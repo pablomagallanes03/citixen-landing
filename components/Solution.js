@@ -2,8 +2,8 @@ import React from 'react';
 
 const Solution = () => {
     return (
-        <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto text-center">
+        <section className="bg-white py-20 px-4 sm:px-6 lg:px-8 fade-in">
+            <div className="max-w-7xl mx-auto section-card">
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
                     Una nueva forma de participación ciudadana
                 </h2>

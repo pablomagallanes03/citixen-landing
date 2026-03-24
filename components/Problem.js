@@ -2,8 +2,8 @@ import React from 'react';
 
 const Problem = () => {
     return (
-        <section className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto text-center">
+        <section className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 fade-in">
+            <div className="max-w-7xl mx-auto section-card text-center">
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
                     Hoy, no tienes control sobre el destino de tus impuestos
                 </h2>

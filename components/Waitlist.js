@@ -11,7 +11,7 @@ const Waitlist = () => {
     };
 
     return (
-        <section className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+        <section id="contact" className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 fade-in">
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
                     Únete a la comunidad
@@ -25,12 +25,12 @@ const Waitlist = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Tu email"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="input-field mb-4"
                         required
                     />
                     <button
                         type="submit"
-                        className="w-full bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
+                        className="btn-primary w-full"
                     >
                         Quiero ser parte
                     </button>

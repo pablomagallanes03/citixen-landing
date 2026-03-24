@@ -2,8 +2,8 @@ import React from 'react';
 
 const HowItWorks = () => {
     return (
-        <section className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+        <section id="how-it-works" className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 fade-in">
+            <div className="max-w-7xl mx-auto section-card">
                 <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-12">
                     Cómo funciona
                 </h2>
