@@ -6,7 +6,10 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div>
-                        <h3 className="text-xl font-bold mb-4">Citixen</h3>
+                        <div className="flex items-center gap-2 mb-4">
+                            <img src="/logo5.svg" alt="Citixen" className="h-8 w-8" />
+                            <span className="text-xl font-bold">Citixen</span>
+                        </div>
                         <p className="text-gray-400">Transformando impuestos en decisiones ciudadanas.</p>
                     </div>
                     <div>

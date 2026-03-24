@@ -4,6 +4,9 @@ const Hero = () => {
     return (
         <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto text-center">
+                <div className="mb-8 flex justify-center">
+                    <img src="/logo2.svg" alt="Icon" className="h-20 w-20" />
+                </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fade-in">
                     Decide a dónde van tus impuestos
                 </h1>
