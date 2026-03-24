@@ -6,6 +6,8 @@ import Solution from '../components/Solution';
 import HowItWorks from '../components/HowItWorks';
 import Impact from '../components/Impact';
 import Product from '../components/Product';
+import WhoCanUse from '../components/WhoCanUse';
+import TransparencyTrust from '../components/TransparencyTrust';
 import CTA from '../components/CTA';
 import SocialProof from '../components/SocialProof';
 import Waitlist from '../components/Waitlist';
@@ -29,6 +31,8 @@ export default function Home() {
                 <HowItWorks />
                 <Impact />
                 <Product />
+                <WhoCanUse />
+                <TransparencyTrust />
                 <CTA />
                 <SocialProof />
                 <Waitlist />

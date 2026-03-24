@@ -8,25 +8,11 @@ const Impact = () => {
                     <img src="/logo3.svg" alt="Icon" className="h-16 w-16" />
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                    Una nueva forma de participación
+                    Construyendo una forma más transparente de asignar recursos
                 </h2>
-                <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-                    Más transparencia. Más impacto. Más poder para las personas.
+                <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Citixen propone un modelo donde los ciudadanos participan activamente en la asignación de recursos públicos, fortaleciendo la transparencia, la confianza y el impacto social.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-                    <div>
-                        <h3 className="text-2xl font-bold text-primary mb-2">Transparencia</h3>
-                        <p className="text-gray-600">Sabe exactamente cómo se usan tus impuestos.</p>
-                    </div>
-                    <div>
-                        <h3 className="text-2xl font-bold text-primary mb-2">Impacto</h3>
-                        <p className="text-gray-600">Financia proyectos que realmente importan en tu comunidad.</p>
-                    </div>
-                    <div>
-                        <h3 className="text-2xl font-bold text-primary mb-2">Poder</h3>
-                        <p className="text-gray-600">Toma decisiones reales sobre el futuro de tu ciudad.</p>
-                    </div>
-                </div>
             </div>
         </section>
     );

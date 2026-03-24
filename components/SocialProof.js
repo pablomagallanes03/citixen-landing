@@ -7,23 +7,12 @@ const SocialProof = () => {
                 <div className="mb-8 flex justify-center">
                     <img src="/logo4.svg" alt="Icon" className="h-16 w-16" />
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-12">
-                    Comunidad en crecimiento
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                    En etapa inicial
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-                    <div>
-                        <div className="text-4xl font-bold text-primary mb-2">500+</div>
-                        <p className="text-gray-600">Personas interesadas</p>
-                    </div>
-                    <div>
-                        <div className="text-4xl font-bold text-primary mb-2">20+</div>
-                        <p className="text-gray-600">Proyectos creados</p>
-                    </div>
-                    <div>
-                        <div className="text-4xl font-bold text-primary mb-2">5</div>
-                        <p className="text-gray-600">Ciudades en desarrollo</p>
-                    </div>
-                </div>
+                <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Estamos construyendo la primera versión de Citixen y formando una comunidad inicial de ciudadanos, organizaciones y actores públicos interesados en este nuevo modelo.
+                </p>
             </div>
         </section>
     );

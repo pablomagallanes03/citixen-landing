@@ -10,23 +10,23 @@ const Product = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div className="text-center">
                         <div className="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">📱</div>
-                        <h3 className="text-lg font-semibold mb-2">Interfaz simple</h3>
-                        <p className="text-gray-600">Fácil de usar para todos los ciudadanos.</p>
+                        <h3 className="text-lg font-semibold mb-2">Interfaz simple e intuitiva</h3>
+                        <p className="text-gray-600">Diseñada para que cualquier ciudadano la use fácilmente.</p>
                     </div>
                     <div className="text-center">
                         <div className="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">👁️</div>
-                        <h3 className="text-lg font-semibold mb-2">Proyectos visibles</h3>
-                        <p className="text-gray-600">Explora proyectos sociales locales claramente.</p>
+                        <h3 className="text-lg font-semibold mb-2">Proyectos visibles y accesibles</h3>
+                        <p className="text-gray-600">Explora proyectos sociales de tu comunidad con claridad.</p>
                     </div>
                     <div className="text-center">
                         <div className="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">🪙</div>
-                        <h3 className="text-lg font-semibold mb-2">Sistema de tokens</h3>
-                        <p className="text-gray-600">Civic coins para asignar de forma segura.</p>
+                        <h3 className="text-lg font-semibold mb-2">Sistema de asignación mediante civic coins</h3>
+                        <p className="text-gray-600">Distancia clara entre impuestos y decisiones participativas.</p>
                     </div>
                     <div className="text-center">
                         <div className="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">✅</div>
-                        <h3 className="text-lg font-semibold mb-2">Validación transparente</h3>
-                        <p className="text-gray-600">Gobiernos aprueban y ejecutan con claridad.</p>
+                        <h3 className="text-lg font-semibold mb-2">Validación por gobiernos locales</h3>
+                        <p className="text-gray-600">Proyectos supervisados y ejecutados con transparencia.</p>
                     </div>
                 </div>
             </div>

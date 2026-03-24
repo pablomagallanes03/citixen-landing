@@ -11,17 +11,17 @@ const HowItWorks = () => {
                     <div className="text-center bg-white p-8 rounded-lg shadow-sm">
                         <div className="text-4xl mb-4">👤</div>
                         <h3 className="text-xl font-semibold mb-4">Ciudadanos</h3>
-                        <p className="text-gray-600">Reciben tokens y deciden dónde invertir su contribución fiscal en proyectos locales.</p>
+                        <p className="text-gray-600">Reciben civic coins por sus aportes y deciden a qué proyectos sociales asignarlos.</p>
                     </div>
                     <div className="text-center bg-white p-8 rounded-lg shadow-sm">
                         <div className="text-4xl mb-4">🏛️</div>
                         <h3 className="text-xl font-semibold mb-4">Gobiernos</h3>
-                        <p className="text-gray-600">Validan y ejecutan los proyectos seleccionados, asegurando transparencia.</p>
+                        <p className="text-gray-600">Validan proyectos, supervisan el proceso y convierten los tokens en financiamiento real.</p>
                     </div>
                     <div className="text-center bg-white p-8 rounded-lg shadow-sm">
                         <div className="text-4xl mb-4">🏗️</div>
-                        <h3 className="text-xl font-semibold mb-4">Proyectos</h3>
-                        <p className="text-gray-600">Reciben financiamiento directo basado en las decisiones ciudadanas.</p>
+                        <h3 className="text-xl font-semibold mb-4">Organizaciones</h3>
+                        <p className="text-gray-600">Presentan proyectos sociales y reciben apoyo directo de la comunidad.</p>
                     </div>
                 </div>
             </div>

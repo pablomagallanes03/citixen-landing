@@ -10,12 +10,12 @@ const Hero = () => {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 animate-fade-in">
                     Decide a dónde van tus impuestos
                 </h1>
-                <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                    Citixen transforma impuestos en decisiones ciudadanas. Apoya proyectos reales en tu ciudad.
+                <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Citixen permite a los ciudadanos asignar parte de sus impuestos a proyectos sociales reales en su ciudad, de forma transparente y participativa.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <button className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
-                        Unirme
+                        Unirme a la comunidad
                     </button>
                     <button className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition duration-300">
                         Ver cómo funciona

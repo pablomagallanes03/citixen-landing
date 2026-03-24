@@ -14,10 +14,10 @@ const Waitlist = () => {
         <section className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                    Trae Citixen a tu ciudad
+                    Únete a la comunidad
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
-                    Regístrate para ser de los primeros en implementar esta solución en tu comunidad.
+                    Deja tu email para recibir novedades y ser parte del lanzamiento.
                 </p>
                 <form onSubmit={handleSubmit} className="max-w-md mx-auto">
                     <input
