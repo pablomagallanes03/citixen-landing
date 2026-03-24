@@ -24,7 +24,9 @@ const Hero = () => {
                         </div>
                     </div>
                     <div className="flex justify-center lg:justify-end">
-                        <img src="/Iphone.png" alt="Citixen App Mockup" className="w-full max-w-md rounded-3xl shadow-soft" />
+                        <div className="placeholder-mockup w-full max-w-md h-[500px] rounded-3xl shadow-soft flex items-center justify-center">
+                            <span className="text-gray-500 text-lg font-medium">App preview</span>
+                        </div>
                     </div>
                 </div>
             </div>

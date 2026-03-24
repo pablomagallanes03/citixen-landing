@@ -121,6 +121,17 @@ p {
     opacity: 0.25;
 }
 
+.placeholder-mockup {
+    background: linear-gradient(180deg, #f7f9fc, #e2e8f0);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.placeholder-mockup:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
 @media (max-width: 768px) {
     .section-card {
         padding: 1.25rem;
