@@ -2,17 +2,19 @@ import React from 'react';
 
 const SocialProof = () => {
     return (
-        <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto text-center">
-                <div className="mb-8 flex justify-center">
-                    <img src="/logo4.svg" alt="Icon" className="h-16 w-16" />
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+        <section className="bg-white py-32 px-4 sm:px-6 lg:px-8 fade-in">
+            <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-gray-900 mb-8">
                     En etapa inicial
                 </h2>
-                <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-                    Estamos construyendo la primera versión de Citixen y formando una comunidad inicial de ciudadanos, organizaciones y actores públicos interesados en este nuevo modelo.
+                <p className="text-xl text-gray-600 leading-relaxed mb-12">
+                    Estamos desarrollando la primera versión de Citixen y formando una comunidad inicial de ciudadanos perspicaces, organizaciones sociales comprometidas, y actores públicos innovadores interesados en transformar el modelo de asignación de recursos públicos.
                 </p>
+                <div className="inline-block bg-gray-50 rounded-2xl px-8 py-6 border border-gray-200">
+                    <p className="text-gray-700 font-medium">
+                        Sé parte de algo diferente desde el comienzo. Tu voz y experiencia configurarán el futuro de Citixen.
+                    </p>
+                </div>
             </div>
         </section>
     );
