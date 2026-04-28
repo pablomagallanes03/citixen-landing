@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://citixen.app/$1",
+      "permanent": false
+    }
+  ]
+}
