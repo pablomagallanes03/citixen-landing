@@ -398,7 +398,7 @@ export default function TransparencyMethodology() {
             <div className="citation-box">
               <p>
                 Citixen Technologies. (2026). <em>Citixen Transparency Index — Methodology v1.0</em>.
-                Retrieved from <code>https://citixen.tech/transparency-methodology</code>
+                Retrieved from <code>https://citixen.org/transparency-methodology</code>
               </p>
             </div>
 
@@ -406,7 +406,7 @@ export default function TransparencyMethodology() {
             <p>
               CTI scores are available programmatically via Citixen&apos;s public API. Documentation
               and endpoints will be published at a future date. Organizations interested in
-              early access can contact <strong>data@citixen.tech</strong>.
+              early access can contact <strong>data@citixen.org</strong>.
             </p>
           </section>
 
@@ -422,7 +422,7 @@ export default function TransparencyMethodology() {
                 or media outlet and are interested in accessing CTI data or collaborating on methodology
                 development, we would like to hear from you.
               </p>
-              <a href="mailto:data@citixen.tech" className="btn-primary">
+              <a href="mailto:data@citixen.org" className="btn-primary">
                 Contact us &rarr;
               </a>
             </div>
