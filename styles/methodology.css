@@ -1,0 +1,424 @@
+/* ═══════════════════════════════════════════════════
+   METHODOLOGY PAGE
+   ═══════════════════════════════════════════════════ */
+
+.methodology-page {
+  padding-top: 72px;
+}
+
+/* Hero */
+.methodology-hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary) 100%);
+  padding: 80px 0 64px;
+  color: white;
+}
+.methodology-hero-inner {
+  max-width: 720px;
+}
+.methodology-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 16px;
+}
+.methodology-hero h1 {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.methodology-subtitle {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+.methodology-meta {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.meta-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.45);
+}
+.meta-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+}
+
+/* Table of contents */
+.methodology-toc {
+  padding: 40px 0 0;
+  background: var(--bg);
+}
+.toc-card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  max-width: 720px;
+}
+.toc-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.toc-card ol {
+  list-style: none;
+  counter-reset: toc;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 32px;
+}
+.toc-card ol li {
+  counter-increment: toc;
+}
+.toc-card ol li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+.toc-card ol li a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  width: 24px;
+  flex-shrink: 0;
+}
+.toc-card ol li a:hover {
+  color: var(--primary);
+}
+
+/* Body */
+.methodology-body {
+  max-width: 720px;
+  padding-top: 24px;
+  padding-bottom: 80px;
+  background: var(--bg);
+}
+
+/* Sections */
+.methodology-section {
+  margin-bottom: 56px;
+  scroll-margin-top: 96px;
+}
+.section-number {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.methodology-section h2 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+.methodology-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+.methodology-section p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+.methodology-section p strong {
+  color: var(--text-primary);
+}
+.methodology-section code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  background: rgba(52,119,193,0.08);
+  color: var(--primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Callouts */
+.callout {
+  background: var(--surface);
+  border-left: 4px solid var(--primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+.callout strong {
+  color: var(--text-primary);
+}
+.callout-warning {
+  border-left-color: var(--accent);
+}
+
+/* Criterion cards */
+.criterion-card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin: 24px 0;
+}
+.criterion-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.criterion-number {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.criterion-header h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+.criterion-es {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+.criterion-weight {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(52,119,193,0.08);
+  padding: 4px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.criterion-question {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-style: italic;
+  margin-bottom: 16px;
+}
+.formula-box {
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 14px 20px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+.formula-box code {
+  font-size: 14px;
+  font-weight: 600;
+  background: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+.criterion-details p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+/* Badges grid */
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.badge-card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+}
+.badge-icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 10px;
+}
+.badge-card h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.badge-card p {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Limitations */
+.limitations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+.limitation-item {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+.limitation-item h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.limitation-item p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* Changelog table */
+.changelog-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-size: 14px;
+}
+.changelog-table th {
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 10px 16px;
+  border-bottom: 2px solid var(--border);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.changelog-table td {
+  padding: 12px 16px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-light);
+  line-height: 1.6;
+}
+
+/* Citation */
+.citation-box {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  margin: 16px 0;
+}
+.citation-box p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+.citation-box em {
+  color: var(--text-primary);
+}
+
+/* CTA */
+.methodology-cta {
+  padding: 80px 0;
+  background: var(--surface);
+}
+.cta-inner {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.cta-inner h2 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+.cta-inner p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .methodology-hero {
+    padding: 60px 0 48px;
+  }
+  .methodology-hero h1 {
+    font-size: 32px;
+  }
+  .methodology-subtitle {
+    font-size: 16px;
+  }
+  .methodology-meta {
+    gap: 20px;
+  }
+  .toc-card ol {
+    grid-template-columns: 1fr;
+  }
+  .methodology-section h2 {
+    font-size: 24px;
+  }
+  .criterion-header {
+    flex-wrap: wrap;
+  }
+  .criterion-weight {
+    margin-left: 0;
+  }
+  .badges-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .methodology-hero h1 {
+    font-size: 26px;
+  }
+  .badges-grid {
+    grid-template-columns: 1fr;
+  }
+}
