@@ -1,273 +1,120 @@
-# CLAUDE.md — Citixen (Guía Estratégica, Producto y Comunicación)
+# CLAUDE.md — Citixen Landing Page
+
+## Qué es este repo
+
+Landing page de Citixen en `citixen.org`. Comunica el producto a gobiernos locales y ciudadanos.
+Deploy: Vercel. Framework: Next.js 14 + React 18. Estilos: CSS custom con variables (no Tailwind classes en components).
+
+**Dominios:**
+- `citixen.org` — landing institucional (este repo)
+- `citixen.tech` — redirige 301 a `citixen.org` (configurar en Vercel)
+- `admin.citixen.app` / `government.citixen.app` — paneles operativos (otros repos)
+- `citixen.app` — backend API (otro repo)
 
 ---
 
-## 🧠 ESENCIA DEL PROYECTO
+## Posicionamiento (mayo 2026)
 
-Citixen no es solo una plataforma tecnológica.
+**Citixen = Infraestructura de confianza para gobiernos locales.**
 
-Es una infraestructura digital que redefine la relación entre ciudadanos, gobiernos locales y recursos públicos.
+El producto tiene 3 capas de adopción progresiva:
+- **Nivel 1 — Transparencia:** Portal público, índice de transparencia, proyectos visibles. Gratuito.
+- **Nivel 2 — Participación:** Consultas, propuestas ciudadanas, priorización. Los vecinos señalan qué importa.
+- **Nivel 3 — Asignación:** Créditos Cívicos. Los vecinos co-deciden la inversión pública con trazabilidad total.
 
-Su propósito es permitir que los ciudadanos participen de forma estructurada, transparente y medible en la asignación de una parte de los recursos públicos que generan a través de sus impuestos.
-
----
-
-## 🎯 VISIÓN
-
-Citixen es una plataforma digital diseñada para transformar la relación entre ciudadanos y gobiernos locales mediante un sistema transparente de participación en el uso de los recursos públicos.
-
-El objetivo es:
-- aumentar la transparencia fiscal  
-- incentivar la participación ciudadana  
-- mejorar la eficiencia en la asignación de recursos públicos  
-
-A largo plazo, Citixen aspira a convertirse en una plataforma global utilizada por municipios para fortalecer la democracia participativa.
+La landing comunica de arriba hacia abajo: primero transparencia (fácil, seguro, sin riesgo), después participación, y solo al final Créditos Cívicos.
 
 ---
 
-## 🌍 PROBLEMA GLOBAL
+## Estructura de la landing
 
-Existe una desconexión estructural entre:
-- los ciudadanos que pagan impuestos  
-- y las decisiones sobre cómo se utilizan esos recursos  
+| Orden | Componente | Objetivo |
+|---|---|---|
+| 1 | Navbar | Navegación + CTA "Activar mi portal" |
+| 2 | Hero | Hook + mockup de portal + proof points |
+| 3 | Problem | Validar el dolor (invisibilidad de gestión) |
+| 4 | SocialProof | Strip de confianza mínima |
+| 5 | Progressive | Las 3 capas con resultado + esfuerzo |
+| 6 | Scenarios | 4 escenarios identificables por tipo de municipio |
+| 7 | Differentiator | Tabla vs alternativas (portal, encuestas, PP) |
+| 8 | HowToStart | 3 pasos con tiempos estimados |
+| 9 | FAQ | 6 objeciones frecuentes del decisor público |
+| 10 | EarlyAccess | Formulario gobierno (primario) + ciudadano |
+| 11 | Footer | Links + legal |
 
-Esto genera:
-- percepción de ineficiencia  
-- falta de transparencia  
-- desconfianza institucional  
-- baja participación ciudadana  
-
-Al mismo tiempo:
-Los gobiernos locales tienen dificultades para identificar y financiar iniciativas sociales alineadas con necesidades reales.
-
----
-
-## 🚀 LA SOLUCIÓN: CITIXEN
-
-Citixen introduce un sistema donde:
-
-- los ciudadanos reciben créditos digitales al pagar impuestos  
-- estos créditos se denominan **Civic Coins**  
-- los ciudadanos asignan estos créditos a proyectos sociales dentro de su ciudad  
-
-Cuando un proyecto alcanza su objetivo:
-- solicita financiamiento  
-- el municipio valida  
-- y realiza el pago con recursos públicos ya recaudados  
+**Página adicional:** `/transparency-methodology` — documento público de metodología del Índice de Transparencia (CTI v1.0). En inglés, orientado a organismos multilaterales e investigadores.
 
 ---
 
-## 🧩 ACTORES DEL ECOSISTEMA
+## Reglas de comunicación
 
-**Ciudadanos**
-- Pagan impuestos municipales  
-- Reciben Civic Coins  
-- Asignan recursos a proyectos  
-
-**Proyectos Sociales**
-- Publican iniciativas con impacto social  
-- Reciben apoyo mediante Civic Coins  
-
-**Municipios**
-- Verifican pagos de impuestos  
-- Aprueban proyectos  
-- Autorizan transferencias de fondos  
+| Regla | Detalle |
+|---|---|
+| Tono | Institucional, claro, sobrio. No es una startup hype. |
+| Vocabulario | "Créditos Cívicos" (no "tokens", no "Civic Coins"). "Infraestructura de confianza" (no "plataforma de participación"). |
+| Orden de revelación | Transparencia primero, CC al final. No asustar con complejidad. |
+| Audiencia primaria | Intendentes, secretarios de gobierno, jefes de gabinete de municipios de 5.000 a 500.000 hab. |
+| Audiencia secundaria | Ciudadanos que quieren que su ciudad lo use |
+| Qué NO decir | "Revolucionar", "empoderar", "disruptivo", "blockchain", "tokens", "cambiar el mundo" |
+| CTA principal | "Activar mi portal" (no "Agendar demo" ni "Contactar ventas") |
 
 ---
 
-## ⚙️ FUNCIONAMIENTO DEL SISTEMA
+## Stack técnico
 
-1. El ciudadano paga un impuesto municipal  
-2. Solicita Civic Coins en la app  
-3. El municipio verifica el pago  
-4. Se emiten Civic Coins  
-5. El ciudadano asigna sus créditos  
-6. Los proyectos acumulan apoyo  
-7. El municipio ejecuta el pago  
-
----
-
-## 💰 ECONOMÍA DEL SISTEMA
-
-Los Civic Coins:
-
-- Son créditos digitales internos  
-- Representan valor público asignable  
-- No son transferibles entre ciudadanos  
-- No pueden venderse  
-- Tienen fecha de expiración  
-
-Solo pueden utilizarse dentro del ecosistema Citixen.
+- **Framework:** Next.js 14 (Pages Router)
+- **Estilos:** CSS custom en `styles/globals.css` + `styles/methodology.css`. Variables CSS en `:root`.
+- **Paleta:** `--primary: #3477C1`, `--secondary: #3C9ECE`, `--accent: #F7794E`, `--dark: #020202`, `--bg: #E7ECF0`, `--surface: #FFFFFF`
+- **Fuente:** Inter (Google Fonts)
+- **Animaciones:** IntersectionObserver + `.fade-up` + CSS keyframes
+- **Deploy:** Vercel (`origin` remote)
+- **Dominio:** `citixen.org`
 
 ---
 
-## 📊 TRANSPARENCIA
+## API endpoint
 
-Citixen integra un sistema de visualización pública:
+`POST /api/contact` — Recibe formularios de la landing.
 
-- créditos emitidos  
-- proyectos financiados  
-- fondos transferidos  
-- estado de ejecución  
+- Si `RESEND_API_KEY` está configurado: envía email de notificación a `CONTACT_EMAIL` (default: `contacto@citixen.org`)
+- Si no: solo logea (modo desarrollo)
+- Nunca falla al usuario — errores de envío se logean pero devuelven 200
 
-La transparencia se comunica como:
-- trazabilidad  
-- seguimiento  
-- resultados visibles  
+**Variables de entorno necesarias en Vercel:**
+- `RESEND_API_KEY` — API key de Resend para envío de emails
+- `CONTACT_EMAIL` — Email destino de las notificaciones (opcional, default `contacto@citixen.org`)
 
 ---
 
-## 🏗️ ARQUITECTURA TECNOLÓGICA
+## SEO
 
-Componentes principales:
-
-- Frontend: interfaz de usuarios  
-- Backend: lógica del sistema  
-- Base de datos: almacenamiento  
-
-No requiere blockchain en su fase inicial.
+- **JSON-LD:** `SoftwareApplication` con info de la empresa y features
+- **Open Graph:** título, descripción, imagen (pendiente asset real en `public/og-image.png`)
+- **Favicon:** SVG en `public/favicon.svg`
+- **Idioma:** `og:locale = es_AR`
 
 ---
 
-## ⚖️ POSICIONAMIENTO
+## Decisiones cerradas
 
-Citixen debe percibirse como:
-
-- infraestructura cívica digital  
-- herramienta de gobernanza moderna  
-- sistema complementario al modelo actual  
-
-Nunca como:
-- movimiento político  
-- plataforma activista  
-- solución radical o anti-sistema  
-
----
-
-## ❌ QUÉ NO ES CITIXEN
-
-- No reemplaza al Estado  
-- No es un sistema de votación política  
-- No es populismo digital  
-- No es una herramienta de protesta  
+| Decisión | Regla |
+|---|---|
+| Nombre del producto | "Citixen" (nunca "Citixen App" ni "Plataforma Citixen") |
+| Nombre de los créditos | "Créditos Cívicos" en español, "Civic Credits" en código. NUNCA "Civic Coins". |
+| Modelo de adopción | 3 capas progresivas. No es negociable el orden ni la narrativa. |
+| Nivel 1 gratuito | Sin límite de tiempo. No es freemium con fecha de vencimiento. |
+| Target primario | Gobiernos locales (no ciudadanos, no ONGs, no empresas) |
+| Hero visual | Mockup de portal web (no mockup de app móvil) |
+| CTA primario | Self-service ("Activar mi portal"), no "Agendar demo" |
 
 ---
 
-## 🧭 TONO DE COMUNICACIÓN
+## Pendientes
 
-Debe ser:
-
-- institucional  
-- claro  
-- moderno  
-- confiable  
-- sobrio  
-
-Evitar:
-
-- hype  
-- exageraciones  
-- lenguaje emocional extremo  
-- discurso político polarizante  
-
----
-
-## ✍️ REGLAS DE COPY
-
-Siempre:
-
-- explicar con claridad  
-- usar lenguaje simple pero serio  
-- priorizar credibilidad  
-- ser directo  
-
-Evitar frases como:
-
-- "revolucionar todo"  
-- "cambiar el mundo"  
-- "la mejor solución"  
-- "empoderar a las masas"  
-
----
-
-## 🏛️ RELACIÓN CON GOBIERNOS
-
-Debe transmitir:
-
-- respeto institucional  
-- viabilidad  
-- facilidad de implementación  
-- mejora del sistema existente  
-
----
-
-## 👥 RELACIÓN CON CIUDADANOS
-
-Debe transmitir:
-
-- participación real  
-- control tangible  
-- impacto visible  
-
-Sin generar falsas expectativas.
-
----
-
-## 🎨 DISEÑO Y EXPERIENCIA
-
-Debe reflejar:
-
-- confianza  
-- claridad  
-- orden  
-- modernidad institucional  
-
-No debe parecer:
-
-- startup hype  
-- app juvenil  
-- producto experimental  
-
----
-
-## ⚠️ REGLAS ESTRICTAS
-
-- No usar lenguaje político polarizante  
-- No prometer cambios irreales  
-- No exagerar impacto  
-- No usar frases genéricas  
-- No desalinearse del enfoque institucional  
-
----
-
-## 🧠 PRINCIPIO FINAL
-
-Citixen es una herramienta seria, viable y escalable para mejorar la participación ciudadana en la asignación de recursos públicos.
-
-Todo el contenido debe alinearse con esta visión.
-
-
-<!-- VERCEL BEST PRACTICES START -->
-## Best practices for developing on Vercel
-
-These defaults are optimized for AI coding agents (and humans) working on apps that deploy to Vercel.
-
-- Treat Vercel Functions as stateless + ephemeral (no durable RAM/FS, no background daemons), use Blob or marketplace integrations for preserving state
-- Edge Functions (standalone) are deprecated; prefer Vercel Functions
-- Don't start new projects on Vercel KV/Postgres (both discontinued); use Marketplace Redis/Postgres instead
-- Store secrets in Vercel Env Variables; not in git or `NEXT_PUBLIC_*`
-- Provision Marketplace native integrations with `vercel integration add` (CI/agent-friendly)
-- Sync env + project settings with `vercel env pull` / `vercel pull` when you need local/offline parity
-- Use `waitUntil` for post-response work; avoid the deprecated Function `context` parameter
-- Set Function regions near your primary data source; avoid cross-region DB/service roundtrips
-- Tune Fluid Compute knobs (e.g., `maxDuration`, memory/CPU) for long I/O-heavy calls (LLMs, APIs)
-- Use Runtime Cache for fast **regional** caching + tag invalidation (don't treat it as global KV)
-- Use Cron Jobs for schedules; cron runs in UTC and triggers your production URL via HTTP GET
-- Use Vercel Blob for uploads/media; Use Edge Config for small, globally-read config
-- If Enable Deployment Protection is enabled, use a bypass secret to directly access them
-- Add OpenTelemetry via `@vercel/otel` on Node; don't expect OTEL support on the Edge runtime
-- Enable Web Analytics + Speed Insights early
-- Use AI Gateway for model routing, set AI_GATEWAY_API_KEY, using a model string (e.g. 'anthropic/claude-sonnet-4.6'), Gateway is already default in AI SDK
-  needed. Always curl https://ai-gateway.vercel.sh/v1/models first; never trust model IDs from memory
-- For durable agent loops or untrusted code: use Workflow (pause/resume/state) + Sandbox; use Vercel MCP for secure infra access
-<!-- VERCEL BEST PRACTICES END -->
+| Item | Prioridad |
+|---|---|
+| Asset real `public/og-image.png` (1200x630) | Alta — necesita diseño |
+| Configurar Resend + dominio verificado | Alta — para que el form funcione en prod |
+| Página de pricing (cuando se defina modelo) | Media |
+| Versión en inglés de la landing | Baja — mercado inicial es Argentina |
+| Analytics (Vercel Web Analytics) | Media |

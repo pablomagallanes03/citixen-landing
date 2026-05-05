@@ -22,10 +22,11 @@ export default function Navbar() {
         </a>
         <ul className={`navbar-links${open ? ' active' : ''}`}>
           <li><a href="#como-funciona" onClick={close}>Cómo funciona</a></li>
-          <li><a href="#municipios" onClick={close}>Para municipios</a></li>
+          <li><a href="#para-tu-ciudad" onClick={close}>Para tu ciudad</a></li>
+          <li><a href="#empezar" onClick={close}>Empezar</a></li>
           <li>
             <a href="#acceso" className="navbar-cta" onClick={close}>
-              Acceso anticipado
+              Activar mi portal
             </a>
           </li>
         </ul>

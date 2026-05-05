@@ -11,7 +11,6 @@ export default function TransparencyMethodology() {
         <meta property="og:title" content="Citixen Transparency Index — Methodology v1.0" />
         <meta property="og:description" content="Public methodology for the CTI, a real-time transparency index for local governments computed from operational data." />
         <meta property="og:type" content="article" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Navbar />

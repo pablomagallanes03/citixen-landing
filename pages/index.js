@@ -3,9 +3,12 @@ import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Problem from '../components/Problem'
-import Mechanism from '../components/Mechanism'
-import ValueProps from '../components/ValueProps'
-import ForGovernments from '../components/ForGovernments'
+import SocialProof from '../components/SocialProof'
+import Progressive from '../components/Progressive'
+import Scenarios from '../components/Scenarios'
+import Differentiator from '../components/Differentiator'
+import HowToStart from '../components/HowToStart'
+import FAQ from '../components/FAQ'
 import EarlyAccess from '../components/EarlyAccess'
 import Footer from '../components/Footer'
 
@@ -22,23 +25,67 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Citixen — Tu impuesto, tu decisión</title>
-        <meta name="description" content="Citixen conecta el pago de impuestos municipales con la decisión ciudadana sobre proyectos reales. Presupuesto participativo con respaldo fiscal real." />
-        <meta name="keywords" content="citixen, participación ciudadana, presupuesto participativo, civic tech, impuestos municipales, civic credits" />
-        <meta property="og:title" content="Citixen — Tu impuesto, tu decisión" />
-        <meta property="og:description" content="Por primera vez, lo que pagás vuelve como decisión. Civic Credits respaldados por presupuesto municipal real." />
+        <title>Citixen — Infraestructura de confianza para gobiernos locales</title>
+        <meta name="description" content="Publicá lo que tu municipio hace. Que tu ciudad lo vea. Portal de transparencia, participación ciudadana y asignación de recursos. Empezá en una semana." />
+        <meta name="keywords" content="citixen, transparencia municipal, participación ciudadana, gobierno abierto, portal municipal, civic tech" />
+        <meta property="og:title" content="Citixen — Infraestructura de confianza para gobiernos locales" />
+        <meta property="og:description" content="Tu ciudad ya funciona. Hacelo visible. Portal de transparencia en una semana, participación ciudadana cuando quieras." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://citixen.org" />
+        <meta property="og:image" content="https://citixen.org/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="es_AR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://citixen.org/og-image.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "Citixen",
+              "applicationCategory": "GovernmentApplication",
+              "description": "Infraestructura de confianza para gobiernos locales. Portal de transparencia, participación ciudadana y asignación de recursos públicos.",
+              "operatingSystem": "Web, Android, iOS",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "Nivel 1 (Transparencia) gratuito"
+              },
+              "author": {
+                "@type": "Organization",
+                "name": "Citixen Technologies SAS",
+                "url": "https://citixen.org",
+                "foundingDate": "2025",
+                "areaServed": {
+                  "@type": "Place",
+                  "name": "Argentina"
+                }
+              },
+              "featureList": [
+                "Portal de transparencia municipal",
+                "Índice de transparencia verificable",
+                "Consultas ciudadanas",
+                "Propuestas ciudadanas",
+                "Asignación de Créditos Cívicos",
+                "Panel de gestión gubernamental"
+              ]
+            })
+          }}
+        />
       </Head>
       <Navbar />
       <Hero />
       <Problem />
-      <Mechanism />
-      <ValueProps />
-      <ForGovernments />
+      <SocialProof />
+      <Progressive />
+      <Scenarios />
+      <Differentiator />
+      <HowToStart />
+      <FAQ />
       <EarlyAccess />
       <Footer />
     </>

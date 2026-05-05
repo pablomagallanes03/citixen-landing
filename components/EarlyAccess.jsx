@@ -1,8 +1,106 @@
 import { useState } from 'react'
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://citixen.app'
+
+function GovernmentForm() {
+  const [form, setForm] = useState({
+    governmentName: '',
+    entityType: '',
+    country: '',
+    province: '',
+    city: '',
+    representativeName: '',
+    representativeRole: '',
+    institutionalEmail: '',
+    acceptedTermsAndConditions: false,
+  })
+  const [status, setStatus] = useState('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+  const [regNumber, setRegNumber] = useState('')
+
+  const set = (k) => (e) => setForm(prev => ({ ...prev, [k]: e.target.value }))
+  const setCheck = (k) => (e) => setForm(prev => ({ ...prev, [k]: e.target.checked }))
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('loading')
+    setErrorMsg('')
+    try {
+      const res = await fetch(`${API_URL}/api/government/register-light`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const data = await res.json()
+      if (res.ok) {
+        setRegNumber(data.data?.government?.registrationNumber || '')
+        setStatus('success')
+      } else if (res.status === 409) {
+        setErrorMsg('Ya existe una solicitud para este gobierno o email.')
+        setStatus('error')
+      } else if (res.status === 429) {
+        setErrorMsg('Demasiados intentos. Intentá de nuevo más tarde.')
+        setStatus('error')
+      } else {
+        setErrorMsg(data.message || 'Algo salió mal. Intentá de nuevo.')
+        setStatus('error')
+      }
+    } catch {
+      setErrorMsg('No se pudo conectar con el servidor. Intentá de nuevo.')
+      setStatus('error')
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <div className="access-success">
+        <div className="success-icon">✓</div>
+        <p>Solicitud enviada correctamente.{regNumber && <> Tu número de registro es <strong>{regNumber}</strong>.</>} Te contactaremos pronto para configurar tu portal.</p>
+      </div>
+    )
+  }
+
+  return (
+    <form className="access-form" onSubmit={handleSubmit}>
+      <input className="access-input" type="text" placeholder="Nombre del municipio / gobierno" value={form.governmentName} onChange={set('governmentName')} required minLength={2} maxLength={100} />
+      <select className="access-input access-select" value={form.entityType} onChange={set('entityType')} required>
+        <option value="">Tipo de entidad</option>
+        <option value="Municipal">Municipal</option>
+        <option value="Provincial">Provincial</option>
+        <option value="Regional">Regional</option>
+        <option value="District">Distrito</option>
+        <option value="County">Condado</option>
+        <option value="Federal">Federal</option>
+      </select>
+      <div className="access-form-row">
+        <input className="access-input" type="text" placeholder="País" value={form.country} onChange={set('country')} required minLength={2} maxLength={50} />
+        <input className="access-input" type="text" placeholder="Provincia / Estado" value={form.province} onChange={set('province')} required minLength={2} maxLength={50} />
+      </div>
+      <input className="access-input" type="text" placeholder="Ciudad" value={form.city} onChange={set('city')} required minLength={2} maxLength={50} />
+      <div className="access-form-row">
+        <input className="access-input" type="text" placeholder="Nombre del responsable" value={form.representativeName} onChange={set('representativeName')} required minLength={2} maxLength={50} />
+        <input className="access-input" type="text" placeholder="Cargo" value={form.representativeRole} onChange={set('representativeRole')} required minLength={2} maxLength={50} />
+      </div>
+      <input className="access-input" type="email" placeholder="Email institucional" value={form.institutionalEmail} onChange={set('institutionalEmail')} required />
+      <label className="access-checkbox-label">
+        <input type="checkbox" checked={form.acceptedTermsAndConditions} onChange={setCheck('acceptedTermsAndConditions')} required />
+        <span>Acepto los Términos y Condiciones</span>
+      </label>
+      <button className="btn-access-gov" type="submit" disabled={status === 'loading' || !form.acceptedTermsAndConditions}>
+        {status === 'loading' ? 'Enviando...' : 'Registrar mi municipio'}
+      </button>
+      {status === 'error' && (
+        <p style={{ fontSize: '13px', color: 'var(--accent)', textAlign: 'center' }}>
+          {errorMsg}
+        </p>
+      )}
+    </form>
+  )
+}
+
 function CitizenForm() {
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState('idle') // idle | loading | success | error
+  const [status, setStatus] = useState('idle')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -25,7 +123,7 @@ function CitizenForm() {
     return (
       <div className="access-success">
         <div className="success-icon">✓</div>
-        <p>Registrado. Te avisamos cuando Citixen llegue a tu ciudad.</p>
+        <p>Listo. Te avisamos cuando la app esté disponible para descargar.</p>
       </div>
     )
   }
@@ -41,59 +139,10 @@ function CitizenForm() {
         required
       />
       <button className="btn-access-citizen" type="submit" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Registrando...' : 'Quiero acceso anticipado'}
+        {status === 'loading' ? 'Registrando...' : 'Avisame cuando esté disponible'}
       </button>
       {status === 'error' && (
         <p style={{ fontSize: '13px', color: 'var(--accent)', textAlign: 'center' }}>
-          Algo salió mal. Intentá de nuevo.
-        </p>
-      )}
-    </form>
-  )
-}
-
-function GovernmentForm() {
-  const [form, setForm] = useState({ name: '', role: '', municipality: '', email: '' })
-  const [status, setStatus] = useState('idle')
-
-  const set = (k) => (e) => setForm(prev => ({ ...prev, [k]: e.target.value }))
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setStatus('loading')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type: 'government', ...form }),
-      })
-      if (res.ok) setStatus('success')
-      else setStatus('error')
-    } catch {
-      setStatus('error')
-    }
-  }
-
-  if (status === 'success') {
-    return (
-      <div className="access-success">
-        <div className="success-icon">✓</div>
-        <p>Recibimos tu consulta. Te contactamos a la brevedad para coordinar una conversación.</p>
-      </div>
-    )
-  }
-
-  return (
-    <form className="access-form" onSubmit={handleSubmit}>
-      <input className="access-input" type="text" placeholder="Nombre completo" value={form.name} onChange={set('name')} required />
-      <input className="access-input" type="text" placeholder="Cargo" value={form.role} onChange={set('role')} required />
-      <input className="access-input" type="text" placeholder="Municipio" value={form.municipality} onChange={set('municipality')} required />
-      <input className="access-input" type="email" placeholder="Email institucional" value={form.email} onChange={set('email')} required />
-      <button className="btn-access-gov" type="submit" disabled={status === 'loading'}>
-        {status === 'loading' ? 'Enviando...' : 'Quiero conocer más'}
-      </button>
-      {status === 'error' && (
-        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', textAlign: 'center' }}>
           Algo salió mal. Intentá de nuevo.
         </p>
       )}
@@ -106,30 +155,29 @@ export default function EarlyAccess() {
     <section className="early-access-section" id="acceso">
       <div className="container">
         <div className="early-access-header">
-          <div className="section-label fade-up"><span className="bar"></span> Acceso anticipado</div>
-          <h2 className="section-title fade-up">Citixen está en fase de lanzamiento</h2>
-          <p className="section-desc fade-up">
-            El sistema está operativo. Estas son las formas de sumarse desde el inicio.
+          <h2 className="section-title fade-up">Tu ciudad ya tiene proyectos en marcha.<br />Solo falta que se vean.</h2>
+          <p className="section-desc fade-up" style={{ textAlign: 'center' }}>
+            El Nivel 1 es gratuito. Activalo hoy y tené tu portal en una semana.
           </p>
         </div>
         <div className="early-access-grid">
-          <div className="access-card card-citizen fade-up delay-1">
-            <div className="access-card-label">Ciudadanos</div>
-            <h3 className="access-card-title">Soy ciudadano</h3>
-            <p className="access-card-desc">
-              Registrate para recibir acceso cuando Citixen llegue a tu ciudad.
-              Sin costo, sin compromisos.
-            </p>
-            <CitizenForm />
-          </div>
-          <div className="access-card card-government fade-up delay-2">
+          <div className="access-card card-government fade-up delay-1">
             <div className="access-card-label">Municipios</div>
-            <h3 className="access-card-title">Soy un municipio</h3>
+            <h3 className="access-card-title">Quiero activar Citixen</h3>
             <p className="access-card-desc">
-              Hablemos sobre cómo implementar Citixen en tu ciudad.
-              Coordinamos una conversación sin compromiso.
+              Registrá tu municipio y te ayudamos a tener tu portal operativo.
+              Sin costo para el Nivel 1, sin compromiso de permanencia.
             </p>
             <GovernmentForm />
+          </div>
+          <div className="access-card card-citizen fade-up delay-2">
+            <div className="access-card-label">Ciudadanos</div>
+            <h3 className="access-card-title">Quiero participar</h3>
+            <p className="access-card-desc">
+              Dejá tu email y te avisamos cuando la app esté disponible para descargar.
+              Desde ahí vas a poder elegir tu ciudad y empezar a participar.
+            </p>
+            <CitizenForm />
           </div>
         </div>
       </div>
