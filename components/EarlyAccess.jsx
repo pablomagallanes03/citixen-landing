@@ -84,7 +84,7 @@ function GovernmentForm() {
       <input className="access-input" type="email" placeholder="Email institucional" value={form.institutionalEmail} onChange={set('institutionalEmail')} required />
       <label className="access-checkbox-label">
         <input type="checkbox" checked={form.acceptedTermsAndConditions} onChange={setCheck('acceptedTermsAndConditions')} required />
-        <span>Acepto los Términos y Condiciones</span>
+        <span>Acepto los <a href="/terms" target="_blank" rel="noopener noreferrer">Términos de Uso</a> y la <a href="/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad</a></span>
       </label>
       <button className="btn-access-gov" type="submit" disabled={status === 'loading' || !form.acceptedTermsAndConditions}>
         {status === 'loading' ? 'Enviando...' : 'Registrar mi municipio'}
