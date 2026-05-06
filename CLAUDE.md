@@ -17,12 +17,11 @@ Deploy: Vercel. Framework: Next.js 14 + React 18. Estilos: CSS custom con variab
 
 **Citixen = Infraestructura de confianza para gobiernos locales.**
 
-El producto tiene 3 capas de adopción progresiva:
-- **Nivel 1 — Transparencia:** Portal público, índice de transparencia, proyectos visibles. Gratuito.
-- **Nivel 2 — Participación:** Consultas, propuestas ciudadanas, priorización. Los vecinos señalan qué importa.
-- **Nivel 3 — Asignación:** Créditos Cívicos. Los vecinos co-deciden la inversión pública con trazabilidad total.
+El producto tiene 2 modos de adopción progresiva:
+- **Modo Comunidad:** Transparencia, participación y engagement ciudadano. Portal público, consultas, propuestas, índice de transparencia. Gratuito.
+- **Modo Economía Participativa:** Todo lo anterior + Créditos Cívicos, financiamiento participativo y trazabilidad económica.
 
-La landing comunica de arriba hacia abajo: primero transparencia (fácil, seguro, sin riesgo), después participación, y solo al final Créditos Cívicos.
+La landing comunica de arriba hacia abajo: primero transparencia y participación (fácil, seguro, sin riesgo), y después Créditos Cívicos como capa de activación avanzada.
 
 ---
 
@@ -34,7 +33,7 @@ La landing comunica de arriba hacia abajo: primero transparencia (fácil, seguro
 | 2 | Hero | Hook + mockup de portal + proof points |
 | 3 | Problem | Validar el dolor (invisibilidad de gestión) |
 | 4 | SocialProof | Strip de confianza mínima |
-| 5 | Progressive | Las 3 capas con resultado + esfuerzo |
+| 5 | Progressive | Los 2 modos con resultado + esfuerzo |
 | 6 | Scenarios | 4 escenarios identificables por tipo de municipio |
 | 7 | Differentiator | Tabla vs alternativas (portal, encuestas, PP) |
 | 8 | HowToStart | 3 pasos con tiempos estimados |
@@ -101,8 +100,8 @@ La landing comunica de arriba hacia abajo: primero transparencia (fácil, seguro
 |---|---|
 | Nombre del producto | "Citixen" (nunca "Citixen App" ni "Plataforma Citixen") |
 | Nombre de los créditos | "Créditos Cívicos" en español, "Civic Credits" en código. NUNCA "Civic Coins". |
-| Modelo de adopción | 3 capas progresivas. No es negociable el orden ni la narrativa. |
-| Nivel 1 gratuito | Sin límite de tiempo. No es freemium con fecha de vencimiento. |
+| Modelo de adopción | 2 modos progresivos (Comunidad + Economía Participativa). Internamente `"light"` y `"full"` en BD. |
+| Modo Comunidad gratuito | Sin límite de tiempo. No es freemium con fecha de vencimiento. |
 | Target primario | Gobiernos locales (no ciudadanos, no ONGs, no empresas) |
 | Hero visual | Mockup de portal web (no mockup de app móvil) |
 | CTA primario | Self-service ("Activar mi portal"), no "Agendar demo" |

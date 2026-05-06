@@ -157,7 +157,7 @@ export default function EarlyAccess() {
         <div className="early-access-header">
           <h2 className="section-title fade-up">Tu ciudad ya tiene proyectos en marcha.<br />Solo falta que se vean.</h2>
           <p className="section-desc fade-up" style={{ textAlign: 'center' }}>
-            El Nivel 1 es gratuito. Activalo hoy y tené tu portal en una semana.
+            Modo Comunidad es gratuito. Activalo hoy y ten\u00e9 tu portal en una semana.
           </p>
         </div>
         <div className="early-access-grid">
@@ -166,7 +166,7 @@ export default function EarlyAccess() {
             <h3 className="access-card-title">Quiero activar Citixen</h3>
             <p className="access-card-desc">
               Registrá tu municipio y te ayudamos a tener tu portal operativo.
-              Sin costo para el Nivel 1, sin compromiso de permanencia.
+              Sin costo para Modo Comunidad, sin compromiso de permanencia.
             </p>
             <GovernmentForm />
           </div>

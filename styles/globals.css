@@ -375,14 +375,14 @@ img { max-width: 100%; display: block; }
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
-/* ═════════���══════════════════════════════════════���══
-   PROGRESSIVE (3 Layers)
+/* ═══════════════════════════════════════════════════
+   PROGRESSIVE (2 Modes)
    ═══════════════════════════════════════════════════ */
 .progressive-section { padding: 120px 0; background: var(--surface); }
 .progressive-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
   margin-bottom: 40px;
 }
 .progressive-card {
@@ -436,6 +436,38 @@ img { max-width: 100%; display: block; }
   line-height: 1.7;
   margin-bottom: 24px;
   flex-grow: 1;
+}
+.progressive-includes {
+  margin-bottom: 24px;
+}
+.progressive-includes-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: block;
+}
+.progressive-includes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.progressive-includes-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.progressive-includes-list li svg {
+  flex-shrink: 0;
+  color: var(--primary);
 }
 .progressive-meta {
   display: flex;

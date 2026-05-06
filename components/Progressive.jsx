@@ -1,27 +1,19 @@
-const levels = [
+const modes = [
   {
-    level: '1',
-    name: 'Transparencia',
-    tagline: 'Publicá lo que hacés',
-    description: 'Portal público con tus proyectos, obras y acciones. Los vecinos ven el estado de cada iniciativa. Tu gestión gana un índice de transparencia verificable.',
-    result: 'Confianza + legitimidad + defensa ante la crítica.',
-    effort: 'Cargar tus proyectos actuales. Nada más.',
+    id: 'community',
+    name: 'Modo Comunidad',
+    tagline: 'Transparencia y participaci\u00f3n sin complejidad',
+    description: 'Portal p\u00fablico de proyectos municipales, consultas ciudadanas, propuestas vecinales y un \u00edndice de transparencia verificable. Todo lo que necesit\u00e1s para conectar con tus vecinos.',
+    includes: [
+      'Portal de transparencia',
+      'Consultas del gobierno',
+      'Propuestas ciudadanas',
+      '\u00cdndice de transparencia',
+      'Digest autom\u00e1tico',
+    ],
+    result: 'Confianza + legitimidad + engagement ciudadano.',
+    effort: 'Cargar tus proyectos actuales. Nada m\u00e1s.',
     color: 'var(--primary)',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-        <circle cx="12" cy="12" r="3"/>
-      </svg>
-    ),
-  },
-  {
-    level: '2',
-    name: 'Participación',
-    tagline: 'Los vecinos te dicen qué les importa',
-    description: 'Consultas, propuestas ciudadanas y priorización desde el celular. Recibís señales reales de demanda sin encuestas manuales ni dependencia de redes sociales.',
-    result: 'Información de demanda real + engagement ciudadano.',
-    effort: 'Activar un switch. Los ciudadanos hacen el resto.',
-    color: 'var(--secondary)',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -32,12 +24,19 @@ const levels = [
     ),
   },
   {
-    level: '3',
-    name: 'Asignación ciudadana',
-    tagline: 'Los vecinos co-deciden la inversión',
-    description: 'Cada vecino recibe Créditos Cívicos al cumplir con el municipio y los asigna a los proyectos que le importan. Presupuesto participativo con trazabilidad total y respaldo fiscal real.',
-    result: 'Legitimidad absoluta + alineamiento gestión-demanda + diferencial político único.',
-    effort: 'Configurar fuentes de ingreso. El sistema hace el resto.',
+    id: 'economy',
+    name: 'Econom\u00eda Participativa',
+    tagline: 'Presupuesto participativo con trazabilidad total',
+    description: 'Todo lo de Comunidad + Cr\u00e9ditos C\u00edvicos: los ciudadanos reciben cr\u00e9ditos al pagar impuestos y co-deciden la inversi\u00f3n p\u00fablica. Financiamiento de proyectos, organizaciones sociales y desembolsos con trazabilidad completa.',
+    includes: [
+      'Todo lo de Comunidad',
+      'Cr\u00e9ditos C\u00edvicos',
+      'Financiamiento de proyectos',
+      'Organizaciones sociales',
+      'Desembolsos y tickets de cobro',
+    ],
+    result: 'Legitimidad absoluta + alineamiento gesti\u00f3n-demanda + diferencial pol\u00edtico \u00fanico.',
+    effort: 'Activar un switch y configurar fuentes de ingreso.',
     color: 'var(--accent)',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -53,35 +52,46 @@ export default function Progressive() {
   return (
     <section className="progressive-section" id="como-funciona">
       <div className="container">
-        <div className="section-label fade-up"><span className="bar"></span> Adopción progresiva</div>
-        <h2 className="section-title fade-up">Tres niveles. Empezás por el primero.<br />Avanzás cuando quieras.</h2>
+        <div className="section-label fade-up"><span className="bar"></span> Adopci\u00f3n progresiva</div>
+        <h2 className="section-title fade-up">Un producto, dos modos.<br />Empez\u00e1 con lo que necesit\u00e1s hoy.</h2>
         <p className="section-desc fade-up">
-          No es un sistema que implementás. Es un camino que recorrés
-          al ritmo de tu ciudad. Sin presión, sin compromiso.
+          Empez\u00e1 con lo que necesit\u00e1s hoy. Activ\u00e1 el resto cuando est\u00e9s listo.
         </p>
 
         <div className="progressive-grid">
-          {levels.map((l, i) => (
-            <div className={`progressive-card fade-up delay-${i + 1}`} key={l.level}>
+          {modes.map((m, i) => (
+            <div className={`progressive-card fade-up delay-${i + 1}`} key={m.id}>
               <div className="progressive-header">
-                <div className="progressive-level" style={{ background: l.color }}>
-                  <span className="progressive-level-icon">{l.icon}</span>
+                <div className="progressive-level" style={{ background: m.color }}>
+                  <span className="progressive-level-icon">{m.icon}</span>
                 </div>
-                <div className="progressive-level-badge" style={{ color: l.color }}>
-                  Nivel {l.level}
+                <div className="progressive-level-badge" style={{ color: m.color }}>
+                  {m.name}
                 </div>
               </div>
-              <h3 className="progressive-name">{l.name}</h3>
-              <p className="progressive-tagline">{l.tagline}</p>
-              <p className="progressive-description">{l.description}</p>
+              <h3 className="progressive-name">{m.tagline}</h3>
+              <p className="progressive-description">{m.description}</p>
+              <div className="progressive-includes">
+                <span className="progressive-includes-label">Incluye</span>
+                <ul className="progressive-includes-list">
+                  {m.includes.map((item) => (
+                    <li key={item}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <div className="progressive-meta">
                 <div className="progressive-meta-item">
                   <span className="progressive-meta-label">Resultado</span>
-                  <span className="progressive-meta-value">{l.result}</span>
+                  <span className="progressive-meta-value">{m.result}</span>
                 </div>
                 <div className="progressive-meta-item">
                   <span className="progressive-meta-label">Esfuerzo</span>
-                  <span className="progressive-meta-value">{l.effort}</span>
+                  <span className="progressive-meta-value">{m.effort}</span>
                 </div>
               </div>
             </div>
@@ -94,11 +104,11 @@ export default function Progressive() {
             <line x1="12" y1="16" x2="12" y2="12"/>
             <line x1="12" y1="8" x2="12.01" y2="8"/>
           </svg>
-          <span>Cada nivel se activa con un switch desde tu panel. Sin migración, sin implementación nueva, sin costo adicional oculto.</span>
+          <span>Empez\u00e1 con Comunidad. Cuando est\u00e9s listo, activ\u00e1 Econom\u00eda Participativa desde el panel. Es un switch, no una migraci\u00f3n.</span>
         </div>
 
         <div className="progressive-cta fade-up">
-          <span>¿Listo para empezar con el Nivel 1?</span>
+          <span>Modo Comunidad es gratuito. Activ\u00e1 tu portal hoy.</span>
           <a href="#acceso" className="btn-progressive-cta">Activar mi portal</a>
         </div>
       </div>

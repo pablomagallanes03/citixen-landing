@@ -13,8 +13,8 @@ export default function Footer() {
             </div>
             <p>
               Infraestructura de confianza para gobiernos locales.
-              Transparencia, participación y asignación ciudadana
-              de recursos públicos.
+              Transparencia, participaci\u00f3n ciudadana y
+              presupuesto participativo con trazabilidad total.
             </p>
           </div>
           <div>

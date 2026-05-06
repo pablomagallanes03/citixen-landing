@@ -1,23 +1,23 @@
 const scenarios = [
   {
     quote: 'Somos un municipio chico y no tenemos equipo digital',
-    answer: 'Perfecto. El Nivel 1 se configura en una tarde. Cargás tus proyectos actuales y tenés un portal profesional con tu marca. Sin diseñadores, sin programadores.',
-    icon: '🏘️',
+    answer: 'Perfecto. Modo Comunidad se configura en una tarde. Carg\u00e1s tus proyectos actuales y ten\u00e9s un portal profesional con tu marca. Sin dise\u00f1adores, sin programadores.',
+    icon: '\uD83C\uDFD8\uFE0F',
   },
   {
     quote: 'Ya tenemos portal web pero nadie lo visita',
-    answer: 'Citixen no es un portal estático. Los vecinos reciben actualizaciones, pueden seguir proyectos, y la participación genera tracción orgánica. Nivel 2 transforma visitantes en ciudadanos activos.',
-    icon: '📊',
+    answer: 'Citixen no es un portal est\u00e1tico. Los vecinos reciben actualizaciones, pueden seguir proyectos, proponer ideas y responder consultas. Modo Comunidad transforma visitantes en ciudadanos activos.',
+    icon: '\uD83D\uDCCA',
   },
   {
     quote: 'Queremos que la gente participe pero nos da miedo perder el control',
-    answer: 'Vos controlás qué se publica, qué se abre a opinión y qué se abre a asignación de recursos. Nada se activa sin tu decisión explícita. Todo tiene moderación incorporada.',
-    icon: '🔒',
+    answer: 'Vos control\u00e1s qu\u00e9 se publica, qu\u00e9 se abre a opini\u00f3n y qu\u00e9 se abre a asignaci\u00f3n de recursos. Nada se activa sin tu decisi\u00f3n expl\u00edcita. Todo tiene moderaci\u00f3n incorporada.',
+    icon: '\uD83D\uDD12',
   },
   {
-    quote: 'Queremos algo que ningún otro municipio tenga',
-    answer: 'Nivel 3. Asignación ciudadana de recursos públicos con Créditos Cívicos. No existe en ninguna otra plataforma. Un diferencial político que genera cobertura mediática y legitimidad verificable.',
-    icon: '🏆',
+    quote: 'Queremos algo que ning\u00fan otro municipio tenga',
+    answer: 'Econom\u00eda Participativa. Asignaci\u00f3n ciudadana de recursos p\u00fablicos con Cr\u00e9ditos C\u00edvicos. No existe en ninguna otra plataforma. Un diferencial pol\u00edtico que genera cobertura medi\u00e1tica y legitimidad verificable.',
+    icon: '\uD83C\uDFC6',
   },
 ]
 
