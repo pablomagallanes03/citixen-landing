@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import Logo from './Logo'
 
 export default function Navbar() {
@@ -16,18 +17,18 @@ export default function Navbar() {
   return (
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="container navbar-inner">
-        <a href="#" className="navbar-logo">
+        <Link href="/" className="navbar-logo" onClick={close}>
           <Logo height={36} />
           <span>citixen</span>
-        </a>
+        </Link>
         <ul className={`navbar-links${open ? ' active' : ''}`}>
-          <li><a href="#como-funciona" onClick={close}>Cómo funciona</a></li>
-          <li><a href="#para-tu-ciudad" onClick={close}>Para tu ciudad</a></li>
-          <li><a href="#empezar" onClick={close}>Empezar</a></li>
+          <li><Link href="/#como-funciona" onClick={close}>Cómo funciona</Link></li>
+          <li><Link href="/pricing" onClick={close}>Pricing</Link></li>
+          <li><Link href="/caso-de-estudio" onClick={close}>Caso de estudio</Link></li>
           <li>
-            <a href="#acceso" className="navbar-cta" onClick={close}>
+            <Link href="/#acceso" className="navbar-cta" onClick={close}>
               Activar mi portal
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="navbar-toggle" onClick={() => setOpen(!open)}>

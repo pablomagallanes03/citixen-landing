@@ -8,11 +8,11 @@ export default function Hero() {
             Operativo en Argentina · 2026
           </div>
           <h1 className="fade-up delay-1">
-            Tu ciudad ya funciona.<br />Hacelo visible.
+            Conectá tu municipio<br />con sus vecinos.
           </h1>
           <p className="fade-up delay-2">
             Citixen es infraestructura de confianza para gobiernos locales.
-            Publicá lo que hacés, activá participación cuando quieras,
+            Publicá lo que hacés, activá participación ciudadana,
             y dejá que tus vecinos co-decidan cuando tu ciudad esté lista.
           </p>
           <div className="hero-buttons fade-up delay-3">
@@ -40,7 +40,7 @@ export default function Hero() {
             </div>
             <div className="hero-proof-divider"></div>
             <div className="hero-proof-item">
-              <span className="hero-proof-number">3 niveles</span>
+              <span className="hero-proof-number">2 modos</span>
               <span className="hero-proof-label">escalás cuando quieras</span>
             </div>
           </div>

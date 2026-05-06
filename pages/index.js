@@ -25,11 +25,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Citixen — Infraestructura de confianza para gobiernos locales</title>
-        <meta name="description" content="Publicá lo que tu municipio hace. Que tu ciudad lo vea. Portal de transparencia, participación ciudadana y asignación de recursos. Empezá en una semana." />
-        <meta name="keywords" content="citixen, transparencia municipal, participación ciudadana, gobierno abierto, portal municipal, civic tech" />
-        <meta property="og:title" content="Citixen — Infraestructura de confianza para gobiernos locales" />
-        <meta property="og:description" content="Tu ciudad ya funciona. Hacelo visible. Portal de transparencia en una semana, participación ciudadana cuando quieras." />
+        <title>Citixen — Conectá tu municipio con sus vecinos</title>
+        <meta name="description" content="Infraestructura de confianza para gobiernos locales. Portal de transparencia, participación ciudadana y presupuesto participativo. Empezá gratis en una semana." />
+        <meta name="keywords" content="citixen, transparencia municipal, participación ciudadana, gobierno abierto, portal municipal, civic tech, presupuesto participativo, créditos cívicos" />
+        <meta property="og:title" content="Citixen — Conectá tu municipio con sus vecinos" />
+        <meta property="og:description" content="Infraestructura de confianza para gobiernos locales. Transparencia, participación ciudadana y presupuesto participativo con trazabilidad total." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://citixen.org" />
         <meta property="og:image" content="https://citixen.org/og-image.png" />
@@ -47,13 +47,13 @@ export default function Home() {
               "@type": "SoftwareApplication",
               "name": "Citixen",
               "applicationCategory": "GovernmentApplication",
-              "description": "Infraestructura de confianza para gobiernos locales. Portal de transparencia, participación ciudadana y asignación de recursos públicos.",
+              "description": "Infraestructura de confianza para gobiernos locales. Portal de transparencia, participación ciudadana y presupuesto participativo con trazabilidad total.",
               "operatingSystem": "Web, Android, iOS",
               "offers": {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD",
-                "description": "Nivel 1 (Transparencia) gratuito"
+                "description": "Modo Comunidad gratuito"
               },
               "author": {
                 "@type": "Organization",

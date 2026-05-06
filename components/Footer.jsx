@@ -13,25 +13,25 @@ export default function Footer() {
             </div>
             <p>
               Infraestructura de confianza para gobiernos locales.
-              Transparencia, participaci\u00f3n ciudadana y
+              Transparencia, participación ciudadana y
               presupuesto participativo con trazabilidad total.
             </p>
           </div>
           <div>
             <h4>Plataforma</h4>
             <ul>
-              <li><a href="#como-funciona">Cómo funciona</a></li>
-              <li><a href="#para-tu-ciudad">Para tu ciudad</a></li>
-              <li><a href="#empezar">Empezar</a></li>
-              <li><a href="#acceso">Registrar municipio</a></li>
+              <li><Link href="/#como-funciona">Cómo funciona</Link></li>
+              <li><Link href="/pricing">Pricing</Link></li>
+              <li><Link href="/#empezar">Empezar</Link></li>
+              <li><Link href="/#acceso">Registrar municipio</Link></li>
             </ul>
           </div>
           <div>
             <h4>Recursos</h4>
             <ul>
+              <li><Link href="/caso-de-estudio">Caso de estudio</Link></li>
               <li><Link href="/transparency-methodology">Metodología de transparencia</Link></li>
-              <li><a href="#">Preguntas frecuentes</a></li>
-              <li><a href="#">Contacto</a></li>
+              <li><Link href="/#acceso">Contacto</Link></li>
             </ul>
           </div>
           <div>
