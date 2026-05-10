@@ -13,10 +13,10 @@ function GovernmentForm() {
     representativeRole: '',
     institutionalEmail: '',
     acceptedTermsAndConditions: false,
+    _hp: '',
   })
   const [status, setStatus] = useState('idle')
   const [errorMsg, setErrorMsg] = useState('')
-  const [regNumber, setRegNumber] = useState('')
 
   const set = (k) => (e) => setForm(prev => ({ ...prev, [k]: e.target.value }))
   const setCheck = (k) => (e) => setForm(prev => ({ ...prev, [k]: e.target.checked }))
@@ -33,10 +33,9 @@ function GovernmentForm() {
       })
       const data = await res.json()
       if (res.ok) {
-        setRegNumber(data.data?.government?.registrationNumber || '')
         setStatus('success')
       } else if (res.status === 409) {
-        setErrorMsg('Ya existe una solicitud para este gobierno o email.')
+        setErrorMsg('Ya existe una consulta con este email.')
         setStatus('error')
       } else if (res.status === 429) {
         setErrorMsg('Demasiados intentos. Intentá de nuevo más tarde.')
@@ -55,13 +54,24 @@ function GovernmentForm() {
     return (
       <div className="access-success">
         <div className="success-icon">✓</div>
-        <p>Solicitud enviada correctamente.{regNumber && <> Tu número de registro es <strong>{regNumber}</strong>.</>} Te contactaremos pronto para configurar tu portal.</p>
+        <p>Consulta recibida. Te contactaremos pronto para coordinar los próximos pasos.</p>
       </div>
     )
   }
 
   return (
     <form className="access-form" onSubmit={handleSubmit}>
+      {/* Honeypot — invisible para humanos, bots lo llenan */}
+      <input
+        type="text"
+        name="_hp"
+        value={form._hp}
+        onChange={set('_hp')}
+        style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0, tabIndex: -1 }}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
       <input className="access-input" type="text" placeholder="Nombre del municipio / gobierno" value={form.governmentName} onChange={set('governmentName')} required minLength={2} maxLength={100} />
       <select className="access-input access-select" value={form.entityType} onChange={set('entityType')} required>
         <option value="">Tipo de entidad</option>
@@ -87,7 +97,7 @@ function GovernmentForm() {
         <span>Acepto los <a href="/terms" target="_blank" rel="noopener noreferrer">Términos de Uso</a> y la <a href="/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad</a></span>
       </label>
       <button className="btn-access-gov" type="submit" disabled={status === 'loading' || !form.acceptedTermsAndConditions}>
-        {status === 'loading' ? 'Enviando...' : 'Registrar mi municipio'}
+        {status === 'loading' ? 'Enviando...' : 'Quiero activar mi portal'}
       </button>
       {status === 'error' && (
         <p style={{ fontSize: '13px', color: 'var(--accent)', textAlign: 'center' }}>
@@ -123,7 +133,7 @@ function CitizenForm() {
     return (
       <div className="access-success">
         <div className="success-icon">✓</div>
-        <p>Listo. Te avisamos cuando la app esté disponible para descargar.</p>
+        <p>Listo. Te avisamos cuando Citixen esté disponible en tu ciudad.</p>
       </div>
     )
   }
@@ -155,9 +165,9 @@ export default function EarlyAccess() {
     <section className="early-access-section" id="acceso">
       <div className="container">
         <div className="early-access-header">
-          <h2 className="section-title fade-up">Tu ciudad ya tiene proyectos en marcha.<br />Solo falta que se vean.</h2>
+          <h2 className="section-title fade-up">Tu municipio ya tiene proyectos en marcha.<br />Solo falta que se vean.</h2>
           <p className="section-desc fade-up" style={{ textAlign: 'center' }}>
-            Modo Comunidad es gratuito. Activalo hoy y ten\u00e9 tu portal en una semana.
+            Modo Comunidad es gratuito. Activalo hoy y tené tu portal en un día.
           </p>
         </div>
         <div className="early-access-grid">
@@ -172,10 +182,9 @@ export default function EarlyAccess() {
           </div>
           <div className="access-card card-citizen fade-up delay-2">
             <div className="access-card-label">Ciudadanos</div>
-            <h3 className="access-card-title">Quiero participar</h3>
+            <h3 className="access-card-title">Quiero que mi ciudad lo use</h3>
             <p className="access-card-desc">
-              Dejá tu email y te avisamos cuando la app esté disponible para descargar.
-              Desde ahí vas a poder elegir tu ciudad y empezar a participar.
+              Dejá tu email y te avisamos cuando Citixen esté disponible en tu ciudad.
             </p>
             <CitizenForm />
           </div>
