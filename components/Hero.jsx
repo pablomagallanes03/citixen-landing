@@ -3,34 +3,25 @@ export default function Hero() {
     <section className="hero">
       <div className="container hero-inner">
         <div className="hero-content">
-          <div className="hero-badge fade-up">
-            <span className="dot"></span>
-            Operativo en Argentina · 2026
-          </div>
           <h1 className="fade-up delay-1">
-            Conectá tu municipio<br />con sus vecinos.
+            Lo que hacés ya existe.<br />Solo falta que se vea.
           </h1>
           <p className="fade-up delay-2">
-            Citixen es infraestructura de confianza para gobiernos locales.
-            Publicá lo que hacés, activá participación ciudadana,
-            y dejá que tus vecinos co-decidan cuando tu ciudad esté lista.
+            Citixen es infraestructura de gestión municipal abierta.
+            Publicá lo que tu municipio hace, medilo con un índice de
+            transparencia verificable, y dejá que tus vecinos lo validen.
           </p>
           <div className="hero-buttons fade-up delay-3">
-            <a href="#acceso" className="btn-primary">
-              Activar mi portal
+            <a href="#comunidad" className="btn-primary">
+              Ver cómo funciona
             </a>
-            <a href="#como-funciona" className="btn-secondary">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="9 12 12 15 15 12"/>
-                <line x1="12" y1="8" x2="12" y2="15"/>
-              </svg>
-              Cómo funciona
+            <a href="#acceso" className="btn-secondary">
+              Contactanos
             </a>
           </div>
           <div className="hero-proof fade-up delay-4">
             <div className="hero-proof-item">
-              <span className="hero-proof-number">1 semana</span>
+              <span className="hero-proof-number">1 día</span>
               <span className="hero-proof-label">para tener tu portal activo</span>
             </div>
             <div className="hero-proof-divider"></div>
@@ -40,8 +31,8 @@ export default function Hero() {
             </div>
             <div className="hero-proof-divider"></div>
             <div className="hero-proof-item">
-              <span className="hero-proof-number">2 modos</span>
-              <span className="hero-proof-label">escalás cuando quieras</span>
+              <span className="hero-proof-number">1K – 500K</span>
+              <span className="hero-proof-label">habitantes · tu municipio</span>
             </div>
           </div>
         </div>
@@ -59,7 +50,7 @@ export default function Hero() {
                 <div className="portal-city-badge">🏛️</div>
                 <div>
                   <div className="portal-city-name">Tu Municipio</div>
-                  <div className="portal-city-sub">Portal de Transparencia</div>
+                  <div className="portal-city-sub">Mi Ciudad</div>
                 </div>
               </div>
               <div className="portal-score">

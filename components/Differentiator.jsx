@@ -3,21 +3,21 @@ const comparisons = [
     feature: 'Transparencia verificable',
     portal: false,
     encuestas: false,
-    pp: 'Solo resultado',
+    pp: 'Solo al final',
     citixen: true,
   },
   {
     feature: 'Participación continua',
     portal: false,
-    encuestas: 'Puntual',
-    pp: '1 vez al año',
+    encuestas: 'Una vez',
+    pp: 'Anual',
     citixen: true,
   },
   {
     feature: 'Co-decisión económica',
     portal: false,
     encuestas: false,
-    pp: 'Sin trazabilidad',
+    pp: 'Sin seguimiento',
     citixen: true,
   },
   {
@@ -46,13 +46,7 @@ export default function Differentiator() {
   return (
     <section className="differentiator-section">
       <div className="container">
-        <div className="section-label fade-up"><span className="bar"></span> Diferencial</div>
-        <h2 className="section-title fade-up">No es otra app de gobierno.<br />Es infraestructura de confianza.</h2>
-        <p className="section-desc fade-up">
-          No es un portal estático, no es una encuesta digital,
-          no es presupuesto participativo tradicional.
-          Es un sistema progresivo con modelo económico real.
-        </p>
+        <h2 className="section-title fade-up">¿Por qué no alcanza<br />con lo que ya existe?</h2>
 
         <div className="comparison-table-wrapper fade-up delay-1">
           <table className="comparison-table">

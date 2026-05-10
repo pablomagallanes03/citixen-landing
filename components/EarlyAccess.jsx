@@ -97,7 +97,7 @@ function GovernmentForm() {
         <span>Acepto los <a href="/terms" target="_blank" rel="noopener noreferrer">Términos de Uso</a> y la <a href="/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad</a></span>
       </label>
       <button className="btn-access-gov" type="submit" disabled={status === 'loading' || !form.acceptedTermsAndConditions}>
-        {status === 'loading' ? 'Enviando...' : 'Quiero activar mi portal'}
+        {status === 'loading' ? 'Enviando...' : 'Quiero activar Mi Ciudad'}
       </button>
       {status === 'error' && (
         <p style={{ fontSize: '13px', color: 'var(--accent)', textAlign: 'center' }}>
@@ -167,7 +167,7 @@ export default function EarlyAccess() {
         <div className="early-access-header">
           <h2 className="section-title fade-up">Tu municipio ya tiene proyectos en marcha.<br />Solo falta que se vean.</h2>
           <p className="section-desc fade-up" style={{ textAlign: 'center' }}>
-            Modo Comunidad es gratuito. Activalo hoy y tené tu portal en un día.
+            Modo Comunidad es gratuito. Activalo hoy y tené Mi Ciudad en un día.
           </p>
         </div>
         <div className="early-access-grid">
@@ -175,7 +175,7 @@ export default function EarlyAccess() {
             <div className="access-card-label">Municipios</div>
             <h3 className="access-card-title">Quiero activar Citixen</h3>
             <p className="access-card-desc">
-              Registrá tu municipio y te ayudamos a tener tu portal operativo.
+              Registrá tu municipio y te ayudamos a tener Mi Ciudad operativo.
               Sin costo para Modo Comunidad, sin compromiso de permanencia.
             </p>
             <GovernmentForm />

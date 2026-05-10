@@ -3,14 +3,23 @@ import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Problem from '../components/Problem'
-import SocialProof from '../components/SocialProof'
-import Progressive from '../components/Progressive'
-import Scenarios from '../components/Scenarios'
-import Differentiator from '../components/Differentiator'
+import WhatIsCitixen from '../components/WhatIsCitixen'
+import CommunityMode from '../components/CommunityMode'
+// import CaseStudyBlock from '../components/CaseStudyBlock'
+import ParticipativeEconomy from '../components/ParticipativeEconomy'
+import CivicCreditsExplainer from '../components/CivicCreditsExplainer'
 import HowToStart from '../components/HowToStart'
+import Trust from '../components/Trust'
 import FAQ from '../components/FAQ'
 import EarlyAccess from '../components/EarlyAccess'
 import Footer from '../components/Footer'
+
+// Componentes removidos del flujo (no eliminados):
+// import SocialProof from '../components/SocialProof'
+// import Progressive from '../components/Progressive'
+// import Scenarios from '../components/Scenarios'
+import Differentiator from '../components/Differentiator'
+import PricingSummary from '../components/PricingSummary'
 
 export default function Home() {
   useEffect(() => {
@@ -25,11 +34,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Citixen — Conectá tu municipio con sus vecinos</title>
-        <meta name="description" content="Infraestructura de confianza para gobiernos locales. Portal de transparencia, participación ciudadana y presupuesto participativo. Empezá gratis en una semana." />
-        <meta name="keywords" content="citixen, transparencia municipal, participación ciudadana, gobierno abierto, portal municipal, civic tech, presupuesto participativo, créditos cívicos" />
-        <meta property="og:title" content="Citixen — Conectá tu municipio con sus vecinos" />
-        <meta property="og:description" content="Infraestructura de confianza para gobiernos locales. Transparencia, participación ciudadana y presupuesto participativo con trazabilidad total." />
+        <title>Citixen — Lo que hacés ya existe. Solo falta que se vea.</title>
+        <meta name="description" content="Infraestructura de gestión municipal abierta. Mi Ciudad: portal público, consultas ciudadanas, propuestas vecinales y presupuesto participativo con trazabilidad total. Empezá gratis en una semana." />
+        <meta name="keywords" content="citixen, transparencia municipal, participación ciudadana, gobierno abierto, portal municipal, civic tech, presupuesto participativo, créditos cívicos, gestión municipal" />
+        <meta property="og:title" content="Citixen — Lo que hacés ya existe. Solo falta que se vea." />
+        <meta property="og:description" content="Infraestructura de gestión municipal abierta. Transparencia, participación ciudadana y presupuesto participativo con trazabilidad total." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://citixen.org" />
         <meta property="og:image" content="https://citixen.org/og-image.png" />
@@ -47,7 +56,7 @@ export default function Home() {
               "@type": "SoftwareApplication",
               "name": "Citixen",
               "applicationCategory": "GovernmentApplication",
-              "description": "Infraestructura de confianza para gobiernos locales. Portal de transparencia, participación ciudadana y presupuesto participativo con trazabilidad total.",
+              "description": "Infraestructura de gestión municipal abierta. Mi Ciudad: portal público, participación ciudadana y presupuesto participativo con trazabilidad total.",
               "operatingSystem": "Web, Android, iOS",
               "offers": {
                 "@type": "Offer",
@@ -66,12 +75,12 @@ export default function Home() {
                 }
               },
               "featureList": [
-                "Portal de transparencia municipal",
+                "Mi Ciudad — portal público municipal",
                 "Índice de transparencia verificable",
                 "Consultas ciudadanas",
                 "Propuestas ciudadanas",
-                "Asignación de Créditos Cívicos",
-                "Panel de gestión gubernamental"
+                "Créditos Cívicos",
+                "Panel de gestión gubernamental con perfiles operativos"
               ]
             })
           }}
@@ -80,11 +89,15 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Problem />
-      <SocialProof />
-      <Progressive />
-      <Scenarios />
-      <Differentiator />
+      <WhatIsCitixen />
+      <CommunityMode />
+      {/* <CaseStudyBlock /> */}
+      <ParticipativeEconomy />
+      <CivicCreditsExplainer />
       <HowToStart />
+      <Differentiator />
+      <PricingSummary />
+      <Trust />
       <FAQ />
       <EarlyAccess />
       <Footer />

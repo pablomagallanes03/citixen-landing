@@ -1,20 +1,20 @@
 const steps = [
   {
     n: '1',
-    title: 'Registr\u00e1 tu municipio',
-    desc: 'Complet\u00e1 un formulario con datos b\u00e1sicos de tu ciudad. Nombre, provincia, poblaci\u00f3n estimada. Nada m\u00e1s.',
+    title: 'Registrá tu municipio',
+    desc: 'Nombre, provincia, email institucional. Te contactamos en 48 horas.',
     time: '5 minutos',
   },
   {
     n: '2',
-    title: 'Carg\u00e1 tus proyectos',
-    desc: 'Los que ya ten\u00e9s en marcha. Obras, programas, iniciativas. No necesit\u00e1s crear nada nuevo \u2014 us\u00e1 lo que ya existe.',
-    time: '1-2 horas',
+    title: 'Cargá tus proyectos actuales',
+    desc: 'Usá la obra pública que ya tenés. Si tenés balances en PDF o Excel, Citixen los procesa automáticamente y los convierte en datos publicables. No necesitás crear nada nuevo.',
+    time: '30 minutos',
   },
   {
     n: '3',
-    title: 'Public\u00e1 tu portal',
-    desc: 'Con tu marca, tu identidad, visible para todos tus vecinos. Un link que pod\u00e9s compartir donde quieras.',
+    title: 'Publicá Mi Ciudad',
+    desc: 'Con la marca de tu municipio. Compartible. Con índice de transparencia desde el día uno.',
     time: 'Inmediato',
   },
 ]
@@ -24,10 +24,10 @@ export default function HowToStart() {
     <section className="how-to-start-section" id="empezar">
       <div className="container">
         <div className="section-label fade-up"><span className="bar"></span> Empezar</div>
-        <h2 className="section-title fade-up">3 pasos. 1 semana. 0 riesgo.</h2>
+        <h2 className="section-title fade-up">Activar Citixen es más fácil<br />que armar un Excel.</h2>
         <p className="section-desc fade-up">
-          Despu\u00e9s, si quer\u00e9s activar Econom\u00eda Participativa:
-          un click. Sin migraci\u00f3n, sin implementaci\u00f3n nueva.
+          Después, activás consultas y propuestas.
+          Y cuando quieras, Economía Participativa. Todo desde el panel.
         </p>
 
         <div className="how-to-grid">
@@ -49,8 +49,8 @@ export default function HowToStart() {
 
         <div className="how-to-after fade-up">
           <p>
-            <strong>\u00bfY despu\u00e9s?</strong> Desde tu panel activ\u00e1s Econom\u00eda Participativa cuando quieras.
-            Desactiv\u00e1s si no funciona. Sin penalidad, sin contrato de permanencia.
+            <strong>Sin penalidad.</strong> Sin contrato de permanencia.
+            Lo desactivás con un click si no funciona.
           </p>
         </div>
       </div>

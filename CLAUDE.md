@@ -25,21 +25,25 @@ La landing comunica de arriba hacia abajo: primero transparencia y participació
 
 ---
 
-## Estructura de la landing
+## Estructura de la landing (actualizada mayo 2026)
 
 | Orden | Componente | Objetivo |
 |---|---|---|
-| 1 | Navbar | Navegación + CTA "Activar mi portal" |
-| 2 | Hero | Hook + mockup de portal + proof points |
-| 3 | Problem | Validar el dolor (invisibilidad de gestión) |
-| 4 | SocialProof | Strip de confianza mínima |
-| 5 | Progressive | Los 2 modos con resultado + esfuerzo |
-| 6 | Scenarios | 4 escenarios identificables por tipo de municipio |
-| 7 | Differentiator | Tabla vs alternativas (portal, encuestas, PP) |
-| 8 | HowToStart | 3 pasos con tiempos estimados |
-| 9 | FAQ | 6 objeciones frecuentes del decisor público |
-| 10 | EarlyAccess | Formulario gobierno (primario) + ciudadano |
-| 11 | Footer | Links + legal |
+| 1 | Navbar | Navegación + CTA "Contactanos" |
+| 2 | Hero | "Lo que hacés ya existe. Solo falta que se vea." + mockup portal + proof points |
+| 3 | Problem | Dolor expandido (4 bloques: PDFs, redes, portal, inauguraciones) |
+| 4 | WhatIsCitixen | Tabla resumen de 2 modos (reemplaza SocialProof) |
+| 5 | CommunityMode | 5 capacidades de Modo Comunidad como producto principal |
+| 6 | CaseStudyBlock | Presidente Roca — "Ejemplo basado en información pública" |
+| 7 | ParticipativeEconomy | Economía Participativa como evolución avanzada |
+| 8 | CivicCreditsExplainer | CC explicados en 4 pasos + comparación con PP tradicional |
+| 9 | HowToStart | 3 pasos simplificados |
+| 10 | Trust | Fundador + empresa + seguridad + contacto |
+| 11 | FAQ | 8 preguntas (incluye seguridad y financiamiento) |
+| 12 | EarlyAccess | Formulario liviano (3 campos gobierno + 1 ciudadano) via /api/contact |
+| 13 | Footer | Links + legal |
+
+**Componentes removidos del flujo (archivos conservados):** SocialProof, Progressive, Scenarios, Differentiator.
 
 **Página adicional:** `/transparency-methodology` — documento público de metodología del Índice de Transparencia (CTI v1.0). En inglés, orientado a organismos multilaterales e investigadores.
 
@@ -50,12 +54,14 @@ La landing comunica de arriba hacia abajo: primero transparencia y participació
 | Regla | Detalle |
 |---|---|
 | Tono | Institucional, claro, sobrio. No es una startup hype. |
-| Vocabulario | "Créditos Cívicos" (no "tokens", no "Civic Coins"). "Infraestructura de confianza" (no "plataforma de participación"). |
+| Vocabulario | "Créditos Cívicos" (no "tokens", no "Civic Coins"). "Infraestructura de gestión municipal abierta" (no "plataforma de participación"). |
 | Orden de revelación | Transparencia primero, CC al final. No asustar con complejidad. |
 | Audiencia primaria | Intendentes, secretarios de gobierno, jefes de gabinete de municipios de 5.000 a 500.000 hab. |
 | Audiencia secundaria | Ciudadanos que quieren que su ciudad lo use |
 | Qué NO decir | "Revolucionar", "empoderar", "disruptivo", "blockchain", "tokens", "cambiar el mundo" |
-| CTA principal | "Activar mi portal" (no "Agendar demo" ni "Contactar ventas") |
+| CTA hero | "Ver cómo funciona" (scroll a #comunidad) — baja fricción |
+| CTA formulario | "Quiero activar Mi Ciudad" — 3 campos (municipio, provincia, email) via /api/contact |
+| CTA navbar | "Contactanos" → scroll a formulario |
 
 ---
 
@@ -104,7 +110,7 @@ La landing comunica de arriba hacia abajo: primero transparencia y participació
 | Modo Comunidad gratuito | Sin límite de tiempo. No es freemium con fecha de vencimiento. |
 | Target primario | Gobiernos locales (no ciudadanos, no ONGs, no empresas) |
 | Hero visual | Mockup de portal web (no mockup de app móvil) |
-| CTA primario | Self-service ("Activar mi portal"), no "Agendar demo" |
+| CTA primario | Self-service ("Activar Mi Ciudad"), no "Agendar demo" |
 
 ---
 

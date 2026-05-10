@@ -10,19 +10,19 @@ const tiers = [
     name: 'Modo Comunidad',
     price: 'Gratis',
     priceSub: 'Sin límite de tiempo',
-    description: 'Todo lo que necesitás para conectar tu municipio con sus vecinos. Transparencia, participación y engagement ciudadano.',
+    description: 'Todo lo que necesitás para que tu gestión municipal sea visible, medible y validable por tus vecinos.',
     color: 'var(--primary)',
-    cta: 'Activar mi portal',
+    cta: 'Activar Mi Ciudad',
     ctaHref: '/#acceso',
     highlighted: false,
     features: [
-      { text: 'Portal público de transparencia', included: true },
-      { text: 'Índice de transparencia verificable', included: true },
+      { text: 'Mi Ciudad — portal público', included: true },
+      { text: 'Indicadores públicos de gestión', included: true },
       { text: 'Proyectos municipales ilimitados', included: true },
+      { text: 'Procesamiento automático de PDFs y Excel', included: true },
       { text: 'Consultas ciudadanas', included: true },
       { text: 'Propuestas vecinales', included: true },
-      { text: 'Comentarios moderados', included: true },
-      { text: 'Digest automático por email', included: true },
+      { text: 'Iniciativas ciudadanas autónomas', included: true },
       { text: 'Panel de gestión con permisos por rol', included: true },
       { text: 'Soporte humano en español', included: true },
       { text: 'Créditos Cívicos', included: false },
@@ -34,8 +34,8 @@ const tiers = [
   {
     id: 'economy',
     name: 'Economía Participativa',
-    price: 'Próximamente',
-    priceSub: 'Depende del tamaño de tu ciudad',
+    price: 'Personalizado',
+    priceSub: 'Según el tamaño de tu ciudad',
     description: 'Todo lo de Comunidad + Créditos Cívicos, financiamiento participativo y trazabilidad económica completa.',
     color: 'var(--accent)',
     cta: 'Contactanos',
@@ -43,7 +43,7 @@ const tiers = [
     highlighted: true,
     features: [
       { text: 'Todo lo de Modo Comunidad', included: true, bold: true },
-      { text: 'Créditos Cívicos por impuestos', included: true },
+      { text: 'Créditos Cívicos por obligaciones fiscales', included: true },
       { text: 'Financiamiento participativo de proyectos', included: true },
       { text: 'Organizaciones sociales verificadas', included: true },
       { text: 'Tickets de cobro y desembolsos', included: true },
@@ -80,9 +80,8 @@ export default function Pricing() {
       <main className="pricing-page">
         <div className="container">
           <div className="pricing-header">
-            <div className="section-label fade-up"><span className="bar"></span> Pricing</div>
             <h1 className="section-title fade-up">Un producto, dos modos.<br />Empezá gratis.</h1>
-            <p className="section-desc fade-up">
+            <p className="section-desc fade-up" style={{ textAlign: 'center', margin: '0 auto 56px' }}>
               Modo Comunidad es gratuito sin límite de tiempo. Cuando tu ciudad esté lista,
               activá Economía Participativa desde el panel. Es un switch, no una migración.
             </p>

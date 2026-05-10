@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     return res.status(200).json({ ok: true })
   }
 
-  const contactEmail = process.env.CONTACT_EMAIL || 'contacto@citixen.org'
+  const contactEmail = process.env.CONTACT_EMAIL || 'hello@citixen.org'
 
   const subject = type === 'government'
     ? `[Citixen] Nuevo municipio interesado: ${municipality || 'Sin nombre'}`

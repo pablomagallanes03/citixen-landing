@@ -8,11 +8,10 @@ export default function Footer() {
         <div className="footer-inner">
           <div className="footer-brand">
             <div className="footer-logo">
-              <Logo height={28} variant="light" />
-              <span>citixen</span>
+              <Logo height={26} variant="light" />
             </div>
             <p>
-              Infraestructura de confianza para gobiernos locales.
+              Infraestructura de gestión municipal abierta.
               Transparencia, participación ciudadana y
               presupuesto participativo con trazabilidad total.
             </p>
@@ -20,18 +19,17 @@ export default function Footer() {
           <div>
             <h4>Plataforma</h4>
             <ul>
-              <li><Link href="/#como-funciona">Cómo funciona</Link></li>
+              <li><Link href="/#comunidad">Cómo funciona</Link></li>
               <li><Link href="/pricing">Pricing</Link></li>
               <li><Link href="/#empezar">Empezar</Link></li>
-              <li><Link href="/#acceso">Registrar municipio</Link></li>
+              <li><Link href="/#acceso">Contacto</Link></li>
             </ul>
           </div>
           <div>
             <h4>Recursos</h4>
             <ul>
-              <li><Link href="/caso-de-estudio">Caso de estudio</Link></li>
+              <li><Link href="/caso-de-estudio">Caso de análisis</Link></li>
               <li><Link href="/transparency-methodology">Metodología de transparencia</Link></li>
-              <li><Link href="/#acceso">Contacto</Link></li>
             </ul>
           </div>
           <div>

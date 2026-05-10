@@ -67,9 +67,9 @@ export default function CaseStudy() {
     <>
       <Head>
         <title>Caso de estudio — Citixen</title>
-        <meta name="description" content="Cómo una comuna del interior de Santa Fe podría transformar su balance mensual en un portal de transparencia con participación ciudadana real." />
+        <meta name="description" content="Cómo una comuna del interior de Santa Fe podría transformar su balance mensual en un portal público con participación ciudadana real." />
         <meta property="og:title" content="Caso de estudio — Citixen" />
-        <meta property="og:description" content="De un PDF en Drive a un portal de transparencia con participación real." />
+        <meta property="og:description" content="De un PDF en Drive a un portal público con participación real." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar />
@@ -194,7 +194,7 @@ export default function CaseStudy() {
               Si publicás balances en PDF, rendiciones en redes sociales o simplemente no tenés
               donde mostrar lo que hacés — Modo Comunidad es gratuito y se configura en una semana.
             </p>
-            <Link href="/#acceso" className="btn-primary">Activar mi portal</Link>
+            <Link href="/#acceso" className="btn-primary">Activar Mi Ciudad</Link>
           </section>
 
         </div>

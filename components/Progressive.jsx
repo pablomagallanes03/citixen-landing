@@ -5,7 +5,7 @@ const modes = [
     tagline: 'Transparencia y participaci\u00f3n sin complejidad',
     description: 'Portal p\u00fablico de proyectos municipales, consultas ciudadanas, propuestas vecinales y un \u00edndice de transparencia verificable. Todo lo que necesit\u00e1s para conectar con tus vecinos.',
     includes: [
-      'Portal de transparencia',
+      'Mi Ciudad — portal público',
       'Consultas del gobierno',
       'Propuestas ciudadanas',
       '\u00cdndice de transparencia',
@@ -108,8 +108,8 @@ export default function Progressive() {
         </div>
 
         <div className="progressive-cta fade-up">
-          <span>Modo Comunidad es gratuito. Activ\u00e1 tu portal hoy.</span>
-          <a href="#acceso" className="btn-progressive-cta">Activar mi portal</a>
+          <span>Modo Comunidad es gratuito. Activ\u00e1 Mi Ciudad hoy.</span>
+          <a href="#acceso" className="btn-progressive-cta">Activar Mi Ciudad</a>
         </div>
       </div>
     </section>
