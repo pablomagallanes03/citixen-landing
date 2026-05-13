@@ -20,7 +20,7 @@ export default function Footer() {
             <h4>Plataforma</h4>
             <ul>
               <li><Link href="/#comunidad">Cómo funciona</Link></li>
-              <li><Link href="/economia-participativa">Economía Participativa</Link></li>
+              <li><Link href="/creditos-civicos">Créditos Cívicos</Link></li>
               <li><Link href="/pricing">Pricing</Link></li>
               <li><Link href="/#empezar">Empezar</Link></li>
               <li><Link href="/#acceso">Contacto</Link></li>

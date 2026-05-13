@@ -12,7 +12,7 @@ export default function PricingSummary() {
             <div className="pricing-summary-sub">Sin límite de tiempo</div>
           </div>
           <div className="pricing-summary-card">
-            <div className="pricing-summary-name" style={{ color: 'var(--accent)' }}>Economía Participativa</div>
+            <div className="pricing-summary-name" style={{ color: 'var(--accent)' }}>Créditos Cívicos</div>
             <div className="pricing-summary-price">Personalizado</div>
             <div className="pricing-summary-sub">Según el tamaño de tu ciudad</div>
           </div>

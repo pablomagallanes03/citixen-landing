@@ -14,7 +14,7 @@ export default function WhatIsCitixen() {
               <tr>
                 <th></th>
                 <th className="what-is-col-community">Modo Comunidad</th>
-                <th className="what-is-col-economy">Economía Participativa</th>
+                <th className="what-is-col-economy">Créditos Cívicos</th>
               </tr>
             </thead>
             <tbody>
@@ -43,7 +43,7 @@ export default function WhatIsCitixen() {
         </div>
 
         <div className="what-is-note fade-up">
-          <span>Empezá con Comunidad. Cuando estés listo, activá Economía Participativa desde el panel. <strong>Es un switch, no una migración.</strong></span>
+          <span>Empezá con Comunidad. Cuando estés listo, activá Créditos Cívicos desde el panel. <strong>Es un switch, no una migración.</strong></span>
         </div>
       </div>
     </section>

@@ -121,12 +121,12 @@ export default function EconomiaParticipativa() {
   return (
     <>
       <Head>
-        <title>Economía Participativa — Citixen</title>
+        <title>Créditos Cívicos — Citixen</title>
         <meta name="description" content="Pagás impuestos. ¿Alguna vez pudiste decidir qué se hace con ellos? Con los Créditos Cívicos, tu contribución fiscal se convierte en capacidad de decisión real sobre proyectos de tu ciudad." />
-        <meta property="og:title" content="Economía Participativa — Citixen" />
+        <meta property="og:title" content="Créditos Cívicos — Citixen" />
         <meta property="og:description" content="Pagás impuestos. ¿Alguna vez pudiste decidir qué se hace con ellos? Con Citixen, tu contribución se convierte en decisión." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://citixen.org/economia-participativa" />
+        <meta property="og:url" content="https://citixen.org/creditos-civicos" />
         <meta property="og:image" content="https://citixen.org/og-image.png" />
         <meta property="og:locale" content="es_AR" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -161,7 +161,7 @@ export default function EconomiaParticipativa() {
             </p>
             <p className="ep-bridge-bold">Citixen hace visible lo invisible.</p>
             <p>
-              Cuando tu municipio activa la Economía Participativa, cada contribución fiscal que hacés
+              Cuando tu municipio activa los Créditos Cívicos, cada contribución fiscal que hacés
               se traduce en capacidad de decisión real. Podés apoyar los proyectos que te importan:
               la vereda de tu barrio, el comedor del club, el refugio para animales.
             </p>
@@ -237,7 +237,7 @@ export default function EconomiaParticipativa() {
             El municipio no pierde control. Gana respaldo.
           </h2>
           <p className="ep-governance-intro fade-up">
-            Activar la Economía Participativa no significa que los vecinos manejen el presupuesto.
+            Activar los Créditos Cívicos no significa que los vecinos manejen el presupuesto.
             Significa que el municipio tiene un canal digital, transparente y auditable para involucrar
             a la comunidad en decisiones que antes tomaba solo.
           </p>

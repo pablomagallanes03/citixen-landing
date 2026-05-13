@@ -4,11 +4,11 @@ import Link from 'next/link'
 const faqs = [
   {
     question: '¿Cuánto cuesta?',
-    answer: 'Modo Comunidad es gratuito, sin límite de tiempo. Economía Participativa tiene un costo mensual que depende del tamaño de tu ciudad. Lo definimos juntos después de la primera conversación. Sin contratos de permanencia.',
+    answer: 'Modo Comunidad es gratuito, sin límite de tiempo. Créditos Cívicos tiene un costo mensual que depende del tamaño de tu ciudad. Lo definimos juntos después de la primera conversación. Sin contratos de permanencia.',
   },
   {
     question: '¿Necesito aprobación del Concejo Deliberante?',
-    answer: 'Para Modo Comunidad, no. Publicar un portal público con la gestión de tu municipio es un acto administrativo: es información que ya es pública. Si querés activar Economía Participativa, depende de tu marco normativo local — te asesoramos.',
+    answer: 'Para Modo Comunidad, no. Publicar un portal público con la gestión de tu municipio es un acto administrativo: es información que ya es pública. Si querés activar los Créditos Cívicos, depende de tu marco normativo local — te asesoramos.',
   },
   {
     question: '¿Qué pasa si cambia el gobierno?',
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: '¿Qué son los Créditos Cívicos?',
-    answer: <>Son capacidad de decisión ciudadana sobre recursos públicos. Se acreditan a partir de tus obligaciones fiscales — impuestos, tasas, multas. No son dinero, no se compran, no se venden. Cuando asignás CC a un proyecto, estás participando en la priorización colectiva de iniciativas de tu ciudad. <Link href="/economia-participativa" style={{ color: 'var(--primary)', fontWeight: 600 }}>Ver explicación completa &rarr;</Link></>,
+    answer: <>Son capacidad de decisión ciudadana sobre recursos públicos. Se acreditan a partir de tus obligaciones fiscales — impuestos, tasas, multas. No son dinero, no se compran, no se venden. Cuando asignás CC a un proyecto, estás participando en la priorización colectiva de iniciativas de tu ciudad. <Link href="/creditos-civicos" style={{ color: 'var(--primary)', fontWeight: 600 }}>Ver explicación completa &rarr;</Link></>,
   },
   {
     question: '¿Mis datos están seguros?',

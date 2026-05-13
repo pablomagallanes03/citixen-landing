@@ -33,7 +33,7 @@ const tiers = [
   },
   {
     id: 'economy',
-    name: 'Economía Participativa',
+    name: 'Créditos Cívicos',
     price: 'Personalizado',
     priceSub: 'Según el tamaño de tu ciudad',
     description: 'Todo lo de Comunidad + Créditos Cívicos, financiamiento participativo y trazabilidad económica completa.',
@@ -71,9 +71,9 @@ export default function Pricing() {
     <>
       <Head>
         <title>Pricing — Citixen</title>
-        <meta name="description" content="Modo Comunidad es gratuito. Economía Participativa tiene un costo accesible que depende del tamaño de tu ciudad. Sin contratos de permanencia." />
+        <meta name="description" content="Modo Comunidad es gratuito. Créditos Cívicos tiene un costo accesible que depende del tamaño de tu ciudad. Sin contratos de permanencia." />
         <meta property="og:title" content="Pricing — Citixen" />
-        <meta property="og:description" content="Modo Comunidad gratuito, sin límite de tiempo. Economía Participativa con costo accesible." />
+        <meta property="og:description" content="Modo Comunidad gratuito, sin límite de tiempo. Créditos Cívicos con costo accesible." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar />
@@ -83,7 +83,7 @@ export default function Pricing() {
             <h1 className="section-title fade-up">Un producto, dos modos.<br />Empezá gratis.</h1>
             <p className="section-desc fade-up" style={{ textAlign: 'center', margin: '0 auto 56px' }}>
               Modo Comunidad es gratuito sin límite de tiempo. Cuando tu ciudad esté lista,
-              activá Economía Participativa desde el panel. Es un switch, no una migración.
+              activá Créditos Cívicos desde el panel. Es un switch, no una migración.
             </p>
           </div>
 
@@ -154,11 +154,11 @@ export default function Pricing() {
                 <p>No. Cada modo se activa y desactiva con un click. Tus datos siempre son tuyos.</p>
               </div>
               <div className="pricing-faq-item">
-                <h4>¿Puedo probar Economía Participativa antes de pagar?</h4>
-                <p>Empezá con Comunidad. Cuando tu ciudad tenga tracción, hablemos sobre Economía Participativa. Sin presión.</p>
+                <h4>¿Puedo probar Créditos Cívicos antes de pagar?</h4>
+                <p>Empezá con Comunidad. Cuando tu ciudad tenga tracción, hablemos sobre Créditos Cívicos. Sin presión.</p>
               </div>
               <div className="pricing-faq-item">
-                <h4>¿Cómo se define el precio de Economía Participativa?</h4>
+                <h4>¿Cómo se define el precio de Créditos Cívicos?</h4>
                 <p>Depende del tamaño de tu ciudad (habitantes). Contactanos para una cotización personalizada.</p>
               </div>
             </div>

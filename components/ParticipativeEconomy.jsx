@@ -11,11 +11,11 @@ const includes = [
 
 export default function ParticipativeEconomy() {
   return (
-    <section className="economy-section" id="economia-participativa">
+    <section className="economy-section" id="creditos-civicos">
       <div className="container">
         <div className="economy-inner fade-up">
           <div className="economy-badge">Evolución avanzada</div>
-          <h2 className="economy-title">Economía Participativa</h2>
+          <h2 className="economy-title">Créditos Cívicos</h2>
           <p className="economy-subtitle">
             Cuando tu ciudad esté lista para co-decidir
           </p>
@@ -43,7 +43,7 @@ export default function ParticipativeEconomy() {
             <p>
               <strong>No hay apuro.</strong> Modo Comunidad construye la base: ciudadanos registrados,
               confianza, hábito de participación. Cuando tu ciudad alcance masa crítica,
-              Economía Participativa se activa con un switch desde el panel.
+              los Créditos Cívicos se activan con un switch desde el panel.
             </p>
           </div>
 
@@ -51,8 +51,8 @@ export default function ParticipativeEconomy() {
             Costo mensual accesible según el tamaño de tu ciudad. Sin contratos de permanencia.
           </div>
 
-          <Link href="/economia-participativa" className="economy-cta-link">
-            Conocé cómo funciona la Economía Participativa &rarr;
+          <Link href="/creditos-civicos" className="economy-cta-link">
+            Conocé cómo funcionan los Créditos Cívicos &rarr;
           </Link>
         </div>
       </div>
