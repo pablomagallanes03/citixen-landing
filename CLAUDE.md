@@ -29,24 +29,23 @@ La landing comunica de arriba hacia abajo: primero transparencia y participació
 
 | Orden | Componente | Objetivo |
 |---|---|---|
-| 1 | Navbar | Navegación + CTA "Contactanos" |
+| 1 | Navbar | "Modo Comunidad", "Créditos Cívicos", "Pricing", CTA "Contactanos" |
 | 2 | Hero | "Lo que hacés ya existe. Solo falta que se vea." + mockup portal + proof points |
 | 3 | Problem | Dolor expandido (4 bloques: PDFs, redes, portal, inauguraciones) |
-| 4 | WhatIsCitixen | Tabla resumen de 2 modos (reemplaza SocialProof) |
-| 5 | CommunityMode | 5 capacidades de Modo Comunidad como producto principal |
-| 6 | CaseStudyBlock | Presidente Roca — "Ejemplo basado en información pública" |
-| 7 | ParticipativeEconomy | Créditos Cívicos como evolución avanzada |
-| 8 | CivicCreditsExplainer | CC explicados en 4 pasos + comparación con PP tradicional |
-| 9 | HowToStart | 3 pasos simplificados |
-| 10 | Trust | Fundador + empresa + seguridad + contacto |
-| 11 | FAQ | 8 preguntas (incluye seguridad y financiamiento) |
-| 12 | EarlyAccess | Formulario liviano (3 campos gobierno + 1 ciudadano) via /api/contact |
-| 13 | Footer | Links + legal |
+| 4 | WhatIsCitixen | Tabla resumen de 2 modos (`#comunidad` anchor) |
+| 5 | CommunityMode | 5 capacidades de Modo Comunidad + CTA "Activar" |
+| 6 | ParticipativeEconomy | Teaser CC — card de transición con link a /creditos-civicos |
+| 7 | HowToStart | 3 pasos simplificados |
+| 8 | PricingSummary | 2 cards: Comunidad (gratis) + CC (personalizado) |
+| 9 | Trust | Seguridad + contacto directo |
+| 10 | FAQ | 8 preguntas (incluye link a /creditos-civicos) |
+| 11 | EarlyAccess | Formulario gobierno + botones descarga app ciudadano |
+| 12 | Footer | Links + legal |
 
-**Componentes removidos del flujo (archivos conservados):** SocialProof, Progressive, Scenarios, Differentiator.
+**Componentes removidos del flujo (archivos conservados):** SocialProof, Progressive, Scenarios, Differentiator, CivicCreditsExplainer, CaseStudyBlock.
 
 **Páginas adicionales:**
-- `/creditos-civicos` — página dedicada a explicar los Créditos Cívicos. Narrativa de 7 actos: hero emocional → puente conceptual → mecanismo de 5 pasos → precedente institucional → gobernanza → FAQ → CTA descarga app. Audiencia: ciudadano frustrado + intendente.
+- `/creditos-civicos` — página dedicada a explicar los Créditos Cívicos. Narrativa de 7 actos: hero emocional (con mockup iPhone + carrusel 3 proyectos) → puente conceptual → mecanismo de 5 pasos → precedente institucional → gobernanza → FAQ → CTA descarga app. Audiencia: ciudadano frustrado + intendente. Fotos en `/public/mockup/`.
 - `/transparency-methodology` — documento público de metodología del Índice de Transparencia (CTI v1.0). En inglés, orientado a organismos multilaterales e investigadores.
 
 ---
