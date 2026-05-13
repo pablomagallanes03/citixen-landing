@@ -25,7 +25,7 @@ const steps = [
       </svg>
     ),
     title: 'Tu municipio reconoce tu contribución',
-    desc: 'Una fracción de lo que pagaste se convierte en Créditos Cívicos en tu cuenta de Citixen. Automáticamente.',
+    desc: 'Un porcentaje de lo que pagaste se convierte en Créditos Cívicos en tu cuenta de Citixen. Automáticamente.',
   },
   {
     number: '3',
