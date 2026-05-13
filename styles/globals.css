@@ -1554,116 +1554,58 @@ img { max-width: 100%; display: block; }
 /* ═══════════════════════════════════════════════════
    PARTICIPATIVE ECONOMY
    ═══════════════════════════════════════════════════ */
-.economy-section {
-  padding: 100px 0;
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--secondary) 100%);
-  position: relative;
-  overflow: hidden;
+/* CC Teaser — transición suave desde CommunityMode */
+.cc-teaser-section {
+  padding: 0 0 100px;
+  background: var(--bg);
 }
-.economy-section::before {
-  content: '';
-  position: absolute;
-  top: -40%; right: -15%;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
-  border-radius: 50%;
-}
-.economy-inner {
-  max-width: 720px;
+.cc-teaser {
+  max-width: 800px;
   margin: 0 auto;
-  text-align: center;
+  padding: 48px;
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--primary);
 }
-.economy-badge {
-  display: inline-block;
-  font-size: 16px;
+.cc-teaser-title {
+  font-size: 24px;
   font-weight: 700;
-  color: var(--surface);
-  background: var(--accent);
-  padding: 6px 16px;
-  border-radius: 6px;
+  color: var(--text-primary);
+  line-height: 1.3;
   margin-bottom: 16px;
-  text-transform: none;
-  letter-spacing: 0;
 }
-.economy-title {
-  font-size: 36px;
-  font-weight: 800;
-  color: white;
-  letter-spacing: -1px;
-  margin-bottom: 8px;
-}
-.economy-subtitle {
-  font-size: 18px;
-  color: rgba(255,255,255,0.75);
-  margin-bottom: 24px;
-}
-.economy-desc {
+.cc-teaser-desc {
   font-size: 16px;
-  color: rgba(255,255,255,0.8);
+  color: var(--text-secondary);
   line-height: 1.7;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
-.economy-includes { margin-bottom: 32px; text-align: left; }
-.economy-includes-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.5);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-  display: block;
-  text-align: center;
-}
-.economy-includes-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.cc-teaser-highlights {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 480px;
-  margin: 0 auto;
+  gap: 24px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
 }
-.economy-includes-list li {
+.cc-teaser-highlight {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-size: 14px;
-  color: rgba(255,255,255,0.8);
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--primary);
 }
-.economy-includes-list li svg { flex-shrink: 0; color: var(--accent); }
-.economy-note {
-  padding: 20px 28px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius-md);
-  margin-bottom: 24px;
-}
-.economy-note p {
-  font-size: 14px;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.7;
-  margin: 0;
-}
-.economy-note strong { color: white; }
-.economy-price {
-  font-size: 13px;
-  color: rgba(255,255,255,0.5);
-}
-.economy-cta-link {
+.cc-teaser-highlight svg { flex-shrink: 0; }
+.cc-teaser-cta {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 24px;
   font-size: 15px;
-  font-weight: 600;
-  color: white;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  font-weight: 700;
+  color: var(--accent);
   transition: opacity 0.2s;
 }
-.economy-cta-link:hover { opacity: 0.8; }
+.cc-teaser-cta:hover { opacity: 0.7; }
 
 .cc-deep-link-btn {
   display: inline-flex;
@@ -1984,7 +1926,9 @@ img { max-width: 100%; display: block; }
   .cc-comparison { grid-template-columns: 1fr; }
   .trust-grid { grid-template-columns: 1fr; }
   .trust-card-founder { flex-direction: column; }
-  .economy-title { font-size: 28px; }
+  .cc-teaser { padding: 32px 24px; }
+  .cc-teaser-title { font-size: 20px; }
+  .cc-teaser-highlights { flex-direction: column; gap: 12px; }
   .what-is-table { font-size: 13px; }
   .what-is-table th, .what-is-table td { padding: 12px 14px; }
 }

@@ -7,7 +7,7 @@ import WhatIsCitixen from '../components/WhatIsCitixen'
 import CommunityMode from '../components/CommunityMode'
 // import CaseStudyBlock from '../components/CaseStudyBlock'
 import ParticipativeEconomy from '../components/ParticipativeEconomy'
-import CivicCreditsExplainer from '../components/CivicCreditsExplainer'
+// import CivicCreditsExplainer from '../components/CivicCreditsExplainer'  // Movido a /creditos-civicos
 import HowToStart from '../components/HowToStart'
 import Trust from '../components/Trust'
 import FAQ from '../components/FAQ'
@@ -93,7 +93,6 @@ export default function Home() {
       <CommunityMode />
       {/* <CaseStudyBlock /> */}
       <ParticipativeEconomy />
-      <CivicCreditsExplainer />
       <HowToStart />
       <Differentiator />
       <PricingSummary />

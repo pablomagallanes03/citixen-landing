@@ -67,7 +67,7 @@ function AnimatedToggle() {
 
 export default function CommunityMode() {
   return (
-    <section className="community-section" id="comunidad">
+    <section className="community-section">
       <div className="container">
         <div className="community-header">
           <div className="section-label section-label--highlight fade-up">

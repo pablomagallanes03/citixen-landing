@@ -1,6 +1,6 @@
 export default function WhatIsCitixen() {
   return (
-    <section className="what-is-section">
+    <section className="what-is-section" id="comunidad">
       <div className="container">
         <div className="section-label fade-up"><span className="bar"></span> Qué es Citixen</div>
         <h2 className="section-title fade-up">Gestión municipal abierta.<br />Dos modos, un mismo sistema.</h2>
