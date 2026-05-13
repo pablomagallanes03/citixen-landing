@@ -198,7 +198,7 @@ export default function EconomiaParticipativa() {
                       {/* Proyecto 2 */}
                       <div className="phone-slide phone-slide--2">
                         <div className="phone-project-photo">
-                          <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=560&h=280&fit=crop&crop=center" alt="Refugio de animales" />
+                          <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=560&h=280&fit=crop&crop=top" alt="Refugio de animales" />
                           <div className="phone-project-category">Bienestar animal</div>
                         </div>
                         <div className="phone-project-body">
@@ -225,7 +225,7 @@ export default function EconomiaParticipativa() {
                       {/* Proyecto 3 */}
                       <div className="phone-slide phone-slide--3">
                         <div className="phone-project-photo">
-                          <img src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=560&h=280&fit=crop&crop=center" alt="Plaza San Martín" />
+                          <img src="https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=560&h=280&fit=crop&crop=center" alt="Plaza San Martín" />
                           <div className="phone-project-category">Espacio público</div>
                         </div>
                         <div className="phone-project-body">
