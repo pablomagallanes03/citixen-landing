@@ -169,7 +169,7 @@ export default function EconomiaParticipativa() {
                   </div>
                   <div className="phone-content">
                     <div className="phone-project-photo">
-                      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=560&h=280&fit=crop&crop=center" alt="Comedor comunitario" />
+                      <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=560&h=280&fit=crop&crop=center" alt="Comedor comunitario" />
                       <div className="phone-project-category">Infraestructura social</div>
                     </div>
                     <div className="phone-project-body">
