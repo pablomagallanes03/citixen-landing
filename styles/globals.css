@@ -1687,9 +1687,15 @@ img { max-width: 100%; display: block; }
   background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
   border-radius: 50%;
 }
-.ep-hero-content {
+.ep-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
   position: relative;
   z-index: 2;
+}
+.ep-hero-content {
   max-width: 760px;
 }
 .ep-hero-title {
@@ -1709,6 +1715,136 @@ img { max-width: 100%; display: block; }
   line-height: 1.7;
   color: rgba(255,255,255,0.75);
   max-width: 580px;
+}
+
+/* Phone mockup */
+.ep-hero-mockup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.phone-frame {
+  width: 280px;
+  background: var(--surface);
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 32px 64px rgba(0,0,0,0.3);
+  position: relative;
+}
+.phone-notch {
+  width: 120px;
+  height: 24px;
+  background: var(--surface);
+  border-radius: 0 0 16px 16px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.phone-notch::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+}
+.phone-content {
+  padding: 8px 16px 24px;
+}
+.phone-wallet {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.phone-wallet-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.phone-wallet-balance {
+  font-size: 36px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+.phone-wallet-balance span {
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 0.7;
+  letter-spacing: 0;
+}
+.phone-wallet-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+}
+.phone-project {
+  background: var(--bg);
+  border-radius: 14px;
+  padding: 16px;
+}
+.phone-project-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.phone-project-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.phone-progress { margin-bottom: 10px; }
+.phone-progress-bar {
+  height: 6px;
+  background: var(--border-light);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+.phone-progress-fill {
+  height: 100%;
+  width: 62%;
+  background: var(--accent);
+  border-radius: 3px;
+  animation: phone-fill 1.5s ease-out 0.5s both;
+}
+@keyframes phone-fill {
+  from { width: 0; }
+  to { width: 62%; }
+}
+.phone-progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.phone-supporters {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.phone-support-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: default;
+  font-family: inherit;
 }
 
 /* Bridge */
@@ -2029,6 +2165,8 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
   .ep-hero { padding: 140px 0 60px; }
+  .ep-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .ep-hero-mockup { display: none; }
   .ep-hero-title { font-size: 32px; }
   .ep-hero-subtitle { font-size: 17px; }
   .ep-section-title { font-size: 28px; }

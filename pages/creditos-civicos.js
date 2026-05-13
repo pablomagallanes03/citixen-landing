@@ -137,14 +137,44 @@ export default function EconomiaParticipativa() {
       {/* ACTO 1 — El golpe emocional */}
       <section className="ep-hero">
         <div className="container">
-          <div className="ep-hero-content fade-up">
-            <h1 className="ep-hero-title">
-              Pagás impuestos.<br />
-              <span className="ep-hero-highlight">¿Alguna vez pudiste decidir qué se hace con ellos?</span>
-            </h1>
-            <p className="ep-hero-subtitle">
-              La mayoría de los vecinos contribuyen toda su vida sin tener voz en cómo se usa esa contribución. Citixen cambia eso.
-            </p>
+          <div className="ep-hero-inner">
+            <div className="ep-hero-content fade-up">
+              <h1 className="ep-hero-title">
+                Pagás impuestos.<br />
+                <span className="ep-hero-highlight">¿Alguna vez pudiste decidir qué se hace con ellos?</span>
+              </h1>
+              <p className="ep-hero-subtitle">
+                La mayoría de los vecinos contribuyen toda su vida sin tener voz en cómo se usa esa contribución. Citixen cambia eso.
+              </p>
+            </div>
+
+            <div className="ep-hero-mockup fade-up delay-2">
+              <div className="phone-frame">
+                <div className="phone-notch"></div>
+                <div className="phone-content">
+                  <div className="phone-wallet">
+                    <div className="phone-wallet-label">Tu balance</div>
+                    <div className="phone-wallet-balance">320 <span>CC</span></div>
+                    <div className="phone-wallet-sub">1 CC = $1.500 ARS</div>
+                  </div>
+                  <div className="phone-project">
+                    <div className="phone-project-title">Comedor barrio San Martín</div>
+                    <div className="phone-project-meta">Infraestructura social</div>
+                    <div className="phone-progress">
+                      <div className="phone-progress-bar">
+                        <div className="phone-progress-fill"></div>
+                      </div>
+                      <div className="phone-progress-text">
+                        <span>1.240 / 2.000 CC</span>
+                        <span>62%</span>
+                      </div>
+                    </div>
+                    <div className="phone-supporters">47 vecinos apoyan este proyecto</div>
+                    <button className="phone-support-btn">Apoyar con CC</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
