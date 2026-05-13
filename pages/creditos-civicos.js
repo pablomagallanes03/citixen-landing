@@ -49,7 +49,7 @@ const steps = [
       </svg>
     ),
     title: 'Los proyectos se materializan',
-    desc: 'Cuando un proyecto alcanza su meta de financiamiento, se pone en marcha. Las organizaciones sociales verificadas reciben el apoyo de los vecinos mes a mes para sostener su operación.',
+    desc: 'Cuando un proyecto alcanza su meta de financiamiento, se pone en marcha. Tu decisión tiene efecto directo.',
   },
   {
     number: '5',
