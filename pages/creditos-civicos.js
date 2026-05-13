@@ -175,7 +175,7 @@ export default function EconomiaParticipativa() {
                           <div className="phone-project-category">Infraestructura social</div>
                         </div>
                         <div className="phone-project-body">
-                          <div className="phone-project-title">Comedor barrio San Martín</div>
+                          <div className="phone-project-title">Comedor Compartiendo Amor</div>
                           <div className="phone-project-desc">Equipamiento y refacción del comedor comunitario para 120 familias.</div>
                           <div className="phone-progress">
                             <div className="phone-progress-header">
@@ -202,7 +202,7 @@ export default function EconomiaParticipativa() {
                           <div className="phone-project-category">Bienestar animal</div>
                         </div>
                         <div className="phone-project-body">
-                          <div className="phone-project-title">Refugio de animales municipal</div>
+                          <div className="phone-project-title">Refugio Patitas del Sur</div>
                           <div className="phone-project-desc">Construcción de refugio con capacidad para 60 animales rescatados.</div>
                           <div className="phone-progress">
                             <div className="phone-progress-header">
@@ -225,7 +225,7 @@ export default function EconomiaParticipativa() {
                       {/* Proyecto 3 */}
                       <div className="phone-slide phone-slide--3">
                         <div className="phone-project-photo">
-                          <img src="https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=560&h=280&fit=crop&crop=center" alt="Plaza San Martín" />
+                          <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=560&h=280&fit=crop&crop=center" alt="Plaza San Martín" />
                           <div className="phone-project-category">Espacio público</div>
                         </div>
                         <div className="phone-project-body">
