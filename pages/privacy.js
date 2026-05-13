@@ -27,12 +27,12 @@ export default function Privacy() {
               </p>
               <div className="legal-meta">
                 <div className="meta-item">
-                  <span className="meta-label">Vigencia</span>
+                  <span className="meta-label">Última actualización</span>
                   <span className="meta-value">Mayo 2026</span>
                 </div>
                 <div className="meta-item">
                   <span className="meta-label">Marco normativo</span>
-                  <span className="meta-value">Ley 25.326 (Argentina)</span>
+                  <span className="meta-value">Ley 25.326 (Argentina) + RGPD</span>
                 </div>
               </div>
             </div>
@@ -43,176 +43,405 @@ export default function Privacy() {
           <div className="container">
             <div className="legal-body">
 
-              <h2>1. Responsable del Tratamiento</h2>
+              <h2>1. Introducción e Identidad del Responsable</h2>
+              <h3>1.1 Sobre esta Política</h3>
               <p>
-                <strong>Citixen Technologies SAS</strong> (en adelante, &ldquo;Citixen&rdquo;) es responsable del tratamiento
-                de los datos personales recopilados a través de la plataforma Citixen, incluyendo el portal web,
-                la aplicación móvil y los paneles de administración.
+                Esta Política de Privacidad describe cómo Citixen Technologies SAS (&ldquo;Citixen&rdquo;,
+                &ldquo;nosotros&rdquo; o &ldquo;nuestro&rdquo;) recolecta, utiliza, almacena, comparte y protege
+                sus datos personales cuando usted utiliza la plataforma Citixen, la aplicación móvil y los
+                servicios asociados (conjuntamente, la &ldquo;Plataforma&rdquo;).
               </p>
               <p>
-                Contacto del responsable: <a href="mailto:contacto@citixen.org">contacto@citixen.org</a>
+                Esta Política debe leerse conjuntamente con nuestros Términos y Condiciones, que definen
+                conceptos clave utilizados a lo largo de este documento, incluyendo la naturaleza de los
+                Créditos Cívicos y el rol de la Plataforma como infraestructura tecnológica de participación cívica.
               </p>
 
-              <h2>2. Datos que Recopilamos</h2>
-              <h3>2.1 Datos proporcionados por el usuario</h3>
-              <ul>
-                <li><strong>Ciudadanos:</strong> nombre, apellido, email, ciudad, contraseña (almacenada de forma cifrada).</li>
-                <li><strong>Gobiernos locales:</strong> nombre del municipio, tipo de entidad, ubicación, nombre y cargo del representante, email institucional.</li>
-                <li><strong>Organizaciones:</strong> nombre, tipo de entidad, descripción, documentación de respaldo, datos bancarios (para desembolsos).</li>
-              </ul>
-              <h3>2.2 Datos generados por el uso</h3>
-              <ul>
-                <li>Historial de asignación de Créditos Cívicos.</li>
-                <li>Proyectos creados, apoyados o completados.</li>
-                <li>Participación en consultas y propuestas ciudadanas.</li>
-                <li>Comprobantes de pago de impuestos (para acreditación de CC).</li>
-              </ul>
-              <h3>2.3 Datos técnicos</h3>
-              <ul>
-                <li>Dirección IP (para seguridad y rate limiting).</li>
-                <li>Tokens de dispositivo para notificaciones push (FCM).</li>
-                <li>Información básica del navegador o dispositivo.</li>
-              </ul>
-              <h3>2.4 Datos de autenticación social</h3>
+              <h3>1.2 Responsable del tratamiento</h3>
               <p>
-                Si el usuario se registra mediante Google o Apple, recibimos el nombre, email y un
-                identificador único del proveedor. No accedemos a contactos, fotos ni otra información
-                de la cuenta del proveedor.
+                <strong>Citixen Technologies SAS</strong><br />
+                Bell Ville, Provincia de Córdoba<br />
+                República Argentina
+              </p>
+              <p>
+                Contacto de privacidad: <a href="mailto:privacy@citixen.org">privacy@citixen.org</a>
               </p>
 
-              <h2>3. Finalidad del Tratamiento</h2>
-              <p>Los datos personales se utilizan exclusivamente para:</p>
+              <h3>1.3 Alcance</h3>
+              <p>
+                Esta Política se aplica a todos los usuarios de la Plataforma, incluyendo ciudadanos,
+                personal gubernamental, representantes de organizaciones y visitantes. Cubre los datos
+                recolectados a través de la aplicación móvil, los paneles web y cualquier API o servicio
+                operado por Citixen.
+              </p>
+
+              <h2>2. Datos que Recolectamos</h2>
+
+              <h3>2.1 Datos de identidad y cuenta</h3>
               <ul>
-                <li>Gestionar el registro y la autenticación de usuarios.</li>
-                <li>Operar la plataforma de participación ciudadana y transparencia.</li>
-                <li>Procesar la asignación de Créditos Cívicos y los desembolsos asociados.</li>
-                <li>Enviar notificaciones relevantes sobre la actividad del usuario.</li>
-                <li>Garantizar la seguridad de la plataforma (detección de fraude, rate limiting).</li>
-                <li>Generar estadísticas agregadas y anónimas sobre el uso de la plataforma.</li>
-                <li>Cumplir con obligaciones legales aplicables.</li>
+                <li>Nombre completo</li>
+                <li>Dirección de correo electrónico</li>
+                <li>Ciudad de residencia (vinculada a un municipio verificado)</li>
+                <li>Fotografía de perfil (opcional)</li>
+                <li>Contraseña (hasheada; nunca almacenada en texto plano)</li>
+                <li>Identificadores de proveedores de autenticación (Google ID, Apple ID, si aplica)</li>
+                <li>Fecha de creación de la cuenta</li>
               </ul>
 
-              <h2>4. Base Legal</h2>
+              <h3>2.2 Datos de validación fiscal</h3>
               <p>
-                El tratamiento de datos se realiza conforme a la Ley 25.326 de Protección de Datos Personales
-                de la República Argentina y sus normas reglamentarias. Las bases legales son:
+                Datos enviados para validar contribuciones fiscales para la emisión de Créditos Cívicos:
               </p>
               <ul>
-                <li><strong>Consentimiento:</strong> otorgado al aceptar estos términos al registrarse.</li>
-                <li><strong>Ejecución contractual:</strong> necesario para prestar el servicio solicitado.</li>
-                <li><strong>Interés legítimo:</strong> seguridad de la plataforma y prevención de fraude.</li>
-                <li><strong>Obligación legal:</strong> cumplimiento de requerimientos normativos.</li>
+                <li>Comprobantes de pago de impuestos y documentos fiscales (imágenes o PDFs)</li>
+                <li>Tipo y método de validación fiscal seleccionado</li>
+                <li>Fecha y monto de las contribuciones validadas</li>
+                <li>Estado de aprobación o rechazo y anotaciones del revisor gubernamental</li>
+              </ul>
+              <p>
+                <strong>Estos son datos sensibles.</strong> Se recolectan exclusivamente con el propósito de
+                validar la elegibilidad de participación cívica y se comparten únicamente con el gobierno
+                local correspondiente. Ver Sección 5 para detalles.
+              </p>
+
+              <h3>2.3 Datos de participación cívica</h3>
+              <ul>
+                <li>Conteo de Créditos Cívicos e historial de asignaciones</li>
+                <li>Proyectos que ha creado, incluyendo descripciones, fotografías y evidencia</li>
+                <li>Proyectos que ha apoyado (registros de asignación)</li>
+                <li>Organizaciones que ha creado o gestiona</li>
+                <li>Iniciativas comunitarias en las que ha creado o participado (likes, reportes)</li>
+                <li>Registros de Tickets de Cobro asociados a sus proyectos u organizaciones</li>
+                <li>Información bancaria (CBU, alias o datos de cuenta bancaria) proporcionada con fines de desembolso</li>
               </ul>
 
-              <h2>5. Almacenamiento y Seguridad</h2>
+              <h3>2.4 Datos de ubicación</h3>
+              <ul>
+                <li>Municipio (ciudad) asociado a su cuenta — requerido para la funcionalidad de participación cívica</li>
+                <li>Coordenadas geográficas de proyectos y organizaciones que usted crea (si elige agregar ubicación)</li>
+                <li>Ubicación aproximada derivada de la dirección IP (para seguridad y prevención de fraude)</li>
+              </ul>
               <p>
-                Los datos se almacenan en servidores seguros con las siguientes medidas de protección:
+                No recolectamos datos de ubicación continuos ni en segundo plano de su dispositivo.
+              </p>
+
+              <h3>2.5 Datos de dispositivo y técnicos</h3>
+              <ul>
+                <li>Tipo de dispositivo, sistema operativo y versión</li>
+                <li>Tokens de notificación push (tokens FCM) para la entrega de notificaciones</li>
+                <li>Identificadores de dispositivo asociados al registro de notificaciones push</li>
+                <li>Dirección IP</li>
+                <li>Tipo y versión de navegador (para usuarios del panel web)</li>
+              </ul>
+
+              <h3>2.6 Datos de autenticación y seguridad</h3>
+              <ul>
+                <li>JSON Web Tokens (tokens de acceso)</li>
+                <li>Tokens de actualización (almacenados encriptados en nuestra base de datos)</li>
+                <li>Tokens de proveedores OAuth (temporales, utilizados solo durante el flujo de autenticación)</li>
+                <li>Marcas de tiempo de inicio de sesión y datos de sesión</li>
+                <li>Intentos fallidos de inicio de sesión (para monitoreo de seguridad)</li>
+              </ul>
+
+              <h3>2.7 Datos de comunicación</h3>
+              <ul>
+                <li>Mensajes de soporte enviados a través de la Plataforma</li>
+                <li>Preferencias e historial de notificaciones</li>
+                <li>Reportes comunitarios que usted envíe o que se envíen sobre su contenido</li>
+              </ul>
+
+              <h3>2.8 Datos que NO recolectamos</h3>
+              <p>No recolectamos:</p>
+              <ul>
+                <li>Datos biométricos</li>
+                <li>Datos de salud o médicos</li>
+                <li>Datos sobre origen racial o étnico</li>
+                <li>Opiniones políticas ni afiliación partidaria</li>
+                <li>Creencias religiosas</li>
+                <li>Orientación sexual</li>
+                <li>Antecedentes penales</li>
+                <li>Datos de menores (la Plataforma está restringida a usuarios de 18 años o más)</li>
+              </ul>
+
+              <h2>3. Cómo Utilizamos sus Datos</h2>
+
+              <h3>3.1 Bases legales para el procesamiento</h3>
+              <p>
+                Procesamos sus datos personales bajo las siguientes bases legales, en cumplimiento de la
+                Ley argentina de Protección de Datos Personales (Ley 25.326) y el Reglamento General de
+                Protección de Datos (RGPD) cuando sea aplicable:
               </p>
               <ul>
-                <li>Contraseñas cifradas con algoritmos de hash seguros (bcrypt).</li>
-                <li>Comunicaciones cifradas mediante HTTPS/TLS.</li>
-                <li>Tokens de autenticación con rotación y expiración automática.</li>
-                <li>Cookies httpOnly y secure para sesiones web.</li>
-                <li>Content Security Policy (CSP) para prevención de ataques XSS.</li>
-                <li>Rate limiting por IP y por usuario para prevención de abuso.</li>
-                <li>Registro de auditoría para acciones administrativas.</li>
+                <li><strong>Ejecución de contrato:</strong> operar su cuenta, procesar asignaciones de CC y generar tickets, compartir datos con su gobierno local para participación cívica, enviar notificaciones transaccionales.</li>
+                <li><strong>Consentimiento:</strong> enviar notificaciones push a su dispositivo, enviar newsletter o comunicaciones promocionales.</li>
+                <li><strong>Interés legítimo:</strong> prevenir fraude y asegurar la seguridad de la Plataforma, hacer cumplir los Términos y Condiciones, moderar contenido, generar analíticas anonimizadas y agregadas.</li>
+                <li><strong>Obligación legal:</strong> cumplir con obligaciones legales (retención de registros fiscales, registros de auditoría), responder a solicitudes legales de autoridades competentes.</li>
               </ul>
 
-              <h2>6. Compartición de Datos</h2>
-              <p>Citixen no vende ni comercializa datos personales. Los datos pueden compartirse con:</p>
-              <ul>
-                <li>
-                  <strong>Gobiernos locales:</strong> los datos del ciudadano necesarios para la gestión
-                  de su participación (nombre, ciudad, historial de CC) son visibles para el gobierno
-                  de su misma ciudad. Nunca se comparten datos con gobiernos de otras ciudades.
-                </li>
-                <li>
-                  <strong>Otros ciudadanos:</strong> el nombre y ciudad del creador de un proyecto son
-                  públicos. El soporte a proyectos es anónimo (solo se muestran conteos agregados).
-                </li>
-                <li>
-                  <strong>Proveedores de servicio:</strong> servicios técnicos necesarios para operar la
-                  plataforma (hosting, email transaccional, almacenamiento de archivos). Estos
-                  proveedores están sujetos a obligaciones de confidencialidad.
-                </li>
-                <li>
-                  <strong>Autoridades:</strong> cuando sea requerido por orden judicial o disposición legal.
-                </li>
-              </ul>
-
-              <h2>7. Aislamiento por Jurisdicción</h2>
+              <h3>3.2 Procesamiento basado en consentimiento</h3>
               <p>
-                La plataforma implementa aislamiento estricto por jurisdicción. Los datos de los ciudadanos
-                de una ciudad solo son accesibles para el gobierno de esa misma ciudad. No existe acceso
-                cruzado entre gobiernos de diferentes ciudades.
+                Cuando nos basamos en el consentimiento como base legal (notificaciones push, newsletter),
+                usted puede retirar su consentimiento en cualquier momento:
+              </p>
+              <ul>
+                <li><strong>Notificaciones push:</strong> desactivar a través de la configuración de su dispositivo o las preferencias de notificación de la Plataforma.</li>
+                <li><strong>Newsletter:</strong> cancelar la suscripción a través del enlace en cualquier correo de newsletter, o a través de la configuración de cuenta.</li>
+              </ul>
+              <p>
+                El retiro del consentimiento no afecta la legalidad del procesamiento realizado antes del retiro.
+              </p>
+
+              <h2>4. Qué es Público y Qué es Privado</h2>
+
+              <h3>4.1 Información pública</h3>
+              <ul>
+                <li>Título, descripción, categoría, ubicación y fotografías del proyecto — visible para todos los usuarios.</li>
+                <li>Nombre, avatar y ciudad del creador del proyecto — visible para todos los usuarios.</li>
+                <li>Progreso de financiamiento del proyecto (CC asignados vs. meta) — visible para todos los usuarios.</li>
+                <li>Número de supporters (solo conteo agregado) — visible para todos los usuarios.</li>
+                <li>Nombre, descripción y estado de verificación de la organización — visible para todos los usuarios.</li>
+                <li>Detalles de la iniciativa comunitaria y conteo de likes — visible para todos los usuarios.</li>
+              </ul>
+
+              <h3>4.2 Información privada</h3>
+              <ul>
+                <li>Su dirección de correo electrónico — solo usted + su gobierno local.</li>
+                <li>Su conteo de CC — solo usted.</li>
+                <li>Su historial de asignaciones (qué proyectos apoyó) — solo usted.</li>
+                <li>Sus documentos de validación fiscal — solo usted + su gobierno local.</li>
+                <li>Su información bancaria (CBU/alias) — solo usted + su gobierno local (solo al procesar un desembolso).</li>
+                <li>Montos individuales de apoyo por proyecto — solo usted.</li>
+                <li>Sus datos de dispositivo y técnicos — solo Citixen.</li>
+              </ul>
+
+              <h3>4.3 Anonimato de los supporters</h3>
+              <p>
+                Cuando usted asigna Créditos Cívicos a un proyecto, su identidad como supporter <strong>no se
+                divulga</strong> a otros usuarios, al creador del proyecto ni al público general. Solo se muestran
+                conteos agregados (ej: &ldquo;47 ciudadanos apoyan este proyecto&rdquo;). Esta es una decisión de diseño
+                deliberada para proteger las elecciones de participación cívica de los ciudadanos de presión
+                social o represalias.
+              </p>
+
+              <h3>4.4 Visibilidad del creador</h3>
+              <p>
+                Si usted crea un proyecto, iniciativa comunitaria u organización, su nombre, avatar y ciudad
+                son públicamente visibles como creador. <strong>Esta es una condición de crear contenido cívico
+                público en la Plataforma.</strong> La rendición de cuentas cívica requiere que la persona que propone
+                un uso de recursos públicos sea públicamente identificable.
+              </p>
+
+              <h2>5. Intercambio de Datos con Gobiernos Locales</h2>
+
+              <h3>5.1 Propósito</h3>
+              <p>
+                El intercambio de datos entre Citixen y los gobiernos locales es un componente necesario de la
+                infraestructura de participación cívica. Sirve tres propósitos específicos:
+              </p>
+              <ul>
+                <li><strong>Validación de identidad</strong> — verificar que los ciudadanos son residentes genuinos del municipio.</li>
+                <li><strong>Prevención de fraude</strong> — permitir al gobierno revisar documentos fiscales y detectar reclamos fraudulentos.</li>
+                <li><strong>Ejecución de decisiones colectivas</strong> — permitir al gobierno revisar proyectos, aprobar iniciativas y procesar desembolsos.</li>
+              </ul>
+              <p>
+                <strong>Este intercambio de datos no es:</strong> vigilancia, comercialización de datos,
+                intercambio discrecional ni perfilamiento con fines ajenos a la participación cívica.
+              </p>
+
+              <h3>5.2 Datos accesibles para los gobiernos locales</h3>
+              <ul>
+                <li><strong>Datos de registro:</strong> nombre, email, ciudad, fecha de registro, estado de aprobación — para validación de identidad.</li>
+                <li><strong>Documentos fiscales:</strong> comprobantes impositivos enviados para validación de CC — para validación fiscal.</li>
+                <li><strong>Proyectos:</strong> detalles del proyecto, estado, progreso de financiamiento, evidencia — para gestión de proyectos.</li>
+                <li><strong>Organizaciones:</strong> detalles de la organización, estado de verificación, presupuesto — para gestión del ecosistema.</li>
+                <li><strong>Tickets de Cobro:</strong> detalles del ticket, beneficiario, cantidad de CC, equivalente en fiat — para procesamiento de desembolsos.</li>
+                <li><strong>Información bancaria:</strong> CBU/alias (solo en etapa de desembolso) — para ejecución de pagos.</li>
+              </ul>
+
+              <h3>5.3 Datos NO accesibles para los gobiernos locales</h3>
+              <ul>
+                <li>Qué proyectos específicos usted apoyó como ciudadano (se preserva el anonimato del supporter)</li>
+                <li>Su conteo individual de CC</li>
+                <li>Su actividad en otros municipios</li>
+                <li>Sus datos de dispositivo, dirección IP o tokens de autenticación</li>
+                <li>Sus preferencias de notificaciones push o historial de comunicación con Citixen</li>
+              </ul>
+
+              <h3>5.4 Aislamiento jurisdiccional</h3>
+              <p>
+                Cada gobierno local solo puede acceder a datos pertenecientes a ciudadanos, proyectos y
+                organizaciones dentro de su propio municipio. <strong>El acceso a datos inter-jurisdiccional
+                está técnicamente prohibido a nivel de la Plataforma.</strong> Un gobierno en la Ciudad A no puede
+                acceder a ningún dato relacionado con la Ciudad B.
+              </p>
+
+              <h2>6. Intercambio de Datos con Terceros</h2>
+
+              <h3>6.1 Proveedores de servicios</h3>
+              <p>Compartimos datos personales con las siguientes categorías de proveedores de servicios:</p>
+              <ul>
+                <li><strong>MongoDB, Inc.</strong> — alojamiento de base de datos (MongoDB Atlas) — Estados Unidos / UE</li>
+                <li><strong>DigitalOcean, LLC</strong> — alojamiento en la nube y almacenamiento de archivos — Estados Unidos</li>
+                <li><strong>Google LLC (Firebase)</strong> — entrega de notificaciones push (FCM) — Estados Unidos</li>
+                <li><strong>Google LLC / Apple Inc.</strong> — autenticación OAuth — Estados Unidos</li>
+                <li><strong>Resend, Inc.</strong> — correos electrónicos transaccionales — Estados Unidos</li>
+              </ul>
+
+              <h3>6.2 No venta de datos personales</h3>
+              <p>
+                <strong>Citixen no vende, alquila ni comercializa sus datos personales a ningún tercero,
+                bajo ninguna circunstancia.</strong>
+              </p>
+
+              <h3>6.3 Divulgación legal</h3>
+              <p>
+                Podemos divulgar sus datos personales si así lo requiere la ley, una orden judicial o
+                una solicitud gubernamental, o si creemos de buena fe que la divulgación es necesaria para
+                proteger los derechos, propiedad o seguridad de Citixen, nuestros usuarios o el público.
+              </p>
+
+              <h2>7. Seguridad de los Datos</h2>
+              <p>Implementamos las siguientes medidas técnicas de seguridad:</p>
+              <ul>
+                <li><strong>Encriptación en tránsito</strong> — todos los datos transmitidos entre su dispositivo y nuestros servidores están encriptados utilizando TLS/HTTPS.</li>
+                <li><strong>Seguridad de autenticación</strong> — los tokens de acceso se almacenan como cookies httpOnly y seguras (paneles web) o en almacenamiento encriptado del dispositivo (aplicación móvil); los tokens de actualización se almacenan encriptados con rotación de uso único y detección de replay.</li>
+                <li><strong>Content Security Policy</strong> — los paneles web están protegidos por encabezados CSP estrictos que previenen XSS y clickjacking.</li>
+                <li><strong>Control de acceso</strong> — controles de acceso basados en roles aseguran que los usuarios gubernamentales solo puedan acceder a datos dentro de su jurisdicción.</li>
+                <li><strong>Limitación de tasa</strong> — los endpoints de la API están protegidos por limitación de tasa para prevenir ataques de fuerza bruta y abuso.</li>
+                <li><strong>Seguridad de contraseñas</strong> — las contraseñas se hashean utilizando bcrypt y nunca se almacenan en texto plano.</li>
+                <li><strong>Registro de auditoría</strong> — las acciones administrativas se registran con marcas de tiempo e identificación del actor.</li>
+              </ul>
+              <p>
+                En caso de una violación de datos personales, Citixen notificará a la autoridad competente
+                dentro de las 72 horas y a los usuarios afectados sin demora indebida.
+              </p>
+              <p>
+                Si bien implementamos medidas de seguridad comercialmente razonables, <strong>ningún sistema
+                es completamente seguro.</strong> Usted es responsable de mantener la seguridad de sus credenciales
+                de cuenta y su dispositivo.
               </p>
 
               <h2>8. Retención de Datos</h2>
               <ul>
                 <li><strong>Cuentas activas:</strong> los datos se conservan mientras la cuenta esté activa.</li>
-                <li><strong>Cuentas eliminadas:</strong> los datos se anoniman o eliminan dentro de los 30 días posteriores a la solicitud de eliminación, salvo datos que deban conservarse por obligación legal.</li>
-                <li><strong>Notificaciones:</strong> se eliminan automáticamente después de 90 días.</li>
-                <li><strong>Registros de auditoría:</strong> se conservan por el plazo legal aplicable.</li>
+                <li><strong>Documentos de validación fiscal:</strong> 10 años desde el envío (obligación fiscal argentina, Ley 11.683).</li>
+                <li><strong>Registros de auditoría:</strong> 5 años (cumplimiento legal y rendición de cuentas).</li>
+                <li><strong>Registros de Tickets de Cobro:</strong> 10 años desde la generación (conservación de registros fiscales).</li>
+                <li><strong>Proyectos completados:</strong> indefinido (anonimizados — registro cívico histórico).</li>
+                <li><strong>Notificaciones:</strong> 90 días (limpieza automática).</li>
+                <li><strong>Tokens de actualización rotados:</strong> 30 días desde la rotación.</li>
+                <li><strong>Cuentas eliminadas — datos personales:</strong> 30 días post-solicitud de eliminación.</li>
+                <li><strong>Cuentas eliminadas — registros anonimizados:</strong> indefinido (registro cívico histórico).</li>
               </ul>
 
-              <h2>9. Derechos del Usuario</h2>
+              <h3>Anonimización de registros históricos</h3>
               <p>
-                De acuerdo con la Ley 25.326, el usuario tiene derecho a:
+                Cuando usted elimina su cuenta, los registros de proyectos completados y participación cívica
+                se retienen como parte del registro cívico histórico. Aplicamos técnicas de anonimización
+                irreversible: su nombre se reemplaza con un identificador genérico, su correo electrónico,
+                foto de perfil y todos los demás identificadores personales se eliminan permanentemente.
+                Después de la anonimización, los datos restantes no pueden ser rastreados hasta usted.
+              </p>
+
+              <h2>9. Sus Derechos</h2>
+              <p>
+                De acuerdo con la Ley 25.326 y el RGPD (cuando sea aplicable), usted tiene derecho a:
               </p>
               <ul>
-                <li><strong>Acceso:</strong> solicitar qué datos personales tenemos almacenados.</li>
+                <li><strong>Acceso:</strong> solicitar una copia de los datos personales que tenemos sobre usted.</li>
                 <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos.</li>
-                <li><strong>Supresión:</strong> solicitar la eliminación de sus datos personales.</li>
-                <li><strong>Oposición:</strong> oponerse al tratamiento de sus datos en ciertos supuestos.</li>
+                <li><strong>Supresión (&ldquo;Derecho al olvido&rdquo;):</strong> solicitar la eliminación de sus datos personales, sujeto a las obligaciones legales de retención.</li>
+                <li><strong>Limitación del tratamiento:</strong> solicitar que limitemos el procesamiento de sus datos en ciertas circunstancias.</li>
+                <li><strong>Portabilidad de datos:</strong> solicitar sus datos en un formato estructurado y legible por máquina.</li>
+                <li><strong>Oposición:</strong> oponerse al procesamiento basado en interés legítimo.</li>
+                <li><strong>Retirar el consentimiento:</strong> cuando el procesamiento se base en el consentimiento, usted puede retirarlo en cualquier momento.</li>
               </ul>
               <p>
-                Para ejercer estos derechos, contactar a <a href="mailto:contacto@citixen.org">contacto@citixen.org</a>.
-                Se responderá dentro de los 10 días hábiles.
+                Para ejercer estos derechos, contactar a <a href="mailto:privacy@citixen.org">privacy@citixen.org</a>.
+                Responderemos dentro de los 30 días. Para usuarios en Argentina, responderemos dentro de los
+                10 días hábiles conforme lo requiere la Ley 25.326.
               </p>
 
-              <h2>10. Cookies y Tecnologías Similares</h2>
+              <h3>Derecho a presentar una queja</h3>
               <p>
-                La plataforma utiliza cookies estrictamente necesarias para el funcionamiento del servicio:
+                Si considera que nuestro procesamiento de sus datos personales viola la legislación aplicable,
+                usted tiene el derecho de presentar una queja ante:
               </p>
               <ul>
-                <li><strong>Cookie de sesión:</strong> autenticación del usuario (httpOnly, secure).</li>
-                <li><strong>Preferencias:</strong> idioma y configuración de interfaz.</li>
+                <li><strong>Argentina:</strong> Agencia de Acceso a la Información Pública (AAIP) — <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener noreferrer">www.argentina.gob.ar/aaip</a></li>
+                <li><strong>Unión Europea:</strong> la autoridad de protección de datos de su país de residencia.</li>
               </ul>
+
+              <h2>10. Transferencias Internacionales de Datos</h2>
               <p>
-                No utilizamos cookies de rastreo, publicidad ni analytics de terceros.
+                Sus datos personales pueden ser transferidos y procesados en países distintos a su país de
+                residencia. Nuestros principales proveedores de servicios están ubicados en Estados Unidos y
+                la Unión Europea.
+              </p>
+              <p>Nos aseguramos de que las transferencias internacionales estén protegidas por:</p>
+              <ul>
+                <li>El estatus de adecuación de Argentina reconocido por la Comisión Europea.</li>
+                <li>Cláusulas Contractuales Tipo (CCT) cuando los datos se transfieren a países sin determinación de adecuación.</li>
+                <li>Protecciones contractuales con todos los proveedores de servicios.</li>
+                <li>Encriptación en tránsito y en reposo.</li>
+              </ul>
+
+              <h2>11. Cookies y Tecnologías de Rastreo</h2>
+              <h3>Paneles web</h3>
+              <ul>
+                <li><strong>Cookies esenciales:</strong> cookies de autenticación httpOnly requeridas para el inicio de sesión seguro. No pueden ser deshabilitadas.</li>
+                <li><strong>Sin cookies publicitarias</strong> — no utilizamos cookies de publicidad, retargeting ni rastreo de comportamiento.</li>
+                <li><strong>Sin analíticas de terceros</strong> — no incorporamos servicios de analíticas de terceros que rastreen usuarios entre sitios web.</li>
+              </ul>
+              <h3>Aplicación móvil</h3>
+              <p>
+                La aplicación móvil no utiliza cookies. Los tokens de autenticación se almacenan en
+                almacenamiento encriptado del dispositivo (keychain seguro).
               </p>
 
-              <h2>11. Menores de Edad</h2>
+              <h2>12. Privacidad de Menores</h2>
               <p>
-                La plataforma no está dirigida a menores de 16 años. No recopilamos intencionalmente datos
-                de menores. Si detectamos una cuenta de un menor, procederemos a su eliminación.
+                La Plataforma no está destinada a y no puede ser utilizada por personas menores de
+                dieciocho (18) años. No recolectamos deliberadamente datos personales de menores. Si
+                tomamos conocimiento de que hemos recolectado datos de un menor, eliminaremos esos datos
+                y cancelaremos la cuenta asociada.
               </p>
 
-              <h2>12. Transferencia Internacional</h2>
+              <h2>13. Cambios a esta Política</h2>
               <p>
-                Los datos pueden almacenarse en servidores ubicados fuera de la República Argentina
-                (servicios cloud). En todos los casos, se garantiza un nivel adecuado de protección
-                conforme a la normativa aplicable.
+                Podemos actualizar esta Política de Privacidad periódicamente. Para cambios sustanciales
+                proporcionaremos al menos treinta (30) días de aviso previo a través de un aviso dentro
+                de la Plataforma y un correo electrónico a la dirección asociada con su cuenta.
+              </p>
+              <p>
+                Su uso continuado de la Plataforma después de la fecha de vigencia de cualquier cambio
+                constituye su reconocimiento de la Política actualizada. Si no está de acuerdo con los
+                cambios, puede dejar de utilizar la Plataforma y solicitar la eliminación de su cuenta.
               </p>
 
-              <h2>13. Modificaciones</h2>
+              <h2>14. Contacto</h2>
               <p>
-                Citixen puede actualizar esta Política de Privacidad. Los cambios significativos serán
-                notificados a los usuarios. La fecha de vigencia se actualizará en la parte superior
-                de este documento.
+                Para cualquier pregunta, inquietud o solicitud relacionada con esta Política de
+                Privacidad o sus datos personales:
+              </p>
+              <p>
+                <strong>Citixen Technologies SAS</strong><br />
+                Bell Ville, Provincia de Córdoba<br />
+                República Argentina
+              </p>
+              <p>
+                Consultas de privacidad: <a href="mailto:privacy@citixen.org">privacy@citixen.org</a><br />
+                Consultas legales: <a href="mailto:legal@citixen.org">legal@citixen.org</a>
+              </p>
+              <p>
+                Nos proponemos responder a todas las consultas relacionadas con privacidad dentro de los 30 días.
               </p>
 
-              <h2>14. Autoridad de Control</h2>
-              <p>
-                La Agencia de Acceso a la Información Pública (AAIP) es el órgano de control en materia
-                de protección de datos personales en la República Argentina.
-                Sitio web: <a href="https://www.argentina.gob.ar/aaip" target="_blank" rel="noopener noreferrer">www.argentina.gob.ar/aaip</a>
-              </p>
-
-              <h2>15. Contacto</h2>
-              <p>
-                Para consultas sobre esta Política de Privacidad o el tratamiento de sus datos personales,
-                puede contactarnos a través de <a href="mailto:contacto@citixen.org">contacto@citixen.org</a>.
+              <p className="legal-footnote">
+                <em>
+                  Esta Política de Privacidad está disponible en español e inglés. En caso de discrepancia,
+                  la versión en español prevalecerá para la interpretación legal para usuarios en Argentina.
+                </em>
               </p>
 
             </div>
