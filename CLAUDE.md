@@ -35,7 +35,7 @@ La landing comunica de arriba hacia abajo: primero transparencia y participació
 | 4 | WhatIsCitixen | Tabla resumen de 2 modos (reemplaza SocialProof) |
 | 5 | CommunityMode | 5 capacidades de Modo Comunidad como producto principal |
 | 6 | CaseStudyBlock | Presidente Roca — "Ejemplo basado en información pública" |
-| 7 | ParticipativeEconomy | Economía Participativa como evolución avanzada |
+| 7 | ParticipativeEconomy | Créditos Cívicos como evolución avanzada |
 | 8 | CivicCreditsExplainer | CC explicados en 4 pasos + comparación con PP tradicional |
 | 9 | HowToStart | 3 pasos simplificados |
 | 10 | Trust | Fundador + empresa + seguridad + contacto |
@@ -45,7 +45,9 @@ La landing comunica de arriba hacia abajo: primero transparencia y participació
 
 **Componentes removidos del flujo (archivos conservados):** SocialProof, Progressive, Scenarios, Differentiator.
 
-**Página adicional:** `/transparency-methodology` — documento público de metodología del Índice de Transparencia (CTI v1.0). En inglés, orientado a organismos multilaterales e investigadores.
+**Páginas adicionales:**
+- `/creditos-civicos` — página dedicada a explicar los Créditos Cívicos. Narrativa de 7 actos: hero emocional → puente conceptual → mecanismo de 5 pasos → precedente institucional → gobernanza → FAQ → CTA descarga app. Audiencia: ciudadano frustrado + intendente.
+- `/transparency-methodology` — documento público de metodología del Índice de Transparencia (CTI v1.0). En inglés, orientado a organismos multilaterales e investigadores.
 
 ---
 
@@ -106,7 +108,8 @@ La landing comunica de arriba hacia abajo: primero transparencia y participació
 |---|---|
 | Nombre del producto | "Citixen" (nunca "Citixen App" ni "Plataforma Citixen") |
 | Nombre de los créditos | "Créditos Cívicos" en español, "Civic Credits" en código. NUNCA "Civic Coins". |
-| Modelo de adopción | 2 modos progresivos (Comunidad + Economía Participativa). Internamente `"light"` y `"full"` en BD. |
+| Modelo de adopción | 2 modos progresivos (Comunidad + Créditos Cívicos). Internamente `"light"` y `"full"` en BD. |
+| Nombre del segundo modo | "Créditos Cívicos" en UI visible. NO "Economía Participativa" (término académico preexistente con carga ideológica). Renombrado mayo 2026. En código/BD sigue siendo `"full"`. |
 | Modo Comunidad gratuito | Sin límite de tiempo. No es freemium con fecha de vencimiento. |
 | Target primario | Gobiernos locales (no ciudadanos, no ONGs, no empresas) |
 | Hero visual | Mockup de portal web (no mockup de app móvil) |
