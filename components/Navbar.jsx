@@ -22,6 +22,7 @@ export default function Navbar() {
         </Link>
         <ul className={`navbar-links${open ? ' active' : ''}`}>
           <li><Link href="/#comunidad" onClick={close}>Cómo funciona</Link></li>
+          <li><Link href="/economia-participativa" onClick={close}>Economía Participativa</Link></li>
           <li><Link href="/pricing" onClick={close}>Pricing</Link></li>
           <li>
             <Link href="/#acceso" className="navbar-cta" onClick={close}>

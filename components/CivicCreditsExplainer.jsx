@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const steps = [
   {
     number: '1',
@@ -85,6 +87,12 @@ export default function CivicCreditsExplainer() {
             <span className="cc-comparison-label">Con Créditos Cívicos</span>
             <span>Cada peso tiene nombre, destino y trazabilidad. Sabés exactamente a dónde fue y qué impacto generó.</span>
           </div>
+        </div>
+
+        <div className="cc-deep-link fade-up" style={{ textAlign: 'center', marginTop: '40px' }}>
+          <Link href="/economia-participativa" className="cc-deep-link-btn">
+            Ver la explicación completa &rarr;
+          </Link>
         </div>
       </div>
     </section>

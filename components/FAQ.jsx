@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 
 const faqs = [
   {
@@ -23,7 +24,7 @@ const faqs = [
   },
   {
     question: '¿Qué son los Créditos Cívicos?',
-    answer: 'Los Créditos Cívicos (CC) son unidades digitales de participación ciudadana. Representan la capacidad del ciudadano de decidir sobre una parte de los recursos públicos de su ciudad. Se acreditan a partir de sus obligaciones fiscales — impuestos, tasas, multas, contribuciones o cualquier pago municipal. No tienen valor monetario, no se pueden comprar, vender ni transferir entre personas. Cuando un ciudadano asigna CC a un proyecto u organización social dentro de Citixen, no está haciendo una donación ni una inversión: está participando en la priorización colectiva de iniciativas para su comunidad. Los CC no son criptomonedas ni puntos de fidelidad. Son una herramienta de participación que permite que cada vecino pueda influir, de forma visible, transparente y trazable, en cómo se priorizan ciertos recursos públicos de su ciudad.',
+    answer: <>Son capacidad de decisión ciudadana sobre recursos públicos. Se acreditan a partir de tus obligaciones fiscales — impuestos, tasas, multas. No son dinero, no se compran, no se venden. Cuando asignás CC a un proyecto, estás participando en la priorización colectiva de iniciativas de tu ciudad. <Link href="/economia-participativa" style={{ color: 'var(--primary)', fontWeight: 600 }}>Ver explicación completa &rarr;</Link></>,
   },
   {
     question: '¿Mis datos están seguros?',

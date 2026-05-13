@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const includes = [
   'Todo lo de Modo Comunidad',
   'Créditos Cívicos vinculados a impuestos reales',
@@ -48,6 +50,10 @@ export default function ParticipativeEconomy() {
           <div className="economy-price">
             Costo mensual accesible según el tamaño de tu ciudad. Sin contratos de permanencia.
           </div>
+
+          <Link href="/economia-participativa" className="economy-cta-link">
+            Conocé cómo funciona la Economía Participativa &rarr;
+          </Link>
         </div>
       </div>
     </section>
