@@ -19,7 +19,7 @@ export default function Footer() {
           <div>
             <h4>Plataforma</h4>
             <ul>
-              <li><Link href="/#comunidad">Cómo funciona</Link></li>
+              <li><Link href="/#comunidad">Modo Comunidad</Link></li>
               <li><Link href="/creditos-civicos">Créditos Cívicos</Link></li>
               <li><Link href="/pricing">Pricing</Link></li>
               <li><Link href="/#empezar">Empezar</Link></li>
@@ -29,7 +29,7 @@ export default function Footer() {
           <div>
             <h4>Recursos</h4>
             <ul>
-              <li><Link href="/caso-de-estudio">Caso de análisis</Link></li>
+              {/* <li><Link href="/caso-de-estudio">Caso de análisis</Link></li> */}
               <li><Link href="/transparency-methodology">Metodología de transparencia</Link></li>
             </ul>
           </div>

@@ -5,21 +5,17 @@ import Hero from '../components/Hero'
 import Problem from '../components/Problem'
 import WhatIsCitixen from '../components/WhatIsCitixen'
 import CommunityMode from '../components/CommunityMode'
-// import CaseStudyBlock from '../components/CaseStudyBlock'
 import ParticipativeEconomy from '../components/ParticipativeEconomy'
-// import CivicCreditsExplainer from '../components/CivicCreditsExplainer'  // Movido a /creditos-civicos
 import HowToStart from '../components/HowToStart'
 import Trust from '../components/Trust'
 import FAQ from '../components/FAQ'
 import EarlyAccess from '../components/EarlyAccess'
 import Footer from '../components/Footer'
-
-// Componentes removidos del flujo (no eliminados):
-// import SocialProof from '../components/SocialProof'
-// import Progressive from '../components/Progressive'
-// import Scenarios from '../components/Scenarios'
-import Differentiator from '../components/Differentiator'
 import PricingSummary from '../components/PricingSummary'
+
+// Componentes removidos del flujo (archivos conservados):
+// CaseStudyBlock, SocialProof, Progressive, Scenarios,
+// Differentiator, CivicCreditsExplainer
 
 export default function Home() {
   useEffect(() => {
@@ -94,7 +90,6 @@ export default function Home() {
       {/* <CaseStudyBlock /> */}
       <ParticipativeEconomy />
       <HowToStart />
-      <Differentiator />
       <PricingSummary />
       <Trust />
       <FAQ />

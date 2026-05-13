@@ -21,7 +21,7 @@ export default function Hero() {
           </div>
           <div className="hero-proof fade-up delay-4">
             <div className="hero-proof-item">
-              <span className="hero-proof-number">1 día</span>
+              <span className="hero-proof-number">1 mañana</span>
               <span className="hero-proof-label">para tener tu portal activo</span>
             </div>
             <div className="hero-proof-divider"></div>

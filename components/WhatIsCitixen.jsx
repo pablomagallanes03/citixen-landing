@@ -21,12 +21,12 @@ export default function WhatIsCitixen() {
               <tr>
                 <td className="what-is-feature">Qué resuelve</td>
                 <td>Que tu gestión sea visible y validable</td>
-                <td>Que tus vecinos co-decidan la inversión</td>
+                <td>Que tus vecinos prioricen la inversión</td>
               </tr>
               <tr>
                 <td className="what-is-feature">Cómo funciona</td>
                 <td>Portal + consultas + propuestas + transparencia</td>
-                <td>Todo lo anterior + Créditos Cívicos</td>
+                <td>Vecinos asignan créditos a proyectos de su ciudad</td>
               </tr>
               <tr>
                 <td className="what-is-feature">Costo</td>

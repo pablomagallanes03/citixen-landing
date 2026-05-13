@@ -21,7 +21,7 @@ export default function Navbar() {
           <Logo height={32} variant="light" />
         </Link>
         <ul className={`navbar-links${open ? ' active' : ''}`}>
-          <li><Link href="/#comunidad" onClick={close}>Cómo funciona</Link></li>
+          <li><Link href="/#comunidad" onClick={close}>Modo Comunidad</Link></li>
           <li><Link href="/creditos-civicos" onClick={close}>Créditos Cívicos</Link></li>
           <li><Link href="/pricing" onClick={close}>Pricing</Link></li>
           <li>
