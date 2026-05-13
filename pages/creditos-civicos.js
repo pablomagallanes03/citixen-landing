@@ -199,12 +199,12 @@ export default function EconomiaParticipativa() {
                       {/* Proyecto 2 */}
                       <div className="phone-slide phone-slide--2">
                         <div className="phone-project-photo">
-                          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=560&h=280&fit=crop&crop=center" alt="Plaza del barrio" />
-                          <div className="phone-project-category">Espacio público</div>
+                          <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=560&h=280&fit=crop&crop=center" alt="Refugio de animales" />
+                          <div className="phone-project-category">Bienestar animal</div>
                         </div>
                         <div className="phone-project-body">
-                          <div className="phone-project-title">Plaza del barrio Belgrano</div>
-                          <div className="phone-project-desc">Juegos nuevos, iluminación LED y forestación en la plaza principal.</div>
+                          <div className="phone-project-title">Refugio de animales municipal</div>
+                          <div className="phone-project-desc">Construcción de refugio con capacidad para 60 animales rescatados.</div>
                           <div className="phone-progress">
                             <div className="phone-progress-header">
                               <span className="phone-progress-label">Financiamiento</span>
@@ -226,12 +226,12 @@ export default function EconomiaParticipativa() {
                       {/* Proyecto 3 */}
                       <div className="phone-slide phone-slide--3">
                         <div className="phone-project-photo">
-                          <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=560&h=280&fit=crop&crop=center" alt="Punto de reciclaje" />
-                          <div className="phone-project-category">Medio ambiente</div>
+                          <img src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=560&h=280&fit=crop&crop=center" alt="Plaza San Martín" />
+                          <div className="phone-project-category">Espacio público</div>
                         </div>
                         <div className="phone-project-body">
-                          <div className="phone-project-title">Puntos verdes zona sur</div>
-                          <div className="phone-project-desc">Instalación de 8 puntos de reciclaje con separación asistida.</div>
+                          <div className="phone-project-title">Restauración plaza San Martín</div>
+                          <div className="phone-project-desc">Recuperación integral: veredas, bancos, iluminación y forestación.</div>
                           <div className="phone-progress">
                             <div className="phone-progress-header">
                               <span className="phone-progress-label">Financiamiento</span>
