@@ -149,24 +149,23 @@ export default function EconomiaParticipativa() {
             </div>
 
             <div className="ep-hero-mockup fade-up delay-2">
-              <div className="phone-device">
-                <div className="phone-device-speaker"></div>
-                <div className="phone-device-screen">
-                  <div className="phone-status-bar">
-                    <span>9:41</span>
-                    <div className="phone-status-icons">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 0 0-6 0zm-4-4l2 2a7.074 7.074 0 0 1 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><rect x="17" y="4" width="4" height="16" rx="1"/><rect x="11" y="8" width="4" height="12" rx="1"/><rect x="5" y="12" width="4" height="8" rx="1"/></svg>
-                      <div className="phone-battery">
-                        <div className="phone-battery-fill"></div>
+              <div className="iphone-wrapper">
+                <div className="iphone-device">
+                  <div className="iphone-screen">
+                    <div className="iphone-dynamic-island"></div>
+                    <div className="iphone-status-bar">
+                      <span>9:41</span>
+                      <div className="iphone-status-icons">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 0 0-6 0zm-4-4l2 2a7.074 7.074 0 0 1 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><rect x="17" y="4" width="4" height="16" rx="1"/><rect x="11" y="8" width="4" height="12" rx="1"/><rect x="5" y="12" width="4" height="8" rx="1"/></svg>
+                        <div className="iphone-battery"><div className="iphone-battery-fill"></div></div>
                       </div>
                     </div>
-                  </div>
-                  <div className="phone-app-header">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-                    <span>Detalle del proyecto</span>
-                    <div style={{width: 18}}></div>
-                  </div>
+                    <div className="phone-app-header">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+                      <span>Detalle del proyecto</span>
+                      <div style={{width: 18}}></div>
+                    </div>
                   <div className="phone-content">
                     <div className="phone-carousel">
                       {/* Proyecto 1 */}
@@ -252,8 +251,9 @@ export default function EconomiaParticipativa() {
                       </div>
                     </div>
                   </div>
+                    <div className="iphone-home-indicator"></div>
+                  </div>
                 </div>
-                <div className="phone-device-bar"></div>
               </div>
             </div>
           </div>

@@ -1717,57 +1717,92 @@ img { max-width: 100%; display: block; }
   max-width: 580px;
 }
 
-/* Phone device mockup */
+/* iPhone device mockup */
 .ep-hero-mockup {
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1200px;
 }
-.phone-device {
+.iphone-wrapper {
+  transform: rotateY(-8deg) rotateX(4deg);
+  transition: transform 0.6s ease;
+}
+.iphone-wrapper:hover {
+  transform: rotateY(-2deg) rotateX(1deg);
+}
+.iphone-device {
   width: 300px;
-  background: #1a1a1a;
-  border-radius: 44px;
-  padding: 12px;
-  box-shadow: 0 32px 64px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.1);
+  background: linear-gradient(145deg, #2a2a2e 0%, #1a1a1e 50%, #0a0a0e 100%);
+  border-radius: 48px;
+  padding: 10px;
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255,255,255,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.1),
+    -8px 0 20px rgba(0,0,0,0.15),
+    8px 0 20px rgba(0,0,0,0.1);
   position: relative;
 }
-.phone-device-speaker {
-  width: 60px;
-  height: 5px;
-  background: #333;
-  border-radius: 3px;
-  margin: 6px auto 8px;
+/* Side buttons */
+.iphone-device::before {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: 120px;
+  width: 3px;
+  height: 36px;
+  background: linear-gradient(180deg, #3a3a3e, #2a2a2e);
+  border-radius: 0 2px 2px 0;
 }
-.phone-device-screen {
+.iphone-device::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: 100px;
+  width: 3px;
+  height: 28px;
+  background: linear-gradient(180deg, #3a3a3e, #2a2a2e);
+  border-radius: 2px 0 0 2px;
+  box-shadow: 0 44px 0 0 #2a2a2e;
+}
+.iphone-screen {
   background: var(--surface);
-  border-radius: 32px;
+  border-radius: 40px;
   overflow: hidden;
+  position: relative;
 }
-.phone-device-bar {
+
+/* Dynamic Island */
+.iphone-dynamic-island {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100px;
-  height: 4px;
-  background: #555;
-  border-radius: 2px;
-  margin: 10px auto 4px;
+  height: 28px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 10;
 }
 
 /* Status bar */
-.phone-status-bar {
+.iphone-status-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px 4px;
+  padding: 14px 24px 6px;
   background: var(--primary);
   font-size: 12px;
   font-weight: 600;
   color: white;
 }
-.phone-status-icons {
+.iphone-status-icons {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-.phone-battery {
+.iphone-battery {
   width: 20px;
   height: 10px;
   border: 1.5px solid white;
@@ -1775,7 +1810,7 @@ img { max-width: 100%; display: block; }
   padding: 1px;
   position: relative;
 }
-.phone-battery::after {
+.iphone-battery::after {
   content: '';
   position: absolute;
   right: -4px;
@@ -1785,11 +1820,20 @@ img { max-width: 100%; display: block; }
   background: white;
   border-radius: 0 1px 1px 0;
 }
-.phone-battery-fill {
+.iphone-battery-fill {
   width: 75%;
   height: 100%;
   background: white;
   border-radius: 1px;
+}
+
+/* Home indicator */
+.iphone-home-indicator {
+  width: 120px;
+  height: 4px;
+  background: #ccc;
+  border-radius: 2px;
+  margin: 8px auto 10px;
 }
 
 /* App header */
