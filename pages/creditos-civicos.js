@@ -168,39 +168,88 @@ export default function EconomiaParticipativa() {
                     <div style={{width: 18}}></div>
                   </div>
                   <div className="phone-content">
-                    <div className="phone-project-photo">
-                      <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=560&h=280&fit=crop&crop=center" alt="Comedor comunitario" />
-                      <div className="phone-project-category">Infraestructura social</div>
-                    </div>
-                    <div className="phone-project-body">
-                      <div className="phone-project-title">Comedor barrio San Martín</div>
-                      <div className="phone-project-desc">Equipamiento y refacción del comedor comunitario para 120 familias del barrio.</div>
-                      <div className="phone-progress">
-                        <div className="phone-progress-header">
-                          <span className="phone-progress-label">Financiamiento</span>
-                          <span className="phone-progress-pct">62%</span>
+                    <div className="phone-carousel">
+                      {/* Proyecto 1 */}
+                      <div className="phone-slide phone-slide--1">
+                        <div className="phone-project-photo">
+                          <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=560&h=280&fit=crop&crop=center" alt="Comedor comunitario" />
+                          <div className="phone-project-category">Infraestructura social</div>
                         </div>
-                        <div className="phone-progress-bar">
-                          <div className="phone-progress-fill"></div>
-                        </div>
-                        <div className="phone-progress-text">
-                          <span>1.240 CC recaudados</span>
-                          <span>Meta: 2.000 CC</span>
+                        <div className="phone-project-body">
+                          <div className="phone-project-title">Comedor barrio San Martín</div>
+                          <div className="phone-project-desc">Equipamiento y refacción del comedor comunitario para 120 familias.</div>
+                          <div className="phone-progress">
+                            <div className="phone-progress-header">
+                              <span className="phone-progress-label">Financiamiento</span>
+                              <span className="phone-progress-pct">62%</span>
+                            </div>
+                            <div className="phone-progress-bar"><div className="phone-progress-fill" style={{width: '62%'}}></div></div>
+                            <div className="phone-progress-text"><span>1.240 CC</span><span>Meta: 2.000 CC</span></div>
+                          </div>
+                          <div className="phone-supporters">
+                            <div className="phone-supporters-avatars"><div className="phone-avatar"></div><div className="phone-avatar"></div><div className="phone-avatar"></div><div className="phone-avatar"></div></div>
+                            <span>47 vecinos apoyan</span>
+                          </div>
+                          <button className="phone-support-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            Apoyar con mis CC
+                          </button>
                         </div>
                       </div>
-                      <div className="phone-supporters">
-                        <div className="phone-supporters-avatars">
-                          <div className="phone-avatar"></div>
-                          <div className="phone-avatar"></div>
-                          <div className="phone-avatar"></div>
-                          <div className="phone-avatar"></div>
+                      {/* Proyecto 2 */}
+                      <div className="phone-slide phone-slide--2">
+                        <div className="phone-project-photo">
+                          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=560&h=280&fit=crop&crop=center" alt="Plaza del barrio" />
+                          <div className="phone-project-category">Espacio público</div>
                         </div>
-                        <span>47 vecinos apoyan este proyecto</span>
+                        <div className="phone-project-body">
+                          <div className="phone-project-title">Plaza del barrio Belgrano</div>
+                          <div className="phone-project-desc">Juegos nuevos, iluminación LED y forestación en la plaza principal.</div>
+                          <div className="phone-progress">
+                            <div className="phone-progress-header">
+                              <span className="phone-progress-label">Financiamiento</span>
+                              <span className="phone-progress-pct">84%</span>
+                            </div>
+                            <div className="phone-progress-bar"><div className="phone-progress-fill" style={{width: '84%'}}></div></div>
+                            <div className="phone-progress-text"><span>4.200 CC</span><span>Meta: 5.000 CC</span></div>
+                          </div>
+                          <div className="phone-supporters">
+                            <div className="phone-supporters-avatars"><div className="phone-avatar"></div><div className="phone-avatar"></div><div className="phone-avatar"></div><div className="phone-avatar"></div><div className="phone-avatar"></div></div>
+                            <span>112 vecinos apoyan</span>
+                          </div>
+                          <button className="phone-support-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            Apoyar con mis CC
+                          </button>
+                        </div>
                       </div>
-                      <button className="phone-support-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        Apoyar con mis Créditos Cívicos
-                      </button>
+                      {/* Proyecto 3 */}
+                      <div className="phone-slide phone-slide--3">
+                        <div className="phone-project-photo">
+                          <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=560&h=280&fit=crop&crop=center" alt="Punto de reciclaje" />
+                          <div className="phone-project-category">Medio ambiente</div>
+                        </div>
+                        <div className="phone-project-body">
+                          <div className="phone-project-title">Puntos verdes zona sur</div>
+                          <div className="phone-project-desc">Instalación de 8 puntos de reciclaje con separación asistida.</div>
+                          <div className="phone-progress">
+                            <div className="phone-progress-header">
+                              <span className="phone-progress-label">Financiamiento</span>
+                              <span className="phone-progress-pct">35%</span>
+                            </div>
+                            <div className="phone-progress-bar"><div className="phone-progress-fill" style={{width: '35%'}}></div></div>
+                            <div className="phone-progress-text"><span>525 CC</span><span>Meta: 1.500 CC</span></div>
+                          </div>
+                          <div className="phone-supporters">
+                            <div className="phone-supporters-avatars"><div className="phone-avatar"></div><div className="phone-avatar"></div><div className="phone-avatar"></div></div>
+                            <span>23 vecinos apoyan</span>
+                          </div>
+                          <button className="phone-support-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            Apoyar con mis CC
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
