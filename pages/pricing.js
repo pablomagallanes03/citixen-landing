@@ -20,7 +20,7 @@ const tiers = [
       { text: 'Indicadores públicos de gestión', included: true },
       { text: 'Proyectos municipales ilimitados', included: true },
       { text: 'Procesamiento automático de PDFs y Excel', included: true },
-      { text: 'Consultas ciudadanas', included: true },
+      { text: 'Opiná — escuchá a tus vecinos', included: true },
       { text: 'Propuestas vecinales', included: true },
       { text: 'Iniciativas ciudadanas autónomas', included: true },
       { text: 'Panel de gestión con permisos por rol', included: true },
@@ -147,7 +147,7 @@ export default function Pricing() {
             <div className="pricing-faq-grid">
               <div className="pricing-faq-item">
                 <h4>¿Modo Comunidad tiene algún límite?</h4>
-                <p>No. Proyectos ilimitados, consultas ilimitadas, ciudadanos ilimitados. Sin fecha de vencimiento.</p>
+                <p>No. Proyectos ilimitados, temas ilimitados, ciudadanos ilimitados. Sin fecha de vencimiento.</p>
               </div>
               <div className="pricing-faq-item">
                 <h4>¿Hay contrato de permanencia?</h4>

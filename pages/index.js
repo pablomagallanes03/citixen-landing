@@ -31,7 +31,7 @@ export default function Home() {
     <>
       <Head>
         <title>Citixen — Lo que hacés ya existe. Solo falta que se vea.</title>
-        <meta name="description" content="Infraestructura de gestión municipal abierta. Mi Ciudad: portal público, consultas ciudadanas, propuestas vecinales y presupuesto participativo con trazabilidad total. Empezá gratis en una semana." />
+        <meta name="description" content="Infraestructura de gestión municipal abierta. Mi Ciudad: portal público, opinión ciudadana, propuestas vecinales y presupuesto participativo con trazabilidad total. Empezá gratis en una semana." />
         <meta name="keywords" content="citixen, transparencia municipal, participación ciudadana, gobierno abierto, portal municipal, civic tech, presupuesto participativo, créditos cívicos, gestión municipal" />
         <meta property="og:title" content="Citixen — Lo que hacés ya existe. Solo falta que se vea." />
         <meta property="og:description" content="Infraestructura de gestión municipal abierta. Transparencia, participación ciudadana y presupuesto participativo con trazabilidad total." />
@@ -73,7 +73,7 @@ export default function Home() {
               "featureList": [
                 "Mi Ciudad — portal público municipal",
                 "Índice de transparencia verificable",
-                "Consultas ciudadanas",
+                "Opiná — opinión ciudadana",
                 "Propuestas ciudadanas",
                 "Créditos Cívicos",
                 "Panel de gestión gubernamental con perfiles operativos"

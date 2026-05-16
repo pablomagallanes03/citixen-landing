@@ -26,7 +26,7 @@ export default function HowToStart() {
         <div className="section-label fade-up"><span className="bar"></span> Empezar</div>
         <h2 className="section-title fade-up">Activar Citixen es más fácil<br />que armar un Excel.</h2>
         <p className="section-desc fade-up">
-          Después, activás consultas y propuestas.
+          Después, activás Opiná y propuestas.
           Y cuando quieras, Créditos Cívicos. Todo desde el panel.
         </p>
 

@@ -45,7 +45,7 @@ const solution = [
   },
   {
     before: 'Vecinos preguntan en redes',
-    after: 'Consultas ciudadanas: "¿qué calle pavimentamos primero?"',
+    after: 'Opiná: "¿qué calle pavimentamos primero?"',
   },
   {
     before: 'Sin datos de participación',

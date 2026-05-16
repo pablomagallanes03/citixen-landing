@@ -3,10 +3,10 @@ const modes = [
     id: 'community',
     name: 'Modo Comunidad',
     tagline: 'Transparencia y participaci\u00f3n sin complejidad',
-    description: 'Portal p\u00fablico de proyectos municipales, consultas ciudadanas, propuestas vecinales y un \u00edndice de transparencia verificable. Todo lo que necesit\u00e1s para conectar con tus vecinos.',
+    description: 'Portal p\u00fablico de proyectos municipales, opini\u00f3n ciudadana, propuestas vecinales y un \u00edndice de transparencia verificable. Todo lo que necesit\u00e1s para conectar con tus vecinos.',
     includes: [
       'Mi Ciudad — portal público',
-      'Consultas del gobierno',
+      'Opiná — escuchá a tus vecinos',
       'Propuestas ciudadanas',
       '\u00cdndice de transparencia',
       'Digest autom\u00e1tico',

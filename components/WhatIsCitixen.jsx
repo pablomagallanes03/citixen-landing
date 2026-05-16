@@ -25,7 +25,7 @@ export default function WhatIsCitixen() {
               </tr>
               <tr>
                 <td className="what-is-feature">Cómo funciona</td>
-                <td>Portal + consultas + propuestas + transparencia</td>
+                <td>Portal + Opiná + propuestas + transparencia</td>
                 <td>Vecinos asignan créditos a proyectos de su ciudad</td>
               </tr>
               <tr>

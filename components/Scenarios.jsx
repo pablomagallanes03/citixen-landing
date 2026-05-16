@@ -6,7 +6,7 @@ const scenarios = [
   },
   {
     quote: 'Ya tenemos portal web pero nadie lo visita',
-    answer: 'Citixen no es un portal est\u00e1tico. Los vecinos reciben actualizaciones, pueden seguir proyectos, proponer ideas y responder consultas. Modo Comunidad transforma visitantes en ciudadanos activos.',
+    answer: 'Citixen no es un portal est\u00e1tico. Los vecinos reciben actualizaciones, pueden seguir proyectos, proponer ideas y opinar. Modo Comunidad transforma visitantes en ciudadanos activos.',
     icon: '\uD83D\uDCCA',
   },
   {

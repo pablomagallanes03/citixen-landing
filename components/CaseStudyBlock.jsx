@@ -3,7 +3,7 @@ import Link from 'next/link'
 const projects = [
   { name: 'Pavimentación Bv. Colón', meta: 'Avance, presupuesto, fotos, estado', color: 'var(--secondary)' },
   { name: 'Desagüe pluvial zona norte', meta: 'Timeline con fechas y evidencia', color: 'var(--green)' },
-  { name: 'Remodelación plaza central', meta: 'Consulta a vecinos sobre diseño', color: 'var(--primary)' },
+  { name: 'Remodelación plaza central', meta: 'Opiná: ¿qué diseño preferís?', color: 'var(--primary)' },
   { name: 'Luminaria LED barrio sur', meta: 'Propuesta ciudadana adoptada', color: 'var(--accent)' },
 ]
 
@@ -36,7 +36,7 @@ export default function CaseStudyBlock() {
             </div>
             <p className="case-block-insight">
               Con Citixen, cada obra tiene su página. Cada peso tiene trazabilidad.
-              Los vecinos pueden seguir proyectos, proponer ideas y responder consultas.
+              Los vecinos pueden seguir proyectos, proponer ideas y opinar.
             </p>
             <Link href="/caso-de-estudio" className="case-block-link">
               Ver análisis completo →
