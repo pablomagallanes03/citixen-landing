@@ -79,6 +79,15 @@ const gains = [
   'La priorización deja de ser discrecional — es participativa y trazable',
   'Los vecinos dejan de reclamar al municipio y empiezan a decidir entre ellos',
   'La gestión se vuelve auditablemente transparente',
+  'Un reporte mensual público que justifica la inversión con métricas concretas',
+]
+
+const implementation = [
+  { title: 'Activación en menos de un día', desc: 'Sin migración técnica. Sin equipo de sistemas. Sin desarrollo a medida.' },
+  { title: 'Probá antes de comprometerte', desc: 'Modo Comunidad es gratuito sin límite de tiempo. Activá Créditos Cívicos cuando tu ciudad esté lista.' },
+  { title: 'Reversible con un click', desc: 'Si en algún momento no funciona, desactivás. Tus datos siguen siendo tuyos.' },
+  { title: 'Sin contrato de permanencia', desc: 'Sin letra chica. Sin penalidades por discontinuar.' },
+  { title: 'Soporte humano directo', desc: 'Configuración inicial acompañada. Atención por persona, no por bot.' },
 ]
 
 const faqs = [
@@ -382,6 +391,31 @@ export default function EconomiaParticipativa() {
               </ul>
             </div>
           </div>
+
+          {/* Para el intendente que está leyendo */}
+          <div className="ep-impl-band fade-up">
+            <div className="ep-impl-header">
+              <span className="ep-impl-eyebrow">Si trabajás en un municipio</span>
+              <h3 className="ep-impl-title">La implementación, sin secretos.</h3>
+              <p className="ep-impl-intro">
+                Lo más caro de activar tecnología en un municipio suele ser el riesgo. Acá no hay.
+              </p>
+            </div>
+            <div className="ep-impl-grid">
+              {implementation.map((item, i) => (
+                <div className="ep-impl-item" key={i}>
+                  <svg className="ep-impl-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                    <path d="M8 12l3 3 5-5"/>
+                  </svg>
+                  <div>
+                    <div className="ep-impl-item-title">{item.title}</div>
+                    <div className="ep-impl-item-desc">{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -400,34 +434,50 @@ export default function EconomiaParticipativa() {
         </div>
       </section>
 
-      {/* ACTO 7 — CTA final */}
+      {/* ACTO 7 — CTA final dual */}
       <section className="ep-cta">
         <div className="container">
-          <div className="ep-cta-content fade-up">
+          <div className="ep-cta-header fade-up">
             <h2 className="ep-cta-title">No esperes a que cambie solo</h2>
             <p className="ep-cta-desc">
-              Cada ciudad que se suma a Citixen empezó con vecinos que decidieron que las cosas
-              podían funcionar mejor. No con un intendente visionario. No con un presupuesto millonario.
-              Con gente que dijo: &ldquo;yo quiero participar&rdquo;.
+              Cada ciudad que se suma a Citixen empezó con dos tipos de personas:
+              vecinos que decidieron pedirlo, y municipios que decidieron escucharlos.
             </p>
-            <p className="ep-cta-action">
-              <strong>Descargá la app. Registrate. Elegí tu ciudad.</strong>
-            </p>
-            <p className="ep-cta-explain">
-              Si tu municipio ya está en Citixen, empezá a participar hoy.<br />
-              Si todavía no está, tu registro es la primera señal de que debería estarlo.
-            </p>
-            <div className="ep-cta-buttons">
-              <a href="https://play.google.com/store/apps/details?id=tech.citixen.app" target="_blank" rel="noopener noreferrer" className="btn-primary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          </div>
+
+          <div className="ep-cta-dual">
+            <div className="ep-cta-track ep-cta-track--citizen fade-up delay-1">
+              <div className="ep-cta-track-label">Si sos vecino</div>
+              <h3 className="ep-cta-track-title">Empezá a participar hoy</h3>
+              <p className="ep-cta-track-desc">
+                Descargá la app, registrate y elegí tu ciudad.
+                Si tu municipio ya usa Citixen, ya podés participar.
+                Si todavía no, tu registro es la primera señal de que debería.
+              </p>
+              <a href="https://play.google.com/store/apps/details?id=tech.citixen.app" target="_blank" rel="noopener noreferrer" className="ep-cta-track-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302a1 1 0 0 1 0 1.38l-2.302 2.302L15.396 13l2.302-2.492zM5.864 2.658L16.8 9.291l-2.302 2.302L5.864 2.658z"/>
                 </svg>
                 Descargar en Google Play
               </a>
             </div>
-            <p className="ep-cta-gov">
-              ¿Trabajás en un municipio? <Link href="/#acceso">Agendá una conversación &rarr;</Link>
-            </p>
+
+            <div className="ep-cta-track ep-cta-track--gov fade-up delay-2">
+              <div className="ep-cta-track-label">Si trabajás en un municipio</div>
+              <h3 className="ep-cta-track-title">Activá Citixen en tu ciudad</h3>
+              <p className="ep-cta-track-desc">
+                Modo Comunidad es gratuito sin límite de tiempo.
+                Probá antes de evaluar Créditos Cívicos.
+                Sin desarrollo a medida, sin contrato, sin penalidades.
+              </p>
+              <Link href="/#acceso" className="ep-cta-track-btn ep-cta-track-btn--gov">
+                Agendá una conversación
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -97,15 +97,15 @@ export default function TransparencyMethodology() {
             <span className="section-number">02</span>
             <h2>Scope &amp; eligibility</h2>
             <p>
-              The CTI applies to local governments operating in <strong>Citixen Light</strong> mode.
+              The CTI applies to local governments operating in <strong>Community mode</strong>.
               Each government manages a portfolio of public projects published on their transparency
               portal.
             </p>
             <h3>Eligible projects</h3>
             <p>
               Only projects with <code>projectType: &quot;light_public&quot;</code> are included. Cancelled
-              projects are excluded from all calculations. Projects from Citixen Full mode (funded
-              projects with Civic Credits) are not part of this index.
+              projects are excluded from all calculations. Projects from Civic Credits mode (funded
+              projects with citizen-allocated credits) are not part of this index.
             </p>
             <h3>Minimum data threshold</h3>
             <div className="callout callout-warning">
@@ -330,11 +330,11 @@ export default function TransparencyMethodology() {
               <div className="limitation-item">
                 <h4>Mitigation: social pressure</h4>
                 <p>
-                  While the CTI v1.0 has no external audit, Citixen&apos;s Layer 2 (citizen participation)
-                  introduces social counter-pressure: public comments, citizen proposals, and community
-                  reports create reputational costs for governments that manipulate data. The combination
-                  of self-reported metrics and social oversight produces a more robust signal than
-                  either mechanism alone.
+                  While the CTI v1.0 has no external audit, Citixen&apos;s participation features
+                  (citizen consultations, proposals, and project comments) introduce social
+                  counter-pressure: reputational costs for governments that manipulate data. The
+                  combination of self-reported metrics and social oversight produces a more robust
+                  signal than either mechanism alone.
                 </p>
               </div>
             </div>

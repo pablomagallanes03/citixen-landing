@@ -17,9 +17,10 @@ const tiers = [
     highlighted: false,
     features: [
       { text: 'Mi Ciudad — portal público', included: true },
-      { text: 'Indicadores públicos de gestión', included: true },
+      { text: 'Reporte mensual público descargable (PDF)', included: true },
+      { text: 'Balance Ciudadano — rendición visual con IA', included: true },
+      { text: 'Índice de transparencia verificable', included: true },
       { text: 'Proyectos municipales ilimitados', included: true },
-      { text: 'Procesamiento automático de PDFs y Excel', included: true },
       { text: 'Opiná — escuchá a tus vecinos', included: true },
       { text: 'Propuestas vecinales', included: true },
       { text: 'Iniciativas ciudadanas autónomas', included: true },

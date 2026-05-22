@@ -29,8 +29,20 @@ const features = [
         <polyline points="10 9 9 9 8 9"/>
       </svg>
     ),
-    title: 'Datos sin carga manual',
-    desc: 'Subí un balance en PDF o un Excel y Citixen lo convierte automáticamente en información clara, fácil de leer para cualquier vecino y lista para publicar en tu portal. Sin tipear datos a mano, sin copiar y pegar.',
+    title: 'Balance Ciudadano',
+    badge: 'con IA',
+    desc: 'Subí el balance ejecutado en PDF o Excel y Citixen lo convierte automáticamente en una rendición visual, comparable y compartible. Sin tipear datos a mano, sin copiar y pegar.',
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+    ),
+    title: 'Reporte Mensual público',
+    desc: 'Un PDF descargable cada mes con las métricas de participación, transparencia y gestión de tu municipio. Sirve para justificar la plataforma ante el Concejo Deliberante y para mostrar progreso real a tus vecinos.',
   },
 ]
 
@@ -85,7 +97,10 @@ export default function CommunityMode() {
           {features.map((f, i) => (
             <div className={`community-feature fade-up delay-${(i % 3) + 1}`} key={i}>
               <div className="community-feature-icon">{f.icon}</div>
-              <h3 className="community-feature-title">{f.title}</h3>
+              <h3 className="community-feature-title">
+                {f.title}
+                {f.badge && <span className="community-feature-badge">{f.badge}</span>}
+              </h3>
               <p className="community-feature-desc">{f.desc}</p>
             </div>
           ))}

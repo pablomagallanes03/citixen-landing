@@ -8,7 +8,7 @@ const steps = [
   {
     n: '2',
     title: 'Cargá tus proyectos actuales',
-    desc: 'Usá la obra pública que ya tenés. Si tenés balances en PDF o Excel, Citixen los procesa automáticamente y los convierte en datos publicables. No necesitás crear nada nuevo.',
+    desc: 'Usá la obra pública que ya tenés. Subí tus balances en PDF o Excel y el Balance Ciudadano los convierte en rendición visual, automáticamente. No necesitás crear nada nuevo.',
     time: '30 minutos',
   },
   {

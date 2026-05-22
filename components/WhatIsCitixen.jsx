@@ -13,8 +13,32 @@ export default function WhatIsCitixen() {
             <thead>
               <tr>
                 <th></th>
-                <th className="what-is-col-community">Modo Comunidad</th>
-                <th className="what-is-col-economy">Créditos Cívicos</th>
+                <th className="what-is-col-community">
+                  <div className="what-is-col-header">
+                    <div className="what-is-col-icon what-is-col-icon--community">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                      </svg>
+                    </div>
+                    <div className="what-is-col-name">Modo Comunidad</div>
+                    <div className="what-is-col-price what-is-col-price--free">Gratis</div>
+                  </div>
+                </th>
+                <th className="what-is-col-economy">
+                  <div className="what-is-col-header">
+                    <div className="what-is-col-icon what-is-col-icon--economy">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v8M8 12h8"/>
+                      </svg>
+                    </div>
+                    <div className="what-is-col-name">Créditos Cívicos</div>
+                    <div className="what-is-col-price what-is-col-price--cc">Personalizado</div>
+                  </div>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -27,6 +51,11 @@ export default function WhatIsCitixen() {
                 <td className="what-is-feature">Cómo funciona</td>
                 <td>Portal + Opiná + propuestas + transparencia</td>
                 <td>Vecinos asignan créditos a proyectos de su ciudad</td>
+              </tr>
+              <tr>
+                <td className="what-is-feature">Salida pública</td>
+                <td>Reporte mensual descargable + Balance Ciudadano visual</td>
+                <td>Todo lo anterior + trazabilidad económica completa</td>
               </tr>
               <tr>
                 <td className="what-is-feature">Costo</td>

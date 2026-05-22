@@ -23,6 +23,10 @@ const faqs = [
     answer: 'No. La plataforma es autoservicio. Si tu equipo puede usar una planilla de Excel, puede usar Citixen. Y tenés soporte humano incluido para la configuración inicial y cualquier duda posterior.',
   },
   {
+    question: '¿Cómo justifico la plataforma ante el Concejo Deliberante?',
+    answer: 'Cada mes Citixen genera automáticamente un reporte mensual público en PDF con métricas concretas: ciudadanos activos, nuevos registros, transparencia, proyectos publicados, propuestas y opiniones. Lo bajás, lo presentás en la próxima sesión, y queda como recurso público en el portal. No tenés que armar nada a mano.',
+  },
+  {
     question: '¿Qué son los Créditos Cívicos?',
     answer: <>Son capacidad de decisión ciudadana sobre recursos públicos. Se acreditan a partir de tus obligaciones fiscales — impuestos, tasas, multas. No son dinero, no se compran, no se venden. Cuando asignás CC a un proyecto, estás participando en la priorización colectiva de iniciativas de tu ciudad. <Link href="/creditos-civicos" style={{ color: 'var(--primary)', fontWeight: 600 }}>Ver explicación completa &rarr;</Link></>,
   },

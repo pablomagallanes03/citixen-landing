@@ -6,13 +6,13 @@ export default function PricingSummary() {
       <div className="container">
         <h2 className="section-title fade-up" style={{ textAlign: 'center' }}>¿Cuánto cuesta?</h2>
         <div className="pricing-summary-grid fade-up delay-1">
-          <div className="pricing-summary-card">
-            <div className="pricing-summary-name" style={{ color: 'var(--primary)' }}>Modo Comunidad</div>
+          <div className="pricing-summary-card pricing-summary-card--community">
+            <div className="pricing-summary-name">Modo Comunidad</div>
             <div className="pricing-summary-price">Gratis</div>
             <div className="pricing-summary-sub">Sin límite de tiempo</div>
           </div>
-          <div className="pricing-summary-card">
-            <div className="pricing-summary-name" style={{ color: 'var(--accent)' }}>Créditos Cívicos</div>
+          <div className="pricing-summary-card pricing-summary-card--cc">
+            <div className="pricing-summary-name">Créditos Cívicos</div>
             <div className="pricing-summary-price">Personalizado</div>
             <div className="pricing-summary-sub">Según el tamaño de tu ciudad</div>
           </div>

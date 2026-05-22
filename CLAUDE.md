@@ -70,7 +70,15 @@ La landing comunica de arriba hacia abajo: primero transparencia y participació
 
 - **Framework:** Next.js 14 (Pages Router)
 - **Estilos:** CSS custom en `styles/globals.css` + `styles/methodology.css`. Variables CSS en `:root`.
-- **Paleta:** `--primary: #3477C1`, `--secondary: #3C9ECE`, `--accent: #F7794E`, `--dark: #020202`, `--bg: #E7ECF0`, `--surface: #FFFFFF`
+- **Paleta de marca (Citixen Brand Blue — definida mayo 2026):**
+  - `--primary: #0A3D91` (navy medio — solid color institucional sobre blanco)
+  - `--primary-mid: #032C7A` (navy profundo — paso intermedio del gradiente)
+  - `--primary-dark: #021B4E` (navy más profundo — navbar, fondos densos, top del gradiente)
+  - `--secondary: #3C9ECE` (celeste — complementario; sin cambio)
+  - `--accent: #F7794E` (coral — CTAs de alto impacto; sin cambio)
+  - `--dark: #020202`, `--bg: #E7ECF0`, `--surface: #FFFFFF`
+- **Gradiente oficial de marca:** `--citixen-gradient: linear-gradient(180deg, #021B4E 0%, #032C7A 45%, #0A3D91 100%)`. Vertical: navy más profundo arriba → navy medio abajo. Usado en TODOS los heroes (Hero index, ep-hero `/creditos-civicos`, ep-cta `/creditos-civicos`, methodology-hero `/transparency-methodology`).
+- **Regla — navbar:** usa `--primary-dark` solid en default y scrolled. Esto da continuidad visual con el top del gradiente del Hero (también `#021B4E`) — la transición navbar→hero es invisible.
 - **Fuente:** Inter (Google Fonts)
 - **Animaciones:** IntersectionObserver + `.fade-up` + CSS keyframes
 - **Deploy:** Vercel (`origin` remote)
@@ -113,6 +121,7 @@ La landing comunica de arriba hacia abajo: primero transparencia y participació
 | Target primario | Gobiernos locales (no ciudadanos, no ONGs, no empresas) |
 | Hero visual | Mockup de portal web (no mockup de app móvil) |
 | CTA primario | Self-service ("Activar Mi Ciudad"), no "Agendar demo" |
+| Citixen Brand Blue | Gradiente vertical `#021B4E → #032C7A → #0A3D91` definido mayo 2026 como identidad de marca. Reemplaza los azules cielo más claros previos (`#3477C1` y derivados). Usado en heroes, navbar, buttons primary, mockups, accents. Variable: `--citixen-gradient`. |
 
 ---
 

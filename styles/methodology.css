@@ -8,7 +8,7 @@
 
 /* Hero */
 .methodology-hero {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary) 100%);
+  background: var(--citixen-gradient);
   padding: 80px 0 64px;
   color: white;
 }
@@ -160,7 +160,7 @@
 .methodology-section code {
   font-family: 'SF Mono', 'Fira Code', monospace;
   font-size: 13px;
-  background: rgba(52,119,193,0.08);
+  background: rgba(10,61,145,0.08);
   color: var(--primary);
   padding: 2px 6px;
   border-radius: 4px;
@@ -227,7 +227,7 @@
   font-size: 14px;
   font-weight: 700;
   color: var(--primary);
-  background: rgba(52,119,193,0.08);
+  background: rgba(10,61,145,0.08);
   padding: 4px 12px;
   border-radius: 8px;
   white-space: nowrap;
