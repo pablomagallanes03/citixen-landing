@@ -84,7 +84,7 @@ const gains = [
 
 const implementation = [
   { title: 'Activación en menos de un día', desc: 'Sin migración técnica. Sin equipo de sistemas. Sin desarrollo a medida.' },
-  { title: 'Probá antes de comprometerte', desc: 'Modo Comunidad es gratuito sin límite de tiempo. Activá Créditos Cívicos cuando tu ciudad esté lista.' },
+  { title: 'Probá antes de comprometerte', desc: 'Empezá gratis con Modo Comunidad. Activá Créditos Cívicos cuando tu ciudad esté lista.' },
   { title: 'Reversible con un click', desc: 'Si en algún momento no funciona, desactivás. Tus datos siguen siendo tuyos.' },
   { title: 'Sin contrato de permanencia', desc: 'Sin letra chica. Sin penalidades por discontinuar.' },
   { title: 'Soporte humano directo', desc: 'Configuración inicial acompañada. Atención por persona, no por bot.' },
@@ -466,7 +466,7 @@ export default function EconomiaParticipativa() {
               <div className="ep-cta-track-label">Si trabajás en un municipio</div>
               <h3 className="ep-cta-track-title">Activá Citixen en tu ciudad</h3>
               <p className="ep-cta-track-desc">
-                Modo Comunidad es gratuito sin límite de tiempo.
+                Empezá gratis con Modo Comunidad, sin tarjeta.
                 Probá antes de evaluar Créditos Cívicos.
                 Sin desarrollo a medida, sin contrato, sin penalidades.
               </p>

@@ -9,7 +9,7 @@ const tiers = [
     id: 'community',
     name: 'Modo Comunidad',
     price: 'Gratis',
-    priceSub: 'Sin límite de tiempo',
+    priceSub: 'Empezá sin tarjeta',
     description: 'Todo lo que necesitás para que tu gestión municipal sea visible, medible y validable por tus vecinos.',
     color: 'var(--primary)',
     cta: 'Activar Mi Ciudad',
@@ -72,9 +72,9 @@ export default function Pricing() {
     <>
       <Head>
         <title>Pricing — Citixen</title>
-        <meta name="description" content="Modo Comunidad es gratuito. Créditos Cívicos tiene un costo accesible que depende del tamaño de tu ciudad. Sin contratos de permanencia." />
+        <meta name="description" content="Empezá gratis con Modo Comunidad. Créditos Cívicos tiene un costo accesible que depende del tamaño de tu ciudad. Sin contratos de permanencia." />
         <meta property="og:title" content="Pricing — Citixen" />
-        <meta property="og:description" content="Modo Comunidad gratuito, sin límite de tiempo. Créditos Cívicos con costo accesible." />
+        <meta property="og:description" content="Modo Comunidad: empezá gratis. Créditos Cívicos con costo accesible." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar />
@@ -83,7 +83,7 @@ export default function Pricing() {
           <div className="pricing-header">
             <h1 className="section-title fade-up">Un producto, dos modos.<br />Empezá gratis.</h1>
             <p className="section-desc fade-up" style={{ textAlign: 'center', margin: '0 auto 56px' }}>
-              Modo Comunidad es gratuito sin límite de tiempo. Cuando tu ciudad esté lista,
+              Empezá gratis con Modo Comunidad y, cuando tu ciudad esté lista,
               activá Créditos Cívicos desde el panel. Es un switch, no una migración.
             </p>
           </div>
@@ -148,7 +148,7 @@ export default function Pricing() {
             <div className="pricing-faq-grid">
               <div className="pricing-faq-item">
                 <h4>¿Modo Comunidad tiene algún límite?</h4>
-                <p>No. Proyectos ilimitados, temas ilimitados, ciudadanos ilimitados. Sin fecha de vencimiento.</p>
+                <p>No hay límites operativos: proyectos, temas y ciudadanos ilimitados. Empezá gratis sin tarjeta.</p>
               </div>
               <div className="pricing-faq-item">
                 <h4>¿Hay contrato de permanencia?</h4>

@@ -117,7 +117,7 @@ La landing comunica de arriba hacia abajo: primero transparencia y participació
 | Nombre de los créditos | "Créditos Cívicos" en español, "Civic Credits" en código. NUNCA "Civic Coins". |
 | Modelo de adopción | 2 modos progresivos (Comunidad + Créditos Cívicos). Internamente `"light"` y `"full"` en BD. |
 | Nombre del segundo modo | "Créditos Cívicos" en UI visible. NO "Economía Participativa" (término académico preexistente con carga ideológica). Renombrado mayo 2026. En código/BD sigue siendo `"full"`. |
-| Modo Comunidad gratuito | Sin límite de tiempo. No es freemium con fecha de vencimiento. |
+| Pricing Modo Comunidad | Trial gratuito de 6 meses + licencia anual a precio accesible (monto pendiente de definir — mayo 2026). Durante el trial, sin tarjeta y sin límites operativos. No prometer "gratis para siempre" en copy ni metadata. |
 | Target primario | Gobiernos locales (no ciudadanos, no ONGs, no empresas) |
 | Hero visual | Mockup de portal web (no mockup de app móvil) |
 | CTA primario | Self-service ("Activar Mi Ciudad"), no "Agendar demo" |

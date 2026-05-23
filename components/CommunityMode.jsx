@@ -120,7 +120,7 @@ export default function CommunityMode() {
         <div className="community-footer fade-up">
           <div className="community-footer-item">
             <span className="community-footer-label">Costo</span>
-            <span className="community-footer-value community-footer-free">Gratuito, sin límite de tiempo</span>
+            <span className="community-footer-value community-footer-free">Empezá gratis, sin tarjeta</span>
           </div>
           <div className="community-footer-divider"></div>
           <div className="community-footer-item">

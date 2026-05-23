@@ -9,7 +9,7 @@ export default function PricingSummary() {
           <div className="pricing-summary-card pricing-summary-card--community">
             <div className="pricing-summary-name">Modo Comunidad</div>
             <div className="pricing-summary-price">Gratis</div>
-            <div className="pricing-summary-sub">Sin límite de tiempo</div>
+            <div className="pricing-summary-sub">Empezá sin tarjeta</div>
           </div>
           <div className="pricing-summary-card pricing-summary-card--cc">
             <div className="pricing-summary-name">Créditos Cívicos</div>

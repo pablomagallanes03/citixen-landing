@@ -4,7 +4,7 @@ import Link from 'next/link'
 const faqs = [
   {
     question: '¿Cuánto cuesta?',
-    answer: 'Modo Comunidad es gratuito, sin límite de tiempo. Créditos Cívicos tiene un costo mensual que depende del tamaño de tu ciudad. Lo definimos juntos después de la primera conversación. Sin contratos de permanencia.',
+    answer: 'Modo Comunidad: empezá gratis sin tarjeta. Créditos Cívicos tiene un costo que depende del tamaño de tu ciudad. Lo definimos juntos después de la primera conversación. Sin contratos de permanencia.',
   },
   {
     question: '¿Necesito aprobación del Concejo Deliberante?',
