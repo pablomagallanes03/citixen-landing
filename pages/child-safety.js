@@ -115,7 +115,7 @@ export default function ChildSafety() {
                   disponible y se procesa con prioridad crítica.</li>
                 <li><strong>Reporte por correo electrónico:</strong> cualquier persona —usuaria o no de
                   la plataforma— puede reportar contenido relacionado con CSAE/CSAM enviando un correo a{' '}
-                  <a href="mailto:hello@citixen.org">hello@citixen.org</a> con el asunto
+                  <a href="mailto:legal@citixen.org">legal@citixen.org</a> con el asunto
                   &ldquo;Reporte CSAE&rdquo;.</li>
                 <li><strong>Procesamiento prioritario:</strong> los reportes de seguridad infantil tienen
                   prioridad máxima sobre cualquier otra cola de moderación y son atendidos por personal
@@ -241,9 +241,7 @@ export default function ChildSafety() {
                 República Argentina
               </p>
               <p>
-                Reportes CSAE / consultas regulatorias:{' '}
-                <a href="mailto:hello@citixen.org">hello@citixen.org</a><br />
-                Consultas legales:{' '}
+                Punto de contacto designado para reportes CSAE y consultas de autoridades regulatorias:{' '}
                 <a href="mailto:legal@citixen.org">legal@citixen.org</a>
               </p>
               <p>
