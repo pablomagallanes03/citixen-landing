@@ -3,6 +3,7 @@ export default function Hero() {
     <section className="hero">
       <div className="container hero-inner">
         <div className="hero-content">
+          <div className="hero-eyebrow fade-up">Gobierno</div>
           <h1 className="fade-up delay-1">
             Lo que hacés ya existe.<br />Solo falta que se vea.
           </h1>
@@ -13,7 +14,7 @@ export default function Hero() {
             para que los vecinos prioricen la inversión.
           </p>
           <div className="hero-buttons fade-up delay-3">
-            <a href="#comunidad" className="btn-primary">
+            <a href="#gobierno" className="btn-primary">
               Ver cómo funciona
             </a>
             <a href="#acceso" className="btn-secondary">
@@ -39,19 +40,6 @@ export default function Hero() {
         </div>
 
         <div className="hero-mockup fade-up delay-2">
-          <div className="hero-cc-tag">
-            <div className="hero-cc-tag-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 8v8M8 12h8"/>
-              </svg>
-            </div>
-            <div className="hero-cc-tag-body">
-              <div className="hero-cc-tag-label">Próximo nivel</div>
-              <div className="hero-cc-tag-title">+ Créditos Cívicos</div>
-              <div className="hero-cc-tag-desc">Activá cuando estés listo</div>
-            </div>
-          </div>
           <div className="portal-frame">
             <div className="portal-browser-bar">
               <div className="portal-dots">

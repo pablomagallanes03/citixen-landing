@@ -1,6 +1,6 @@
 export default function WhatIsCitixen() {
   return (
-    <section className="what-is-section" id="comunidad">
+    <section className="what-is-section" id="gobierno">
       <div className="container">
         <div className="section-label fade-up"><span className="bar"></span> Qué es Citixen</div>
         <h2 className="section-title fade-up">Gestión municipal abierta.<br />Dos modos, un mismo sistema.</h2>
@@ -23,7 +23,8 @@ export default function WhatIsCitixen() {
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                       </svg>
                     </div>
-                    <div className="what-is-col-name">Modo Comunidad</div>
+                    <div className="what-is-col-name">Empezá publicando</div>
+                    <div className="what-is-col-sub">Modo Comunidad</div>
                     <div className="what-is-col-price what-is-col-price--free">Gratis</div>
                   </div>
                 </th>
@@ -35,7 +36,8 @@ export default function WhatIsCitixen() {
                         <path d="M12 8v8M8 12h8"/>
                       </svg>
                     </div>
-                    <div className="what-is-col-name">Créditos Cívicos</div>
+                    <div className="what-is-col-name">Sumá presupuesto participativo</div>
+                    <div className="what-is-col-sub">Créditos Cívicos</div>
                     <div className="what-is-col-price what-is-col-price--cc">Personalizado</div>
                   </div>
                 </th>

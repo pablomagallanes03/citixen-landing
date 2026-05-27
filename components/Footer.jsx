@@ -19,10 +19,9 @@ export default function Footer() {
           <div>
             <h4>Plataforma</h4>
             <ul>
-              <li><Link href="/#comunidad">Modo Comunidad</Link></li>
-              <li><Link href="/creditos-civicos">Créditos Cívicos</Link></li>
+              <li><Link href="/#gobierno">Soy gobierno</Link></li>
+              <li><Link href="/soyvecino">Soy vecino</Link></li>
               <li><Link href="/pricing">Pricing</Link></li>
-              <li><Link href="/#empezar">Empezar</Link></li>
               <li><Link href="/#acceso">Contacto</Link></li>
             </ul>
           </div>

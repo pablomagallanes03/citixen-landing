@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     question: '¿Qué son los Créditos Cívicos?',
-    answer: <>Son capacidad de decisión ciudadana sobre recursos públicos. Se acreditan a partir de tus obligaciones fiscales — impuestos, tasas, multas. No son dinero, no se compran, no se venden. Cuando asignás CC a un proyecto, estás participando en la priorización colectiva de iniciativas de tu ciudad. <Link href="/creditos-civicos" style={{ color: 'var(--primary)', fontWeight: 600 }}>Ver explicación completa &rarr;</Link></>,
+    answer: <>Son capacidad de decisión ciudadana sobre recursos públicos. Se acreditan a partir de tus obligaciones fiscales — impuestos, tasas, multas. No son dinero, no se compran, no se venden. Cuando asignás CC a un proyecto, estás participando en la priorización colectiva de iniciativas de tu ciudad. <Link href="/soyvecino" style={{ color: 'var(--primary)', fontWeight: 600 }}>Ver explicación completa &rarr;</Link></>,
   },
   {
     question: '¿Mis datos están seguros?',

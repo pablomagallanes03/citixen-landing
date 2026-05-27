@@ -21,8 +21,8 @@ export default function Navbar() {
           <Logo height={32} variant="light" />
         </Link>
         <ul className={`navbar-links${open ? ' active' : ''}`}>
-          <li><Link href="/#comunidad" onClick={close}>Modo Comunidad</Link></li>
-          <li><Link href="/creditos-civicos" onClick={close}>Créditos Cívicos</Link></li>
+          <li><Link href="/#gobierno" onClick={close}>Soy gobierno</Link></li>
+          <li><Link href="/soyvecino" onClick={close}>Soy vecino</Link></li>
           <li><Link href="/pricing" onClick={close}>Pricing</Link></li>
           <li>
             <Link href="/#acceso" className="navbar-cta" onClick={close}>

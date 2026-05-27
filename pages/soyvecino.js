@@ -130,16 +130,17 @@ export default function EconomiaParticipativa() {
   return (
     <>
       <Head>
-        <title>Créditos Cívicos — Citixen</title>
-        <meta name="description" content="Pagás impuestos. ¿Alguna vez pudiste decidir qué se hace con ellos? Con los Créditos Cívicos, tu contribución fiscal se convierte en capacidad de decisión real sobre proyectos de tu ciudad." />
-        <meta property="og:title" content="Créditos Cívicos — Citixen" />
+        <title>Soy vecino — Citixen</title>
+        <meta name="description" content="Pagás impuestos. ¿Alguna vez pudiste decidir qué se hace con ellos? Con Citixen, tu contribución fiscal se convierte en capacidad de decisión real sobre proyectos de tu ciudad." />
+        <meta property="og:title" content="Soy vecino — Citixen" />
         <meta property="og:description" content="Pagás impuestos. ¿Alguna vez pudiste decidir qué se hace con ellos? Con Citixen, tu contribución se convierte en decisión." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://citixen.org/creditos-civicos" />
+        <meta property="og:url" content="https://citixen.org/soyvecino" />
         <meta property="og:image" content="https://citixen.org/og-image.png" />
         <meta property="og:locale" content="es_AR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://citixen.org/soyvecino" />
       </Head>
       <Navbar />
 
@@ -148,6 +149,7 @@ export default function EconomiaParticipativa() {
         <div className="container">
           <div className="ep-hero-inner">
             <div className="ep-hero-content fade-up">
+              <div className="ep-hero-eyebrow">Sos vecino</div>
               <h1 className="ep-hero-title">
                 Pagás impuestos.<br />
                 <span className="ep-hero-highlight">¿Alguna vez pudiste decidir qué se hace con ellos?</span>

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
+import VecinoBanner from '../components/VecinoBanner'
 import Problem from '../components/Problem'
 import WhatIsCitixen from '../components/WhatIsCitixen'
 import CommunityMode from '../components/CommunityMode'
@@ -30,11 +31,13 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Citixen — Lo que hacés ya existe. Solo falta que se vea.</title>
-        <meta name="description" content="Infraestructura de gestión municipal abierta. Mi Ciudad: portal público, opinión ciudadana, propuestas vecinales y presupuesto participativo con trazabilidad total. Empezá gratis en una semana." />
-        <meta name="keywords" content="citixen, transparencia municipal, participación ciudadana, gobierno abierto, portal municipal, civic tech, presupuesto participativo, créditos cívicos, gestión municipal" />
-        <meta property="og:title" content="Citixen — Lo que hacés ya existe. Solo falta que se vea." />
-        <meta property="og:description" content="Infraestructura de gestión municipal abierta. Transparencia, participación ciudadana y presupuesto participativo con trazabilidad total." />
+        <title>Citixen | Transparencia, participación y gestión ciudadana</title>
+        <meta name="description" content="Citixen es la plataforma argentina que ayuda a los municipios a publicar sus proyectos, escuchar a sus vecinos y gestionar presupuesto participativo con trazabilidad pública." />
+        <meta name="keywords" content="citixen, transparencia municipal, participación ciudadana, gobierno abierto, portal de transparencia, gestión municipal, presupuesto participativo, créditos cívicos, civic tech argentina, software para municipios" />
+        <meta property="og:title" content="Citixen | Transparencia, participación y gestión ciudadana" />
+        <meta property="og:description" content="Plataforma para que los municipios publiquen sus proyectos, escuchen a sus vecinos y gestionen presupuesto participativo con trazabilidad pública." />
+        <meta property="og:site_name" content="Citixen" />
+        <link rel="canonical" href="https://citixen.org/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://citixen.org" />
         <meta property="og:image" content="https://citixen.org/og-image.png" />
@@ -49,34 +52,63 @@ export default function Home() {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "Citixen",
-              "applicationCategory": "GovernmentApplication",
-              "description": "Infraestructura de gestión municipal abierta. Mi Ciudad: portal público, participación ciudadana y presupuesto participativo con trazabilidad total.",
-              "operatingSystem": "Web, Android, iOS",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "description": "Modo Comunidad gratuito"
-              },
-              "author": {
-                "@type": "Organization",
-                "name": "Citixen Technologies SAS",
-                "url": "https://citixen.org",
-                "foundingDate": "2025",
-                "areaServed": {
-                  "@type": "Place",
-                  "name": "Argentina"
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://citixen.org/#organization",
+                  "name": "Citixen",
+                  "legalName": "Citixen Technologies SAS",
+                  "url": "https://citixen.org",
+                  "logo": "https://citixen.org/pictures/logo-citixen.svg",
+                  "foundingDate": "2025",
+                  "description": "Plataforma de transparencia y participación ciudadana para gobiernos locales en Argentina y América Latina.",
+                  "areaServed": {
+                    "@type": "Place",
+                    "name": "Argentina"
+                  },
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "hello@citixen.org",
+                    "contactType": "customer support",
+                    "availableLanguage": ["Spanish"]
+                  },
+                  "sameAs": [
+                    "https://citixen.org",
+                    "https://citixen.tech"
+                  ]
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://citixen.org/#website",
+                  "url": "https://citixen.org",
+                  "name": "Citixen",
+                  "inLanguage": "es-AR",
+                  "publisher": { "@id": "https://citixen.org/#organization" }
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "Citixen",
+                  "applicationCategory": "GovernmentApplication",
+                  "applicationSubCategory": "CivicTechnology",
+                  "description": "Plataforma para que los municipios publiquen sus proyectos, escuchen a sus vecinos y gestionen presupuesto participativo con trazabilidad pública.",
+                  "operatingSystem": "Web, Android, iOS",
+                  "url": "https://citixen.org",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD",
+                    "description": "Modo Comunidad gratuito"
+                  },
+                  "author": { "@id": "https://citixen.org/#organization" },
+                  "featureList": [
+                    "Portal de transparencia municipal",
+                    "Índice de transparencia verificable",
+                    "Consultas y opinión ciudadana",
+                    "Propuestas vecinales",
+                    "Presupuesto participativo con Créditos Cívicos",
+                    "Panel de gestión municipal con perfiles operativos"
+                  ]
                 }
-              },
-              "featureList": [
-                "Mi Ciudad — portal público municipal",
-                "Índice de transparencia verificable",
-                "Opiná — opinión ciudadana",
-                "Propuestas ciudadanas",
-                "Créditos Cívicos",
-                "Panel de gestión gubernamental con perfiles operativos"
               ]
             })
           }}
@@ -84,6 +116,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <Hero />
+      <VecinoBanner />
       <Problem />
       <WhatIsCitixen />
       <CommunityMode />

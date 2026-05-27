@@ -90,7 +90,7 @@ export default function CivicCreditsExplainer() {
         </div>
 
         <div className="cc-deep-link fade-up" style={{ textAlign: 'center', marginTop: '40px' }}>
-          <Link href="/creditos-civicos" className="cc-deep-link-btn">
+          <Link href="/soyvecino" className="cc-deep-link-btn">
             Ver la explicación completa &rarr;
           </Link>
         </div>

@@ -1,0 +1,14 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/creditos-civicos',
+        destination: '/soyvecino',
+        permanent: true,
+      },
+    ]
+  },
+}
+
+module.exports = nextConfig

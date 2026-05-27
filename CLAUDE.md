@@ -29,20 +29,32 @@ La landing comunica de arriba hacia abajo: primero transparencia y participació
 
 | Orden | Componente | Objetivo |
 |---|---|---|
-| 1 | Navbar | "Modo Comunidad", "Créditos Cívicos", "Pricing", CTA "Contactanos" |
-| 2 | Hero | "Lo que hacés ya existe. Solo falta que se vea." + mockup portal + proof points |
-| 3 | Problem | Dolor expandido (4 bloques: PDFs, redes, portal, inauguraciones) |
-| 4 | WhatIsCitixen | Tabla resumen de 2 modos (`#comunidad` anchor) |
-| 5 | CommunityMode | 5 capacidades de Modo Comunidad + CTA "Activar" |
-| 6 | ParticipativeEconomy | Teaser CC — card de transición con link a /creditos-civicos |
-| 7 | HowToStart | 3 pasos simplificados |
-| 8 | PricingSummary | 2 cards: Comunidad (gratis) + CC (personalizado) |
-| 9 | Trust | Seguridad + contacto directo |
-| 10 | FAQ | 8 preguntas (incluye link a /creditos-civicos) |
-| 11 | EarlyAccess | Formulario gobierno + botones descarga app ciudadano |
-| 12 | Footer | Links + legal |
+| 1 | Navbar | "Soy gobierno" (`/#gobierno`), "Soy vecino" (`/soyvecino`), "Pricing", CTA "Contactanos" |
+| 2 | Hero | Eyebrow **"Gobierno"** + "Lo que hacés ya existe. Solo falta que se vea." + mockup portal limpio + proof points. Audiencia gobierno sin distracciones. |
+| 3 | VecinoBanner | Banda horizontal de transición entre Hero y Problem. Fondo naranja muy claro. **"¿Sos vecino?"** + CTA naranja **"Soy vecino →"** → `/soyvecino`. Entrada visible para vecino sin competir con el mockup del Hero. |
+| 4 | Problem | Dolor expandido (4 bloques: PDFs, redes, portal, inauguraciones) |
+| 5 | WhatIsCitixen | Tabla resumen de 2 modos (`#gobierno` anchor). Headers desde la perspectiva del comprador: "Empezá publicando" (Modo Comunidad) / "Sumá presupuesto participativo" (Créditos Cívicos) |
+| 6 | CommunityMode | 5 capacidades de Modo Comunidad + CTA "Activar" |
+| 7 | ParticipativeEconomy | Teaser CC — card de transición con link a /soyvecino |
+| 8 | HowToStart | 3 pasos simplificados |
+| 9 | PricingSummary | 2 cards: Comunidad (gratis) + CC (personalizado) |
+| 10 | Trust | Seguridad + contacto directo |
+| 11 | FAQ | 8 preguntas (incluye link a /soyvecino) |
+| 12 | EarlyAccess | Formulario gobierno (solo una columna, ancho protagonista). El acceso del ciudadano se movió a `/soyvecino`. |
+| 13 | Footer | Links + legal |
 
 **Componentes removidos del flujo (archivos conservados):** SocialProof, Progressive, Scenarios, Differentiator, CivicCreditsExplainer, CaseStudyBlock.
+
+**Decisión narrativa (mayo 2026 — revisión 2):** la landing **separa audiencias desde el primer pantallazo**, no por scroll. El visitante ve simultáneamente:
+- Una sección **"Gobierno"** que ocupa todo el flujo principal de la home (mockup, mensajes, proof points, formulario, etc.).
+- Una card **"Soy vecino"** flotante (naranja accent) en el Hero que lleva directo a `/soyvecino` — la página dedicada del vecino con su propio mensaje emocional ("Pagás impuestos. ¿Alguna vez pudiste decidir qué se hace con ellos?").
+
+El vecino NO tiene que scrollear por contenido de gobierno para encontrar lo suyo. Click directo desde el Hero o desde la navbar ("Soy vecino").
+
+**Rutas y SEO:**
+- `/` — home (gobierno como audiencia primaria + entrada visible para vecino)
+- `/soyvecino` — landing dedicada al vecino. Renombrada desde `/creditos-civicos` (mayo 2026). Mantiene la narrativa de 7 actos original con eyebrow nuevo "Sos vecino" en el hero.
+- `/creditos-civicos` → redirect 308 (permanent) a `/soyvecino` en `next.config.js`. Preserva SEO acumulado y links externos previos.
 
 **Páginas adicionales:**
 - `/creditos-civicos` — página dedicada a explicar los Créditos Cívicos. Narrativa de 7 actos: hero emocional (con mockup iPhone + carrusel 3 proyectos) → puente conceptual → mecanismo de 5 pasos → precedente institucional → gobernanza → FAQ → CTA descarga app. Audiencia: ciudadano frustrado + intendente. Fotos en `/public/mockup/`.
