@@ -13,11 +13,20 @@ const features = [
   {
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
       </svg>
     ),
-    title: 'Indicadores públicos',
-    desc: 'Citixen mide el nivel de actualización, evidencia publicada y cumplimiento de cada proyecto con métricas visibles y metodología abierta. No es una auditoría — es una herramienta para mostrar evolución.',
+    title: 'Escuchá prioridades reales',
+    desc: 'Consultá a tus vecinos antes de tomar decisiones. Priorizaciones, votaciones y respuestas abiertas, con resultados públicos al finalizar.',
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+    ),
+    title: 'Ideas desde la comunidad',
+    desc: 'Los vecinos proponen mejoras para su ciudad y pueden organizar iniciativas propias — voluntariado, campañas, acciones comunitarias — de forma completamente autónoma.',
   },
   {
     icon: (
@@ -46,50 +55,19 @@ const features = [
   },
 ]
 
-const optionalFeatures = [
-  {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-      </svg>
-    ),
-    title: 'Escuchá prioridades reales',
-    desc: 'Consultá a tus vecinos antes de tomar decisiones. Priorizaciones, votaciones y respuestas abiertas, con resultados públicos al finalizar.',
-  },
-  {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-      </svg>
-    ),
-    title: 'Ideas desde la comunidad',
-    desc: 'Los vecinos proponen mejoras para su ciudad y pueden organizar iniciativas propias — voluntariado, campañas, acciones comunitarias — de forma completamente autónoma.',
-  },
-]
-
-function AnimatedToggle() {
-  return (
-    <div className="toggle-animated">
-      <div className="toggle-track">
-        <div className="toggle-thumb"></div>
-      </div>
-    </div>
-  )
-}
-
 export default function CommunityMode() {
   return (
     <section className="community-section">
       <div className="container">
         <div className="community-header">
           <div className="section-label section-label--highlight fade-up">
-            Producto principal
+            Path alternativo
           </div>
           <h2 className="section-title fade-up">
             Modo Comunidad
           </h2>
           <p className="community-subtitle fade-up">
-            La forma más simple de transformar lo que tu municipio hace en confianza pública.
+            Si tu ciudad todavía no puede activar Créditos Cívicos, empezá publicando, escuchando y preparándote. El switch a CC queda a un clic cuando estés listo.
           </p>
         </div>
 
@@ -102,17 +80,6 @@ export default function CommunityMode() {
                 {f.badge && <span className="community-feature-badge">{f.badge}</span>}
               </h3>
               <p className="community-feature-desc">{f.desc}</p>
-            </div>
-          ))}
-          {optionalFeatures.map((f, i) => (
-            <div className={`community-feature community-feature--optional fade-up delay-${(i % 2) + 1}`} key={`opt-${i}`}>
-              <div className="community-feature-top">
-                <div className="community-feature-icon">{f.icon}</div>
-                <AnimatedToggle />
-              </div>
-              <h3 className="community-feature-title">{f.title}</h3>
-              <p className="community-feature-desc">{f.desc}</p>
-              <span className="community-feature-optional-label">Activable desde el panel</span>
             </div>
           ))}
         </div>

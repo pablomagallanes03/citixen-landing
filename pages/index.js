@@ -2,11 +2,10 @@ import Head from 'next/head'
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
-import VecinoBanner from '../components/VecinoBanner'
 import Problem from '../components/Problem'
 import WhatIsCitixen from '../components/WhatIsCitixen'
-import CommunityMode from '../components/CommunityMode'
 import ParticipativeEconomy from '../components/ParticipativeEconomy'
+import CommunityMode from '../components/CommunityMode'
 import HowToStart from '../components/HowToStart'
 import Trust from '../components/Trust'
 import FAQ from '../components/FAQ'
@@ -16,7 +15,8 @@ import PricingSummary from '../components/PricingSummary'
 
 // Componentes removidos del flujo (archivos conservados):
 // CaseStudyBlock, SocialProof, Progressive, Scenarios,
-// Differentiator, CivicCreditsExplainer
+// Differentiator, CivicCreditsExplainer, VecinoBanner
+// (VecinoBanner removido junio 2026 — el Hero ya le habla al vecino)
 
 export default function Home() {
   useEffect(() => {
@@ -31,11 +31,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Citixen | Transparencia, participación y gestión ciudadana</title>
-        <meta name="description" content="Citixen es la plataforma argentina que ayuda a los municipios a publicar sus proyectos, escuchar a sus vecinos y gestionar presupuesto participativo con trazabilidad pública." />
-        <meta name="keywords" content="citixen, transparencia municipal, participación ciudadana, gobierno abierto, portal de transparencia, gestión municipal, presupuesto participativo, créditos cívicos, civic tech argentina, software para municipios" />
-        <meta property="og:title" content="Citixen | Transparencia, participación y gestión ciudadana" />
-        <meta property="og:description" content="Plataforma para que los municipios publiquen sus proyectos, escuchen a sus vecinos y gestionen presupuesto participativo con trazabilidad pública." />
+        <title>Citixen | Pagás impuestos. Decidís dónde van.</title>
+        <meta name="description" content="Citixen le da a los vecinos peso real en cómo se invierten los impuestos de su municipio. Mediante Créditos Cívicos, la ciudadanía prioriza los proyectos que su ciudad ejecuta." />
+        <meta name="keywords" content="participación ciudadana, créditos cívicos, presupuesto participativo, civic tech argentina, software para municipios, gobierno abierto, participación vecinal, civic credits" />
+        <meta property="og:title" content="Citixen | Pagás impuestos. Decidís dónde van." />
+        <meta property="og:description" content="Citixen le da a los vecinos peso real en cómo se invierten los impuestos de su municipio. Mediante Créditos Cívicos, la ciudadanía prioriza los proyectos que su ciudad ejecuta." />
         <meta property="og:site_name" content="Citixen" />
         <link rel="canonical" href="https://citixen.org/" />
         <meta property="og:type" content="website" />
@@ -61,7 +61,7 @@ export default function Home() {
                   "url": "https://citixen.org",
                   "logo": "https://citixen.org/pictures/logo-citixen.svg",
                   "foundingDate": "2025",
-                  "description": "Plataforma de transparencia y participación ciudadana para gobiernos locales en Argentina y América Latina.",
+                  "description": "Plataforma de participación ciudadana para gobiernos locales en Argentina y América Latina. Los vecinos priorizan la inversión pública mediante Créditos Cívicos.",
                   "areaServed": {
                     "@type": "Place",
                     "name": "Argentina"
@@ -90,7 +90,7 @@ export default function Home() {
                   "name": "Citixen",
                   "applicationCategory": "GovernmentApplication",
                   "applicationSubCategory": "CivicTechnology",
-                  "description": "Plataforma para que los municipios publiquen sus proyectos, escuchen a sus vecinos y gestionen presupuesto participativo con trazabilidad pública.",
+                  "description": "Citixen le da a los vecinos peso real en cómo se invierten los impuestos de su municipio. Mediante Créditos Cívicos, la ciudadanía prioriza los proyectos que su ciudad ejecuta.",
                   "operatingSystem": "Web, Android, iOS",
                   "url": "https://citixen.org",
                   "offers": {
@@ -101,12 +101,12 @@ export default function Home() {
                   },
                   "author": { "@id": "https://citixen.org/#organization" },
                   "featureList": [
-                    "Portal de transparencia municipal",
-                    "Índice de transparencia verificable",
-                    "Consultas y opinión ciudadana",
-                    "Propuestas vecinales",
-                    "Presupuesto participativo con Créditos Cívicos",
-                    "Panel de gestión municipal con perfiles operativos"
+                    "Créditos Cívicos para que los vecinos prioricen la inversión pública",
+                    "Ciclos de financiamiento participativo con aprobación municipal",
+                    "Consultas ciudadanas vinculantes",
+                    "Propuestas vecinales con seguimiento público",
+                    "Panel de gestión municipal con perfiles operativos",
+                    "Portal público de proyectos y reportes mensuales"
                   ]
                 }
               ]
@@ -116,12 +116,10 @@ export default function Home() {
       </Head>
       <Navbar />
       <Hero />
-      <VecinoBanner />
       <Problem />
       <WhatIsCitixen />
-      <CommunityMode />
-      {/* <CaseStudyBlock /> */}
       <ParticipativeEconomy />
+      <CommunityMode />
       <HowToStart />
       <PricingSummary />
       <Trust />

@@ -13,43 +13,53 @@ Deploy: Vercel. Framework: Next.js 14 + React 18. Estilos: CSS custom con variab
 
 ---
 
-## Posicionamiento (mayo 2026)
+## Posicionamiento (revisado junio 2026 — decisión 31/05)
 
-**Citixen = Infraestructura de confianza para gobiernos locales.**
+**Citixen = participación ciudadana con peso real en municipios locales.**
 
-El producto tiene 2 modos de adopción progresiva:
-- **Modo Comunidad:** Transparencia, participación y engagement ciudadano. Portal público, consultas, propuestas, índice de transparencia. Gratuito.
-- **Modo Economía Participativa:** Todo lo anterior + Créditos Cívicos, financiamiento participativo y trazabilidad económica.
+El centro del producto es **el ciudadano con peso en su municipio**, no el municipio con un dashboard de transparencia. La transparencia fiscal es **piso del producto** (commodity técnica), no el hook de venta. El moat es: Créditos Cívicos + ciclo de aprobación + participación vinculante.
 
-La landing comunica de arriba hacia abajo: primero transparencia y participación (fácil, seguro, sin riesgo), y después Créditos Cívicos como capa de activación avanzada.
+El producto tiene 2 modos de adopción:
+- **Créditos Cívicos** (interno: `full`): participación con CC, financiamiento participativo, ciclo de aprobación municipal. **Modo protagonista del producto.**
+- **Modo Comunidad** (interno: `light`): consultas, propuestas, portal público y reporte mensual. Sin CC. Puerta de entrada para municipios que todavía no están listos para activar CC. Trial 6 meses gratuito.
+
+### Cómo se traduce en la landing
+- El Hero le habla **al vecino**, no al intendente. El intendente lee la promesa que él puede ofrecerle a su ciudad.
+- El relato lleva CC al frente, no atrás. Comunidad aparece después como path alternativo (no como modo gratuito al que escalás).
+- Transparencia NO se vende como propuesta de valor. Se menciona como output del sistema.
+- ASAP / índice de transparencia: solo como prueba externa al hablar con municipios que ya lo cumplen — *"ASAP mide qué se publica. Citixen mide qué se decide."*
+
+Ver memorias del proyecto raíz: `no-asap-compliance-positioning`, `portal-four-functions`.
 
 ---
 
-## Estructura de la landing (actualizada mayo 2026)
+## Estructura de la landing (revisada junio 2026)
 
 | Orden | Componente | Objetivo |
 |---|---|---|
 | 1 | Navbar | "Soy gobierno" (`/#gobierno`), "Soy vecino" (`/soyvecino`), "Pricing", CTA "Contactanos" |
-| 2 | Hero | Eyebrow **"Gobierno"** + "Lo que hacés ya existe. Solo falta que se vea." + mockup portal limpio + proof points. Audiencia gobierno sin distracciones. |
-| 3 | VecinoBanner | Banda horizontal de transición entre Hero y Problem. Fondo naranja muy claro. **"¿Sos vecino?"** + CTA naranja **"Soy vecino →"** → `/soyvecino`. Entrada visible para vecino sin competir con el mockup del Hero. |
-| 4 | Problem | Dolor expandido (4 bloques: PDFs, redes, portal, inauguraciones) |
-| 5 | WhatIsCitixen | Tabla resumen de 2 modos (`#gobierno` anchor). Headers desde la perspectiva del comprador: "Empezá publicando" (Modo Comunidad) / "Sumá presupuesto participativo" (Créditos Cívicos) |
-| 6 | CommunityMode | 5 capacidades de Modo Comunidad + CTA "Activar" |
-| 7 | ParticipativeEconomy | Teaser CC — card de transición con link a /soyvecino |
-| 8 | HowToStart | 3 pasos simplificados |
-| 9 | PricingSummary | 2 cards: Comunidad (gratis) + CC (personalizado) |
-| 10 | Trust | Seguridad + contacto directo |
-| 11 | FAQ | 8 preguntas (incluye link a /soyvecino) |
-| 12 | EarlyAccess | Formulario gobierno (solo una columna, ancho protagonista). El acceso del ciudadano se movió a `/soyvecino`. |
-| 13 | Footer | Links + legal |
+| 2 | Hero | Sin eyebrow. H1 al vecino: **"Pagás impuestos. Ahora también decidís dónde van."** + subhead que explica el mecanismo CC + proof points (vinculante / trazable / activable hoy) + mockup phone con ciclo de financiamiento activo. CTAs: "Ver cómo funciona" (→`#gobierno`) y "Soy gobierno →" (→`#acceso`). |
+| 3 | Problem | Dolor del vecino sin peso: "Pagás impuestos toda tu vida. Nunca decidiste sobre uno solo." 4 bloques (consultas no vinculantes, audiencias express, presupuestos participativos simbólicos, programas sin preguntar). Turn: "Citixen le da peso real **antes** de que se vote, no después". |
+| 4 | WhatIsCitixen | Tabla de 2 modos (`#gobierno` anchor). **Columna izquierda: Créditos Cívicos** ("Que tus vecinos decidan" + label "Producto principal"). **Columna derecha: Modo Comunidad** ("Si tu ciudad todavía no está lista" + "Gratis 6 meses"). |
+| 5 | ParticipativeEconomy | **Producto principal** — eyebrow "El producto principal" + mockup wallet CC + título "Cada impuesto que pagás se convierte en una decisión real sobre tu ciudad" + 3 pasos + pills + CTA a `/soyvecino`. |
+| 6 | CommunityMode | **Path alternativo** — eyebrow "Path alternativo" + subtítulo "Si tu ciudad todavía no puede activar Créditos Cívicos…". 4 capacidades core + 2 optional. CTA "Activar Modo Comunidad". |
+| 7 | HowToStart | 3 pasos simplificados |
+| 8 | PricingSummary | 2 cards: Comunidad (gratis 6 meses) + CC (personalizado) |
+| 9 | Trust | Seguridad + contacto directo |
+| 10 | FAQ | 8 preguntas (incluye link a /soyvecino) |
+| 11 | EarlyAccess | Formulario gobierno (solo una columna, ancho protagonista). El acceso del ciudadano se movió a `/soyvecino`. |
+| 12 | Footer | Links + legal |
 
-**Componentes removidos del flujo (archivos conservados):** SocialProof, Progressive, Scenarios, Differentiator, CivicCreditsExplainer, CaseStudyBlock.
+**Componentes removidos del flujo (archivos conservados):** SocialProof, Progressive, Scenarios, Differentiator, CivicCreditsExplainer, CaseStudyBlock, **VecinoBanner**.
 
-**Decisión narrativa (mayo 2026 — revisión 2):** la landing **separa audiencias desde el primer pantallazo**, no por scroll. El visitante ve simultáneamente:
-- Una sección **"Gobierno"** que ocupa todo el flujo principal de la home (mockup, mensajes, proof points, formulario, etc.).
-- Una card **"Soy vecino"** flotante (naranja accent) en el Hero que lleva directo a `/soyvecino` — la página dedicada del vecino con su propio mensaje emocional ("Pagás impuestos. ¿Alguna vez pudiste decidir qué se hace con ellos?").
+**VecinoBanner** se removió en junio 2026: con el Hero hablándole directo al vecino, la banda transicional dejó de tener sentido. El acceso a `/soyvecino` sigue disponible desde la navbar.
 
-El vecino NO tiene que scrollear por contenido de gobierno para encontrar lo suyo. Click directo desde el Hero o desde la navbar ("Soy vecino").
+**Decisión narrativa (junio 2026):** la landing es **vecino-first en el Hero**. El intendente entra leyendo la promesa que él puede ofrecerle a sus vecinos. No hay separación de audiencias por scroll ni por card lateral — el frame unifica ambos lectores desde el H1. La sección WhatIsCitixen + EarlyAccess hablan al intendente directo cuando él baja al detalle de cómo activarlo.
+
+**Rutas y SEO:**
+- `/` — home (citizen-first, intendente lee como audiencia que compra esta promesa)
+- `/soyvecino` — landing dedicada al vecino con narrativa de 7 actos
+- `/creditos-civicos` → redirect 308 a `/soyvecino`
 
 **Rutas y SEO:**
 - `/` — home (gobierno como audiencia primaria + entrada visible para vecino)
@@ -67,12 +77,13 @@ El vecino NO tiene que scrollear por contenido de gobierno para encontrar lo suy
 | Regla | Detalle |
 |---|---|
 | Tono | Institucional, claro, sobrio. No es una startup hype. |
-| Vocabulario | "Créditos Cívicos" (no "tokens", no "Civic Coins"). "Infraestructura de gestión municipal abierta" (no "plataforma de participación"). |
-| Orden de revelación | Transparencia primero, CC al final. No asustar con complejidad. |
-| Audiencia primaria | Intendentes, secretarios de gobierno, jefes de gabinete de municipios de 5.000 a 500.000 hab. |
-| Audiencia secundaria | Ciudadanos que quieren que su ciudad lo use |
-| Qué NO decir | "Revolucionar", "empoderar", "disruptivo", "blockchain", "tokens", "cambiar el mundo" |
-| CTA hero | "Ver cómo funciona" (scroll a #comunidad) — baja fricción |
+| Vocabulario | "Créditos Cívicos" (no "tokens", no "Civic Coins"). "Participación ciudadana con peso real" o "plataforma de participación". NO usar "infraestructura de transparencia" ni "portal de transparencia" como descriptor primario. |
+| Orden de revelación | **Participación con CC al frente.** Modo Comunidad como path alternativo, no como modo gratuito al que escalás. Transparencia es output del sistema, no propuesta de valor. |
+| Audiencia primaria del Hero | **Vecinos del municipio.** El Hero les habla directo. |
+| Comprador | Intendentes, secretarios de gobierno, jefes de gabinete (municipios 5.000 – 500.000 hab). Entran al Hero leyendo la promesa que pueden ofrecerle a sus vecinos. La sección WhatIsCitixen + form les habla de forma directa. |
+| Qué NO decir | "Revolucionar", "empoderar", "disruptivo", "blockchain", "tokens", "cambiar el mundo". **Tampoco vender transparencia como hook ni posicionar Citixen como herramienta de cumplimiento ASAP** (decisión 31/05 — ver memoria `no-asap-compliance-positioning`). |
+| CTA hero primary | "Ver cómo funciona" → `#gobierno` (lleva a WhatIsCitixen) |
+| CTA hero secondary | "Soy gobierno →" → `#acceso` (form para que el intendente se auto-identifique y salte directo) |
 | CTA formulario | "Quiero activar Mi Ciudad" — 3 campos (municipio, provincia, email) via /api/contact |
 | CTA navbar | "Contactanos" → scroll a formulario |
 

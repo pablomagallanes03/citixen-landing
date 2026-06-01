@@ -268,6 +268,18 @@ img { max-width: 100%; display: block; }
 
 /* Portal mockup */
 .hero-mockup { display: flex; justify-content: center; align-items: center; position: relative; }
+.hero-mockup-img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+  transform: perspective(1200px) rotateX(-4deg) rotateZ(4deg);
+  filter: drop-shadow(0 40px 80px rgba(2, 27, 78, 0.5));
+  transition: transform 0.4s ease;
+}
+.hero-mockup-img:hover {
+  transform: perspective(1200px) rotateX(-4deg) rotateZ(4deg) translateY(-4px);
+}
 
 /* Tag flotante — señala que Créditos Cívicos también es parte del producto */
 .hero-cc-tag {
@@ -487,6 +499,212 @@ img { max-width: 100%; display: block; }
   width: 22px;
   height: 2px;
   background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Hero phone mockup — ciclo de financiamiento activo
+   Reemplaza al portal-frame del Hero a partir de junio 2026.
+   Las clases .portal-* quedan en este archivo por si otra página las reutiliza. */
+.hero-phone {
+  width: 320px;
+  max-width: 100%;
+  background: #0d1b3a;
+  border-radius: 44px;
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 40px 80px rgba(2, 27, 78, 0.45), 0 0 0 1px rgba(255,255,255,0.06) inset;
+}
+.hero-phone-notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 26px;
+  background: #0d1b3a;
+  border-radius: 0 0 18px 18px;
+  z-index: 3;
+}
+.hero-phone-screen {
+  background: var(--surface);
+  border-radius: 32px;
+  padding: 42px 18px 14px;
+  overflow: hidden;
+  position: relative;
+}
+.hero-phone-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 0 4px 14px;
+}
+.hero-phone-statusbar-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.hero-phone-statusbar-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--text-primary);
+}
+.hero-phone-statusbar-battery {
+  width: 18px; height: 9px;
+  border: 1px solid var(--text-primary);
+  border-radius: 2px;
+  margin-left: 4px;
+  position: relative;
+}
+.hero-phone-statusbar-battery::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--text-primary);
+  border-radius: 1px;
+}
+
+/* Header del ciclo */
+.hero-phone-cycle-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.hero-phone-cycle-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 2px;
+}
+.hero-phone-cycle-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+}
+.hero-phone-cycle-badge {
+  background: rgba(247,121,78,0.12);
+  color: var(--accent);
+  padding: 4px 9px;
+  border-radius: 100px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Balance del vecino */
+.hero-phone-balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--citixen-gradient);
+  color: white;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+}
+.hero-phone-balance-label {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+}
+.hero-phone-balance-value {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+/* Cards de proyectos */
+.hero-phone-project {
+  background: #f7f9fc;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 11px 12px;
+  margin-bottom: 8px;
+}
+.hero-phone-project--accent {
+  background: white;
+  border-color: rgba(247,121,78,0.35);
+  box-shadow: 0 4px 14px rgba(247,121,78,0.10);
+}
+.hero-phone-project-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+  margin-bottom: 3px;
+}
+.hero-phone-project-stat {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+.hero-phone-project-progress {
+  height: 4px;
+  background: var(--border-light);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.hero-phone-project-progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+}
+.hero-phone-project--accent .hero-phone-project-progress-fill {
+  background: var(--accent);
+}
+.hero-phone-project-cta {
+  width: 100%;
+  margin-top: 9px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.hero-phone-project-cta:hover { background: #e56a3f; }
+
+/* Tabs inferiores */
+.hero-phone-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  margin-top: 6px;
+  border-top: 1px solid var(--border-light);
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.hero-phone-tab--active {
+  color: var(--accent);
+  position: relative;
+}
+.hero-phone-tab--active::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--accent);
   border-radius: 2px;
 }
 
@@ -1544,6 +1762,25 @@ img { max-width: 100%; display: block; }
 
 /* Wallet mockup */
 .cc-protagonist-mockup { display: flex; justify-content: center; }
+.cc-protagonist-img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 40px 80px rgba(2, 27, 78, 0.32));
+}
+
+/* Cuando ParticipativeEconomy va sin mockup (junio 2026 — el mockup se movió al Hero) */
+.cc-protagonist-grid--solo {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.cc-protagonist-grid--solo .cc-protagonist-desc { margin-left: auto; margin-right: auto; }
+.cc-protagonist-grid--solo .cc-protagonist-steps { max-width: 480px; margin-left: auto; margin-right: auto; text-align: left; }
+.cc-protagonist-grid--solo .cc-protagonist-pills { justify-content: center; }
+.cc-protagonist-grid--solo .cc-protagonist-cta { display: inline-flex; }
 .wallet-frame {
   width: 320px;
   background: var(--surface);
@@ -2283,6 +2520,267 @@ img { max-width: 100%; display: block; }
   font-size: 14px;
   font-weight: 600;
   color: white;
+}
+
+/* Header del ciclo activo — variante del Hero de la home (junio 2026) */
+.phone-cycle-header {
+  padding: 12px 18px 16px;
+  background: var(--primary);
+  color: white;
+}
+.phone-cycle-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+.phone-cycle-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.phone-cycle-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+.phone-cycle-badge {
+  background: rgba(247,121,78,0.22);
+  color: var(--accent);
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Vista de ciclo — contenido del Hero */
+.phone-content--cycle { padding: 14px; }
+.phone-balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--citixen-gradient);
+  color: white;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+}
+.phone-balance-label {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.78);
+}
+.phone-balance-value {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+.phone-cycle-project {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 11px 12px;
+  margin-bottom: 8px;
+}
+.phone-cycle-project--accent {
+  border-color: rgba(247,121,78,0.35);
+  box-shadow: 0 4px 14px rgba(247,121,78,0.12);
+}
+.phone-cycle-project-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+  margin-bottom: 3px;
+}
+.phone-cycle-project-stat {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+.phone-cycle-project-progress {
+  height: 4px;
+  background: var(--border-light);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.phone-cycle-project-progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+}
+.phone-cycle-project--accent .phone-cycle-project-progress-fill {
+  background: var(--accent);
+}
+.phone-cycle-project-cta {
+  width: 100%;
+  margin-top: 10px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 9px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 11.5px;
+  cursor: default;
+  font-family: inherit;
+}
+
+/* Vista "Recibiste CC" — Hero del home (junio 2026) */
+.phone-content--receipt { padding: 18px 16px 14px; }
+
+.phone-receipt-card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px 18px 18px;
+  text-align: center;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 16px rgba(2, 27, 78, 0.08);
+}
+.phone-receipt-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #f9935e);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 20px rgba(247, 121, 78, 0.32);
+}
+.phone-receipt-eyebrow {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 8px;
+}
+.phone-receipt-amount {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+.phone-receipt-source {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.phone-receipt-balance {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  border: 1px solid var(--border-light);
+  padding: 11px 14px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.phone-receipt-balance-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+.phone-receipt-balance-value {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.3px;
+}
+
+.phone-receipt-cta {
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: default;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  box-shadow: 0 6px 16px rgba(247, 121, 78, 0.28);
+}
+.phone-receipt-hint {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0 6px;
+}
+
+/* Header main-screen (sin back chevron) — variante usada en el Hero del home */
+.phone-app-header--main {
+  justify-content: space-between;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+.phone-app-header-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* Tab bar inferior — pantalla main, da proporción de teléfono real */
+.phone-tabbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  background: white;
+  padding: 8px 8px 4px;
+  border-top: 1px solid var(--border-light);
+}
+.phone-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--text-muted);
+  position: relative;
+  padding: 4px 6px 6px;
+  flex: 1;
+}
+.phone-tab--active {
+  color: var(--accent);
+}
+.phone-tab--active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
 }
 
 /* Content & Carousel */
