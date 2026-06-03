@@ -4,7 +4,7 @@ export default function Hero() {
       <div className="container hero-inner">
         <div className="hero-content">
           <h1 className="fade-up delay-1">
-            Pagás impuestos.<br />Ahora también decidís dónde van.
+            Pagás impuestos.<br />Ahora también decidís adónde van.
           </h1>
           <p className="fade-up delay-2">
             Una parte de lo que pagás se transforma en <strong>Créditos Cívicos</strong>.
@@ -21,7 +21,7 @@ export default function Hero() {
           </div>
           <div className="hero-proof fade-up delay-4">
             <div className="hero-proof-item">
-              <span className="hero-proof-number">Vinculante</span>
+              <span className="hero-proof-number">Con peso real</span>
               <span className="hero-proof-label">Lo que prioriza la ciudad, el municipio ejecuta</span>
             </div>
             <div className="hero-proof-divider"></div>
