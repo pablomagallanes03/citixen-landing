@@ -38,7 +38,7 @@ Ver memorias del proyecto raíz: `no-asap-compliance-positioning`, `portal-four-
 | Orden | Componente | Objetivo |
 |---|---|---|
 | 1 | Navbar | "Soy gobierno" (`/#gobierno`), "Soy vecino" (`/soyvecino`), "Pricing", CTA "Contactanos" |
-| 2 | Hero | Sin eyebrow. H1 al vecino: **"Pagás impuestos. Ahora también decidís adónde van."** + subhead que explica el mecanismo CC + proof points (con peso real / trazable / activable hoy) + mockup phone con ciclo de financiamiento activo. CTAs: "Ver cómo funciona" (→`#gobierno`) y "Soy gobierno →" (→`#acceso`). |
+| 2 | Hero | Sin eyebrow. H1 al vecino: **"Pagás impuestos. Ahora también decidís adónde van."** + subhead que explica el mecanismo CC + proof points (con peso real / trazable / lo elegís vos) + mockup phone con ciclo de financiamiento activo. CTAs: "Ver cómo funciona" (→`#gobierno`) y "Soy gobierno →" (→`#acceso`). |
 | 3 | Problem | Dolor del vecino sin peso: "Pagás impuestos toda tu vida. Nunca decidiste sobre uno solo." 4 bloques (consultas no vinculantes, audiencias express, presupuestos participativos simbólicos, programas sin preguntar). Turn: "Citixen le da peso real **antes** de que se vote, no después". |
 | 4 | WhatIsCitixen | Tabla de 2 modos (`#gobierno` anchor). **Columna izquierda: Créditos Cívicos** ("Que tus vecinos decidan" + label "Producto principal"). **Columna derecha: Modo Comunidad** ("Si tu ciudad todavía no está lista" + "Gratis 6 meses"). |
 | 5 | ParticipativeEconomy | **Producto principal** — eyebrow "El producto principal" + mockup wallet CC + título "Cada impuesto que pagás se convierte en una decisión real sobre tu ciudad" + 3 pasos + pills + CTA a `/soyvecino`. |

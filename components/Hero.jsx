@@ -31,8 +31,8 @@ export default function Hero() {
             </div>
             <div className="hero-proof-divider"></div>
             <div className="hero-proof-item">
-              <span className="hero-proof-number">Activable hoy</span>
-              <span className="hero-proof-label">Funciona con el marco legal de tu municipio</span>
+              <span className="hero-proof-number">Lo elegís vos</span>
+              <span className="hero-proof-label">Vos decidís a qué proyecto va cada crédito</span>
             </div>
           </div>
         </div>
