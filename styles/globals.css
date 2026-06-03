@@ -933,7 +933,7 @@ img { max-width: 100%; display: block; }
    FOOTER
    ══════════════════���══════════════════════════���═════ */
 .footer { padding: 56px 0 32px; background: var(--text-primary); color: rgba(255,255,255,0.7); }
-.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
 .footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; color: rgba(255,255,255,0.45); max-width: 280px; }
 .footer-logo { display: flex; align-items: center; gap: 10px; }
 .footer-logo svg { height: 28px; width: auto; }
@@ -943,6 +943,46 @@ img { max-width: 100%; display: block; }
 .footer ul li { margin-bottom: 10px; }
 .footer ul a { font-size: 14px; color: rgba(255,255,255,0.45); transition: color 0.2s; }
 .footer ul a:hover { color: white; }
+.footer-store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 10px 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 10px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.footer-store-badge:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.28);
+  color: white;
+  transform: translateY(-1px);
+}
+.footer-store-badge svg {
+  flex-shrink: 0;
+  color: rgba(255,255,255,0.9);
+}
+.footer-store-badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.footer-store-badge-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.55);
+}
+.footer-store-badge-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+}
 .footer-bottom {
   padding-top: 28px;
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -3349,6 +3389,178 @@ img { max-width: 100%; display: block; }
   color: white;
 }
 .ep-cta-track-btn--gov:hover { background: #e56a3f; }
+
+/* Buscador de ciudad en CTA ciudadano */
+.ep-city-search {
+  position: relative;
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+.ep-city-search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: var(--radius-lg);
+  padding: 0 14px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.ep-city-search-input-wrap:focus-within {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.40);
+}
+.ep-city-search-icon {
+  color: rgba(255,255,255,0.65);
+  flex-shrink: 0;
+}
+.ep-city-search-input {
+  flex: 1;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  font-family: inherit;
+  padding: 14px 12px;
+}
+.ep-city-search-input::placeholder { color: rgba(255,255,255,0.45); }
+.ep-city-search-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.20);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: ep-city-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes ep-city-spin { to { transform: rotate(360deg); } }
+
+.ep-city-search-results {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 10;
+}
+.ep-city-search-results li { margin: 0; }
+.ep-city-search-results button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 10px 12px;
+  border-radius: calc(var(--radius-lg) - 4px);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: background 0.15s ease;
+}
+.ep-city-search-results button:hover,
+.ep-city-search-results button:focus-visible {
+  background: rgba(10, 61, 145, 0.08);
+  outline: none;
+}
+.ep-city-result-name-row {
+  color: var(--primary-dark);
+  font-weight: 600;
+  font-size: 15px;
+}
+.ep-city-result-region-row {
+  color: rgba(2, 27, 78, 0.55);
+  font-size: 12px;
+}
+
+.ep-city-loading {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.70);
+  font-size: 14px;
+}
+.ep-city-error {
+  margin-top: 12px;
+  color: #ffb89c;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ep-city-result {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: var(--radius-lg);
+  padding: 22px 22px 18px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+.ep-city-status-badge {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+.ep-city-status--active {
+  background: rgba(76, 217, 123, 0.18);
+  color: #b9f4cf;
+  border: 1px solid rgba(76, 217, 123, 0.35);
+}
+.ep-city-status--government_pending {
+  background: rgba(247, 187, 78, 0.18);
+  color: #ffe0a8;
+  border: 1px solid rgba(247, 187, 78, 0.35);
+}
+.ep-city-status--pre_adoption {
+  background: rgba(247, 121, 78, 0.18);
+  color: #ffd1bd;
+  border: 1px solid rgba(247, 121, 78, 0.35);
+}
+.ep-city-result-name {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+}
+.ep-city-result-region {
+  color: rgba(255,255,255,0.55);
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.ep-city-result-msg {
+  color: rgba(255,255,255,0.85);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 6px 0 4px;
+}
+.ep-city-result-msg strong { color: white; font-weight: 700; }
+.ep-city-reset {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  padding: 4px 0;
+  color: rgba(255,255,255,0.60);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.ep-city-reset:hover { color: white; }
 
 /* Responsive */
 @media (max-width: 1024px) {
