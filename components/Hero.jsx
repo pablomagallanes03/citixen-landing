@@ -1,10 +1,12 @@
+import RotatingWord from './RotatingWord'
+
 export default function Hero() {
   return (
     <section className="hero">
       <div className="container hero-inner">
         <div className="hero-content">
           <h1 className="fade-up delay-1">
-            Pagás impuestos.<br />Ahora también decidís adónde van.
+            Pagás <RotatingWord />.<br />Ahora también decidís adónde van.
           </h1>
           <p className="fade-up delay-2">
             Una parte de lo que pagás se transforma en <strong>Créditos Cívicos</strong>.
