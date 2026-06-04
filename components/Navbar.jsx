@@ -21,7 +21,7 @@ export default function Navbar() {
           <Logo height={32} variant="light" />
         </Link>
         <ul className={`navbar-links${open ? ' active' : ''}`}>
-          <li><Link href="/#gobierno" onClick={close}>Soy gobierno</Link></li>
+          <li><Link href="/soygobierno" onClick={close}>Soy gobierno</Link></li>
           <li><Link href="/soyvecino" onClick={close}>Soy vecino</Link></li>
           <li><Link href="/pricing" onClick={close}>Pricing</Link></li>
           <li>

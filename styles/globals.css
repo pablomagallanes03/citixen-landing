@@ -3641,6 +3641,30 @@ img { max-width: 100%; display: block; }
   margin-bottom: 20px;
 }
 
+/* Hero actions — botones del hero de /soygobierno (sobre gradiente navy) */
+.ep-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.ep-hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.1px;
+  color: rgba(255,255,255,0.92);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.ep-hero-link:hover {
+  color: #fff;
+  transform: translateX(3px);
+}
+
 /* ========================================================================
    Vecino Banner — banda horizontal entre Hero y Problem
    Transición clara entre audiencia gobierno (Hero) y resto de home.
