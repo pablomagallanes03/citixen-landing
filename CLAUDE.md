@@ -37,7 +37,7 @@ Ver memorias del proyecto raíz: `no-asap-compliance-positioning`, `portal-four-
 
 | Orden | Componente | Objetivo |
 |---|---|---|
-| 1 | Navbar | "Soy gobierno" (`/#gobierno`), "Soy vecino" (`/soyvecino`), "Pricing", CTA "Contactanos" |
+| 1 | Navbar | "Soy gobierno" (`/soygobierno`), "Soy vecino" (`/soyvecino`), "Pricing", CTA "Contactanos" |
 | 2 | Hero | Sin eyebrow. H1 al vecino: **"Pagás [palabra rotativa]. Ahora también decidís adónde van."** La primera palabra rota (`RotatingWord.jsx`): impuestos → tasas → multas → patentes, cada 2,2s, en celeste `--secondary`, fade+slide-up, respeta `prefers-reduced-motion`. SSR renderiza "impuestos" (sin layout shift / SEO). Comunica el alcance de obligaciones fiscales configurables como fuente de CC (§32). + subhead que explica el mecanismo CC + proof points (con peso real / trazable / lo elegís vos) + mockup phone con ciclo de financiamiento activo. CTAs: "Ver cómo funciona" (→`#gobierno`) y "Soy gobierno →" (→`#acceso`). |
 | 3 | Problem | Dolor del vecino sin peso: "Pagás impuestos toda tu vida. Nunca decidiste sobre uno solo." 4 bloques (consultas no vinculantes, audiencias express, presupuestos participativos simbólicos, programas sin preguntar). Turn: "Citixen le da peso real **antes** de que se vote, no después". |
 | 4 | WhatIsCitixen | Tabla de 2 modos (`#gobierno` anchor). **Columna izquierda: Créditos Cívicos** ("Que tus vecinos decidan" + label "Producto principal"). **Columna derecha: Modo Comunidad** ("Si tu ciudad todavía no está lista" + "Gratis 6 meses"). |
@@ -62,8 +62,9 @@ Ver memorias del proyecto raíz: `no-asap-compliance-positioning`, `portal-four-
 - `/creditos-civicos` → redirect 308 a `/soyvecino`
 
 **Rutas y SEO:**
-- `/` — home (gobierno como audiencia primaria + entrada visible para vecino)
+- `/` — home (vecino-first en el Hero; el intendente entra leyendo la promesa que puede ofrecer)
 - `/soyvecino` — landing dedicada al vecino. Renombrada desde `/creditos-civicos` (mayo 2026). Mantiene la narrativa de 7 actos original con eyebrow nuevo "Sos vecino" en el hero.
+- `/soygobierno` — landing dedicada al intendente (junio 2026). Página espejo de `/soyvecino`, gobierno-first: el comprador ya se auto-seleccionó, así que lidera con "qué ganás vos" (beneficios al gobierno) sin contaminar el frame vecino-first de la home. Reutiliza el sistema de clases `ep-*` (paleta navy, sin CSS nuevo salvo `.ep-hero-actions` / `.ep-hero-link`). 9 actos: promesa → problema del gobierno → qué gana → por qué es seguro → control vs respaldo → 2 modos → implementación → FAQ del intendente → CTA al form `/#acceso`. Transparencia se mantiene como output, no como hook (coherente con `no-asap-compliance-positioning`). El nav "Soy gobierno" apunta acá (antes era ancla `/#gobierno`).
 - `/creditos-civicos` → redirect 308 (permanent) a `/soyvecino` en `next.config.js`. Preserva SEO acumulado y links externos previos.
 
 **Páginas adicionales:**
