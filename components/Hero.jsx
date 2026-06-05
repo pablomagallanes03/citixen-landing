@@ -78,6 +78,11 @@ export default function Hero() {
                   </div>
                   <span className="hv-metric-div"></span>
                   <div className="hv-metric">
+                    <span className="hv-metric-num">18.400</span>
+                    <span className="hv-metric-label">Créditos Cívicos asignados</span>
+                  </div>
+                  <span className="hv-metric-div"></span>
+                  <div className="hv-metric">
                     <span className="hv-metric-num">+2.000</span>
                     <span className="hv-metric-label">vecinos la usan</span>
                   </div>
