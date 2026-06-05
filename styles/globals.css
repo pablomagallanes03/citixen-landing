@@ -330,16 +330,32 @@ img { max-width: 100%; display: block; }
   font-size: 17px; font-weight: 800; color: var(--dark);
   line-height: 1.25; margin: 0 0 8px;
 }
-.hv-decision { font-size: 12.5px; color: #475569; line-height: 1.45; margin: 0 0 16px; }
-.hv-decision strong {
-  display: block; color: var(--primary); font-weight: 800;
-  font-size: 26px; line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 3px;
+.hv-highlight {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px; font-weight: 700; color: var(--secondary);
+  margin: 0 0 14px;
 }
+.hv-metrics {
+  display: flex; align-items: center; gap: 18px;
+  margin: 0 0 16px; padding-bottom: 16px;
+  border-bottom: 1px solid #eef2f6;
+}
+.hv-metric { display: flex; flex-direction: column; }
+.hv-metric-num {
+  font-size: 24px; font-weight: 800; color: var(--primary);
+  line-height: 1.05; letter-spacing: -0.5px;
+}
+.hv-metric-label { font-size: 11.5px; color: #475569; margin-top: 3px; }
+.hv-metric-div { width: 1px; height: 32px; background: #e2e8f0; }
 
 .hv-timeline { display: flex; flex-direction: column; }
 .hv-step {
-  position: relative; padding: 0 0 14px 22px;
+  position: relative; padding: 0 0 15px 22px;
   font-size: 12.5px; font-weight: 600; color: var(--dark);
+}
+.hv-step em {
+  display: block; font-style: normal; font-weight: 600;
+  font-size: 10.5px; color: #94a3b8; margin-top: 1px;
 }
 .hv-step::before {
   content: ''; position: absolute; left: 0; top: 1px;

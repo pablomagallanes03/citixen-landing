@@ -70,14 +70,23 @@ export default function Hero() {
               <div className="hv-card-body">
                 <span className="hv-chip">Espacios públicos</span>
                 <h3 className="hv-title">Plaza San Martín — Barrio Norte</h3>
-                <p className="hv-decision">
-                  <strong>412 vecinos</strong> lo eligieron · el más priorizado del barrio
-                </p>
+                <div className="hv-highlight">★ El más votado del barrio</div>
+                <div className="hv-metrics">
+                  <div className="hv-metric">
+                    <span className="hv-metric-num">412</span>
+                    <span className="hv-metric-label">vecinos lo priorizaron</span>
+                  </div>
+                  <span className="hv-metric-div"></span>
+                  <div className="hv-metric">
+                    <span className="hv-metric-num">+2.000</span>
+                    <span className="hv-metric-label">vecinos la usan</span>
+                  </div>
+                </div>
                 <div className="hv-timeline">
-                  <span className="hv-step hv-step--done">Priorizado por los vecinos</span>
-                  <span className="hv-step hv-step--done">Aprobado por el municipio</span>
-                  <span className="hv-step hv-step--done">En obra</span>
-                  <span className="hv-step hv-step--done">Listo</span>
+                  <span className="hv-step hv-step--done">Priorizado por los vecinos<em>feb 2026</em></span>
+                  <span className="hv-step hv-step--done">Aprobado por el municipio<em>mar 2026</em></span>
+                  <span className="hv-step hv-step--done">En obra<em>abr – jul 2026</em></span>
+                  <span className="hv-step hv-step--done">Inaugurada<em>ago 2026</em></span>
                 </div>
               </div>
               <div className="hv-stats">
