@@ -45,6 +45,8 @@ export default function Home() {
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="es_AR" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Citixen | Pagás impuestos. Decidís dónde van." />
+        <meta name="twitter:description" content="Citixen le da a los vecinos peso real en cómo se invierten los impuestos de su municipio. Mediante Créditos Cívicos, la ciudadanía prioriza los proyectos que su ciudad ejecuta." />
         <meta name="twitter:image" content="https://citixen.org/og-image.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script

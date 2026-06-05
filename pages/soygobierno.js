@@ -45,7 +45,7 @@ const benefits = [
       </svg>
     ),
     title: 'Decisión ciudadana sobre fondos que ya tenés',
-    desc: 'Cuando tu ciudad está lista, los vecinos priorizan a qué proyectos van los Créditos Cívicos. El dinero ya está en tu caja — proviene de impuestos recaudados. Vos no ponés plata nueva.',
+    desc: 'Cuando tu ciudad está lista, los vecinos priorizan a qué proyectos van los Créditos Cívicos. El dinero ya está en tu caja — proviene de impuestos recaudados. Vos no ponés dinero nuevo.',
   },
 ]
 
@@ -68,7 +68,7 @@ const gains = [
 
 // Por qué es seguro — tarjetas cortas
 const safety = [
-  { title: 'No ponés plata nueva', desc: 'Redirigís decisión sobre fondos ya recaudados. El dinero nunca sale de tu control.' },
+  { title: 'No ponés dinero nuevo', desc: 'Redirigís decisión sobre fondos ya recaudados. El dinero nunca sale de tu control.' },
   { title: 'Vos controlás las perillas', desc: 'El porcentaje y el valor los definís vos. El ciudadano no controla ninguno de los dos.' },
   { title: 'Pagás cuando querés', desc: 'Modelo de reclamo: el beneficiario de un proyecto completado inicia el cobro, vos transferís. Nunca al revés.' },
   { title: 'Cero riesgo de fuga', desc: 'Los Créditos Cívicos no se convierten en dinero por el ciudadano. Solo cobra quien ejecutó un proyecto real.' },
@@ -88,7 +88,7 @@ const implementation = [
 // Preguntas del intendente
 const faqs = [
   {
-    q: '¿Tengo que poner plata nueva?',
+    q: '¿Tengo que poner dinero nuevo?',
     a: 'No. Los Créditos Cívicos provienen de impuestos que tu municipio ya recaudó. Cuando un proyecto se completa, desembolsás fondos que ya estaban en la caja municipal. No se genera dinero nuevo ni se compromete presupuesto adicional.',
   },
   {
@@ -127,7 +127,7 @@ export default function SoyGobierno() {
     <>
       <Head>
         <title>Soy gobierno — Citixen</title>
-        <meta name="description" content="Conectá tu municipio con sus vecinos. Citixen le da a tu ciudad un canal oficial, participación real y decisión ciudadana sobre fondos que ya tenés — sin poner plata nueva y sin perder control." />
+        <meta name="description" content="Conectá tu municipio con sus vecinos. Citixen le da a tu ciudad un canal oficial, participación real y decisión ciudadana sobre fondos que ya tenés — sin poner dinero nuevo y sin perder control." />
         <meta property="og:title" content="Soy gobierno — Citixen" />
         <meta property="og:description" content="Conectá tu municipio con sus vecinos. Participación real, material para justificar la gestión y decisión ciudadana sobre fondos que ya tenés." />
         <meta property="og:type" content="website" />
@@ -152,7 +152,7 @@ export default function SoyGobierno() {
               </h1>
               <p className="ep-hero-subtitle">
                 Citixen conecta a tu municipio con sus vecinos: un canal oficial directo, participación
-                ordenada, y la prueba — con números — de que tu gestión escucha. Sin poner plata nueva
+                ordenada, y la prueba — con números — de que tu gestión escucha. Sin poner dinero nuevo
                 y sin perder control.
               </p>
               <div className="ep-hero-actions">

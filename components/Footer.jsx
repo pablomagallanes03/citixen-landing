@@ -11,9 +11,9 @@ export default function Footer() {
               <Logo height={26} variant="light" />
             </div>
             <p>
-              Infraestructura de gestión municipal abierta.
-              Transparencia, participación ciudadana y
-              presupuesto participativo con trazabilidad total.
+              Participación ciudadana con peso real en tu municipio.
+              Tus vecinos deciden adónde van los Créditos Cívicos
+              y la ciudad ejecuta lo que priorizaron.
             </p>
             <a
               href="https://play.google.com/store/apps/details?id=app.citixen"
@@ -34,7 +34,7 @@ export default function Footer() {
           <div>
             <h4>Plataforma</h4>
             <ul>
-              <li><Link href="/#gobierno">Soy gobierno</Link></li>
+              <li><Link href="/soygobierno">Soy gobierno</Link></li>
               <li><Link href="/soyvecino">Soy vecino</Link></li>
               <li><Link href="/pricing">Pricing</Link></li>
               <li><Link href="/#acceso">Contacto</Link></li>

@@ -289,7 +289,7 @@ const faqs = [
     a: 'No. Los Créditos Cívicos no viven en blockchain, no se minan, no se tradean y no tienen cotización. Son un registro digital interno de participación, operado por el municipio.',
   },
   {
-    q: '¿Puedo sacar plata con mis créditos?',
+    q: '¿Puedo sacar dinero con mis créditos?',
     a: 'No. Los créditos se usan para apoyar proyectos. Cuando un proyecto se completa, el municipio desembolsa los fondos al ejecutor — fondos que ya estaban en la caja municipal. No se genera dinero nuevo.',
   },
   {

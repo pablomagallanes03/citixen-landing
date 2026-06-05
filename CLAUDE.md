@@ -85,7 +85,7 @@ Ver memorias del proyecto raíz: `no-asap-compliance-positioning`, `portal-four-
 | Qué NO decir | "Revolucionar", "empoderar", "disruptivo", "blockchain", "tokens", "cambiar el mundo". **Tampoco vender transparencia como hook ni posicionar Citixen como herramienta de cumplimiento ASAP** (decisión 31/05 — ver memoria `no-asap-compliance-positioning`). |
 | CTA hero primary | "Ver cómo funciona" → `#gobierno` (lleva a WhatIsCitixen) |
 | CTA hero secondary | "Soy gobierno →" → `#acceso` (form para que el intendente se auto-identifique y salte directo) |
-| CTA formulario | "Quiero activar Mi Ciudad" — 3 campos (municipio, provincia, email) via /api/contact |
+| CTA formulario | "Quiero activar Mi Ciudad" — el form de `EarlyAccess` postea directo al backend `POST {NEXT_PUBLIC_API_URL}/api/government/register-light` (crea `MunicipalLead`). Tiene honeypot anti-spam. NO usa un endpoint propio de la landing. |
 | CTA navbar | "Contactanos" → scroll a formulario |
 
 ---
@@ -110,17 +110,16 @@ Ver memorias del proyecto raíz: `no-asap-compliance-positioning`, `portal-four-
 
 ---
 
-## API endpoint
+## Formularios
 
-`POST /api/contact` — Recibe formularios de la landing.
+La landing **no tiene API routes propias** (`pages/api/` fue eliminado en junio 2026 — el endpoint `/api/contact` quedó muerto y se borró).
 
-- Si `RESEND_API_KEY` está configurado: envía email de notificación a `CONTACT_EMAIL` (default: `contacto@citixen.org`)
-- Si no: solo logea (modo desarrollo)
-- Nunca falla al usuario — errores de envío se logean pero devuelven 200
+Los dos formularios postean directo al backend Citixen (`NEXT_PUBLIC_API_URL`, default `https://citixen.app`):
+- `EarlyAccess` (form de gobierno en `/#acceso`) → `POST /api/government/register-light` (crea `MunicipalLead`). Honeypot `_hp` anti-spam. Maneja 409 (duplicado) y 429 (rate limit).
+- `/soyvecino` consume `GET /api/cities?search=` y `GET /api/cities/:slug/stats` para el buscador de ciudad.
 
-**Variables de entorno necesarias en Vercel:**
-- `RESEND_API_KEY` — API key de Resend para envío de emails
-- `CONTACT_EMAIL` — Email destino de las notificaciones (opcional, default `contacto@citixen.org`)
+**Variable de entorno en Vercel:**
+- `NEXT_PUBLIC_API_URL` — URL del backend (opcional, default `https://citixen.app`)
 
 ---
 
@@ -153,8 +152,11 @@ Ver memorias del proyecto raíz: `no-asap-compliance-positioning`, `portal-four-
 
 | Item | Prioridad |
 |---|---|
-| Asset real `public/og-image.png` (1200x630) | Alta — necesita diseño |
-| Configurar Resend + dominio verificado | Alta — para que el form funcione en prod |
-| Página de pricing (cuando se defina modelo) | Media |
+| ~~Asset real `public/og-image.png` (1200x630)~~ | ✅ Existe (`public/og-image.png`, 1200×630) |
+| ~~Configurar Resend~~ | ✅ Obsoleto — el form postea al backend, la landing ya no envía emails |
+| ~~Página de pricing~~ | ✅ Existe (`/pricing`) |
+| Migrar `<img>` a `next/image` en `/soyvecino` y `CivicLoopScroll` (5 instancias) | Media — LCP/bandwidth |
 | Versión en inglés de la landing | Baja — mercado inicial es Argentina |
 | Analytics (Vercel Web Analytics) | Media |
+
+**Componentes sin importar (conservados a propósito):** `CaseStudyBlock`, `SocialProof`, `Progressive`, `Scenarios`, `Differentiator`, `CivicCreditsExplainer`, `VecinoBanner`. No están en el flujo de ninguna página. Borrar si se confirma que no vuelven.
