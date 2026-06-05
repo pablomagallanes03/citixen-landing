@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import CivicLoopScroll from '../components/CivicLoopScroll'
 
 const CITIXEN_API = process.env.NEXT_PUBLIC_API_URL || 'https://citixen.app'
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=app.citixen'
@@ -513,16 +514,7 @@ export default function EconomiaParticipativa() {
             <p className="ep-mechanism-sub">Y funcionan así:</p>
           </div>
 
-          <div className="ep-steps">
-            {steps.map((step, i) => (
-              <div className={`ep-step fade-up delay-${(i % 3) + 1}`} key={i}>
-                <div className="ep-step-number">{step.number}</div>
-                <div className="ep-step-icon">{step.icon}</div>
-                <h3 className="ep-step-title">{step.title}</h3>
-                <p className="ep-step-desc">{step.desc}</p>
-              </div>
-            ))}
-          </div>
+          <CivicLoopScroll steps={steps} />
 
           <div className="ep-clarification fade-up">
             <h3 className="ep-clarification-title">No es una promesa. Es un mecanismo.</h3>

@@ -3127,6 +3127,292 @@ img { max-width: 100%; display: block; }
 }
 .ep-clarification p:last-child { margin-bottom: 0; }
 
+/* ═══════════════════════════════════════════════════
+   CIVIC LOOP — scrollytelling del recorrido de CC (ACTO 3)
+   Panel sticky navy con escena viva + pasos que se iluminan.
+   ═══════════════════════════════════════════════════ */
+.loop-scroll {
+  max-width: 1080px;
+  margin: 0 auto 64px;
+}
+.loop-grid {
+  display: grid;
+  grid-template-columns: 1.04fr 1fr;
+  gap: 44px;
+  align-items: stretch; /* la columna izq toma la altura de los pasos → el sticky puede viajar */
+}
+
+/* ── Panel sticky (izquierda) ── */
+.loop-stage-wrap { position: relative; }
+.loop-stage {
+  position: sticky;
+  top: clamp(90px, 16vh, 150px);
+  background: var(--citixen-gradient);
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+}
+.loop-stage-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 20px;
+}
+
+/* ── Escena viva: la plaza (v3) ──
+   --restore (0→1) lo maneja el scroll-scrub vía JS (con easing) y se aplica
+   como filtro gris→color sobre la foto real de la plaza. */
+.loop-scene-viewport {
+  position: relative;
+  height: 272px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #0a1530;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+/* Imágenes apiladas: una por paso, cross-fade manejado por el scroll (opacity vía JS) */
+.loop-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: opacity;
+}
+/* scrim superior sutil para asentar la notificación */
+.loop-scene-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2, 12, 40, 0.32), rgba(2, 12, 40, 0) 34%);
+  pointer-events: none;
+}
+/* Notificación push por paso — compacta, se desliza desde arriba.
+   La posición horizontal varía por paso (pos-tl / pos-tr / pos-tc). */
+.loop-notif {
+  position: absolute;
+  top: 13px;
+  max-width: 214px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+  padding: 8px 10px;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(2, 27, 78, 0.32), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  animation: loopNotifIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.loop-notif.pos-tl { left: 14px; }
+.loop-notif.pos-tr { right: 14px; }
+.loop-notif.pos-tc {
+  left: 50%;
+  transform: translateX(-50%);
+  animation-name: loopNotifInC;
+}
+@keyframes loopNotifIn {
+  from { opacity: 0; transform: translateY(-16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes loopNotifInC {
+  from { opacity: 0; transform: translate(-50%, -16px) scale(0.97); }
+  to   { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+.loop-notif-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 7px;
+  flex-shrink: 0;
+  display: block;
+  box-shadow: 0 2px 6px rgba(2, 27, 78, 0.3);
+}
+.loop-notif-main { min-width: 0; flex: 1; }
+.loop-notif-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1px; }
+.loop-notif-app { font-size: 8.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-muted); }
+.loop-notif-time { font-size: 8.5px; color: var(--text-muted); }
+.loop-notif-title { font-size: 11.5px; font-weight: 800; color: #0b1424; line-height: 1.22; }
+.loop-notif-text { font-size: 10px; color: var(--text-secondary); line-height: 1.3; margin-top: 1px; }
+
+/* Push notification */
+.loop-toast {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+  animation: loopToastIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes loopToastIn {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.loop-toast-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(247, 121, 78, 0.18);
+}
+.loop-toast-text { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+.loop-toast-text strong { font-size: 12px; font-weight: 700; color: var(--text-primary); }
+.loop-toast-text span { font-size: 11px; color: var(--text-secondary); }
+
+/* Caption + timeline + contador */
+.loop-stage-caption {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+  margin-top: 22px;
+  min-height: 50px;
+  animation: loopSceneIn 0.45s ease-out;
+}
+@keyframes loopSceneIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.loop-rail { position: relative; margin-top: 22px; }
+.loop-rail-track {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  right: 14px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 3px;
+  transform: translateY(-50%);
+}
+.loop-rail-fill {
+  height: 100%;
+  background: var(--secondary);
+  border-radius: 3px;
+  /* el ancho lo maneja el scroll-scrub vía JS, sin transition para mapeo directo */
+}
+.loop-rail-coin {
+  position: absolute;
+  top: 50%;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--primary-dark);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -188%);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35), 0 0 0 4px rgba(60, 158, 206, 0.28);
+  z-index: 3;
+}
+.loop-rail-nodes { position: relative; display: flex; justify-content: space-between; }
+.loop-rail-node {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary-dark);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+.loop-rail-node.is-done { background: var(--secondary); border-color: var(--secondary); color: #fff; }
+.loop-rail-node.is-active {
+  background: var(--primary-dark);
+  border-color: #fff;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.16);
+}
+.loop-stage-counter { margin-top: 18px; font-size: 14px; font-weight: 700; color: #fff; }
+.loop-stage-counter span { color: rgba(255, 255, 255, 0.5); font-weight: 600; }
+
+/* ── Pasos (derecha) ── */
+.loop-steps { list-style: none; margin: 0; padding: 0; }
+.loop-step {
+  min-height: 74vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px 0;
+  opacity: 0.32;
+  transform: translateY(8px);
+  /* opacidad/posición las maneja el scroll-scrub vía JS (sin transition para mapeo directo) */
+}
+.loop-step.is-active { opacity: 1; transform: translateY(0); }
+.loop-step-head { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.loop-step-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+  transition: transform 0.45s ease;
+}
+.loop-step.is-active .loop-step-icon { transform: scale(1.06); }
+.loop-step-index {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+.loop-step-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  color: var(--text-primary);
+  line-height: 1.18;
+  margin-bottom: 14px;
+}
+.loop-step-desc { font-size: 17px; line-height: 1.65; color: var(--text-secondary); max-width: 46ch; }
+
+/* Tablet / mobile → lista estática legible (sin sticky de dos columnas) */
+@media (max-width: 860px) {
+  .loop-grid { grid-template-columns: 1fr; gap: 0; }
+  .loop-stage-wrap { display: none; }
+  .loop-step {
+    min-height: 0;
+    opacity: 1;
+    transform: none;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .loop-step:last-child { border-bottom: none; }
+  .loop-step-title { font-size: 22px; }
+  .loop-step-desc { font-size: 16px; }
+}
+
+/* Respeta usuarios con movimiento reducido → escena estática, foto a color */
+@media (prefers-reduced-motion: reduce) {
+  .loop-stage { position: static; }
+  .loop-scene-viewport { --restore: 1; }
+  .loop-notif { animation: none; }
+  .loop-step { opacity: 1; transform: none; }
+}
+
 /* Precedent */
 .ep-precedent {
   padding: 100px 0;
