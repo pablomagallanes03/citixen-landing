@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Hero() {
@@ -19,9 +18,9 @@ export default function Hero() {
             <a href="#acceso" className="btn-primary">
               Activá Citixen en tu ciudad
             </a>
-            <Link href="/soyvecino" className="btn-secondary">
-              Ver proyectos reales →
-            </Link>
+            <a href="#gobierno" className="btn-secondary">
+              Ver cómo funciona →
+            </a>
           </div>
           <div className="hero-proof fade-up delay-4">
             <div className="hero-proof-item">
