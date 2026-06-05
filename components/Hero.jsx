@@ -6,7 +6,6 @@ export default function Hero() {
     <section className="hero">
       <div className="container hero-inner">
         <div className="hero-content">
-          <span className="hero-badge fade-up delay-1">Decisión ciudadana vinculante</span>
           <h1 className="fade-up delay-1">
             Lo que tus vecinos deciden,<br />la ciudad lo construye.
           </h1>

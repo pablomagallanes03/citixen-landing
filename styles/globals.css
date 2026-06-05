@@ -190,7 +190,7 @@ img { max-width: 100%; display: block; }
    ═══════════════════════════════════════��═══════════ */
 .hero {
   position: relative;
-  padding: 160px 0 100px;
+  padding: 116px 0 64px;
   background: var(--citixen-gradient);
   overflow: hidden;
   min-height: 100vh;
@@ -243,12 +243,12 @@ img { max-width: 100%; display: block; }
 }
 .hero p {
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.6;
   color: rgba(255,255,255,0.8);
-  margin-bottom: 36px;
+  margin-bottom: 28px;
   max-width: 480px;
 }
-.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
 
 /* Hero proof points */
 .hero-proof {
