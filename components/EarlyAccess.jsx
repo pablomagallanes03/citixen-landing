@@ -133,7 +133,6 @@ export default function EarlyAccess() {
             <h3 className="access-card-title">Quiero activar Citixen</h3>
             <p className="access-card-desc">
               Registrá tu municipio y te ayudamos a tenerlo operativo en un día.
-              Sin costo para Modo Comunidad, sin compromiso de permanencia.
             </p>
             <GovernmentForm />
           </div>

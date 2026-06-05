@@ -47,12 +47,6 @@ export default function HowToStart() {
           ))}
         </div>
 
-        <div className="how-to-after fade-up">
-          <p>
-            <strong>Sin penalidad.</strong> Sin contrato de permanencia.
-            Lo desactivás con un click si no funciona.
-          </p>
-        </div>
       </div>
     </section>
   )

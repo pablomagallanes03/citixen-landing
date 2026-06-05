@@ -67,7 +67,7 @@ export default function CommunityMode() {
             Modo Comunidad
           </h2>
           <p className="community-subtitle fade-up">
-            Si tu ciudad todavía no puede activar Créditos Cívicos, empezá publicando, escuchando y preparándote. El switch a CC queda a un clic cuando estés listo.
+            Si tu ciudad todavía no puede activar Créditos Cívicos, empezá publicando, escuchando y preparándote. Activá los Créditos Cívicos cuando estés listo.
           </p>
         </div>
 
@@ -92,7 +92,7 @@ export default function CommunityMode() {
           <div className="community-footer-divider"></div>
           <div className="community-footer-item">
             <span className="community-footer-label">Esfuerzo</span>
-            <span className="community-footer-value">Cargar tus proyectos actuales. Nada más.</span>
+            <span className="community-footer-value">Mínimo. Sin equipo técnico.</span>
           </div>
           <div className="community-footer-divider"></div>
           <div className="community-footer-item">

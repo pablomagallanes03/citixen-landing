@@ -31,10 +31,6 @@ const faqs = [
     answer: <>Son capacidad de decisión ciudadana sobre recursos públicos. Se acreditan a partir de tus obligaciones fiscales — impuestos, tasas, multas. No son dinero, no se compran, no se venden. Cuando asignás CC a un proyecto, estás participando en la priorización colectiva de iniciativas de tu ciudad. <Link href="/soyvecino" style={{ color: 'var(--primary)', fontWeight: 600 }}>Ver explicación completa &rarr;</Link></>,
   },
   {
-    question: '¿Mis datos están seguros?',
-    answer: 'Sí. Citixen usa autenticación con cookies seguras, control de acceso por roles con permisos diferenciados, registro de auditoría de toda acción de gobierno, y protección contra ataques comunes. Los datos viven en servidores con backups automáticos. No vendemos ni compartimos datos con terceros.',
-  },
-  {
     question: '¿Esto ya funciona en algún municipio?',
     answer: 'El sistema está operativo y probado. Estamos incorporando los primeros municipios — por eso el acceso anticipado incluye acompañamiento personalizado en la configuración y puesta en marcha.',
   },

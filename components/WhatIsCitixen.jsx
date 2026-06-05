@@ -66,8 +66,8 @@ export default function WhatIsCitixen() {
               </tr>
               <tr>
                 <td className="what-is-feature">Esfuerzo</td>
-                <td>Activar un switch + definir % de impuestos</td>
-                <td>Cargar tus proyectos actuales</td>
+                <td>Definir el % de impuestos a Créditos Cívicos</td>
+                <td>Publicar tu gestión actual</td>
               </tr>
             </tbody>
           </table>

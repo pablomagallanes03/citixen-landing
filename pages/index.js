@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import Problem from '../components/Problem'
 import WhatIsCitixen from '../components/WhatIsCitixen'
-import ParticipativeEconomy from '../components/ParticipativeEconomy'
 import CommunityMode from '../components/CommunityMode'
 import HowToStart from '../components/HowToStart'
 import Trust from '../components/Trust'
@@ -114,7 +113,6 @@ export default function Home() {
       <Hero />
       <Problem />
       <WhatIsCitixen />
-      <ParticipativeEconomy />
       <CommunityMode />
       <HowToStart />
       <Trust />
