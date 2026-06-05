@@ -285,9 +285,9 @@ img { max-width: 100%; display: block; }
 /* Hero visual — arco decisión → obra (reemplaza el mockup-wallet, jun 2026) */
 .hero-visual { position: relative; width: 100%; max-width: 420px; }
 .hero-visual .hv-bg {
-  position: absolute; top: -32px; left: 40px; right: -16px;
-  display: flex; flex-direction: column; gap: 10px;
-  z-index: 1; opacity: 0.6;
+  position: absolute; top: -18px; left: 26px; right: 26px;
+  display: flex; flex-direction: column; gap: 8px;
+  z-index: 1; opacity: 0.45;
 }
 .hv-bg-card {
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
@@ -330,8 +330,11 @@ img { max-width: 100%; display: block; }
   font-size: 17px; font-weight: 800; color: var(--dark);
   line-height: 1.25; margin: 0 0 8px;
 }
-.hv-decision { font-size: 13px; color: #475569; line-height: 1.4; margin: 0 0 16px; }
-.hv-decision strong { color: var(--primary); font-weight: 800; }
+.hv-decision { font-size: 12.5px; color: #475569; line-height: 1.45; margin: 0 0 16px; }
+.hv-decision strong {
+  display: block; color: var(--primary); font-weight: 800;
+  font-size: 26px; line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 3px;
+}
 
 .hv-timeline { display: flex; flex-direction: column; }
 .hv-step {
