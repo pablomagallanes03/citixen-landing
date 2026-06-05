@@ -11,12 +11,6 @@ import Trust from '../components/Trust'
 import FAQ from '../components/FAQ'
 import EarlyAccess from '../components/EarlyAccess'
 import Footer from '../components/Footer'
-import PricingSummary from '../components/PricingSummary'
-
-// Componentes removidos del flujo (archivos conservados):
-// CaseStudyBlock, SocialProof, Progressive, Scenarios,
-// Differentiator, CivicCreditsExplainer, VecinoBanner
-// (VecinoBanner removido junio 2026 — el Hero ya le habla al vecino)
 
 export default function Home() {
   useEffect(() => {
@@ -123,7 +117,6 @@ export default function Home() {
       <ParticipativeEconomy />
       <CommunityMode />
       <HowToStart />
-      <PricingSummary />
       <Trust />
       <FAQ />
       <EarlyAccess />

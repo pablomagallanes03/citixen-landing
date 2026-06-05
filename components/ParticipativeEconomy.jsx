@@ -51,8 +51,8 @@ export default function ParticipativeEconomy() {
 
             <div className="cc-protagonist-pills">
               <span className="cc-protagonist-pill">Vinculados a impuestos reales</span>
-              <span className="cc-protagonist-pill">Trazabilidad completa</span>
-              <span className="cc-protagonist-pill">Se activa con un switch</span>
+              <span className="cc-protagonist-pill">Decisión vinculante</span>
+              <span className="cc-protagonist-pill">El municipio mantiene el control</span>
             </div>
 
             <Link href="/soyvecino" className="cc-protagonist-cta">

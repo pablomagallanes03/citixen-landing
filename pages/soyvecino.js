@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -375,7 +376,7 @@ export default function EconomiaParticipativa() {
                       {/* Proyecto 1 */}
                       <div className="phone-slide phone-slide--1">
                         <div className="phone-project-photo">
-                          <img src="/mockup/comedorc.png" alt="Comedor Compartiendo Amor" />
+                          <Image src="/mockup/comedorc.png" alt="Comedor Compartiendo Amor" fill sizes="300px" style={{ objectFit: 'cover' }} />
                           <div className="phone-project-category">Infraestructura social</div>
                         </div>
                         <div className="phone-project-body">
@@ -402,7 +403,7 @@ export default function EconomiaParticipativa() {
                       {/* Proyecto 2 */}
                       <div className="phone-slide phone-slide--2">
                         <div className="phone-project-photo">
-                          <img src="/mockup/refugio.png" alt="Refugio Patitas del Sur" />
+                          <Image src="/mockup/refugio.png" alt="Refugio Patitas del Sur" fill sizes="300px" style={{ objectFit: 'cover' }} />
                           <div className="phone-project-category">Bienestar animal</div>
                         </div>
                         <div className="phone-project-body">
@@ -429,7 +430,7 @@ export default function EconomiaParticipativa() {
                       {/* Proyecto 3 */}
                       <div className="phone-slide phone-slide--3">
                         <div className="phone-project-photo">
-                          <img src="/mockup/plaza.png" alt="Restauración plaza San Martín" />
+                          <Image src="/mockup/plaza.png" alt="Restauración plaza San Martín" fill sizes="300px" style={{ objectFit: 'cover' }} />
                           <div className="phone-project-category">Espacio público</div>
                         </div>
                         <div className="phone-project-body">

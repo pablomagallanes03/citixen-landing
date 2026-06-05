@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
@@ -57,7 +58,14 @@ export default function Hero() {
 
             <div className="hv-card">
               <div className="hv-photo">
-                <img src="/mockup/plaza.png" alt="Plaza San Martín renovada por el municipio" />
+                <Image
+                  src="/mockup/plaza.png"
+                  alt="Plaza San Martín renovada por el municipio"
+                  fill
+                  sizes="420px"
+                  style={{ objectFit: 'cover' }}
+                  priority
+                />
                 <span className="hv-photo-stamp">Ejecutado</span>
               </div>
               <div className="hv-card-body">

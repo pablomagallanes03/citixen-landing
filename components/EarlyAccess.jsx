@@ -113,17 +113,26 @@ export default function EarlyAccess() {
     <section className="early-access-section" id="acceso">
       <div className="container">
         <div className="early-access-header">
-          <h2 className="section-title fade-up">Tu municipio ya tiene proyectos en marcha.<br />Solo falta que se vean.</h2>
+          <h2 className="section-title fade-up">Que la próxima obra de tu ciudad<br />la decidan tus vecinos.</h2>
           <p className="section-desc fade-up" style={{ textAlign: 'center' }}>
-            Modo Comunidad es gratuito. Activalo hoy y tené Mi Ciudad en un día.
+            Empezá gratis con Modo Comunidad y activá la decisión vinculante cuando
+            tu ciudad esté lista. Sin contrato, reversible cuando quieras.
           </p>
+          <div className="early-access-control fade-up">
+            <span className="early-access-control-label">Vos mantenés el control</span>
+            <ul className="early-access-control-list">
+              <li>Definís qué porcentaje de cada ingreso genera Créditos Cívicos</li>
+              <li>Aprobás qué proyectos son elegibles y cuándo se ejecutan</li>
+              <li>Pausás o desactivás cuando quieras — sin poner dinero nuevo</li>
+            </ul>
+          </div>
         </div>
         <div className="early-access-grid early-access-grid--single">
           <div className="access-card card-government fade-up delay-1">
             <div className="access-card-label">Municipios</div>
             <h3 className="access-card-title">Quiero activar Citixen</h3>
             <p className="access-card-desc">
-              Registrá tu municipio y te ayudamos a tener Mi Ciudad operativo.
+              Registrá tu municipio y te ayudamos a tenerlo operativo en un día.
               Sin costo para Modo Comunidad, sin compromiso de permanencia.
             </p>
             <GovernmentForm />
