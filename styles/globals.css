@@ -281,6 +281,84 @@ img { max-width: 100%; display: block; }
 
 /* Portal mockup */
 .hero-mockup { display: flex; justify-content: center; align-items: center; position: relative; }
+
+/* Hero visual — arco decisión → obra (reemplaza el mockup-wallet, jun 2026) */
+.hero-visual { position: relative; width: 100%; max-width: 420px; }
+.hero-visual .hv-bg {
+  position: absolute; top: -32px; left: 40px; right: -16px;
+  display: flex; flex-direction: column; gap: 10px;
+  z-index: 1; opacity: 0.6;
+}
+.hv-bg-card {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 11px 16px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: var(--radius-md, 12px);
+  backdrop-filter: blur(6px);
+}
+.hv-bg-title { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); }
+.hv-status {
+  font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; white-space: nowrap;
+}
+.hv-status--done { background: rgba(34,197,94,0.18); color: #bbf7d0; }
+.hv-status--vote { background: rgba(60,158,206,0.22); color: #bfe3f5; }
+
+.hv-card {
+  position: relative; z-index: 2; width: 100%;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 30px 70px rgba(2,27,78,0.45);
+  overflow: hidden;
+}
+.hv-photo { position: relative; height: 168px; overflow: hidden; }
+.hv-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hv-photo-stamp {
+  position: absolute; top: 12px; right: 12px;
+  font-size: 12px; font-weight: 700; color: #fff;
+  background: var(--green, #22c55e);
+  padding: 5px 12px; border-radius: 100px;
+  box-shadow: 0 6px 16px rgba(2,27,78,0.3);
+}
+.hv-card-body { padding: 18px 20px 8px; }
+.hv-chip {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  color: var(--secondary); background: rgba(60,158,206,0.12);
+  padding: 4px 10px; border-radius: 100px; margin-bottom: 10px;
+}
+.hv-title {
+  font-size: 17px; font-weight: 800; color: var(--dark);
+  line-height: 1.25; margin: 0 0 8px;
+}
+.hv-decision { font-size: 13px; color: #475569; line-height: 1.4; margin: 0 0 16px; }
+.hv-decision strong { color: var(--primary); font-weight: 800; }
+
+.hv-timeline { display: flex; flex-direction: column; }
+.hv-step {
+  position: relative; padding: 0 0 14px 22px;
+  font-size: 12.5px; font-weight: 600; color: var(--dark);
+}
+.hv-step::before {
+  content: ''; position: absolute; left: 0; top: 1px;
+  width: 13px; height: 13px; border-radius: 50%;
+  background: var(--green, #22c55e); box-shadow: 0 0 0 3px rgba(34,197,94,0.18);
+}
+.hv-step::after {
+  content: ''; position: absolute; left: 6px; top: 14px; bottom: 0;
+  width: 1px; background: rgba(34,197,94,0.35);
+}
+.hv-step:last-child { padding-bottom: 0; }
+.hv-step:last-child::after { display: none; }
+
+.hv-stats {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border-light, #e2e8f0);
+  background: var(--bg, #e7ecf0);
+}
+.hv-stat { font-size: 11.5px; color: #475569; }
+.hv-stat strong { color: var(--primary); font-weight: 800; font-size: 14px; }
+.hv-stat-div { width: 1px; height: 22px; background: var(--border-light, #cbd5e1); }
 .hero-mockup-img {
   width: 100%;
   max-width: 260px;
