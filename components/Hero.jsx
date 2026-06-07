@@ -12,7 +12,7 @@ export default function Hero() {
             Con Citixen, los vecinos priorizan en qué proyectos invierte el municipio
             — y esa decisión se ejecuta, no queda en una consulta sin efecto.
             Los Créditos Cívicos son el mecanismo que la hace vinculante; el municipio
-            mantiene el control y la ejecución.
+            aprueba, financia y respalda cada proyecto.
           </p>
           <div className="hero-buttons fade-up delay-3">
             <a href="#acceso" className="btn-primary">
@@ -34,8 +34,8 @@ export default function Hero() {
             </div>
             <div className="hero-proof-divider"></div>
             <div className="hero-proof-item">
-              <span className="hero-proof-number">Con control municipal</span>
-              <span className="hero-proof-label">El municipio aprueba y ejecuta cada proyecto</span>
+              <span className="hero-proof-number">Con respaldo municipal</span>
+              <span className="hero-proof-label">El municipio aprueba, financia y respalda cada proyecto</span>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ export default function Hero() {
               </div>
               <div className="hv-bg-card">
                 <span className="hv-bg-title">Bicisenda Costanera</span>
-                <span className="hv-status hv-status--vote">En votación</span>
+                <span className="hv-status hv-status--vote">Recibiendo apoyo</span>
               </div>
             </div>
 
@@ -68,8 +68,7 @@ export default function Hero() {
               </div>
               <div className="hv-card-body">
                 <span className="hv-chip">Espacios públicos</span>
-                <h3 className="hv-title">Plaza San Martín — Barrio Norte</h3>
-                <div className="hv-highlight">★ El más votado del barrio</div>
+                <h3 className="hv-title">Renovación Plaza San Martín</h3>
                 <div className="hv-metrics">
                   <div className="hv-metric">
                     <span className="hv-metric-num">412</span>
@@ -82,21 +81,26 @@ export default function Hero() {
                   </div>
                   <span className="hv-metric-div"></span>
                   <div className="hv-metric">
-                    <span className="hv-metric-num">+2.000</span>
-                    <span className="hv-metric-label">vecinos la usan</span>
+                    <span className="hv-metric-num">100%</span>
+                    <span className="hv-metric-label">de la meta financiada</span>
                   </div>
                 </div>
                 <div className="hv-timeline">
-                  <span className="hv-step hv-step--done">Priorizado por los vecinos<em>feb 2026</em></span>
-                  <span className="hv-step hv-step--done">Aprobado por el municipio<em>mar 2026</em></span>
-                  <span className="hv-step hv-step--done">En obra<em>abr – jul 2026</em></span>
-                  <span className="hv-step hv-step--done">Inaugurada<em>ago 2026</em></span>
+                  <span className="hv-step hv-step--done">Aprobado por el municipio<em>feb 2026</em></span>
+                  <span className="hv-step hv-step--done">Meta alcanzada<em>jul 2026</em></span>
+                  <span className="hv-step hv-step--done">En obra<em>ago – nov 2026</em></span>
+                  <span className="hv-step hv-step--done">Inaugurada<em>dic 2026</em></span>
                 </div>
               </div>
               <div className="hv-stats">
                 <span className="hv-stat"><strong>1.240</strong> vecinos decidiendo</span>
                 <span className="hv-stat-div"></span>
-                <span className="hv-stat"><strong>7</strong> proyectos ejecutados este año</span>
+                <span className="hv-evidence">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Pack de evidencia
+                </span>
               </div>
             </div>
           </div>

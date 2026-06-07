@@ -38,17 +38,17 @@ Ver memorias del proyecto raíz: `no-asap-compliance-positioning`, `portal-four-
 | Orden | Componente | Objetivo |
 |---|---|---|
 | 1 | Navbar | "Soy gobierno" (`/soygobierno`), "Soy vecino" (`/soyvecino`), "Pricing", CTA "Contactanos" |
-| 2 | Hero | Sin eyebrow. H1 al vecino: **"Pagás [palabra rotativa]. Ahora también decidís adónde van."** La primera palabra rota (`RotatingWord.jsx`): impuestos → tasas → multas → patentes, cada 2,2s, en celeste `--secondary`, fade+slide-up, respeta `prefers-reduced-motion`. SSR renderiza "impuestos" (sin layout shift / SEO). Comunica el alcance de obligaciones fiscales configurables como fuente de CC (§32). + subhead que explica el mecanismo CC + proof points (con peso real / trazable / lo elegís vos) + mockup phone con ciclo de financiamiento activo. CTAs: "Ver cómo funciona" (→`#gobierno`) y "Soy gobierno →" (→`#acceso`). |
+| 2 | Hero | Sin eyebrow. H1 al vecino: **"Lo que tus vecinos deciden, la ciudad lo construye."** (H1 fijo — el `RotatingWord` fue retirado). Subhead explica el mecanismo CC + control municipal. 3 proof points: "Vinculante" / "Proyectos reales" / "Con control municipal". CTAs: "Activá Citixen en tu ciudad" (→`#acceso`) y "Ver cómo funciona →" (→`#gobierno`). **Visual `hero-visual` (arco decisión → obra, reemplazó el mockup-wallet en jun 2026):** tarjeta de proyecto ejecutado "Plaza San Martín — Barrio Norte" con foto (`/mockup/plaza.png`, LCP `priority`), chip de categoría, 3 métricas (vecinos que priorizaron / CC asignados / % meta financiada), timeline de 4 pasos del ciclo real (priorizado → aprobado por el municipio → en obra → inaugurada) y footer con "vecinos decidiendo" + chip "Pack de evidencia". Cards de fondo desenfocadas: "Ejecutado" / "Recibiendo apoyo". Challenger A/B del H1 archivado en comentario. **Vocabulario: nunca "votar/votación" — los vecinos priorizan/asignan CC.** |
 | 3 | Problem | Dolor del vecino sin peso: "Pagás impuestos toda tu vida. Nunca decidiste sobre uno solo." 4 bloques (consultas no vinculantes, audiencias express, presupuestos participativos simbólicos, programas sin preguntar). Turn: "Citixen le da peso real **antes** de que se vote, no después". |
 | 4 | WhatIsCitixen | Tabla de 2 modos (`#gobierno` anchor). **Columna izquierda: Créditos Cívicos** ("Que tus vecinos decidan" + label "Producto principal"). **Columna derecha: Modo Comunidad** ("Si tu ciudad todavía no está lista" + "Gratis 6 meses"). |
-| 5 | ParticipativeEconomy | **Producto principal** — eyebrow "El producto principal" + mockup wallet CC + título "Cada impuesto que pagás se convierte en una decisión real sobre tu ciudad" + 3 pasos + pills + CTA a `/soyvecino`. |
-| 6 | CommunityMode | **Path alternativo** — eyebrow "Path alternativo" + subtítulo "Si tu ciudad todavía no puede activar Créditos Cívicos…". 4 capacidades core + 2 optional. CTA "Activar Modo Comunidad". |
-| 7 | HowToStart | 3 pasos simplificados |
-| 8 | PricingSummary | 2 cards: Comunidad (gratis 6 meses) + CC (personalizado) |
-| 9 | Trust | Seguridad + contacto directo |
-| 10 | FAQ | 8 preguntas (incluye link a /soyvecino) |
-| 11 | EarlyAccess | Formulario gobierno (solo una columna, ancho protagonista). El acceso del ciudadano se movió a `/soyvecino`. |
-| 12 | Footer | Links + legal |
+| 5 | CommunityMode | **Path alternativo** — eyebrow "Path alternativo" + subtítulo "Si tu ciudad todavía no puede activar Créditos Cívicos…". 4 capacidades core + 2 optional. CTA "Activar Modo Comunidad". |
+| 6 | HowToStart | 3 pasos simplificados |
+| 7 | Trust | Seguridad + contacto directo |
+| 8 | FAQ | 8 preguntas (incluye link a /soyvecino) |
+| 9 | EarlyAccess | Formulario gobierno (solo una columna, ancho protagonista). El acceso del ciudadano se movió a `/soyvecino`. |
+| 10 | Footer | Links + legal |
+
+> **Nota (jun 2026):** `ParticipativeEconomy` y `PricingSummary` figuraban en el flujo de esta tabla pero **no se importan en `index.js`** ni existen como componentes. La home real es exactamente la secuencia de arriba (ver `pages/index.js`).
 
 **Componentes removidos del flujo (archivos conservados):** SocialProof, Progressive, Scenarios, Differentiator, CivicCreditsExplainer, CaseStudyBlock, **VecinoBanner**.
 
