@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -260,30 +259,6 @@ const steps = [
   },
 ]
 
-const controls = [
-  'Qué porcentaje de cada tipo de ingreso genera Créditos Cívicos',
-  'Qué proyectos son elegibles para recibir apoyo',
-  'Cuándo se aprueba la ejecución de un proyecto',
-  'Cuándo y cómo se desembolsan los fondos',
-  'La posibilidad de pausar o ajustar el sistema en cualquier momento',
-]
-
-const gains = [
-  'Cada decisión presupuestaria tiene respaldo ciudadano documentado',
-  'La priorización deja de ser discrecional — es participativa y trazable',
-  'Los vecinos dejan de reclamar al municipio y empiezan a decidir entre ellos',
-  'La gestión se vuelve auditablemente transparente',
-  'Un reporte mensual público que justifica la inversión con métricas concretas',
-]
-
-const implementation = [
-  { title: 'Activación en menos de un día', desc: 'Sin migración técnica. Sin equipo de sistemas. Sin desarrollo a medida.' },
-  { title: 'Probá antes de comprometerte', desc: 'Empezá gratis con Modo Comunidad. Activá Créditos Cívicos cuando tu ciudad esté lista.' },
-  { title: 'Reversible con un click', desc: 'Si en algún momento no funciona, desactivás. Tus datos siguen siendo tuyos.' },
-  { title: 'Sin contrato de permanencia', desc: 'Sin letra chica. Sin penalidades por discontinuar.' },
-  { title: 'Soporte humano directo', desc: 'Configuración inicial acompañada. Atención por persona, no por bot.' },
-]
-
 const faqs = [
   {
     q: '¿Es algún tipo de criptomoneda?',
@@ -308,6 +283,64 @@ const faqs = [
   {
     q: '¿Mi municipio ya lo tiene?',
     a: 'Descargá la app y buscá tu ciudad. Si todavía no está, podés registrarte para ser parte de los primeros vecinos en pedirlo.',
+  },
+]
+
+// Strip "Todo lo que vas a poder hacer" — beneficios del vecino
+const citizenPerks = [
+  {
+    title: 'Decidí sobre proyectos reales',
+    desc: 'Asignás Créditos Cívicos a lo que querés que tu ciudad construya.',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Opiná y proponé',
+    desc: 'Respondés las consultas del municipio y proponés tus propias ideas. Lo que más se apoya, se nota.',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Impulsá lo tuyo',
+    desc: 'Creás tus propios proyectos sociales o iniciativas ciudadanas, y sumás el apoyo de tus vecinos para hacerlos realidad.',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Seguí los resultados',
+    desc: 'Ves con fotos y números qué se logró en tu barrio. Cada proyecto cierra con pruebas.',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Enterate primero',
+    desc: 'Recibís los avisos oficiales de tu municipio: cortes, convocatorias, emergencias.',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Mirá tu impacto',
+    desc: 'Todo lo que apoyaste y lograste, junto en un solo lugar.',
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+      </svg>
+    ),
   },
 ]
 
@@ -431,75 +464,6 @@ export default function EconomiaParticipativa() {
         </div>
       </section>
 
-      {/* ACTO 5 — El municipio no pierde control */}
-      <section className="ep-governance">
-        <div className="container">
-          <h2 className="ep-section-title fade-up">
-            El municipio no pierde control. Gana respaldo.
-          </h2>
-          <p className="ep-governance-intro fade-up">
-            Activar los Créditos Cívicos no significa que los vecinos manejen el presupuesto.
-            Significa que el municipio tiene un canal digital, transparente y auditable para involucrar
-            a la comunidad en decisiones que antes tomaba solo.
-          </p>
-
-          <div className="ep-governance-grid">
-            <div className="ep-governance-card fade-up delay-1">
-              <h3 className="ep-governance-card-title">Lo que el municipio controla</h3>
-              <ul className="ep-governance-list">
-                {controls.map((item, i) => (
-                  <li key={i}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                      <path d="M8 12l3 3 5-5"/>
-                    </svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="ep-governance-card ep-governance-card--gains fade-up delay-2">
-              <h3 className="ep-governance-card-title">Lo que gana</h3>
-              <ul className="ep-governance-list">
-                {gains.map((item, i) => (
-                  <li key={i}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                    </svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Para el intendente que está leyendo */}
-          <div className="ep-impl-band fade-up">
-            <div className="ep-impl-header">
-              <span className="ep-impl-eyebrow">Si trabajás en un municipio</span>
-              <h3 className="ep-impl-title">La implementación, sin secretos.</h3>
-              <p className="ep-impl-intro">
-                Lo más caro de activar tecnología en un municipio suele ser el riesgo. Acá no hay.
-              </p>
-            </div>
-            <div className="ep-impl-grid">
-              {implementation.map((item, i) => (
-                <div className="ep-impl-item" key={i}>
-                  <svg className="ep-impl-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                    <path d="M8 12l3 3 5-5"/>
-                  </svg>
-                  <div>
-                    <div className="ep-impl-item-title">{item.title}</div>
-                    <div className="ep-impl-item-desc">{item.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ACTO 6 — Preguntas honestas */}
       <section className="ep-faq">
         <div className="container">
@@ -515,35 +479,57 @@ export default function EconomiaParticipativa() {
         </div>
       </section>
 
-      {/* ACTO 7 — CTA final dual */}
+      {/* ACTO 7 — CTA final (100% vecino) */}
       <section className="ep-cta">
         <div className="container">
           <div className="ep-cta-header fade-up">
-            <h2 className="ep-cta-title">No esperes a que cambie solo</h2>
+            <h2 className="ep-cta-title">Las ciudades no cambian solas. Las cambian sus vecinos.</h2>
             <p className="ep-cta-desc">
-              Cada ciudad que se suma a Citixen empezó con dos tipos de personas:
-              vecinos que decidieron pedirlo, y municipios que decidieron escucharlos.
+              No esperes a que alguien más lo pida. Cada ciudad en Citixen arrancó con un vecino
+              que decidió que su voz tenía que contar. Puede ser la tuya.
             </p>
+          </div>
+
+          {/* Strip — todo lo que vas a poder hacer */}
+          <div className="ep-cta-perks fade-up">
+            {citizenPerks.map((p, i) => (
+              <div className="ep-cta-perk" key={i}>
+                <div className="ep-cta-perk-icon">{p.icon}</div>
+                <h3 className="ep-cta-perk-title">{p.title}</h3>
+                <p className="ep-cta-perk-desc">{p.desc}</p>
+              </div>
+            ))}
           </div>
 
           <div className="ep-cta-dual">
             <CitySearchCTA />
 
-            <div className="ep-cta-track ep-cta-track--gov fade-up delay-2">
-              <div className="ep-cta-track-label">Si trabajás en un municipio</div>
-              <h3 className="ep-cta-track-title">Activá Citixen en tu ciudad</h3>
-              <p className="ep-cta-track-desc">
-                Empezá gratis con Modo Comunidad, sin tarjeta.
-                Probá antes de evaluar Créditos Cívicos.
-                Sin desarrollo a medida, sin contrato, sin penalidades.
-              </p>
-              <Link href="/#acceso" className="ep-cta-track-btn ep-cta-track-btn--gov">
-                Agendá una conversación
+            <div className="ep-cta-track fade-up delay-2">
+              <div className="ep-cta-track-label">Empezá hoy</div>
+              <h3 className="ep-cta-track-title">Descargá la app y sumate</h3>
+              <ul className="ep-cta-track-list">
+                {[
+                  'Tu opinión decide proyectos reales, no termina en un buzón.',
+                  'Influís en a dónde va una parte de lo que tu ciudad recauda.',
+                  'Seguís con fotos y números lo que tu barrio logró.',
+                ].map((item, i) => (
+                  <li key={i}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                      <path d="M8 12l3 3 5-5"/>
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="ep-cta-track-btn">
+                Descargá Citixen
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12 5 19 12 12 19"/>
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
                 </svg>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

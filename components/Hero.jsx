@@ -1,18 +1,30 @@
 import Image from 'next/image'
+import { useState, useEffect } from 'react'
+
+const ROTATING_WORDS = ['impuestos', 'multas', 'tasas', 'contribuciones']
 
 export default function Hero() {
+  const [wordIndex, setWordIndex] = useState(0)
+  useEffect(() => {
+    const id = setInterval(() => {
+      setWordIndex((i) => (i + 1) % ROTATING_WORDS.length)
+    }, 2200)
+    return () => clearInterval(id)
+  }, [])
+
   return (
     <section className="hero">
       <div className="container hero-inner">
         <div className="hero-content">
           <h1 className="fade-up delay-1">
-            Lo que tus vecinos deciden,<br />la ciudad lo construye.
+            Pagás{' '}
+            <span className="rotating-word">
+              <span key={wordIndex} className="rotating-word__active">{ROTATING_WORDS[wordIndex]}</span>
+            </span>,<br />ahora también decidí adónde van.
           </h1>
           <p className="fade-up delay-2">
-            Con Citixen, los vecinos priorizan en qué proyectos invierte el municipio
-            — y esa decisión se ejecuta, no queda en una consulta sin efecto.
-            Los Créditos Cívicos son el mecanismo que la hace vinculante; el municipio
-            aprueba, financia y respalda cada proyecto.
+            Citixen cambia tu relación con tu ciudad: participás de las decisiones,
+            priorizás los proyectos que importan y ves cómo se hacen realidad. Cerca y con efecto real.
           </p>
           <div className="hero-buttons fade-up delay-3">
             <a href="#acceso" className="btn-primary">
