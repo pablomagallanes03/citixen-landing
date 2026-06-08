@@ -2,12 +2,8 @@ import Head from 'next/head'
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
-import Problem from '../components/Problem'
 import WhatIsCitixen from '../components/WhatIsCitixen'
-import CommunityMode from '../components/CommunityMode'
-import HowToStart from '../components/HowToStart'
-import Trust from '../components/Trust'
-import FAQ from '../components/FAQ'
+import TwoPaths from '../components/TwoPaths'
 import EarlyAccess from '../components/EarlyAccess'
 import Footer from '../components/Footer'
 
@@ -111,12 +107,8 @@ export default function Home() {
       </Head>
       <Navbar />
       <Hero />
-      <Problem />
       <WhatIsCitixen />
-      <CommunityMode />
-      <HowToStart />
-      <Trust />
-      <FAQ />
+      <TwoPaths />
       <EarlyAccess />
       <Footer />
     </>

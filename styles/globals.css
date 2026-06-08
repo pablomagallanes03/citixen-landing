@@ -878,6 +878,60 @@ img { max-width: 100%; display: block; }
 /* ═══════════════════════════════════════════════════
    FAQ
    ═══════════════════════════════════════════════════ */
+/* Dos caminos — routing por audiencia (home) */
+.two-paths-section { padding: 100px 0; background: var(--bg); }
+.two-paths-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.two-paths-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-top: 3px solid transparent;
+  border-radius: var(--radius-xl);
+  padding: 40px 36px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.two-paths-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.two-paths-card--citizen { border-top-color: var(--secondary); }
+.two-paths-card--gov { border-top-color: var(--primary); }
+.two-paths-tag {
+  display: inline-block;
+  font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.two-paths-card--citizen .two-paths-tag { color: var(--secondary); }
+.two-paths-card--gov .two-paths-tag { color: var(--primary); }
+.two-paths-title {
+  font-size: 24px; font-weight: 800;
+  color: var(--text-primary); letter-spacing: -0.4px;
+  line-height: 1.25; margin-bottom: 12px;
+}
+.two-paths-desc {
+  font-size: 16px; line-height: 1.6;
+  color: var(--text-secondary); margin-bottom: 28px; flex-grow: 1;
+}
+.two-paths-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 15px; font-weight: 700; align-self: flex-start;
+}
+.two-paths-card--citizen .two-paths-link { color: var(--secondary); }
+.two-paths-card--gov .two-paths-link { color: var(--primary); }
+.two-paths-link svg { transition: transform 0.2s; }
+.two-paths-card:hover .two-paths-link svg { transform: translateX(4px); }
+@media (max-width: 768px) {
+  .two-paths-section { padding: 72px 0; }
+  .two-paths-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 36px; }
+  .two-paths-card { padding: 32px 28px; }
+}
+
 .faq-section { padding: 100px 0; background: var(--bg); }
 .faq-list { max-width: 720px; }
 .faq-item {
@@ -942,10 +996,7 @@ img { max-width: 100%; display: block; }
 /* ═══════════════════════════════════════════════════
    PRICING PAGE
    ═══════════════════════════════════════════════════ */
-.pricing-page {
-  padding: 140px 0 80px;
-  min-height: 100vh;
-}
+.pricing-section { padding: 100px 0; background: var(--bg); }
 .pricing-header {
   text-align: center;
   margin-bottom: 64px;
@@ -1066,6 +1117,7 @@ img { max-width: 100%; display: block; }
   color: var(--text-muted);
 }
 .pricing-features li.not-included svg { color: var(--text-muted); }
+.pricing-faq-section { background: var(--bg); padding-bottom: 80px; }
 .pricing-faq {
   max-width: 900px;
   margin: 0 auto;
@@ -3518,6 +3570,7 @@ img { max-width: 100%; display: block; }
   margin-bottom: 16px;
 }
 .ep-cta-track--gov .ep-cta-track-label { color: var(--accent); }
+.ep-cta-dual--single { grid-template-columns: 1fr; max-width: 520px; }
 .ep-cta-track-title {
   font-size: 24px;
   font-weight: 800;
@@ -3584,17 +3637,6 @@ img { max-width: 100%; display: block; }
 .ep-cta-perk-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 7px; line-height: 1.3; }
 .ep-cta-perk-desc { font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.72); }
 
-/* Lista de razones en la columna de descarga */
-.ep-cta-track-list {
-  list-style: none;
-  display: flex; flex-direction: column; gap: 13px;
-  margin-bottom: 28px; flex-grow: 1;
-}
-.ep-cta-track-list li {
-  display: flex; gap: 10px; align-items: flex-start;
-  font-size: 14.5px; line-height: 1.5; color: rgba(255,255,255,0.82);
-}
-.ep-cta-track-list svg { flex-shrink: 0; margin-top: 1px; color: var(--accent); }
 
 @media (max-width: 1024px) { .ep-cta-perks { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px)  { .ep-cta-perks { grid-template-columns: 1fr; } }

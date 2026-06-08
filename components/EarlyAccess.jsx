@@ -116,16 +116,8 @@ export default function EarlyAccess() {
           <h2 className="section-title fade-up">Que la próxima obra de tu ciudad<br />la decidan tus vecinos.</h2>
           <p className="section-desc fade-up" style={{ textAlign: 'center' }}>
             Empezás con Modo Comunidad gratis y encendés los Créditos Cívicos cuando
-            tu ciudad esté lista — sin rehacer nada. Sin contrato, reversible cuando quieras.
+            tu ciudad esté lista, sin rehacer nada. Sin contrato, reversible cuando quieras.
           </p>
-          <div className="early-access-control fade-up">
-            <span className="early-access-control-label">Vos mantenés el control</span>
-            <ul className="early-access-control-list">
-              <li>Definís qué porcentaje de cada ingreso genera Créditos Cívicos</li>
-              <li>Aprobás qué proyectos son elegibles y cuándo se ejecutan</li>
-              <li>Pausás o desactivás cuando quieras — sin poner dinero nuevo</li>
-            </ul>
-          </div>
         </div>
         <div className="early-access-grid early-access-grid--single">
           <div className="access-card card-government fade-up delay-1">

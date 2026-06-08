@@ -91,7 +91,7 @@ function CitySearchCTA() {
         <>
           <p className="ep-cta-track-desc">
             Buscá tu municipio para ver si ya está en Citixen.
-            Si todavía no, sumate igual — cuantos más vecinos seamos, más rápido llega.
+            Si todavía no, sumate igual: cuantos más vecinos seamos, más rápido llega.
           </p>
 
           <div className="ep-city-search">
@@ -169,7 +169,7 @@ function CitySearchCTA() {
             <p className="ep-city-result-msg">
               {cityCount > 0
                 ? <>Tu municipio todavía no está activo, pero <strong>{formatCount(cityCount)}</strong> {cityCount === 1 ? 'vecino fundador' : 'vecinos fundadores'} ya se sumaron. Cuantos más seamos, más rápido llega.</>
-                : <>Tu municipio todavía no está en Citixen. Sé el primer vecino fundador — invitá a otros y empujá para que llegue.</>}
+                : <>Tu municipio todavía no está en Citixen. Sé el primer vecino fundador. Invitá a otros y empujá para que llegue.</>}
             </p>
           )}
 
@@ -266,7 +266,7 @@ const faqs = [
   },
   {
     q: '¿Puedo sacar dinero con mis créditos?',
-    a: 'No. Los créditos se usan para apoyar proyectos. Cuando un proyecto se completa, el municipio desembolsa los fondos al ejecutor — fondos que ya estaban en la caja municipal. No se genera dinero nuevo.',
+    a: 'No. Los créditos se usan para apoyar proyectos. Cuando un proyecto se completa, el municipio desembolsa los fondos al ejecutor, fondos que ya estaban en la caja municipal. No se genera dinero nuevo.',
   },
   {
     q: '¿De dónde salen los Créditos Cívicos?',
@@ -501,36 +501,8 @@ export default function EconomiaParticipativa() {
             ))}
           </div>
 
-          <div className="ep-cta-dual">
+          <div className="ep-cta-dual ep-cta-dual--single">
             <CitySearchCTA />
-
-            <div className="ep-cta-track fade-up delay-2">
-              <div className="ep-cta-track-label">Empezá hoy</div>
-              <h3 className="ep-cta-track-title">Descargá la app y sumate</h3>
-              <ul className="ep-cta-track-list">
-                {[
-                  'Tu opinión decide proyectos reales, no termina en un buzón.',
-                  'Influís en a dónde va una parte de lo que tu ciudad recauda.',
-                  'Seguís con fotos y números lo que tu barrio logró.',
-                ].map((item, i) => (
-                  <li key={i}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                      <path d="M8 12l3 3 5-5"/>
-                    </svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="ep-cta-track-btn">
-                Descargá Citixen
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <polyline points="7 10 12 15 17 10"/>
-                  <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-              </a>
-            </div>
           </div>
         </div>
       </section>

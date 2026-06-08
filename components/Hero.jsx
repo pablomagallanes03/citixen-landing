@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
-const ROTATING_WORDS = ['impuestos', 'multas', 'tasas', 'contribuciones']
+const ROTATING_WORDS = ['impuestos', 'multas', 'tasas']
 
 export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0)

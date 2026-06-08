@@ -5,12 +5,13 @@ import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import EarlyAccess from '../components/EarlyAccess'
+import PricingSection from '../components/PricingSection'
 
 // ── Modo Comunidad — herramientas sin manejar dinero ──
 const communityTools = [
   {
-    title: 'Mi Ciudad — portal público',
-    desc: 'Una página pública por municipio (tuciudad.citixen.app) con tus proyectos, avances y reportes. Se comparte por WhatsApp con vista previa rica y difunde tu gestión sola, sin que el vecino descargue nada.',
+    title: 'Mi Ciudad: portal público',
+    desc: 'La cara pública de tu gestión: una dirección web propia (tuciudad.citixen.app) con tus proyectos, avances y reportes, abierta a todos, compartible en redes. Es la puerta por donde los vecinos descubren tu trabajo.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
@@ -18,8 +19,8 @@ const communityTools = [
     ),
   },
   {
-    title: 'Opiná — consultas ciudadanas',
-    desc: 'Le preguntás a tu ciudad lo que necesites saber: priorizar una obra, elegir el nombre de una plaza, medir un servicio. Tres formatos —ranking, opción múltiple o texto libre— con resultados auditables y conclusión pública.',
+    title: 'Opiná: consultas ciudadanas',
+    desc: 'Le preguntás a tu ciudad lo que necesites saber: priorizar una obra, elegir el nombre de una plaza, medir un servicio. Tres formatos (ranking, opción múltiple o texto libre) con resultados auditables y conclusión pública.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -27,7 +28,7 @@ const communityTools = [
     ),
   },
   {
-    title: 'Pulso ciudadano — propuestas',
+    title: 'Propuestas: Pulso ciudadano',
     desc: 'Tus vecinos proponen y apoyan ideas. Vos ves qué quiere la ciudad agrupado por tema, como insumo de planificación, sin la obligación de responder una por una.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -87,7 +88,7 @@ const creditTools = [
   },
   {
     title: 'Respaldo municipal de ejecución',
-    desc: 'Algunos proyectos necesitan al municipio para ejecutarse: un terreno fiscal, un permiso, materiales. El vecino lo declara y vos comprometés el recurso al aprobar, antes de que el proyecto reciba un solo crédito.',
+    desc: 'Algunos proyectos necesitan al municipio para ejecutarse: un terreno fiscal, un permiso, materiales. El vecino lo declara y vos comprometés el recurso al aprobar, antes de que el proyecto sea financiado.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
@@ -104,17 +105,17 @@ const creditTools = [
     ),
   },
   {
-    title: 'Ciclos de financiamiento',
-    desc: 'Agrupás los proyectos del mes en rondas. Genera efecto campaña —"tu ciudad decide sobre estos proyectos este mes"— y concentra la participación.',
+    title: 'Financiamiento de organizaciones',
+    desc: 'Las organizaciones sociales de tu ciudad reciben un presupuesto mensual sostenido por los vecinos. Vos aprobás el monto y desembolsás cada mes.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+        <line x1="3" y1="21" x2="21" y2="21"/><line x1="3" y1="10" x2="21" y2="10"/><polyline points="5 6 12 3 19 6"/><line x1="4" y1="10" x2="4" y2="21"/><line x1="20" y1="10" x2="20" y2="21"/><line x1="8" y1="14" x2="8" y2="17"/><line x1="12" y1="14" x2="12" y2="17"/><line x1="16" y1="14" x2="16" y2="17"/>
       </svg>
     ),
   },
   {
-    title: 'Desembolsos trazables',
-    desc: 'Cuando un proyecto se completa, el beneficiario reclama y vos transferís por fuera de la app, con el tipo de cambio bloqueado y cada paso registrado.',
+    title: 'Control total del pago',
+    desc: 'Cuando un proyecto se completa, vos autorizás la transferencia a quien lo ejecutó, por tus canales de siempre. El dinero nunca sale de tu control y cada movimiento queda registrado.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
@@ -127,7 +128,7 @@ const creditTools = [
 const teamTools = [
   {
     title: 'Equipo con roles y permisos',
-    desc: 'Cada funcionario tiene su cuenta y su perfil —tesorería, revisión, proyectos, comunicación—. Se terminó la contraseña compartida y quién hace qué queda claro.',
+    desc: 'Cada funcionario tiene su cuenta y su perfil (tesorería, revisión, proyectos, comunicación). Se terminó la contraseña compartida y quién hace qué queda claro.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
@@ -187,7 +188,7 @@ const toolBlocks = [
     badge: 'Empezás acá · 6 meses gratis',
     badgeClass: 'community',
     title: 'Modo Comunidad',
-    sub: 'Conectás con tus vecinos sin manejar un peso: transparencia, participación y comunicación. Es la puerta de entrada.',
+    sub: 'Conectás con tus vecinos: transparencia, participación y comunicación. Es la puerta de entrada.',
     tools: communityTools,
   },
   {
@@ -195,7 +196,7 @@ const toolBlocks = [
     badge: 'Cuando tu ciudad está lista',
     badgeClass: 'credits',
     title: 'Créditos Cívicos',
-    sub: 'Tus vecinos deciden a dónde van fondos que ya recaudaste. Lo activás con un paso, cuando la plataforma te dice que estás listo.',
+    sub: 'Tus vecinos deciden a dónde van los fondos que ya recaudaste. Lo activás con un click, cuando la plataforma te dice que estás listo.',
     tools: creditTools,
   },
   {
@@ -246,7 +247,7 @@ export default function SoyGobierno() {
               </h1>
               <p className="ep-hero-subtitle">
                 Citixen conecta a tu municipio con sus vecinos: un canal oficial directo, participación
-                ordenada, decisión sobre fondos que ya recaudaste, y la prueba —con fotos y números—
+                ordenada, decisión sobre fondos que ya recaudaste, y la prueba, con fotos y números,
                 de que las cosas se hicieron. Mirá todo lo que vas a tener en tus manos.
               </p>
               <div className="ep-hero-actions">
@@ -401,7 +402,7 @@ export default function SoyGobierno() {
                 {[
                   'Fotos del antes y el después, documentos y comprobantes de la ejecución.',
                   'La historia contada: qué se hizo, qué cambió en el barrio, a cuántos vecinos alcanzó.',
-                  'Queda público y permanente en el perfil del proyecto — no se edita ni se borra después.',
+                  'Queda público y permanente en el perfil del proyecto, no se edita ni se borra después.',
                 ].map((item, i) => (
                   <li key={i}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -421,31 +422,19 @@ export default function SoyGobierno() {
         </div>
       </section>
 
-      {/* ACTO 4 — Cierre: ¿dudas? escribinos + form (post directo → MunicipalLead) */}
+      {/* ACTO 4 — Precios */}
+      <PricingSection />
+
+      {/* ACTO 5 — Cierre: ¿dudas? escribinos + form (post directo → MunicipalLead) */}
       <section className="sg-help">
         <div className="container">
           <p className="sg-help-text fade-up">
             ¿Te quedan dudas sobre alguna herramienta o cómo aplicaría en tu ciudad?
-            No hay letra chica: escribinos y te respondemos una persona de carne y hueso.
+            No hay letra chica: escribinos y te respondemos.
           </p>
         </div>
       </section>
       <EarlyAccess />
-
-      {/* Cierre — barra de disponibilidad / prueba (movida al final) */}
-      <section className="sg-proof sg-proof--bottom">
-        <div className="container">
-          <p className="sg-proof-label">Disponible para gobiernos locales en 7 países de la región</p>
-          <div className="sg-proof-row">
-            {['Argentina', 'Brasil', 'Perú', 'Chile', 'Uruguay', 'Paraguay', 'Bolivia'].map(c => (
-              <span key={c} className="sg-proof-item">{c}</span>
-            ))}
-          </div>
-          <p className="sg-proof-foot">
-            Disponible en Google Play y App Store · Citixen Technologies SAS
-          </p>
-        </div>
-      </section>
 
       <Footer />
 

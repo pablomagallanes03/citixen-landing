@@ -7,24 +7,8 @@ const faqs = [
     answer: 'Modo Comunidad: empezá gratis sin tarjeta. Créditos Cívicos tiene un costo que depende del tamaño de tu ciudad. Lo definimos juntos después de la primera conversación. Sin contratos de permanencia.',
   },
   {
-    question: '¿Necesito aprobación del Concejo Deliberante?',
-    answer: 'Para Modo Comunidad, no. Publicar un portal público con la gestión de tu municipio es un acto administrativo: es información que ya es pública. Si querés activar los Créditos Cívicos, depende de tu marco normativo local — te asesoramos.',
-  },
-  {
     question: '¿Qué pasa si cambia el gobierno?',
     answer: 'Citixen es infraestructura de la ciudad, no del intendente. Los datos son públicos, el portal persiste entre gestiones, y la nueva administración recibe acceso completo al historial. La transparencia de tu gestión queda registrada para siempre.',
-  },
-  {
-    question: '¿Puedo desactivarlo si no funciona?',
-    answer: 'Sí. Cada modo se desactiva con un click. Sin penalidad, sin período mínimo, sin letra chica. Los datos que cargaste siguen siendo tuyos.',
-  },
-  {
-    question: '¿Necesito un equipo de sistemas?',
-    answer: 'No. La plataforma es autoservicio. Si tu equipo puede usar una planilla de Excel, puede usar Citixen. Y tenés soporte humano incluido para la configuración inicial y cualquier duda posterior.',
-  },
-  {
-    question: '¿Cómo justifico la plataforma ante el Concejo Deliberante?',
-    answer: 'Cada mes Citixen genera automáticamente un reporte mensual público en PDF con métricas concretas: ciudadanos activos, nuevos registros, transparencia, proyectos publicados, propuestas y opiniones. Lo bajás, lo presentás en la próxima sesión, y queda como recurso público en el portal. No tenés que armar nada a mano.',
   },
   {
     question: '¿Qué son los Créditos Cívicos?',
