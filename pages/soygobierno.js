@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import Image from 'next/image'
+import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import EarlyAccess from '../components/EarlyAccess'
+import PhoneMockup from '../components/PhoneMockup'
 
 // Qué gana tu gobierno — los beneficios centrales
 const benefits = [
@@ -114,53 +116,36 @@ const faqs = [
   },
 ]
 
-// Demo de producto — solo superficies con assets reales (sin inventar el panel)
-const demoTabs = [
+// Demo de producto — 3 superficies que el municipio usa todos los días
+const surfaces = [
   {
-    key: 'app',
-    label: 'La app del vecino',
-    img: '/pictures/Iphone.png',
+    title: 'La app del vecino',
     desc: 'Tu vecino ve qué hace su ciudad en tiempo real, opina, propone y apoya lo que le importa — sin tener que salir a la calle para ser escuchado.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="12" y1="18" x2="12" y2="18"/>
+      </svg>
+    ),
   },
   {
-    key: 'portal',
-    label: 'El portal público "Mi Ciudad"',
-    img: '/mockup/plaza.png',
+    title: 'El portal público "Mi Ciudad"',
     desc: 'Una página pública por municipio con tus proyectos, avances y reportes mensuales. Se comparte por WhatsApp y difunde tu gestión sola, sin que el vecino baje nada.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    ),
   },
   {
-    key: 'cc',
-    label: 'Créditos Cívicos',
-    img: '/wallet-mockup.png',
+    title: 'Créditos Cívicos',
     desc: 'Cuando tu ciudad está lista, cada vecino prioriza con Créditos Cívicos a qué proyectos van los fondos que ya recaudaste. Trazable de punta a punta.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+      </svg>
+    ),
   },
 ]
-
-function DemoShowcase() {
-  const [active, setActive] = useState('app')
-  const current = demoTabs.find(t => t.key === active)
-  return (
-    <div className="sg-demo fade-up">
-      <div className="sg-demo-tabs">
-        {demoTabs.map(t => (
-          <button
-            key={t.key}
-            className={`sg-demo-tab ${active === t.key ? 'is-active' : ''}`}
-            onClick={() => setActive(t.key)}
-          >
-            {t.label}
-          </button>
-        ))}
-      </div>
-      <div className="sg-demo-stage">
-        <div className="sg-demo-frame">
-          <img src={current.img} alt={current.label} loading="lazy" />
-        </div>
-        <p className="sg-demo-caption">{current.desc}</p>
-      </div>
-    </div>
-  )
-}
 
 export default function SoyGobierno() {
   useEffect(() => {
@@ -217,8 +202,70 @@ export default function SoyGobierno() {
               </p>
             </div>
 
+            {/* Visual: arco decisión → obra (mismo sistema que la home). */}
             <div className="ep-hero-mockup fade-up delay-2">
-              <img className="sg-hero-img" src="/pictures/Iphone.png" alt="App de Citixen que usan tus vecinos" loading="eager" />
+              <div className="hero-visual">
+                <div className="hv-bg" aria-hidden="true">
+                  <div className="hv-bg-card">
+                    <span className="hv-bg-title">Luminarias Av. Mitre</span>
+                    <span className="hv-status hv-status--done">Ejecutado</span>
+                  </div>
+                  <div className="hv-bg-card">
+                    <span className="hv-bg-title">Bicisenda Costanera</span>
+                    <span className="hv-status hv-status--vote">Recibiendo apoyo</span>
+                  </div>
+                </div>
+
+                <div className="hv-card">
+                  <div className="hv-photo">
+                    <Image
+                      src="/mockup/plaza.png"
+                      alt="Plaza San Martín renovada por el municipio"
+                      fill
+                      sizes="420px"
+                      style={{ objectFit: 'cover' }}
+                      priority
+                    />
+                    <span className="hv-photo-stamp">Ejecutado</span>
+                  </div>
+                  <div className="hv-card-body">
+                    <span className="hv-chip">Espacios públicos</span>
+                    <h3 className="hv-title">Renovación Plaza San Martín</h3>
+                    <div className="hv-metrics">
+                      <div className="hv-metric">
+                        <span className="hv-metric-num">412</span>
+                        <span className="hv-metric-label">vecinos lo priorizaron</span>
+                      </div>
+                      <span className="hv-metric-div"></span>
+                      <div className="hv-metric">
+                        <span className="hv-metric-num">18.400</span>
+                        <span className="hv-metric-label">Créditos Cívicos asignados</span>
+                      </div>
+                      <span className="hv-metric-div"></span>
+                      <div className="hv-metric">
+                        <span className="hv-metric-num">100%</span>
+                        <span className="hv-metric-label">de la meta financiada</span>
+                      </div>
+                    </div>
+                    <div className="hv-timeline">
+                      <span className="hv-step hv-step--done">Aprobado por el municipio<em>feb 2026</em></span>
+                      <span className="hv-step hv-step--done">Meta alcanzada<em>jul 2026</em></span>
+                      <span className="hv-step hv-step--done">En obra<em>ago – nov 2026</em></span>
+                      <span className="hv-step hv-step--done">Inaugurada<em>dic 2026</em></span>
+                    </div>
+                  </div>
+                  <div className="hv-stats">
+                    <span className="hv-stat"><strong>1.240</strong> vecinos decidiendo</span>
+                    <span className="hv-stat-div"></span>
+                    <span className="hv-evidence">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      Pack de evidencia
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -289,7 +336,23 @@ export default function SoyGobierno() {
         <div className="container">
           <span className="ep-mechanism-lead fade-up" style={{ textAlign: 'center', display: 'block' }}>Mirá adentro</span>
           <h2 className="ep-section-title fade-up">Lo que tu ciudad va a usar todos los días.</h2>
-          <DemoShowcase />
+
+          <div className="sg-demo fade-up">
+            <div className="sg-demo-device">
+              <PhoneMockup />
+            </div>
+            <div className="sg-demo-surfaces">
+              {surfaces.map((s, i) => (
+                <div className="sg-surface" key={i}>
+                  <div className="sg-surface-icon">{s.icon}</div>
+                  <div>
+                    <h3 className="sg-surface-title">{s.title}</h3>
+                    <p className="sg-surface-desc">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -434,12 +497,6 @@ export default function SoyGobierno() {
       <Footer />
 
       <style jsx>{`
-        /* HERO — imagen estática en la 2da columna del ep-hero */
-        .sg-hero-img {
-          max-height: 540px;
-          width: auto;
-          filter: drop-shadow(0 30px 60px rgba(0,0,0,0.45));
-        }
         .sg-hero-trust {
           margin-top: 26px;
           font-size: 14px;
@@ -453,22 +510,32 @@ export default function SoyGobierno() {
         .sg-proof-item { font-size: 17px; font-weight: 600; color: var(--text-secondary); }
         .sg-proof-foot { text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 18px; }
 
-        /* DEMO */
+        /* DEMO — iPhone CSS + superficies en columna (mismo lenguaje que /soyvecino) */
         .sg-demowrap { padding: 104px 0; background: var(--bg); }
-        .sg-demo { margin-top: 28px; }
-        .sg-demo-tabs { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; }
-        .sg-demo-tab { background: var(--surface); border: 1px solid var(--border-light); border-radius: 999px; padding: 10px 22px; font-size: 15px; font-weight: 600; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
-        .sg-demo-tab:hover { border-color: var(--primary); color: var(--primary); }
-        .sg-demo-tab.is-active { background: var(--primary); border-color: var(--primary); color: #fff; }
-        .sg-demo-stage { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--radius-xl); padding: 40px; }
-        .sg-demo-frame { display: flex; justify-content: center; }
-        .sg-demo-frame img { max-height: 420px; width: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); }
-        .sg-demo-caption { font-size: 18px; line-height: 1.65; color: var(--text-secondary); }
+        .sg-demo {
+          margin-top: 48px;
+          display: grid;
+          grid-template-columns: 0.85fr 1fr;
+          gap: 64px;
+          align-items: center;
+        }
+        .sg-demo-device { display: flex; justify-content: center; }
+        .sg-demo-surfaces { display: flex; flex-direction: column; gap: 28px; }
+        .sg-surface { display: flex; gap: 18px; align-items: flex-start; }
+        .sg-surface-icon {
+          flex-shrink: 0;
+          width: 48px; height: 48px;
+          display: flex; align-items: center; justify-content: center;
+          border-radius: var(--radius-lg);
+          background: rgba(10, 61, 145, 0.08);
+          color: var(--primary);
+        }
+        .sg-surface-title { font-size: 19px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+        .sg-surface-desc { font-size: 16px; line-height: 1.6; color: var(--text-secondary); }
 
         @media (max-width: 900px) {
           .sg-demowrap { padding: 72px 0; }
-          .sg-demo-stage { grid-template-columns: 1fr; text-align: center; padding: 28px; }
-          .sg-demo-tabs { justify-content: flex-start; }
+          .sg-demo { grid-template-columns: 1fr; gap: 48px; margin-top: 36px; }
         }
       `}</style>
     </>
