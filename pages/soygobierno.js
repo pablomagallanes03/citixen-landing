@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import EarlyAccess from '../components/EarlyAccess'
 
 // Qué gana tu gobierno — los beneficios centrales
 const benefits = [
@@ -113,6 +114,54 @@ const faqs = [
   },
 ]
 
+// Demo de producto — solo superficies con assets reales (sin inventar el panel)
+const demoTabs = [
+  {
+    key: 'app',
+    label: 'La app del vecino',
+    img: '/pictures/Iphone.png',
+    desc: 'Tu vecino ve qué hace su ciudad en tiempo real, opina, propone y apoya lo que le importa — sin tener que salir a la calle para ser escuchado.',
+  },
+  {
+    key: 'portal',
+    label: 'El portal público "Mi Ciudad"',
+    img: '/mockup/plaza.png',
+    desc: 'Una página pública por municipio con tus proyectos, avances y reportes mensuales. Se comparte por WhatsApp y difunde tu gestión sola, sin que el vecino baje nada.',
+  },
+  {
+    key: 'cc',
+    label: 'Créditos Cívicos',
+    img: '/wallet-mockup.png',
+    desc: 'Cuando tu ciudad está lista, cada vecino prioriza con Créditos Cívicos a qué proyectos van los fondos que ya recaudaste. Trazable de punta a punta.',
+  },
+]
+
+function DemoShowcase() {
+  const [active, setActive] = useState('app')
+  const current = demoTabs.find(t => t.key === active)
+  return (
+    <div className="sg-demo fade-up">
+      <div className="sg-demo-tabs">
+        {demoTabs.map(t => (
+          <button
+            key={t.key}
+            className={`sg-demo-tab ${active === t.key ? 'is-active' : ''}`}
+            onClick={() => setActive(t.key)}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+      <div className="sg-demo-stage">
+        <div className="sg-demo-frame">
+          <img src={current.img} alt={current.label} loading="lazy" />
+        </div>
+        <p className="sg-demo-caption">{current.desc}</p>
+      </div>
+    </div>
+  )
+}
+
 export default function SoyGobierno() {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -159,12 +208,34 @@ export default function SoyGobierno() {
                 <Link href="#gana" className="ep-cta-track-btn ep-cta-track-btn--gov" style={{ display: 'inline-flex', width: 'auto' }}>
                   Ver qué ganás
                 </Link>
-                <Link href="/#acceso" className="ep-hero-link">
+                <Link href="#acceso" className="ep-hero-link">
                   Activar mi ciudad →
                 </Link>
               </div>
+              <p className="sg-hero-trust">
+                Activación revisada caso por caso. Hablás con una persona, no con un formulario.
+              </p>
+            </div>
+
+            <div className="ep-hero-mockup fade-up delay-2">
+              <img className="sg-hero-img" src="/pictures/Iphone.png" alt="App de Citixen que usan tus vecinos" loading="eager" />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ACTO 1.5 — Barra de prueba */}
+      <section className="sg-proof">
+        <div className="container">
+          <p className="sg-proof-label">Disponible para gobiernos locales en 7 países de la región</p>
+          <div className="sg-proof-row">
+            {['Argentina', 'Brasil', 'Perú', 'Chile', 'Uruguay', 'Paraguay', 'Bolivia'].map(c => (
+              <span key={c} className="sg-proof-item">{c}</span>
+            ))}
+          </div>
+          <p className="sg-proof-foot">
+            Disponible en Google Play y App Store · Citixen Technologies SAS
+          </p>
         </div>
       </section>
 
@@ -210,6 +281,15 @@ export default function SoyGobierno() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ACTO 3.5 — Mirá el producto */}
+      <section className="sg-demowrap">
+        <div className="container">
+          <span className="ep-mechanism-lead fade-up" style={{ textAlign: 'center', display: 'block' }}>Mirá adentro</span>
+          <h2 className="ep-section-title fade-up">Lo que tu ciudad va a usar todos los días.</h2>
+          <DemoShowcase />
         </div>
       </section>
 
@@ -348,38 +428,49 @@ export default function SoyGobierno() {
         </div>
       </section>
 
-      {/* ACTO 9 — CTA final */}
-      <section className="ep-cta">
-        <div className="container">
-          <div className="ep-cta-header fade-up">
-            <h2 className="ep-cta-title">Citixen le da peso a tu vecino. A vos, la prueba de que escuchás.</h2>
-            <p className="ep-cta-desc">
-              Empezá gratis con Modo Comunidad, sin tarjeta. Probá antes de evaluar Créditos Cívicos.
-              Sin desarrollo a medida, sin contrato, sin penalidades.
-            </p>
-          </div>
-
-          <div className="ep-cta-dual" style={{ justifyContent: 'center' }}>
-            <div className="ep-cta-track ep-cta-track--gov fade-up delay-1">
-              <div className="ep-cta-track-label">Si trabajás en un municipio</div>
-              <h3 className="ep-cta-track-title">Activá Citixen en tu ciudad</h3>
-              <p className="ep-cta-track-desc">
-                Dejanos tu municipio, provincia y un email. Te contactamos para acompañar la
-                configuración inicial. Atención por persona, no por bot.
-              </p>
-              <Link href="/#acceso" className="ep-cta-track-btn ep-cta-track-btn--gov">
-                Agendá una conversación
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"/>
-                  <polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* ACTO 9 — CTA final con form real (post directo al backend → MunicipalLead) */}
+      <EarlyAccess />
 
       <Footer />
+
+      <style jsx>{`
+        /* HERO — imagen estática en la 2da columna del ep-hero */
+        .sg-hero-img {
+          max-height: 540px;
+          width: auto;
+          filter: drop-shadow(0 30px 60px rgba(0,0,0,0.45));
+        }
+        .sg-hero-trust {
+          margin-top: 26px;
+          font-size: 14px;
+          color: rgba(255,255,255,0.6);
+        }
+
+        /* PROOF BAR */
+        .sg-proof { background: var(--surface); padding: 40px 0; border-bottom: 1px solid var(--border-light); }
+        .sg-proof-label { text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 18px; }
+        .sg-proof-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 28px; }
+        .sg-proof-item { font-size: 17px; font-weight: 600; color: var(--text-secondary); }
+        .sg-proof-foot { text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 18px; }
+
+        /* DEMO */
+        .sg-demowrap { padding: 104px 0; background: var(--bg); }
+        .sg-demo { margin-top: 28px; }
+        .sg-demo-tabs { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; }
+        .sg-demo-tab { background: var(--surface); border: 1px solid var(--border-light); border-radius: 999px; padding: 10px 22px; font-size: 15px; font-weight: 600; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+        .sg-demo-tab:hover { border-color: var(--primary); color: var(--primary); }
+        .sg-demo-tab.is-active { background: var(--primary); border-color: var(--primary); color: #fff; }
+        .sg-demo-stage { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--radius-xl); padding: 40px; }
+        .sg-demo-frame { display: flex; justify-content: center; }
+        .sg-demo-frame img { max-height: 420px; width: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); }
+        .sg-demo-caption { font-size: 18px; line-height: 1.65; color: var(--text-secondary); }
+
+        @media (max-width: 900px) {
+          .sg-demowrap { padding: 72px 0; }
+          .sg-demo-stage { grid-template-columns: 1fr; text-align: center; padding: 28px; }
+          .sg-demo-tabs { justify-content: flex-start; }
+        }
+      `}</style>
     </>
   )
 }

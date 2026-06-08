@@ -7,6 +7,11 @@ const nextConfig = {
         destination: '/soyvecino',
         permanent: true,
       },
+      {
+        source: '/municipios',
+        destination: '/soygobierno',
+        permanent: true,
+      },
     ]
   },
 }
