@@ -11,9 +11,8 @@ export default function Footer() {
               <Logo height={26} variant="light" />
             </div>
             <p>
-              Participación ciudadana con peso real en tu municipio.
-              Tus vecinos deciden adónde van los Créditos Cívicos
-              y la ciudad ejecuta lo que priorizaron.
+              Una nueva relación entre tu municipio y sus vecinos.
+              Participación ciudadana con peso real.
             </p>
             <a
               href="https://play.google.com/store/apps/details?id=app.citixen"

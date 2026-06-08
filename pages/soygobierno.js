@@ -20,7 +20,7 @@ const communityTools = [
   },
   {
     title: 'Opiná: consultas ciudadanas',
-    desc: 'Le preguntás a tu ciudad lo que necesites saber: priorizar una obra, elegir el nombre de una plaza, medir un servicio. Tres formatos (ranking, opción múltiple o texto libre) con resultados auditables y conclusión pública.',
+    desc: 'Le preguntás a tu ciudad lo que necesites saber: priorizar una obra, elegir el nombre de una plaza, medir un servicio. Con diferentes formatos (ranking, opción múltiple, texto libre), con resultados auditables y conclusión pública.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
@@ -78,7 +78,7 @@ const creditTools = [
     ),
   },
   {
-    title: 'Curaduría y aprobación de proyectos',
+    title: 'Aprobación y control de proyectos',
     desc: 'Aprobás los proyectos, fijás cuánto puede aportar cada vecino y decidís cuáles reciben apoyo. Nada se financia sin tu visto bueno.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -196,7 +196,7 @@ const toolBlocks = [
     badge: 'Cuando tu ciudad está lista',
     badgeClass: 'credits',
     title: 'Créditos Cívicos',
-    sub: 'Tus vecinos deciden a dónde van los fondos que ya recaudaste. Lo activás con un click, cuando la plataforma te dice que estás listo.',
+    sub: 'Tus vecinos deciden a dónde van los fondos que ya recaudaste. Lo activás cuando estés listo, con un click.',
     tools: creditTools,
   },
   {
@@ -242,13 +242,13 @@ export default function SoyGobierno() {
           <div className="ep-hero-inner">
             <div className="ep-hero-content fade-up">
               <h1 className="ep-hero-title">
-                Tu ciudad paga impuestos.<br />
-                <span className="ep-hero-highlight">Dale a tus vecinos peso real en qué se hace con ellos.</span>
+                Convertí a tus vecinos<br />
+                <span className="ep-hero-highlight">en aliados de tu gestión.</span>
               </h1>
               <p className="ep-hero-subtitle">
-                Citixen conecta a tu municipio con sus vecinos: un canal oficial directo, participación
-                ordenada, decisión sobre fondos que ya recaudaste, y la prueba, con fotos y números,
-                de que las cosas se hicieron. Mirá todo lo que vas a tener en tus manos.
+                Citixen convierte el reclamo en participación, y la participación en respaldo a tu gestión.
+                Un canal directo con tus vecinos, decisiones con su apoyo, y la prueba de lo que se hizo.
+                Mirá todo lo que vas a tener en tus manos.
               </p>
               <div className="ep-hero-actions">
                 <Link href="#herramientas" className="ep-cta-track-btn ep-cta-track-btn--gov" style={{ display: 'inline-flex', width: 'auto' }}>

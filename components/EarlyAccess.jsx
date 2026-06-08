@@ -19,7 +19,6 @@ function GovernmentForm() {
   const [errorMsg, setErrorMsg] = useState('')
 
   const set = (k) => (e) => setForm(prev => ({ ...prev, [k]: e.target.value }))
-  const setCheck = (k) => (e) => setForm(prev => ({ ...prev, [k]: e.target.checked }))
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -29,7 +28,7 @@ function GovernmentForm() {
       const res = await fetch(`${API_URL}/api/government/register-light`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, acceptedTermsAndConditions: true }),
       })
       const data = await res.json()
       if (res.ok) {
@@ -92,13 +91,12 @@ function GovernmentForm() {
         <input className="access-input" type="text" placeholder="Cargo" value={form.representativeRole} onChange={set('representativeRole')} required minLength={2} maxLength={50} />
       </div>
       <input className="access-input" type="email" placeholder="Email institucional" value={form.institutionalEmail} onChange={set('institutionalEmail')} required />
-      <label className="access-checkbox-label">
-        <input type="checkbox" checked={form.acceptedTermsAndConditions} onChange={setCheck('acceptedTermsAndConditions')} required />
-        <span>Acepto los <a href="/terms" target="_blank" rel="noopener noreferrer">Términos de Uso</a> y la <a href="/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad</a></span>
-      </label>
-      <button className="btn-access-gov" type="submit" disabled={status === 'loading' || !form.acceptedTermsAndConditions}>
+      <button className="btn-access-gov" type="submit" disabled={status === 'loading'}>
         {status === 'loading' ? 'Enviando...' : 'Quiero activar Mi Ciudad'}
       </button>
+      <p className="access-privacy-note">
+        Al enviar tus datos, aceptás nuestra <a href="/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad</a>.
+      </p>
       {status === 'error' && (
         <p style={{ fontSize: '13px', color: 'var(--accent)', textAlign: 'center' }}>
           {errorMsg}

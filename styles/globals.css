@@ -3571,6 +3571,28 @@ img { max-width: 100%; display: block; }
 }
 .ep-cta-track--gov .ep-cta-track-label { color: var(--accent); }
 .ep-cta-dual--single { grid-template-columns: 1fr; max-width: 520px; }
+
+/* Área de descarga (stores) en la tarjeta del vecino */
+.ep-city-download { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.ep-store-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 13px 18px;
+  background: #fff; color: var(--primary-dark);
+  border-radius: var(--radius-lg); font-weight: 700; font-size: 15px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.ep-store-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
+.ep-store-btn svg { flex-shrink: 0; }
+.ep-store-btn--soon {
+  background: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.6);
+  cursor: default;
+}
+.ep-store-btn--soon:hover { transform: none; box-shadow: none; }
+
+/* Nota de privacidad bajo el form de gobierno */
+.access-privacy-note { font-size: 12px; line-height: 1.5; color: var(--text-muted); text-align: center; margin-top: 10px; }
+.access-privacy-note a { color: var(--text-secondary); text-decoration: underline; }
 .ep-cta-track-title {
   font-size: 24px;
   font-weight: 800;
