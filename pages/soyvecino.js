@@ -343,7 +343,6 @@ export default function EconomiaParticipativa() {
         <div className="container">
           <div className="ep-hero-inner">
             <div className="ep-hero-content fade-up">
-              <div className="ep-hero-eyebrow">Sos vecino</div>
               <h1 className="ep-hero-title">
                 Pagás impuestos.<br />
                 <span className="ep-hero-highlight">¿Alguna vez pudiste decidir qué se hace con ellos?</span>

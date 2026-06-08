@@ -5,131 +5,12 @@ import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import EarlyAccess from '../components/EarlyAccess'
-import PhoneMockup from '../components/PhoneMockup'
 
-// Qué gana tu gobierno — los beneficios centrales
-const benefits = [
+// ── Modo Comunidad — herramientas sin manejar dinero ──
+const communityTools = [
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-      </svg>
-    ),
-    title: 'Un canal oficial directo al vecino',
-    desc: 'Comunicás emergencias, cortes, convocatorias y trámites segmentando por barrio o tipo de vecino. Llega al teléfono, queda registrado, y cada link compartido difunde solo.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-        <polyline points="14 2 14 8 20 8"/>
-        <line x1="16" y1="13" x2="8" y2="13"/>
-        <line x1="16" y1="17" x2="8" y2="17"/>
-      </svg>
-    ),
-    title: 'Con qué justificar la gestión',
-    desc: 'Un reporte mensual en PDF, listo para el concejo o para redes: cuántos vecinos participan, qué se hizo, cuánto se decidió. Métricas concretas que demuestran que tu gestión escucha.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M9 11l3 3L22 4"/>
-        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-      </svg>
-    ),
-    title: 'Participación real y ordenada',
-    desc: 'Consultás a tus vecinos con resultados auditables. Ves qué quiere la ciudad como insumo de planificación — sin generar promesas que después no podés cumplir.',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="12" y1="1" x2="12" y2="23"/>
-        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-      </svg>
-    ),
-    title: 'Decisión ciudadana sobre fondos que ya tenés',
-    desc: 'Cuando tu ciudad está lista, los vecinos priorizan a qué proyectos van los Créditos Cívicos. El dinero ya está en tu caja — proviene de impuestos recaudados. Vos no ponés dinero nuevo.',
-  },
-]
-
-// Lo que controlás / lo que ganás
-const controls = [
-  'Qué porcentaje de cada tipo de ingreso genera Créditos Cívicos',
-  'Qué proyectos son elegibles para recibir apoyo',
-  'Cuándo se aprueba la ejecución de cada proyecto',
-  'Cuándo y cómo se desembolsan los fondos — siempre por fuera de la app',
-  'Pausar, ajustar o desactivar el sistema en cualquier momento',
-]
-
-const gains = [
-  'Cada decisión presupuestaria con respaldo ciudadano documentado',
-  'La priorización deja de ser discrecional — es participativa y trazable',
-  'Los vecinos dejan de reclamar y empiezan a decidir entre ellos',
-  'Roles separados: quien revisa comprobantes no es quien maneja desembolsos',
-  'Un registro auditable de cada acción, con motivo obligatorio',
-]
-
-// Por qué es seguro — tarjetas cortas
-const safety = [
-  { title: 'No ponés dinero nuevo', desc: 'Redirigís decisión sobre fondos ya recaudados. El dinero nunca sale de tu control.' },
-  { title: 'Vos controlás las perillas', desc: 'El porcentaje y el valor los definís vos. El ciudadano no controla ninguno de los dos.' },
-  { title: 'Pagás cuando querés', desc: 'Modelo de reclamo: el beneficiario de un proyecto completado inicia el cobro, vos transferís. Nunca al revés.' },
-  { title: 'Cero riesgo de fuga', desc: 'Los Créditos Cívicos no se convierten en dinero por el ciudadano. Solo cobra quien ejecutó un proyecto real.' },
-  { title: 'Solo tu ciudad', desc: 'Aislamiento total de jurisdicción. Tu gobierno ve y opera únicamente sobre vecinos y proyectos de tu municipio.' },
-  { title: 'Control interno formal', desc: 'Cada miembro de tu equipo tiene un perfil con permisos acotados. Auditoría con motivo en toda acción sensible.' },
-]
-
-// Implementación sin secretos
-const implementation = [
-  { title: 'Activación en menos de un día', desc: 'Sin migración técnica. Sin equipo de sistemas. Sin desarrollo a medida.' },
-  { title: 'Probá antes de comprometerte', desc: 'Empezá gratis con Modo Comunidad. Activá Créditos Cívicos cuando tu ciudad esté lista.' },
-  { title: 'Reversible con un click', desc: 'Si en algún momento no funciona, desactivás. Tus datos siguen siendo tuyos.' },
-  { title: 'Sin contrato de permanencia', desc: 'Sin letra chica. Sin penalidades por discontinuar.' },
-  { title: 'Soporte humano directo', desc: 'Configuración inicial acompañada. Atención por persona, no por bot.' },
-]
-
-// Preguntas del intendente
-const faqs = [
-  {
-    q: '¿Tengo que poner dinero nuevo?',
-    a: 'No. Los Créditos Cívicos provienen de impuestos que tu municipio ya recaudó. Cuando un proyecto se completa, desembolsás fondos que ya estaban en la caja municipal. No se genera dinero nuevo ni se compromete presupuesto adicional.',
-  },
-  {
-    q: '¿Pierdo control sobre el presupuesto?',
-    a: 'No. Activar Créditos Cívicos no significa que los vecinos manejen la caja. Vos definís qué porcentaje de cada ingreso genera créditos, qué proyectos son elegibles, cuándo se aprueban y cuándo se paga. Los vecinos priorizan dentro del marco que vos fijás.',
-  },
-  {
-    q: '¿Cuánto tarda en estar operativo?',
-    a: 'Menos de un día. No hay migración de sistemas ni integración técnica. Configurás tus fuentes de ingreso, tu equipo y empezás. La configuración inicial es acompañada por una persona.',
-  },
-  {
-    q: '¿Y si mi municipio todavía no está listo para todo esto?',
-    a: 'Empezás con Modo Comunidad: transparencia, consultas y participación, sin manejar un peso. Gratis durante seis meses. Cuando tu ciudad madura, activás Créditos Cívicos con un solo paso — la plataforma misma te indica cuándo estás listo.',
-  },
-  {
-    q: '¿Es una criptomoneda o blockchain?',
-    a: 'No. Los Créditos Cívicos no viven en blockchain, no se minan, no se tradean y no tienen cotización. Son un registro digital interno de participación, operado por tu municipio.',
-  },
-  {
-    q: '¿Funciona en municipios chicos?',
-    a: 'Sí. El sistema escala desde 5.000 habitantes. La mayoría de los proyectos públicos más urgentes están en ciudades chicas, donde el impacto es inmediato y visible.',
-  },
-]
-
-// Demo de producto — 3 superficies que el municipio usa todos los días
-const surfaces = [
-  {
-    title: 'La app del vecino',
-    desc: 'Tu vecino ve qué hace su ciudad en tiempo real, opina, propone y apoya lo que le importa — sin tener que salir a la calle para ser escuchado.',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="5" y="2" width="14" height="20" rx="2.5"/><line x1="12" y1="18" x2="12" y2="18"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'El portal público "Mi Ciudad"',
-    desc: 'Una página pública por municipio con tus proyectos, avances y reportes mensuales. Se comparte por WhatsApp y difunde tu gestión sola, sin que el vecino baje nada.',
+    title: 'Mi Ciudad — portal público',
+    desc: 'Una página pública por municipio (tuciudad.citixen.app) con tus proyectos, avances y reportes. Se comparte por WhatsApp con vista previa rica y difunde tu gestión sola, sin que el vecino descargue nada.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
@@ -137,13 +18,193 @@ const surfaces = [
     ),
   },
   {
-    title: 'Créditos Cívicos',
-    desc: 'Cuando tu ciudad está lista, cada vecino prioriza con Créditos Cívicos a qué proyectos van los fondos que ya recaudaste. Trazable de punta a punta.',
+    title: 'Opiná — consultas ciudadanas',
+    desc: 'Le preguntás a tu ciudad lo que necesites saber: priorizar una obra, elegir el nombre de una plaza, medir un servicio. Tres formatos —ranking, opción múltiple o texto libre— con resultados auditables y conclusión pública.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Pulso ciudadano — propuestas',
+    desc: 'Tus vecinos proponen y apoyan ideas. Vos ves qué quiere la ciudad agrupado por tema, como insumo de planificación, sin la obligación de responder una por una.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Comunicación institucional',
+    desc: 'Un canal oficial directo al teléfono del vecino: emergencias, cortes, convocatorias, trámites. Segmentás por barrio o tipo de vecino, queda registrado y con audiencia auditable.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Comentarios en proyectos',
+    desc: 'Los vecinos comentan y siguen los proyectos municipales. Conversación moderada, con filtros automáticos de contenido, sin que se transforme en red social.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Reporte mensual en PDF',
+    desc: 'Un informe listo para el concejo o la prensa: cuántos vecinos participan, qué se hizo, cuánto se decidió. Métricas concretas que justifican la plataforma ante quien haga falta.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+      </svg>
+    ),
+  },
+]
+
+// ── Créditos Cívicos — herramientas con decisión sobre fondos ──
+const creditTools = [
+  {
+    title: 'Fuentes de ingreso configurables',
+    desc: 'Definís qué impuestos generan Créditos Cívicos y en qué porcentaje cada uno. Vos controlás la perilla; el vecino nunca la toca.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Curaduría y aprobación de proyectos',
+    desc: 'Aprobás los proyectos, fijás cuánto puede aportar cada vecino y decidís cuáles reciben apoyo. Nada se financia sin tu visto bueno.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Respaldo municipal de ejecución',
+    desc: 'Algunos proyectos necesitan al municipio para ejecutarse: un terreno fiscal, un permiso, materiales. El vecino lo declara y vos comprometés el recurso al aprobar, antes de que el proyecto reciba un solo crédito.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Verificación de organizaciones y vecinos',
+    desc: 'Certificás las organizaciones de tu ciudad y verificás la identidad de los vecinos, con límites de proyectos que ajustás a cada caso.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Ciclos de financiamiento',
+    desc: 'Agrupás los proyectos del mes en rondas. Genera efecto campaña —"tu ciudad decide sobre estos proyectos este mes"— y concentra la participación.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Desembolsos trazables',
+    desc: 'Cuando un proyecto se completa, el beneficiario reclama y vos transferís por fuera de la app, con el tipo de cambio bloqueado y cada paso registrado.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
       </svg>
     ),
+  },
+]
+
+// ── Transversal — gestión interna del gobierno ──
+const teamTools = [
+  {
+    title: 'Equipo con roles y permisos',
+    desc: 'Cada funcionario tiene su cuenta y su perfil —tesorería, revisión, proyectos, comunicación—. Se terminó la contraseña compartida y quién hace qué queda claro.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Mapa de la ciudad',
+    desc: 'Todos los proyectos y organizaciones geolocalizados, filtrables por estado, categoría y fecha. Ves tu ciudad de un vistazo.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Tablero de gestión',
+    desc: 'Engagement, salud de la plataforma y resumen financiero en un panel. Los números que necesitás para decidir y para mostrar.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Registro de auditoría',
+    desc: 'Cada acción sensible queda registrada con autor, fecha y motivo obligatorio. Control interno formal, de fábrica.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Expedientes de vecinos y organizaciones',
+    desc: 'Abrís el expediente de cualquier vecino u organización y ves su historial completo en un solo lugar: participación, proyectos, comunicaciones y estado.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Soporte directo con Citixen',
+    desc: 'Un canal de soporte con el equipo de Citixen desde el panel: abrís un hilo, queda con seguimiento y te responde una persona. No es un mail al vacío.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"/>
+      </svg>
+    ),
+  },
+]
+
+const toolBlocks = [
+  {
+    id: 'comunidad',
+    badge: 'Empezás acá · 6 meses gratis',
+    badgeClass: 'community',
+    title: 'Modo Comunidad',
+    sub: 'Conectás con tus vecinos sin manejar un peso: transparencia, participación y comunicación. Es la puerta de entrada.',
+    tools: communityTools,
+  },
+  {
+    id: 'creditos',
+    badge: 'Cuando tu ciudad está lista',
+    badgeClass: 'credits',
+    title: 'Créditos Cívicos',
+    sub: 'Tus vecinos deciden a dónde van fondos que ya recaudaste. Lo activás con un paso, cuando la plataforma te dice que estás listo.',
+    tools: creditTools,
+  },
+  {
+    id: 'equipo',
+    badge: 'Transversal · los dos modos',
+    badgeClass: 'team',
+    title: 'Para tu equipo',
+    sub: 'La gestión interna, ordenada. Disponible siempre, sin importar el modo en el que estés.',
+    tools: teamTools,
   },
 ]
 
@@ -161,9 +222,9 @@ export default function SoyGobierno() {
     <>
       <Head>
         <title>Soy gobierno — Citixen</title>
-        <meta name="description" content="Conectá tu municipio con sus vecinos. Citixen le da a tu ciudad un canal oficial, participación real y decisión ciudadana sobre fondos que ya tenés — sin poner dinero nuevo y sin perder control." />
+        <meta name="description" content="Todas las herramientas que Citixen le da a tu municipio: portal público, consultas, propuestas, comunicación institucional, Créditos Cívicos, desembolsos trazables, pack de evidencia y gestión de equipo. Un catálogo concreto, sin vueltas." />
         <meta property="og:title" content="Soy gobierno — Citixen" />
-        <meta property="og:description" content="Conectá tu municipio con sus vecinos. Participación real, material para justificar la gestión y decisión ciudadana sobre fondos que ya tenés." />
+        <meta property="og:description" content="El catálogo completo de herramientas que tu municipio puede usar con Citixen: participación, comunicación, Créditos Cívicos y evidencia de gestión." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://citixen.org/soygobierno" />
         <meta property="og:image" content="https://citixen.org/og-image.png" />
@@ -179,19 +240,18 @@ export default function SoyGobierno() {
         <div className="container">
           <div className="ep-hero-inner">
             <div className="ep-hero-content fade-up">
-              <div className="ep-hero-eyebrow">Si trabajás en un municipio</div>
               <h1 className="ep-hero-title">
                 Tu ciudad paga impuestos.<br />
                 <span className="ep-hero-highlight">Dale a tus vecinos peso real en qué se hace con ellos.</span>
               </h1>
               <p className="ep-hero-subtitle">
                 Citixen conecta a tu municipio con sus vecinos: un canal oficial directo, participación
-                ordenada, y la prueba — con números — de que tu gestión escucha. Sin poner dinero nuevo
-                y sin perder control.
+                ordenada, decisión sobre fondos que ya recaudaste, y la prueba —con fotos y números—
+                de que las cosas se hicieron. Mirá todo lo que vas a tener en tus manos.
               </p>
               <div className="ep-hero-actions">
-                <Link href="#gana" className="ep-cta-track-btn ep-cta-track-btn--gov" style={{ display: 'inline-flex', width: 'auto' }}>
-                  Ver qué ganás
+                <Link href="#herramientas" className="ep-cta-track-btn ep-cta-track-btn--gov" style={{ display: 'inline-flex', width: 'auto' }}>
+                  Ver las herramientas
                 </Link>
                 <Link href="#acceso" className="ep-hero-link">
                   Activar mi ciudad →
@@ -271,8 +331,109 @@ export default function SoyGobierno() {
         </div>
       </section>
 
-      {/* ACTO 1.5 — Barra de prueba */}
-      <section className="sg-proof">
+      {/* ACTO 2 — El catálogo completo de herramientas */}
+      <section className="sg-tools" id="herramientas">
+        <div className="container">
+          <div className="sg-tools-head fade-up">
+            <span className="sg-tools-eyebrow">El catálogo completo</span>
+            <h2 className="sg-tools-title">Todo lo que tu municipio puede hacer con Citixen</h2>
+            <p className="sg-tools-sub">
+              No son promesas: es funcionalidad en producción, hoy. Ordenada por dónde te conviene empezar.
+            </p>
+          </div>
+
+          {toolBlocks.map((block) => (
+            <div className="sg-block fade-up" id={block.id} key={block.id}>
+              <div className="sg-block-head">
+                <h3 className="sg-block-title">{block.title}</h3>
+                <span className={`sg-block-badge sg-block-badge--${block.badgeClass}`}>{block.badge}</span>
+                <p className="sg-block-sub">{block.sub}</p>
+              </div>
+              <div className="sg-tool-grid">
+                {block.tools.map((t, i) => (
+                  <div className="sg-tool" key={i}>
+                    <div className="sg-tool-icon">{t.icon}</div>
+                    <h4 className="sg-tool-title">{t.title}</h4>
+                    <p className="sg-tool-desc">{t.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ACTO 3 — El círculo se cierra con pruebas (Pack de evidencia) */}
+      <section className="sg-evidence">
+        <div className="container">
+          <div className="sg-evi-grid fade-up">
+            <div className="sg-evi-visual">
+              <div className="sg-evi-card">
+                <div className="sg-evi-photo">
+                  <Image
+                    src="/mockup/plaza.png"
+                    alt="Evidencia de cierre del proyecto: Plaza San Martín ejecutada"
+                    fill
+                    sizes="440px"
+                    style={{ objectFit: 'cover' }}
+                  />
+                  <span className="sg-evi-stamp">Ejecutado · dic 2026</span>
+                </div>
+                <div className="sg-evi-meta">
+                  <span className="sg-evi-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Pack de evidencia
+                  </span>
+                  <p className="sg-evi-cap">12 fotos · 3 documentos · historia de cierre · 412 vecinos alcanzados</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="sg-evi-content">
+              <span className="sg-evi-eyebrow">El círculo se cierra con pruebas</span>
+              <h2 className="sg-evi-title">Cada proyecto que termina deja un registro real de lo que pasó.</h2>
+              <p className="sg-evi-intro">
+                No es “se hizo, confíen”. Es evidencia pública y permanente, con cara, lugar y fecha.
+              </p>
+              <ul className="sg-evi-list">
+                {[
+                  'Fotos del antes y el después, documentos y comprobantes de la ejecución.',
+                  'La historia contada: qué se hizo, qué cambió en el barrio, a cuántos vecinos alcanzó.',
+                  'Queda público y permanente en el perfil del proyecto — no se edita ni se borra después.',
+                ].map((item, i) => (
+                  <li key={i}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                      <path d="M8 12l3 3 5-5"/>
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="sg-evi-closing">
+                Para el vecino, la prueba de que su decisión sirvió. Para tu gestión, la evidencia
+                más poderosa que existe: resultados que se ven.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ACTO 4 — Cierre: ¿dudas? escribinos + form (post directo → MunicipalLead) */}
+      <section className="sg-help">
+        <div className="container">
+          <p className="sg-help-text fade-up">
+            ¿Te quedan dudas sobre alguna herramienta o cómo aplicaría en tu ciudad?
+            No hay letra chica: escribinos y te respondemos una persona de carne y hueso.
+          </p>
+        </div>
+      </section>
+      <EarlyAccess />
+
+      {/* Cierre — barra de disponibilidad / prueba (movida al final) */}
+      <section className="sg-proof sg-proof--bottom">
         <div className="container">
           <p className="sg-proof-label">Disponible para gobiernos locales en 7 países de la región</p>
           <div className="sg-proof-row">
@@ -286,214 +447,6 @@ export default function SoyGobierno() {
         </div>
       </section>
 
-      {/* ACTO 2 — El problema del gobierno */}
-      <section className="ep-bridge">
-        <div className="container">
-          <h2 className="ep-section-title fade-up">El problema no es la gestión. Es no poder mostrarla.</h2>
-          <div className="ep-bridge-text fade-up">
-            <p>
-              Tu municipio ya recauda impuestos y ya hace obra. Pero el vecino no lo ve, no participa,
-              y vos no tenés cómo demostrar — con números — que la gestión funciona.
-            </p>
-            <p className="ep-bridge-bold">
-              Las plataformas de participación mueren porque el gobierno no las puede justificar.
-            </p>
-            <p>
-              Las consultas no vinculantes no movilizan. Las audiencias públicas las escucha nadie.
-              Los presupuestos participativos simbólicos no cambian una decisión real. Y el vecino
-              sigue reclamando, porque nunca lo invitaste a decidir.
-            </p>
-            <p className="ep-bridge-closing">
-              Citixen está diseñada para lo contrario: que sí puedas mostrar lo que tu ciudad decide.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ACTO 3 — Qué gana tu gobierno */}
-      <section className="ep-mechanism" id="gana">
-        <div className="container">
-          <div className="ep-mechanism-intro fade-up">
-            <p className="ep-mechanism-lead">Lo que tu municipio gana con Citixen</p>
-            <h2 className="ep-mechanism-name">Cuatro cosas concretas</h2>
-            <p className="ep-mechanism-sub">No promesas. Funcionalidad en producción.</p>
-          </div>
-
-          <div className="ep-steps">
-            {benefits.map((b, i) => (
-              <div className={`ep-step fade-up delay-${(i % 3) + 1}`} key={i}>
-                <div className="ep-step-icon">{b.icon}</div>
-                <h3 className="ep-step-title">{b.title}</h3>
-                <p className="ep-step-desc">{b.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ACTO 3.5 — Mirá el producto */}
-      <section className="sg-demowrap">
-        <div className="container">
-          <span className="ep-mechanism-lead fade-up" style={{ textAlign: 'center', display: 'block' }}>Mirá adentro</span>
-          <h2 className="ep-section-title fade-up">Lo que tu ciudad va a usar todos los días.</h2>
-
-          <div className="sg-demo fade-up">
-            <div className="sg-demo-device">
-              <PhoneMockup />
-            </div>
-            <div className="sg-demo-surfaces">
-              {surfaces.map((s, i) => (
-                <div className="sg-surface" key={i}>
-                  <div className="sg-surface-icon">{s.icon}</div>
-                  <div>
-                    <h3 className="sg-surface-title">{s.title}</h3>
-                    <p className="sg-surface-desc">{s.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ACTO 4 — Por qué es seguro */}
-      <section className="ep-precedent">
-        <div className="container">
-          <h2 className="ep-section-title fade-up">Por qué es seguro para vos</h2>
-          <p className="ep-governance-intro fade-up">
-            La objeción real de cualquier intendente no es si la idea es buena. Es el riesgo.
-            Por eso el sistema está construido para que el control nunca salga de tu mano.
-          </p>
-
-          <div className="ep-impl-grid fade-up">
-            {safety.map((item, i) => (
-              <div className="ep-impl-item" key={i}>
-                <svg className="ep-impl-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                  <path d="M8 12l3 3 5-5"/>
-                </svg>
-                <div>
-                  <div className="ep-impl-item-title">{item.title}</div>
-                  <div className="ep-impl-item-desc">{item.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ACTO 5 — Control vs respaldo */}
-      <section className="ep-governance">
-        <div className="container">
-          <h2 className="ep-section-title fade-up">
-            No perdés control. Ganás respaldo.
-          </h2>
-          <p className="ep-governance-intro fade-up">
-            Activar la participación de tus vecinos no significa entregar el presupuesto. Significa
-            tener un canal digital, transparente y auditable para involucrar a la comunidad en
-            decisiones que antes tomabas solo.
-          </p>
-
-          <div className="ep-governance-grid">
-            <div className="ep-governance-card fade-up delay-1">
-              <h3 className="ep-governance-card-title">Lo que tu municipio controla</h3>
-              <ul className="ep-governance-list">
-                {controls.map((item, i) => (
-                  <li key={i}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                      <path d="M8 12l3 3 5-5"/>
-                    </svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="ep-governance-card ep-governance-card--gains fade-up delay-2">
-              <h3 className="ep-governance-card-title">Lo que gana</h3>
-              <ul className="ep-governance-list">
-                {gains.map((item, i) => (
-                  <li key={i}>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                    </svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ACTO 6 — Empezás sin riesgo (2 modos) */}
-      <section className="ep-precedent">
-        <div className="container">
-          <h2 className="ep-section-title fade-up">Empezás sin riesgo</h2>
-          <div className="ep-precedent-text fade-up">
-            <p>
-              No tenés que activar todo el primer día. Citixen tiene dos modos, y vos elegís
-              por dónde empezar.
-            </p>
-            <p className="ep-precedent-bold">
-              Modo Comunidad: gratis durante seis meses.
-            </p>
-            <p>
-              Transparencia, consultas, propuestas y portal público. Sin manejar un peso, sin tarjeta,
-              sin límites operativos. Ideal para arrancar, mostrar resultados y ganar adopción en tu ciudad.
-            </p>
-            <p className="ep-precedent-closing">
-              Cuando tu ciudad madura, activás Créditos Cívicos con un solo paso. La plataforma misma
-              te dice cuándo estás listo.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ACTO 7 — Implementación sin secretos */}
-      <section className="ep-governance">
-        <div className="container">
-          <div className="ep-impl-band fade-up">
-            <div className="ep-impl-header">
-              <span className="ep-impl-eyebrow">La implementación, sin secretos</span>
-              <h3 className="ep-impl-title">Lo más caro de la tecnología municipal es el riesgo. Acá no hay.</h3>
-            </div>
-            <div className="ep-impl-grid">
-              {implementation.map((item, i) => (
-                <div className="ep-impl-item" key={i}>
-                  <svg className="ep-impl-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                    <path d="M8 12l3 3 5-5"/>
-                  </svg>
-                  <div>
-                    <div className="ep-impl-item-title">{item.title}</div>
-                    <div className="ep-impl-item-desc">{item.desc}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ACTO 8 — Preguntas del intendente */}
-      <section className="ep-faq">
-        <div className="container">
-          <h2 className="ep-section-title fade-up">Preguntas que te vas a hacer</h2>
-          <div className="ep-faq-grid fade-up">
-            {faqs.map((faq, i) => (
-              <div className="ep-faq-item" key={i}>
-                <h3 className="ep-faq-question">{faq.q}</h3>
-                <p className="ep-faq-answer">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ACTO 9 — CTA final con form real (post directo al backend → MunicipalLead) */}
-      <EarlyAccess />
-
       <Footer />
 
       <style jsx>{`
@@ -505,37 +458,137 @@ export default function SoyGobierno() {
 
         /* PROOF BAR */
         .sg-proof { background: var(--surface); padding: 40px 0; border-bottom: 1px solid var(--border-light); }
+        .sg-proof--bottom { border-bottom: none; border-top: 1px solid var(--border-light); }
         .sg-proof-label { text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 18px; }
         .sg-proof-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 28px; }
         .sg-proof-item { font-size: 17px; font-weight: 600; color: var(--text-secondary); }
         .sg-proof-foot { text-align: center; font-size: 13px; color: var(--text-muted); margin-top: 18px; }
 
-        /* DEMO — iPhone CSS + superficies en columna (mismo lenguaje que /soyvecino) */
-        .sg-demowrap { padding: 104px 0; background: var(--bg); }
-        .sg-demo {
-          margin-top: 48px;
+        /* TOOLS CATALOG */
+        .sg-tools { padding: 100px 0; background: var(--bg); }
+        .sg-tools-head { text-align: center; max-width: 700px; margin: 0 auto; }
+        .sg-tools-eyebrow {
+          display: inline-block; font-size: 13px; font-weight: 700;
+          letter-spacing: 0.08em; text-transform: uppercase;
+          color: var(--accent); margin-bottom: 14px;
+        }
+        .sg-tools-title {
+          font-size: 38px; font-weight: 800; line-height: 1.15;
+          letter-spacing: -0.5px; color: var(--text-primary); margin-bottom: 16px;
+        }
+        .sg-tools-sub { font-size: 18px; line-height: 1.65; color: var(--text-secondary); }
+
+        .sg-block { margin-top: 72px; }
+        .sg-block-head {
+          display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px;
+          margin-bottom: 32px; padding-bottom: 20px;
+          border-bottom: 1px solid var(--border-light);
+        }
+        .sg-block-title { font-size: 27px; font-weight: 800; color: var(--text-primary); letter-spacing: -0.5px; }
+        .sg-block-badge {
+          font-size: 12px; font-weight: 700; padding: 6px 13px; border-radius: 999px;
+          text-transform: uppercase; letter-spacing: 0.04em;
+        }
+        .sg-block-badge--community { color: var(--secondary); background: rgba(60,158,206,0.12); }
+        .sg-block-badge--credits { color: var(--primary); background: rgba(10,61,145,0.10); }
+        .sg-block-badge--team { color: var(--text-secondary); background: rgba(2,2,2,0.06); }
+        .sg-block-sub {
+          width: 100%; font-size: 16px; line-height: 1.6;
+          color: var(--text-secondary); margin-top: 4px; max-width: 720px;
+        }
+
+        .sg-tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .sg-tool {
+          background: var(--surface); border: 1px solid var(--border-light);
+          border-radius: var(--radius-lg); padding: 28px 26px;
+          transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .sg-tool:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+        .sg-tool-icon {
+          width: 46px; height: 46px; border-radius: var(--radius-md);
+          display: flex; align-items: center; justify-content: center;
+          background: rgba(10,61,145,0.08); color: var(--primary); margin-bottom: 18px;
+        }
+        .sg-tool-title { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 9px; line-height: 1.3; }
+        .sg-tool-desc { font-size: 15px; line-height: 1.6; color: var(--text-secondary); }
+
+        /* EVIDENCE — banda navy de prueba (el círculo se cierra) */
+        .sg-evidence { padding: 104px 0; background: linear-gradient(160deg, #021B4E 0%, #032C7A 100%); }
+        .sg-evi-grid {
           display: grid;
-          grid-template-columns: 0.85fr 1fr;
+          grid-template-columns: 0.9fr 1fr;
           gap: 64px;
           align-items: center;
         }
-        .sg-demo-device { display: flex; justify-content: center; }
-        .sg-demo-surfaces { display: flex; flex-direction: column; gap: 28px; }
-        .sg-surface { display: flex; gap: 18px; align-items: flex-start; }
-        .sg-surface-icon {
-          flex-shrink: 0;
-          width: 48px; height: 48px;
-          display: flex; align-items: center; justify-content: center;
-          border-radius: var(--radius-lg);
-          background: rgba(10, 61, 145, 0.08);
-          color: var(--primary);
+        .sg-evi-eyebrow {
+          display: inline-block;
+          font-size: 12px; font-weight: 700;
+          letter-spacing: 1.5px; text-transform: uppercase;
+          color: var(--accent); margin-bottom: 16px;
         }
-        .sg-surface-title { font-size: 19px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
-        .sg-surface-desc { font-size: 16px; line-height: 1.6; color: var(--text-secondary); }
+        .sg-evi-title {
+          font-size: 34px; font-weight: 800; line-height: 1.2;
+          letter-spacing: -0.5px; color: #fff; margin-bottom: 18px;
+        }
+        .sg-evi-intro {
+          font-size: 17px; line-height: 1.7;
+          color: rgba(255,255,255,0.72); margin-bottom: 28px;
+        }
+        .sg-evi-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+        .sg-evi-list li {
+          display: flex; gap: 12px; align-items: flex-start;
+          font-size: 16px; line-height: 1.55; color: rgba(255,255,255,0.9);
+        }
+        .sg-evi-list svg { flex-shrink: 0; margin-top: 2px; color: var(--accent); }
+        .sg-evi-closing {
+          font-size: 17px; font-weight: 600; line-height: 1.6; color: #fff;
+          border-left: 3px solid var(--accent); padding-left: 18px;
+        }
+        .sg-evi-card {
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(255,255,255,0.12);
+          border-radius: var(--radius-xl);
+          padding: 14px;
+          box-shadow: var(--shadow-lg);
+        }
+        .sg-evi-photo {
+          position: relative; width: 100%; aspect-ratio: 4 / 3;
+          border-radius: var(--radius-lg); overflow: hidden;
+        }
+        .sg-evi-stamp {
+          position: absolute; top: 12px; left: 12px;
+          font-size: 12px; font-weight: 700; color: #fff;
+          background: rgba(2,27,78,0.78); padding: 6px 12px;
+          border-radius: 999px;
+        }
+        .sg-evi-meta { padding: 16px 8px 8px; }
+        .sg-evi-tag {
+          display: inline-flex; align-items: center; gap: 6px;
+          font-size: 12px; font-weight: 700; color: var(--accent);
+          text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+        }
+        .sg-evi-cap { font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.75); }
 
+        /* HELP / DUDAS */
+        .sg-help { background: var(--surface); padding: 80px 0 0; }
+        .sg-help-text {
+          max-width: 640px; margin: 0 auto; text-align: center;
+          font-size: 19px; line-height: 1.6; color: var(--text-secondary);
+        }
+
+        @media (max-width: 1024px) {
+          .sg-tool-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 900px) {
-          .sg-demowrap { padding: 72px 0; }
-          .sg-demo { grid-template-columns: 1fr; gap: 48px; margin-top: 36px; }
+          .sg-tools { padding: 72px 0; }
+          .sg-tools-title { font-size: 30px; }
+          .sg-block { margin-top: 56px; }
+          .sg-tool-grid { grid-template-columns: 1fr; }
+          .sg-evidence { padding: 72px 0; }
+          .sg-evi-grid { grid-template-columns: 1fr; gap: 40px; }
+          .sg-evi-title { font-size: 27px; }
+          .sg-help { padding: 64px 0 0; }
+          .sg-help-text { font-size: 17px; }
         }
       `}</style>
     </>
