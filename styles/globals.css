@@ -824,11 +824,16 @@ img { max-width: 100%; display: block; }
 .footer ul li { margin-bottom: 10px; }
 .footer ul a { font-size: 14px; color: rgba(255,255,255,0.45); transition: color 0.2s; }
 .footer ul a:hover { color: white; }
+.footer-store-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
 .footer-store-badge {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  margin-top: 20px;
   padding: 10px 18px;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.14);
