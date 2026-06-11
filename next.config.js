@@ -12,6 +12,11 @@ const nextConfig = {
         destination: '/soygobierno',
         permanent: true,
       },
+      {
+        source: '/pricing',
+        destination: '/soygobierno#pricing',
+        permanent: true,
+      },
     ]
   },
 }

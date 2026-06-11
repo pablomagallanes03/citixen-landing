@@ -60,7 +60,7 @@ const tiers = [
 export default function PricingSection({ headingLevel = 'h2' }) {
   const Heading = headingLevel
   return (
-    <section className="pricing-section">
+    <section className="pricing-section" id="pricing">
       <div className="container">
         <div className="pricing-header">
           <Heading className="section-title fade-up">Un producto, dos modos.<br />Empezá gratis.</Heading>
