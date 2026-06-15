@@ -14,7 +14,7 @@ const nextConfig = {
       },
       {
         source: '/pricing',
-        destination: '/soygobierno#pricing',
+        destination: '/soygobierno',
         permanent: true,
       },
     ]

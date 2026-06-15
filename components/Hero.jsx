@@ -34,22 +34,6 @@ export default function Hero() {
               Ver cómo funciona →
             </a>
           </div>
-          <div className="hero-proof fade-up delay-4">
-            <div className="hero-proof-item">
-              <span className="hero-proof-number">Vinculante</span>
-              <span className="hero-proof-label">Lo que la ciudad decide, se ejecuta</span>
-            </div>
-            <div className="hero-proof-divider"></div>
-            <div className="hero-proof-item">
-              <span className="hero-proof-number">Proyectos reales</span>
-              <span className="hero-proof-label">Obras concretas, no una encuesta más</span>
-            </div>
-            <div className="hero-proof-divider"></div>
-            <div className="hero-proof-item">
-              <span className="hero-proof-number">Con respaldo municipal</span>
-              <span className="hero-proof-label">El municipio aprueba, financia y respalda cada proyecto</span>
-            </div>
-          </div>
         </div>
 
         {/* Visual: arco decisión → obra. Reemplaza el mockup-wallet (jun 2026). */}

@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import EarlyAccess from '../components/EarlyAccess'
-import PricingSection from '../components/PricingSection'
 
 // ── Modo Comunidad — herramientas sin manejar dinero ──
 const communityTools = [
@@ -127,11 +126,11 @@ const creditTools = [
 // ── Transversal — gestión interna del gobierno ──
 const teamTools = [
   {
-    title: 'Equipo con roles y permisos',
-    desc: 'Cada funcionario tiene su cuenta y su perfil (tesorería, revisión, proyectos, comunicación). Se terminó la contraseña compartida y quién hace qué queda claro.',
+    title: 'Tablero de gestión',
+    desc: 'Engagement, salud de la plataforma y resumen financiero en un panel. Los números que necesitás para decidir y para mostrar.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
       </svg>
     ),
   },
@@ -145,11 +144,11 @@ const teamTools = [
     ),
   },
   {
-    title: 'Tablero de gestión',
-    desc: 'Engagement, salud de la plataforma y resumen financiero en un panel. Los números que necesitás para decidir y para mostrar.',
+    title: 'Expedientes de vecinos y organizaciones',
+    desc: 'Abrís el expediente de cualquier vecino u organización y ves su historial completo en un solo lugar: participación, proyectos, comunicaciones y estado.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
       </svg>
     ),
   },
@@ -163,11 +162,11 @@ const teamTools = [
     ),
   },
   {
-    title: 'Expedientes de vecinos y organizaciones',
-    desc: 'Abrís el expediente de cualquier vecino u organización y ves su historial completo en un solo lugar: participación, proyectos, comunicaciones y estado.',
+    title: 'Equipo con roles y permisos',
+    desc: 'Cada funcionario tiene su cuenta y su perfil (tesorería, revisión, proyectos, comunicación). Se terminó la contraseña compartida y quién hace qué queda claro.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
       </svg>
     ),
   },
@@ -422,10 +421,7 @@ export default function SoyGobierno() {
         </div>
       </section>
 
-      {/* ACTO 4 — Precios */}
-      <PricingSection />
-
-      {/* ACTO 5 — Cierre: ¿dudas? escribinos + form (post directo → MunicipalLead) */}
+      {/* ACTO 4 — Cierre: ¿dudas? escribinos + form (post directo → MunicipalLead) */}
       <section className="sg-help">
         <div className="container">
           <p className="sg-help-text fade-up">
