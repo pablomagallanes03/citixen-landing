@@ -146,6 +146,7 @@ Los dos formularios postean directo al backend Citixen (`NEXT_PUBLIC_API_URL`, d
 | Hero visual | Mockup de portal web (no mockup de app móvil) |
 | CTA primario | Self-service ("Activar Mi Ciudad"), no "Agendar demo" |
 | Citixen Brand Blue | Gradiente vertical `#021B4E → #032C7A → #0A3D91` definido mayo 2026 como identidad de marca. Reemplaza los azules cielo más claros previos (`#3477C1` y derivados). Usado en heroes, navbar, buttons primary, mockups, accents. Variable: `--citixen-gradient`. |
+| IA en la landing (decisión jun 2026) | **No mencionar IA todavía.** Hoy la única IA en producción es el parser del Balance Ciudadano; el motor de deliberación (la IA potente: síntesis trazable de participación) está escrito pero NO deployado. Meter IA ahora sería vaporware o hype — y "IA + participación" mal framed asusta al intendente (suena a "el algoritmo decide por los vecinos", lo contrario al guardrail cerrado `la-ia-asiste-nunca-decide`). **Trigger para reabrir:** cuando el motor de deliberación esté en producción, la IA pasa a pilar con feature real detrás. Framing obligatorio entonces: principio de confianza ("asiste, nunca decide, con trazabilidad / cita su fuente"), nunca en el hero, nunca hype. |
 
 ---
 
