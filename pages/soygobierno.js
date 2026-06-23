@@ -65,7 +65,7 @@ const communityTools = [
   },
 ]
 
-// ── Créditos Cívicos — herramientas con decisión sobre fondos ──
+// ── Presupuesto participativo continuo (mecanismo interno: Créditos Cívicos) ──
 const creditTools = [
   {
     title: 'Fuentes de ingreso configurables',
@@ -194,8 +194,8 @@ const toolBlocks = [
     id: 'creditos',
     badge: 'Cuando tu ciudad está lista',
     badgeClass: 'credits',
-    title: 'Créditos Cívicos',
-    sub: 'Tus vecinos deciden a dónde van los fondos que ya recaudaste. Lo activás cuando estés listo, con un click.',
+    title: 'Presupuesto participativo continuo',
+    sub: 'No es la votación anual de un pozo fijo: tus vecinos asignan, de forma continua y trazable, parte de lo que tu municipio ya recaudó. El mecanismo dentro de la app se llama Créditos Cívicos. Lo activás cuando estés listo, con un click.',
     tools: creditTools,
   },
   {
@@ -222,9 +222,9 @@ export default function SoyGobierno() {
     <>
       <Head>
         <title>Soy gobierno — Citixen</title>
-        <meta name="description" content="Todas las herramientas que Citixen le da a tu municipio: portal público, consultas, propuestas, comunicación institucional, Créditos Cívicos, desembolsos trazables, pack de evidencia y gestión de equipo. Un catálogo concreto, sin vueltas." />
+        <meta name="description" content="Todas las herramientas que Citixen le da a tu municipio: portal público, consultas, propuestas, comunicación institucional, presupuesto participativo continuo y trazable, pack de evidencia y gestión de equipo. Un catálogo concreto, sin vueltas." />
         <meta property="og:title" content="Soy gobierno — Citixen" />
-        <meta property="og:description" content="El catálogo completo de herramientas que tu municipio puede usar con Citixen: participación, comunicación, Créditos Cívicos y evidencia de gestión." />
+        <meta property="og:description" content="El catálogo completo de herramientas que tu municipio puede usar con Citixen: participación ciudadana, comunicación institucional, presupuesto participativo continuo y evidencia de gestión." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://citixen.org/soygobierno" />
         <meta property="og:image" content="https://citixen.org/og-image.png" />

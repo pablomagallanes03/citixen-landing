@@ -13,19 +13,6 @@ export default function WhatIsCitixen() {
             <thead>
               <tr>
                 <th></th>
-                <th className="what-is-col-economy">
-                  <div className="what-is-col-header">
-                    <div className="what-is-col-icon what-is-col-icon--economy">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 8v8M8 12h8"/>
-                      </svg>
-                    </div>
-                    <div className="what-is-col-name">Que tus vecinos decidan</div>
-                    <div className="what-is-col-sub">Créditos Cívicos</div>
-                    <div className="what-is-col-price what-is-col-price--cc">Producto principal</div>
-                  </div>
-                </th>
                 <th className="what-is-col-community">
                   <div className="what-is-col-header">
                     <div className="what-is-col-icon what-is-col-icon--community">
@@ -36,9 +23,22 @@ export default function WhatIsCitixen() {
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                       </svg>
                     </div>
-                    <div className="what-is-col-name">Si tu ciudad todavía no está lista</div>
+                    <div className="what-is-col-name">Participación ciudadana</div>
                     <div className="what-is-col-sub">Modo Comunidad</div>
-                    <div className="what-is-col-price what-is-col-price--free">Gratis 6 meses</div>
+                    <div className="what-is-col-price what-is-col-price--free">Empezás acá · 6 meses gratis</div>
+                  </div>
+                </th>
+                <th className="what-is-col-economy">
+                  <div className="what-is-col-header">
+                    <div className="what-is-col-icon what-is-col-icon--economy">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v8M8 12h8"/>
+                      </svg>
+                    </div>
+                    <div className="what-is-col-name">Presupuesto participativo continuo</div>
+                    <div className="what-is-col-sub">Créditos Cívicos</div>
+                    <div className="what-is-col-price what-is-col-price--cc">Cuando estés listo</div>
                   </div>
                 </th>
               </tr>
@@ -46,35 +46,35 @@ export default function WhatIsCitixen() {
             <tbody>
               <tr>
                 <td className="what-is-feature">Qué resuelve</td>
-                <td>Que la ciudadanía priorice la inversión pública</td>
                 <td>Que tu gestión sea visible y validable mientras te preparás</td>
+                <td>Que la ciudadanía priorice la inversión pública</td>
               </tr>
               <tr>
                 <td className="what-is-feature">Cómo funciona</td>
-                <td>Vecinos asignan Créditos Cívicos a proyectos de su ciudad</td>
                 <td>Portal público + consultas + propuestas + reporte mensual</td>
+                <td>Los vecinos asignan Créditos Cívicos a proyectos de su ciudad, de forma continua</td>
               </tr>
               <tr>
                 <td className="what-is-feature">Salida pública</td>
-                <td>Trazabilidad económica completa de cada decisión</td>
                 <td>Reporte mensual descargable + Balance Ciudadano visual</td>
+                <td>Cada decisión queda trazada y pública, proyecto por proyecto</td>
               </tr>
               <tr>
                 <td className="what-is-feature">Costo</td>
-                <td>Según tamaño de ciudad</td>
                 <td><strong style={{ color: 'var(--green)' }}>Gratis 6 meses</strong></td>
+                <td>Según tamaño de ciudad</td>
               </tr>
               <tr>
                 <td className="what-is-feature">Esfuerzo</td>
-                <td>Definir el % de impuestos a Créditos Cívicos</td>
                 <td>Publicar tu gestión actual</td>
+                <td>Definir el % de impuestos que generan Créditos Cívicos</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div className="what-is-note fade-up">
-          <span>Si todavía no podés activar Créditos Cívicos, empezá con Comunidad. Cuando estés listo, es un switch desde el panel. <strong>No es una migración.</strong></span>
+          <span>Empezás con Modo Comunidad y activás el presupuesto participativo continuo cuando tu ciudad esté lista. Es un switch desde el panel, <strong>no una migración.</strong></span>
         </div>
       </div>
     </section>
