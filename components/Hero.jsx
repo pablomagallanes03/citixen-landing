@@ -1,26 +1,13 @@
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
-
-const ROTATING_WORDS = ['impuestos', 'multas', 'tasas']
 
 export default function Hero() {
-  const [wordIndex, setWordIndex] = useState(0)
-  useEffect(() => {
-    const id = setInterval(() => {
-      setWordIndex((i) => (i + 1) % ROTATING_WORDS.length)
-    }, 2200)
-    return () => clearInterval(id)
-  }, [])
-
   return (
     <section className="hero">
       <div className="container hero-inner">
         <div className="hero-content">
           <h1 className="fade-up delay-1">
-            Pagás{' '}
-            <span className="rotating-word">
-              <span key={wordIndex} className="rotating-word__active">{ROTATING_WORDS[wordIndex]}</span>
-            </span>,<br />ahora también decidí qué proyectos se hacen en tu ciudad.
+            Tu ciudad decide mejor<br />
+            <span style={{ color: 'var(--secondary)' }}>cuando decidís vos también.</span>
           </h1>
           <p className="fade-up delay-2">
             Citixen cambia tu relación con tu ciudad: participás de las decisiones,
