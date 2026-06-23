@@ -386,11 +386,11 @@ export default function EconomiaParticipativa() {
           <div className="ep-hero-inner">
             <div className="ep-hero-content fade-up">
               <h1 className="ep-hero-title">
-                Pagás impuestos.<br />
-                <span className="ep-hero-highlight">¿Alguna vez pudiste decidir qué se hace con ellos?</span>
+                Dejá de pedirle a tu ciudad.<br />
+                <span className="ep-hero-highlight">Empezá a decidir con ella.</span>
               </h1>
               <p className="ep-hero-subtitle">
-                La mayoría de los vecinos contribuyen toda su vida sin tener voz en cómo se usa esa contribución. Citixen cambia eso.
+                No se trata de pedir más fuerte, sino de decidir. Con Citixen priorizás los proyectos que tu ciudad necesita y ves cómo se hacen realidad.
               </p>
             </div>
 

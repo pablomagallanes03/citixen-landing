@@ -20,7 +20,7 @@ export default function Hero() {
             Pagás{' '}
             <span className="rotating-word">
               <span key={wordIndex} className="rotating-word__active">{ROTATING_WORDS[wordIndex]}</span>
-            </span>,<br />ahora también decidí adónde van.
+            </span>,<br />ahora también decidí qué proyectos se hacen en tu ciudad.
           </h1>
           <p className="fade-up delay-2">
             Citixen cambia tu relación con tu ciudad: participás de las decisiones,

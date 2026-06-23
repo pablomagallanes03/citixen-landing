@@ -20,10 +20,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Citixen | Pagás impuestos. Decidís dónde van.</title>
+        <title>Citixen | Pagás impuestos. Decidís qué proyectos se hacen.</title>
         <meta name="description" content="Citixen le da a los vecinos peso real sobre la inversión pública de su municipio: un presupuesto participativo continuo y trazable mediante Créditos Cívicos. La ciudadanía prioriza los proyectos que su ciudad ejecuta." />
         <meta name="keywords" content="participación ciudadana, créditos cívicos, presupuesto participativo, civic tech argentina, software para municipios, gobierno abierto, participación vecinal, civic credits" />
-        <meta property="og:title" content="Citixen | Pagás impuestos. Decidís dónde van." />
+        <meta property="og:title" content="Citixen | Pagás impuestos. Decidís qué proyectos se hacen." />
         <meta property="og:description" content="Citixen le da a los vecinos peso real sobre la inversión pública de su municipio: un presupuesto participativo continuo y trazable mediante Créditos Cívicos. La ciudadanía prioriza los proyectos que su ciudad ejecuta." />
         <meta property="og:site_name" content="Citixen" />
         <link rel="canonical" href="https://citixen.org/" />
@@ -34,7 +34,7 @@ export default function Home() {
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="es_AR" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Citixen | Pagás impuestos. Decidís dónde van." />
+        <meta name="twitter:title" content="Citixen | Pagás impuestos. Decidís qué proyectos se hacen." />
         <meta name="twitter:description" content="Citixen le da a los vecinos peso real sobre la inversión pública de su municipio: un presupuesto participativo continuo y trazable mediante Créditos Cívicos. La ciudadanía prioriza los proyectos que su ciudad ejecuta." />
         <meta name="twitter:image" content="https://citixen.org/og-image.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
