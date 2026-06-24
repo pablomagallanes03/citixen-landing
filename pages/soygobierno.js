@@ -4,10 +4,21 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import Deliberation from '../components/Deliberation'
 import EarlyAccess from '../components/EarlyAccess'
 
-// ── Modo Comunidad — herramientas sin manejar dinero ──
+// ── Escuchar y comunicar — herramientas sin manejar dinero ──
 const communityTools = [
+  {
+    title: 'Deliberación con IA',
+    desc: 'Cuando una consulta recibe cientos de respuestas, Citixen las lee todas: resume, agrupa los temas, marca acuerdos, tensiones y voces minoritarias — citando texto real de cada vecino. Vos leés a toda tu ciudad de una sola vez. La IA asiste, nunca decide.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2z"/>
+        <path d="M9 21h6"/>
+      </svg>
+    ),
+  },
   {
     title: 'Mi Ciudad: portal público',
     desc: 'La cara pública de tu gestión: una dirección web propia (tuciudad.citixen.app) con tus proyectos, avances y reportes, abierta a todos, compartible en redes. Es la puerta por donde los vecinos descubren tu trabajo.',
@@ -184,26 +195,26 @@ const teamTools = [
 const toolBlocks = [
   {
     id: 'comunidad',
-    badge: 'Empezás acá · 6 meses gratis',
+    badge: 'Tu punto de partida',
     badgeClass: 'community',
-    title: 'Modo Comunidad',
-    sub: 'Conectás con tus vecinos: transparencia, participación y comunicación. Es la puerta de entrada.',
+    title: 'Escuchá y comunicá',
+    sub: 'Conectás con tus vecinos: deliberación con IA, transparencia, participación y comunicación. Por acá empieza toda ciudad.',
     tools: communityTools,
   },
   {
     id: 'creditos',
-    badge: 'Cuando tu ciudad está lista',
+    badge: 'Se enciende con un switch',
     badgeClass: 'credits',
     title: 'Presupuesto participativo continuo',
-    sub: 'No es la votación anual de un pozo fijo: tus vecinos asignan, de forma continua y trazable, parte de lo que tu municipio ya recaudó. El mecanismo dentro de la app se llama Créditos Cívicos. Lo activás cuando estés listo, con un click.',
+    sub: 'No es la votación anual de un pozo fijo: tus vecinos asignan, de forma continua y trazable, parte de lo que tu municipio ya recaudó. El mecanismo dentro de la app se llama Créditos Cívicos. Lo encendés cuando estés listo, con un switch.',
     tools: creditTools,
   },
   {
     id: 'equipo',
-    badge: 'Transversal · los dos modos',
+    badge: 'Siempre disponible',
     badgeClass: 'team',
     title: 'Para tu equipo',
-    sub: 'La gestión interna, ordenada. Disponible siempre, sin importar el modo en el que estés.',
+    sub: 'La gestión interna, ordenada. Disponible siempre, lo tengas encendido o no.',
     tools: teamTools,
   },
 ]
@@ -222,9 +233,9 @@ export default function SoyGobierno() {
     <>
       <Head>
         <title>Soy gobierno — Citixen</title>
-        <meta name="description" content="Todas las herramientas que Citixen le da a tu municipio: portal público, consultas, propuestas, comunicación institucional, presupuesto participativo continuo y trazable, pack de evidencia y gestión de equipo. Un catálogo concreto, sin vueltas." />
+        <meta name="description" content="Una sola plataforma para tu municipio: consultas, propuestas, comunicación institucional y un motor de deliberación con IA que lee a toda tu ciudad sin perder una voz, citando texto real. La IA asiste, nunca decide. Y cuando estés listo, encendés el presupuesto participativo continuo con un switch." />
         <meta property="og:title" content="Soy gobierno — Citixen" />
-        <meta property="og:description" content="El catálogo completo de herramientas que tu municipio puede usar con Citixen: participación ciudadana, comunicación institucional, presupuesto participativo continuo y evidencia de gestión." />
+        <meta property="og:description" content="Una sola plataforma: participación, comunicación institucional, deliberación asistida por IA y presupuesto participativo continuo. Leés a toda tu ciudad sin perder una voz; la IA asiste, nunca decide." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://citixen.org/soygobierno" />
         <meta property="og:image" content="https://citixen.org/og-image.png" />
@@ -330,6 +341,9 @@ export default function SoyGobierno() {
           </div>
         </div>
       </section>
+
+      {/* ACTO 1.5 — El diferenciador: motor de deliberación con IA */}
+      <Deliberation />
 
       {/* ACTO 2 — El catálogo completo de herramientas */}
       <section className="sg-tools" id="herramientas">

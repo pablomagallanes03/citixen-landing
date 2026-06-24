@@ -113,8 +113,8 @@ export default function EarlyAccess() {
         <div className="early-access-header">
           <h2 className="section-title fade-up">Que la próxima obra de tu ciudad<br />la decidan tus vecinos.</h2>
           <p className="section-desc fade-up" style={{ textAlign: 'center' }}>
-            Empezás con Modo Comunidad gratis y encendés el presupuesto participativo
-            continuo cuando tu ciudad esté lista, sin rehacer nada. Sin contrato, reversible cuando quieras.
+            Empezás escuchando a tus vecinos y, cuando tu ciudad esté lista, encendés el peso
+            económico con un switch — sin rehacer nada. Sin contratos de permanencia.
           </p>
         </div>
         <div className="early-access-grid early-access-grid--single">

@@ -192,7 +192,7 @@ export default function CaseStudy() {
             <h2>¿Tu municipio tiene el mismo problema?</h2>
             <p>
               Si publicás balances en PDF, rendiciones en redes sociales o simplemente no tenés
-              donde mostrar lo que hacés — Modo Comunidad es gratuito y se configura en una semana.
+              donde mostrar lo que hacés — Citixen te da una dirección pública propia y se configura en una semana.
             </p>
             <Link href="/#acceso" className="btn-primary">Activar Mi Ciudad</Link>
           </section>

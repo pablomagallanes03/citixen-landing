@@ -268,38 +268,11 @@ const steps = [
   },
 ]
 
-const faqs = [
-  {
-    q: '¿Es algún tipo de criptomoneda?',
-    a: 'No. Los Créditos Cívicos no viven en blockchain, no se minan, no se tradean y no tienen cotización. Son un registro digital interno de participación, operado por el municipio.',
-  },
-  {
-    q: '¿Puedo sacar dinero con mis créditos?',
-    a: 'No. Los créditos se usan para apoyar proyectos. Cuando un proyecto se completa, el municipio desembolsa los fondos al ejecutor, fondos que ya estaban en la caja municipal. No se genera dinero nuevo.',
-  },
-  {
-    q: '¿De dónde salen los Créditos Cívicos?',
-    a: 'De tus obligaciones fiscales: impuestos, tasas, multas. Cada crédito tiene origen en una contribución real.',
-  },
-  {
-    q: '¿Qué pasa si apoyo un proyecto y se cancela?',
-    a: 'Tus créditos vuelven automáticamente a tu cuenta. Sin excepción, sin demora.',
-  },
-  {
-    q: '¿Funciona solo en ciudades grandes?',
-    a: 'No. El sistema escala desde municipios de 5.000 habitantes. La mayoría de los proyectos públicos más urgentes están en ciudades chicas, donde el impacto es inmediato y visible.',
-  },
-  {
-    q: '¿Mi municipio ya lo tiene?',
-    a: 'Descargá la app y buscá tu ciudad. Si todavía no está, podés registrarte para ser parte de los primeros vecinos en pedirlo.',
-  },
-]
-
 // Strip "Todo lo que vas a poder hacer" — beneficios del vecino
 const citizenPerks = [
   {
     title: 'Decidí sobre proyectos reales',
-    desc: 'Asignás Créditos Cívicos a lo que querés que tu ciudad construya.',
+    desc: 'Priorizás y empujás los proyectos que querés que tu ciudad construya.',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
@@ -367,9 +340,9 @@ export default function EconomiaParticipativa() {
     <>
       <Head>
         <title>Soy vecino — Citixen</title>
-        <meta name="description" content="Pagás impuestos. ¿Alguna vez pudiste decidir qué se hace con ellos? Con Citixen, tu contribución fiscal se convierte en capacidad de decisión real sobre proyectos de tu ciudad." />
+        <meta name="description" content="Tu ciudad te escucha de verdad. Con Citixen opinás, proponés y priorizás los proyectos que importan — y tu voz no se pierde: se lee, se cuenta y se ve cómo se hace realidad. Donde tu municipio lo activa, además le das peso con Créditos Cívicos." />
         <meta property="og:title" content="Soy vecino — Citixen" />
-        <meta property="og:description" content="Pagás impuestos. ¿Alguna vez pudiste decidir qué se hace con ellos? Con Citixen, tu contribución se convierte en decisión." />
+        <meta property="og:description" content="Tu ciudad te escucha de verdad. Opinás, proponés y priorizás los proyectos que importan — y tu voz no se pierde." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://citixen.org/soyvecino" />
         <meta property="og:image" content="https://citixen.org/og-image.png" />
@@ -390,7 +363,9 @@ export default function EconomiaParticipativa() {
                 <span className="ep-hero-highlight">Empezá a decidir con ella.</span>
               </h1>
               <p className="ep-hero-subtitle">
-                No se trata de pedir más fuerte, sino de decidir. Con Citixen priorizás los proyectos que tu ciudad necesita y ves cómo se hacen realidad.
+                No se trata de pedir más fuerte, sino de participar. Con Citixen tu ciudad te
+                escucha de verdad: opinás, proponés y priorizás los proyectos que importan —
+                y ves cómo se hacen realidad.
               </p>
             </div>
 
@@ -401,7 +376,50 @@ export default function EconomiaParticipativa() {
         </div>
       </section>
 
-      {/* ACTO 2 — El puente conceptual */}
+      {/* ACTO 2 — Todo lo que vas a poder hacer (beneficios del vecino) */}
+      <section className="vb-section">
+        <div className="container">
+          <div className="vb-head fade-up">
+            <h2 className="vb-title">Todo lo que vas a poder hacer</h2>
+            <p className="vb-sub">Desde tu teléfono, en tu ciudad. Participación que se nota.</p>
+          </div>
+          <div className="vb-grid fade-up delay-1">
+            {citizenPerks.map((p, i) => (
+              <article className="vb-card" key={i}>
+                <div className="vb-ic">{p.icon}</div>
+                <h3 className="vb-card-title">{p.title}</h3>
+                <p className="vb-card-desc">{p.desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ACTO 3 — Tu voz no se pierde (cara ciudadana del motor de deliberación) */}
+      <section className="ep-precedent" id="tu-voz">
+        <div className="container">
+          <h2 className="ep-section-title fade-up">Tu voz no cae en un buzón.</h2>
+          <div className="ep-precedent-text fade-up">
+            <p>
+              Cuando tu municipio abre una consulta, no respondés para que nadie te lea. Citixen
+              lee cada respuesta — la tuya y la de los otros tres mil vecinos — sin que ninguna
+              se pierda en el camino.
+            </p>
+            <p className="ep-precedent-bold">Hasta las voces de pocos quedan a la vista.</p>
+            <p>
+              Agrupa lo que se dijo, muestra en qué coincidimos y dónde no, y siempre cita el
+              texto real de los vecinos. Una IA ayuda a leer a toda la ciudad de una sola vez —
+              pero no opina, no recomienda y no decide por nadie. Eso queda en manos tuyas y de
+              tu municipio.
+            </p>
+            <p className="ep-precedent-closing">
+              Participar en serio empieza por algo simple: que alguien te escuche de verdad.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ACTO 4 — El puente conceptual (acá entra el tema Créditos Cívicos) */}
       <section className="ep-bridge">
         <div className="container">
           <h2 className="ep-section-title fade-up">¿Y si tu esfuerzo contara?</h2>
@@ -473,21 +491,6 @@ export default function EconomiaParticipativa() {
         </div>
       </section>
 
-      {/* ACTO 6 — Preguntas honestas */}
-      <section className="ep-faq">
-        <div className="container">
-          <h2 className="ep-section-title fade-up">Preguntas que te vas a hacer</h2>
-          <div className="ep-faq-grid fade-up">
-            {faqs.map((faq, i) => (
-              <div className="ep-faq-item" key={i}>
-                <h3 className="ep-faq-question">{faq.q}</h3>
-                <p className="ep-faq-answer">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ACTO 7 — CTA final (100% vecino) */}
       <section className="ep-cta">
         <div className="container">
@@ -499,17 +502,6 @@ export default function EconomiaParticipativa() {
             </p>
           </div>
 
-          {/* Strip — todo lo que vas a poder hacer */}
-          <div className="ep-cta-perks fade-up">
-            {citizenPerks.map((p, i) => (
-              <div className="ep-cta-perk" key={i}>
-                <div className="ep-cta-perk-icon">{p.icon}</div>
-                <h3 className="ep-cta-perk-title">{p.title}</h3>
-                <p className="ep-cta-perk-desc">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-
           <div className="ep-cta-dual ep-cta-dual--single">
             <CitySearchCTA />
           </div>
@@ -517,6 +509,40 @@ export default function EconomiaParticipativa() {
       </section>
 
       <Footer />
+
+      <style jsx>{`
+        .vb-section { padding: 96px 0; background: var(--bg); }
+        .vb-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+        .vb-title {
+          font-size: 36px; font-weight: 800; line-height: 1.15;
+          letter-spacing: -0.5px; color: var(--text-primary); margin-bottom: 14px;
+        }
+        .vb-sub { font-size: 18px; line-height: 1.6; color: var(--text-secondary); }
+        .vb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .vb-card {
+          background: var(--surface);
+          border: 1px solid var(--border-light);
+          border-radius: 18px;
+          padding: 26px 24px;
+          transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .vb-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -24px rgba(2, 27, 78, .4); }
+        .vb-ic {
+          width: 46px; height: 46px; border-radius: 13px;
+          display: grid; place-items: center;
+          background: rgba(60, 158, 206, .12); color: var(--primary);
+          margin-bottom: 16px;
+        }
+        .vb-card-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin: 0 0 8px; }
+        .vb-card-desc { font-size: .95rem; line-height: 1.55; color: var(--text-secondary); margin: 0; }
+
+        @media (max-width: 920px) { .vb-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) {
+          .vb-section { padding: 64px 0; }
+          .vb-grid { grid-template-columns: 1fr; }
+          .vb-title { font-size: 28px; }
+        }
+      `}</style>
     </>
   )
 }
