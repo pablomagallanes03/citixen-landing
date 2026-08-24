@@ -29,7 +29,7 @@ export default function Privacy() {
               <div className="legal-meta">
                 <div className="meta-item">
                   <span className="meta-label">Última actualización</span>
-                  <span className="meta-value">13 de mayo de 2026</span>
+                  <span className="meta-value">24 de agosto de 2026</span>
                 </div>
                 <div className="meta-item">
                   <span className="meta-label">Marco normativo</span>
@@ -170,6 +170,7 @@ export default function Privacy() {
                 <li>Orientación sexual</li>
                 <li>Antecedentes penales</li>
                 <li>Datos de menores (la Plataforma está restringida a usuarios de 18 años o más)</li>
+                <li>Copias, fotografías, capturas o grabaciones de documentos de identidad o de videollamadas de verificación (ver Sección 2.10)</li>
               </ul>
 
               <h3>2.9 Procesamiento asistido por inteligencia artificial</h3>
@@ -188,6 +189,14 @@ export default function Privacy() {
                 <li><strong>Sin entrenamiento con datos personales identificables.</strong> Los datos personales de los usuarios no se utilizan para entrenar, ajustar ni mejorar modelos de IA. El procesamiento se limita a la ejecución de tareas específicas sobre los datos proporcionados, sin retención por parte del modelo.</li>
                 <li><strong>Proveedores de IA.</strong> Los modelos de IA utilizados son provistos por terceros (actualmente Anthropic, Inc.). Los datos enviados a estos proveedores están sujetos a los acuerdos de procesamiento de datos correspondientes y a las mismas salvaguardas descritas en la Sección 6.</li>
               </ul>
+
+              <h3>2.10 Datos de verificación de identidad humana</h3>
+              <p>
+                Los ciudadanos que deseen habilitar la recaudación externa de donaciones en una Iniciativa Comunitaria (ver Términos y Condiciones, Sección 5.9) pueden solicitar una verificación de identidad. Este proceso es optativo y se realiza mediante una videollamada corta con el equipo de Citixen, no mediante la carga de documentos a la Plataforma. Recolectamos: número de teléfono de contacto, tipo de documento exhibido (no una copia ni el número completo), el resultado de la verificación (seis controles puntuales), notas del revisor y las fechas del proceso.
+              </p>
+              <p>
+                <strong>Deliberadamente no recolectamos ni almacenamos</strong> copia, fotografía o captura del documento exhibido, ni grabación, audio o transcripción de la videollamada, ni el número completo del documento. Esta minimización es intencional: evitamos crear un repositorio de documentos de identidad sensibles. El resultado (identidad verificada: sí/no) es visible públicamente como insignia en el perfil del creador; los datos subyacentes son accesibles únicamente por el administrador de sistema de Citixen a cargo de este proceso y no se comparten con gobiernos locales ni con otros usuarios.
+              </p>
 
               {/* ═══ 3. CÓMO UTILIZAMOS SUS DATOS ═══ */}
               <h2>3. Cómo Utilizamos sus Datos</h2>
@@ -308,6 +317,7 @@ export default function Privacy() {
                 <li>Sus datos de dispositivo, dirección IP o tokens de autenticación</li>
                 <li>Su actividad en iniciativas comunitarias (a menos que la iniciativa sea señalada para revisión)</li>
                 <li>Sus preferencias de notificaciones push o historial de comunicación con Citixen</li>
+                <li>Sus datos de verificación de identidad humana (teléfono, notas de revisión) — gestionados exclusivamente por Citixen (Sección 2.10)</li>
               </ul>
 
               <h3>5.4 Aislamiento jurisdiccional</h3>

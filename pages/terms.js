@@ -28,7 +28,7 @@ export default function Terms() {
               <div className="legal-meta">
                 <div className="meta-item">
                   <span className="meta-label">Vigencia</span>
-                  <span className="meta-value">13 de mayo de 2026</span>
+                  <span className="meta-value">24 de agosto de 2026</span>
                 </div>
                 <div className="meta-item">
                   <span className="meta-label">Jurisdicción</span>
@@ -87,7 +87,7 @@ export default function Terms() {
                 <li>Que todos los participantes realicen seguimiento de la participación cívica, el progreso de los proyectos y el impacto comunitario.</li>
               </ul>
               <p>
-                <strong>El uso de la Plataforma es gratuito para los ciudadanos.</strong> No se cobra cargo de registro, suscripción, transacción ni de ningún otro tipo a los ciudadanos. La relación económica subyacente a la participación cívica es entre usted y su gobierno local, no entre usted y Citixen. La Plataforma no facilita la captación de capital privado para proyectos — las asignaciones de CC representan el ejercicio de un derecho de participación cívica sobre recursos que ya forman parte del presupuesto municipal.
+                <strong>El uso de la Plataforma es gratuito para los ciudadanos.</strong> No se cobra cargo de registro, suscripción, transacción ni de ningún otro tipo a los ciudadanos. La relación económica subyacente a la participación cívica es entre usted y su gobierno local, no entre usted y Citixen. La Plataforma no facilita la captación de capital privado para proyectos financiados por Créditos Cívicos — las asignaciones de CC representan el ejercicio de un derecho de participación cívica sobre recursos que ya forman parte del presupuesto municipal. Esta descripción corresponde al mecanismo de Créditos Cívicos: las Iniciativas Comunitarias pueden incorporar, de forma optativa, un enlace externo de recaudación operado por terceros, que se rige por la Sección 5.9.
               </p>
 
               <h3>2.2 Qué NO es Citixen</h3>
@@ -100,6 +100,9 @@ export default function Terms() {
                 <li>Una plataforma de inversión, plataforma de crowdfunding o mercado de valores;</li>
                 <li>Un garante de cualquier resultado de proyecto, acción gubernamental o desembolso financiero.</li>
               </ul>
+              <p>
+                Esta enumeración no se altera por la posibilidad de que una Iniciativa Comunitaria incluya un enlace externo de recaudación (Sección 5.9): ese enlace lleva a una plataforma de pago operada por terceros ajenos a Citixen, nunca por Citixen.
+              </p>
 
               <h3>2.3 La Plataforma como infraestructura</h3>
               <p>
@@ -201,7 +204,7 @@ export default function Terms() {
 
               <h3>4.2 Registro y aprobación</h3>
               <p>
-                Las cuentas de ciudadano se crean a través de un proceso de registro que incluye datos de identificación. El registro crea una cuenta pendiente. La activación de la cuenta requiere aprobación por parte del gobierno local correspondiente. <strong>El registro no garantiza la aprobación.</strong> Las decisiones de aprobación son tomadas por el gobierno local a su exclusiva discreción, y Citixen no es responsable de, ni participa en, estas decisiones.
+                Las cuentas de ciudadano se crean a través de un proceso de registro que incluye verificación del correo electrónico. La cuenta se activa de inmediato al completar el registro: el ciudadano puede iniciar sesión y utilizar la Plataforma con normalidad desde ese momento. Las cuentas se crean con estado de aprobación pendiente por defecto; <strong>este estado no bloquea el acceso a la cuenta ni la navegación de la Plataforma</strong> — únicamente condiciona las operaciones que involucran Créditos Cívicos, que requieren aprobación previa del gobierno local. <strong>El registro no garantiza la aprobación para operar con Créditos Cívicos.</strong> Las decisiones de aprobación son tomadas por el gobierno local a su exclusiva discreción, y Citixen no es responsable de, ni participa en, estas decisiones. La verificación de identidad por videollamada, optativa para quienes deseen habilitar recaudación externa en Iniciativas Comunitarias, es un proceso distinto descripto en la Sección 5.9.
               </p>
 
               <h3>4.3 Autenticación de terceros</h3>
@@ -226,7 +229,7 @@ export default function Terms() {
               <p>La Plataforma admite dos tipos de proyectos:</p>
               <ul>
                 <li><strong>Proyectos financiados</strong> — proyectos sociales que reciben Créditos Cívicos, requieren aprobación gubernamental antes de aceptar asignaciones, y al completarse pueden generar un registro de solicitud de desembolso (Ticket de Cobro) para el beneficiario;</li>
-                <li><strong>Iniciativas Comunitarias</strong> — iniciativas cívicas que no involucran Créditos Cívicos, no requieren aprobación gubernamental y se impulsan por la participación ciudadana directa (voluntariado, coordinación, contribuciones en especie).</li>
+                <li><strong>Iniciativas Comunitarias</strong> — iniciativas cívicas que no involucran Créditos Cívicos, no requieren aprobación gubernamental y se impulsan por la participación ciudadana directa (voluntariado, coordinación, contribuciones en especie). Pueden incluir, a criterio de su creador, un enlace externo de recaudación de donaciones (Sección 5.9).</li>
               </ul>
 
               <h3>5.2 Creación de proyectos</h3>
@@ -269,6 +272,17 @@ export default function Terms() {
               <h3>5.8 Reportes comunitarios</h3>
               <p>
                 Los usuarios pueden reportar proyectos o iniciativas que consideren que violan estos Términos o la legislación aplicable. Los reportes son revisados por el gobierno local correspondiente (para proyectos financiados) o por el equipo de moderación de Citixen (para iniciativas comunitarias sin contraparte gubernamental). Citixen no está obligada a tomar acción sobre cada reporte pero los revisará de buena fe.
+              </p>
+
+              <h3>5.9 Recaudación externa en Iniciativas Comunitarias</h3>
+              <p>
+                Cualquier ciudadano puede incorporar en su Iniciativa Comunitaria un enlace externo de recaudación de donaciones (por ejemplo, Mercado Pago, GoFundMe u otra plataforma de pago de terceros), sin necesidad de trayectoria previa en la Plataforma. <strong>Citixen no procesa ni custodia fondos:</strong> el enlace dirige al donante fuera de la Plataforma, hacia un servicio elegido y operado exclusivamente por el creador. La relación de la donación es entre el donante y el creador de la iniciativa; Citixen no es parte de ella.
+              </p>
+              <p>
+                Cuando el creador cuenta con identidad verificada (insignia &ldquo;Identidad verificada&rdquo;), esa verificación certifica únicamente que una persona se presentó en una videollamada, exhibió un documento de identidad y que los datos coinciden con los de su cuenta. <strong>No constituye una validación de la causa declarada, una garantía sobre el uso de los fondos, ni una certificación de la veracidad de la iniciativa.</strong> Cualquier monto de fondos recaudados que el creador declare en la Plataforma es información autodeclarada, no auditada por Citixen.
+              </p>
+              <p>
+                Citixen no realiza determinación alguna sobre si una Iniciativa Comunitaria cumple con la legislación aplicable en materia de solicitud pública de donaciones o financiamiento colectivo en la jurisdicción del creador o del donante, ni garantiza que las donaciones sean deducibles de impuestos. Cada usuario es responsable de cumplir dicha legislación. Citixen se reserva el derecho de restringir, suspender o inhabilitar esta función en cualquier jurisdicción donde identifique un riesgo regulatorio, y de ocultar el enlace o revocar la insignia de identidad verificada ante sospecha fundada de fraude, conforme a los mecanismos de reporte de la Sección 5.8.
               </p>
 
               {/* ═══ 6. ORGANIZACIONES ═══ */}
@@ -465,11 +479,11 @@ export default function Terms() {
               </p>
 
               <h3>13.2 Sin garantías</h3>
-              <p>Citixen no garantiza: el funcionamiento continuo o libre de errores de la Plataforma; que algún proyecto será aprobado, financiado o exitoso; que algún gobierno local cumplirá sus obligaciones de desembolso; ni la exactitud de cualquier información exhibida en la Plataforma.</p>
+              <p>Citixen no garantiza: el funcionamiento continuo o libre de errores de la Plataforma; que algún proyecto será aprobado, financiado o exitoso; que algún gobierno local cumplirá sus obligaciones de desembolso; la exactitud de cualquier información exhibida en la Plataforma; ni la legitimidad de cualquier causa de recaudación publicada por un usuario ni el uso correcto o declarado de los fondos donados a través de enlaces externos conforme a la Sección 5.9.</p>
 
               <h3>13.3 Acciones de terceros</h3>
               <p>
-                Citixen no es responsable por las acciones, omisiones, decisiones o faltas de gobiernos locales, creadores de proyectos, organizaciones, otros usuarios o proveedores de servicios de terceros.
+                Citixen no es responsable por las acciones, omisiones, decisiones o faltas de gobiernos locales, creadores de proyectos, organizaciones, otros usuarios, proveedores de servicios de terceros, ni de las plataformas de pago de terceros elegidas por los creadores de iniciativas conforme a la Sección 5.9 — incluyendo el uso, destino o resultado de los fondos recaudados a través de dichos enlaces.
               </p>
 
               <h3>13.4 Limitación de responsabilidad</h3>
