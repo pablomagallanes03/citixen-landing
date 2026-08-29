@@ -340,9 +340,9 @@ export default function EconomiaParticipativa() {
     <>
       <Head>
         <title>Soy vecino — Citixen</title>
-        <meta name="description" content="Tu ciudad te escucha de verdad. Con Citixen opinás, proponés y priorizás los proyectos que importan — y tu voz no se pierde: se lee, se cuenta y se ve cómo se hace realidad. Donde tu municipio lo activa, además le das peso con Créditos Cívicos." />
+        <meta name="description" content="Pagás impuestos. Con Citixen empezás a decidir en qué se usan: recibís Créditos Cívicos y priorizás los proyectos que se hacen con ese dinero, opinás, proponés y ves cómo se ejecutan." />
         <meta property="og:title" content="Soy vecino — Citixen" />
-        <meta property="og:description" content="Tu ciudad te escucha de verdad. Opinás, proponés y priorizás los proyectos que importan — y tu voz no se pierde." />
+        <meta property="og:description" content="Pagás impuestos. Con Citixen empezás a decidir en qué se usan — priorizás proyectos, opinás y ves cómo se hacen realidad." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://citixen.org/soyvecino" />
         <meta property="og:image" content="https://citixen.org/og-image.png" />
@@ -359,13 +359,12 @@ export default function EconomiaParticipativa() {
           <div className="ep-hero-inner">
             <div className="ep-hero-content fade-up">
               <h1 className="ep-hero-title">
-                Dejá de pedirle a tu ciudad.<br />
-                <span className="ep-hero-highlight">Empezá a decidir con ella.</span>
+                Pagás impuestos.<br />
+                <span className="ep-hero-highlight">Empezá a decidir en qué se usan.</span>
               </h1>
               <p className="ep-hero-subtitle">
-                No se trata de pedir más fuerte, sino de participar. Con Citixen tu ciudad te
-                escucha de verdad: opinás, proponés y priorizás los proyectos que importan —
-                y ves cómo se hacen realidad.
+                Citixen te da Créditos Cívicos por lo que ya aportás a tu municipio — vos
+                priorizás qué proyectos se hacen con ese dinero, y ves cómo se ejecutan.
               </p>
             </div>
 
