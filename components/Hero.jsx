@@ -4,13 +4,13 @@ export default function Hero() {
       <div className="container hero-inner">
         <div className="hero-content">
           <h1 className="fade-up delay-1">
-            Tu ciudad te escucha.<br />
-            <span style={{ color: 'var(--secondary)' }}>A vos y a cada vecino.</span>
+            Pagás impuestos.<br />
+            <span style={{ color: 'var(--secondary)' }}>Ahora también priorizás en qué se usan.</span>
           </h1>
           <p className="fade-up delay-2">
-            Citixen es la plataforma con la que tu municipio consulta, ordena y decide
-            con su gente — leyendo cada voz, sin que ninguna se pierda. Y cuando tu ciudad
-            esté lista, lo que se decide pasa a tener peso real.
+            Citixen convierte lo que tu municipio recauda en decisiones compartidas: los
+            vecinos priorizan proyectos reales con Créditos Cívicos, y el gobierno gana
+            respaldo genuino en cada uno.
           </p>
           <div className="hero-buttons fade-up delay-3">
             <a href="#acceso" className="btn-primary">

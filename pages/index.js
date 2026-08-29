@@ -20,11 +20,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Citixen | Tu ciudad escucha, delibera y decide con sus vecinos.</title>
-        <meta name="description" content="Citixen es la plataforma de participación ciudadana para municipios: consultas, propuestas y un motor de deliberación asistido por IA que lee cada voz sin perder ninguna, citando texto real. La IA asiste, nunca decide. Y cuando tu ciudad esté lista, la participación pasa a tener peso real con Créditos Cívicos." />
-        <meta name="keywords" content="participación ciudadana, deliberación asistida por IA, IA verificable, consultas ciudadanas, créditos cívicos, civic tech argentina, software para municipios, gobierno abierto, participación vecinal" />
-        <meta property="og:title" content="Citixen | Tu ciudad escucha, delibera y decide con sus vecinos." />
-        <meta property="og:description" content="Una sola plataforma de participación ciudadana para municipios: consultas, propuestas y deliberación asistida por IA que lee cada voz sin perder ninguna, citando texto real. La IA asiste, nunca decide." />
+        <title>Citixen | Pagás impuestos. Ahora también priorizás en qué se usan.</title>
+        <meta name="description" content="Citixen es la plataforma de participación ciudadana para municipios: priorizás proyectos reales con Créditos Cívicos y opinás en consultas leídas por un motor de deliberación asistido por IA que no pierde ninguna voz, citando texto real. La IA asiste, nunca decide." />
+        <meta name="keywords" content="pagar impuestos, participación ciudadana, deliberación asistida por IA, IA verificable, consultas ciudadanas, créditos cívicos, civic tech argentina, software para municipios, gobierno abierto, participación vecinal" />
+        <meta property="og:title" content="Citixen | Pagás impuestos. Ahora también priorizás en qué se usan." />
+        <meta property="og:description" content="Priorizás proyectos reales con Créditos Cívicos y opinás en consultas leídas por un motor de deliberación asistido por IA que no pierde ninguna voz. La IA asiste, nunca decide." />
         <meta property="og:site_name" content="Citixen" />
         <link rel="canonical" href="https://citixen.org/" />
         <meta property="og:type" content="website" />
@@ -34,8 +34,8 @@ export default function Home() {
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="es_AR" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Citixen | Tu ciudad escucha, delibera y decide con sus vecinos." />
-        <meta name="twitter:description" content="Una sola plataforma de participación ciudadana para municipios: consultas, propuestas y deliberación asistida por IA que lee cada voz sin perder ninguna, citando texto real. La IA asiste, nunca decide." />
+        <meta name="twitter:title" content="Citixen | Pagás impuestos. Ahora también priorizás en qué se usan." />
+        <meta name="twitter:description" content="Priorizás proyectos reales con Créditos Cívicos y opinás en consultas leídas por un motor de deliberación asistido por IA que no pierde ninguna voz. La IA asiste, nunca decide." />
         <meta name="twitter:image" content="https://citixen.org/og-image.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
