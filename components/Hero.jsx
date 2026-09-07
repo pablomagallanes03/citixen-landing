@@ -22,7 +22,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Visual: "tu ciudad te escucha" — consulta en vivo, cada voz leída (giro jun 2026). */}
+        {/* Visual: momento de asignación de Créditos Cívicos — hace visible la promesa fiscal del H1 (ago 2026). */}
         <div className="hero-mockup fade-up delay-2">
           <div className="hl-wrap">
             <div className="hl-stack hl-stack--2" aria-hidden="true" />
@@ -30,36 +30,41 @@ export default function Hero() {
 
             <div className="hl-card">
               <div className="hl-head">
-                <span className="hl-live"><span className="hl-live-dot" />Consulta abierta</span>
-                <span className="hl-head-label">Opiná</span>
+                <span className="hl-live"><span className="hl-live-dot" />Este mes</span>
+                <span className="hl-head-label">Créditos Cívicos</span>
               </div>
-              <h3 className="hl-q">¿Qué hacemos con el galpón ferroviario abandonado?</h3>
+              <h3 className="hl-q">Tenés 100 CC para priorizar</h3>
 
-              <ul className="hl-voices">
+              <ul className="hl-alloc">
                 <li>
-                  <span className="hl-av hl-av--1">V</span>
-                  <span className="hl-voice-text">Que sea un espacio público, no privado.</span>
-                  <svg className="hl-tick" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span className="hl-alloc-name">Parque del barrio</span>
+                  <span className="hl-alloc-track"><span className="hl-alloc-fill hl-alloc-fill--1" style={{ width: '40%' }} /></span>
+                  <span className="hl-alloc-amount">40 CC</span>
                 </li>
                 <li>
-                  <span className="hl-av hl-av--2">M</span>
-                  <span className="hl-voice-text">Un centro cultural para los pibes del barrio.</span>
-                  <svg className="hl-tick" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span className="hl-alloc-name">Centro cultural</span>
+                  <span className="hl-alloc-track"><span className="hl-alloc-fill hl-alloc-fill--2" style={{ width: '25%' }} /></span>
+                  <span className="hl-alloc-amount">25 CC</span>
                 </li>
-                <li className="hl-voice--minority">
-                  <span className="hl-av hl-av--3">J</span>
-                  <span className="hl-voice-text">Preservar la estructura por su valor histórico.</span>
-                  <svg className="hl-tick" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <li>
+                  <span className="hl-alloc-name">Iluminación</span>
+                  <span className="hl-alloc-track"><span className="hl-alloc-fill hl-alloc-fill--3" style={{ width: '20%' }} /></span>
+                  <span className="hl-alloc-amount">20 CC</span>
+                </li>
+                <li>
+                  <span className="hl-alloc-name">Ciclovía</span>
+                  <span className="hl-alloc-track"><span className="hl-alloc-fill hl-alloc-fill--4" style={{ width: '15%' }} /></span>
+                  <span className="hl-alloc-amount">15 CC</span>
                 </li>
               </ul>
 
-              <div className="hl-more">+ 309 vecinos más</div>
+              <div className="hl-more">+ 1.240 vecinos priorizando este mes</div>
 
               <div className="hl-foot">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
                 </svg>
-                <span><strong>312 respuestas</strong> · todas leídas, ninguna se pierde</span>
+                <span><strong>100 CC asignados</strong> · a proyectos aprobados por tu municipio</span>
               </div>
             </div>
           </div>
@@ -136,33 +141,46 @@ export default function Hero() {
           letter-spacing: -0.01em;
         }
 
-        .hl-voices { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-        .hl-voices li {
+        .hl-alloc { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+        .hl-alloc li {
           display: flex;
           align-items: center;
           gap: 11px;
-          background: #f4f7fa;
-          border-radius: 12px;
-          padding: 11px 13px;
         }
-        .hl-voice--minority { box-shadow: inset 3px 0 0 var(--accent); }
-        .hl-av {
+        .hl-alloc-name {
           flex-shrink: 0;
-          width: 28px; height: 28px;
-          border-radius: 50%;
-          display: grid; place-items: center;
-          font-size: 12px; font-weight: 700; color: #fff;
-        }
-        .hl-av--1 { background: #0A3D91; }
-        .hl-av--2 { background: #3C9ECE; }
-        .hl-av--3 { background: #F7794E; }
-        .hl-voice-text {
-          flex: 1;
-          font-size: 0.92rem;
-          line-height: 1.35;
+          width: 132px;
+          font-size: 0.86rem;
+          font-weight: 600;
           color: #334155;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
-        .hl-tick { flex-shrink: 0; color: var(--secondary); }
+        .hl-alloc-track {
+          flex: 1;
+          height: 8px;
+          border-radius: 999px;
+          background: #eef2f6;
+          overflow: hidden;
+        }
+        .hl-alloc-fill {
+          display: block;
+          height: 100%;
+          border-radius: 999px;
+        }
+        .hl-alloc-fill--1 { background: var(--primary); }
+        .hl-alloc-fill--2 { background: var(--secondary); }
+        .hl-alloc-fill--3 { background: rgba(10, 61, 145, 0.4); }
+        .hl-alloc-fill--4 { background: var(--accent); }
+        .hl-alloc-amount {
+          flex-shrink: 0;
+          width: 44px;
+          text-align: right;
+          font-size: 0.86rem;
+          font-weight: 700;
+          color: var(--dark);
+        }
 
         .hl-more {
           font-size: 0.82rem;
@@ -191,8 +209,10 @@ export default function Hero() {
       `}</style>
 
       {/*
-        Visual anterior (arco proyecto → obra, hv-*) archivado en git (jun 2026).
-        El giro corrió el hero al eje "escucha"; el arco de ejecución sigue vivo en /soygobierno.
+        Historial del visual del hero: arco proyecto → obra (hv-*, archivado jun 2026) → consulta
+        con voces (eje "escucha", jun-ago 2026) → asignación de CC (eje fiscal, ago 2026, actual,
+        coherente con el H1/subhead "Pagás impuestos..."). El arco de ejecución del proyecto
+        sigue vivo en /soygobierno.
       */}
     </section>
   )
