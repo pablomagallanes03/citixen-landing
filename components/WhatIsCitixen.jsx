@@ -90,10 +90,6 @@ export default function WhatIsCitixen() {
               El presupuesto participativo continuo. Cuando tu ciudad esté lista, lo que
               los vecinos deciden pasa a tener <strong>peso económico real</strong>.
             </p>
-            <div className="tool-switch-flag">
-              <span className="tool-switch-knob" aria-hidden="true"></span>
-              Se activa con un switch, cuando estés listo
-            </div>
           </article>
         </div>
       </div>
@@ -175,38 +171,6 @@ export default function WhatIsCitixen() {
         /* Switch — Créditos Cívicos */
         .tool-card--switch { border-color: rgba(247, 121, 78, .35); }
         .tool-ic--switch { background: rgba(247, 121, 78, .14); color: var(--accent); }
-        .tool-switch-flag {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          align-self: flex-start;
-          margin-top: auto;
-          font-size: .72rem;
-          font-weight: 700;
-          letter-spacing: .02em;
-          color: var(--accent);
-          background: rgba(247, 121, 78, .1);
-          padding: 6px 12px;
-          border-radius: 999px;
-        }
-        .tool-switch-knob {
-          width: 26px;
-          height: 15px;
-          border-radius: 999px;
-          background: var(--accent);
-          position: relative;
-          flex-shrink: 0;
-        }
-        .tool-switch-knob::after {
-          content: '';
-          position: absolute;
-          top: 2px;
-          right: 2px;
-          width: 11px;
-          height: 11px;
-          border-radius: 50%;
-          background: #fff;
-        }
 
         @media (max-width: 920px) {
           .tools-grid { grid-template-columns: repeat(2, 1fr); }
