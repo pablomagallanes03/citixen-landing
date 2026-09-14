@@ -2,14 +2,15 @@
 
 ## Qué es este repo
 
-Landing page de Citixen en `citixen.org`. Comunica el producto a gobiernos locales y ciudadanos.
+Landing page de Citixen en `citixen.app`. Comunica el producto a gobiernos locales y ciudadanos.
 Deploy: Vercel. Framework: Next.js 14 + React 18. Estilos: CSS custom con variables (no Tailwind classes en components).
 
-**Dominios:**
-- `citixen.org` — landing institucional (este repo)
-- `citixen.tech` — redirige 301 a `citixen.org` (configurar en Vercel)
+**Dominios (verificado por auditoría DNS/HTTP/TLS, sep 2026 — corrige la versión anterior de esta sección):**
+- `citixen.app` — **este repo** (landing institucional Next.js). El deploy vive en Vercel como siempre, pero el dominio lo sirve Nginx en el droplet del backend (`164.92.218.144`) haciendo reverse-proxy hacia ese deploy de Vercel para toda ruta que no sea `/api/*` — así la landing y el backend conviven bajo un solo dominio sin CORS. TLS termina en el droplet (Let's Encrypt, `CN=citixen.app`), no en Vercel. **No confundir con "solo backend"** — esa era la doc vieja.
+- `citixen.app/api/*` — backend API (otro repo, mismo dominio, mismo droplet, sin proxy)
+- `citixen.org` — **ya NO es este repo.** Es `citixen-portal` (Vite/React, sitio ciudadano estilo GoFundMe — Iniciativas Ciudadanas, Vercel directo)
+- `citixen.tech` — **dado de baja (sep 2026).** El usuario decidió no renovarlo/venderlo por costo de mantenimiento — no se usaba. El redirect 301 hacia `citixen.org` que tenía configurado se quitó de `vercel.json` de este repo. No referenciar `citixen.tech` en ningún lugar nuevo (copy, JSON-LD, comentarios de código).
 - `admin.citixen.app` / `government.citixen.app` — paneles operativos (otros repos)
-- `citixen.app` — backend API (otro repo)
 
 ---
 
@@ -115,7 +116,7 @@ Ver memorias del proyecto raíz: `no-asap-compliance-positioning`, `portal-four-
 - **Fuente:** Inter (Google Fonts)
 - **Animaciones:** IntersectionObserver + `.fade-up` + CSS keyframes
 - **Deploy:** Vercel (`origin` remote)
-- **Dominio:** `citixen.org`
+- **Dominio:** `citixen.app` (ver corrección de dominios arriba, sep 2026)
 
 ---
 

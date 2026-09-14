@@ -64,8 +64,7 @@ export default function Home() {
                     "availableLanguage": ["Spanish"]
                   },
                   "sameAs": [
-                    "https://citixen.org",
-                    "https://citixen.tech"
+                    "https://citixen.org"
                   ]
                 },
                 {

@@ -5,17 +5,6 @@
       "has": [
         {
           "type": "host",
-          "value": "citixen.tech"
-        }
-      ],
-      "destination": "https://citixen.org/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
           "value": "www.citixen.org"
         }
       ],
