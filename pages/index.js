@@ -2,8 +2,16 @@ import Head from 'next/head'
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
-import WhatIsCitixen from '../components/WhatIsCitixen'
-import TwoPaths from '../components/TwoPaths'
+import HowItWorks from '../components/HowItWorks'
+import TaxToProject from '../components/TaxToProject'
+import GoalReached from '../components/GoalReached'
+import CollectiveDecisions from '../components/CollectiveDecisions'
+import MoreThanOpinion from '../components/MoreThanOpinion'
+import CitizenGovernmentSplit from '../components/CitizenGovernmentSplit'
+import CitizenInitiatives from '../components/CitizenInitiatives'
+import NotOnePriority from '../components/NotOnePriority'
+import RepresentativeDemocracy from '../components/RepresentativeDemocracy'
+import FinalCTA from '../components/FinalCTA'
 import EarlyAccess from '../components/EarlyAccess'
 import Footer from '../components/Footer'
 
@@ -20,11 +28,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Citixen | Pagás impuestos. Ahora también priorizás en qué se usan.</title>
-        <meta name="description" content="Citixen es la plataforma de participación ciudadana para municipios: priorizás proyectos reales con Créditos Cívicos y opinás en consultas leídas por un motor de deliberación asistido por IA que no pierde ninguna voz, citando texto real. La IA asiste, nunca decide." />
-        <meta name="keywords" content="pagar impuestos, participación ciudadana, deliberación asistida por IA, IA verificable, consultas ciudadanas, créditos cívicos, civic tech argentina, software para municipios, gobierno abierto, participación vecinal" />
-        <meta property="og:title" content="Citixen | Pagás impuestos. Ahora también priorizás en qué se usan." />
-        <meta property="og:description" content="Priorizás proyectos reales con Créditos Cívicos y opinás en consultas leídas por un motor de deliberación asistido por IA que no pierde ninguna voz. La IA asiste, nunca decide." />
+        <title>Citixen | Tus impuestos. Tu ciudad. Tu decisión.</title>
+        <meta name="description" content="Citixen convierte una parte de tus impuestos en Créditos Cívicos: capacidad real de decidir qué proyectos de tu ciudad reciben recursos. Vos elegís, el municipio ejecuta." />
+        <meta name="keywords" content="pagar impuestos, participación ciudadana, créditos cívicos, presupuesto participativo, consultas ciudadanas, civic tech argentina, software para municipios, gobierno abierto, participación vecinal" />
+        <meta property="og:title" content="Citixen | Tus impuestos. Tu ciudad. Tu decisión." />
+        <meta property="og:description" content="Una parte de tus impuestos se convierte en Créditos Cívicos: capacidad real de decidir qué proyectos de tu ciudad reciben recursos." />
         <meta property="og:site_name" content="Citixen" />
         <link rel="canonical" href="https://citixen.org/" />
         <meta property="og:type" content="website" />
@@ -34,8 +42,8 @@ export default function Home() {
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="es_AR" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Citixen | Pagás impuestos. Ahora también priorizás en qué se usan." />
-        <meta name="twitter:description" content="Priorizás proyectos reales con Créditos Cívicos y opinás en consultas leídas por un motor de deliberación asistido por IA que no pierde ninguna voz. La IA asiste, nunca decide." />
+        <meta name="twitter:title" content="Citixen | Tus impuestos. Tu ciudad. Tu decisión." />
+        <meta name="twitter:description" content="Una parte de tus impuestos se convierte en Créditos Cívicos: capacidad real de decidir qué proyectos de tu ciudad reciben recursos." />
         <meta name="twitter:image" content="https://citixen.org/og-image.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
@@ -52,7 +60,7 @@ export default function Home() {
                   "url": "https://citixen.org",
                   "logo": "https://citixen.org/pictures/logo-citixen.svg",
                   "foundingDate": "2025",
-                  "description": "Plataforma de participación ciudadana para gobiernos locales en Argentina y América Latina. Consultas, propuestas y deliberación asistida por IA que lee cada voz sin perder ninguna. La IA asiste, nunca decide.",
+                  "description": "Plataforma de participación ciudadana para gobiernos locales en Argentina y América Latina. Los vecinos convierten una parte de sus impuestos en Créditos Cívicos y deciden qué proyectos de su ciudad los reciben.",
                   "areaServed": {
                     "@type": "Place",
                     "name": "Argentina"
@@ -80,17 +88,16 @@ export default function Home() {
                   "name": "Citixen",
                   "applicationCategory": "GovernmentApplication",
                   "applicationSubCategory": "CivicTechnology",
-                  "description": "Una sola plataforma de participación ciudadana para municipios: consultas, propuestas y un motor de deliberación asistido por IA que lee cada voz sin perder ninguna, citando texto real. La IA asiste, nunca decide. Cuando la ciudad está lista, la participación pasa a tener peso real con Créditos Cívicos.",
+                  "description": "Convertí una parte de tus impuestos en Créditos Cívicos y asigná recursos reales a los proyectos de tu ciudad que consideres prioritarios. Vos elegís, el municipio ejecuta.",
                   "operatingSystem": "Web, Android, iOS",
                   "url": "https://citixen.org",
                   "author": { "@id": "https://citixen.org/#organization" },
                   "featureList": [
-                    "Motor de deliberación asistido por IA: síntesis trazable y verificable de la participación, citando texto ciudadano real",
+                    "Créditos Cívicos: convertís una parte de tus impuestos en capacidad de decisión sobre proyectos reales",
                     "Consultas ciudadanas con resultados públicos",
-                    "Propuestas vecinales con apoyo de la comunidad",
+                    "Propuestas e iniciativas ciudadanas con apoyo de la comunidad",
                     "Comunicación institucional segmentada y auditable",
-                    "Portal público de proyectos y reportes mensuales",
-                    "Créditos Cívicos: presupuesto participativo continuo, activable cuando la ciudad está lista"
+                    "Portal público de proyectos y reportes mensuales"
                   ]
                 }
               ]
@@ -100,8 +107,16 @@ export default function Home() {
       </Head>
       <Navbar />
       <Hero />
-      <WhatIsCitixen />
-      <TwoPaths />
+      <HowItWorks />
+      <TaxToProject />
+      <GoalReached />
+      <CollectiveDecisions />
+      <MoreThanOpinion />
+      <CitizenGovernmentSplit />
+      <CitizenInitiatives />
+      <NotOnePriority />
+      <RepresentativeDemocracy />
+      <FinalCTA />
       <EarlyAccess />
       <Footer />
     </>
