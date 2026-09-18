@@ -17,10 +17,7 @@ const PROJECTS = [
     title: 'Nueva iluminación pública',
     chip: 'Infraestructura urbana',
     desc: 'Instalar nuevas luminarias en 12 cuadras del barrio.',
-    bg: 'linear-gradient(135deg, #F7794E 0%, #ff9a6e 100%)',
-    icon: (
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2z"/></svg>
-    ),
+    photo: '/mockup/iluminacion.jpg',
     progress: 45,
     supporters: '1.240 vecinos ya participaron',
   },
@@ -29,10 +26,7 @@ const PROJECTS = [
     title: 'Ciclovías seguras',
     chip: 'Movilidad',
     desc: 'Conectar el centro con barrios residenciales.',
-    bg: 'linear-gradient(135deg, #3C9ECE 0%, #6fbde0 100%)',
-    icon: (
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM12 17.5V14l-3-3 4-3 2 3h2"/></svg>
-    ),
+    photo: '/mockup/ciclovia.jpg',
     progress: 28,
     supporters: '876 vecinos ya participaron',
   },
@@ -41,10 +35,7 @@ const PROJECTS = [
     title: 'Recuperar el Centro Cultural',
     chip: 'Cultura',
     desc: 'Refaccionar el edificio y reabrir sus actividades.',
-    bg: 'linear-gradient(135deg, #0A3D91 0%, #3C9ECE 100%)',
-    icon: (
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21V13h6v8"/></svg>
-    ),
+    photo: '/mockup/centro-cultural.jpg',
     progress: 82,
     supporters: '2.910 vecinos ya participaron',
   },
@@ -94,11 +85,7 @@ export default function Hero() {
         <div className="hero-mockup fade-up delay-2">
           <div className="hv-card">
             <div className="hv-photo" key={p.id}>
-              {p.photo ? (
-                <Image src={p.photo} alt={p.title} fill sizes="420px" style={{ objectFit: 'cover' }} priority />
-              ) : (
-                <div className="hero-icon-banner" style={{ background: p.bg }}>{p.icon}</div>
-              )}
+              <Image src={p.photo} alt={p.title} fill sizes="420px" style={{ objectFit: 'cover' }} priority={active === 0} />
               <span className="hv-photo-stamp" style={{ background: 'var(--accent)' }}>Proyecto destacado</span>
             </div>
             <div className="hv-card-body" style={{ paddingBottom: 4 }}>
@@ -148,14 +135,6 @@ export default function Hero() {
           margin-bottom: 28px !important;
         }
 
-        .hero-icon-banner {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          animation: heroFadeIn 0.4s ease-out;
-        }
         .hv-photo :global(img) {
           animation: heroFadeIn 0.4s ease-out;
         }
@@ -179,7 +158,7 @@ export default function Hero() {
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .hero-icon-banner, .hv-photo :global(img) { animation: none; }
+          .hv-photo :global(img) { animation: none; }
         }
       `}</style>
     </section>
