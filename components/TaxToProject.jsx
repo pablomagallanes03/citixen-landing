@@ -7,14 +7,21 @@ const PROJECTS = [
   { id: 'cultura', emoji: '🎭', name: 'Recuperar el Centro Cultural', goalUsd: 8000, limit: 10, color: '#8b5cf6' },
 ]
 
+const PAID = 100
+const ALLOCATION_PCT = 70
+const BUDGET = (PAID * ALLOCATION_PCT) / 100 // 70 CC — lo que este ciudadano tiene para repartir
+
 const fmt = (n) => n.toLocaleString('es-AR')
 
 export default function TaxToProject() {
-  const [amounts, setAmounts] = useState(PROJECTS.map((p) => p.limit))
+  const [amounts, setAmounts] = useState([30, 20, 15, 5]) // suma 70, dentro del límite de cada proyecto
   const total = amounts.reduce((s, a) => s + a, 0)
 
   const handleChange = (index, rawValue) => {
-    const max = PROJECTS[index].limit
+    const projectMax = PROJECTS[index].limit
+    const othersSum = amounts.reduce((s, a, i) => (i === index ? s : s + a), 0)
+    const budgetMax = BUDGET - othersSum
+    const max = Math.min(projectMax, budgetMax)
     const val = Math.max(0, Math.min(max, Number(rawValue)))
     setAmounts((prev) => prev.map((a, i) => (i === index ? val : a)))
   }
@@ -33,7 +40,12 @@ export default function TaxToProject() {
           <span>$1 de decisión</span>
         </div>
         <p className="ttp-lead fade-up delay-1">
-          Pagaste $100 de un impuesto municipal. Tu municipio te asigna 100 Créditos Cívicos.
+          Tu municipio decide qué porcentaje de cada impuesto se convierte en Créditos Cívicos.
+        </p>
+        <p className="section-desc fade-up delay-1">
+          Pagaste $100 de un impuesto municipal. Tu municipio destina el {ALLOCATION_PCT}% de este
+          impuesto a decisión ciudadana: recibís {BUDGET} Créditos Cívicos. El resto sigue
+          financiando los servicios habituales de tu ciudad.
         </p>
         <p className="section-desc fade-up delay-1">
           No son puntos, premios ni una moneda virtual. Cada Crédito Cívico representa $1 que
@@ -41,11 +53,11 @@ export default function TaxToProject() {
         </p>
 
         <div className="ttp-arrow-chain fade-up delay-1">
-          <span>$100 aportados</span>
+          <span>${fmt(PAID)} aportados</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          <span>100 CC</span>
+          <span>{ALLOCATION_PCT}% → {BUDGET} CC</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          <span>$100 asignados por vos</span>
+          <span>${fmt(BUDGET)} asignados por vos</span>
         </div>
 
         <h3 className="ttp-subhead fade-up delay-2">Ahora empieza la decisión.</h3>
@@ -82,7 +94,7 @@ export default function TaxToProject() {
             ))}
           </div>
           <div className="ttp-total">
-            <strong>{total}</strong> / 100 CC asignados
+            <strong>{total}</strong> / {BUDGET} CC asignados
           </div>
         </div>
 
