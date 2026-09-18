@@ -32,10 +32,6 @@ export default function TaxToProject() {
           <span className="ttp-formula-eq">=</span>
           <span>$1 de decisión</span>
         </div>
-        <p className="ttp-formula-note fade-up delay-1">
-          En este ejemplo. El tipo de cambio real lo fija cada municipio y se muestra siempre en la app.
-        </p>
-
         <p className="ttp-lead fade-up delay-1">
           Pagaste $100 de un impuesto municipal. Tu municipio te asigna 100 Créditos Cívicos.
         </p>
@@ -117,18 +113,12 @@ export default function TaxToProject() {
           align-items: center;
           gap: 12px;
           flex-wrap: wrap;
-          margin-top: 40px;
+          margin: 40px 0 32px;
           font-size: 24px;
           font-weight: 800;
           color: var(--primary);
         }
         .ttp-formula-eq { color: var(--text-muted); font-weight: 600; font-size: 18px; }
-        .ttp-formula-note {
-          font-size: 13px;
-          color: var(--text-muted);
-          margin-top: 8px;
-          margin-bottom: 32px;
-        }
 
         .ttp-lead {
           font-size: 20px;

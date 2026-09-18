@@ -5,12 +5,12 @@ import Hero from '../components/Hero'
 import HowItWorks from '../components/HowItWorks'
 import TaxToProject from '../components/TaxToProject'
 import GoalReached from '../components/GoalReached'
+import ProofOfImpact from '../components/ProofOfImpact'
 import CollectiveDecisions from '../components/CollectiveDecisions'
 import MoreThanOpinion from '../components/MoreThanOpinion'
 import CitizenGovernmentSplit from '../components/CitizenGovernmentSplit'
 import CitizenInitiatives from '../components/CitizenInitiatives'
 import NotOnePriority from '../components/NotOnePriority'
-import RepresentativeDemocracy from '../components/RepresentativeDemocracy'
 import FinalCTA from '../components/FinalCTA'
 import EarlyAccess from '../components/EarlyAccess'
 import Footer from '../components/Footer'
@@ -110,12 +110,12 @@ export default function Home() {
       <HowItWorks />
       <TaxToProject />
       <GoalReached />
+      <ProofOfImpact />
       <CollectiveDecisions />
       <MoreThanOpinion />
       <CitizenGovernmentSplit />
       <CitizenInitiatives />
       <NotOnePriority />
-      <RepresentativeDemocracy />
       <FinalCTA />
       <EarlyAccess />
       <Footer />
