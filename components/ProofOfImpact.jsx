@@ -40,7 +40,6 @@ export default function ProofOfImpact() {
                 sizes="440px"
                 style={{ objectFit: 'cover' }}
               />
-              <span className="poi-stamp">Ejemplo ilustrativo · cierre de proyecto</span>
             </div>
             <div className="poi-meta">
               <span className="poi-tag">
@@ -99,12 +98,6 @@ export default function ProofOfImpact() {
         .poi-photo {
           position: relative; width: 100%; aspect-ratio: 4 / 3;
           border-radius: var(--radius-lg); overflow: hidden;
-        }
-        .poi-stamp {
-          position: absolute; top: 12px; left: 12px;
-          font-size: 12px; font-weight: 700; color: #fff;
-          background: rgba(2,27,78,0.78); padding: 6px 12px;
-          border-radius: 999px;
         }
         .poi-meta { padding: 16px 8px 8px; }
         .poi-tag {

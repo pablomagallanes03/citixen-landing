@@ -297,7 +297,6 @@ export default function SoyGobierno() {
                       style={{ objectFit: 'cover' }}
                       priority
                     />
-                    <span className="hv-photo-stamp">Ejemplo ilustrativo</span>
                   </div>
                   <div className="hv-card-body">
                     <span className="hv-chip">Espacios públicos</span>
@@ -392,7 +391,6 @@ export default function SoyGobierno() {
                     sizes="440px"
                     style={{ objectFit: 'cover' }}
                   />
-                  <span className="sg-evi-stamp">Ejemplo ilustrativo · cierre de proyecto</span>
                 </div>
                 <div className="sg-evi-meta">
                   <span className="sg-evi-tag">
@@ -554,12 +552,6 @@ export default function SoyGobierno() {
         .sg-evi-photo {
           position: relative; width: 100%; aspect-ratio: 4 / 3;
           border-radius: var(--radius-lg); overflow: hidden;
-        }
-        .sg-evi-stamp {
-          position: absolute; top: 12px; left: 12px;
-          font-size: 12px; font-weight: 700; color: #fff;
-          background: rgba(2,27,78,0.78); padding: 6px 12px;
-          border-radius: 999px;
         }
         .sg-evi-meta { padding: 16px 8px 8px; }
         .sg-evi-tag {

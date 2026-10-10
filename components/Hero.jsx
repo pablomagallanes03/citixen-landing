@@ -85,7 +85,6 @@ export default function Hero() {
           <div className="hv-card">
             <div className="hv-photo" key={p.id}>
               <Image src={p.photo} alt={p.title} fill sizes="420px" style={{ objectFit: 'cover' }} priority={active === 0} />
-              <span className="hv-photo-stamp" style={{ background: 'var(--accent)' }}>Ejemplo ilustrativo</span>
             </div>
             <div className="hv-card-body" style={{ paddingBottom: 4 }}>
               <span className="hv-chip">{p.chip}</span>
