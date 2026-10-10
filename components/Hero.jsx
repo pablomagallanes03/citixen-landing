@@ -100,8 +100,8 @@ export default function Hero() {
             <div className="hv-card-body" style={{ paddingBottom: 4 }}>
               <div className="hv-card-text" key={p.id}>
                 <span className="hv-chip">{p.chip}</span>
-                <h3 className="hv-title">{p.title}</h3>
-                <p style={{ fontSize: '13px', color: '#64748b', margin: '0 0 16px', lineHeight: 1.5 }}>
+                <h3 className="hv-title hv-title--clamp">{p.title}</h3>
+                <p className="hv-desc">
                   {p.desc} Proyectos y cifras ficticios.
                 </p>
               </div>
@@ -158,6 +158,24 @@ export default function Hero() {
         .hv-supporters-text {
           display: block;
           animation: heroTextIn 0.45s ease-out;
+        }
+        .hv-title--clamp {
+          min-height: 44px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .hv-desc {
+          font-size: 13px;
+          color: #64748b;
+          line-height: 1.5;
+          margin: 0 0 16px;
+          min-height: 40px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
         @keyframes heroTextIn {
           from { opacity: 0; transform: translateY(6px); }
