@@ -83,15 +83,28 @@ export default function Hero() {
             (los mismos 4 de TaxToProject más abajo en la página) cada 4.5s. */}
         <div className="hero-mockup fade-up delay-2">
           <div className="hv-card">
-            <div className="hv-photo" key={p.id}>
-              <Image src={p.photo} alt={p.title} fill sizes="420px" style={{ objectFit: 'cover' }} priority={active === 0} />
+            <div className="hv-photo">
+              {PROJECTS.map((proj, i) => (
+                <Image
+                  key={proj.id}
+                  src={proj.photo}
+                  alt={proj.title}
+                  fill
+                  sizes="420px"
+                  style={{ objectFit: 'cover' }}
+                  priority={i === 0}
+                  className={`hv-photo-layer${i === active ? ' is-active' : ''}`}
+                />
+              ))}
             </div>
             <div className="hv-card-body" style={{ paddingBottom: 4 }}>
-              <span className="hv-chip">{p.chip}</span>
-              <h3 className="hv-title">{p.title}</h3>
-              <p style={{ fontSize: '13px', color: '#64748b', margin: '0 0 16px', lineHeight: 1.5 }}>
-                {p.desc} Proyectos y cifras ficticios.
-              </p>
+              <div className="hv-card-text" key={p.id}>
+                <span className="hv-chip">{p.chip}</span>
+                <h3 className="hv-title">{p.title}</h3>
+                <p style={{ fontSize: '13px', color: '#64748b', margin: '0 0 16px', lineHeight: 1.5 }}>
+                  {p.desc} Proyectos y cifras ficticios.
+                </p>
+              </div>
               <div className="phone-progress">
                 <div className="phone-progress-header">
                   <span className="phone-progress-label">Créditos Cívicos asignados</span>
@@ -101,7 +114,7 @@ export default function Hero() {
               </div>
               <div className="phone-supporters" style={{ marginBottom: 0 }}>
                 <div className="phone-supporters-avatars"><div className="phone-avatar" /><div className="phone-avatar" /><div className="phone-avatar" /><div className="phone-avatar" /></div>
-                <span>{p.supporters}</span>
+                <span key={p.id} className="hv-supporters-text">{p.supporters}</span>
               </div>
             </div>
             <div className="hv-stats hv-stats--rotator">
@@ -133,12 +146,22 @@ export default function Hero() {
           margin-bottom: 28px !important;
         }
 
-        .hv-photo :global(img) {
-          animation: heroFadeIn 0.4s ease-out;
+        .hv-photo :global(.hv-photo-layer) {
+          opacity: 0;
+          transition: opacity 0.7s ease;
         }
-        @keyframes heroFadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
+        .hv-photo :global(.hv-photo-layer.is-active) {
+          opacity: 1;
+        }
+
+        .hv-card-text,
+        .hv-supporters-text {
+          display: block;
+          animation: heroTextIn 0.45s ease-out;
+        }
+        @keyframes heroTextIn {
+          from { opacity: 0; transform: translateY(6px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
         .hv-stats--rotator { display: flex; align-items: center; gap: 12px; }
@@ -156,7 +179,9 @@ export default function Hero() {
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .hv-photo :global(img) { animation: none; }
+          .hv-photo :global(.hv-photo-layer) { transition: none; }
+          .hv-card-text,
+          .hv-supporters-text { animation: none; }
         }
       `}</style>
     </section>
