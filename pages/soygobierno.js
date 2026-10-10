@@ -237,12 +237,12 @@ export default function SoyGobierno() {
         <meta property="og:title" content="Soy gobierno — Citixen" />
         <meta property="og:description" content="Una sola plataforma: participación, comunicación institucional, deliberación asistida por IA y presupuesto participativo continuo. Leés a toda tu ciudad sin perder una voz; la IA asiste, nunca decide." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://citixen.org/soygobierno" />
-        <meta property="og:image" content="https://citixen.org/og-image.png" />
+        <meta property="og:url" content="https://citixen.app/soygobierno" />
+        <meta property="og:image" content="https://citixen.app/og-image.png" />
         <meta property="og:locale" content="es_AR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://citixen.org/soygobierno" />
+        <link rel="canonical" href="https://citixen.app/soygobierno" />
       </Head>
       <Navbar />
 
@@ -291,17 +291,18 @@ export default function SoyGobierno() {
                   <div className="hv-photo">
                     <Image
                       src="/mockup/plaza.png"
-                      alt="Plaza San Martín renovada por el municipio"
+                      alt="Ejemplo ilustrativo de una plaza renovada"
                       fill
                       sizes="420px"
                       style={{ objectFit: 'cover' }}
                       priority
                     />
-                    <span className="hv-photo-stamp">Ejecutado</span>
+                    <span className="hv-photo-stamp">Ejemplo ilustrativo</span>
                   </div>
                   <div className="hv-card-body">
                     <span className="hv-chip">Espacios públicos</span>
                     <h3 className="hv-title">Renovación Plaza San Martín</h3>
+                    <p>Proyecto, cifras y fechas ficticios.</p>
                     <div className="hv-metrics">
                       <div className="hv-metric">
                         <span className="hv-metric-num">412</span>
@@ -386,12 +387,12 @@ export default function SoyGobierno() {
                 <div className="sg-evi-photo">
                   <Image
                     src="/mockup/plaza.png"
-                    alt="Evidencia de cierre del proyecto: Plaza San Martín ejecutada"
+                    alt="Ejemplo ilustrativo de evidencia de cierre de una plaza"
                     fill
                     sizes="440px"
                     style={{ objectFit: 'cover' }}
                   />
-                  <span className="sg-evi-stamp">Ejecutado · dic 2026</span>
+                  <span className="sg-evi-stamp">Ejemplo ilustrativo · cierre de proyecto</span>
                 </div>
                 <div className="sg-evi-meta">
                   <span className="sg-evi-tag">
@@ -400,7 +401,7 @@ export default function SoyGobierno() {
                     </svg>
                     Pack de evidencia
                   </span>
-                  <p className="sg-evi-cap">12 fotos · 3 documentos · historia de cierre · 412 vecinos alcanzados</p>
+                  <p className="sg-evi-cap">Datos ficticios: 12 fotos · 3 documentos · historia de cierre · 412 vecinos alcanzados</p>
                 </div>
               </div>
             </div>

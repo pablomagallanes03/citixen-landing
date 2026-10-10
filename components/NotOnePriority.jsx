@@ -2,7 +2,7 @@ export default function NotOnePriority() {
   return (
     <section className="nop-section">
       <div className="container nop-inner">
-        <div className="nop-text fade-up">
+        <div className="nop-text reveal-left">
           <h2 className="section-title">
             Una ciudad no tiene<br />una sola prioridad.
           </h2>
@@ -15,7 +15,7 @@ export default function NotOnePriority() {
           </p>
         </div>
 
-        <div className="nop-callout fade-up delay-1">
+        <div className="nop-callout reveal-right delay-1">
           <div className="nop-callout-ic">
             <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
           </div>

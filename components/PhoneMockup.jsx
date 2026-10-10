@@ -6,6 +6,9 @@ import Image from 'next/image'
 export default function PhoneMockup() {
   return (
     <div className="iphone-wrapper">
+      <p style={{ textAlign: 'center', fontSize: 13, lineHeight: 1.5, marginBottom: 12, color: '#0b1e48', background: '#fff', padding: '8px 12px', borderRadius: 12 }}>
+        Ejemplo ilustrativo · proyectos y cifras ficticios
+      </p>
       <div className="iphone-device">
         <div className="iphone-screen">
           <div className="iphone-dynamic-island"></div>

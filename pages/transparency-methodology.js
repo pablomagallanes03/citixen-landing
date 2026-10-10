@@ -397,7 +397,7 @@ export default function TransparencyMethodology() {
             <div className="citation-box">
               <p>
                 Citixen Technologies. (2026). <em>Citixen Transparency Index — Methodology v1.0</em>.
-                Retrieved from <code>https://citixen.org/transparency-methodology</code>
+                Retrieved from <code>https://citixen.app/transparency-methodology</code>
               </p>
             </div>
 

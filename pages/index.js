@@ -6,11 +6,7 @@ import HowItWorks from '../components/HowItWorks'
 import TaxToProject from '../components/TaxToProject'
 import GoalReached from '../components/GoalReached'
 import ProofOfImpact from '../components/ProofOfImpact'
-import CollectiveDecisions from '../components/CollectiveDecisions'
 import MoreThanOpinion from '../components/MoreThanOpinion'
-import CitizenGovernmentSplit from '../components/CitizenGovernmentSplit'
-import CitizenInitiatives from '../components/CitizenInitiatives'
-import NotOnePriority from '../components/NotOnePriority'
 import FinalCTA from '../components/FinalCTA'
 import EarlyAccess from '../components/EarlyAccess'
 import Footer from '../components/Footer'
@@ -21,7 +17,7 @@ export default function Home() {
       (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
       { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     )
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el))
+    document.querySelectorAll('.fade-up, .reveal-left, .reveal-right').forEach(el => observer.observe(el))
     return () => observer.disconnect()
   }, [])
 
@@ -34,17 +30,17 @@ export default function Home() {
         <meta property="og:title" content="Citixen | Tus impuestos. Tu ciudad. Tu decisión." />
         <meta property="og:description" content="Una parte de tus impuestos se convierte en Créditos Cívicos: capacidad real de decidir qué proyectos de tu ciudad reciben recursos." />
         <meta property="og:site_name" content="Citixen" />
-        <link rel="canonical" href="https://citixen.org/" />
+        <link rel="canonical" href="https://citixen.app/" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://citixen.org" />
-        <meta property="og:image" content="https://citixen.org/og-image.png" />
+        <meta property="og:url" content="https://citixen.app" />
+        <meta property="og:image" content="https://citixen.app/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="es_AR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Citixen | Tus impuestos. Tu ciudad. Tu decisión." />
         <meta name="twitter:description" content="Una parte de tus impuestos se convierte en Créditos Cívicos: capacidad real de decidir qué proyectos de tu ciudad reciben recursos." />
-        <meta name="twitter:image" content="https://citixen.org/og-image.png" />
+        <meta name="twitter:image" content="https://citixen.app/og-image.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
           type="application/ld+json"
@@ -54,11 +50,11 @@ export default function Home() {
               "@graph": [
                 {
                   "@type": "Organization",
-                  "@id": "https://citixen.org/#organization",
+                  "@id": "https://citixen.app/#organization",
                   "name": "Citixen",
                   "legalName": "Citixen Technologies SAS",
-                  "url": "https://citixen.org",
-                  "logo": "https://citixen.org/pictures/logo-citixen.svg",
+                  "url": "https://citixen.app",
+                  "logo": "https://citixen.app/pictures/logo-citixen.svg",
                   "foundingDate": "2025",
                   "description": "Plataforma de participación ciudadana para gobiernos locales en Argentina y América Latina. Los vecinos convierten una parte de sus impuestos en Créditos Cívicos y deciden qué proyectos de su ciudad los reciben.",
                   "areaServed": {
@@ -77,11 +73,11 @@ export default function Home() {
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://citixen.org/#website",
-                  "url": "https://citixen.org",
+                  "@id": "https://citixen.app/#website",
+                  "url": "https://citixen.app",
                   "name": "Citixen",
                   "inLanguage": "es-AR",
-                  "publisher": { "@id": "https://citixen.org/#organization" }
+                  "publisher": { "@id": "https://citixen.app/#organization" }
                 },
                 {
                   "@type": "SoftwareApplication",
@@ -90,8 +86,8 @@ export default function Home() {
                   "applicationSubCategory": "CivicTechnology",
                   "description": "Convertí una parte de tus impuestos en Créditos Cívicos y asigná recursos reales a los proyectos de tu ciudad que consideres prioritarios. Vos elegís, el municipio ejecuta.",
                   "operatingSystem": "Web, Android, iOS",
-                  "url": "https://citixen.org",
-                  "author": { "@id": "https://citixen.org/#organization" },
+                  "url": "https://citixen.app",
+                  "author": { "@id": "https://citixen.app/#organization" },
                   "featureList": [
                     "Créditos Cívicos: convertís una parte de tus impuestos en capacidad de decisión sobre proyectos reales",
                     "Consultas ciudadanas con resultados públicos",
@@ -108,14 +104,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <HowItWorks />
+      <MoreThanOpinion />
       <TaxToProject />
       <GoalReached />
       <ProofOfImpact />
-      <CollectiveDecisions />
-      <MoreThanOpinion />
-      <CitizenGovernmentSplit />
-      <CitizenInitiatives />
-      <NotOnePriority />
       <FinalCTA />
       <EarlyAccess />
       <Footer />

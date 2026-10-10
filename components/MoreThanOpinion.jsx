@@ -4,7 +4,7 @@ export default function MoreThanOpinion() {
   return (
     <section className="more-than-opinion-section">
       <div className="container mto-inner">
-        <div className="mto-text fade-up">
+        <div className="mto-text reveal-left">
           <div className="section-label"><span className="bar"></span> Más que opinar</div>
           <h2 className="section-title">
             Participar debería<br />ser más que opinar.
@@ -26,7 +26,7 @@ export default function MoreThanOpinion() {
           </div>
         </div>
 
-        <div className="mto-visual fade-up delay-1">
+        <div className="mto-visual reveal-right delay-1">
           <PhoneMockup />
         </div>
       </div>

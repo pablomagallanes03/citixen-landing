@@ -62,13 +62,12 @@ export default function Hero() {
             <span style={{ color: 'var(--accent)' }}>Tu decisión.</span>
           </h1>
           <p className="fade-up delay-2">
-            Cada año contribuís a financiar tu ciudad. Tus impuestos se convierten en calles,
-            plazas, transporte, cultura, infraestructura y servicios públicos. Pero entre aportar
-            esos recursos y decidir qué se hace con ellos, hay una distancia enorme.
+            Tus impuestos financian tu ciudad. Pero aportar no siempre significa poder decidir
+            qué proyectos reciben esos recursos.
           </p>
           <p className="hero-lead-strong fade-up delay-2">
-            Citixen propone algo simple: que también puedas decidir directamente a qué proyectos
-            destinar esos recursos que aportaste, tus impuestos.
+            Con Citixen, una parte de tu contribución genera Créditos Cívicos para apoyar
+            los proyectos que te importan, según las reglas de tu municipio.
           </p>
           <p className="hero-tagline fade-up delay-2">
             Créditos Cívicos para convertir impuestos en decisiones ciudadanas.
@@ -86,13 +85,13 @@ export default function Hero() {
           <div className="hv-card">
             <div className="hv-photo" key={p.id}>
               <Image src={p.photo} alt={p.title} fill sizes="420px" style={{ objectFit: 'cover' }} priority={active === 0} />
-              <span className="hv-photo-stamp" style={{ background: 'var(--accent)' }}>Proyecto destacado</span>
+              <span className="hv-photo-stamp" style={{ background: 'var(--accent)' }}>Ejemplo ilustrativo</span>
             </div>
             <div className="hv-card-body" style={{ paddingBottom: 4 }}>
               <span className="hv-chip">{p.chip}</span>
               <h3 className="hv-title">{p.title}</h3>
               <p style={{ fontSize: '13px', color: '#64748b', margin: '0 0 16px', lineHeight: 1.5 }}>
-                {p.desc}
+                {p.desc} Proyectos y cifras ficticios.
               </p>
               <div className="phone-progress">
                 <div className="phone-progress-header">
@@ -113,7 +112,7 @@ export default function Hero() {
                 ))}
               </div>
               <span className="hv-evidence" style={{ marginLeft: 'auto' }}>
-                Ver proyecto
+                Proyecto de ejemplo
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </span>
             </div>

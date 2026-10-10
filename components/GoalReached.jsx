@@ -4,7 +4,7 @@ export default function GoalReached() {
       <div className="container">
         <h2 className="section-title fade-up">¿Y cuándo un proyecto alcanza su meta?</h2>
         <p className="section-desc fade-up">
-          Supongamos que recuperar la plaza necesita $20.000. Los vecinos empiezan a
+          Ejemplo ilustrativo: recuperar la plaza tiene una meta ficticia de $20.000. Los vecinos empiezan a
           asignarle sus Créditos:
         </p>
 
@@ -29,39 +29,18 @@ export default function GoalReached() {
           para ejecutarlo.
         </p>
 
-        <div className="gr-arrow-chain fade-up delay-2">
-          <span>20.000 CC asignados</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          <span>$20.000 para el proyecto</span>
-        </div>
+
 
         <p className="section-desc fade-up delay-2">
           Citixen no se queda con una comisión ni convierte esos recursos en dinero privado
           del ciudadano. Los fondos siguen siendo públicos hasta su ejecución.
         </p>
 
-        <div className="gr-stats fade-up delay-3">
-          <div className="hv-metric">
-            <span className="hv-metric-num">100 CC</span>
-            <span className="hv-metric-label">asignados</span>
-          </div>
-          <span className="hv-metric-div"></span>
-          <div className="hv-metric">
-            <span className="hv-metric-num">$100</span>
-            <span className="hv-metric-label">destinados al proyecto</span>
-          </div>
-          <span className="hv-metric-div"></span>
-          <div className="hv-metric">
-            <span className="hv-metric-num">0%</span>
-            <span className="hv-metric-label">comisión para Citixen</span>
-          </div>
-        </div>
-
         <div className="gr-closing fade-up delay-3">
-          <h3>Cada peso representado por tus Créditos tiene un destino que vos elegiste.</h3>
+          <h3>Vos elegís. El municipio ejecuta.</h3>
           <p>
-            <strong>Vos decidís el destino.</strong> El municipio garantiza los recursos.
-            El proyecto los convierte en resultados.
+            El municipio valida las condiciones y libera los fondos. Podés seguir la ejecución
+            y consultar las evidencias del proyecto.
           </p>
         </div>
       </div>
@@ -96,30 +75,6 @@ export default function GoalReached() {
           margin: 10px 0 40px;
         }
 
-        .gr-arrow-chain {
-          display: flex;
-          align-items: center;
-          flex-wrap: wrap;
-          gap: 10px;
-          margin: 24px 0;
-          font-size: 15px;
-          font-weight: 700;
-          color: var(--text-primary);
-        }
-        .gr-arrow-chain svg { color: var(--border); flex-shrink: 0; }
-
-        .gr-stats {
-          display: flex;
-          align-items: flex-start;
-          gap: 20px;
-          margin: 40px 0;
-          padding: 24px 28px;
-          background: var(--bg);
-          border-radius: var(--radius-lg);
-          max-width: 560px;
-        }
-        .gr-stats .hv-metric-num { color: var(--primary); font-size: 22px; }
-
         .gr-closing {
           margin-top: 48px;
           max-width: 680px;
@@ -140,7 +95,6 @@ export default function GoalReached() {
 
         @media (max-width: 600px) {
           .gr-closing h3 { font-size: 21px; }
-          .gr-stats { flex-wrap: wrap; gap: 16px 24px; }
         }
       `}</style>
     </section>

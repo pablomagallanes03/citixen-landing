@@ -219,10 +219,10 @@ export default function AccountDeletion() {
                 <a href="mailto:privacy@citixen.org">privacy@citixen.org</a>
                 <br />
                 <strong>Política de privacidad completa:</strong>{' '}
-                <Link href="/privacy">citixen.org/privacy</Link>
+                <Link href="/privacy">citixen.app/privacy</Link>
                 <br />
                 <strong>Términos y condiciones:</strong>{' '}
-                <Link href="/terms">citixen.org/terms</Link>
+                <Link href="/terms">citixen.app/terms</Link>
               </p>
               <p>
                 También podés presentar un reclamo ante la Agencia de Acceso a la Información Pública

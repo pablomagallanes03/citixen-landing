@@ -9,8 +9,8 @@ const ITEMS = [
 export default function ProofOfImpact() {
   return (
     <section className="poi-section">
-      <div className="container poi-grid fade-up">
-        <div className="poi-content">
+      <div className="container poi-grid">
+        <div className="poi-content reveal-left">
           <span className="poi-eyebrow">El círculo se cierra con pruebas</span>
           <h2 className="poi-title">Tu decisión no se pierde en un número. Se convierte en algo real.</h2>
           <p className="poi-intro">
@@ -28,20 +28,19 @@ export default function ProofOfImpact() {
               </li>
             ))}
           </ul>
-          <p className="poi-closing">Para vos, la prueba de que tu decisión sirvió.</p>
         </div>
 
-        <div className="poi-visual">
+        <div className="poi-visual reveal-right delay-1">
           <div className="poi-card">
             <div className="poi-photo">
               <Image
                 src="/mockup/plaza.png"
-                alt="Evidencia de cierre: Plaza San Martín ejecutada"
+                alt="Ejemplo ilustrativo de un proyecto de plaza"
                 fill
                 sizes="440px"
                 style={{ objectFit: 'cover' }}
               />
-              <span className="poi-stamp">Ejecutado · dic 2026</span>
+              <span className="poi-stamp">Ejemplo ilustrativo · cierre de proyecto</span>
             </div>
             <div className="poi-meta">
               <span className="poi-tag">
@@ -50,7 +49,7 @@ export default function ProofOfImpact() {
                 </svg>
                 Pack de evidencia
               </span>
-              <p className="poi-cap">12 fotos · 3 documentos · historia de cierre · 412 vecinos alcanzados</p>
+              <p className="poi-cap">Datos ficticios: 12 fotos · 3 documentos · historia de cierre · 412 vecinos alcanzados</p>
             </div>
           </div>
         </div>

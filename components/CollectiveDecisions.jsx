@@ -11,7 +11,7 @@ export default function CollectiveDecisions() {
   return (
     <section className="collective-section">
       <div className="container collective-inner">
-        <div className="collective-text fade-up">
+        <div className="collective-text reveal-left">
           <h2 className="section-title">
             Miles de decisiones individuales<br />construyen una prioridad colectiva.
           </h2>
@@ -27,7 +27,7 @@ export default function CollectiveDecisions() {
           <p className="collective-strong">Dónde los ciudadanos decidieron poner sus Créditos.</p>
         </div>
 
-        <div className="collective-visual fade-up delay-1" aria-hidden="true">
+        <div className="collective-visual reveal-right delay-1" aria-hidden="true">
           <div className="collective-people">
             <Person fill="var(--primary)" height={64} />
             <Person fill="var(--secondary)" height={78} />

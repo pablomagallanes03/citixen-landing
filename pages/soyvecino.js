@@ -251,7 +251,7 @@ const steps = [
       </svg>
     ),
     title: 'Los proyectos se materializan',
-    desc: 'Cuando un proyecto alcanza su meta de financiamiento, se pone en marcha. Tu decisión tiene efecto directo.',
+    desc: 'Al alcanzar la meta, el responsable solicita la ejecución. El municipio libera los fondos una vez cumplidas las condiciones del proyecto.',
   },
   {
     number: '5',
@@ -344,12 +344,12 @@ export default function EconomiaParticipativa() {
         <meta property="og:title" content="Soy vecino — Citixen" />
         <meta property="og:description" content="Pagás impuestos. Con Citixen empezás a decidir en qué se usan — priorizás proyectos, opinás y ves cómo se hacen realidad." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://citixen.org/soyvecino" />
-        <meta property="og:image" content="https://citixen.org/og-image.png" />
+        <meta property="og:url" content="https://citixen.app/soyvecino" />
+        <meta property="og:image" content="https://citixen.app/og-image.png" />
         <meta property="og:locale" content="es_AR" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://citixen.org/soyvecino" />
+        <link rel="canonical" href="https://citixen.app/soyvecino" />
       </Head>
       <Navbar />
 
@@ -401,7 +401,7 @@ export default function EconomiaParticipativa() {
           <div className="ep-precedent-text fade-up">
             <p>
               Cuando tu municipio abre una consulta, no respondés para que nadie te lea. Citixen
-              lee cada respuesta — la tuya y la de los otros tres mil vecinos — sin que ninguna
+              lee cada respuesta — la tuya y la de los demás vecinos — sin que ninguna
               se pierda en el camino.
             </p>
             <p className="ep-precedent-bold">Hasta las voces de pocos quedan a la vista.</p>
@@ -435,7 +435,7 @@ export default function EconomiaParticipativa() {
               la vereda de tu barrio, el comedor del club, el refugio para animales.
             </p>
             <p className="ep-bridge-closing">
-              No es dinero. No se compra. No se vende. Es tu voz, proporcional a tu esfuerzo.
+              No es dinero. No se compra. No se vende. Es capacidad de decisión vinculada a tu contribución, según las reglas de tu municipio.
             </p>
           </div>
         </div>
@@ -477,14 +477,13 @@ export default function EconomiaParticipativa() {
               desde hace décadas. Porto Alegre lo hizo en 1989. En Argentina, más de 50 municipios
               tienen algún mecanismo de participación presupuestaria.
             </p>
-            <p className="ep-precedent-bold">Lo que es nuevo es hacerlo bien.</p>
+            <p className="ep-precedent-bold">Un modelo continuo, digital y trazable.</p>
             <p>
-              Sin papel, sin asambleas de 3 horas un martes a las 19, sin urnas que nadie cuenta.
-              Con una plataforma donde cada vecino participa desde su teléfono, en el momento que quiere,
-              con la información completa sobre cada proyecto.
+              Citixen suma una plataforma donde cada vecino puede participar desde su teléfono,
+              consultar la información de cada proyecto y seguir el destino de los recursos.
             </p>
             <p className="ep-precedent-closing">
-              Citixen no inventa el presupuesto participativo. Lo hace funcionar de verdad.
+              Citixen no inventa el presupuesto participativo. Lo lleva a un modelo continuo, digital y trazable.
             </p>
           </div>
         </div>
@@ -496,8 +495,8 @@ export default function EconomiaParticipativa() {
           <div className="ep-cta-header fade-up">
             <h2 className="ep-cta-title">Las ciudades no cambian solas. Las cambian sus vecinos.</h2>
             <p className="ep-cta-desc">
-              No esperes a que alguien más lo pida. Cada ciudad en Citixen arrancó con un vecino
-              que decidió que su voz tenía que contar. Puede ser la tuya.
+              Buscá tu ciudad y sumate. Si tu municipio todavía no está activo, podés invitar
+              a otros vecinos para impulsar su incorporación.
             </p>
           </div>
 

@@ -29,7 +29,7 @@ export default function TaxToProject() {
   return (
     <section className="ttp-section" id="asignacion">
       <div className="container">
-        <div className="section-label fade-up"><span className="bar"></span> Un ejemplo</div>
+        <div className="section-label fade-up"><span className="bar"></span> Ejemplo ilustrativo</div>
         <h2 className="section-title fade-up">De tu impuesto al proyecto</h2>
 
         <div className="ttp-formula fade-up delay-1">
@@ -43,13 +43,13 @@ export default function TaxToProject() {
           Tu municipio decide qué porcentaje de cada impuesto se convierte en Créditos Cívicos.
         </p>
         <p className="section-desc fade-up delay-1">
-          Pagaste $100 de un impuesto municipal. Tu municipio destina el {ALLOCATION_PCT}% de este
+          Supongamos que pagaste $100 de un impuesto municipal. Tu municipio destina el {ALLOCATION_PCT}% de este
           impuesto a decisión ciudadana: recibís {BUDGET} Créditos Cívicos. El resto sigue
           financiando los servicios habituales de tu ciudad.
         </p>
         <p className="section-desc fade-up delay-1">
-          No son puntos, premios ni una moneda virtual. Cada Crédito Cívico representa $1 que
-          podés asignar a proyectos de tu ciudad.
+          Cada Crédito Cívico representa $1 de decisión sobre los recursos habilitados por el municipio.
+          El porcentaje, los proyectos, las metas y los límites de este simulador son ficticios.
         </p>
 
         <div className="ttp-arrow-chain fade-up delay-1">
@@ -98,21 +98,12 @@ export default function TaxToProject() {
           </div>
         </div>
 
-        <p className="ttp-strong fade-up delay-3">Tus Créditos te obligan a priorizar.</p>
-        <p className="section-desc fade-up delay-3">
-          No se trata de elegir una sola causa. Distribuís tu capacidad de decisión entre
-          distintos proyectos según lo importantes que sean para vos.
-        </p>
+
 
         <div className="ttp-note fade-up delay-3">
           <p>
-            Los límites evitan que una única persona concentre todos sus Créditos en un
-            proyecto y hacen que las prioridades se construyan entre muchos ciudadanos.
-          </p>
-          <p>
-            El municipio puede ajustar esos límites cuando existan razones previamente
-            definidas —por ejemplo, necesidades urgentes o proyectos prioritarios— y esos
-            cambios quedan visibles para todos.
+            Los límites por persona distribuyen el apoyo entre proyectos. El municipio puede
+            ajustarlos por razones previamente definidas; esos cambios quedan visibles para todos.
           </p>
         </div>
       </div>
@@ -218,12 +209,6 @@ export default function TaxToProject() {
         }
         .ttp-total strong { font-size: 20px; color: var(--primary); font-weight: 800; }
 
-        .ttp-strong {
-          margin-top: 48px;
-          font-size: 22px;
-          font-weight: 800;
-          color: var(--primary);
-        }
 
         .ttp-note {
           margin-top: 28px;
