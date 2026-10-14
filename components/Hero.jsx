@@ -148,10 +148,11 @@ export default function Hero() {
 
         .hv-photo :global(.hv-photo-layer) {
           opacity: 0;
-          transition: opacity 0.7s ease;
+          transition: opacity 0.35s ease-in 0s;
         }
         .hv-photo :global(.hv-photo-layer.is-active) {
           opacity: 1;
+          transition: opacity 0.35s ease-out 0.35s;
         }
 
         .hv-card-text,
@@ -197,7 +198,8 @@ export default function Hero() {
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .hv-photo :global(.hv-photo-layer) { transition: none; }
+          .hv-photo :global(.hv-photo-layer),
+          .hv-photo :global(.hv-photo-layer.is-active) { transition: none; }
           .hv-card-text,
           .hv-supporters-text { animation: none; }
         }
