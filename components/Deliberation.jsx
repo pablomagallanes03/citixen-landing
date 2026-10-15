@@ -1,7 +1,10 @@
-export default function Deliberation() {
+export default function Deliberation({ embedded = false }) {
   return (
-    <section className="delib-section" id="deliberacion">
-      <div className="container delib-inner">
+    <section
+      className={embedded ? 'delib-section delib-embedded' : 'delib-section'}
+      id={embedded ? undefined : 'deliberacion'}
+    >
+      <div className={embedded ? 'delib-inner' : 'container delib-inner'}>
         <div className="delib-copy fade-up">
           <div className="delib-label"><span className="bar"></span> El motor de deliberación</div>
           <h2 className="delib-title">
@@ -194,10 +197,35 @@ export default function Deliberation() {
         }
         .delib-demo-foot svg { flex-shrink: 0; color: var(--secondary); }
 
+        /* ── Variante embebida: vive dentro de una sección clara (catálogo), no full-bleed navy ── */
+        .delib-embedded {
+          background: transparent;
+          color: var(--text-primary);
+          padding: 0 0 48px;
+          overflow: visible;
+        }
+        .delib-embedded .delib-label { color: var(--primary); }
+        .delib-embedded .delib-title { color: var(--text-primary); }
+        .delib-embedded .delib-title span { color: var(--primary); }
+        .delib-embedded .delib-lead { color: var(--text-secondary); }
+        .delib-embedded .delib-lead strong { color: var(--text-primary); }
+        .delib-embedded .delib-guarantees strong { color: var(--text-primary); }
+        .delib-embedded .delib-guarantees span { color: var(--text-secondary); }
+        .delib-embedded .delib-g-ic { background: rgba(247,121,78,.12); }
+        .delib-embedded .delib-principle { color: var(--text-primary); }
+
+        /* La demo-card pasa a ser una tarjeta navy flotante sobre el fondo claro del catálogo */
+        .delib-embedded .delib-demo {
+          background: var(--citixen-gradient);
+          border: none;
+          box-shadow: var(--shadow-lg);
+        }
+
         @media (max-width: 880px) {
           .delib-section { padding: 72px 0; }
           .delib-inner { grid-template-columns: 1fr; gap: 40px; }
           .delib-lead { max-width: none; }
+          .delib-embedded { padding: 0 0 40px; }
         }
       `}</style>
     </section>

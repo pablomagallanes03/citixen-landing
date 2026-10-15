@@ -8,14 +8,28 @@ import Deliberation from '../components/Deliberation'
 import EarlyAccess from '../components/EarlyAccess'
 
 // ── Escuchar y comunicar — herramientas sin manejar dinero ──
+// Orden por prioridad: gancho de adopción más fácil (encuestas sin registro) → versión formal
+// de lo mismo → cara pública → el resto de participación → cierre (reporte).
+// "Deliberación con IA" ya no es una tarjeta más: se renderiza embebida al inicio de este
+// bloque (ver toolBlocks.map más abajo) — decirlo dos veces (sección propia + tarjeta) era
+// redundante y abultaba el largo de la página.
 const communityTools = [
   {
-    title: 'Deliberación con IA',
-    desc: 'Cuando una consulta recibe cientos de respuestas, Citixen las lee todas: resume, agrupa los temas, marca acuerdos, tensiones y voces minoritarias — citando texto real de cada vecino. Vos leés a toda tu ciudad de una sola vez. La IA asiste, nunca decide.',
+    title: 'Opiná: encuestas abiertas',
+    desc: 'Lanzás una encuesta sin que el vecino tenga que registrarse: la compartís por WhatsApp, redes o un código QR en la calle. Es lo que hoy ya hacés con un Google Form o un story de Instagram, pero sin perder ese tráfico — Citixen lo convierte en vecinos de tu ciudad, y la IA te resume las respuestas de texto libre.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2z"/>
-        <path d="M9 21h6"/>
+        <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Opiná: consultas verificadas',
+    desc: 'La versión formal de Opiná: solo responden vecinos con cuenta en tu ciudad. Priorizás una obra, elegís el nombre de una plaza o medís un servicio — con ranking, opción múltiple o texto libre, resultados auditables y conclusión pública.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
       </svg>
     ),
   },
@@ -25,15 +39,6 @@ const communityTools = [
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Opiná: consultas ciudadanas',
-    desc: 'Le preguntás a tu ciudad lo que necesites saber: priorizar una obra, elegir el nombre de una plaza, medir un servicio. Con diferentes formatos (ranking, opción múltiple, texto libre), con resultados auditables y conclusión pública.',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
       </svg>
     ),
   },
@@ -77,13 +82,15 @@ const communityTools = [
 ]
 
 // ── Presupuesto participativo continuo (mecanismo interno: Créditos Cívicos) ──
+// Orden por prioridad: primero quién tiene el control de la plata (el miedo #1 del intendente),
+// después cómo se configura, y al final lo que complementa (respaldo, verificación, orgs).
 const creditTools = [
   {
-    title: 'Fuentes de ingreso configurables',
-    desc: 'Definís qué impuestos generan Créditos Cívicos y en qué porcentaje cada uno. Vos controlás la perilla; el vecino nunca la toca.',
+    title: 'Control total del pago',
+    desc: 'Cuando un proyecto se completa, vos autorizás la transferencia a quien lo ejecutó, por tus canales de siempre. El dinero nunca sale de tu control y cada movimiento queda registrado.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>
+        <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
       </svg>
     ),
   },
@@ -93,6 +100,15 @@ const creditTools = [
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+      </svg>
+    ),
+  },
+  {
+    title: 'Fuentes de ingreso configurables',
+    desc: 'Definís qué impuestos generan Créditos Cívicos y en qué porcentaje cada uno. Vos controlás la perilla; el vecino nunca la toca.',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>
       </svg>
     ),
   },
@@ -123,18 +139,11 @@ const creditTools = [
       </svg>
     ),
   },
-  {
-    title: 'Control total del pago',
-    desc: 'Cuando un proyecto se completa, vos autorizás la transferencia a quien lo ejecutó, por tus canales de siempre. El dinero nunca sale de tu control y cada movimiento queda registrado.',
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-      </svg>
-    ),
-  },
 ]
 
 // ── Transversal — gestión interna del gobierno ──
+// Orden por prioridad: tablero (lo primero que pide cualquier equipo) → roles (diferenciador
+// institucional fuerte) → operativa diaria (expedientes) → control interno (auditoría, mapa) → soporte al cierre.
 const teamTools = [
   {
     title: 'Tablero de gestión',
@@ -146,11 +155,11 @@ const teamTools = [
     ),
   },
   {
-    title: 'Mapa de la ciudad',
-    desc: 'Todos los proyectos y organizaciones geolocalizados, filtrables por estado, categoría y fecha. Ves tu ciudad de un vistazo.',
+    title: 'Equipo con roles y permisos',
+    desc: 'Cada funcionario tiene su cuenta y su perfil (tesorería, revisión, proyectos, comunicación). Se terminó la contraseña compartida y quién hace qué queda claro.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
       </svg>
     ),
   },
@@ -173,11 +182,11 @@ const teamTools = [
     ),
   },
   {
-    title: 'Equipo con roles y permisos',
-    desc: 'Cada funcionario tiene su cuenta y su perfil (tesorería, revisión, proyectos, comunicación). Se terminó la contraseña compartida y quién hace qué queda claro.',
+    title: 'Mapa de la ciudad',
+    desc: 'Todos los proyectos y organizaciones geolocalizados, filtrables por estado, categoría y fecha. Ves tu ciudad de un vistazo.',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/>
       </svg>
     ),
   },
@@ -342,8 +351,17 @@ export default function SoyGobierno() {
         </div>
       </section>
 
-      {/* ACTO 1.5 — El diferenciador: motor de deliberación con IA */}
-      <Deliberation />
+      {/* Mini-mapa de navegación: ancla a cada bloque del catálogo, visible apenas se termina el Hero */}
+      <nav className="sg-jumpnav fade-up" aria-label="Secciones del catálogo">
+        <div className="container sg-jumpnav-inner">
+          {toolBlocks.map((block) => (
+            <Link href={`#${block.id}`} className="sg-jumpnav-pill" key={block.id}>
+              <span className="sg-jumpnav-title">{block.title}</span>
+              <span className="sg-jumpnav-badge">{block.badge}</span>
+            </Link>
+          ))}
+        </div>
+      </nav>
 
       {/* ACTO 2 — El catálogo completo de herramientas */}
       <section className="sg-tools" id="herramientas">
@@ -363,6 +381,7 @@ export default function SoyGobierno() {
                 <span className={`sg-block-badge sg-block-badge--${block.badgeClass}`}>{block.badge}</span>
                 <p className="sg-block-sub">{block.sub}</p>
               </div>
+              {block.id === 'comunidad' && <Deliberation embedded />}
               <div className="sg-tool-grid">
                 {block.tools.map((t, i) => (
                   <div className="sg-tool" key={i}>
@@ -453,6 +472,20 @@ export default function SoyGobierno() {
           font-size: 14px;
           color: rgba(255,255,255,0.6);
         }
+
+        /* JUMP NAV — mapa de 3 pastillas debajo del hero, ancla a cada bloque del catálogo */
+        /* :global() porque son <Link> (componente, no tag html) — styled-jsx no les inyecta su hash de scope */
+        .sg-jumpnav { background: var(--surface); border-bottom: 1px solid var(--border-light); padding: 22px 0; }
+        .sg-jumpnav-inner { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+        :global(.sg-jumpnav-pill) {
+          display: flex; flex-direction: column; gap: 3px;
+          padding: 10px 20px; border-radius: var(--radius-lg);
+          background: var(--bg); border: 1px solid var(--border-light);
+          text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+        :global(.sg-jumpnav-pill:hover) { transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        :global(.sg-jumpnav-title) { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+        :global(.sg-jumpnav-badge) { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; }
 
         /* PROOF BAR */
         .sg-proof { background: var(--surface); padding: 40px 0; border-bottom: 1px solid var(--border-light); }
