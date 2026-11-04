@@ -26,7 +26,7 @@ Dirección creativa «El acuerdo»: *El gobierno habilita. La ciudadanía decide
 
 - Next.js 14.2 (Pages Router), React 18. Se evaluó App Router y se descartó: Pages Router trae enrutamiento por idioma nativo y conserva las páginas legales sin tocarlas.
 - Estilos: `styles/globals.css` (tokens y base) + CSS Modules por componente. `styles/legal.css` y `styles/methodology.css` son de las páginas que se conservan.
-- Fuentes con `next/font` (alojadas en el sitio): Schibsted Grotesk (titulares) e Inter (texto). La tipografía de titulares está pendiente de confirmación.
+- Fuentes con `next/font/local` desde `styles/fonts/` (variables, subconjunto latino, OFL): Schibsted Grotesk (titulares) e Inter (texto). No usar `next/font/google`: la descarga de Schibsted Grotesk falla al compilar en Vercel (nov 2026). La tipografía de titulares está pendiente de confirmación.
 - Sin dependencias nuevas.
 
 ## Páginas y rutas
