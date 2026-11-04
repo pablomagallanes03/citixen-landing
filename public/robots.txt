@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://citixen.org/sitemap.xml
+Sitemap: https://citixen.app/sitemap.xml

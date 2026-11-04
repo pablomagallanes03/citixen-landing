@@ -1,0 +1,44 @@
+.pieces {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.piece {
+  transition: transform 900ms var(--ease), opacity 600ms var(--ease), fill 600ms var(--ease);
+  transform: translate(calc(var(--dx) * var(--gap)), calc(var(--dy) * var(--gap)));
+}
+
+.together { --gap: 0px; }
+.apart { --gap: 40px; }
+
+/* Superficie oscura: blanco + coral, como el logo sobre navy */
+.night .piece { fill: var(--white); }
+/* Superficie clara: navy + coral */
+.light .piece { fill: var(--navy); }
+
+.night .citizen,
+.light .citizen { fill: var(--coral); }
+
+/* Con una pieza destacada, el resto se apaga */
+.focused .piece { opacity: 0.18; }
+.focused .active { opacity: 1; }
+
+/* Deriva lenta del estado abierto */
+.drift .piece {
+  animation: drift 9s var(--ease) infinite alternate;
+}
+.drift .government { animation-delay: -2s; }
+.drift .citizen { animation-delay: -4s; }
+.drift .fulfilment { animation-delay: -6s; }
+
+@keyframes drift {
+  from { transform: translate(calc(var(--dx) * var(--gap)), calc(var(--dy) * var(--gap))); }
+  to { transform: translate(calc(var(--dx) * (var(--gap) + 14px)), calc(var(--dy) * (var(--gap) + 6px))); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .piece { transition: none; }
+  .drift .piece { animation: none; }
+}

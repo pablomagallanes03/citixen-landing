@@ -1,0 +1,375 @@
+/* ── Comunes ─────────────────────────────────────────────── */
+.h2 {
+  font-size: var(--size-h2);
+  max-width: 20ch;
+  color: var(--ink);
+}
+.onNight { color: var(--on-night); }
+.lead {
+  margin-top: 1.25rem;
+  font-size: var(--size-lead);
+  color: var(--ink-2);
+  max-width: 46ch;
+}
+
+.arrowLink {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-top: 2.5rem;
+  font-weight: 600;
+  color: var(--on-night);
+  border-bottom: 1px solid var(--on-night-3);
+  padding-bottom: 2px;
+  transition: border-color 200ms var(--ease);
+}
+.arrowLink:hover { border-color: var(--coral); }
+.dark { color: var(--navy); border-color: var(--line); }
+
+/* ── 01 Hero ─────────────────────────────────────────────── */
+.hero {
+  background: var(--night);
+  color: var(--on-night);
+  padding-top: calc(var(--nav-height) + clamp(3rem, 2rem + 6vw, 7.5rem));
+  padding-bottom: clamp(4rem, 3rem + 6vw, 8rem);
+  overflow: hidden;
+}
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  align-items: center;
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+}
+.heroTitle {
+  font-size: var(--size-display);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  max-width: 12ch;
+}
+.heroLead {
+  margin-top: 1.75rem;
+  max-width: 44ch;
+  font-size: var(--size-lead);
+  color: var(--on-night-2);
+}
+.heroActions {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.75rem;
+}
+.heroLink {
+  font-weight: 600;
+  color: var(--on-night);
+  border-bottom: 1px solid var(--on-night-3);
+  padding-bottom: 2px;
+}
+.heroLink:hover { border-color: var(--coral); }
+.heroPieces {
+  width: min(100%, 440px);
+  justify-self: end;
+}
+
+/* ── 02 Simulador (escena estática) ───────────────────────── */
+.sim {
+  background: var(--mist);
+  padding: var(--section) 0;
+}
+.simFrame {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+  box-shadow: 0 1px 0 var(--line), 0 30px 60px -40px rgba(2, 27, 78, 0.35);
+}
+.simHead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.simBadge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--coral-soft);
+  color: var(--coral-ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.simCity { font-size: 0.875rem; color: var(--ink-3); }
+.simTitle {
+  font-size: var(--size-h2);
+  max-width: 18ch;
+}
+.simEquivalent {
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.simIntro {
+  margin-top: 1rem;
+  max-width: 52ch;
+  color: var(--ink-2);
+}
+.simProjects {
+  list-style: none;
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.simProject {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.simProjectHead h3 { font-size: var(--size-h3); }
+.simProjectHead p { margin-top: 0.35rem; color: var(--ink-2); font-size: 0.9375rem; }
+.simProposed { font-size: 0.8125rem !important; color: var(--ink-3) !important; }
+.simBar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--mist);
+  overflow: hidden;
+}
+.simBar span { display: block; height: 100%; background: var(--navy); border-radius: inherit; }
+.simFigures {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+.simFigures div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--mist);
+}
+.simFigures dt { font-size: 0.8125rem; color: var(--ink-3); }
+.simFigures dd { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.simException {
+  font-size: 0.8125rem;
+  color: var(--navy);
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--coral);
+}
+.simPending {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  color: var(--ink-3);
+}
+
+/* ── 03 Los tres tiempos ─────────────────────────────────── */
+.times { padding: var(--section) 0; background: var(--white); }
+.timesList {
+  list-style: none;
+  margin-top: clamp(2.5rem, 2rem + 3vw, 5rem);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(2rem, 1rem + 3vw, 4rem);
+}
+.time p { color: var(--ink-2); margin-top: 0.75rem; max-width: 34ch; }
+.timePiece { width: 92px; margin-bottom: 1.75rem; }
+.timeNumber {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-3);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+.timeTitle { font-size: clamp(1.5rem, 1.2rem + 1vw, 2.125rem); }
+
+/* ── 04 Reglas ───────────────────────────────────────────── */
+.rules {
+  padding: var(--section) 0;
+  background: var(--gradient);
+  color: var(--on-night-2);
+}
+.rulesGrid {
+  list-style: none;
+  margin-top: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line-night);
+}
+.rule {
+  padding: 2rem 2rem 2.25rem 0;
+  border-bottom: 1px solid var(--line-night);
+}
+.rule:nth-child(odd) { border-right: 1px solid var(--line-night); }
+.rule:nth-child(even) { padding-left: 2rem; }
+.ruleNumber { font-size: 0.8125rem; color: var(--on-night-3); font-variant-numeric: tabular-nums; }
+.rule h3 { margin-top: 0.75rem; font-size: var(--size-h3); color: var(--on-night); }
+.rule p { margin-top: 0.6rem; max-width: 44ch; }
+.rulesFoot { margin-top: 2.5rem; display: grid; justify-items: start; gap: 0.5rem; max-width: 60ch; }
+.rulesBacking { color: var(--on-night); font-weight: 600; }
+
+/* ── 05 Diferencia ───────────────────────────────────────── */
+.different { padding: var(--section) 0; background: var(--white); }
+.differentInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(2rem, 1rem + 4vw, 6rem);
+  align-items: end;
+}
+.differentTitle {
+  white-space: pre-line;
+  font-size: clamp(2.5rem, 1.5rem + 4.5vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+.differentBody { font-size: var(--size-lead); color: var(--ink-2); }
+.differentStrong {
+  margin-top: 1.25rem;
+  font-size: var(--size-lead);
+  font-weight: 600;
+  color: var(--ink);
+  padding-left: 1rem;
+  border-left: 3px solid var(--coral);
+}
+
+/* ── 06 Pruebas ──────────────────────────────────────────── */
+.evidence { padding: var(--section) 0; background: var(--mist); }
+.evidenceInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 1rem + 4vw, 6rem);
+  align-items: center;
+}
+.evidenceCard {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: 0 30px 60px -40px rgba(2, 27, 78, 0.35);
+}
+.illustrative {
+  position: absolute;
+  top: -0.75rem;
+  left: 2rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--on-night);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.evidenceTop { display: flex; justify-content: space-between; align-items: center; }
+.evidenceStatus {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--navy);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: var(--mist-soft);
+}
+.evidenceMark { width: 44px; }
+.evidenceProject {
+  margin-top: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.evidenceCard ul { list-style: none; margin-top: 1.25rem; display: grid; gap: 0.6rem; }
+.evidenceCard li {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  background: var(--mist-soft);
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+/* ── 07 Plataforma ───────────────────────────────────────── */
+.platform { padding: var(--section) 0; background: var(--white); }
+.platformList {
+  list-style: none;
+  margin-top: clamp(2.5rem, 2rem + 3vw, 4rem);
+  border-top: 1px solid var(--line);
+}
+.platformList li {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1rem 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.platformList h3 { font-size: var(--size-h3); }
+.platformList p { color: var(--ink-2); max-width: 52ch; }
+
+/* ── 08 Vecinos ──────────────────────────────────────────── */
+.neighbors { background: var(--coral-soft); padding: clamp(3rem, 2rem + 4vw, 5rem) 0; }
+.neighborsInner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem 3rem;
+}
+.neighborsTitle { font-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.75rem); }
+.neighborsInner p { margin-top: 0.75rem; color: var(--ink-2); max-width: 54ch; }
+.neighborsCta {
+  display: inline-flex;
+  gap: 0.4rem;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--on-night);
+  font-weight: 600;
+}
+.neighborsCta:hover { background: var(--navy); }
+
+/* ── 09 Primer ciclo ─────────────────────────────────────── */
+.cycle { background: var(--night); color: var(--on-night-2); padding: var(--section) 0; }
+.cycleInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 1rem + 4vw, 6rem);
+  align-items: center;
+}
+.cycleSteps {
+  list-style: none;
+  margin: 2.5rem 0;
+  display: grid;
+  gap: 1rem;
+  max-width: 48ch;
+}
+.cycleSteps li { display: flex; gap: 1rem; align-items: baseline; font-size: 1.0625rem; }
+.cycleSteps span {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line-night);
+  font-size: 0.8125rem;
+  color: var(--on-night);
+}
+.cyclePieces { width: min(100%, 320px); justify-self: end; }
+
+/* ── Adaptación ──────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .heroInner, .differentInner, .evidenceInner, .cycleInner { grid-template-columns: 1fr; }
+  .heroPieces { order: -1; width: 180px; justify-self: start; margin-bottom: 0.5rem; }
+  .cyclePieces { display: none; }
+  .simProjects, .timesList { grid-template-columns: 1fr; }
+  .timesList { gap: 3rem; }
+}
+@media (max-width: 720px) {
+  .rulesGrid { grid-template-columns: 1fr; }
+  .rule, .rule:nth-child(even) { padding: 1.75rem 0; }
+  .rule:nth-child(odd) { border-right: 0; }
+  .platformList li { grid-template-columns: 1fr; gap: 0.4rem; }
+}

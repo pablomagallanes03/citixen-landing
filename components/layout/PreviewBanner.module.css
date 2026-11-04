@@ -1,0 +1,16 @@
+.banner {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  z-index: 150;
+  max-width: min(420px, calc(100vw - 24px));
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(11, 23, 54, 0.92);
+  color: var(--on-night-2);
+  font-size: 12.5px;
+  line-height: 1.45;
+  box-shadow: 0 8px 24px rgba(2, 27, 78, 0.25);
+  pointer-events: none;
+}
+.banner strong { color: var(--coral); font-weight: 600; margin-right: 4px; }
