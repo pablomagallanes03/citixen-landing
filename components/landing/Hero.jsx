@@ -36,9 +36,7 @@ export default function Hero({ t, places, districts, labels, variant }) {
           <p className={styles.heroLead}>{t.lead}</p>
           <div className={styles.heroActions}>
             <Link href="#demostracion" className="btn-primary">{t.primary}</Link>
-            <a href="#lugares" className={styles.ghostNight}>
-              {t.secondary} <span aria-hidden="true">↓</span>
-            </a>
+            <Link href="#demostracion" className={styles.ghostNight}>{t.secondary}</Link>
           </div>
         </div>
 
@@ -85,7 +83,7 @@ export default function Hero({ t, places, districts, labels, variant }) {
               aria-hidden="true"
             >
               <strong>{p.name}</strong>
-              <span className={styles.calloutMeta}>{p.contributions} aportes este mes</span>
+              <span className={styles.calloutMeta}>{p.contributions} {t.calloutMeta}</span>
               <span className={styles.calloutLabel}>{t.calloutLabel}</span>
               <span className={styles.calloutTheme}>
                 {topTheme}

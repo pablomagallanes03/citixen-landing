@@ -7,7 +7,7 @@ import { site } from '../content/site.mjs'
 import styles from './Navbar.module.css'
 
 const LINKS = [
-  { href: '/#plataforma', key: 'platform' },
+  { href: '/plataforma', key: 'platform' },
   { href: '/#lugares', key: 'places' },
   { href: '/como-funciona', key: 'howItWorks' },
   { href: '/vecinos', key: 'neighbors' },

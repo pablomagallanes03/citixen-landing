@@ -49,7 +49,7 @@ export default function Home() {
       <Platform t={t.platform} />
       <StartPath t={t.start} />
       <CivicCredits t={t.civicCredits} />
-      <FinalCta t={t.final} form={{ ...f.form, ...t.final.form }} />
+      <FinalCta t={t.final} form={f.form} />
       {REVIEW && <ReviewBar t={t.review} variants={t.hero.variants} value={variant} onChange={setVariant} />}
     </Layout>
   )

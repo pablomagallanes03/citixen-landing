@@ -419,6 +419,7 @@
 .platformNone { margin-top: 1rem; font-size: 0.9rem; color: var(--ink-2); }
 .platformMeanwhile { margin-top: 0.8rem; font-size: 0.86rem; color: var(--ink-2); }
 .platformColSoon { background: transparent; border-style: dashed; }
+.platformMore { display: inline-flex; gap: 0.4rem; margin-top: 1.5rem; font-weight: 600; color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ── Cómo empezar y reglas ──────────────────────────────── */
 .startGrid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: start; }

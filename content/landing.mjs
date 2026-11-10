@@ -1,21 +1,63 @@
-// Home «Ciudad que escucha» (maqueta, nov 2026). Solo en español por ahora: ver lib/draft.mjs.
+// Home «Ciudad que escucha» (nov 2026), en español, portugués de Brasil e inglés.
 //
-// Reglas de este contenido (brief del 10-nov-2026, segunda iteración):
-//  - Lo disponible se afirma sin rótulo o con «Disponible hoy». Lo que no está disponible lleva «Próximamente».
+// Reglas de este contenido:
+//  - Solo dos estados públicos: «Disponible hoy» y «Próximamente».
 //  - La inteligencia colectiva se muestra como demostración conceptual, con datos ficticios.
 //  - Valle Norte es una ciudad ficticia. Ninguna cifra es real. No hay clientes ni testimonios.
 //  - Sin promesas absolutas: no se promete anonimato, ni que nada falle, ni que algo sirva en cualquier jurisdicción.
 //  - «Devolución» no se usa: se dice «respuesta del municipio».
+//  - Los nombres propios de Valle Norte (lugares y barrios) no se traducen.
+//
+// Los datos que no dependen del idioma (posiciones, cifras, estados) viven en PLACES y RESPONSES,
+// y cada idioma aporta solo sus textos. Así las tres versiones tienen siempre la misma estructura.
 
-import { spanishFirst } from '../lib/draft.mjs'
 import { gated } from '../lib/claims.mjs'
 
-export const landing = spanishFirst({
+const PLACES = [
+  { id: 'plaza-encuentro', type: 'plaza', name: 'Plaza del Encuentro', area: 'Barrio Centro', x: 470, y: 300, contributions: 86, shares: [41, 27, 18], needs: ['action', 'identified'], survey: { responses: 86, open: true }, channels: 0, actions: [10] },
+  { id: 'parque-costanera', type: 'plaza', name: 'Parque Costanera', area: 'Barrio Río', x: 190, y: 430, contributions: 132, shares: [34, 30, 21], needs: ['identified', 'action'], survey: { responses: 132, open: true }, channels: 1, actions: [15] },
+  { id: 'centro-cultural', type: 'culture', name: 'Centro Cultural La Estación', area: 'Barrio Estación', x: 700, y: 175, contributions: 54, shares: [38, 29, 14], needs: ['done'], survey: { responses: 54, open: false }, channels: 2, actions: [100] },
+  { id: 'escuela-14', type: 'school', name: 'Escuela N.º 14', area: 'Barrio Norte', x: 560, y: 110, contributions: 47, shares: [52, 23, 11], needs: ['action'], survey: { responses: 47, open: false }, channels: 0, actions: [60] },
+  { id: 'polideportivo', type: 'sport', name: 'Polideportivo Municipal', area: 'Barrio Sur', x: 330, y: 520, contributions: 63, shares: [36, 31, 19], needs: ['identified'], survey: { responses: 63, open: true }, channels: 1, actions: [] },
+  { id: 'biblioteca', type: 'culture', name: 'Biblioteca Popular', area: 'Barrio Centro', x: 610, y: 360, contributions: 22, shares: [45, 32, 18], needs: ['done'], survey: { responses: 22, open: false }, channels: 2, actions: [100] },
+  { id: 'atencion-vecinal', type: 'office', name: 'Oficina de Atención Vecinal', area: 'Barrio Centro', x: 405, y: 215, contributions: 71, shares: [48, 33, 9], needs: ['action'], survey: { responses: 71, open: true }, channels: 0, actions: [40] },
+  { id: 'centro-salud', type: 'health', name: 'Centro de Salud Barrio Norte', area: 'Barrio Norte', x: 830, y: 260, contributions: 39, shares: [44, 28, 20], needs: ['identified'], survey: { responses: 39, open: true }, channels: 1, actions: [] },
+  { id: 'paseo-rio', type: 'public', name: 'Paseo del Río', area: 'Barrio Río', x: 95, y: 250, contributions: 58, shares: [40, 26, 22], needs: ['done'], survey: { responses: 58, open: false }, channels: 2, actions: [100] },
+]
+
+const DISTRICTS = [['Barrio Río', 34, 44], ['Barrio Norte', 600, 30], ['Barrio Estación', 790, 118], ['Barrio Centro', 470, 418], ['Barrio Sur', 250, 604]]
+
+const RESPONSE_THEMES = ['light', 'kids', 'clean', 'night', 'light', 'access', 'kids', 'night', 'clean', 'light', 'kids', 'clean', 'light', 'night', 'access', 'kids']
+const THEME_IDS = ['light', 'kids', 'clean', 'night', 'access']
+
+// Une los datos compartidos con los textos de cada idioma.
+function places(texts, channelSets) {
+  return PLACES.map((p, i) => {
+    const tx = texts[i]
+    return {
+      id: p.id, type: p.type, name: p.name, area: p.area, x: p.x, y: p.y, since: tx.since,
+      contributions: p.contributions,
+      themes: tx.themes.map((name, k) => [name, p.shares[k]]),
+      needs: tx.needs.map((name, k) => [name, p.needs[k]]),
+      response: tx.response,
+      history: tx.history,
+      survey: { title: tx.survey, responses: p.survey.responses, open: p.survey.open },
+      channels: channelSets[p.channels],
+      actions: tx.actions.map(([title, state], k) => [title, state, p.actions[k]]),
+    }
+  })
+}
+const themes = (names) => THEME_IDS.map((id, i) => ({ id, name: names[i] }))
+const responses = (texts) => texts.map((text, i) => ({ theme: RESPONSE_THEMES[i], text }))
+
+const placesOf = (cardFields) => ({ districts: DISTRICTS, ...cardFields })
+
+// ─────────────────────────────────────────────────────────────── español
+const es = {
   meta: {
     title: 'Citixen | Conocé mejor tu ciudad',
-    description: 'Citixen conecta a los gobiernos locales con el conocimiento de sus vecinos: escucha ciudadana, inteligencia colectiva, participación, cocreación y acción pública visible.',
+    description: 'Citixen conecta a los gobiernos locales con el conocimiento de sus vecinos: escucha ciudadana, participación, cocreación y acción pública visible.',
   },
-
   labels: {
     soon: 'Próximamente',
     available: 'Disponible hoy',
@@ -24,8 +66,6 @@ export const landing = spanishFirst({
     cityName: 'Valle Norte',
     cityNote: 'Valle Norte es una ciudad ficticia. Todas las cifras son de ejemplo.',
   },
-
-  // Variantes del titular para evaluar en la vista previa (la barra de revisión las alterna).
   hero: {
     eyebrow: 'Para gobiernos locales',
     variants: [
@@ -34,28 +74,20 @@ export const landing = spanishFirst({
       { id: 'c', title: 'Cada lugar de tu ciudad tiene algo para contarte.' },
       { id: 'd', title: 'Gobernar con lo que sabe tu ciudad.' },
     ],
-    lead: 'Citixen reúne lo que los vecinos dicen de cada plaza, escuela y centro cultural, ordena los resultados para tu equipo y deja a la vista lo que tu gestión hace con eso.',
-    primary: 'Pedir una demostración',
-    secondary: 'Explorar una ciudad',
+    lead: 'Citixen reúne lo que los vecinos dicen de cada plaza, escuela y centro cultural, ordena los resultados para tu equipo y deja a la vista lo que tu gestión hace con eso. Próximamente, también vas a poder ver qué necesidades se repiten entre distintos lugares de la ciudad.',
+    primary: 'Solicitar un piloto',
+    secondary: 'Pedir una demostración',
     summaryLabel: 'Valle Norte · este mes',
-    summary: [
-      ['9', 'lugares escuchando'],
-      ['572', 'aportes'],
-      ['3', 'temas en crecimiento'],
-    ],
+    summary: [['9', 'lugares escuchando'], ['572', 'aportes'], ['3', 'temas en crecimiento']],
+    calloutMeta: 'aportes este mes',
     calloutLabel: 'Lo que más dicen',
     reading: {
-      title: 'Lectura de Valle Norte',
-      rows: [
-        ['Iluminación y seguridad', '4 lugares', 'up'],
-        ['Turnos y tiempos de espera', '2 lugares', 'up'],
-        ['Espacios para chicos', '3 lugares', 'flat'],
-      ],
+      title: 'Lo que se repite en la ciudad',
+      rows: [['Iluminación y seguridad', '4 lugares', 'up'], ['Turnos y tiempos de espera', '2 lugares', 'up'], ['Espacios para chicos', '3 lugares', 'flat']],
     },
-    mapLabel: 'Ilustración: mapa de una ciudad ficticia con sus lugares, los aportes de los vecinos y una lectura de toda la ciudad.',
-    caption: 'Ilustración con datos ficticios. Lugares y la lectura de la ciudad llegan próximamente.',
+    mapLabel: 'Ilustración: mapa de una ciudad ficticia con sus lugares, los aportes de los vecinos y las necesidades que se repiten entre distintos lugares.',
+    caption: 'Ilustración con datos ficticios. Lugares y la lectura de lo que se repite en la ciudad llegan próximamente.',
   },
-
   problems: {
     title: 'Tu ciudad sabe cosas que no siempre llegan a tu gestión.',
     items: [
@@ -64,48 +96,20 @@ export const landing = spanishFirst({
       { title: 'Lo que hacés no se ve', body: 'Las respuestas y las obras no vuelven a quienes participaron, y la confianza no crece.' },
     ],
   },
-
-  places: {
+  places: placesOf({
     eyebrow: 'Lugares',
     title: 'Cada lugar de tu ciudad, con su propia memoria.',
     lead: 'Cada plaza, escuela o centro cultural tiene una ficha permanente: lo que dicen los vecinos, sus necesidades, cómo participan y qué hizo tu gobierno. Mes a mes, el lugar acumula su historia. Tocá un lugar del mapa.',
     filtersLabel: 'Filtrar por tipo de lugar',
     sizeNote: 'El tamaño de cada círculo indica los aportes del mes.',
     all: 'Todos',
-    types: {
-      plaza: 'Plazas y parques',
-      culture: 'Cultura',
-      school: 'Educación',
-      sport: 'Deporte',
-      health: 'Salud',
-      office: 'Atención municipal',
-      public: 'Espacios públicos',
-    },
-    districts: [
-      ['Barrio Río', 34, 44],
-      ['Barrio Norte', 600, 30],
-      ['Barrio Estación', 790, 118],
-      ['Barrio Centro', 470, 418],
-      ['Barrio Sur', 250, 604],
-    ],
+    types: { plaza: 'Plazas y parques', culture: 'Cultura', school: 'Educación', sport: 'Deporte', health: 'Salud', office: 'Atención municipal', public: 'Espacios públicos' },
     card: {
       since: 'Ficha abierta desde',
       contributions: 'aportes este mes',
       qr: 'QR en el lugar',
-      tabs: {
-        summary: 'Resumen',
-        history: 'Historial',
-        needs: 'Necesidades',
-        participation: 'Participación',
-        actions: 'Acciones',
-      },
-      tabStatus: {
-        summary: 'soon',
-        history: 'soon',
-        needs: 'soon',
-        participation: 'available',
-        actions: 'available',
-      },
+      tabs: { summary: 'Resumen', history: 'Historial', needs: 'Necesidades', participation: 'Participación', actions: 'Acciones' },
+      tabStatus: { summary: 'soon', history: 'soon', needs: 'soon', participation: 'available', actions: 'available' },
       tabNotes: {
         summary: 'Los temas de cada lugar, ordenados con inteligencia artificial, llegan próximamente.',
         history: 'La historia de cada lugar llega con las fichas permanentes.',
@@ -123,133 +127,36 @@ export const landing = spanishFirst({
       noActions: 'Todavía no hay obras registradas para este lugar.',
       healthNote: 'Lugar de atención: sus aportes no se van a enviar a proveedores externos de inteligencia artificial.',
     },
-    needStates: {
-      identified: 'Identificada',
-      action: 'Acción registrada',
-      done: 'Resuelta, con evidencia',
-    },
+    needStates: { identified: 'Identificada', action: 'Acción registrada', done: 'Resuelta, con evidencia' },
     bridge: {
       title: 'Hoy ya podés empezar.',
       body: 'Mientras llegan las fichas de Lugares, cualquier espacio puede tener su encuesta abierta con QR, sus obras con estado público y la respuesta de tu municipio.',
     },
-    list: [
-      {
-        id: 'plaza-encuentro', type: 'plaza', name: 'Plaza del Encuentro', area: 'Barrio Centro', x: 470, y: 300, since: 'marzo de 2026',
-        contributions: 86, themes: [['Iluminación', 41], ['Juegos para chicos', 27], ['Limpieza', 18]],
-        needs: [['Más luz en el sector norte', 'action'], ['Bebederos', 'identified']],
-        response: 'Licitamos el recambio de 24 luminarias. Obra prevista para marzo.',
-        history: [['Nov', 'Respuesta publicada: recambio de 24 luminarias'], ['Oct', 'Encuesta con QR: 86 respuestas en el mes'], ['Ago', 'Primer aporte sobre la luz del sector norte']],
-        survey: { title: '¿Qué mejorarías de la plaza?', responses: 86, open: true },
-        channels: ['QR en el lugar', 'WhatsApp', 'Instagram'],
-        actions: [['Recambio de luminarias', 'Licitada', 10]],
-      },
-      {
-        id: 'parque-costanera', type: 'plaza', name: 'Parque Costanera', area: 'Barrio Río', x: 190, y: 430, since: 'abril de 2026',
-        contributions: 132, themes: [['Actividades nocturnas', 34], ['Seguridad', 30], ['Bicisenda', 21]],
-        needs: [['Bicisenda conectada al centro', 'identified'], ['Baños públicos', 'action']],
-        response: 'Abrimos una consulta para priorizar los usos nocturnos del parque.',
-        history: [['Nov', 'Consulta abierta sobre los usos nocturnos'], ['Sep', 'Baños públicos: obra licitada'], ['Abr', 'El parque suma su ficha y su QR']],
-        survey: { title: '¿Cómo usarías el parque de noche?', responses: 132, open: true },
-        channels: ['QR en el lugar', 'Instagram'],
-        actions: [['Baños públicos', 'Licitada', 15]],
-      },
-      {
-        id: 'centro-cultural', type: 'culture', name: 'Centro Cultural La Estación', area: 'Barrio Estación', x: 700, y: 175, since: 'febrero de 2026',
-        contributions: 54, themes: [['Talleres para adolescentes', 38], ['Horarios de fin de semana', 29], ['Accesibilidad', 14]],
-        needs: [['Rampa en la sala principal', 'done']],
-        response: 'Inauguramos la rampa de acceso. Sumamos dos talleres los sábados.',
-        history: [['Oct', 'Rampa de acceso inaugurada'], ['Sep', 'Dos talleres nuevos los sábados'], ['May', 'La accesibilidad aparece como necesidad']],
-        survey: { title: '¿Qué talleres te gustaría sumar?', responses: 54, open: false },
-        channels: ['QR en el lugar', 'WhatsApp'],
-        actions: [['Rampa en la sala principal', 'Terminada', 100]],
-      },
-      {
-        id: 'escuela-14', type: 'school', name: 'Escuela N.º 14', area: 'Barrio Norte', x: 560, y: 110, since: 'marzo de 2026',
-        contributions: 47, themes: [['Cruce peatonal', 52], ['Veredas', 23], ['Arbolado', 11]],
-        needs: [['Cruce peatonal en la avenida', 'action']],
-        response: 'El cruce peatonal está en obra. Avance: 60 %.',
-        history: [['Nov', 'Avance de obra: 60 %'], ['Sep', 'Comienza la obra del cruce peatonal'], ['Jul', 'Las familias piden un cruce seguro']],
-        survey: { title: '¿Cómo llegan tus hijos a la escuela?', responses: 47, open: false },
-        channels: ['QR en el lugar', 'WhatsApp', 'Instagram'],
-        actions: [['Cruce peatonal en la avenida', 'En curso', 60]],
-      },
-      {
-        id: 'polideportivo', type: 'sport', name: 'Polideportivo Municipal', area: 'Barrio Sur', x: 330, y: 520, since: 'mayo de 2026',
-        contributions: 63, themes: [['Horarios de pileta', 36], ['Vestuarios', 31], ['Actividades para mayores', 19]],
-        needs: [['Renovar vestuarios', 'identified']],
-        response: 'Ampliamos los horarios de pileta libre de diciembre a febrero.',
-        history: [['Nov', 'Anuncio: más horarios de pileta en verano'], ['Oct', 'Vestuarios: necesidad identificada'], ['May', 'Primera encuesta del lugar']],
-        survey: { title: '¿Qué horarios usarías?', responses: 63, open: true },
-        channels: ['QR en el lugar', 'Instagram'],
-        actions: [],
-      },
-      {
-        id: 'biblioteca', type: 'culture', name: 'Biblioteca Popular', area: 'Barrio Centro', x: 610, y: 360, since: 'junio de 2026',
-        contributions: 22, themes: [['Wifi', 45], ['Espacio de estudio', 32], ['Horarios', 18]],
-        needs: [['Mejorar la conexión a internet', 'done']],
-        response: 'Instalamos un nuevo punto de acceso a internet en la sala de lectura.',
-        history: [['Oct', 'Nuevo punto de acceso a internet'], ['Ago', 'El wifi, tema principal del mes']],
-        survey: { title: '¿Para qué venís a la biblioteca?', responses: 22, open: false },
-        channels: ['QR en el lugar', 'WhatsApp'],
-        actions: [['Punto de acceso a internet', 'Terminada', 100]],
-      },
-      {
-        id: 'atencion-vecinal', type: 'office', name: 'Oficina de Atención Vecinal', area: 'Barrio Centro', x: 405, y: 215, since: 'marzo de 2026',
-        contributions: 71, themes: [['Tiempos de espera', 48], ['Turnos en línea', 33], ['Trato', 9]],
-        needs: [['Turnos en línea para trámites', 'action']],
-        response: 'Desde el mes próximo los turnos se piden desde la app.',
-        history: [['Nov', 'Anuncio: turnos desde la app'], ['Sep', 'Los tiempos de espera encabezan los aportes'], ['Mar', 'QR en el mostrador de atención']],
-        survey: { title: '¿Cómo fue tu atención hoy?', responses: 71, open: true },
-        channels: ['QR en el lugar', 'WhatsApp', 'Instagram'],
-        actions: [['Turnos en línea', 'En curso', 40]],
-      },
-      {
-        id: 'centro-salud', type: 'health', name: 'Centro de Salud Barrio Norte', area: 'Barrio Norte', x: 830, y: 260, since: 'julio de 2026',
-        contributions: 39, themes: [['Turnos', 44], ['Sala de espera', 28], ['Horarios', 20]],
-        needs: [['Ampliar la sala de espera', 'identified']],
-        response: 'Sumamos un turno de atención por la tarde dos veces por semana.',
-        history: [['Oct', 'Nuevo turno de atención por la tarde'], ['Ago', 'Sala de espera: necesidad identificada']],
-        survey: { title: '¿Cómo fue tu espera hoy?', responses: 39, open: true },
-        channels: ['QR en el lugar', 'Instagram'],
-        actions: [],
-      },
-      {
-        id: 'paseo-rio', type: 'public', name: 'Paseo del Río', area: 'Barrio Río', x: 95, y: 250, since: 'abril de 2026',
-        contributions: 58, themes: [['Bancos y sombra', 40], ['Feria de fin de semana', 26], ['Limpieza', 22]],
-        needs: [['Más sombra en el paseo', 'done']],
-        response: 'Plantamos 40 árboles nativos a lo largo del paseo.',
-        history: [['Oct', '40 árboles nativos plantados'], ['Ago', 'Propuesta de huerta comunitaria: 128 apoyos'], ['May', 'La sombra, tema principal']],
-        survey: { title: '¿Qué le falta al paseo?', responses: 58, open: false },
-        channels: ['QR en el lugar', 'WhatsApp'],
-        actions: [['Arbolado del paseo', 'Terminada', 100]],
-      },
-    ],
-  },
-
+    list: places([
+      { since: 'marzo de 2026', themes: ['Iluminación', 'Juegos para chicos', 'Limpieza'], needs: ['Más luz en el sector norte', 'Bebederos'], response: 'Licitamos el recambio de 24 luminarias. Obra prevista para marzo.', history: [['Nov', 'Respuesta publicada: recambio de 24 luminarias'], ['Oct', 'Encuesta con QR: 86 respuestas en el mes'], ['Ago', 'Primer aporte sobre la luz del sector norte']], survey: '¿Qué mejorarías de la plaza?', actions: [['Recambio de luminarias', 'Licitada']] },
+      { since: 'abril de 2026', themes: ['Actividades nocturnas', 'Seguridad', 'Bicisenda'], needs: ['Bicisenda conectada al centro', 'Baños públicos'], response: 'Abrimos una consulta para priorizar los usos nocturnos del parque.', history: [['Nov', 'Consulta abierta sobre los usos nocturnos'], ['Sep', 'Baños públicos: obra licitada'], ['Abr', 'El parque suma su ficha y su QR']], survey: '¿Cómo usarías el parque de noche?', actions: [['Baños públicos', 'Licitada']] },
+      { since: 'febrero de 2026', themes: ['Talleres para adolescentes', 'Horarios de fin de semana', 'Accesibilidad'], needs: ['Rampa en la sala principal'], response: 'Inauguramos la rampa de acceso. Sumamos dos talleres los sábados.', history: [['Oct', 'Rampa de acceso inaugurada'], ['Sep', 'Dos talleres nuevos los sábados'], ['May', 'La accesibilidad aparece como necesidad']], survey: '¿Qué talleres te gustaría sumar?', actions: [['Rampa en la sala principal', 'Terminada']] },
+      { since: 'marzo de 2026', themes: ['Cruce peatonal', 'Veredas', 'Arbolado'], needs: ['Cruce peatonal en la avenida'], response: 'El cruce peatonal está en obra. Avance: 60 %.', history: [['Nov', 'Avance de obra: 60 %'], ['Sep', 'Comienza la obra del cruce peatonal'], ['Jul', 'Las familias piden un cruce seguro']], survey: '¿Cómo llegan tus hijos a la escuela?', actions: [['Cruce peatonal en la avenida', 'En curso']] },
+      { since: 'mayo de 2026', themes: ['Horarios de pileta', 'Vestuarios', 'Actividades para mayores'], needs: ['Renovar vestuarios'], response: 'Ampliamos los horarios de pileta libre de diciembre a febrero.', history: [['Nov', 'Anuncio: más horarios de pileta en verano'], ['Oct', 'Vestuarios: necesidad identificada'], ['May', 'Primera encuesta del lugar']], survey: '¿Qué horarios usarías?', actions: [] },
+      { since: 'junio de 2026', themes: ['Wifi', 'Espacio de estudio', 'Horarios'], needs: ['Mejorar la conexión a internet'], response: 'Instalamos un nuevo punto de acceso a internet en la sala de lectura.', history: [['Oct', 'Nuevo punto de acceso a internet'], ['Ago', 'El wifi, tema principal del mes']], survey: '¿Para qué venís a la biblioteca?', actions: [['Punto de acceso a internet', 'Terminada']] },
+      { since: 'marzo de 2026', themes: ['Tiempos de espera', 'Turnos en línea', 'Trato'], needs: ['Turnos en línea para trámites'], response: 'Desde el mes próximo los turnos se piden desde la app.', history: [['Nov', 'Anuncio: turnos desde la app'], ['Sep', 'Los tiempos de espera encabezan los aportes'], ['Mar', 'QR en el mostrador de atención']], survey: '¿Cómo fue tu atención hoy?', actions: [['Turnos en línea', 'En curso']] },
+      { since: 'julio de 2026', themes: ['Turnos', 'Sala de espera', 'Horarios'], needs: ['Ampliar la sala de espera'], response: 'Sumamos un turno de atención por la tarde dos veces por semana.', history: [['Oct', 'Nuevo turno de atención por la tarde'], ['Ago', 'Sala de espera: necesidad identificada']], survey: '¿Cómo fue tu espera hoy?', actions: [] },
+      { since: 'abril de 2026', themes: ['Bancos y sombra', 'Feria de fin de semana', 'Limpieza'], needs: ['Más sombra en el paseo'], response: 'Plantamos 40 árboles nativos a lo largo del paseo.', history: [['Oct', '40 árboles nativos plantados'], ['Ago', 'Propuesta de huerta comunitaria: 128 apoyos'], ['May', 'La sombra, tema principal']], survey: '¿Qué le falta al paseo?', actions: [['Arbolado del paseo', 'Terminada']] },
+    ], [['QR en el lugar', 'WhatsApp', 'Instagram'], ['QR en el lugar', 'Instagram'], ['QR en el lugar', 'WhatsApp']]),
+  }),
   intelligence: {
     eyebrow: 'Inteligencia colectiva',
     title: 'De opiniones sueltas a conocimiento para decidir.',
     lead: 'Así va a funcionar la lectura de respuestas abiertas con inteligencia artificial: temas, acuerdos, desacuerdos y voces minoritarias, y cada conclusión con las respuestas que la respaldan. Probala con una consulta de ejemplo.',
     disclaimer: 'Datos ficticios. Esta capacidad todavía no está disponible.',
+    exampleLabel: 'Consulta de ejemplo',
     question: '¿Qué cambiarías del Parque Costanera?',
     responsesLabel: 'respuestas abiertas',
     run: 'Organizar las respuestas',
     reset: 'Volver a empezar',
     running: 'Organizando…',
-    steps: [
-      'Se buscan y quitan nombres y datos de contacto',
-      'Se agrupan las respuestas en temas',
-      'Se buscan acuerdos y desacuerdos',
-      'Cada conclusión se vincula con sus citas',
-    ],
-    stats: {
-      responses: 'respuestas leídas',
-      themes: 'temas',
-      agree: 'acuerdo amplio',
-      disagree: 'desacuerdo',
-      minority: 'voz minoritaria',
-      traced: 'respuestas citadas',
-    },
+    steps: ['Se buscan y quitan nombres y datos de contacto', 'Se agrupan las respuestas en temas', 'Se buscan acuerdos y desacuerdos', 'Cada conclusión se vincula con sus citas'],
+    stats: { responses: 'respuestas leídas', themes: 'temas', agree: 'acuerdo amplio', disagree: 'desacuerdo', minority: 'voz minoritaria', traced: 'respuestas citadas' },
     blocks: {
       themes: 'Temas que surgen',
       themesHint: 'El tamaño indica cuántas respuestas hablan de cada tema. Tocá uno.',
@@ -261,34 +168,30 @@ export const landing = spanishFirst({
       trace: 'De dónde sale',
       traceHint: 'Tocá cualquier conclusión para ver las respuestas que la respaldan.',
       responseWord: 'Respuesta',
+      numberAbbr: 'n.º',
+      of: 'de',
+      responsesWord: 'respuestas',
     },
     channels: ['QR en el parque', 'WhatsApp', 'Instagram', 'QR en el parque'],
-    themes: [
-      { id: 'light', name: 'Iluminación y seguridad' },
-      { id: 'kids', name: 'Espacios para chicos' },
-      { id: 'clean', name: 'Limpieza y mantenimiento' },
-      { id: 'night', name: 'Uso nocturno del parque' },
-      { id: 'access', name: 'Accesibilidad' },
-    ],
-    responses: [
-      { theme: 'light', text: 'De noche el sector de la costanera queda a oscuras.' },
-      { theme: 'kids', text: 'Faltan juegos para chicos más grandes.' },
-      { theme: 'clean', text: 'Los cestos se llenan el sábado y quedan así hasta el lunes.' },
-      { theme: 'night', text: 'Me gustaría que haya ferias y música los viernes a la noche.' },
-      { theme: 'light', text: 'Necesitamos más luces en el camino que va al río.' },
-      { theme: 'access', text: 'Con la silla de ruedas no puedo llegar al mirador.' },
-      { theme: 'kids', text: 'Un arenero con sombra para los más chicos.' },
-      { theme: 'night', text: 'Prefiero que de noche sea un lugar tranquilo, vivo enfrente.' },
-      { theme: 'clean', text: 'El pasto está muy alto en la zona de los bancos.' },
-      { theme: 'light', text: 'Volvemos caminando de trabajar y da miedo pasar.' },
-      { theme: 'kids', text: 'Los juegos están oxidados, alguno se puede romper.' },
-      { theme: 'clean', text: 'Faltan baños limpios cerca de la cancha.' },
-      { theme: 'light', text: 'Cámaras o más presencia de noche.' },
-      { theme: 'night', text: 'Más actividades a la noche traen más gente y más seguridad.' },
-      { theme: 'access', text: 'Las rampas están rotas en la entrada principal.' },
-      { theme: 'kids', text: 'Una plaza de juegos inclusiva.' },
-    ],
-    // Índices de `responses` que respaldan cada posición.
+    themes: themes(['Iluminación y seguridad', 'Espacios para chicos', 'Limpieza y mantenimiento', 'Uso nocturno del parque', 'Accesibilidad']),
+    responses: responses([
+      'De noche el sector de la costanera queda a oscuras.',
+      'Faltan juegos para chicos más grandes.',
+      'Los cestos se llenan el sábado y quedan así hasta el lunes.',
+      'Me gustaría que haya ferias y música los viernes a la noche.',
+      'Necesitamos más luces en el camino que va al río.',
+      'Con la silla de ruedas no puedo llegar al mirador.',
+      'Un arenero con sombra para los más chicos.',
+      'Prefiero que de noche sea un lugar tranquilo, vivo enfrente.',
+      'El pasto está muy alto en la zona de los bancos.',
+      'Volvemos caminando de trabajar y da miedo pasar.',
+      'Los juegos están oxidados, alguno se puede romper.',
+      'Faltan baños limpios cerca de la cancha.',
+      'Cámaras o más presencia de noche.',
+      'Más actividades a la noche traen más gente y más seguridad.',
+      'Las rampas están rotas en la entrada principal.',
+      'Una plaza de juegos inclusiva.',
+    ]),
     positions: [
       { id: 'lights', kind: 'agree', label: 'Amplio acuerdo', text: 'Más luz en el camino al río', favor: [0, 4, 9, 12], against: [] },
       { id: 'night', kind: 'disagree', label: 'Desacuerdo', text: 'Ferias y música los viernes a la noche', favor: [3, 13], against: [7] },
@@ -301,10 +204,7 @@ export const landing = spanishFirst({
     },
     time: {
       months: ['Ago', 'Sep', 'Oct', 'Nov'],
-      series: [
-        { theme: 'Iluminación y seguridad', values: [12, 18, 26, 31] },
-        { theme: 'Limpieza y mantenimiento', values: [30, 24, 21, 19] },
-      ],
+      series: [{ theme: 'Iluminación y seguridad', values: [12, 18, 26, 31] }, { theme: 'Limpieza y mantenimiento', values: [30, 24, 21, 19] }],
       note: 'La preocupación por la iluminación creció desde agosto.',
     },
     principles: [
@@ -313,8 +213,6 @@ export const landing = spanishFirst({
       { title: 'Cuidado con los datos', body: 'Antes del análisis se van a buscar y quitar nombres y datos de contacto. Ningún sistema detecta todo, por eso tu equipo revisa. Los aportes de lugares de atención no se van a enviar a proveedores externos de inteligencia artificial.' },
     ],
   },
-
-  // Participación, cocreación y acción visible, juntas.
   action: {
     eyebrow: 'De la escucha a la acción',
     title: 'Lo que escuchás se convierte en decisiones que se ven.',
@@ -369,7 +267,6 @@ export const landing = spanishFirst({
     },
     exampleNote: 'Datos ficticios',
   },
-
   platform: {
     eyebrow: 'La plataforma',
     title: 'Una plataforma para escuchar, comprender y actuar con tu comunidad.',
@@ -378,6 +275,7 @@ export const landing = spanishFirst({
     soonLabel: 'Próximamente',
     status: { available: 'Disponible hoy', partial: 'Disponible hoy', soon: 'Próximamente' },
     noneToday: 'Esta capacidad todavía no está disponible.',
+    more: 'Ver la plataforma en detalle',
     items: [
       { id: 'listen', name: 'Escuchar', available: ['Encuestas abiertas con QR y WhatsApp, sin crear cuenta', 'Consultas con respuesta del municipio', 'De qué canal llegó cada respuesta'], soon: ['Un canal permanente para cada Lugar'] },
       { id: 'understand', name: 'Comprender', available: ['Resultados de preguntas cerradas', 'Lectura de cada respuesta abierta', 'Reporte mensual de participación'], soon: ['Temas, acuerdos y voces minoritarias con IA', 'Evolución de las necesidades'] },
@@ -386,7 +284,6 @@ export const landing = spanishFirst({
       { id: 'act', name: 'Actuar y mostrar', available: ['Obras con estado público', 'Avisos institucionales', 'Portal Mi Ciudad e índice de transparencia'], soon: ['Necesidades vinculadas a acciones', 'Fichas de Lugares'] },
     ],
   },
-
   start: {
     eyebrow: 'Una propuesta para tu municipio',
     title: 'Empezá por un lugar.',
@@ -399,7 +296,7 @@ export const landing = spanishFirst({
     ],
     outcomesTitle: 'Al terminar el piloto tenés',
     outcomes: [
-      'Lo que dijeron los vecinos de ese lugar, ordenado por canal y por respuesta',
+      'Los resultados de la encuesta del lugar, con el canal por el que llegó cada respuesta',
       'La respuesta de tu municipio, publicada',
       'Un reporte para mostrar dentro y fuera de tu gestión',
     ],
@@ -413,14 +310,13 @@ export const landing = spanishFirst({
       { title: 'Inteligencia artificial con límites', body: 'Cuando la sumes, cada tema va a mostrar las respuestas que lo respaldan. No decide ni califica a las personas.' },
     ],
   },
-
   civicCredits: {
     eyebrow: 'Créditos Cívicos',
     title: 'Cuando tu comunidad esté lista, también puede decidir.',
     body: gated(
       'emission.modalities',
-      'Con Créditos Cívicos, los vecinos asignan una parte de los recursos que tu municipio habilita a proyectos que vos ya aprobaste. Es la forma más avanzada de participación en Citixen, y se suma cuando tu ciudad la necesita.',
-      'Con Créditos Cívicos, los vecinos asignan a proyectos que vos ya aprobaste los créditos que generan los impuestos que pagan. Es la forma más avanzada de participación en Citixen, y se suma cuando tu ciudad la necesita.',
+      'Con Créditos Cívicos, los vecinos asignan una parte de los recursos que tu municipio habilita a proyectos que vos ya aprobaste. Es una capacidad complementaria, que se suma cuando tu ciudad decide abrir esa decisión a sus vecinos.',
+      'Con Créditos Cívicos, los vecinos asignan a proyectos que vos ya aprobaste los créditos que generan los impuestos que pagan. Es una capacidad complementaria, que se suma cuando tu ciudad decide abrir esa decisión a sus vecinos.',
     ),
     points: [
       'Tu gobierno aprueba los proyectos y fija las reglas',
@@ -429,21 +325,571 @@ export const landing = spanishFirst({
     ],
     link: 'Conocer Créditos Cívicos',
   },
-
   final: {
     title: 'Pedí un piloto o una demostración.',
     body: 'Contanos de tu municipio. Te mostramos la plataforma y, si querés empezar por un lugar, armamos juntos la propuesta.',
-    form: {
-      title: 'Hablemos de tu ciudad',
-      body: 'Completá tus datos y te contactamos.',
-      submit: 'Enviar pedido',
-      success: 'Recibimos tu pedido. Te contactamos para conversar sobre la demostración o el piloto.',
-    },
   },
+  review: { label: 'Maqueta', heroLabel: 'Titular', note: 'Solo en la vista previa' },
+}
 
-  review: {
-    label: 'Maqueta',
-    heroLabel: 'Titular',
-    note: 'Solo en la vista previa',
+// ─────────────────────────────────────────────────────── português (Brasil)
+const pt = {
+  meta: {
+    title: 'Citixen | Conheça melhor a sua cidade',
+    description: 'O Citixen conecta governos locais ao conhecimento dos seus cidadãos: escuta cidadã, participação, cocriação e ação pública visível.',
   },
-})
+  labels: {
+    soon: 'Em breve',
+    available: 'Disponível hoje',
+    concept: 'Demonstração conceitual',
+    fictional: 'Dados fictícios',
+    cityName: 'Valle Norte',
+    cityNote: 'Valle Norte é uma cidade fictícia. Todos os números são de exemplo.',
+  },
+  hero: {
+    eyebrow: 'Para governos locais',
+    variants: [
+      { id: 'a', title: 'Conheça melhor a sua cidade. Construa o futuro dela com quem vive nela.' },
+      { id: 'b', title: 'Sua cidade tem muito a dizer. Agora você pode ouvi-la.' },
+      { id: 'c', title: 'Cada lugar da sua cidade tem algo a contar.' },
+      { id: 'd', title: 'Governar com o que a sua cidade sabe.' },
+    ],
+    lead: 'O Citixen reúne o que os cidadãos dizem de cada praça, escola e centro cultural, organiza os resultados para a sua equipe e deixa à vista o que a sua gestão faz com isso. Em breve, você também vai poder ver quais necessidades se repetem em diferentes lugares da cidade.',
+    primary: 'Solicitar um piloto',
+    secondary: 'Pedir uma demonstração',
+    summaryLabel: 'Valle Norte · este mês',
+    summary: [['9', 'lugares em escuta'], ['572', 'contribuições'], ['3', 'temas em alta']],
+    calloutMeta: 'contribuições este mês',
+    calloutLabel: 'O que mais dizem',
+    reading: {
+      title: 'O que se repete na cidade',
+      rows: [['Iluminação e segurança', '4 lugares', 'up'], ['Agendamentos e tempo de espera', '2 lugares', 'up'], ['Espaços para crianças', '3 lugares', 'flat']],
+    },
+    mapLabel: 'Ilustração: mapa de uma cidade fictícia com seus lugares, as contribuições dos cidadãos e as necessidades que se repetem em diferentes lugares.',
+    caption: 'Ilustração com dados fictícios. Lugares e a leitura do que se repete na cidade chegam em breve.',
+  },
+  problems: {
+    title: 'Sua cidade sabe coisas que nem sempre chegam à sua gestão.',
+    items: [
+      { title: 'Chegam tarde ou não chegam', body: 'O que acontece em uma praça, uma escola ou um centro cultural só se sabe quando já virou problema, ou por uma mensagem solta.' },
+      { title: 'Se dispersam sem gerar conhecimento', body: 'Opiniões em redes sociais, formulários e reuniões que ninguém consegue organizar, comparar nem lembrar.' },
+      { title: 'O que você faz não aparece', body: 'As respostas e as obras não voltam a quem participou, e a confiança não cresce.' },
+    ],
+  },
+  places: placesOf({
+    eyebrow: 'Lugares',
+    title: 'Cada lugar da sua cidade, com a sua própria memória.',
+    lead: 'Cada praça, escola ou centro cultural tem uma ficha permanente: o que os cidadãos dizem, suas necessidades, como participam e o que o seu governo fez. Mês a mês, o lugar acumula a sua história. Toque em um lugar do mapa.',
+    filtersLabel: 'Filtrar por tipo de lugar',
+    sizeNote: 'O tamanho de cada círculo indica as contribuições do mês.',
+    all: 'Todos',
+    types: { plaza: 'Praças e parques', culture: 'Cultura', school: 'Educação', sport: 'Esporte', health: 'Saúde', office: 'Atendimento municipal', public: 'Espaços públicos' },
+    card: {
+      since: 'Ficha aberta desde',
+      contributions: 'contribuições este mês',
+      qr: 'QR no local',
+      tabs: { summary: 'Resumo', history: 'Histórico', needs: 'Necessidades', participation: 'Participação', actions: 'Ações' },
+      tabStatus: { summary: 'soon', history: 'soon', needs: 'soon', participation: 'available', actions: 'available' },
+      tabNotes: {
+        summary: 'Os temas de cada lugar, organizados com inteligência artificial, chegam em breve.',
+        history: 'A história de cada lugar chega com as fichas permanentes.',
+        needs: 'As necessidades vinculadas a ações chegam em breve.',
+        participation: 'Hoje você pode abrir uma pesquisa com QR para qualquer espaço e ver por qual canal chegou cada resposta.',
+        actions: 'Hoje você pode publicar obras com seu status e andamento. Vê-las agrupadas na ficha de cada lugar chega em breve.',
+      },
+      themes: 'O que mais dizem',
+      response: 'Última resposta do município',
+      survey: 'Pesquisa do lugar',
+      surveyResponses: 'respostas',
+      surveyOpen: 'Aberta',
+      surveyClosed: 'Encerrada',
+      channels: 'Chegaram por',
+      noActions: 'Ainda não há obras registradas para este lugar.',
+      healthNote: 'Local de atendimento: suas contribuições não vão ser enviadas a provedores externos de inteligência artificial.',
+    },
+    needStates: { identified: 'Identificada', action: 'Ação registrada', done: 'Resolvida, com evidência' },
+    bridge: {
+      title: 'Você já pode começar hoje.',
+      body: 'Enquanto as fichas de Lugares não chegam, qualquer espaço pode ter a sua pesquisa aberta com QR, suas obras com status público e a resposta do seu município.',
+    },
+    list: places([
+      { since: 'março de 2026', themes: ['Iluminação', 'Brinquedos para crianças', 'Limpeza'], needs: ['Mais luz no setor norte', 'Bebedouros'], response: 'Abrimos a licitação para trocar 24 luminárias. Obra prevista para março.', history: [['Nov', 'Resposta publicada: troca de 24 luminárias'], ['Out', 'Pesquisa com QR: 86 respostas no mês'], ['Ago', 'Primeira contribuição sobre a luz do setor norte']], survey: 'O que você melhoraria na praça?', actions: [['Troca de luminárias', 'Em licitação']] },
+      { since: 'abril de 2026', themes: ['Atividades noturnas', 'Segurança', 'Ciclovia'], needs: ['Ciclovia ligada ao centro', 'Banheiros públicos'], response: 'Abrimos uma consulta para priorizar os usos noturnos do parque.', history: [['Nov', 'Consulta aberta sobre os usos noturnos'], ['Set', 'Banheiros públicos: obra licitada'], ['Abr', 'O parque ganha a sua ficha e o seu QR']], survey: 'Como você usaria o parque à noite?', actions: [['Banheiros públicos', 'Em licitação']] },
+      { since: 'fevereiro de 2026', themes: ['Oficinas para adolescentes', 'Horários de fim de semana', 'Acessibilidade'], needs: ['Rampa na sala principal'], response: 'Inauguramos a rampa de acesso. Incluímos duas oficinas aos sábados.', history: [['Out', 'Rampa de acesso inaugurada'], ['Set', 'Duas oficinas novas aos sábados'], ['Mai', 'A acessibilidade aparece como necessidade']], survey: 'Que oficinas você gostaria de incluir?', actions: [['Rampa na sala principal', 'Concluída']] },
+      { since: 'março de 2026', themes: ['Faixa de pedestres', 'Calçadas', 'Arborização'], needs: ['Faixa de pedestres na avenida'], response: 'A faixa de pedestres está em obra. Andamento: 60 %.', history: [['Nov', 'Andamento da obra: 60 %'], ['Set', 'Começa a obra da faixa de pedestres'], ['Jul', 'As famílias pedem uma travessia segura']], survey: 'Como os seus filhos chegam à escola?', actions: [['Faixa de pedestres na avenida', 'Em andamento']] },
+      { since: 'maio de 2026', themes: ['Horários da piscina', 'Vestiários', 'Atividades para idosos'], needs: ['Reformar os vestiários'], response: 'Ampliamos os horários de piscina livre de dezembro a fevereiro.', history: [['Nov', 'Anúncio: mais horários de piscina no verão'], ['Out', 'Vestiários: necessidade identificada'], ['Mai', 'Primeira pesquisa do lugar']], survey: 'Que horários você usaria?', actions: [] },
+      { since: 'junho de 2026', themes: ['Wi-Fi', 'Espaço de estudo', 'Horários'], needs: ['Melhorar a conexão à internet'], response: 'Instalamos um novo ponto de acesso à internet na sala de leitura.', history: [['Out', 'Novo ponto de acesso à internet'], ['Ago', 'O Wi-Fi, tema principal do mês']], survey: 'Para que você vem à biblioteca?', actions: [['Ponto de acesso à internet', 'Concluída']] },
+      { since: 'março de 2026', themes: ['Tempo de espera', 'Agendamento on-line', 'Atendimento'], needs: ['Agendamento on-line para serviços'], response: 'A partir do mês que vem, o agendamento é feito pelo app.', history: [['Nov', 'Anúncio: agendamento pelo app'], ['Set', 'O tempo de espera lidera as contribuições'], ['Mar', 'QR no balcão de atendimento']], survey: 'Como foi o seu atendimento hoje?', actions: [['Agendamento on-line', 'Em andamento']] },
+      { since: 'julho de 2026', themes: ['Agendamentos', 'Sala de espera', 'Horários'], needs: ['Ampliar a sala de espera'], response: 'Incluímos um turno de atendimento à tarde duas vezes por semana.', history: [['Out', 'Novo turno de atendimento à tarde'], ['Ago', 'Sala de espera: necessidade identificada']], survey: 'Como foi a sua espera hoje?', actions: [] },
+      { since: 'abril de 2026', themes: ['Bancos e sombra', 'Feira de fim de semana', 'Limpeza'], needs: ['Mais sombra no passeio'], response: 'Plantamos 40 árvores nativas ao longo do passeio.', history: [['Out', '40 árvores nativas plantadas'], ['Ago', 'Proposta de horta comunitária: 128 apoios'], ['Mai', 'A sombra, tema principal']], survey: 'O que falta no passeio?', actions: [['Arborização do passeio', 'Concluída']] },
+    ], [['QR no local', 'WhatsApp', 'Instagram'], ['QR no local', 'Instagram'], ['QR no local', 'WhatsApp']]),
+  }),
+  intelligence: {
+    eyebrow: 'Inteligência coletiva',
+    title: 'De opiniões soltas a conhecimento para decidir.',
+    lead: 'É assim que vai funcionar a leitura de respostas abertas com inteligência artificial: temas, acordos, desacordos e vozes minoritárias, e cada conclusão com as respostas que a sustentam. Experimente com uma consulta de exemplo.',
+    disclaimer: 'Dados fictícios. Este recurso ainda não está disponível.',
+    exampleLabel: 'Consulta de exemplo',
+    question: 'O que você mudaria no Parque Costanera?',
+    responsesLabel: 'respostas abertas',
+    run: 'Organizar as respostas',
+    reset: 'Recomeçar',
+    running: 'Organizando…',
+    steps: ['Nomes e dados de contato são buscados e removidos', 'As respostas são agrupadas em temas', 'Acordos e desacordos são identificados', 'Cada conclusão é vinculada às suas citações'],
+    stats: { responses: 'respostas lidas', themes: 'temas', agree: 'acordo amplo', disagree: 'desacordo', minority: 'voz minoritária', traced: 'respostas citadas' },
+    blocks: {
+      themes: 'Temas que surgem',
+      themesHint: 'O tamanho indica quantas respostas falam de cada tema. Toque em um.',
+      positions: 'Acordos e desacordos',
+      favor: 'a favor',
+      against: 'contra',
+      minority: 'Vozes minoritárias',
+      time: 'Como muda com o tempo',
+      trace: 'De onde vem',
+      traceHint: 'Toque em qualquer conclusão para ver as respostas que a sustentam.',
+      responseWord: 'Resposta',
+      numberAbbr: 'nº',
+      of: 'de',
+      responsesWord: 'respostas',
+    },
+    channels: ['QR no parque', 'WhatsApp', 'Instagram', 'QR no parque'],
+    themes: themes(['Iluminação e segurança', 'Espaços para crianças', 'Limpeza e manutenção', 'Uso noturno do parque', 'Acessibilidade']),
+    responses: responses([
+      'À noite, o setor da orla fica no escuro.',
+      'Faltam brinquedos para crianças maiores.',
+      'As lixeiras enchem no sábado e ficam assim até segunda.',
+      'Eu gostaria que tivesse feira e música nas sextas à noite.',
+      'Precisamos de mais luz no caminho que vai até o rio.',
+      'De cadeira de rodas, não consigo chegar ao mirante.',
+      'Um tanque de areia com sombra para os pequenos.',
+      'Prefiro que à noite seja um lugar tranquilo, moro em frente.',
+      'A grama está muito alta perto dos bancos.',
+      'Voltamos a pé do trabalho e dá medo passar.',
+      'Os brinquedos estão enferrujados, algum pode quebrar.',
+      'Faltam banheiros limpos perto da quadra.',
+      'Câmeras ou mais presença à noite.',
+      'Mais atividades à noite trazem mais gente e mais segurança.',
+      'As rampas estão quebradas na entrada principal.',
+      'Um parquinho inclusivo.',
+    ]),
+    positions: [
+      { id: 'lights', kind: 'agree', label: 'Acordo amplo', text: 'Mais luz no caminho até o rio', favor: [0, 4, 9, 12], against: [] },
+      { id: 'night', kind: 'disagree', label: 'Desacordo', text: 'Feira e música nas sextas à noite', favor: [3, 13], against: [7] },
+    ],
+    minority: {
+      id: 'access',
+      title: 'Poucas respostas, uma barreira concreta',
+      body: 'Duas pessoas descrevem dificuldades para chegar de cadeira de rodas. São poucas, mas apontam algo que a média não mostra.',
+      quotes: [5, 14],
+    },
+    time: {
+      months: ['Ago', 'Set', 'Out', 'Nov'],
+      series: [{ theme: 'Iluminação e segurança', values: [12, 18, 26, 31] }, { theme: 'Limpeza e manutenção', values: [30, 24, 21, 19] }],
+      note: 'A preocupação com a iluminação cresceu desde agosto.',
+    },
+    principles: [
+      { title: 'Cada conclusão, com suas citações', body: 'Nenhum tema aparece sem as respostas que o sustentam, e qualquer um pode ser revisado.' },
+      { title: 'A IA ajuda, a sua equipe decide', body: 'A inteligência artificial organiza e resume. As decisões são das pessoas.' },
+      { title: 'Cuidado com os dados', body: 'Antes da análise, nomes e dados de contato vão ser buscados e removidos. Nenhum sistema detecta tudo, por isso a sua equipe revisa. As contribuições de locais de atendimento não vão ser enviadas a provedores externos de inteligência artificial.' },
+    ],
+  },
+  action: {
+    eyebrow: 'Da escuta à ação',
+    title: 'O que você ouve vira decisões que aparecem.',
+    lead: 'Os cidadãos propõem e priorizam, a sua equipe age e qualquer pessoa pode acompanhar o que foi decidido e como ficou.',
+    columns: [
+      {
+        name: 'Participar',
+        status: 'available',
+        items: [
+          { title: 'Propostas cidadãs', body: 'Um cidadão propõe e outros apoiam. A sua equipe vê quais temas mobilizam a cidade.' },
+          { title: 'Consultas para priorizar', body: 'Os cidadãos ordenam opções e o seu município publica o que vai fazer com o resultado.' },
+          { title: 'Iniciativas comunitárias', body: 'Projetos que os próprios cidadãos levam adiante.' },
+        ],
+        proposal: { title: 'Horta comunitária no Paseo del Río', supports: '128 apoios', tag: 'Meio ambiente' },
+      },
+      {
+        name: 'Cocriar',
+        status: 'soon',
+        body: 'Com o CoLab, a sua equipe apresenta um desafio e os cidadãos trabalham nele por etapas, com regras anunciadas com antecedência. O resultado é uma proposta consolidada.',
+        example: 'Novo projeto do Paseo del Río',
+        stages: ['Desafio', 'Ideias', 'Melhorias', 'Proposta'],
+        current: 1,
+        note: '64 ideias · etapa 2 de 4 · dados fictícios',
+      },
+      {
+        name: 'Agir e mostrar',
+        status: 'available',
+        items: [
+          { title: 'Obras com status público', body: 'Em andamento, atrasada ou concluída, com o seu progresso.' },
+          { title: 'Avisos institucionais', body: 'Para toda a cidade ou para quem participou, com registro público.' },
+          { title: 'Relatório mensal', body: 'Um PDF com os números do mês, pronto para comunicar.' },
+        ],
+      },
+    ],
+    portal: {
+      url: 'citixen.org/valle-norte',
+      title: 'Mi Ciudad · Valle Norte',
+      transparency: 'Índice de transparência',
+      transparencyValue: '78',
+      works: [
+        { title: 'Faixa de pedestres · Escuela N.º 14', state: 'Em andamento', progress: 60 },
+        { title: 'Troca de luminárias · Plaza del Encuentro', state: 'Em licitação', progress: 10 },
+        { title: 'Rampa de acesso · Centro Cultural', state: 'Concluída', progress: 100 },
+      ],
+      notice: { label: 'Aviso do município', title: 'Interdição da avenida Costanera no sábado' },
+    },
+    report: {
+      label: 'Relatório mensal',
+      title: 'Participação em Valle Norte · Outubro',
+      lines: [['Respostas a pesquisas', '1.240'], ['Novas propostas', '18'], ['Obras com andamento publicado', '9']],
+      quote: '“Em outubro, 1.240 respostas ajudaram a definir as obras de três espaços públicos.”',
+    },
+    exampleNote: 'Dados fictícios',
+  },
+  platform: {
+    eyebrow: 'A plataforma',
+    title: 'Uma plataforma para ouvir, compreender e agir com a sua comunidade.',
+    lead: 'Cinco recursos que funcionam juntos. Cada um indica o que você pode usar hoje e o que chega em breve.',
+    availableLabel: 'Disponível hoje',
+    soonLabel: 'Em breve',
+    status: { available: 'Disponível hoje', partial: 'Disponível hoje', soon: 'Em breve' },
+    noneToday: 'Este recurso ainda não está disponível.',
+    more: 'Ver a plataforma em detalhe',
+    items: [
+      { id: 'listen', name: 'Ouvir', available: ['Pesquisas abertas com QR e WhatsApp, sem criar conta', 'Consultas com resposta do município', 'Por qual canal chegou cada resposta'], soon: ['Um canal permanente para cada Lugar'] },
+      { id: 'understand', name: 'Compreender', available: ['Resultados de perguntas fechadas', 'Leitura de cada resposta aberta', 'Relatório mensal de participação'], soon: ['Temas, acordos e vozes minoritárias com IA', 'Evolução das necessidades'] },
+      { id: 'participate', name: 'Participar', available: ['Propostas com apoios de cidadãos', 'Consultas para priorizar entre opções', 'Iniciativas cidadãs', 'App para cidadãos no iOS e no Android'], soon: [] },
+      { id: 'cocreate', name: 'Cocriar', available: [], soon: ['CoLab: processos de cocriação por etapas, com regras anunciadas'], meanwhile: 'Enquanto isso, os cidadãos podem propor e priorizar com os recursos de Participar.' },
+      { id: 'act', name: 'Agir e mostrar', available: ['Obras com status público', 'Avisos institucionais', 'Portal Mi Ciudad e índice de transparência'], soon: ['Necessidades vinculadas a ações', 'Fichas de Lugares'] },
+    ],
+  },
+  start: {
+    eyebrow: 'Uma proposta para o seu município',
+    title: 'Comece por um lugar.',
+    lead: 'Um piloto delimitado, com o que já está disponível hoje: você escolhe um espaço da sua cidade, ouve quem o usa, responde em público e mostra o que foi feito.',
+    steps: [
+      { title: 'Escolhemos juntos um espaço', body: 'Uma praça, um parque ou um centro cultural que a sua equipe queira conhecer melhor.' },
+      { title: 'Você sai com uma pesquisa e um QR', body: 'Preparamos juntos e você compartilha no local, pelo WhatsApp e nas redes sociais.' },
+      { title: 'Você responde em público', body: 'Publica o que vai fazer com o que os cidadãos disseram e registra a obra, se for o caso.' },
+      { title: 'Você mostra o que foi feito', body: 'Com o relatório do mês, você comunica os resultados e decide como seguir.' },
+    ],
+    outcomesTitle: 'Ao terminar o piloto, você tem',
+    outcomes: [
+      'Os resultados da pesquisa do lugar, com o canal por onde chegou cada resposta',
+      'A resposta do seu município, publicada',
+      'Um relatório para mostrar dentro e fora da sua gestão',
+    ],
+    cta: 'Solicitar um piloto',
+    secondary: 'ou pedir uma demonstração',
+    rulesTitle: 'Regras que você pode defender',
+    rules: [
+      { title: 'As regras são anunciadas antes', body: 'Cada pesquisa e consulta informa para que serve o que se responde e se é vinculante.' },
+      { title: 'Respostas, não pessoas', body: 'Quando não é possível comprovar quem respondeu, contamos respostas e contribuições, não pessoas.' },
+      { title: 'O que é publicado deixa registro', body: 'Um aviso do município não é editado depois de enviado: se tiver um erro, é publicada uma retificação vinculada. As respostas a pesquisas guardam as suas versões.' },
+      { title: 'Inteligência artificial com limites', body: 'Quando você incluir esse recurso, cada tema vai mostrar as respostas que o sustentam. Ela não decide nem avalia pessoas.' },
+    ],
+  },
+  civicCredits: {
+    eyebrow: 'Créditos Cívicos',
+    title: 'Quando a sua comunidade estiver pronta, ela também pode decidir.',
+    body: gated(
+      'emission.modalities',
+      'Com os Créditos Cívicos, os cidadãos destinam uma parte dos recursos que o seu município disponibiliza a projetos que você já aprovou. É um recurso complementar, que se soma quando a sua cidade decide abrir essa decisão aos cidadãos.',
+      'Com os Créditos Cívicos, os cidadãos destinam a projetos que você já aprovou os créditos gerados pelos impostos que pagam. É um recurso complementar, que se soma quando a sua cidade decide abrir essa decisão aos cidadãos.',
+    ),
+    points: [
+      'O seu governo aprova os projetos e define as regras',
+      gated('limits.general', 'Cada cidadão distribui os seus créditos com um limite mensal', 'Cada cidadão distribui os seus créditos com um limite definido pelo seu município'),
+      'Os projetos que atingem a meta são executados e encerrados com provas públicas',
+    ],
+    link: 'Conhecer os Créditos Cívicos',
+  },
+  final: {
+    title: 'Peça um piloto ou uma demonstração.',
+    body: 'Conte sobre o seu município. Mostramos a plataforma e, se você quiser começar por um lugar, montamos a proposta juntos.',
+  },
+  review: { label: 'Protótipo', heroLabel: 'Título', note: 'Só na pré-visualização' },
+}
+
+// ────────────────────────────────────────────────────────────────── english
+const en = {
+  meta: {
+    title: 'Citixen | Get to know your city better',
+    description: 'Citixen connects local governments with what their residents know: civic listening, participation, co-creation and visible public action.',
+  },
+  labels: {
+    soon: 'Coming soon',
+    available: 'Available today',
+    concept: 'Concept demo',
+    fictional: 'Fictional data',
+    cityName: 'Valle Norte',
+    cityNote: 'Valle Norte is a fictional city. All figures are examples.',
+  },
+  hero: {
+    eyebrow: 'For local governments',
+    variants: [
+      { id: 'a', title: 'Get to know your city better. Build its future with the people who live there.' },
+      { id: 'b', title: 'Your city has a lot to say. Now you can listen.' },
+      { id: 'c', title: 'Every place in your city has something to tell you.' },
+      { id: 'd', title: 'Govern with what your city knows.' },
+    ],
+    lead: 'Citixen gathers what residents say about every square, school and community center, organizes the results for your team and shows what your administration does with them. Soon, you will also be able to see which needs come up across different places in the city.',
+    primary: 'Request a pilot',
+    secondary: 'Request a demo',
+    summaryLabel: 'Valle Norte · this month',
+    summary: [['9', 'places listening'], ['572', 'contributions'], ['3', 'growing topics']],
+    calloutMeta: 'contributions this month',
+    calloutLabel: 'What people mention most',
+    reading: {
+      title: 'What comes up across the city',
+      rows: [['Lighting and safety', '4 places', 'up'], ['Appointments and wait times', '2 places', 'up'], ['Spaces for children', '3 places', 'flat']],
+    },
+    mapLabel: 'Illustration: map of a fictional city with its places, residents’ contributions and the needs that come up across different places.',
+    caption: 'Illustration with fictional data. Places and the city-wide reading of recurring needs are coming soon.',
+  },
+  problems: {
+    title: 'Your city knows things that don’t always reach your administration.',
+    items: [
+      { title: 'They arrive late, or not at all', body: 'What happens in a square, a school or a community center becomes known once it is already a problem, or through a stray message.' },
+      { title: 'They scatter without becoming knowledge', body: 'Opinions on social media, in forms and at meetings that no one manages to organize, compare or remember.' },
+      { title: 'What you do goes unseen', body: 'Responses and public works never make it back to the people who took part, and trust doesn’t grow.' },
+    ],
+  },
+  places: placesOf({
+    eyebrow: 'Places',
+    title: 'Every place in your city, with its own memory.',
+    lead: 'Every square, school or community center has a permanent profile: what residents say, its needs, how people take part and what your government did. Month after month, the place builds up its history. Tap a place on the map.',
+    filtersLabel: 'Filter by type of place',
+    sizeNote: 'The size of each circle shows the month’s contributions.',
+    all: 'All',
+    types: { plaza: 'Squares and parks', culture: 'Culture', school: 'Education', sport: 'Sports', health: 'Health', office: 'Municipal services', public: 'Public spaces' },
+    card: {
+      since: 'Profile open since',
+      contributions: 'contributions this month',
+      qr: 'QR code on site',
+      tabs: { summary: 'Summary', history: 'History', needs: 'Needs', participation: 'Participation', actions: 'Actions' },
+      tabStatus: { summary: 'soon', history: 'soon', needs: 'soon', participation: 'available', actions: 'available' },
+      tabNotes: {
+        summary: 'Each place’s topics, organized with artificial intelligence, are coming soon.',
+        history: 'Each place’s history arrives with the permanent profiles.',
+        needs: 'Needs linked to actions are coming soon.',
+        participation: 'Today you can open a survey with a QR code for any space and see which channel each response came from.',
+        actions: 'Today you can publish public works with their status and progress. Seeing them grouped in each place’s profile is coming soon.',
+      },
+      themes: 'What people mention most',
+      response: 'Latest response from the municipality',
+      survey: 'Survey for this place',
+      surveyResponses: 'responses',
+      surveyOpen: 'Open',
+      surveyClosed: 'Closed',
+      channels: 'Received via',
+      noActions: 'No public works have been registered for this place yet.',
+      healthNote: 'Care facility: its contributions will not be sent to external artificial intelligence providers.',
+    },
+    needStates: { identified: 'Identified', action: 'Action registered', done: 'Resolved, with evidence' },
+    bridge: {
+      title: 'You can start today.',
+      body: 'Until Places profiles arrive, any space can have its open survey with a QR code, its public works with a public status and your municipality’s response.',
+    },
+    list: places([
+      { since: 'March 2026', themes: ['Lighting', 'Play equipment', 'Cleaning'], needs: ['More light in the north section', 'Drinking fountains'], response: 'We put the replacement of 24 streetlights out to tender. Work is planned for March.', history: [['Nov', 'Response published: replacement of 24 streetlights'], ['Oct', 'QR survey: 86 responses this month'], ['Aug', 'First contribution about lighting in the north section']], survey: 'What would you improve in the square?', actions: [['Streetlight replacement', 'Out to tender']] },
+      { since: 'April 2026', themes: ['Evening activities', 'Safety', 'Bike lane'], needs: ['Bike lane connected to downtown', 'Public restrooms'], response: 'We opened a consultation to prioritize evening uses of the park.', history: [['Nov', 'Consultation opened on evening uses'], ['Sep', 'Public restrooms: work put out to tender'], ['Apr', 'The park gets its profile and QR code']], survey: 'How would you use the park at night?', actions: [['Public restrooms', 'Out to tender']] },
+      { since: 'February 2026', themes: ['Workshops for teenagers', 'Weekend hours', 'Accessibility'], needs: ['Ramp in the main hall'], response: 'We opened the access ramp. We added two workshops on Saturdays.', history: [['Oct', 'Access ramp opened'], ['Sep', 'Two new Saturday workshops'], ['May', 'Accessibility comes up as a need']], survey: 'Which workshops would you like to add?', actions: [['Ramp in the main hall', 'Completed']] },
+      { since: 'March 2026', themes: ['Pedestrian crossing', 'Sidewalks', 'Trees'], needs: ['Pedestrian crossing on the avenue'], response: 'The pedestrian crossing is under construction. Progress: 60%.', history: [['Nov', 'Construction progress: 60%'], ['Sep', 'Work on the pedestrian crossing begins'], ['Jul', 'Families ask for a safe crossing']], survey: 'How do your children get to school?', actions: [['Pedestrian crossing on the avenue', 'In progress']] },
+      { since: 'May 2026', themes: ['Pool hours', 'Locker rooms', 'Activities for older adults'], needs: ['Renovate the locker rooms'], response: 'We extended open-swim hours from December to February.', history: [['Nov', 'Announcement: more pool hours in summer'], ['Oct', 'Locker rooms: need identified'], ['May', 'First survey for this place']], survey: 'Which hours would you use?', actions: [] },
+      { since: 'June 2026', themes: ['Wi-Fi', 'Study space', 'Opening hours'], needs: ['Improve the internet connection'], response: 'We installed a new internet access point in the reading room.', history: [['Oct', 'New internet access point'], ['Aug', 'Wi-Fi, the month’s main topic']], survey: 'What do you come to the library for?', actions: [['Internet access point', 'Completed']] },
+      { since: 'March 2026', themes: ['Wait times', 'Online appointments', 'Service'], needs: ['Online appointments for procedures'], response: 'Starting next month, appointments are booked through the app.', history: [['Nov', 'Announcement: appointments through the app'], ['Sep', 'Wait times top the contributions'], ['Mar', 'QR code at the service desk']], survey: 'How was your visit today?', actions: [['Online appointments', 'In progress']] },
+      { since: 'July 2026', themes: ['Appointments', 'Waiting room', 'Opening hours'], needs: ['Expand the waiting room'], response: 'We added an afternoon service shift twice a week.', history: [['Oct', 'New afternoon service shift'], ['Aug', 'Waiting room: need identified']], survey: 'How was your wait today?', actions: [] },
+      { since: 'April 2026', themes: ['Benches and shade', 'Weekend market', 'Cleaning'], needs: ['More shade along the walkway'], response: 'We planted 40 native trees along the walkway.', history: [['Oct', '40 native trees planted'], ['Aug', 'Community garden proposal: 128 supporters'], ['May', 'Shade, the main topic']], survey: 'What is the walkway missing?', actions: [['Walkway trees', 'Completed']] },
+    ], [['QR code on site', 'WhatsApp', 'Instagram'], ['QR code on site', 'Instagram'], ['QR code on site', 'WhatsApp']]),
+  }),
+  intelligence: {
+    eyebrow: 'Collective intelligence',
+    title: 'From scattered opinions to knowledge you can act on.',
+    lead: 'This is how reading open responses with artificial intelligence will work: topics, agreements, disagreements and minority voices, with every conclusion backed by the responses behind it. Try it with an example consultation.',
+    disclaimer: 'Fictional data. This capability is not available yet.',
+    exampleLabel: 'Example consultation',
+    question: 'What would you change about Parque Costanera?',
+    responsesLabel: 'open responses',
+    run: 'Organize the responses',
+    reset: 'Start over',
+    running: 'Organizing…',
+    steps: ['Names and contact details are found and removed', 'Responses are grouped into topics', 'Agreements and disagreements are identified', 'Every conclusion is linked to its quotes'],
+    stats: { responses: 'responses read', themes: 'topics', agree: 'broad agreement', disagree: 'disagreement', minority: 'minority voice', traced: 'responses quoted' },
+    blocks: {
+      themes: 'Emerging topics',
+      themesHint: 'Size shows how many responses mention each topic. Tap one.',
+      positions: 'Agreements and disagreements',
+      favor: 'in favor',
+      against: 'against',
+      minority: 'Minority voices',
+      time: 'How it changes over time',
+      trace: 'Where it comes from',
+      traceHint: 'Tap any conclusion to see the responses behind it.',
+      responseWord: 'Response',
+      numberAbbr: 'no.',
+      of: 'of',
+      responsesWord: 'responses',
+    },
+    channels: ['QR code in the park', 'WhatsApp', 'Instagram', 'QR code in the park'],
+    themes: themes(['Lighting and safety', 'Spaces for children', 'Cleaning and maintenance', 'Using the park at night', 'Accessibility']),
+    responses: responses([
+      'At night the riverside section is completely dark.',
+      'There is nothing to play on for older kids.',
+      'The bins fill up on Saturday and stay that way until Monday.',
+      'I’d like a market and live music on Friday nights.',
+      'We need more lights on the path down to the river.',
+      'In my wheelchair I can’t get to the lookout.',
+      'A shaded sandbox for the little ones.',
+      'I’d rather it stay quiet at night, I live across the street.',
+      'The grass is really tall around the benches.',
+      'We walk home from work and it’s scary to go through.',
+      'The play equipment is rusty, something could break.',
+      'There are no clean restrooms near the field.',
+      'Cameras or more presence at night.',
+      'More activities at night bring more people and more safety.',
+      'The ramps are broken at the main entrance.',
+      'An inclusive playground.',
+    ]),
+    positions: [
+      { id: 'lights', kind: 'agree', label: 'Broad agreement', text: 'More light on the path to the river', favor: [0, 4, 9, 12], against: [] },
+      { id: 'night', kind: 'disagree', label: 'Disagreement', text: 'A market and music on Friday nights', favor: [3, 13], against: [7] },
+    ],
+    minority: {
+      id: 'access',
+      title: 'Few responses, one concrete barrier',
+      body: 'Two people describe trouble getting around in a wheelchair. They are few, but they point to something the average doesn’t show.',
+      quotes: [5, 14],
+    },
+    time: {
+      months: ['Aug', 'Sep', 'Oct', 'Nov'],
+      series: [{ theme: 'Lighting and safety', values: [12, 18, 26, 31] }, { theme: 'Cleaning and maintenance', values: [30, 24, 21, 19] }],
+      note: 'Concern about lighting has grown since August.',
+    },
+    principles: [
+      { title: 'Every conclusion, with its quotes', body: 'No topic appears without the responses behind it, and any of them can be checked.' },
+      { title: 'AI assists, your team decides', body: 'Artificial intelligence organizes and summarizes. Decisions are made by people.' },
+      { title: 'Care with data', body: 'Before the analysis, names and contact details will be searched for and removed. No system catches everything, so your team reviews. Contributions from care facilities will not be sent to external artificial intelligence providers.' },
+    ],
+  },
+  action: {
+    eyebrow: 'From listening to action',
+    title: 'What you hear becomes decisions people can see.',
+    lead: 'Residents propose and prioritize, your team acts, and anyone can follow what was decided and how it turned out.',
+    columns: [
+      {
+        name: 'Participate',
+        status: 'available',
+        items: [
+          { title: 'Resident proposals', body: 'One resident proposes and others support it. Your team sees which topics move the city.' },
+          { title: 'Consultations to prioritize', body: 'Residents rank options and your municipality publishes what it will do with the result.' },
+          { title: 'Community initiatives', body: 'Projects that residents carry out themselves.' },
+        ],
+        proposal: { title: 'Community garden at Paseo del Río', supports: '128 supporters', tag: 'Environment' },
+      },
+      {
+        name: 'Co-create',
+        status: 'soon',
+        body: 'With CoLab, your team sets a challenge and residents work on it in stages, under rules announced in advance. The result is a consolidated proposal.',
+        example: 'Redesigning Paseo del Río',
+        stages: ['Challenge', 'Ideas', 'Improvements', 'Proposal'],
+        current: 1,
+        note: '64 ideas · stage 2 of 4 · fictional data',
+      },
+      {
+        name: 'Act and show',
+        status: 'available',
+        items: [
+          { title: 'Public works with a public status', body: 'In progress, delayed or completed, with their progress.' },
+          { title: 'Official notices', body: 'To the whole city or to those who took part, with a public record.' },
+          { title: 'Monthly report', body: 'A PDF with the month’s figures, ready to share.' },
+        ],
+      },
+    ],
+    portal: {
+      url: 'citixen.org/valle-norte',
+      title: 'Mi Ciudad · Valle Norte',
+      transparency: 'Transparency index',
+      transparencyValue: '78',
+      works: [
+        { title: 'Pedestrian crossing · Escuela N.º 14', state: 'In progress', progress: 60 },
+        { title: 'Streetlight replacement · Plaza del Encuentro', state: 'Out to tender', progress: 10 },
+        { title: 'Access ramp · Centro Cultural', state: 'Completed', progress: 100 },
+      ],
+      notice: { label: 'Notice from the municipality', title: 'Avenida Costanera closed to traffic on Saturday' },
+    },
+    report: {
+      label: 'Monthly report',
+      title: 'Participation in Valle Norte · October',
+      lines: [['Survey responses', '1,240'], ['New proposals', '18'], ['Public works with published progress', '9']],
+      quote: '“In October, 1,240 responses helped shape the works in three public spaces.”',
+    },
+    exampleNote: 'Fictional data',
+  },
+  platform: {
+    eyebrow: 'The platform',
+    title: 'One platform to listen, understand and act with your community.',
+    lead: 'Five capabilities that work together. Each one shows what you can use today and what is coming soon.',
+    availableLabel: 'Available today',
+    soonLabel: 'Coming soon',
+    status: { available: 'Available today', partial: 'Available today', soon: 'Coming soon' },
+    noneToday: 'This capability is not available yet.',
+    more: 'See the platform in detail',
+    items: [
+      { id: 'listen', name: 'Listen', available: ['Open surveys with QR codes and WhatsApp, no account needed', 'Consultations with a response from the municipality', 'Which channel each response came from'], soon: ['A permanent channel for each Place'] },
+      { id: 'understand', name: 'Understand', available: ['Results for closed questions', 'Reading every open response', 'Monthly participation report'], soon: ['Topics, agreements and minority voices with AI', 'How needs evolve'] },
+      { id: 'participate', name: 'Participate', available: ['Proposals with residents’ support', 'Consultations to prioritize between options', 'Citizen initiatives', 'App for residents on iOS and Android'], soon: [] },
+      { id: 'cocreate', name: 'Co-create', available: [], soon: ['CoLab: co-creation processes in stages, under announced rules'], meanwhile: 'In the meantime, residents can propose and prioritize with the Participate tools.' },
+      { id: 'act', name: 'Act and show', available: ['Public works with a public status', 'Official notices', 'Mi Ciudad portal and transparency index'], soon: ['Needs linked to actions', 'Places profiles'] },
+    ],
+  },
+  start: {
+    eyebrow: 'A proposal for your municipality',
+    title: 'Start with one place.',
+    lead: 'A focused pilot, using what is available today: you choose a space in your city, listen to the people who use it, respond publicly and show what was done.',
+    steps: [
+      { title: 'We choose a space together', body: 'A square, a park or a community center your team wants to understand better.' },
+      { title: 'You go out with a survey and a QR code', body: 'We prepare it together and you share it on site, on WhatsApp and on social media.' },
+      { title: 'You respond publicly', body: 'You publish what you will do with what residents said, and register the public work if there is one.' },
+      { title: 'You show what was done', body: 'With the monthly report you share the results and decide what comes next.' },
+    ],
+    outcomesTitle: 'At the end of the pilot you have',
+    outcomes: [
+      'The results of the survey for that place, with the channel each response came from',
+      'Your municipality’s response, published',
+      'A report to share inside and outside your administration',
+    ],
+    cta: 'Request a pilot',
+    secondary: 'or request a demo',
+    rulesTitle: 'Rules you can stand behind',
+    rules: [
+      { title: 'Rules are announced first', body: 'Every survey and consultation states what the answers will be used for and whether it is binding.' },
+      { title: 'Responses, not people', body: 'When it can’t be verified who responded, we count responses and contributions, not people.' },
+      { title: 'What is published leaves a record', body: 'A notice from the municipality isn’t edited once sent: if it has an error, a linked correction is published. Responses to surveys keep their versions.' },
+      { title: 'Artificial intelligence with limits', body: 'When you add it, every topic will show the responses behind it. It doesn’t decide and doesn’t rate people.' },
+    ],
+  },
+  civicCredits: {
+    eyebrow: 'Civic Credits',
+    title: 'When your community is ready, it can decide too.',
+    body: gated(
+      'emission.modalities',
+      'With Civic Credits, residents allocate part of the resources your municipality makes available to projects you have already approved. It is a complementary capability, added when your city decides to open that decision to its residents.',
+      'With Civic Credits, residents allocate the credits generated by the taxes they pay to projects you have already approved. It is a complementary capability, added when your city decides to open that decision to its residents.',
+    ),
+    points: [
+      'Your government approves the projects and sets the rules',
+      gated('limits.general', 'Each resident distributes their credits within a monthly limit', 'Each resident distributes their credits within a limit set by your municipality'),
+      'Projects that reach their goal are carried out and closed with public evidence',
+    ],
+    link: 'Learn about Civic Credits',
+  },
+  final: {
+    title: 'Request a pilot or a demo.',
+    body: 'Tell us about your municipality. We’ll show you the platform and, if you want to start with one place, we’ll put the proposal together with you.',
+  },
+  review: { label: 'Mockup', heroLabel: 'Headline', note: 'Preview only' },
+}
+
+export const landing = { es, pt, en }

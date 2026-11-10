@@ -141,6 +141,7 @@ export function Platform({ t }) {
             )
           })}
         </ol>
+        <Link href="/plataforma" className={styles.platformMore}>{t.more} <span aria-hidden="true">→</span></Link>
       </div>
     </section>
   )

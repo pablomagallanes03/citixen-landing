@@ -4,12 +4,12 @@ export const how = {
   es: {
     meta: {
       title: 'Cómo funcionan los Créditos Cívicos | Citixen',
-      description: 'Reglas públicas: el municipio habilita los proyectos y define cómo se generan los créditos, los vecinos deciden y lo decidido se cumple con pruebas.',
+      description: 'Reglas públicas: el municipio habilita los proyectos y define cómo se generan los créditos, los vecinos deciden y cada proyecto financiado se cierra con pruebas públicas.',
     },
     hero: {
       eyebrow: 'Créditos Cívicos',
       title: 'Reglas simples. Decisiones con consecuencia.',
-      lead: 'El municipio habilita, los vecinos deciden y lo decidido se cumple. Así funciona cada parte.',
+      lead: 'El municipio habilita, los vecinos deciden y cada proyecto financiado se cierra con pruebas. Así funciona cada parte.',
     },
     sections: [
       {
@@ -69,7 +69,7 @@ export const how = {
       {
         piece: 'fulfilment',
         title: 'Cómo se prueba',
-        body: 'El responsable cierra el proyecto con fotos, documentos y la historia de lo que cambió. El municipio verifica el cierre, y todo queda público y permanente.',
+        body: 'El responsable cierra el proyecto con fotos, documentos y la historia de lo que cambió. El municipio verifica el cierre, que queda publicado junto al proyecto.',
       },
       {
         piece: 'project',
@@ -77,7 +77,7 @@ export const how = {
         body: gated(
           'backing.budget',
           'Los créditos emitidos tienen respaldo en recursos que el municipio habilitó. Cada emisión, asignación y pago queda registrado y auditado.',
-          'Cada asignación y cada pago quedan registrados. Toda acción del municipio deja constancia de autor, fecha y motivo.',
+          'Cada asignación y cada pago quedan registrados. Las acciones del municipio sobre cada proyecto dejan constancia de autor, fecha y motivo.',
         ),
       },
     ],
@@ -115,20 +115,20 @@ export const how = {
       ],
     },
     cta: {
-      title: 'Diseñemos el primer ciclo de tu ciudad.',
-      button: 'Pedir una demostración',
+      title: 'Empezá por un lugar y sumá Créditos Cívicos cuando tu ciudad esté lista.',
+      button: 'Solicitar un piloto',
     },
   },
 
   pt: {
     meta: {
       title: 'Como funcionam os Créditos Cívicos | Citixen',
-      description: 'Regras públicas: o município habilita os projetos e define como os créditos são gerados, os moradores decidem e o que foi decidido é cumprido com provas.',
+      description: 'Regras públicas: o município habilita os projetos e define como os créditos são gerados, os moradores decidem e cada projeto financiado é encerrado com provas públicas.',
     },
     hero: {
       eyebrow: 'Créditos Cívicos',
       title: 'Regras simples. Decisões com consequência.',
-      lead: 'O município habilita, os moradores decidem e o que foi decidido é cumprido. Veja como funciona cada parte.',
+      lead: 'O município habilita, os moradores decidem e cada projeto financiado é encerrado com provas. Veja como funciona cada parte.',
     },
     sections: [
       {
@@ -188,7 +188,7 @@ export const how = {
       {
         piece: 'fulfilment',
         title: 'Como se comprova',
-        body: 'O responsável encerra o projeto com fotos, documentos e a história do que mudou. O município verifica o encerramento, e tudo fica público e permanente.',
+        body: 'O responsável encerra o projeto com fotos, documentos e a história do que mudou. O município verifica o encerramento, que fica publicado junto ao projeto.',
       },
       {
         piece: 'project',
@@ -196,7 +196,7 @@ export const how = {
         body: gated(
           'backing.budget',
           'Os créditos emitidos têm respaldo em recursos que o município habilitou. Cada emissão, destinação e pagamento fica registrado e auditado.',
-          'Cada destinação e cada pagamento ficam registrados. Toda ação do município deixa registro de autor, data e motivo.',
+          'Cada destinação e cada pagamento ficam registrados. As ações do município sobre cada projeto deixam registro de autor, data e motivo.',
         ),
       },
     ],
@@ -234,20 +234,20 @@ export const how = {
       ],
     },
     cta: {
-      title: 'Vamos desenhar o primeiro ciclo da sua cidade.',
-      button: 'Solicitar uma demonstração',
+      title: 'Comece por um lugar e inclua os Créditos Cívicos quando a sua cidade estiver pronta.',
+      button: 'Solicitar um piloto',
     },
   },
 
   en: {
     meta: {
       title: 'How Civic Credits work | Citixen',
-      description: 'Public rules: the local government enables projects and sets how credits are generated, residents decide, and what is decided gets done, with evidence.',
+      description: 'Public rules: the local government enables projects and sets how credits are generated, residents decide, and every funded project is closed with public evidence.',
     },
     hero: {
       eyebrow: 'Civic Credits',
       title: 'Simple rules. Decisions with consequences.',
-      lead: 'The local government enables, residents decide, and what is decided gets done. Here is how each part works.',
+      lead: 'The local government enables, residents decide, and every funded project is closed with evidence. Here is how each part works.',
     },
     sections: [
       {
@@ -307,7 +307,7 @@ export const how = {
       {
         piece: 'fulfilment',
         title: 'How it is proven',
-        body: 'The lead closes the project with photos, documents and the story of what changed. The local government verifies the closing, and everything stays public and permanent.',
+        body: 'The lead closes the project with photos, documents and the story of what changed. The local government verifies the closing, which is published alongside the project.',
       },
       {
         piece: 'project',
@@ -315,7 +315,7 @@ export const how = {
         body: gated(
           'backing.budget',
           'Issued credits are backed by resources the local government made available. Every issuance, allocation and payment is recorded and audited.',
-          'Every allocation and every payment is recorded. Every action by the local government leaves a record of who, when and why.',
+          'Every allocation and every payment is recorded. The local government’s actions on each project leave a record of who, when and why.',
         ),
       },
     ],
@@ -353,8 +353,8 @@ export const how = {
       ],
     },
     cta: {
-      title: 'Let’s design your city’s first cycle.',
-      button: 'Request a demo',
+      title: 'Start with one place and add Civic Credits when your city is ready.',
+      button: 'Request a pilot',
     },
   },
 }

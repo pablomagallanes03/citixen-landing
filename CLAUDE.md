@@ -16,7 +16,9 @@ Brief aprobado por Pablo (10-nov-2026): https://claude.ai/artifact/TwbATDBS3ZU1N
 - **Dos estados públicos:** disponible (sin rótulo, o «Disponible hoy» donde convive con lo que viene) y «Próximamente». La inteligencia colectiva se muestra solo como «Demostración conceptual» con datos ficticios.
 - Nombres: «Lugares» y «CoLab» se mantienen; las capacidades de análisis usan nombres descriptivos (Temas que surgen, Acuerdos y desacuerdos, Voces minoritarias, Cómo cambia en el tiempo).
 - Valle Norte es la ciudad ficticia de todos los ejemplos. Sin clientes, testimonios ni métricas reales. Ejemplo principal: una plaza; los lugares de salud se muestran sin análisis de IA externa.
-- Contenido **solo en español** (`spanishFirst` en `lib/draft.mjs`): pt y en copian el español y `check-content` frena la compilación de producción mientras quede contenido así.
+- Home, `/plataforma`, `/primer-ciclo` y navegación en español, portugués de Brasil e inglés (11-nov-2026). `spanishFirst` (`lib/draft.mjs`) queda para contenido nuevo sin traducir: `check-content` frena la compilación de producción si un módulo lo usa.
+- CTA principal: «Solicitar un piloto» (navegación, hero, «Empezá por un lugar», `/como-funciona`, `/plataforma`); «Pedir una demostración» es la alternativa. Mismo formulario (`MunicipalLead`), textos de piloto o demostración en `firstCycle.form`.
+- «Plataforma» en la navegación y el pie lleva a `/plataforma` (reescrita por capacidad, con el estado de cada herramienta).
 - La barra «Maqueta» (abajo a la derecha, solo en vista previa) alterna cuatro titulares; `?titular=b` comparte uno.
 - La regla «tampoco la síntesis de respuestas con IA» de «El acuerdo» queda reemplazada: la IA aparece como diferencial, rotulada como demostración conceptual hasta que se resuelvan sus condiciones de privacidad.
 - `currency.local` (1 CC = 1 moneda local) se reemplazó por `currency.usd` (1 CC = 1 USD), alineado con la decisión del 4-nov-2026. Las cifras del simulador se calibraron con 1 CC = $1: no muestran equivalencias en dinero hasta recalibrarlas con aprobación de Pablo.
@@ -132,9 +134,10 @@ npx next lint
 | Item | Prioridad |
 |---|---|
 | Integrar el simulador interactivo tras validar el prototipo (y recalibrar cifras a 1 CC = 1 USD) | Alta |
-| Traducir la home nueva a pt y en | Alta, antes de producción |
-| Reescribir `/plataforma` (contenido de «El acuerdo», ya no está en la navegación) | Media |
-| Mover a `content/` los pocos textos que quedan en `Intelligence.jsx` («Consulta de ejemplo», «n.º») | Baja |
+| La política de privacidad no menciona los datos de contacto del formulario de piloto o demostración (requiere decisión de Pablo) | Alta, antes de producción |
+| Prueba en un dispositivo físico (iOS y Android) | Alta, antes de producción |
+| El email de confirmación del backend llega solo en español | Media |
+| `content/home.mjs` y `components/home/` quedaron sin uso (home de «El acuerdo») | Baja |
 | Revisión nativa de portugués e inglés | Alta |
 | Imagen para redes (`public/og-image.png` es del diseño anterior) | Media |
 | Versión del logo para fondos claros | Media |

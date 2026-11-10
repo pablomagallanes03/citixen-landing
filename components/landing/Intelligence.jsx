@@ -33,7 +33,7 @@ export default function Intelligence({ t, labels }) {
   const maxCount = Math.max(...Object.values(counts))
   const b = t.blocks
 
-  const meta = (i) => `${b.responseWord} n.º ${String(i + 1).padStart(2, '0')} · ${t.channels[i % t.channels.length]}`
+  const meta = (i) => `${b.responseWord} ${b.numberAbbr} ${String(i + 1).padStart(2, '0')} · ${t.channels[i % t.channels.length]}`
   const quoteList = (ids) => ids.map((i) => (
     <li key={i}>
       <blockquote>«{t.responses[i].text}»</blockquote>
@@ -46,7 +46,7 @@ export default function Intelligence({ t, labels }) {
   if (sel.kind === 'theme') {
     const th = t.themes.find((x) => x.id === sel.id)
     const ids = t.responses.map((r, i) => (r.theme === sel.id ? i : -1)).filter((i) => i >= 0)
-    trace = { title: th.name, sub: `${ids.length} de ${total} respuestas`, groups: [[null, ids]] }
+    trace = { title: th.name, sub: `${ids.length} ${b.of} ${total} ${b.responsesWord}`, groups: [[null, ids]] }
   } else if (sel.kind === 'position') {
     const pos = t.positions.find((x) => x.id === sel.id)
     trace = { title: pos.text, sub: pos.label, groups: [[b.favor, pos.favor], [b.against, pos.against]] }
@@ -77,7 +77,7 @@ export default function Intelligence({ t, labels }) {
         <div className={styles.intelBox}>
           <div className={styles.intelTop}>
             <div>
-              <p className={styles.mockKicker}>Consulta de ejemplo · {labels.cityName}</p>
+              <p className={styles.mockKicker}>{t.exampleLabel} · {labels.cityName}</p>
               <strong className={styles.intelQ}>{t.question}</strong>
               <span className={styles.mockFoot}>{total} {t.responsesLabel}</span>
             </div>
@@ -119,7 +119,7 @@ export default function Intelligence({ t, labels }) {
                 <li><b>{t.positions.filter((p) => p.kind === 'agree').length}</b>{t.stats.agree}</li>
                 <li><b>{t.positions.filter((p) => p.kind === 'disagree').length}</b>{t.stats.disagree}</li>
                 <li><b>1</b>{t.stats.minority}</li>
-                <li><b>{total} de {total}</b>{t.stats.traced}</li>
+                <li><b>{total} {b.of} {total}</b>{t.stats.traced}</li>
               </ul>
 
               <div className={styles.intelBoard}>

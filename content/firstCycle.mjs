@@ -1,7 +1,7 @@
 export const firstCycle = {
   es: {
     meta: {
-      title: 'Pedir una demostración | Citixen',
+      title: 'Solicitar un piloto | Citixen',
       description: 'Conocé Citixen con el contexto de tu municipio y empezá por un lugar: una encuesta con QR, la respuesta de tu gobierno y el reporte del mes.',
     },
     hero: {
@@ -15,8 +15,8 @@ export const firstCycle = {
       { title: 'Acompañamiento', body: 'Te ayudamos a publicar la respuesta de tu municipio, leer los resultados y sumar los próximos lugares.' },
     ],
     form: {
-      title: 'Pedí una demostración',
-      body: 'Completá tus datos y te contactamos para coordinarla.',
+      title: 'Pedí un piloto o una demostración',
+      body: 'Completá tus datos y te contactamos.',
       fields: {
         representativeName: 'Nombre y apellido',
         representativeRole: 'Cargo',
@@ -35,11 +35,11 @@ export const firstCycle = {
         County: 'Condado',
         Federal: 'Nacional o federal',
       },
-      submit: 'Pedir una demostración',
+      submit: 'Enviar pedido',
       sending: 'Enviando…',
       privacy: 'Al enviar tus datos, aceptás nuestra',
       privacyLink: 'Política de privacidad',
-      success: 'Recibimos tu pedido. Te contactamos para coordinar la demostración.',
+      success: 'Recibimos tu pedido. Te contactamos para conversar sobre el piloto o la demostración.',
       errors: {
         duplicate: 'Ya recibimos un pedido con este email. Te vamos a contactar.',
         rateLimited: 'Recibimos varios pedidos seguidos. Probá de nuevo más tarde.',
@@ -52,22 +52,22 @@ export const firstCycle = {
 
   pt: {
     meta: {
-      title: 'Primeiro ciclo | Citixen',
-      description: 'Solicite uma demonstração com o contexto do seu município. Acompanhamos a definição das regras, dos primeiros projetos e do lançamento.',
+      title: 'Solicitar um piloto | Citixen',
+      description: 'Conheça o Citixen com o contexto do seu município e comece por um lugar: uma pesquisa com QR, a resposta do seu governo e o relatório do mês.',
     },
     hero: {
       eyebrow: 'Para governos',
-      title: 'Vamos desenhar o primeiro ciclo da sua cidade.',
-      lead: 'Mostramos o Citixen com o contexto do seu município e acompanhamos a definição das regras, dos primeiros projetos e do lançamento.',
+      title: 'Vamos começar por um lugar da sua cidade.',
+      lead: 'Mostramos o Citixen com o contexto do seu município e acompanhamos você para ouvir o primeiro espaço, responder e mostrar o que foi feito.',
     },
     steps: [
       { title: 'Demonstração', body: 'Percorremos a plataforma com o contexto da sua cidade: suas prioridades, sua equipe e seus prazos.' },
-      { title: 'Desenho do ciclo', body: 'Definimos juntos como os créditos são gerados, os limites e os primeiros projetos a habilitar.' },
-      { title: 'Lançamento', body: 'Acompanhamos a implantação, a comunicação com os moradores e o monitoramento.' },
+      { title: 'Primeiro lugar', body: 'Escolhemos juntos um espaço e preparamos a pesquisa, o QR e a forma de responder.' },
+      { title: 'Acompanhamento', body: 'Ajudamos você a publicar a resposta do seu município, ler os resultados e incluir os próximos lugares.' },
     ],
     form: {
-      title: 'Solicite uma demonstração',
-      body: 'Preencha seus dados e entraremos em contato para agendar.',
+      title: 'Peça um piloto ou uma demonstração',
+      body: 'Preencha seus dados e entraremos em contato.',
       fields: {
         representativeName: 'Nome e sobrenome',
         representativeRole: 'Cargo',
@@ -86,11 +86,11 @@ export const firstCycle = {
         County: 'Condado',
         Federal: 'Nacional ou federal',
       },
-      submit: 'Solicitar uma demonstração',
+      submit: 'Enviar pedido',
       sending: 'Enviando…',
       privacy: 'Ao enviar seus dados, você aceita a nossa',
       privacyLink: 'Política de privacidade (em espanhol)',
-      success: 'Recebemos o seu pedido. Entraremos em contato para agendar a demonstração.',
+      success: 'Recebemos o seu pedido. Entraremos em contato para conversar sobre o piloto ou a demonstração.',
       errors: {
         duplicate: 'Já recebemos um pedido com este e-mail. Entraremos em contato.',
         rateLimited: 'Recebemos vários pedidos seguidos. Tente de novo mais tarde.',
@@ -103,22 +103,22 @@ export const firstCycle = {
 
   en: {
     meta: {
-      title: 'First cycle | Citixen',
-      description: 'Request a demo built around your local government’s context. We support you in defining the rules, the first projects and the launch.',
+      title: 'Request a pilot | Citixen',
+      description: 'See Citixen in your municipality’s context and start with one place: a survey with a QR code, your government’s response and the monthly report.',
     },
     hero: {
       eyebrow: 'For governments',
-      title: 'Let’s design your city’s first cycle.',
-      lead: 'We show you Citixen in your local government’s context and support you in defining the rules, the first projects and the launch.',
+      title: 'Let’s start with one place in your city.',
+      lead: 'We show you Citixen in your municipality’s context and support you as you listen to the first space, respond and show what was done.',
     },
     steps: [
       { title: 'Demo', body: 'We walk through the platform in your city’s context: your priorities, your team and your timeline.' },
-      { title: 'Cycle design', body: 'Together we define how credits are generated, the limits and the first projects to enable.' },
-      { title: 'Launch', body: 'We support you through rollout, communication with residents and follow-up.' },
+      { title: 'First place', body: 'Together we choose a space and prepare the survey, the QR code and how you will respond.' },
+      { title: 'Support', body: 'We help you publish your municipality’s response, read the results and add the next places.' },
     ],
     form: {
-      title: 'Request a demo',
-      body: 'Share your details and we will get in touch to schedule it.',
+      title: 'Request a pilot or a demo',
+      body: 'Share your details and we will get in touch.',
       fields: {
         representativeName: 'Full name',
         representativeRole: 'Role',
@@ -137,11 +137,11 @@ export const firstCycle = {
         County: 'County',
         Federal: 'National or federal',
       },
-      submit: 'Request a demo',
+      submit: 'Send request',
       sending: 'Sending…',
       privacy: 'By sending your details, you accept our',
       privacyLink: 'Privacy policy (in Spanish)',
-      success: 'We received your request. We will get in touch to schedule the demo.',
+      success: 'We received your request. We will get in touch to talk about the pilot or the demo.',
       errors: {
         duplicate: 'We already have a request with this email. We will be in touch.',
         rateLimited: 'We received several requests in a row. Please try again later.',

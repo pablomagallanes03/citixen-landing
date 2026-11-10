@@ -1,232 +1,200 @@
-export const platform = {
-  es: {
-    meta: {
-      title: 'Plataforma | Citixen',
-      description: 'Créditos Cívicos, Opiná, Propuestas, Mi Ciudad, comunicación institucional y un panel de gestión con roles y auditoría.',
-    },
-    hero: {
-      eyebrow: 'Plataforma',
-      title: 'Todo lo que tu ciudad necesita para participar.',
-      lead: 'Los Créditos Cívicos son el centro. Alrededor, las herramientas para escuchar, informar y gestionar.',
-    },
-    core: {
-      name: 'Créditos Cívicos',
-      body: 'Los vecinos asignan créditos a proyectos aprobados por el municipio. Lo que llega a su meta se financia, se ejecuta y se prueba.',
-      link: 'Cómo funcionan',
-    },
-    items: [
-      {
-        name: 'Opiná',
-        body: 'Preguntale a tu ciudad y publicá qué hiciste con las respuestas.',
-        points: [
-          'Consultas verificadas: solo responden vecinos con cuenta en tu ciudad.',
-          'Encuestas abiertas, sin registro, para compartir por WhatsApp, redes o código QR.',
-          'Al cierre de cada consulta, resultados públicos y la respuesta oficial del municipio.',
-        ],
-      },
-      {
-        name: 'Propuestas',
-        body: 'Las ideas de los vecinos, ordenadas.',
-        points: [
-          'Los vecinos proponen y apoyan ideas para su ciudad.',
-          'Ves qué quiere la ciudad, agrupado por tema.',
-          'Moderación con filtros automáticos y reportes de la comunidad.',
-        ],
-      },
-      {
-        name: 'Mi Ciudad',
-        body: 'La cara pública de tu gestión.',
-        points: [
-          'Una página pública de tu ciudad en citixen.org.',
-          'Proyectos, avances y pruebas de cierre, abiertos a todos.',
-          'Encuestas abiertas y comunicados oficiales con su propia página para compartir.',
-        ],
-      },
-      {
-        name: 'Comunicación institucional',
-        body: 'Un canal oficial directo al teléfono de cada vecino.',
-        points: [
-          'Avisos, convocatorias y emergencias, segmentados por audiencia.',
-          'Las comunicaciones masivas quedan en un registro público.',
-          'Límites de envío y revisión de un segundo funcionario para las emergencias.',
-        ],
-      },
-      {
-        name: 'Panel de gestión',
-        body: 'La operación del municipio, ordenada.',
-        points: [
-          'Cada funcionario con su cuenta y su perfil: revisión, proyectos, tesorería, comunicación.',
-          'Registro de auditoría con autor, fecha y motivo de cada acción sensible.',
-          'Expedientes de vecinos y organizaciones, y un mapa de la ciudad.',
-          'Un reporte mensual en PDF, listo para el concejo o la prensa.',
-        ],
-      },
-      {
-        name: 'Aplicaciones',
-        body: 'Para que cada vecino participe desde su teléfono.',
-        points: [
-          'Disponibles en Android e iOS.',
-          'Créditos, proyectos, consultas y avisos en un solo lugar.',
-        ],
-      },
-    ],
-    cta: {
-      title: 'Te mostramos la plataforma con el contexto de tu ciudad.',
-      button: 'Pedir una demostración',
-    },
-  },
+// /plataforma (nov 2026): la plataforma ordenada por capacidad, con el estado de cada herramienta.
+// Solo dos estados públicos: disponible hoy ('available') y próximamente ('soon').
+// Créditos Cívicos se presenta como capacidad complementaria, sin afirmaciones pendientes de aprobación.
 
-  pt: {
-    meta: {
-      title: 'Plataforma | Citixen',
-      description: 'Créditos Cívicos, Opine, Propostas, Minha Cidade, comunicação institucional e um painel de gestão com perfis e auditoria.',
-    },
-    hero: {
-      eyebrow: 'Plataforma',
-      title: 'Tudo o que a sua cidade precisa para participar.',
-      lead: 'Os Créditos Cívicos são o centro. Em volta, as ferramentas para ouvir, informar e gerir.',
-    },
-    core: {
-      name: 'Créditos Cívicos',
-      body: 'Os moradores destinam créditos a projetos aprovados pelo município. O que atinge a meta é financiado, executado e comprovado.',
-      link: 'Como funcionam',
-    },
-    items: [
-      {
-        name: 'Opine',
-        body: 'Pergunte à sua cidade e publique o que você fez com as respostas.',
-        points: [
-          'Consultas verificadas: só respondem moradores com conta na sua cidade.',
-          'Enquetes abertas, sem cadastro, para compartilhar por WhatsApp, redes ou código QR.',
-          'No encerramento de cada consulta, resultados públicos e a resposta oficial do município.',
-        ],
-      },
-      {
-        name: 'Propostas',
-        body: 'As ideias dos moradores, organizadas.',
-        points: [
-          'Os moradores propõem e apoiam ideias para a sua cidade.',
-          'Você vê o que a cidade quer, agrupado por tema.',
-          'Moderação com filtros automáticos e denúncias da comunidade.',
-        ],
-      },
-      {
-        name: 'Minha Cidade',
-        body: 'A face pública da sua gestão.',
-        points: [
-          'Uma página pública da sua cidade em citixen.org.',
-          'Projetos, andamento e provas de encerramento, abertos a todos.',
-          'Enquetes abertas e comunicados oficiais com página própria para compartilhar.',
-        ],
-      },
-      {
-        name: 'Comunicação institucional',
-        body: 'Um canal oficial direto no celular de cada morador.',
-        points: [
-          'Avisos, convocações e emergências, segmentados por público.',
-          'As comunicações em massa ficam em um registro público.',
-          'Limites de envio e revisão de um segundo servidor para emergências.',
-        ],
-      },
-      {
-        name: 'Painel de gestão',
-        body: 'A operação do município, organizada.',
-        points: [
-          'Cada servidor com sua conta e seu perfil: revisão, projetos, tesouraria, comunicação.',
-          'Registro de auditoria com autor, data e motivo de cada ação sensível.',
-          'Fichas de moradores e organizações, e um mapa da cidade.',
-          'Um relatório mensal em PDF, pronto para a câmara ou a imprensa.',
-        ],
-      },
-      {
-        name: 'Aplicativos',
-        body: 'Para que cada morador participe pelo celular.',
-        points: [
-          'Disponíveis para Android e iOS.',
-          'Créditos, projetos, consultas e avisos em um só lugar.',
-        ],
-      },
-    ],
-    cta: {
-      title: 'Mostramos a plataforma com o contexto da sua cidade.',
-      button: 'Solicitar uma demonstração',
-    },
+const es = {
+  meta: {
+    title: 'Plataforma | Citixen',
+    description: 'Opiná, propuestas, iniciativas, Mi Ciudad, comunicación institucional y un panel de gestión. Y lo que llega: Lugares, inteligencia colectiva y CoLab.',
   },
-
-  en: {
-    meta: {
-      title: 'Platform | Citixen',
-      description: 'Civic Credits, Have Your Say, Proposals, My City, official communications and a management dashboard with roles and audit logs.',
-    },
-    hero: {
-      eyebrow: 'Platform',
-      title: 'Everything your city needs to take part.',
-      lead: 'Civic Credits are the core. Around them, the tools to listen, inform and manage.',
-    },
-    core: {
-      name: 'Civic Credits',
-      body: 'Residents allocate credits to projects approved by the local government. What reaches its goal is funded, carried out and proven.',
-      link: 'How they work',
-    },
-    items: [
-      {
-        name: 'Have Your Say',
-        body: 'Ask your city, and publish what you did with the answers.',
-        points: [
-          'Verified consultations: only residents with an account in your city can respond.',
-          'Open surveys, no sign-up needed, to share on WhatsApp, social media or a QR code.',
-          'When each consultation closes, public results and the local government\u2019s official response.',
-        ],
-      },
-      {
-        name: 'Proposals',
-        body: 'Residents’ ideas, organized.',
-        points: [
-          'Residents propose and back ideas for their city.',
-          'You see what the city wants, grouped by topic.',
-          'Moderation with automatic filters and community reports.',
-        ],
-      },
-      {
-        name: 'My City',
-        body: 'The public face of your administration.',
-        points: [
-          'A public page for your city on citixen.org.',
-          'Projects, progress and closing evidence, open to everyone.',
-          'Open surveys and official notices, each with its own page to share.',
-        ],
-      },
-      {
-        name: 'Official communications',
-        body: 'An official channel straight to every resident’s phone.',
-        points: [
-          'Notices, calls to participate and emergencies, targeted by audience.',
-          'Mass communications are kept in a public record.',
-          'Sending limits, and a second official’s review for emergencies.',
-        ],
-      },
-      {
-        name: 'Management dashboard',
-        body: 'Your local government’s operations, organized.',
-        points: [
-          'Every official with their own account and role: review, projects, treasury, communications.',
-          'An audit log with who, when and why for every sensitive action.',
-          'Records for residents and organizations, and a city map.',
-          'A monthly PDF report, ready for the council or the press.',
-        ],
-      },
-      {
-        name: 'Apps',
-        body: 'So every resident can take part from their phone.',
-        points: [
-          'Available on Android and iOS.',
-          'Credits, projects, consultations and notices in one place.',
-        ],
-      },
-    ],
-    cta: {
-      title: 'We’ll show you the platform in your city’s context.',
-      button: 'Request a demo',
-    },
+  hero: {
+    eyebrow: 'Plataforma',
+    title: 'Una plataforma para escuchar, comprender y actuar con tu comunidad.',
+    lead: 'Herramientas para escuchar a los vecinos, ordenar lo que dicen, abrir la participación y mostrar lo que hace tu gestión. Cada una indica si está disponible hoy o llega próximamente.',
   },
+  status: { available: 'Disponible hoy', soon: 'Próximamente' },
+  groups: [
+    {
+      name: 'Escuchar',
+      intro: 'Preguntale a tu ciudad donde está la gente.',
+      tools: [
+        { name: 'Opiná', status: 'available', body: 'Consultas y encuestas con la respuesta pública de tu municipio.', points: ['Consultas verificadas: responden vecinos con cuenta en tu ciudad.', 'Encuestas abiertas, sin crear cuenta, para compartir con QR, WhatsApp y redes.', 'El canal por el que llegó cada respuesta.', 'Al cierre, resultados y la respuesta oficial del municipio.'] },
+        { name: 'Lugares', status: 'soon', body: 'Cada plaza, escuela o centro cultural con su canal permanente y su ficha.', points: ['Un QR fijo en cada lugar para opinar en cualquier momento.', 'La historia, las necesidades y las acciones de cada lugar en un solo sitio.'] },
+      ],
+    },
+    {
+      name: 'Comprender',
+      intro: 'Del dato suelto a algo que tu equipo puede usar.',
+      tools: [
+        { name: 'Resultados y reporte mensual', status: 'available', body: 'Lo que respondieron, claro y listo para comunicar.', points: ['Resultados de cada pregunta cerrada.', 'Lectura de cada respuesta abierta.', 'Un reporte mensual en PDF para el concejo o la prensa.'] },
+        { name: 'Inteligencia colectiva', status: 'soon', body: 'Lectura de respuestas abiertas con inteligencia artificial, siempre con las citas que la respaldan.', points: ['Temas que surgen, acuerdos y desacuerdos.', 'Voces minoritarias que el promedio no muestra.', 'Necesidades que se repiten entre lugares y cómo cambian en el tiempo.', 'La IA ordena y resume; las decisiones son de tu equipo.'] },
+      ],
+    },
+    {
+      name: 'Participar',
+      intro: 'Que los vecinos propongan, prioricen y se sumen.',
+      tools: [
+        { name: 'Propuestas', status: 'available', body: 'Las ideas de los vecinos, ordenadas.', points: ['Los vecinos proponen y apoyan ideas para su ciudad.', 'Ves qué quiere la ciudad, agrupado por tema.', 'Moderación con filtros automáticos y reportes de la comunidad.'] },
+        { name: 'Consultas para priorizar e iniciativas', status: 'available', body: 'Para ordenar opciones y para lo que los vecinos llevan adelante.', points: ['Los vecinos ordenan opciones y tu municipio publica qué hará.', 'Iniciativas ciudadanas con apoyo y difusión.', 'App para vecinos en Android e iOS.'] },
+      ],
+    },
+    {
+      name: 'Cocrear',
+      intro: 'Soluciones construidas con quienes las van a usar.',
+      tools: [
+        { name: 'CoLab', status: 'soon', body: 'Procesos de cocreación por etapas, con reglas anunciadas de antemano.', points: ['Un desafío planteado por tu equipo.', 'Ideas y mejoras de vecinos y organizaciones.', 'Una propuesta consolidada para llevar adelante.'] },
+      ],
+    },
+    {
+      name: 'Actuar y mostrar',
+      intro: 'Que se vea lo que hace tu gestión.',
+      tools: [
+        { name: 'Mi Ciudad', status: 'available', body: 'La página pública de tu ciudad en citixen.org.', points: ['Obras con su estado y avance.', 'Proyectos y pruebas de cierre, abiertos a todos.', 'Encuestas y comunicados con su propia página para compartir.', 'Índice de transparencia.'] },
+        { name: 'Comunicación institucional', status: 'available', body: 'Un canal oficial al teléfono de cada vecino.', points: ['Avisos, convocatorias y emergencias, por audiencia.', 'Las comunicaciones masivas quedan en un registro público.', 'Límites de envío y revisión de un segundo funcionario para las emergencias.'] },
+      ],
+    },
+  ],
+  team: {
+    name: 'Para tu equipo',
+    tool: { name: 'Panel de gestión', status: 'available', body: 'La operación del municipio, ordenada.', points: ['Cada funcionario con su cuenta y su perfil: revisión, proyectos, tesorería y comunicación.', 'Registro de auditoría con autor, fecha y motivo de las acciones sensibles.', 'Expedientes de vecinos y organizaciones, y un mapa de la ciudad.'] },
+  },
+  complement: {
+    label: 'Capacidad complementaria',
+    name: 'Créditos Cívicos',
+    body: 'Cuando tu ciudad decide abrir esa decisión, los vecinos asignan créditos a proyectos que tu gobierno ya aprobó, con las reglas que fija tu municipio.',
+    link: 'Cómo funcionan',
+  },
+  cta: { title: 'Empezá por un lugar.', button: 'Solicitar un piloto' },
 }
+
+const pt = {
+  meta: {
+    title: 'Plataforma | Citixen',
+    description: 'Consultas e pesquisas, propostas, iniciativas, Mi Ciudad, comunicação institucional e um painel de gestão. E o que vem por aí: Lugares, inteligência coletiva e CoLab.',
+  },
+  hero: {
+    eyebrow: 'Plataforma',
+    title: 'Uma plataforma para ouvir, compreender e agir com a sua comunidade.',
+    lead: 'Recursos para ouvir os cidadãos, organizar o que eles dizem, abrir a participação e mostrar o que a sua gestão faz. Cada um indica se está disponível hoje ou se chega em breve.',
+  },
+  status: { available: 'Disponível hoje', soon: 'Em breve' },
+  groups: [
+    {
+      name: 'Ouvir',
+      intro: 'Pergunte à sua cidade onde as pessoas estão.',
+      tools: [
+        { name: 'Opine', status: 'available', body: 'Consultas e pesquisas com a resposta pública do seu município.', points: ['Consultas verificadas: respondem cidadãos com conta na sua cidade.', 'Pesquisas abertas, sem criar conta, para compartilhar com QR, WhatsApp e redes sociais.', 'O canal por onde chegou cada resposta.', 'No encerramento, resultados e a resposta oficial do município.'] },
+        { name: 'Lugares', status: 'soon', body: 'Cada praça, escola ou centro cultural com o seu canal permanente e a sua ficha.', points: ['Um QR fixo em cada lugar para opinar a qualquer momento.', 'A história, as necessidades e as ações de cada lugar em um só lugar.'] },
+      ],
+    },
+    {
+      name: 'Compreender',
+      intro: 'Do dado solto a algo que a sua equipe pode usar.',
+      tools: [
+        { name: 'Resultados e relatório mensal', status: 'available', body: 'O que responderam, claro e pronto para comunicar.', points: ['Resultados de cada pergunta fechada.', 'Leitura de cada resposta aberta.', 'Um relatório mensal em PDF para a câmara ou a imprensa.'] },
+        { name: 'Inteligência coletiva', status: 'soon', body: 'Leitura de respostas abertas com inteligência artificial, sempre com as citações que a sustentam.', points: ['Temas que surgem, acordos e desacordos.', 'Vozes minoritárias que a média não mostra.', 'Necessidades que se repetem entre lugares e como mudam com o tempo.', 'A IA organiza e resume; as decisões são da sua equipe.'] },
+      ],
+    },
+    {
+      name: 'Participar',
+      intro: 'Que os cidadãos proponham, priorizem e participem.',
+      tools: [
+        { name: 'Propostas', status: 'available', body: 'As ideias dos cidadãos, organizadas.', points: ['Os cidadãos propõem e apoiam ideias para a sua cidade.', 'Você vê o que a cidade quer, agrupado por tema.', 'Moderação com filtros automáticos e denúncias da comunidade.'] },
+        { name: 'Consultas para priorizar e iniciativas', status: 'available', body: 'Para ordenar opções e para o que os cidadãos levam adiante.', points: ['Os cidadãos ordenam opções e o seu município publica o que vai fazer.', 'Iniciativas cidadãs com apoio e divulgação.', 'App para cidadãos no Android e no iOS.'] },
+      ],
+    },
+    {
+      name: 'Cocriar',
+      intro: 'Soluções construídas com quem vai usá-las.',
+      tools: [
+        { name: 'CoLab', status: 'soon', body: 'Processos de cocriação por etapas, com regras anunciadas com antecedência.', points: ['Um desafio apresentado pela sua equipe.', 'Ideias e melhorias de cidadãos e organizações.', 'Uma proposta consolidada para levar adiante.'] },
+      ],
+    },
+    {
+      name: 'Agir e mostrar',
+      intro: 'Que apareça o que a sua gestão faz.',
+      tools: [
+        { name: 'Mi Ciudad', status: 'available', body: 'A página pública da sua cidade em citixen.org.', points: ['Obras com o seu status e andamento.', 'Projetos e provas de encerramento, abertos a todos.', 'Pesquisas e comunicados com página própria para compartilhar.', 'Índice de transparência.'] },
+        { name: 'Comunicação institucional', status: 'available', body: 'Um canal oficial até o celular de cada cidadão.', points: ['Avisos, convocações e emergências, por público.', 'As comunicações em massa ficam em um registro público.', 'Limites de envio e revisão de um segundo servidor para as emergências.'] },
+      ],
+    },
+  ],
+  team: {
+    name: 'Para a sua equipe',
+    tool: { name: 'Painel de gestão', status: 'available', body: 'A operação do município, organizada.', points: ['Cada servidor com a sua conta e o seu perfil: revisão, projetos, tesouraria e comunicação.', 'Registro de auditoria com autor, data e motivo das ações sensíveis.', 'Fichas de cidadãos e organizações, e um mapa da cidade.'] },
+  },
+  complement: {
+    label: 'Recurso complementar',
+    name: 'Créditos Cívicos',
+    body: 'Quando a sua cidade decide abrir essa decisão, os cidadãos destinam créditos a projetos que o seu governo já aprovou, com as regras definidas pelo seu município.',
+    link: 'Como funcionam',
+  },
+  cta: { title: 'Comece por um lugar.', button: 'Solicitar um piloto' },
+}
+
+const en = {
+  meta: {
+    title: 'Platform | Citixen',
+    description: 'Consultations and surveys, proposals, initiatives, Mi Ciudad, official communications and a management panel. And what is coming: Places, collective intelligence and CoLab.',
+  },
+  hero: {
+    eyebrow: 'Platform',
+    title: 'One platform to listen, understand and act with your community.',
+    lead: 'Tools to listen to residents, organize what they say, open up participation and show what your administration does. Each one shows whether it is available today or coming soon.',
+  },
+  status: { available: 'Available today', soon: 'Coming soon' },
+  groups: [
+    {
+      name: 'Listen',
+      intro: 'Ask your city where people are.',
+      tools: [
+        { name: 'Have Your Say', status: 'available', body: 'Consultations and surveys with your municipality’s public response.', points: ['Verified consultations: answered by residents with an account in your city.', 'Open surveys, no account needed, to share by QR code, WhatsApp and social media.', 'The channel each response came from.', 'When they close, results and the municipality’s official response.'] },
+        { name: 'Places', status: 'soon', body: 'Every square, school or community center with its own permanent channel and profile.', points: ['A fixed QR code at each place to share an opinion any time.', 'Each place’s history, needs and actions in one spot.'] },
+      ],
+    },
+    {
+      name: 'Understand',
+      intro: 'From loose data to something your team can use.',
+      tools: [
+        { name: 'Results and monthly report', status: 'available', body: 'What people answered, clear and ready to share.', points: ['Results for each closed question.', 'Reading every open response.', 'A monthly PDF report for the council or the press.'] },
+        { name: 'Collective intelligence', status: 'soon', body: 'Reading open responses with artificial intelligence, always with the quotes behind it.', points: ['Emerging topics, agreements and disagreements.', 'Minority voices the average doesn’t show.', 'Needs that come up across places and how they change over time.', 'AI organizes and summarizes; decisions stay with your team.'] },
+      ],
+    },
+    {
+      name: 'Participate',
+      intro: 'Let residents propose, prioritize and get involved.',
+      tools: [
+        { name: 'Proposals', status: 'available', body: 'Residents’ ideas, organized.', points: ['Residents propose and support ideas for their city.', 'You see what the city wants, grouped by topic.', 'Moderation with automatic filters and community reports.'] },
+        { name: 'Consultations to prioritize, and initiatives', status: 'available', body: 'To rank options, and for what residents carry out themselves.', points: ['Residents rank options and your municipality publishes what it will do.', 'Citizen initiatives with support and outreach.', 'App for residents on Android and iOS.'] },
+      ],
+    },
+    {
+      name: 'Co-create',
+      intro: 'Solutions built with the people who will use them.',
+      tools: [
+        { name: 'CoLab', status: 'soon', body: 'Co-creation processes in stages, under rules announced in advance.', points: ['A challenge set by your team.', 'Ideas and improvements from residents and organizations.', 'A consolidated proposal to carry forward.'] },
+      ],
+    },
+    {
+      name: 'Act and show',
+      intro: 'Make what your administration does visible.',
+      tools: [
+        { name: 'Mi Ciudad', status: 'available', body: 'Your city’s public page on citixen.org.', points: ['Public works with their status and progress.', 'Projects and closing evidence, open to everyone.', 'Surveys and notices with their own page to share.', 'Transparency index.'] },
+        { name: 'Official communications', status: 'available', body: 'An official channel to every resident’s phone.', points: ['Notices, calls to participate and emergencies, by audience.', 'Mass communications are kept in a public record.', 'Sending limits, and a second official’s review for emergencies.'] },
+      ],
+    },
+  ],
+  team: {
+    name: 'For your team',
+    tool: { name: 'Management panel', status: 'available', body: 'Your municipality’s operations, organized.', points: ['Each official with their own account and role: review, projects, treasury and communications.', 'Audit log with who, when and why for sensitive actions.', 'Records for residents and organizations, and a map of the city.'] },
+  },
+  complement: {
+    label: 'Complementary capability',
+    name: 'Civic Credits',
+    body: 'When your city decides to open that decision, residents allocate credits to projects your government has already approved, under the rules your municipality sets.',
+    link: 'How they work',
+  },
+  cta: { title: 'Start with one place.', button: 'Request a pilot' },
+}
+
+export const platform = { es, pt, en }
