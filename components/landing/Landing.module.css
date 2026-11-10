@@ -132,6 +132,7 @@
 .calloutLeft { --tx: -28px; }
 .calloutRight { --tx: calc(-100% + 28px); }
 .calloutBelow { --ty: 28px; }
+.calloutBeside { --tx: calc(-100% - 30px); --ty: -50%; }
 @keyframes callout { from { opacity: 0; } to { opacity: 1; } }
 .callout strong { font-family: var(--font-display); font-size: 0.98rem; line-height: 1.2; }
 .calloutMeta { color: var(--ink-3); font-size: 0.76rem; }
@@ -266,8 +267,7 @@
 .surveyBox strong { font-family: var(--font-display); font-size: 1.05rem; }
 .surveyBox span:last-child { font-size: 0.86rem; color: var(--ink-2); }
 .surveyBox b { color: var(--navy); font-family: var(--font-display); font-size: 1.15rem; }
-.proposalsLine { font-size: 0.88rem; color: var(--ink-2); display: flex; align-items: center; gap: 0.5rem; }
-.proposalsLine b { min-width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--coral-soft); color: var(--coral-ink); }
+.channelsLine { font-size: 0.86rem; color: var(--ink-2); }
 .actionsList { list-style: none; display: grid; gap: 0.6rem; }
 .actionsList li { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr) 5.5rem; gap: 0.6rem; align-items: center; font-size: 0.88rem; }
 .actionsList b { text-align: right; font-size: 0.78rem; color: var(--navy); }
@@ -412,11 +412,23 @@
 /* ── La plataforma ──────────────────────────────────────── */
 .platformGrid { list-style: none; margin-top: 2.25rem; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.75rem; }
 .platformCol { display: grid; align-content: start; padding: 1.2rem; border-radius: var(--radius); background: var(--white); border: 1px solid var(--line); min-width: 0; }
-.platformName { margin-top: 0.3rem; font-size: 1.2rem; color: var(--ink); }
+.platformCol > div:first-child { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.platformName { margin-top: 0.5rem; font-size: 1.2rem; color: var(--ink); }
+.platformSoon { margin-top: 1rem; padding: 0.75rem 0.8rem; border-radius: 12px; border: 1px dashed var(--line); background: var(--mist-soft); }
+.platformSoon .listLabel { margin-top: 0; }
+.platformNone { margin-top: 1rem; font-size: 0.9rem; color: var(--ink-2); }
+.platformMeanwhile { margin-top: 0.8rem; font-size: 0.86rem; color: var(--ink-2); }
+.platformColSoon { background: transparent; border-style: dashed; }
 
 /* ── Cómo empezar y reglas ──────────────────────────────── */
 .startGrid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(2rem, 1rem + 4vw, 5rem); align-items: start; }
-.startCta { margin-top: 2rem; }
+.startCtas { margin-top: 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.1rem; }
+.startSecondary { font-weight: 600; color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+.outcomes { margin-top: 2rem; padding: 1.2rem 1.3rem; border-radius: var(--radius); background: var(--night); color: var(--on-night-2); display: grid; gap: 0.6rem; }
+.outcomes strong { color: var(--on-night); font-family: var(--font-display); font-size: 1.05rem; }
+.outcomes ul { list-style: none; display: grid; gap: 0.5rem; }
+.outcomes li { position: relative; padding-left: 1.4rem; font-size: 0.94rem; }
+.outcomes li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 8px; height: 8px; border-radius: 2px; background: var(--white); }
 .startSteps { list-style: none; display: grid; gap: 0.75rem; }
 .startSteps li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem; padding: 1.2rem; border-radius: var(--radius); border: 1px solid var(--line); background: var(--white); }
 .startSteps div { display: grid; gap: 0.2rem; }

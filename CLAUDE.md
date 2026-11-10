@@ -11,6 +11,8 @@ Brief aprobado por Pablo (10-nov-2026): https://claude.ai/artifact/TwbATDBS3ZU1N
 - Se quitaron el recorrido de la plaza y las capacidades en pestañas (repetían Lugares y la sección de acción).
 - Sin promesas absolutas: no «todo lo que necesita un gobierno», no «sin normas nuevas», no «lo publicado no se borra» (se dice qué queda registrado y cómo se corrige), y la protección de datos se describe como un intento con revisión humana, no como garantía.
 - Las cifras de ejemplo del hero viven dentro de la figura del mapa, con su rótulo de datos ficticios.
+- Revisión del 10-nov-2026: solo dos estados públicos («Disponible hoy» y «Próximamente») en todas las secciones; el hero dice «ordena los resultados» (no promete análisis con IA); «Empezá por un lugar» es la propuesta de piloto con CTA «Solicitar un piloto», sin gratuidad ni plazos; el formulario de la home usa los textos de piloto o demostración (`final.form`) y sigue creando un `MunicipalLead`.
+- PDF para compartir: no usar `page.pdf()` sobre la página (Chrome convierte las fuentes variables en Type3 y algunos visores las deforman). Generar el PDF a partir de capturas del navegador.
 - **Dos estados públicos:** disponible (sin rótulo, o «Disponible hoy» donde convive con lo que viene) y «Próximamente». La inteligencia colectiva se muestra solo como «Demostración conceptual» con datos ficticios.
 - Nombres: «Lugares» y «CoLab» se mantienen; las capacidades de análisis usan nombres descriptivos (Temas que surgen, Acuerdos y desacuerdos, Voces minoritarias, Cómo cambia en el tiempo).
 - Valle Norte es la ciudad ficticia de todos los ejemplos. Sin clientes, testimonios ni métricas reales. Ejemplo principal: una plaza; los lugares de salud se muestran sin análisis de IA externa.

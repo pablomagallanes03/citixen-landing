@@ -105,7 +105,7 @@ export function Action({ t, labels }) {
   )
 }
 
-// Resumen de la plataforma: qué hay hoy y qué viene, por capacidad.
+// Resumen de la plataforma: cada capacidad dice qué está disponible hoy y qué está en desarrollo.
 export function Platform({ t }) {
   return (
     <section id="plataforma" className={`${styles.section} ${styles.sectionMist}`}>
@@ -114,20 +114,32 @@ export function Platform({ t }) {
         <h2 className={styles.h2}>{t.title}</h2>
         <p className={styles.lead}>{t.lead}</p>
         <ol className={styles.platformGrid}>
-          {t.items.map((it, i) => (
-            <li key={it.id} className={styles.platformCol}>
-              <span className={styles.capNum}>{String(i + 1).padStart(2, '0')}</span>
-              <h3 className={styles.platformName}>{it.name}</h3>
-              <p className={styles.listLabel}>{t.availableLabel}</p>
-              <ul className={styles.checkList}>{it.available.map((a) => <li key={a}>{a}</li>)}</ul>
-              {it.soon.length > 0 && (
-                <>
-                  <p className={styles.listLabel}><span className={styles.soonChip}>{t.soonLabel}</span></p>
-                  <ul className={styles.soonList}>{it.soon.map((a) => <li key={a}>{a}</li>)}</ul>
-                </>
-              )}
-            </li>
-          ))}
+          {t.items.map((it, i) => {
+            const state = it.available.length === 0 ? 'soon' : it.soon.length === 0 ? 'available' : 'partial'
+            const chipClass = state === 'soon' ? styles.soonChip : styles.availableChip
+            return (
+              <li key={it.id} className={`${styles.platformCol} ${state === 'soon' ? styles.platformColSoon : ''}`}>
+                <div>
+                  <span className={styles.capNum}>{String(i + 1).padStart(2, '0')}</span>
+                  <span className={chipClass}>{t.status[state]}</span>
+                </div>
+                <h3 className={styles.platformName}>{it.name}</h3>
+                {it.available.length > 0 ? (
+                  <>
+                    <p className={styles.listLabel}>{t.availableLabel}</p>
+                    <ul className={styles.checkList}>{it.available.map((a) => <li key={a}>{a}</li>)}</ul>
+                  </>
+                ) : <p className={styles.platformNone}>{t.noneToday}</p>}
+                {it.soon.length > 0 && (
+                  <div className={styles.platformSoon}>
+                    <p className={styles.listLabel}>{t.soonLabel}</p>
+                    <ul className={styles.soonList}>{it.soon.map((a) => <li key={a}>{a}</li>)}</ul>
+                  </div>
+                )}
+                {it.meanwhile && <p className={styles.platformMeanwhile}>{it.meanwhile}</p>}
+              </li>
+            )
+          })}
         </ol>
       </div>
     </section>
@@ -142,7 +154,14 @@ export function StartPath({ t }) {
           <p className={styles.eyebrow}>{t.eyebrow}</p>
           <h2 className={styles.h2}>{t.title}</h2>
           <p className={styles.lead}>{t.lead}</p>
-          <Link href="#demostracion" className={`btn-primary ${styles.startCta}`}>{t.cta}</Link>
+          <div className={styles.outcomes}>
+            <strong>{t.outcomesTitle}</strong>
+            <ul>{t.outcomes.map((o) => <li key={o}>{o}</li>)}</ul>
+          </div>
+          <div className={styles.startCtas}>
+            <Link href="#demostracion" className="btn-primary">{t.cta}</Link>
+            <Link href="#demostracion" className={styles.startSecondary}>{t.secondary}</Link>
+          </div>
         </div>
         <ol className={styles.startSteps}>
           {t.steps.map((s, i) => (

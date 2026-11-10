@@ -34,7 +34,7 @@ export const landing = spanishFirst({
       { id: 'c', title: 'Cada lugar de tu ciudad tiene algo para contarte.' },
       { id: 'd', title: 'Gobernar con lo que sabe tu ciudad.' },
     ],
-    lead: 'Citixen reúne lo que los vecinos dicen de cada plaza, escuela y centro cultural, lo convierte en conocimiento para tu equipo y deja a la vista lo que tu gestión hace con eso.',
+    lead: 'Citixen reúne lo que los vecinos dicen de cada plaza, escuela y centro cultural, ordena los resultados para tu equipo y deja a la vista lo que tu gestión hace con eso.',
     primary: 'Pedir una demostración',
     secondary: 'Explorar una ciudad',
     summaryLabel: 'Valle Norte · este mes',
@@ -110,8 +110,8 @@ export const landing = spanishFirst({
         summary: 'Los temas de cada lugar, ordenados con inteligencia artificial, llegan próximamente.',
         history: 'La historia de cada lugar llega con las fichas permanentes.',
         needs: 'Las necesidades vinculadas a acciones llegan próximamente.',
-        participation: 'Hoy podés abrir una encuesta con QR para cualquier espacio y recibir propuestas de vecinos.',
-        actions: 'Hoy podés publicar obras con su estado y responder en público.',
+        participation: 'Hoy podés abrir una encuesta con QR para cualquier espacio y ver por qué canal llegó cada respuesta.',
+        actions: 'Hoy podés publicar obras con su estado y avance. Verlas agrupadas en la ficha de cada lugar llega próximamente.',
       },
       themes: 'Lo que más dicen',
       response: 'Última respuesta del municipio',
@@ -119,9 +119,9 @@ export const landing = spanishFirst({
       surveyResponses: 'respuestas',
       surveyOpen: 'Abierta',
       surveyClosed: 'Cerrada',
-      proposals: 'propuestas de vecinos sobre este lugar',
+      channels: 'Llegaron por',
       noActions: 'Todavía no hay obras registradas para este lugar.',
-      healthNote: 'Lugar de atención: sus aportes no se van a enviar a proveedores de inteligencia artificial.',
+      healthNote: 'Lugar de atención: sus aportes no se van a enviar a proveedores externos de inteligencia artificial.',
     },
     needStates: {
       identified: 'Identificada',
@@ -140,7 +140,7 @@ export const landing = spanishFirst({
         response: 'Licitamos el recambio de 24 luminarias. Obra prevista para marzo.',
         history: [['Nov', 'Respuesta publicada: recambio de 24 luminarias'], ['Oct', 'Encuesta con QR: 86 respuestas en el mes'], ['Ago', 'Primer aporte sobre la luz del sector norte']],
         survey: { title: '¿Qué mejorarías de la plaza?', responses: 86, open: true },
-        proposals: 3,
+        channels: ['QR en el lugar', 'WhatsApp', 'Instagram'],
         actions: [['Recambio de luminarias', 'Licitada', 10]],
       },
       {
@@ -150,7 +150,7 @@ export const landing = spanishFirst({
         response: 'Abrimos una consulta para priorizar los usos nocturnos del parque.',
         history: [['Nov', 'Consulta abierta sobre los usos nocturnos'], ['Sep', 'Baños públicos: obra licitada'], ['Abr', 'El parque suma su ficha y su QR']],
         survey: { title: '¿Cómo usarías el parque de noche?', responses: 132, open: true },
-        proposals: 5,
+        channels: ['QR en el lugar', 'Instagram'],
         actions: [['Baños públicos', 'Licitada', 15]],
       },
       {
@@ -160,7 +160,7 @@ export const landing = spanishFirst({
         response: 'Inauguramos la rampa de acceso. Sumamos dos talleres los sábados.',
         history: [['Oct', 'Rampa de acceso inaugurada'], ['Sep', 'Dos talleres nuevos los sábados'], ['May', 'La accesibilidad aparece como necesidad']],
         survey: { title: '¿Qué talleres te gustaría sumar?', responses: 54, open: false },
-        proposals: 2,
+        channels: ['QR en el lugar', 'WhatsApp'],
         actions: [['Rampa en la sala principal', 'Terminada', 100]],
       },
       {
@@ -170,7 +170,7 @@ export const landing = spanishFirst({
         response: 'El cruce peatonal está en obra. Avance: 60 %.',
         history: [['Nov', 'Avance de obra: 60 %'], ['Sep', 'Comienza la obra del cruce peatonal'], ['Jul', 'Las familias piden un cruce seguro']],
         survey: { title: '¿Cómo llegan tus hijos a la escuela?', responses: 47, open: false },
-        proposals: 1,
+        channels: ['QR en el lugar', 'WhatsApp', 'Instagram'],
         actions: [['Cruce peatonal en la avenida', 'En curso', 60]],
       },
       {
@@ -180,7 +180,7 @@ export const landing = spanishFirst({
         response: 'Ampliamos los horarios de pileta libre de diciembre a febrero.',
         history: [['Nov', 'Anuncio: más horarios de pileta en verano'], ['Oct', 'Vestuarios: necesidad identificada'], ['May', 'Primera encuesta del lugar']],
         survey: { title: '¿Qué horarios usarías?', responses: 63, open: true },
-        proposals: 2,
+        channels: ['QR en el lugar', 'Instagram'],
         actions: [],
       },
       {
@@ -190,7 +190,7 @@ export const landing = spanishFirst({
         response: 'Instalamos un nuevo punto de acceso a internet en la sala de lectura.',
         history: [['Oct', 'Nuevo punto de acceso a internet'], ['Ago', 'El wifi, tema principal del mes']],
         survey: { title: '¿Para qué venís a la biblioteca?', responses: 22, open: false },
-        proposals: 1,
+        channels: ['QR en el lugar', 'WhatsApp'],
         actions: [['Punto de acceso a internet', 'Terminada', 100]],
       },
       {
@@ -200,7 +200,7 @@ export const landing = spanishFirst({
         response: 'Desde el mes próximo los turnos se piden desde la app.',
         history: [['Nov', 'Anuncio: turnos desde la app'], ['Sep', 'Los tiempos de espera encabezan los aportes'], ['Mar', 'QR en el mostrador de atención']],
         survey: { title: '¿Cómo fue tu atención hoy?', responses: 71, open: true },
-        proposals: 0,
+        channels: ['QR en el lugar', 'WhatsApp', 'Instagram'],
         actions: [['Turnos en línea', 'En curso', 40]],
       },
       {
@@ -210,7 +210,7 @@ export const landing = spanishFirst({
         response: 'Sumamos un turno de atención por la tarde dos veces por semana.',
         history: [['Oct', 'Nuevo turno de atención por la tarde'], ['Ago', 'Sala de espera: necesidad identificada']],
         survey: { title: '¿Cómo fue tu espera hoy?', responses: 39, open: true },
-        proposals: 0,
+        channels: ['QR en el lugar', 'Instagram'],
         actions: [],
       },
       {
@@ -220,7 +220,7 @@ export const landing = spanishFirst({
         response: 'Plantamos 40 árboles nativos a lo largo del paseo.',
         history: [['Oct', '40 árboles nativos plantados'], ['Ago', 'Propuesta de huerta comunitaria: 128 apoyos'], ['May', 'La sombra, tema principal']],
         survey: { title: '¿Qué le falta al paseo?', responses: 58, open: false },
-        proposals: 4,
+        channels: ['QR en el lugar', 'WhatsApp'],
         actions: [['Arbolado del paseo', 'Terminada', 100]],
       },
     ],
@@ -237,7 +237,7 @@ export const landing = spanishFirst({
     reset: 'Volver a empezar',
     running: 'Organizando…',
     steps: [
-      'Se quitan los nombres y datos de contacto detectados',
+      'Se buscan y quitan nombres y datos de contacto',
       'Se agrupan las respuestas en temas',
       'Se buscan acuerdos y desacuerdos',
       'Cada conclusión se vincula con sus citas',
@@ -310,7 +310,7 @@ export const landing = spanishFirst({
     principles: [
       { title: 'Cada conclusión, con sus citas', body: 'Ningún tema aparece sin las respuestas que lo respaldan, y cualquiera se puede revisar.' },
       { title: 'La IA asiste, tu equipo decide', body: 'La inteligencia artificial ordena y resume. Las decisiones son de las personas.' },
-      { title: 'Cuidado con los datos', body: 'Antes del análisis se busca quitar nombres y datos de contacto. Ningún sistema detecta todo, por eso tu equipo revisa, y los aportes de lugares de atención no se envían a proveedores externos.' },
+      { title: 'Cuidado con los datos', body: 'Antes del análisis se van a buscar y quitar nombres y datos de contacto. Ningún sistema detecta todo, por eso tu equipo revisa. Los aportes de lugares de atención no se van a enviar a proveedores externos de inteligencia artificial.' },
     ],
   },
 
@@ -337,7 +337,7 @@ export const landing = spanishFirst({
         example: 'Rediseño del Paseo del Río',
         stages: ['Desafío', 'Ideas', 'Mejoras', 'Propuesta'],
         current: 1,
-        note: '64 ideas · etapa 2 de 4 · ejemplo ficticio',
+        note: '64 ideas · etapa 2 de 4 · datos ficticios',
       },
       {
         name: 'Actuar y mostrar',
@@ -367,35 +367,44 @@ export const landing = spanishFirst({
       lines: [['Respuestas a encuestas', '1.240'], ['Propuestas nuevas', '18'], ['Obras con avance publicado', '9']],
       quote: '«En octubre, 1.240 respuestas ayudaron a definir las obras de tres espacios públicos.»',
     },
-    exampleNote: 'Ejemplo con datos ficticios',
+    exampleNote: 'Datos ficticios',
   },
 
   platform: {
     eyebrow: 'La plataforma',
     title: 'Una plataforma para escuchar, comprender y actuar con tu comunidad.',
-    lead: 'Cinco capacidades que funcionan juntas. Podés empezar por una y sumar las demás.',
-    availableLabel: 'Hoy',
+    lead: 'Cinco capacidades que funcionan juntas. Cada una indica qué podés usar hoy y qué llega próximamente.',
+    availableLabel: 'Disponible hoy',
     soonLabel: 'Próximamente',
+    status: { available: 'Disponible hoy', partial: 'Disponible hoy', soon: 'Próximamente' },
+    noneToday: 'Esta capacidad todavía no está disponible.',
     items: [
       { id: 'listen', name: 'Escuchar', available: ['Encuestas abiertas con QR y WhatsApp, sin crear cuenta', 'Consultas con respuesta del municipio', 'De qué canal llegó cada respuesta'], soon: ['Un canal permanente para cada Lugar'] },
       { id: 'understand', name: 'Comprender', available: ['Resultados de preguntas cerradas', 'Lectura de cada respuesta abierta', 'Reporte mensual de participación'], soon: ['Temas, acuerdos y voces minoritarias con IA', 'Evolución de las necesidades'] },
-      { id: 'participate', name: 'Participar', available: ['Propuestas con apoyos de vecinos', 'Iniciativas ciudadanas', 'App para vecinos en iOS y Android'], soon: [] },
-      { id: 'cocreate', name: 'Cocrear', available: ['Consultas para priorizar entre opciones'], soon: ['CoLab: propuestas construidas por etapas'] },
+      { id: 'participate', name: 'Participar', available: ['Propuestas con apoyos de vecinos', 'Consultas para priorizar entre opciones', 'Iniciativas ciudadanas', 'App para vecinos en iOS y Android'], soon: [] },
+      { id: 'cocreate', name: 'Cocrear', available: [], soon: ['CoLab: procesos de cocreación por etapas, con reglas anunciadas'], meanwhile: 'Mientras tanto, los vecinos pueden proponer y priorizar con las herramientas de Participar.' },
       { id: 'act', name: 'Actuar y mostrar', available: ['Obras con estado público', 'Avisos institucionales', 'Portal Mi Ciudad e índice de transparencia'], soon: ['Necesidades vinculadas a acciones', 'Fichas de Lugares'] },
     ],
   },
 
   start: {
-    eyebrow: 'Cómo empezar',
+    eyebrow: 'Una propuesta para tu municipio',
     title: 'Empezá por un lugar.',
-    lead: 'Con un espacio y un equipo chico ya podés escuchar, responder y mostrar resultados. Después sumás los lugares que quieras.',
+    lead: 'Un piloto acotado, con lo que ya está disponible hoy: elegís un espacio de tu ciudad, escuchás a quienes lo usan, respondés en público y mostrás lo hecho.',
     steps: [
-      { title: 'Elegí un espacio', body: 'Una plaza, un parque o un centro cultural que quieras conocer mejor.' },
-      { title: 'Salí con una encuesta y un QR', body: 'La preparamos juntos y la compartís en el lugar, por WhatsApp y en redes.' },
-      { title: 'Respondé en público', body: 'Publicás qué vas a hacer con lo que dijeron los vecinos, y registrás la obra si corresponde.' },
-      { title: 'Mostrá lo hecho y sumá lugares', body: 'Con el reporte del mes mostrás los resultados y elegís el próximo espacio.' },
+      { title: 'Elegimos juntos un espacio', body: 'Una plaza, un parque o un centro cultural que tu equipo quiera conocer mejor.' },
+      { title: 'Salís con una encuesta y un QR', body: 'La preparamos juntos y la compartís en el lugar, por WhatsApp y en redes.' },
+      { title: 'Respondés en público', body: 'Publicás qué vas a hacer con lo que dijeron los vecinos y registrás la obra si corresponde.' },
+      { title: 'Mostrás lo hecho', body: 'Con el reporte del mes comunicás los resultados y decidís cómo seguir.' },
     ],
-    cta: 'Pedir una demostración',
+    outcomesTitle: 'Al terminar el piloto tenés',
+    outcomes: [
+      'Lo que dijeron los vecinos de ese lugar, ordenado por canal y por respuesta',
+      'La respuesta de tu municipio, publicada',
+      'Un reporte para mostrar dentro y fuera de tu gestión',
+    ],
+    cta: 'Solicitar un piloto',
+    secondary: 'o pedir una demostración',
     rulesTitle: 'Reglas que podés defender',
     rules: [
       { title: 'Las reglas se anuncian antes', body: 'Cada encuesta y consulta dice para qué se usa lo que se responde y si es vinculante.' },
@@ -422,8 +431,14 @@ export const landing = spanishFirst({
   },
 
   final: {
-    title: 'Conocé Citixen con el contexto de tu ciudad.',
-    body: 'Te mostramos la plataforma con tus espacios, tus prioridades y tus tiempos.',
+    title: 'Pedí un piloto o una demostración.',
+    body: 'Contanos de tu municipio. Te mostramos la plataforma y, si querés empezar por un lugar, armamos juntos la propuesta.',
+    form: {
+      title: 'Hablemos de tu ciudad',
+      body: 'Completá tus datos y te contactamos.',
+      submit: 'Enviar pedido',
+      success: 'Recibimos tu pedido. Te contactamos para conversar sobre la demostración o el piloto.',
+    },
   },
 
   review: {

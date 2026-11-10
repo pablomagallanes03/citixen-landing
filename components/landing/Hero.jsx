@@ -21,8 +21,10 @@ export default function Hero({ t, places, districts, labels, variant }) {
   const p = places[active]
   // La tarjeta del lugar va arriba del pin (abajo si el pin está cerca del borde superior)
   // y se alinea al borde cuando el pin está en un costado.
-  const below = p.y < 200
-  const side = p.x < 220 ? styles.calloutLeft : p.x > 780 ? styles.calloutRight : ''
+  // Arriba a la derecha va al costado izquierdo del pin, para no tapar la lectura de la ciudad.
+  const beside = p.y < 200 && p.x > 600
+  const below = p.y < 200 && !beside
+  const side = beside ? styles.calloutBeside : p.x < 220 ? styles.calloutLeft : p.x > 780 ? styles.calloutRight : ''
   const [topTheme, topShare] = p.themes[0]
 
   return (

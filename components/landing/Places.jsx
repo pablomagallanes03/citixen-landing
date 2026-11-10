@@ -167,7 +167,7 @@ export default function Places({ t, labels }) {
                     <strong>{selected.survey.title}</strong>
                     <span><b>{selected.survey.responses}</b> {c.surveyResponses}</span>
                   </div>
-                  <p className={styles.proposalsLine}><b>{selected.proposals}</b> {c.proposals}</p>
+                  <p className={styles.channelsLine}>{c.channels} {selected.channels.join(' · ')}</p>
                 </div>
               )}
 
