@@ -1,18 +1,18 @@
 export const firstCycle = {
   es: {
     meta: {
-      title: 'Primer ciclo | Citixen',
-      description: 'Pedí una demostración con el contexto de tu municipio. Te acompañamos a definir las reglas, los primeros proyectos y el lanzamiento.',
+      title: 'Pedir una demostración | Citixen',
+      description: 'Conocé Citixen con el contexto de tu municipio y empezá por un lugar: una encuesta con QR, la respuesta de tu gobierno y el reporte del mes.',
     },
     hero: {
       eyebrow: 'Para gobiernos',
-      title: 'Diseñemos el primer ciclo de tu ciudad.',
-      lead: 'Te mostramos Citixen con el contexto de tu municipio y te acompañamos a definir las reglas, los primeros proyectos y el lanzamiento.',
+      title: 'Empecemos por un lugar de tu ciudad.',
+      lead: 'Te mostramos Citixen con el contexto de tu municipio y te acompañamos a escuchar el primer espacio, responder y mostrar lo hecho.',
     },
     steps: [
       { title: 'Demostración', body: 'Recorremos la plataforma con el contexto de tu ciudad: tus prioridades, tu equipo y tus tiempos.' },
-      { title: 'Diseño del ciclo', body: 'Definimos juntos cómo se generan los créditos, los límites y los primeros proyectos a habilitar.' },
-      { title: 'Lanzamiento', body: 'Te acompañamos en la puesta en marcha, la comunicación a los vecinos y el seguimiento.' },
+      { title: 'Primer lugar', body: 'Elegimos juntos un espacio y preparamos la encuesta, el QR y la forma de responder.' },
+      { title: 'Acompañamiento', body: 'Te ayudamos a publicar la respuesta de tu municipio, leer los resultados y sumar los próximos lugares.' },
     ],
     form: {
       title: 'Pedí una demostración',

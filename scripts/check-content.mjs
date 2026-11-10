@@ -11,9 +11,12 @@ import path from 'node:path'
 import { CLAIMS, CLAIM_STATUSES } from '../content/claims.mjs'
 import { isGated, resolveContent } from '../lib/claims.mjs'
 import { LOCALES } from '../lib/i18n-config.mjs'
+import { isSpanishFirst } from '../lib/draft.mjs'
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)))
 const errors = []
+const spanishFirst = []
+const IS_PRODUCTION = process.env.VERCEL_ENV === 'production'
 
 for (const [id, claim] of Object.entries(CLAIMS)) {
   if (!CLAIM_STATUSES.includes(claim.status)) errors.push(`${id}: estado inválido "${claim.status}"`)
@@ -64,6 +67,10 @@ for (const file of files) {
   for (const [name, content] of Object.entries(mod)) {
     if (!content || typeof content !== 'object' || !('es' in content)) continue
     const where = `${file}:${name}`
+    if (isSpanishFirst(content)) {
+      spanishFirst.push(where)
+      if (IS_PRODUCTION) errors.push(`${where}: contenido solo en español (pt y en sin traducir); no se publica en producción`)
+    }
     const reference = JSON.stringify(shape(content.es))
     for (const locale of LOCALES) {
       if (!content[locale]) { errors.push(`${where}: falta el idioma "${locale}"`); continue }
@@ -82,6 +89,8 @@ if (errors.length) {
   console.error(`Contenido con ${errors.length} problema(s):\n- ${errors.join('\n- ')}`)
   process.exit(1)
 }
+
+if (spanishFirst.length) console.log(`Contenido solo en español (vista previa): ${spanishFirst.join(', ')}`)
 
 const pending = Object.entries(CLAIMS).filter(([, c]) => c.status !== 'verified').map(([id]) => id)
 console.log(`Contenido verificado en ${LOCALES.length} idiomas (${files.length} archivos).`)

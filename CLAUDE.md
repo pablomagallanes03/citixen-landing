@@ -1,7 +1,20 @@
 # CLAUDE.md — citixen.app (web institucional)
 
-Web institucional de Citixen en `citixen.app`. Rediseño «El acuerdo» (nov 2026), rama `redesign/el-acuerdo`.
+Web institucional de Citixen en `citixen.app`. Rama `redesign/ciudad-que-escucha` (maqueta, 10-nov-2026), creada sobre `redesign/el-acuerdo`.
 Hasta que se apruebe y se haga merge, producción sigue sirviendo `main` con el diseño anterior.
+
+## Maqueta «Ciudad que escucha» (reemplaza la dirección de «El acuerdo» en la home)
+
+Brief aprobado por Pablo (10-nov-2026): https://claude.ai/artifact/TwbATDBS3ZU1NEpbhg6MmK
+- Citixen se presenta como plataforma de escucha ciudadana, inteligencia colectiva, participación, cocreación y gestión pública basada en conocimiento ciudadano. **No** como plataforma de reclamos ni de encuestas con seguimiento.
+- Home nueva: `pages/index.js` + `components/landing/*` + `content/landing.mjs`. Lugares con protagonismo visual (mapa interactivo), recorrido de la plaza, demostración conceptual de inteligencia colectiva, cocreación (CoLab), acción visible, cómo empezar, reglas, Créditos Cívicos como sección propia y formulario.
+- **Dos estados públicos:** disponible (sin rótulo, o «Disponible hoy» donde convive con lo que viene) y «Próximamente». La inteligencia colectiva se muestra solo como «Demostración conceptual» con datos ficticios.
+- Nombres: «Lugares» y «CoLab» se mantienen; las capacidades de análisis usan nombres descriptivos (Temas que surgen, Acuerdos y desacuerdos, Voces minoritarias, Cómo cambia en el tiempo).
+- Valle Norte es la ciudad ficticia de todos los ejemplos. Sin clientes, testimonios ni métricas reales. Ejemplo principal: una plaza; los lugares de salud se muestran sin análisis de IA externa.
+- Contenido **solo en español** (`spanishFirst` en `lib/draft.mjs`): pt y en copian el español y `check-content` frena la compilación de producción mientras quede contenido así.
+- La barra «Maqueta» (abajo a la derecha, solo en vista previa) alterna cuatro titulares; `?titular=b` comparte uno.
+- La regla «tampoco la síntesis de respuestas con IA» de «El acuerdo» queda reemplazada: la IA aparece como diferencial, rotulada como demostración conceptual hasta que se resuelvan sus condiciones de privacidad.
+- `currency.local` (1 CC = 1 moneda local) se reemplazó por `currency.usd` (1 CC = 1 USD), alineado con la decisión del 4-nov-2026. Las cifras del simulador se calibraron con 1 CC = $1: no muestran equivalencias en dinero hasta recalibrarlas con aprobación de Pablo.
 
 ## Dominios
 
@@ -54,7 +67,7 @@ Las URLs legales están declaradas en Google Play y App Store: no cambiarlas.
 
 La web comunica el modelo completo de Créditos Cívicos V2, que se desarrolla en otro chat. Para que producción nunca afirme algo que todavía no existe:
 
-- `content/claims.mjs`: estado de cada capacidad (`emission.modalities`, `limits.general`, `execution.municipal`, `currency.local`, `backing.budget`).
+- `content/claims.mjs`: estado de cada capacidad (`emission.modalities`, `limits.general`, `execution.municipal`, `currency.usd`, `backing.budget`).
 - En el contenido, un texto condicionado se escribe `gated(id, textoCompleto, textoVerificado)`. `textoVerificado` describe lo que hoy es cierto; puede ser `null` para ocultar el elemento.
 - **Producción** muestra el texto completo solo si la afirmación está `verified`. **Preview y desarrollo** muestran los textos completos, con un aviso visible.
 - **Pasar una afirmación a `verified` requiere la aprobación explícita del dueño del producto (Pablo)**, después de revisar la evidencia técnica y funcional de V2. Registrar `approvedBy` y `approvedAt`.
@@ -113,7 +126,10 @@ npx next lint
 
 | Item | Prioridad |
 |---|---|
-| Integrar el simulador interactivo tras validar el prototipo | Alta |
+| Integrar el simulador interactivo tras validar el prototipo (y recalibrar cifras a 1 CC = 1 USD) | Alta |
+| Traducir la home nueva a pt y en | Alta, antes de producción |
+| Reescribir `/plataforma` (contenido de «El acuerdo», ya no está en la navegación) | Media |
+| Mover a `content/` los textos de las maquetas de `Capabilities.jsx` y `Journey.jsx` | Baja |
 | Revisión nativa de portugués e inglés | Alta |
 | Imagen para redes (`public/og-image.png` es del diseño anterior) | Media |
 | Versión del logo para fondos claros | Media |

@@ -28,8 +28,8 @@ export const how = {
           ],
         ),
         note: gated(
-          'currency.local',
-          '1 Crédito Cívico equivale a 1 unidad de la moneda local. En Argentina, $1.',
+          'currency.usd',
+          '1 Crédito Cívico equivale a 1 dólar estadounidense. El panel lo muestra en moneda local con el tipo de cambio vigente.',
           null,
         ),
       },
@@ -147,8 +147,8 @@ export const how = {
           ],
         ),
         note: gated(
-          'currency.local',
-          '1 Crédito Cívico equivale a 1 unidade da moeda local. No Brasil, R$ 1.',
+          'currency.usd',
+          '1 Crédito Cívico equivale a 1 dólar americano. O painel mostra o valor em moeda local, com a taxa de câmbio vigente.',
           null,
         ),
       },
@@ -266,8 +266,8 @@ export const how = {
           ],
         ),
         note: gated(
-          'currency.local',
-          '1 Civic Credit equals 1 unit of the local currency. In Argentina, $1.',
+          'currency.usd',
+          '1 Civic Credit equals 1 US dollar. The dashboard shows it in local currency at the current exchange rate.',
           null,
         ),
       },

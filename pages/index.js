@@ -1,11 +1,17 @@
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import Layout from '../components/layout/Layout'
 import Seo from '../components/layout/Seo'
-import Hero from '../components/home/Hero'
-import SimulatorPreview from '../components/home/SimulatorPreview'
-import { ThreeTimes, Rules, Different, Evidence, Platform, Neighbors, FirstCycle } from '../components/home/Sections'
+import Hero from '../components/landing/Hero'
+import Capabilities from '../components/landing/Capabilities'
+import Places from '../components/landing/Places'
+import Journey from '../components/landing/Journey'
+import Intelligence from '../components/landing/Intelligence'
+import { Problems, Cocreation, VisibleAction, StartPath, Rules, CivicCredits, FinalCta, ReviewBar } from '../components/landing/Sections'
 import { useContent } from '../lib/i18n.mjs'
-import { home } from '../content/home.mjs'
-import { site } from '../content/site.mjs'
+import { showsUnverifiedClaims } from '../lib/claims.mjs'
+import { landing } from '../content/landing.mjs'
+import { firstCycle } from '../content/firstCycle.mjs'
 import { SITE_URL } from '../lib/i18n-config.mjs'
 
 const ORGANIZATION_LD = {
@@ -19,22 +25,37 @@ const ORGANIZATION_LD = {
   email: 'hello@citixen.org',
 }
 
+const REVIEW = showsUnverifiedClaims(process.env.SITE_ENV)
+
 export default function Home() {
-  const t = useContent(home)
-  const s = useContent(site)
+  const t = useContent(landing)
+  const f = useContent(firstCycle)
+  const { query } = useRouter()
+  const [variant, setVariant] = useState('a')
+
+  // ?titular=b permite compartir una variante concreta del titular durante la revisión.
+  useEffect(() => {
+    if (REVIEW && typeof query.titular === 'string' && t.hero.variants.some((v) => v.id === query.titular)) {
+      setVariant(query.titular)
+    }
+  }, [query.titular, t.hero.variants])
 
   return (
     <Layout>
       <Seo title={t.meta.title} description={t.meta.description} path="/" jsonLd={ORGANIZATION_LD} />
-      <Hero t={t.hero} />
-      <SimulatorPreview />
-      <ThreeTimes t={t.threeTimes} />
+      <Hero t={t.hero} variant={variant} />
+      <Problems t={t.problems} />
+      <Capabilities t={t.capabilities} />
+      <Places t={t.places} labels={t.labels} />
+      <Journey t={t.journey} labels={t.labels} />
+      <Intelligence t={t.intelligence} labels={t.labels} />
+      <Cocreation t={t.cocreation} />
+      <VisibleAction t={t.action} />
+      <StartPath t={t.start} />
       <Rules t={t.rules} />
-      <Different t={t.different} />
-      <Evidence t={t.evidence} illustrative={s.illustrative} />
-      <Platform t={t.platform} />
-      <Neighbors t={t.neighbors} />
-      <FirstCycle t={t.firstCycle} />
+      <CivicCredits t={t.civicCredits} />
+      <FinalCta t={t.final} form={f.form} />
+      {REVIEW && <ReviewBar t={t.review} variants={t.hero.variants} value={variant} onChange={setVariant} />}
     </Layout>
   )
 }

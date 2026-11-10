@@ -31,9 +31,12 @@ export const CLAIMS = {
     approvedBy: null,
     approvedAt: null,
   },
-  'currency.local': {
+  // Corregida el 10-nov-2026: la versión anterior («1 CC = 1 unidad de moneda local»)
+  // contradecía la decisión vigente del 4-nov-2026 (1 CC = 1 USD, valuado en moneda local
+  // con el tipo de cambio vigente). Ninguna regla económica cambió con esta corrección.
+  'currency.usd': {
     status: 'pending',
-    capability: '1 Crédito Cívico = 1 unidad de moneda local',
+    capability: '1 Crédito Cívico = 1 dólar estadounidense, expresado en moneda local con el tipo de cambio vigente',
     approvedBy: null,
     approvedAt: null,
   },

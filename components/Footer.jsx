@@ -28,7 +28,7 @@ export default function Footer() {
           <h2 className={styles.heading}>{f.sections.product}</h2>
           <ul>
             <li><Link href="/como-funciona">{f.links.howItWorks}</Link></li>
-            <li><Link href="/plataforma">{f.links.platform}</Link></li>
+            <li><Link href="/#plataforma">{f.links.platform}</Link></li>
             <li><Link href="/vecinos">{f.links.neighbors}</Link></li>
             <li><Link href="/primer-ciclo">{f.links.firstCycle}</Link></li>
             <li><a href={PORTAL_URL} target="_blank" rel="noopener noreferrer">{f.links.portal}</a></li>
