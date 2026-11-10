@@ -3,11 +3,9 @@ import { useRouter } from 'next/router'
 import Layout from '../components/layout/Layout'
 import Seo from '../components/layout/Seo'
 import Hero from '../components/landing/Hero'
-import Capabilities from '../components/landing/Capabilities'
 import Places from '../components/landing/Places'
-import Journey from '../components/landing/Journey'
 import Intelligence from '../components/landing/Intelligence'
-import { Problems, Cocreation, VisibleAction, StartPath, Rules, CivicCredits, FinalCta, ReviewBar } from '../components/landing/Sections'
+import { Problems, Action, Platform, StartPath, CivicCredits, FinalCta, ReviewBar } from '../components/landing/Sections'
 import { useContent } from '../lib/i18n.mjs'
 import { showsUnverifiedClaims } from '../lib/claims.mjs'
 import { landing } from '../content/landing.mjs'
@@ -43,16 +41,13 @@ export default function Home() {
   return (
     <Layout>
       <Seo title={t.meta.title} description={t.meta.description} path="/" jsonLd={ORGANIZATION_LD} />
-      <Hero t={t.hero} variant={variant} />
+      <Hero t={t.hero} places={t.places.list} districts={t.places.districts} labels={t.labels} variant={variant} />
       <Problems t={t.problems} />
-      <Capabilities t={t.capabilities} />
       <Places t={t.places} labels={t.labels} />
-      <Journey t={t.journey} labels={t.labels} />
       <Intelligence t={t.intelligence} labels={t.labels} />
-      <Cocreation t={t.cocreation} />
-      <VisibleAction t={t.action} />
+      <Action t={t.action} labels={t.labels} />
+      <Platform t={t.platform} />
       <StartPath t={t.start} />
-      <Rules t={t.rules} />
       <CivicCredits t={t.civicCredits} />
       <FinalCta t={t.final} form={f.form} />
       {REVIEW && <ReviewBar t={t.review} variants={t.hero.variants} value={variant} onChange={setVariant} />}

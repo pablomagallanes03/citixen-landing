@@ -7,7 +7,10 @@ Hasta que se apruebe y se haga merge, producción sigue sirviendo `main` con el 
 
 Brief aprobado por Pablo (10-nov-2026): https://claude.ai/artifact/TwbATDBS3ZU1NEpbhg6MmK
 - Citixen se presenta como plataforma de escucha ciudadana, inteligencia colectiva, participación, cocreación y gestión pública basada en conocimiento ciudadano. **No** como plataforma de reclamos ni de encuestas con seguimiento.
-- Home nueva: `pages/index.js` + `components/landing/*` + `content/landing.mjs`. Lugares con protagonismo visual (mapa interactivo), recorrido de la plaza, demostración conceptual de inteligencia colectiva, cocreación (CoLab), acción visible, cómo empezar, reglas, Créditos Cívicos como sección propia y formulario.
+- Home nueva: `pages/index.js` + `components/landing/*` + `content/landing.mjs`. Segunda iteración (10-nov-2026), 9 secciones: hero con el mapa de toda la ciudad (`Hero.jsx` + `CityMap.jsx`, compartido con Lugares), problemas, Lugares (mapa por barrios + ficha permanente en pestañas: resumen, historial, necesidades, participación, acciones; cada pestaña dice si está disponible hoy o llega próximamente), inteligencia colectiva (proceso visible + tablero con temas, acuerdos y desacuerdos, voz minoritaria, evolución y trazabilidad hasta cada respuesta), de la escucha a la acción (participar, cocrear, actuar y mostrar en una sola sección), resumen de la plataforma, cómo empezar con las reglas, Créditos Cívicos y formulario.
+- Se quitaron el recorrido de la plaza y las capacidades en pestañas (repetían Lugares y la sección de acción).
+- Sin promesas absolutas: no «todo lo que necesita un gobierno», no «sin normas nuevas», no «lo publicado no se borra» (se dice qué queda registrado y cómo se corrige), y la protección de datos se describe como un intento con revisión humana, no como garantía.
+- Las cifras de ejemplo del hero viven dentro de la figura del mapa, con su rótulo de datos ficticios.
 - **Dos estados públicos:** disponible (sin rótulo, o «Disponible hoy» donde convive con lo que viene) y «Próximamente». La inteligencia colectiva se muestra solo como «Demostración conceptual» con datos ficticios.
 - Nombres: «Lugares» y «CoLab» se mantienen; las capacidades de análisis usan nombres descriptivos (Temas que surgen, Acuerdos y desacuerdos, Voces minoritarias, Cómo cambia en el tiempo).
 - Valle Norte es la ciudad ficticia de todos los ejemplos. Sin clientes, testimonios ni métricas reales. Ejemplo principal: una plaza; los lugares de salud se muestran sin análisis de IA externa.
@@ -129,7 +132,7 @@ npx next lint
 | Integrar el simulador interactivo tras validar el prototipo (y recalibrar cifras a 1 CC = 1 USD) | Alta |
 | Traducir la home nueva a pt y en | Alta, antes de producción |
 | Reescribir `/plataforma` (contenido de «El acuerdo», ya no está en la navegación) | Media |
-| Mover a `content/` los textos de las maquetas de `Capabilities.jsx` y `Journey.jsx` | Baja |
+| Mover a `content/` los pocos textos que quedan en `Intelligence.jsx` («Consulta de ejemplo», «n.º») | Baja |
 | Revisión nativa de portugués e inglés | Alta |
 | Imagen para redes (`public/og-image.png` es del diseño anterior) | Media |
 | Versión del logo para fondos claros | Media |
