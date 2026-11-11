@@ -142,7 +142,6 @@ npx next lint
 | Integrar el simulador interactivo tras validar el prototipo (y recalibrar cifras a 1 CC = 1 USD) | Alta |
 | Prueba en un dispositivo físico (iOS y Android) | Alta, antes de producción |
 | Política de privacidad: aplicar la propuesta de `docs/` tras la revisión jurídica (preguntas al abogado: https://claude.ai/artifact/D5c2tbtt3SDXyYf4foqZGF) | Alta, antes de producción |
-| `citixen.app` responde 403 «Vercel Security Checkpoint» a lectores de redes y buscadores (visto el 11-nov-2026): revisar el firewall del proyecto en Vercel | Alta |
 | Política de privacidad solo en español: una revisión preliminar con IA (no jurídica) la considera bloqueante para publicar pt/en. Decidir con el abogado | Alta |
 | `content/home.mjs` y `components/home/` quedaron sin uso (home de «El acuerdo») | Baja |
 | Revisión nativa de portugués e inglés (se publican sin ella por decisión de Pablo, 11-nov-2026) | Baja |
