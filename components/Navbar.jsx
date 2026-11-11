@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { PANEL_SIGNUP_URL } from '../lib/urls.mjs'
 import { useRouter } from 'next/router'
 import Logo from './Logo'
 import { LOCALES, LOCALE_META, useContent, useLocale } from '../lib/i18n.mjs'
@@ -81,7 +82,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <Link href="/primer-ciclo" className={`btn-primary ${styles.cta}`}>{t.nav.cta}</Link>
+          <a href={PANEL_SIGNUP_URL} className={`btn-primary ${styles.cta}`}>{t.nav.cta}</a>
         </nav>
 
         <button
