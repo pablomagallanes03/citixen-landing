@@ -98,7 +98,7 @@ La web comunica el modelo completo de Créditos Cívicos V2, que se desarrolla e
 ## Formularios y backend
 
 - Formulario de piloto o demostración (`components/DemoForm.jsx`) → `POST /api/government/register-light` (crea `MunicipalLead`). Desde el 11-nov-2026 pide solo nombre, email institucional, municipio u organismo, país e interés (`pilot`/`demo`), y envía el idioma de la página (`locale`) y el honeypot `_hp`. Maneja 409 y 429. `?interes=demo` preselecciona la demostración.
-- **Depende del backend de la rama `feat/lead-form-simplificado`** (tipo, provincia, ciudad y cargo opcionales; `interest` y `locale`; email de confirmación en el idioma del pedido). El backend de producción actual rechaza el formulario nuevo con 400: desplegar el backend antes que esta landing.
+- Usa el contrato del backend desplegado el 11-nov-2026 (PR #20 del backend: tipo, provincia, ciudad y cargo opcionales; `interest` y `locale`; email de confirmación en el idioma del pedido). El panel superadmin muestra interés e idioma.
 - Propuesta de actualización de la política de privacidad para estos datos: `docs/propuesta-privacidad-formulario-comercial.md` (pendiente de revisión jurídica).
 - Buscador de ciudades (`components/CitySearch.jsx`) → `GET /api/cities?search=` y `GET /api/cities/:slug/stats`.
 - Las llamadas son relativas (`/api/...`). En producción Nginx las envía al backend; en preview y desarrollo lo hace la regla `rewrites` de `next.config.js`, que evita el bloqueo de CORS.
@@ -141,7 +141,6 @@ npx next lint
 |---|---|
 | Integrar el simulador interactivo tras validar el prototipo (y recalibrar cifras a 1 CC = 1 USD) | Alta |
 | Prueba en un dispositivo físico (iOS y Android) | Alta, antes de producción |
-| Desplegar el backend de `feat/lead-form-simplificado` antes de fusionar esta rama | Alta, bloquea el formulario |
 | Política de privacidad: aplicar la propuesta de `docs/` tras la revisión jurídica (preguntas al abogado: https://claude.ai/artifact/D5c2tbtt3SDXyYf4foqZGF) | Alta, antes de producción |
 | `citixen.app` responde 403 «Vercel Security Checkpoint» a lectores de redes y buscadores (visto el 11-nov-2026): revisar el firewall del proyecto en Vercel | Alta |
 | Política de privacidad solo en español: una revisión preliminar con IA (no jurídica) la considera bloqueante para publicar pt/en. Decidir con el abogado | Alta |
