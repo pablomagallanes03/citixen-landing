@@ -1,0 +1,76 @@
+.search { display: grid; gap: 1rem; }
+.field { position: relative; }
+.input {
+  width: 100%;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  font-size: 1.0625rem;
+}
+.input:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(10, 61, 145, 0.15); }
+.results {
+  list-style: none;
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  max-height: 320px;
+  overflow-y: auto;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px -20px rgba(2, 27, 78, 0.35);
+}
+.results button {
+  width: 100%;
+  display: grid;
+  gap: 2px;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: 0;
+  background: transparent;
+}
+.results button:hover, .results button:focus-visible { background: var(--mist-soft); }
+.resultName { font-weight: 600; }
+.resultRegion { font-size: 0.8125rem; color: var(--ink-3); }
+.status { min-height: 1.25rem; font-size: 0.875rem; color: var(--ink-3); }
+
+.result { display: grid; gap: 0.35rem; }
+.badge {
+  justify-self: start;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--mist-soft);
+  color: var(--ink-2);
+}
+.active { background: var(--night); color: var(--on-night); }
+.government_pending { background: var(--mist); color: var(--navy); }
+.pre_adoption { background: var(--coral-soft); color: var(--coral-ink); }
+.cityName { margin-top: 0.5rem; font-family: var(--font-display); font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; }
+.cityRegion { color: var(--ink-3); font-size: 0.9375rem; }
+.message { margin-top: 0.5rem; color: var(--ink-2); }
+.count { color: var(--ink-2); font-size: 0.9375rem; }
+.reset { justify-self: start; margin-top: 0.75rem; border: 0; background: none; font-weight: 600; color: var(--navy); }
+
+.stores {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+.storesLabel { font-size: 0.875rem; color: var(--ink-3); margin-right: 0.25rem; }
+.store {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--on-night);
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+.store:hover { background: var(--navy); }

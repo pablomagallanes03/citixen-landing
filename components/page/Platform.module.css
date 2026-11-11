@@ -1,0 +1,49 @@
+/* /plataforma: capacidades con el estado de cada herramienta. Usa los tokens de styles/globals.css. */
+
+.section { padding-block: var(--section); background: var(--mist-soft); }
+.groups { list-style: none; display: grid; gap: clamp(2.5rem, 2rem + 2vw, 4rem); }
+.group { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.6fr); gap: clamp(1.5rem, 1rem + 2vw, 3rem); align-items: start; }
+.groupHead { display: grid; gap: 0.4rem; position: sticky; top: calc(var(--nav-height) + 1.5rem); }
+.groupHead h2 { font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.3rem); color: var(--ink); line-height: 1.1; }
+.groupHead p { color: var(--ink-2); }
+.groupNum { font-size: 0.8rem; font-weight: 700; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+
+.tools { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.tool { display: grid; gap: 0.6rem; align-content: start; padding: 1.4rem; border-radius: var(--radius-lg); background: var(--white); border: 1px solid var(--line); min-width: 0; }
+.toolSoon { background: transparent; border-style: dashed; }
+.toolHead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; }
+.toolHead h3 { font-size: 1.25rem; color: var(--ink); line-height: 1.2; }
+.toolBody { color: var(--ink-2); }
+
+.chipAvailable, .chipSoon {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em;
+  padding: 0.22rem 0.65rem; border-radius: 999px; white-space: nowrap; line-height: 1.3;
+}
+.chipAvailable { background: var(--navy); color: var(--white); }
+.chipAvailable::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.chipSoon { border: 1px dashed var(--ink-3); color: var(--ink-2); }
+
+.points, .pointsSoon { list-style: none; display: grid; gap: 0.5rem; font-size: 0.94rem; }
+.points li, .pointsSoon li { position: relative; padding-left: 1.4rem; }
+.points li { color: var(--ink); }
+.points li::before { content: ''; position: absolute; left: 0; top: 0.4em; width: 12px; height: 12px; border-radius: 50%; background: var(--navy); box-shadow: inset 0 0 0 3.5px var(--navy), inset 0 0 0 4.5px var(--white); }
+.pointsSoon li { color: var(--ink-2); }
+.pointsSoon li::before { content: ''; position: absolute; left: 0; top: 0.4em; width: 12px; height: 12px; border-radius: 50%; border: 1.5px dashed var(--ink-3); }
+
+.complement {
+  margin-top: clamp(3rem, 2rem + 3vw, 5rem); display: grid; gap: 0.6rem; justify-items: start;
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem); border-radius: var(--radius-lg); background: var(--night); color: var(--on-night-2);
+}
+.complement h2 { color: var(--on-night); font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); }
+.complement p { max-width: 60ch; }
+.complementLabel { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-night-3); }
+.complementLink { margin-top: 0.5rem; font-weight: 600; color: var(--on-night); text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 960px) {
+  .group { grid-template-columns: minmax(0, 1fr); }
+  .groupHead { position: static; }
+}
+@media (max-width: 640px) {
+  .tools { grid-template-columns: minmax(0, 1fr); }
+}
