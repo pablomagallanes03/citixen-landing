@@ -72,7 +72,7 @@ Las URLs legales están declaradas en Google Play y App Store: no cambiarlas.
 
 - `es` (por defecto, sin prefijo), `pt` (`/pt/...`), `en` (`/en/...`). Configuración en `next.config.js` (`i18n`) y `lib/i18n-config.mjs`.
 - Todo texto vive en `content/*.mjs` con la forma `{ es, pt, en }` y la misma estructura en los tres idiomas. Los componentes leen con `useContent(modulo)`.
-- Portugués de Brasil (`pt-BR`). Las traducciones al portugués y al inglés necesitan revisión de un hablante nativo antes del lanzamiento.
+- Portugués de Brasil (`pt-BR`). Las versiones en portugués e inglés se publican sin revisión nativa (decisión de Pablo, 11-nov-2026). No decir que tuvieron revisión nativa.
 
 ## Registro de afirmaciones (protección del despliegue)
 
@@ -140,13 +140,13 @@ npx next lint
 | Item | Prioridad |
 |---|---|
 | Integrar el simulador interactivo tras validar el prototipo (y recalibrar cifras a 1 CC = 1 USD) | Alta |
-| La política de privacidad no menciona los datos de contacto del formulario de piloto o demostración (requiere decisión de Pablo) | Alta, antes de producción |
 | Prueba en un dispositivo físico (iOS y Android) | Alta, antes de producción |
 | Desplegar el backend de `feat/lead-form-simplificado` antes de fusionar esta rama | Alta, bloquea el formulario |
-| Política de privacidad: aplicar la propuesta de `docs/` tras la revisión jurídica | Alta, antes de producción |
+| Política de privacidad: aplicar la propuesta de `docs/` tras la revisión jurídica (preguntas al abogado: https://claude.ai/artifact/D5c2tbtt3SDXyYf4foqZGF) | Alta, antes de producción |
 | `citixen.app` responde 403 «Vercel Security Checkpoint» a lectores de redes y buscadores (visto el 11-nov-2026): revisar el firewall del proyecto en Vercel | Alta |
+| Política de privacidad solo en español: una revisión preliminar con IA (no jurídica) la considera bloqueante para publicar pt/en. Decidir con el abogado | Alta |
 | `content/home.mjs` y `components/home/` quedaron sin uso (home de «El acuerdo») | Baja |
-| Revisión nativa de portugués e inglés | Alta |
+| Revisión nativa de portugués e inglés (se publican sin ella por decisión de Pablo, 11-nov-2026) | Baja |
 | Versión del logo para fondos claros | Media |
 | Confirmar tipografía de titulares (Schibsted Grotesk o licencia) | Media |
 | `www.citixen.app` sirve contenido duplicado: redirigir al dominio principal en Nginx (requiere aprobación) | Media |

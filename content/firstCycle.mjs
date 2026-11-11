@@ -27,7 +27,7 @@ export const firstCycle = {
       interests: { pilot: 'Un piloto', demo: 'Una demostración' },
       submit: 'Enviar pedido',
       sending: 'Enviando…',
-      privacy: 'Al enviar tus datos, aceptás nuestra',
+      privacy: 'Usamos estos datos para responder tu pedido y coordinar la demostración o el piloto. Más información en nuestra',
       privacyLink: 'Política de privacidad',
       success: 'Recibimos tu pedido. Te contactamos para conversar sobre el piloto o la demostración.',
       errors: {
@@ -68,7 +68,7 @@ export const firstCycle = {
       interests: { pilot: 'Um piloto', demo: 'Uma demonstração' },
       submit: 'Enviar pedido',
       sending: 'Enviando…',
-      privacy: 'Ao enviar seus dados, você aceita a nossa',
+      privacy: 'Usamos estes dados para responder ao seu pedido e combinar a demonstração ou o piloto. Mais informações na nossa',
       privacyLink: 'Política de privacidade (em espanhol)',
       success: 'Recebemos o seu pedido. Entraremos em contato para conversar sobre o piloto ou a demonstração.',
       errors: {
@@ -109,7 +109,7 @@ export const firstCycle = {
       interests: { pilot: 'A pilot', demo: 'A demo' },
       submit: 'Send request',
       sending: 'Sending…',
-      privacy: 'By sending your details, you accept our',
+      privacy: 'We use these details to answer your request and arrange the demo or pilot. More information in our',
       privacyLink: 'Privacy policy (in Spanish)',
       success: 'We received your request. We will get in touch to talk about the pilot or the demo.',
       errors: {
