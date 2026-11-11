@@ -4,8 +4,16 @@ import { LOCALES, LOCALE_META, SITE_URL, DEFAULT_LOCALE, localizedPath, useLocal
 // Fuera de producción de Vercel (preview, desarrollo, compilación local) no se indexa.
 const NOINDEX = process.env.SITE_ENV !== 'production'
 
-export default function Seo({ title, description, path = '/', image = '/og-image.png', jsonLd }) {
+// Imagen para redes por idioma (public/og-image-<idioma>.png, 1200 × 630).
+const OG_ALT = {
+  es: 'Citixen: Conocé mejor tu ciudad. Construí su futuro con quienes la viven.',
+  pt: 'Citixen: Conheça melhor a sua cidade. Construa o futuro dela com quem vive nela.',
+  en: 'Citixen: Get to know your city better. Build its future with the people who live there.',
+}
+
+export default function Seo({ title, description, path = '/', image, jsonLd }) {
   const locale = useLocale()
+  image = image || `/og-image-${locale}.png`
   const url = `${SITE_URL}${localizedPath(path, locale)}`
   const imageUrl = image.startsWith('http') ? image : `${SITE_URL}${image}`
 
@@ -29,6 +37,7 @@ export default function Seo({ title, description, path = '/', image = '/og-image
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={OG_ALT[locale] || OG_ALT.es} />
       <meta property="og:locale" content={LOCALE_META[locale].og} />
       {LOCALES.filter((l) => l !== locale).map((l) => (
         <meta key={`og-locale-${l}`} property="og:locale:alternate" content={LOCALE_META[l].og} />
@@ -37,6 +46,7 @@ export default function Seo({ title, description, path = '/', image = '/og-image
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
+      <meta name="twitter:image:alt" content={OG_ALT[locale] || OG_ALT.es} />
 
       {jsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

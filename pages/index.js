@@ -42,12 +42,13 @@ export default function Home() {
     <Layout>
       <Seo title={t.meta.title} description={t.meta.description} path="/" jsonLd={ORGANIZATION_LD} />
       <Hero t={t.hero} places={t.places.list} districts={t.places.districts} labels={t.labels} variant={variant} />
+      {/* Orden: el problema, lo que el municipio puede implementar hoy y lo que suma después. */}
       <Problems t={t.problems} />
+      <StartPath t={t.start} />
+      <Action t={t.action} labels={t.labels} />
       <Places t={t.places} labels={t.labels} />
       <Intelligence t={t.intelligence} labels={t.labels} />
-      <Action t={t.action} labels={t.labels} />
       <Platform t={t.platform} />
-      <StartPath t={t.start} />
       <CivicCredits t={t.civicCredits} />
       <FinalCta t={t.final} form={f.form} />
       {REVIEW && <ReviewBar t={t.review} variants={t.hero.variants} value={variant} onChange={setVariant} />}

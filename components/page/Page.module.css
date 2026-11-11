@@ -184,7 +184,7 @@
 .stepList { list-style: none; display: grid; }
 .stepBlock { padding: 0 0 2rem; margin-bottom: 2rem; border-bottom: 1px solid var(--line); }
 .stepBlock:last-child { border-bottom: 0; margin-bottom: 0; }
-.stepNumber { display: block; margin-bottom: 0.75rem; font-size: 0.8125rem; font-weight: 600; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.stepNumber { display: block; margin-bottom: 0.75rem; font-size: 0.8125rem; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .stepBlock .blockBody { margin-top: 0.6rem; max-width: 46ch; }
 .panelIntro { margin: 0.5rem 0 1.5rem; }
 

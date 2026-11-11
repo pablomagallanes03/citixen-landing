@@ -91,7 +91,7 @@ export default function CitySearch({ t, downloadLabel }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             autoComplete="off"
-            aria-controls={`${listId}-list`}
+            aria-controls={results.length > 0 ? `${listId}-list` : undefined}
             aria-describedby={`${listId}-status`}
           />
           {results.length > 0 && (

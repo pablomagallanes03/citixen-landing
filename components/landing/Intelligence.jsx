@@ -64,7 +64,7 @@ export default function Intelligence({ t, labels }) {
       <div className="wrap">
         <div className={styles.intelHead}>
           <div>
-            <p className={styles.eyebrow}>{t.eyebrow}</p>
+            <p className={styles.eyebrow}>{t.eyebrow} <span className={styles.soonChip}>{labels.soon}</span></p>
             <h2 className={styles.h2}>{t.title}</h2>
             <p className={styles.lead}>{t.lead}</p>
           </div>
@@ -194,6 +194,11 @@ export default function Intelligence({ t, labels }) {
               </div>
             </div>
           )}
+        </div>
+
+        <div className={styles.bridgeLight}>
+          <span className={styles.availableChip}>{labels.available}</span>
+          <div><strong>{t.today.title}</strong> {t.today.body}</div>
         </div>
 
         <ul className={styles.principles}>

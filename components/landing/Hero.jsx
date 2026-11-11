@@ -36,7 +36,7 @@ export default function Hero({ t, places, districts, labels, variant }) {
           <p className={styles.heroLead}>{t.lead}</p>
           <div className={styles.heroActions}>
             <Link href="#demostracion" className="btn-primary">{t.primary}</Link>
-            <Link href="#demostracion" className={styles.ghostNight}>{t.secondary}</Link>
+            <Link href={{ pathname: '/', query: { interes: 'demo' }, hash: 'demostracion' }} className={styles.ghostNight}>{t.secondary}</Link>
           </div>
         </div>
 

@@ -161,7 +161,7 @@ export function StartPath({ t }) {
           </div>
           <div className={styles.startCtas}>
             <Link href="#demostracion" className="btn-primary">{t.cta}</Link>
-            <Link href="#demostracion" className={styles.startSecondary}>{t.secondary}</Link>
+            <Link href={{ pathname: '/', query: { interes: 'demo' }, hash: 'demostracion' }} className={styles.startSecondary}>{t.secondary}</Link>
           </div>
         </div>
         <ol className={styles.startSteps}>

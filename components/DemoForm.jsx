@@ -1,23 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import Pieces from './brand/Pieces'
+import { useLocale } from '../lib/i18n.mjs'
 import styles from './DemoForm.module.css'
 
-// Envía al backend (POST /api/government/register-light → MunicipalLead), con los campos
-// que exige su validador. Solo en producción de Vercel envía de verdad: en preview y
-// desarrollo simula el envío para no crear pedidos reales.
+// Pedido de piloto o de demostración → POST /api/government/register-light (crea un MunicipalLead).
+// Desde nov 2026 pide solo nombre, email institucional, municipio u organismo, país e interés;
+// el resto se conversa después. Requiere el backend con tipo, provincia, ciudad y cargo opcionales
+// (rama feat/lead-form-simplificado): desplegar el backend antes que esta landing.
+// Solo en producción de Vercel envía de verdad: en preview y desarrollo simula el envío.
 const LIVE = process.env.SITE_ENV === 'production'
-const ENTITY_TYPES = ['Municipal', 'Provincial', 'Regional', 'District', 'County', 'Federal']
+const INTERESTS = ['pilot', 'demo']
 
 const EMPTY = {
   representativeName: '',
-  representativeRole: '',
   institutionalEmail: '',
   governmentName: '',
-  entityType: 'Municipal',
   country: '',
-  province: '',
-  city: '',
+  interest: 'pilot',
   _hp: '',
 }
 
@@ -40,9 +41,16 @@ function Field({ name, label, type = 'text', value, onChange, autoComplete, minL
 }
 
 export default function DemoForm({ t }) {
+  const locale = useLocale()
+  const { query } = useRouter()
   const [form, setForm] = useState(EMPTY)
   const [status, setStatus] = useState('idle')
   const [error, setError] = useState('')
+
+  // «Pedir una demostración» llega con ?interes=demo: deja elegida esa opción.
+  useEffect(() => {
+    if (query.interes === 'demo' || query.interes === 'pilot') setForm((prev) => ({ ...prev, interest: query.interes }))
+  }, [query.interes])
 
   const set = (key) => (e) => setForm((prev) => ({ ...prev, [key]: e.target.value }))
 
@@ -61,7 +69,7 @@ export default function DemoForm({ t }) {
       const res = await fetch('/api/government/register-light', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, acceptedTermsAndConditions: true }),
+        body: JSON.stringify({ ...form, locale, acceptedTermsAndConditions: true }),
       })
       if (res.ok) return setStatus('success')
       setStatus('error')
@@ -86,7 +94,7 @@ export default function DemoForm({ t }) {
 
   const f = t.fields
   return (
-    <form className={styles.form} onSubmit={submit} noValidate={false}>
+    <form className={styles.form} onSubmit={submit}>
       {!LIVE && <p className={styles.demo}>{t.demoMode}</p>}
 
       {/* Trampa para bots: invisible para personas */}
@@ -101,24 +109,25 @@ export default function DemoForm({ t }) {
         aria-hidden="true"
       />
 
+      <fieldset className={styles.interest}>
+        <legend>{f.interest}</legend>
+        <div className={styles.choices}>
+          {INTERESTS.map((value) => (
+            <label key={value} className={`${styles.choice} ${form.interest === value ? styles.choiceOn : ''}`}>
+              <input type="radio" name="interest" value={value} checked={form.interest === value} onChange={set('interest')} />
+              <span>{t.interests[value]}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
       <div className={styles.row}>
         <Field name="representativeName" label={f.representativeName} value={form.representativeName} onChange={set('representativeName')} autoComplete="name" />
-        <Field name="representativeRole" label={f.representativeRole} value={form.representativeRole} onChange={set('representativeRole')} autoComplete="organization-title" />
+        <Field name="institutionalEmail" type="email" label={f.institutionalEmail} value={form.institutionalEmail} onChange={set('institutionalEmail')} autoComplete="email" maxLength={120} />
       </div>
-      <Field name="institutionalEmail" type="email" label={f.institutionalEmail} value={form.institutionalEmail} onChange={set('institutionalEmail')} autoComplete="email" maxLength={120} />
       <div className={styles.row}>
         <Field name="governmentName" label={f.governmentName} value={form.governmentName} onChange={set('governmentName')} autoComplete="organization" maxLength={100} />
-        <label className={styles.field}>
-          <span>{f.entityType}</span>
-          <select name="entityType" value={form.entityType} onChange={set('entityType')} required>
-            {ENTITY_TYPES.map((type) => <option key={type} value={type}>{t.entityTypes[type]}</option>)}
-          </select>
-        </label>
-      </div>
-      <div className={styles.row3}>
         <Field name="country" label={f.country} value={form.country} onChange={set('country')} autoComplete="country-name" />
-        <Field name="province" label={f.province} value={form.province} onChange={set('province')} autoComplete="address-level1" />
-        <Field name="city" label={f.city} value={form.city} onChange={set('city')} autoComplete="address-level2" />
       </div>
 
       <button type="submit" className={`btn-primary ${styles.submit}`} disabled={status === 'sending'}>

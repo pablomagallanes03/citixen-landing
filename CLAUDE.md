@@ -19,6 +19,10 @@ Brief aprobado por Pablo (10-nov-2026): https://claude.ai/artifact/TwbATDBS3ZU1N
 - Home, `/plataforma`, `/primer-ciclo` y navegación en español, portugués de Brasil e inglés (11-nov-2026). `spanishFirst` (`lib/draft.mjs`) queda para contenido nuevo sin traducir: `check-content` frena la compilación de producción si un módulo lo usa.
 - CTA principal: «Solicitar un piloto» (navegación, hero, «Empezá por un lugar», `/como-funciona`, `/plataforma`); «Pedir una demostración» es la alternativa. Mismo formulario (`MunicipalLead`), textos de piloto o demostración en `firstCycle.form`.
 - «Plataforma» en la navegación y el pie lleva a `/plataforma` (reescrita por capacidad, con el estado de cada herramienta).
+- Ronda de lanzamiento (11-nov-2026): Citixen se presenta como plataforma con implementación y acompañamiento en los primeros pilotos (no como consultora de encuestas); el piloto es la puerta de entrada, no el límite. Orden de la home: hero → problemas → piloto (lo que se implementa hoy) → de la escucha a la acción → Lugares e inteligencia colectiva (lo que se suma después, con «Próximamente» y un puente «Hoy ya podés») → plataforma → Créditos Cívicos → formulario.
+- Hero sin capacidades futuras en el párrafo; en teléfonos se oculta la fila de cifras de la figura para que el mapa suba.
+- Créditos Cívicos: «siguen los procedimientos administrativos y presupuestarios de tu municipio», nunca «se ejecutan».
+- Imagen para redes por idioma: `public/og-image-{es,pt,en}.png` (1200 × 630), con `og:image:alt`. Se generan con capturas del hero real (mapa y logo del sitio) y las fuentes del sitio; `og-image.png` es copia de la versión en español.
 - La barra «Maqueta» (abajo a la derecha, solo en vista previa) alterna cuatro titulares; `?titular=b` comparte uno.
 - La regla «tampoco la síntesis de respuestas con IA» de «El acuerdo» queda reemplazada: la IA aparece como diferencial, rotulada como demostración conceptual hasta que se resuelvan sus condiciones de privacidad.
 - `currency.local` (1 CC = 1 moneda local) se reemplazó por `currency.usd` (1 CC = 1 USD), alineado con la decisión del 4-nov-2026. Las cifras del simulador se calibraron con 1 CC = $1: no muestran equivalencias en dinero hasta recalibrarlas con aprobación de Pablo.
@@ -93,7 +97,9 @@ La web comunica el modelo completo de Créditos Cívicos V2, que se desarrolla e
 
 ## Formularios y backend
 
-- Formulario de demostración (`components/DemoForm.jsx`) → `POST /api/government/register-light` (crea `MunicipalLead`). Envía los 8 campos que exige el validador del backend, con honeypot `_hp`. Maneja 409 y 429.
+- Formulario de piloto o demostración (`components/DemoForm.jsx`) → `POST /api/government/register-light` (crea `MunicipalLead`). Desde el 11-nov-2026 pide solo nombre, email institucional, municipio u organismo, país e interés (`pilot`/`demo`), y envía el idioma de la página (`locale`) y el honeypot `_hp`. Maneja 409 y 429. `?interes=demo` preselecciona la demostración.
+- **Depende del backend de la rama `feat/lead-form-simplificado`** (tipo, provincia, ciudad y cargo opcionales; `interest` y `locale`; email de confirmación en el idioma del pedido). El backend de producción actual rechaza el formulario nuevo con 400: desplegar el backend antes que esta landing.
+- Propuesta de actualización de la política de privacidad para estos datos: `docs/propuesta-privacidad-formulario-comercial.md` (pendiente de revisión jurídica).
 - Buscador de ciudades (`components/CitySearch.jsx`) → `GET /api/cities?search=` y `GET /api/cities/:slug/stats`.
 - Las llamadas son relativas (`/api/...`). En producción Nginx las envía al backend; en preview y desarrollo lo hace la regla `rewrites` de `next.config.js`, que evita el bloqueo de CORS.
 
@@ -136,11 +142,11 @@ npx next lint
 | Integrar el simulador interactivo tras validar el prototipo (y recalibrar cifras a 1 CC = 1 USD) | Alta |
 | La política de privacidad no menciona los datos de contacto del formulario de piloto o demostración (requiere decisión de Pablo) | Alta, antes de producción |
 | Prueba en un dispositivo físico (iOS y Android) | Alta, antes de producción |
-| El email de confirmación del backend llega solo en español | Media |
+| Desplegar el backend de `feat/lead-form-simplificado` antes de fusionar esta rama | Alta, bloquea el formulario |
+| Política de privacidad: aplicar la propuesta de `docs/` tras la revisión jurídica | Alta, antes de producción |
+| `citixen.app` responde 403 «Vercel Security Checkpoint» a lectores de redes y buscadores (visto el 11-nov-2026): revisar el firewall del proyecto en Vercel | Alta |
 | `content/home.mjs` y `components/home/` quedaron sin uso (home de «El acuerdo») | Baja |
 | Revisión nativa de portugués e inglés | Alta |
-| Imagen para redes (`public/og-image.png` es del diseño anterior) | Media |
 | Versión del logo para fondos claros | Media |
 | Confirmar tipografía de titulares (Schibsted Grotesk o licencia) | Media |
 | `www.citixen.app` sirve contenido duplicado: redirigir al dominio principal en Nginx (requiere aprobación) | Media |
-| Revisar el email automático de confirmación del backend para que hable de «demostración» | Media |
