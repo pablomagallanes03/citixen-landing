@@ -29,7 +29,7 @@ export default function ChildSafety() {
               <div className="legal-meta">
                 <div className="meta-item">
                   <span className="meta-label">Última actualización</span>
-                  <span className="meta-value">27 de mayo de 2026</span>
+                  <span className="meta-value">12 de noviembre de 2026</span>
                 </div>
                 <div className="meta-item">
                   <span className="meta-label">Marco normativo</span>
@@ -109,8 +109,7 @@ export default function ChildSafety() {
                 o conducta vinculada a la seguridad infantil:
               </p>
               <ul>
-                <li><strong>Reporte de contenido in-app:</strong> proyectos, organizaciones, propuestas,
-                  comentarios e iniciativas comunitarias incluyen un botón de denuncia accesible desde
+                <li><strong>Reporte de contenido in-app:</strong> proyectos, organizaciones y comentarios incluyen un botón de denuncia accesible desde
                   el menú de cada elemento. La categoría &ldquo;Seguridad infantil / CSAE&rdquo; está
                   disponible y se procesa con prioridad crítica.</li>
                 <li><strong>Reporte por correo electrónico:</strong> cualquier persona —usuaria o no de
@@ -175,8 +174,10 @@ export default function ChildSafety() {
                   Contenido marcado por el filtro pasa a revisión humana antes de publicarse.</li>
                 <li><strong>Sin mensajería privada entre usuarios desconocidos:</strong> la plataforma
                   no incluye un sistema de mensajería privada general entre ciudadanos. Las
-                  interacciones se desarrollan sobre objetos públicos (proyectos, propuestas,
-                  iniciativas comunitarias) con auditoría completa.</li>
+                  interacciones entre ciudadanos se desarrollan sobre objetos públicos (proyectos,
+                  propuestas y comentarios) con auditoría completa. Los únicos canales privados son
+                  entre un ciudadano y su gobierno local o Citixen (por ejemplo, respuestas a
+                  comunicaciones oficiales o consultas de soporte).</li>
                 <li><strong>Sin contenido para menores:</strong> Citixen no aloja, promociona ni
                   recomienda contenido destinado a menores.</li>
                 <li><strong>Moderación humana:</strong> el equipo de moderación recibe capacitación
