@@ -32,7 +32,7 @@ Brief aprobado por Pablo (10-nov-2026): https://claude.ai/artifact/TwbATDBS3ZU1N
 
 - `citixen.app`: este repo. Nginx en el droplet del backend (`164.92.218.144`) hace reverse-proxy a Vercel para toda ruta que no sea `/api/*`. TLS termina en el droplet.
 - `citixen.app/api/*`: backend (otro repo), mismo dominio.
-- `citixen.org`: `citixen-portal` (iniciativas ciudadanas y Mi Ciudad). No es este repo.
+- `citixen.org`: `citixen-portal`, hoy solo una landing que lleva a citixen.app. No es este repo. Las Iniciativas Ciudadanas se retiraron del producto (nov 2026): no mencionarlas en la landing.
 - `admin.citixen.app` / `government.citixen.app`: paneles (otros repos).
 - `citixen.tech` fue dado de baja. No referenciarlo.
 - El archivo `infra/nginx-citixen.conf` del backend está desactualizado respecto del servidor real. No usarlo como referencia del proxy.
@@ -61,7 +61,7 @@ Dirección creativa «El acuerdo»: *El gobierno habilita. La ciudadanía decide
 | `/` | Home: hero, simulador, tres tiempos, reglas, diferencia, pruebas, plataforma, vecinos, primer ciclo |
 | `/como-funciona` | Créditos Cívicos en detalle + preguntas de gobiernos |
 | `/plataforma` | Capacidades complementarias |
-| `/vecinos` | Para ciudadanos: buscador de ciudad, app, iniciativas en citixen.org |
+| `/vecinos` | Para ciudadanos: buscador de ciudad y app |
 | `/primer-ciclo` | Conversión: pasos + formulario de demostración |
 | `/privacy`, `/terms`, `/account-deletion`, `/child-safety`, `/transparency-methodology` | **Se conservan con sus rutas y contenido.** Solo en español |
 

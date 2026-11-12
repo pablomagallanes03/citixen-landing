@@ -52,11 +52,6 @@ export const neighbors = {
       people: { one: 'vecino ya se sumó', other: 'vecinos ya se sumaron' },
     },
     download: 'Descargá la app',
-    initiatives: {
-      title: '¿Tenés una iniciativa propia?',
-      body: 'En citixen.org podés crear y difundir iniciativas ciudadanas para tu barrio.',
-      link: 'Ir a citixen.org',
-    },
   },
 
   pt: {
@@ -112,11 +107,6 @@ export const neighbors = {
       people: { one: 'morador já entrou', other: 'moradores já entraram' },
     },
     download: 'Baixe o app',
-    initiatives: {
-      title: 'Você tem uma iniciativa própria?',
-      body: 'Em citixen.org você pode criar e divulgar iniciativas cidadãs para o seu bairro.',
-      link: 'Ir para citixen.org',
-    },
   },
 
   en: {
@@ -172,10 +162,5 @@ export const neighbors = {
       people: { one: 'resident has joined', other: 'residents have joined' },
     },
     download: 'Download the app',
-    initiatives: {
-      title: 'Do you have an initiative of your own?',
-      body: 'On citixen.org you can create and share citizen initiatives for your neighborhood.',
-      link: 'Go to citixen.org',
-    },
   },
 }

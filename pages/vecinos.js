@@ -4,7 +4,6 @@ import PageHero from '../components/page/PageHero'
 import CitySearch from '../components/CitySearch'
 import { useContent } from '../lib/i18n.mjs'
 import { neighbors } from '../content/neighbors.mjs'
-import { PORTAL_URL } from '../content/site.mjs'
 import styles from '../components/page/Page.module.css'
 
 export default function Neighbors() {
@@ -46,15 +45,6 @@ export default function Neighbors() {
         </div>
       </section>
 
-      <section className={styles.section}>
-        <div className="wrap reveal">
-          <h2 className={styles.h2}>{t.initiatives.title}</h2>
-          <p className={styles.lead}>{t.initiatives.body}</p>
-          <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer" className={styles.textLink}>
-            {t.initiatives.link} <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </section>
     </Layout>
   )
 }

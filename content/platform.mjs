@@ -5,7 +5,7 @@
 const es = {
   meta: {
     title: 'Plataforma | Citixen',
-    description: 'Opiná, propuestas, iniciativas, Mi Ciudad, comunicación institucional y un panel de gestión. Y lo que llega: Lugares, inteligencia colectiva y CoLab.',
+    description: 'Opiná, propuestas, Mi Ciudad, comunicación institucional y un panel de gestión. Y lo que llega: Lugares, inteligencia colectiva y CoLab.',
   },
   hero: {
     eyebrow: 'Plataforma',
@@ -35,7 +35,7 @@ const es = {
       intro: 'Que los vecinos propongan, prioricen y se sumen.',
       tools: [
         { name: 'Propuestas', status: 'available', body: 'Las ideas de los vecinos, ordenadas.', points: ['Los vecinos proponen y apoyan ideas para su ciudad.', 'Ves qué quiere la ciudad, agrupado por tema.', 'Moderación con filtros automáticos y reportes de la comunidad.'] },
-        { name: 'Consultas para priorizar e iniciativas', status: 'available', body: 'Para ordenar opciones y para lo que los vecinos llevan adelante.', points: ['Los vecinos ordenan opciones y tu municipio publica qué hará.', 'Iniciativas ciudadanas con apoyo y difusión.', 'App para vecinos en Android e iOS.'] },
+        { name: 'Consultas para priorizar', status: 'available', body: 'Para ordenar opciones y decidir en conjunto.', points: ['Los vecinos ordenan opciones y tu municipio publica qué hará.', 'App para vecinos en Android e iOS.'] },
       ],
     },
     {
@@ -70,7 +70,7 @@ const es = {
 const pt = {
   meta: {
     title: 'Plataforma | Citixen',
-    description: 'Consultas e pesquisas, propostas, iniciativas, Mi Ciudad, comunicação institucional e um painel de gestão. E o que vem por aí: Lugares, inteligência coletiva e CoLab.',
+    description: 'Consultas e pesquisas, propostas, Mi Ciudad, comunicação institucional e um painel de gestão. E o que vem por aí: Lugares, inteligência coletiva e CoLab.',
   },
   hero: {
     eyebrow: 'Plataforma',
@@ -100,7 +100,7 @@ const pt = {
       intro: 'Que os cidadãos proponham, priorizem e participem.',
       tools: [
         { name: 'Propostas', status: 'available', body: 'As ideias dos cidadãos, organizadas.', points: ['Os cidadãos propõem e apoiam ideias para a sua cidade.', 'Você vê o que a cidade quer, agrupado por tema.', 'Moderação com filtros automáticos e denúncias da comunidade.'] },
-        { name: 'Consultas para priorizar e iniciativas', status: 'available', body: 'Para ordenar opções e para o que os cidadãos levam adiante.', points: ['Os cidadãos ordenam opções e o seu município publica o que vai fazer.', 'Iniciativas cidadãs com apoio e divulgação.', 'App para cidadãos no Android e no iOS.'] },
+        { name: 'Consultas para priorizar', status: 'available', body: 'Para ordenar opções e decidir em conjunto.', points: ['Os cidadãos ordenam opções e o seu município publica o que vai fazer.', 'App para cidadãos no Android e no iOS.'] },
       ],
     },
     {
@@ -135,7 +135,7 @@ const pt = {
 const en = {
   meta: {
     title: 'Platform | Citixen',
-    description: 'Consultations and surveys, proposals, initiatives, Mi Ciudad, official communications and a management panel. And what is coming: Places, collective intelligence and CoLab.',
+    description: 'Consultations and surveys, proposals, Mi Ciudad, official communications and a management panel. And what is coming: Places, collective intelligence and CoLab.',
   },
   hero: {
     eyebrow: 'Platform',
@@ -165,7 +165,7 @@ const en = {
       intro: 'Let residents propose, prioritize and get involved.',
       tools: [
         { name: 'Proposals', status: 'available', body: 'Residents’ ideas, organized.', points: ['Residents propose and support ideas for their city.', 'You see what the city wants, grouped by topic.', 'Moderation with automatic filters and community reports.'] },
-        { name: 'Consultations to prioritize, and initiatives', status: 'available', body: 'To rank options, and for what residents carry out themselves.', points: ['Residents rank options and your municipality publishes what it will do.', 'Citizen initiatives with support and outreach.', 'App for residents on Android and iOS.'] },
+        { name: 'Consultations to prioritize', status: 'available', body: 'To rank options and decide together.', points: ['Residents rank options and your municipality publishes what it will do.', 'App for residents on Android and iOS.'] },
       ],
     },
     {

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Logo from './Logo'
 import { useContent } from '../lib/i18n.mjs'
-import { site, PLAY_STORE_URL, APP_STORE_URL, PORTAL_URL } from '../content/site.mjs'
+import { site, PLAY_STORE_URL, APP_STORE_URL } from '../content/site.mjs'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -31,7 +31,6 @@ export default function Footer() {
             <li><Link href="/plataforma">{f.links.platform}</Link></li>
             <li><Link href="/vecinos">{f.links.neighbors}</Link></li>
             <li><Link href="/primer-ciclo">{f.links.firstCycle}</Link></li>
-            <li><a href={PORTAL_URL} target="_blank" rel="noopener noreferrer">{f.links.portal}</a></li>
           </ul>
         </nav>
 
