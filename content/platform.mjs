@@ -5,7 +5,7 @@
 const es = {
   meta: {
     title: 'Plataforma | Citixen',
-    description: 'Inteligencia colectiva con IA, Opiná, propuestas, Mi Ciudad, comunicación institucional y un panel de gestión. Y lo que llega: Lugares y CoLab.',
+    description: 'Inteligencia colectiva con IA, Opiná, propuestas, Mi Ciudad, comunicación institucional y un panel de gestión. Y lo que llega: CoLab.',
   },
   hero: {
     eyebrow: 'Plataforma',
@@ -19,7 +19,7 @@ const es = {
       intro: 'Preguntale a tu ciudad donde está la gente.',
       tools: [
         { name: 'Opiná', status: 'available', body: 'Consultas y encuestas con la respuesta pública de tu municipio.', points: ['Consultas verificadas: responden vecinos con cuenta en tu ciudad.', 'Encuestas abiertas, sin crear cuenta, para compartir con QR, WhatsApp y redes.', 'El canal por el que llegó cada respuesta.', 'Al cierre, resultados y la respuesta oficial del municipio.'] },
-        { name: 'Lugares', status: 'soon', body: 'Cada plaza, escuela o centro cultural con su canal permanente y su ficha.', points: ['Un QR fijo en cada lugar para opinar en cualquier momento.', 'La historia, las necesidades y las acciones de cada lugar en un solo sitio.'] },
+        { name: 'Lugares', status: 'available', body: 'Cada plaza, escuela o centro cultural con su canal permanente y su ficha.', points: ['Un QR fijo en cada lugar para opinar en cualquier momento.', 'La historia, las necesidades y las acciones de cada lugar en un solo sitio.'] },
       ],
     },
     {
@@ -70,7 +70,7 @@ const es = {
 const pt = {
   meta: {
     title: 'Plataforma | Citixen',
-    description: 'Inteligência coletiva com IA, consultas e pesquisas, propostas, Mi Ciudad, comunicação institucional e um painel de gestão. E o que vem por aí: Lugares e CoLab.',
+    description: 'Inteligência coletiva com IA, consultas e pesquisas, propostas, Mi Ciudad, comunicação institucional e um painel de gestão. E o que vem por aí: CoLab.',
   },
   hero: {
     eyebrow: 'Plataforma',
@@ -84,7 +84,7 @@ const pt = {
       intro: 'Pergunte à sua cidade onde as pessoas estão.',
       tools: [
         { name: 'Opine', status: 'available', body: 'Consultas e pesquisas com a resposta pública do seu município.', points: ['Consultas verificadas: respondem cidadãos com conta na sua cidade.', 'Pesquisas abertas, sem criar conta, para compartilhar com QR, WhatsApp e redes sociais.', 'O canal por onde chegou cada resposta.', 'No encerramento, resultados e a resposta oficial do município.'] },
-        { name: 'Lugares', status: 'soon', body: 'Cada praça, escola ou centro cultural com o seu canal permanente e a sua ficha.', points: ['Um QR fixo em cada lugar para opinar a qualquer momento.', 'A história, as necessidades e as ações de cada lugar em um só lugar.'] },
+        { name: 'Lugares', status: 'available', body: 'Cada praça, escola ou centro cultural com o seu canal permanente e a sua ficha.', points: ['Um QR fixo em cada lugar para opinar a qualquer momento.', 'A história, as necessidades e as ações de cada lugar em um só lugar.'] },
       ],
     },
     {
@@ -135,7 +135,7 @@ const pt = {
 const en = {
   meta: {
     title: 'Platform | Citixen',
-    description: 'Collective intelligence with AI, consultations and surveys, proposals, Mi Ciudad, official communications and a management panel. And what is coming: Places and CoLab.',
+    description: 'Collective intelligence with AI, consultations and surveys, proposals, Mi Ciudad, official communications and a management panel. And what is coming: CoLab.',
   },
   hero: {
     eyebrow: 'Platform',
@@ -149,7 +149,7 @@ const en = {
       intro: 'Ask your city where people are.',
       tools: [
         { name: 'Have Your Say', status: 'available', body: 'Consultations and surveys with your municipality’s public response.', points: ['Verified consultations: answered by residents with an account in your city.', 'Open surveys, no account needed, to share by QR code, WhatsApp and social media.', 'The channel each response came from.', 'When they close, results and the municipality’s official response.'] },
-        { name: 'Places', status: 'soon', body: 'Every square, school or community center with its own permanent channel and profile.', points: ['A fixed QR code at each place to share an opinion any time.', 'Each place’s history, needs and actions in one spot.'] },
+        { name: 'Places', status: 'available', body: 'Every square, school or community center with its own permanent channel and profile.', points: ['A fixed QR code at each place to share an opinion any time.', 'Each place’s history, needs and actions in one spot.'] },
       ],
     },
     {
