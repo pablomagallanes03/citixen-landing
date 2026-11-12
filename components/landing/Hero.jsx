@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { PANEL_SIGNUP_URL } from '../../lib/urls.mjs'
 import CityMap, { MAP_W, MAP_H } from './CityMap'
 import PlaceIcon from './PlaceIcon'
 import styles from './Landing.module.css'
@@ -35,8 +36,8 @@ export default function Hero({ t, places, districts, labels, variant }) {
           <h1 className={styles.heroTitle} key={variant}>{title}</h1>
           <p className={styles.heroLead}>{t.lead}</p>
           <div className={styles.heroActions}>
-            <Link href="#demostracion" className="btn-primary">{t.primary}</Link>
-            <Link href={{ pathname: '/', query: { interes: 'demo' }, hash: 'demostracion' }} className={styles.ghostNight}>{t.secondary}</Link>
+            <a href={PANEL_SIGNUP_URL} className="btn-primary">{t.primary}</a>
+            <Link href="#demostracion" className={styles.ghostNight}>{t.secondary}</Link>
           </div>
         </div>
 
