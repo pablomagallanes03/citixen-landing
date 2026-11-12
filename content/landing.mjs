@@ -2,7 +2,8 @@
 //
 // Reglas de este contenido:
 //  - Solo dos estados públicos: «Disponible hoy» y «Próximamente».
-//  - La inteligencia colectiva se muestra como demostración conceptual, con datos ficticios.
+//  - La inteligencia colectiva está disponible (plan gratuito: 1.000 aportes por mes, decisión de Pablo
+//    del 12-nov-2026). El ejemplo interactivo sigue usando datos ficticios.
 //  - Valle Norte es una ciudad ficticia. Ninguna cifra es real. No hay clientes ni testimonios.
 //  - Sin promesas absolutas: no se promete anonimato, ni que nada falle, ni que algo sirva en cualquier jurisdicción.
 //  - «Devolución» no se usa: se dice «respuesta del municipio».
@@ -56,7 +57,7 @@ const placesOf = (cardFields) => ({ districts: DISTRICTS, ...cardFields })
 const es = {
   meta: {
     title: 'Citixen | Conocé mejor tu ciudad',
-    description: 'Citixen conecta a los gobiernos locales con el conocimiento de sus vecinos: escucha ciudadana, participación, cocreación y acción pública visible.',
+    description: 'Citixen escucha a tu ciudad y, con inteligencia artificial, convierte lo que dicen los vecinos en temas, acuerdos y prioridades claras para decidir y actuar.',
   },
   labels: {
     soon: 'Próximamente',
@@ -74,7 +75,7 @@ const es = {
       { id: 'c', title: 'Cada lugar de tu ciudad tiene algo para contarte.' },
       { id: 'd', title: 'Gobernar con lo que sabe tu ciudad.' },
     ],
-    lead: 'Citixen conecta a tu gobierno con lo que pasa en sus plazas, barrios y espacios públicos. Escuchá a tu comunidad, conocé sus necesidades y mostrá cómo responde tu gestión.',
+    lead: 'Citixen escucha a tu comunidad en sus plazas, barrios y espacios públicos. Con inteligencia artificial, convierte cientos de opiniones en temas, acuerdos y prioridades claras, cada uno con las respuestas que lo respaldan. Y muestra cómo responde tu gestión.',
     primary: 'Empezar gratis',
     secondary: 'Solicitar un piloto',
     summaryLabel: 'Valle Norte · este mes',
@@ -147,9 +148,9 @@ const es = {
   intelligence: {
     eyebrow: 'Inteligencia colectiva',
     title: 'De opiniones sueltas a conocimiento para decidir.',
-    lead: 'Así va a funcionar la lectura de respuestas abiertas con inteligencia artificial, siempre con las respuestas que respaldan cada conclusión. Probala con una consulta de ejemplo.',
-    today: { title: 'Hoy ya podés', body: 'ver los resultados de cada pregunta cerrada, leer cada respuesta abierta y publicar la respuesta de tu municipio.' },
-    disclaimer: 'Datos ficticios. Esta capacidad todavía no está disponible.',
+    lead: 'La inteligencia artificial lee todas las respuestas abiertas y las ordena en temas, acuerdos, desacuerdos y voces minoritarias. Cada conclusión viene con las respuestas que la respaldan. Probala con una consulta de ejemplo.',
+    today: { title: 'Incluida en el plan gratuito:', body: 'tu municipio analiza con inteligencia artificial hasta 1.000 aportes por mes. Los que pasen ese límite se analizan el mes siguiente.' },
+    disclaimer: 'Ejemplo con una consulta de una ciudad ficticia.',
     exampleLabel: 'Consulta de ejemplo',
     question: '¿Qué cambiarías del Parque Costanera?',
     responsesLabel: 'respuestas abiertas',
@@ -211,7 +212,7 @@ const es = {
     principles: [
       { title: 'Cada conclusión, con sus citas', body: 'Ningún tema aparece sin las respuestas que lo respaldan, y cualquiera se puede revisar.' },
       { title: 'La IA asiste, tu equipo decide', body: 'La inteligencia artificial ordena y resume. Las decisiones son de las personas.' },
-      { title: 'Cuidado con los datos', body: 'Antes del análisis se van a buscar y quitar nombres y datos de contacto. Ningún sistema detecta todo, por eso tu equipo revisa. Los aportes de lugares de atención no se van a enviar a proveedores externos de inteligencia artificial.' },
+      { title: 'Cuidado con los datos', body: 'Antes del análisis se buscan y quitan nombres y datos de contacto. Ningún sistema detecta todo, por eso tu equipo revisa. Los aportes de lugares de atención no se envían a proveedores externos de inteligencia artificial.' },
     ],
   },
   action: {
@@ -278,7 +279,7 @@ const es = {
     more: 'Ver la plataforma en detalle',
     items: [
       { id: 'listen', name: 'Escuchar', available: ['Encuestas abiertas con QR y WhatsApp, sin crear cuenta', 'Consultas con respuesta del municipio', 'De qué canal llegó cada respuesta'], soon: ['Un canal permanente para cada Lugar'] },
-      { id: 'understand', name: 'Comprender', available: ['Resultados de preguntas cerradas', 'Lectura de cada respuesta abierta', 'Reporte mensual de participación'], soon: ['Temas, acuerdos y voces minoritarias con IA', 'Evolución de las necesidades'] },
+      { id: 'understand', name: 'Comprender', available: ['Resultados de preguntas cerradas', 'Temas, acuerdos y voces minoritarias con IA, con sus citas', 'Cómo cambian los temas mes a mes', 'Reporte mensual de participación'], soon: ['Necesidades que se repiten entre lugares'] },
       { id: 'participate', name: 'Participar', available: ['Propuestas con apoyos de vecinos', 'Consultas para priorizar entre opciones', 'App para vecinos en iOS y Android'], soon: [] },
       { id: 'cocreate', name: 'Cocrear', available: [], soon: ['CoLab: procesos de cocreación por etapas, con reglas anunciadas'], meanwhile: 'Mientras tanto, los vecinos pueden proponer y priorizar con las herramientas de Participar.' },
       { id: 'act', name: 'Actuar y mostrar', available: ['Obras con estado público', 'Avisos institucionales', 'Portal Mi Ciudad e índice de transparencia'], soon: ['Necesidades vinculadas a acciones', 'Fichas de Lugares'] },
@@ -290,14 +291,14 @@ const es = {
     lead: 'Un piloto acotado, que implementamos y acompañamos junto a tu equipo con lo que ya está disponible hoy. Es el comienzo: con la misma plataforma después sumás lugares, comunidades y procesos participativos.',
     steps: [
       { title: 'Elegimos juntos un espacio público', body: 'Una plaza, un parque o un centro cultural que tu equipo quiera conocer mejor.' },
-      { title: 'Escuchás a quienes lo usan', body: 'Con una encuesta abierta: QR en el lugar, WhatsApp y redes. Se responde sin crear una cuenta.' },
-      { title: 'Ordenamos los resultados disponibles', body: 'Los resultados de cada pregunta, cada respuesta abierta y el canal por el que llegó.' },
+      { title: 'Escuchás a quienes lo usan', body: 'Con un QR en el lugar, WhatsApp y redes. Se responde sin crear una cuenta.' },
+      { title: 'La IA ordena lo que dijeron', body: 'Temas, acuerdos y desacuerdos, cada uno con las respuestas que lo respaldan, y el canal por el que llegó cada una.' },
       { title: 'Publicás la respuesta institucional', body: 'Tu municipio cuenta qué va a hacer con lo que dijeron los vecinos, junto a los resultados.' },
       { title: 'Mostrás qué hizo tu municipio', body: 'Las obras con su estado en Mi Ciudad y el reporte del mes para comunicarlo.' },
     ],
     outcomesTitle: 'Al terminar el piloto tenés',
     outcomes: [
-      'Las respuestas que llegaron, ordenadas por pregunta y por canal',
+      'Lo que dijeron los vecinos, ordenado en temas con sus citas',
       'La respuesta de tu municipio, publicada',
       'Un reporte para mostrar lo hecho dentro y fuera de tu gestión',
     ],
@@ -308,7 +309,7 @@ const es = {
       { title: 'Las reglas se anuncian antes', body: 'Cada encuesta y consulta dice para qué se usa lo que se responde y si es vinculante.' },
       { title: 'Respuestas, no personas', body: 'Cuando no se puede comprobar quién respondió, contamos respuestas y aportes, no personas.' },
       { title: 'Lo publicado deja registro', body: 'Un aviso del municipio no se edita después de enviado: si tiene un error, se publica una rectificación vinculada. Las respuestas a encuestas guardan sus versiones.' },
-      { title: 'Inteligencia artificial con límites', body: 'Cuando la sumes, cada tema va a mostrar las respuestas que lo respaldan. No decide ni califica a las personas.' },
+      { title: 'Inteligencia artificial con límites', body: 'Cada tema muestra las respuestas que lo respaldan. La IA ordena y resume: no decide ni califica a las personas.' },
     ],
   },
   civicCredits: {
@@ -337,7 +338,7 @@ const es = {
 const pt = {
   meta: {
     title: 'Citixen | Conheça melhor a sua cidade',
-    description: 'O Citixen conecta governos locais ao conhecimento dos seus cidadãos: escuta cidadã, participação, cocriação e ação pública visível.',
+    description: 'O Citixen escuta a sua cidade e, com inteligência artificial, transforma o que os cidadãos dizem em temas, acordos e prioridades claras para decidir e agir.',
   },
   labels: {
     soon: 'Em breve',
@@ -355,7 +356,7 @@ const pt = {
       { id: 'c', title: 'Cada lugar da sua cidade tem algo a contar.' },
       { id: 'd', title: 'Governar com o que a sua cidade sabe.' },
     ],
-    lead: 'O Citixen conecta o seu governo ao que acontece nas praças, bairros e espaços públicos. Ouça a sua comunidade, conheça as necessidades dela e mostre como a sua gestão responde.',
+    lead: 'O Citixen escuta a sua comunidade nas praças, bairros e espaços públicos. Com inteligência artificial, transforma centenas de opiniões em temas, acordos e prioridades claras, cada um com as respostas que o sustentam. E mostra como a sua gestão responde.',
     primary: 'Começar grátis',
     secondary: 'Solicitar um piloto',
     summaryLabel: 'Valle Norte · este mês',
@@ -428,9 +429,9 @@ const pt = {
   intelligence: {
     eyebrow: 'Inteligência coletiva',
     title: 'De opiniões soltas a conhecimento para decidir.',
-    lead: 'É assim que vai funcionar a leitura de respostas abertas com inteligência artificial, sempre com as respostas que sustentam cada conclusão. Experimente com uma consulta de exemplo.',
-    today: { title: 'Hoje você já pode', body: 'ver os resultados de cada pergunta fechada, ler cada resposta aberta e publicar a resposta do seu município.' },
-    disclaimer: 'Dados fictícios. Este recurso ainda não está disponível.',
+    lead: 'A inteligência artificial lê todas as respostas abertas e as organiza em temas, acordos, desacordos e vozes minoritárias. Cada conclusão vem com as respostas que a sustentam. Experimente com uma consulta de exemplo.',
+    today: { title: 'Incluída no plano gratuito:', body: 'o seu município analisa com inteligência artificial até 1.000 contribuições por mês. As que passarem desse limite são analisadas no mês seguinte.' },
+    disclaimer: 'Exemplo com uma consulta de uma cidade fictícia.',
     exampleLabel: 'Consulta de exemplo',
     question: 'O que você mudaria no Parque Costanera?',
     responsesLabel: 'respostas abertas',
@@ -492,7 +493,7 @@ const pt = {
     principles: [
       { title: 'Cada conclusão, com suas citações', body: 'Nenhum tema aparece sem as respostas que o sustentam, e qualquer um pode ser revisado.' },
       { title: 'A IA ajuda, a sua equipe decide', body: 'A inteligência artificial organiza e resume. As decisões são das pessoas.' },
-      { title: 'Cuidado com os dados', body: 'Antes da análise, nomes e dados de contato vão ser buscados e removidos. Nenhum sistema detecta tudo, por isso a sua equipe revisa. As contribuições de locais de atendimento não vão ser enviadas a provedores externos de inteligência artificial.' },
+      { title: 'Cuidado com os dados', body: 'Antes da análise, nomes e dados de contato são buscados e removidos. Nenhum sistema detecta tudo, por isso a sua equipe revisa. As contribuições de locais de atendimento não são enviadas a provedores externos de inteligência artificial.' },
     ],
   },
   action: {
@@ -559,7 +560,7 @@ const pt = {
     more: 'Ver a plataforma em detalhe',
     items: [
       { id: 'listen', name: 'Ouvir', available: ['Pesquisas abertas com QR e WhatsApp, sem criar conta', 'Consultas com resposta do município', 'Por qual canal chegou cada resposta'], soon: ['Um canal permanente para cada Lugar'] },
-      { id: 'understand', name: 'Compreender', available: ['Resultados de perguntas fechadas', 'Leitura de cada resposta aberta', 'Relatório mensal de participação'], soon: ['Temas, acordos e vozes minoritárias com IA', 'Evolução das necessidades'] },
+      { id: 'understand', name: 'Compreender', available: ['Resultados de perguntas fechadas', 'Temas, acordos e vozes minoritárias com IA, com suas citações', 'Como os temas mudam mês a mês', 'Relatório mensal de participação'], soon: ['Necessidades que se repetem entre lugares'] },
       { id: 'participate', name: 'Participar', available: ['Propostas com apoios de cidadãos', 'Consultas para priorizar entre opções', 'App para cidadãos no iOS e no Android'], soon: [] },
       { id: 'cocreate', name: 'Cocriar', available: [], soon: ['CoLab: processos de cocriação por etapas, com regras anunciadas'], meanwhile: 'Enquanto isso, os cidadãos podem propor e priorizar com os recursos de Participar.' },
       { id: 'act', name: 'Agir e mostrar', available: ['Obras com status público', 'Avisos institucionais', 'Portal Mi Ciudad e índice de transparência'], soon: ['Necessidades vinculadas a ações', 'Fichas de Lugares'] },
@@ -571,14 +572,14 @@ const pt = {
     lead: 'Um piloto delimitado, que implantamos e acompanhamos com a sua equipe usando o que já está disponível hoje. É o começo: com a mesma plataforma, depois você inclui lugares, comunidades e processos participativos.',
     steps: [
       { title: 'Escolhemos juntos um espaço público', body: 'Uma praça, um parque ou um centro cultural que a sua equipe queira conhecer melhor.' },
-      { title: 'Você ouve quem o usa', body: 'Com uma pesquisa aberta: QR no local, WhatsApp e redes sociais. Responde-se sem criar conta.' },
-      { title: 'Organizamos os resultados disponíveis', body: 'Os resultados de cada pergunta, cada resposta aberta e o canal por onde chegou.' },
+      { title: 'Você ouve quem o usa', body: 'Com um QR no local, WhatsApp e redes sociais. Responde-se sem criar conta.' },
+      { title: 'A IA organiza o que disseram', body: 'Temas, acordos e desacordos, cada um com as respostas que o sustentam, e o canal por onde chegou cada uma.' },
       { title: 'Você publica a resposta institucional', body: 'O seu município conta o que vai fazer com o que os cidadãos disseram, junto aos resultados.' },
       { title: 'Você mostra o que o seu município fez', body: 'As obras com o seu status no Mi Ciudad e o relatório do mês para comunicar.' },
     ],
     outcomesTitle: 'Ao terminar o piloto, você tem',
     outcomes: [
-      'As respostas recebidas, organizadas por pergunta e por canal',
+      'O que os cidadãos disseram, organizado em temas com suas citações',
       'A resposta do seu município, publicada',
       'Um relatório para mostrar o que foi feito dentro e fora da sua gestão',
     ],
@@ -589,7 +590,7 @@ const pt = {
       { title: 'As regras são anunciadas antes', body: 'Cada pesquisa e consulta informa para que serve o que se responde e se é vinculante.' },
       { title: 'Respostas, não pessoas', body: 'Quando não é possível comprovar quem respondeu, contamos respostas e contribuições, não pessoas.' },
       { title: 'O que é publicado deixa registro', body: 'Um aviso do município não é editado depois de enviado: se tiver um erro, é publicada uma retificação vinculada. As respostas a pesquisas guardam as suas versões.' },
-      { title: 'Inteligência artificial com limites', body: 'Quando você incluir esse recurso, cada tema vai mostrar as respostas que o sustentam. Ela não decide nem avalia pessoas.' },
+      { title: 'Inteligência artificial com limites', body: 'Cada tema mostra as respostas que o sustentam. A IA organiza e resume: não decide nem avalia pessoas.' },
     ],
   },
   civicCredits: {
@@ -618,7 +619,7 @@ const pt = {
 const en = {
   meta: {
     title: 'Citixen | Get to know your city better',
-    description: 'Citixen connects local governments with what their residents know: civic listening, participation, co-creation and visible public action.',
+    description: 'Citixen listens to your city and, with artificial intelligence, turns what residents say into clear topics, agreements and priorities to decide and act on.',
   },
   labels: {
     soon: 'Coming soon',
@@ -636,7 +637,7 @@ const en = {
       { id: 'c', title: 'Every place in your city has something to tell you.' },
       { id: 'd', title: 'Govern with what your city knows.' },
     ],
-    lead: 'Citixen connects your government with what happens in its squares, neighborhoods and public spaces. Listen to your community, understand its needs and show how your administration responds.',
+    lead: 'Citixen listens to your community in its squares, neighborhoods and public spaces. With artificial intelligence, it turns hundreds of opinions into clear topics, agreements and priorities, each backed by the responses behind it. And it shows how your administration responds.',
     primary: 'Start for free',
     secondary: 'Request a pilot',
     summaryLabel: 'Valle Norte · this month',
@@ -709,9 +710,9 @@ const en = {
   intelligence: {
     eyebrow: 'Collective intelligence',
     title: 'From scattered opinions to knowledge you can act on.',
-    lead: 'This is how reading open responses with artificial intelligence will work, always with the responses behind every conclusion. Try it with an example consultation.',
-    today: { title: 'Today you can already', body: 'see the results of each closed question, read every open response and publish your municipality’s response.' },
-    disclaimer: 'Fictional data. This capability is not available yet.',
+    lead: 'Artificial intelligence reads every open response and organizes it into topics, agreements, disagreements and minority voices. Every conclusion comes with the responses behind it. Try it with an example consultation.',
+    today: { title: 'Included in the free plan:', body: 'your municipality analyzes up to 1,000 contributions a month with artificial intelligence. Anything above that limit is analyzed the following month.' },
+    disclaimer: 'Example with a consultation from a fictional city.',
     exampleLabel: 'Example consultation',
     question: 'What would you change about Parque Costanera?',
     responsesLabel: 'open responses',
@@ -773,7 +774,7 @@ const en = {
     principles: [
       { title: 'Every conclusion, with its quotes', body: 'No topic appears without the responses behind it, and any of them can be checked.' },
       { title: 'AI assists, your team decides', body: 'Artificial intelligence organizes and summarizes. Decisions are made by people.' },
-      { title: 'Care with data', body: 'Before the analysis, names and contact details will be searched for and removed. No system catches everything, so your team reviews. Contributions from care facilities will not be sent to external artificial intelligence providers.' },
+      { title: 'Care with data', body: 'Before the analysis, names and contact details are searched for and removed. No system catches everything, so your team reviews. Contributions from care facilities are not sent to external artificial intelligence providers.' },
     ],
   },
   action: {
@@ -840,7 +841,7 @@ const en = {
     more: 'See the platform in detail',
     items: [
       { id: 'listen', name: 'Listen', available: ['Open surveys with QR codes and WhatsApp, no account needed', 'Consultations with a response from the municipality', 'Which channel each response came from'], soon: ['A permanent channel for each Place'] },
-      { id: 'understand', name: 'Understand', available: ['Results for closed questions', 'Reading every open response', 'Monthly participation report'], soon: ['Topics, agreements and minority voices with AI', 'How needs evolve'] },
+      { id: 'understand', name: 'Understand', available: ['Results for closed questions', 'Topics, agreements and minority voices with AI, with their quotes', 'How topics change month by month', 'Monthly participation report'], soon: ['Needs that repeat across places'] },
       { id: 'participate', name: 'Participate', available: ['Proposals with residents’ support', 'Consultations to prioritize between options', 'App for residents on iOS and Android'], soon: [] },
       { id: 'cocreate', name: 'Co-create', available: [], soon: ['CoLab: co-creation processes in stages, under announced rules'], meanwhile: 'In the meantime, residents can propose and prioritize with the Participate tools.' },
       { id: 'act', name: 'Act and show', available: ['Public works with a public status', 'Official notices', 'Mi Ciudad portal and transparency index'], soon: ['Needs linked to actions', 'Places profiles'] },
@@ -852,14 +853,14 @@ const en = {
     lead: 'A focused pilot that we set up and support together with your team, using what is available today. It is a starting point: with the same platform you then add places, communities and participatory processes.',
     steps: [
       { title: 'We choose a public space together', body: 'A square, a park or a community center your team wants to understand better.' },
-      { title: 'You listen to the people who use it', body: 'With an open survey: a QR code on site, WhatsApp and social media. No account needed to respond.' },
-      { title: 'We organize the available results', body: 'The results for each question, every open response and the channel it came from.' },
+      { title: 'You listen to the people who use it', body: 'With a QR code on site, WhatsApp and social media. No account needed to respond.' },
+      { title: 'AI organizes what people said', body: 'Topics, agreements and disagreements, each with the responses behind it, and the channel each one came from.' },
       { title: 'You publish the official response', body: 'Your municipality shares what it will do with what residents said, alongside the results.' },
       { title: 'You show what your municipality did', body: 'Public works with their status on Mi Ciudad, and the monthly report to share it.' },
     ],
     outcomesTitle: 'At the end of the pilot you have',
     outcomes: [
-      'The responses received, organized by question and by channel',
+      'What residents said, organized into topics with their quotes',
       'Your municipality’s response, published',
       'A report to show what was done inside and outside your administration',
     ],
@@ -870,7 +871,7 @@ const en = {
       { title: 'Rules are announced first', body: 'Every survey and consultation states what the answers will be used for and whether it is binding.' },
       { title: 'Responses, not people', body: 'When it can’t be verified who responded, we count responses and contributions, not people.' },
       { title: 'What is published leaves a record', body: 'A notice from the municipality isn’t edited once sent: if it has an error, a linked correction is published. Responses to surveys keep their versions.' },
-      { title: 'Artificial intelligence with limits', body: 'When you add it, every topic will show the responses behind it. It doesn’t decide and doesn’t rate people.' },
+      { title: 'Artificial intelligence with limits', body: 'Every topic shows the responses behind it. AI organizes and summarizes: it doesn’t decide and doesn’t rate people.' },
     ],
   },
   civicCredits: {

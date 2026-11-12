@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Logo from './Logo'
+import { SHOW_CIVIC_CREDITS, SHOW_NEIGHBORS_PAGE } from '../lib/features'
 import { useContent } from '../lib/i18n.mjs'
 import { site, PLAY_STORE_URL, APP_STORE_URL } from '../content/site.mjs'
 import styles from './Footer.module.css'
@@ -27,9 +28,9 @@ export default function Footer() {
         <nav aria-label={f.sections.product} className={styles.col}>
           <h2 className={styles.heading}>{f.sections.product}</h2>
           <ul>
-            <li><Link href="/como-funciona">{f.links.howItWorks}</Link></li>
+            {SHOW_CIVIC_CREDITS && <li><Link href="/como-funciona">{f.links.howItWorks}</Link></li>}
             <li><Link href="/plataforma">{f.links.platform}</Link></li>
-            <li><Link href="/vecinos">{f.links.neighbors}</Link></li>
+            {SHOW_NEIGHBORS_PAGE && <li><Link href="/vecinos">{f.links.neighbors}</Link></li>}
             <li><Link href="/primer-ciclo">{f.links.firstCycle}</Link></li>
           </ul>
         </nav>

@@ -5,7 +5,7 @@
 const es = {
   meta: {
     title: 'Plataforma | Citixen',
-    description: 'Opiná, propuestas, Mi Ciudad, comunicación institucional y un panel de gestión. Y lo que llega: Lugares, inteligencia colectiva y CoLab.',
+    description: 'Inteligencia colectiva con IA, Opiná, propuestas, Mi Ciudad, comunicación institucional y un panel de gestión. Y lo que llega: Lugares y CoLab.',
   },
   hero: {
     eyebrow: 'Plataforma',
@@ -26,8 +26,8 @@ const es = {
       name: 'Comprender',
       intro: 'Del dato suelto a algo que tu equipo puede usar.',
       tools: [
+        { name: 'Inteligencia colectiva', status: 'available', body: 'La inteligencia artificial lee todas las respuestas abiertas y las ordena, siempre con las citas que respaldan cada conclusión.', points: ['Temas que surgen, acuerdos y desacuerdos.', 'Voces minoritarias que el promedio no muestra.', 'Cómo cambian los temas mes a mes.', 'Incluida en el plan gratuito: hasta 1.000 aportes por mes.', 'La IA ordena y resume; las decisiones son de tu equipo.'] },
         { name: 'Resultados y reporte mensual', status: 'available', body: 'Lo que respondieron, claro y listo para comunicar.', points: ['Resultados de cada pregunta cerrada.', 'Lectura de cada respuesta abierta.', 'Un reporte mensual en PDF para el concejo o la prensa.'] },
-        { name: 'Inteligencia colectiva', status: 'soon', body: 'Lectura de respuestas abiertas con inteligencia artificial, siempre con las citas que la respaldan.', points: ['Temas que surgen, acuerdos y desacuerdos.', 'Voces minoritarias que el promedio no muestra.', 'Necesidades que se repiten entre lugares y cómo cambian en el tiempo.', 'La IA ordena y resume; las decisiones son de tu equipo.'] },
       ],
     },
     {
@@ -56,7 +56,7 @@ const es = {
   ],
   team: {
     name: 'Para tu equipo',
-    tool: { name: 'Panel de gestión', status: 'available', body: 'La operación del municipio, ordenada.', points: ['Cada funcionario con su cuenta y su perfil: revisión, proyectos, tesorería y comunicación.', 'Registro de auditoría con autor, fecha y motivo de las acciones sensibles.', 'Expedientes de vecinos y organizaciones, y un mapa de la ciudad.'] },
+    tool: { name: 'Panel de gestión', status: 'available', body: 'La operación del municipio, ordenada.', points: ['Cada funcionario con su cuenta y su perfil: revisión, proyectos y comunicación.', 'Registro de auditoría con autor, fecha y motivo de las acciones sensibles.', 'Expedientes de vecinos y organizaciones, y un mapa de la ciudad.'] },
   },
   complement: {
     label: 'Capacidad complementaria',
@@ -70,7 +70,7 @@ const es = {
 const pt = {
   meta: {
     title: 'Plataforma | Citixen',
-    description: 'Consultas e pesquisas, propostas, Mi Ciudad, comunicação institucional e um painel de gestão. E o que vem por aí: Lugares, inteligência coletiva e CoLab.',
+    description: 'Inteligência coletiva com IA, consultas e pesquisas, propostas, Mi Ciudad, comunicação institucional e um painel de gestão. E o que vem por aí: Lugares e CoLab.',
   },
   hero: {
     eyebrow: 'Plataforma',
@@ -91,8 +91,8 @@ const pt = {
       name: 'Compreender',
       intro: 'Do dado solto a algo que a sua equipe pode usar.',
       tools: [
+        { name: 'Inteligência coletiva', status: 'available', body: 'A inteligência artificial lê todas as respostas abertas e as organiza, sempre com as citações que sustentam cada conclusão.', points: ['Temas que surgem, acordos e desacordos.', 'Vozes minoritárias que a média não mostra.', 'Como os temas mudam mês a mês.', 'Incluída no plano gratuito: até 1.000 contribuições por mês.', 'A IA organiza e resume; as decisões são da sua equipe.'] },
         { name: 'Resultados e relatório mensal', status: 'available', body: 'O que responderam, claro e pronto para comunicar.', points: ['Resultados de cada pergunta fechada.', 'Leitura de cada resposta aberta.', 'Um relatório mensal em PDF para a câmara ou a imprensa.'] },
-        { name: 'Inteligência coletiva', status: 'soon', body: 'Leitura de respostas abertas com inteligência artificial, sempre com as citações que a sustentam.', points: ['Temas que surgem, acordos e desacordos.', 'Vozes minoritárias que a média não mostra.', 'Necessidades que se repetem entre lugares e como mudam com o tempo.', 'A IA organiza e resume; as decisões são da sua equipe.'] },
       ],
     },
     {
@@ -121,7 +121,7 @@ const pt = {
   ],
   team: {
     name: 'Para a sua equipe',
-    tool: { name: 'Painel de gestão', status: 'available', body: 'A operação do município, organizada.', points: ['Cada servidor com a sua conta e o seu perfil: revisão, projetos, tesouraria e comunicação.', 'Registro de auditoria com autor, data e motivo das ações sensíveis.', 'Fichas de cidadãos e organizações, e um mapa da cidade.'] },
+    tool: { name: 'Painel de gestão', status: 'available', body: 'A operação do município, organizada.', points: ['Cada servidor com a sua conta e o seu perfil: revisão, projetos e comunicação.', 'Registro de auditoria com autor, data e motivo das ações sensíveis.', 'Fichas de cidadãos e organizações, e um mapa da cidade.'] },
   },
   complement: {
     label: 'Recurso complementar',
@@ -135,7 +135,7 @@ const pt = {
 const en = {
   meta: {
     title: 'Platform | Citixen',
-    description: 'Consultations and surveys, proposals, Mi Ciudad, official communications and a management panel. And what is coming: Places, collective intelligence and CoLab.',
+    description: 'Collective intelligence with AI, consultations and surveys, proposals, Mi Ciudad, official communications and a management panel. And what is coming: Places and CoLab.',
   },
   hero: {
     eyebrow: 'Platform',
@@ -156,8 +156,8 @@ const en = {
       name: 'Understand',
       intro: 'From loose data to something your team can use.',
       tools: [
+        { name: 'Collective intelligence', status: 'available', body: 'Artificial intelligence reads every open response and organizes it, always with the quotes behind each conclusion.', points: ['Emerging topics, agreements and disagreements.', 'Minority voices the average doesn’t show.', 'How topics change month by month.', 'Included in the free plan: up to 1,000 contributions a month.', 'AI organizes and summarizes; decisions stay with your team.'] },
         { name: 'Results and monthly report', status: 'available', body: 'What people answered, clear and ready to share.', points: ['Results for each closed question.', 'Reading every open response.', 'A monthly PDF report for the council or the press.'] },
-        { name: 'Collective intelligence', status: 'soon', body: 'Reading open responses with artificial intelligence, always with the quotes behind it.', points: ['Emerging topics, agreements and disagreements.', 'Minority voices the average doesn’t show.', 'Needs that come up across places and how they change over time.', 'AI organizes and summarizes; decisions stay with your team.'] },
       ],
     },
     {
@@ -186,7 +186,7 @@ const en = {
   ],
   team: {
     name: 'For your team',
-    tool: { name: 'Management panel', status: 'available', body: 'Your municipality’s operations, organized.', points: ['Each official with their own account and role: review, projects, treasury and communications.', 'Audit log with who, when and why for sensitive actions.', 'Records for residents and organizations, and a map of the city.'] },
+    tool: { name: 'Management panel', status: 'available', body: 'Your municipality’s operations, organized.', points: ['Each official with their own account and role: review, projects and communications.', 'Audit log with who, when and why for sensitive actions.', 'Records for residents and organizations, and a map of the city.'] },
   },
   complement: {
     label: 'Complementary capability',
