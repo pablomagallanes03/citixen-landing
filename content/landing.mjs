@@ -225,7 +225,6 @@ const es = {
         items: [
           { title: 'Propuestas ciudadanas', body: 'Un vecino propone y otros la apoyan. Tu equipo ve qué temas mueven a la ciudad.' },
           { title: 'Consultas para priorizar', body: 'Los vecinos ordenan opciones y tu municipio publica qué hará con el resultado.' },
-          { title: 'Iniciativas comunitarias', body: 'Proyectos que los propios vecinos llevan adelante.' },
         ],
         proposal: { title: 'Huerta comunitaria en el Paseo del Río', supports: '128 apoyos', tag: 'Ambiente' },
       },
@@ -280,7 +279,7 @@ const es = {
     items: [
       { id: 'listen', name: 'Escuchar', available: ['Encuestas abiertas con QR y WhatsApp, sin crear cuenta', 'Consultas con respuesta del municipio', 'De qué canal llegó cada respuesta'], soon: ['Un canal permanente para cada Lugar'] },
       { id: 'understand', name: 'Comprender', available: ['Resultados de preguntas cerradas', 'Lectura de cada respuesta abierta', 'Reporte mensual de participación'], soon: ['Temas, acuerdos y voces minoritarias con IA', 'Evolución de las necesidades'] },
-      { id: 'participate', name: 'Participar', available: ['Propuestas con apoyos de vecinos', 'Consultas para priorizar entre opciones', 'Iniciativas ciudadanas', 'App para vecinos en iOS y Android'], soon: [] },
+      { id: 'participate', name: 'Participar', available: ['Propuestas con apoyos de vecinos', 'Consultas para priorizar entre opciones', 'App para vecinos en iOS y Android'], soon: [] },
       { id: 'cocreate', name: 'Cocrear', available: [], soon: ['CoLab: procesos de cocreación por etapas, con reglas anunciadas'], meanwhile: 'Mientras tanto, los vecinos pueden proponer y priorizar con las herramientas de Participar.' },
       { id: 'act', name: 'Actuar y mostrar', available: ['Obras con estado público', 'Avisos institucionales', 'Portal Mi Ciudad e índice de transparencia'], soon: ['Necesidades vinculadas a acciones', 'Fichas de Lugares'] },
     ],
@@ -507,7 +506,6 @@ const pt = {
         items: [
           { title: 'Propostas cidadãs', body: 'Um cidadão propõe e outros apoiam. A sua equipe vê quais temas mobilizam a cidade.' },
           { title: 'Consultas para priorizar', body: 'Os cidadãos ordenam opções e o seu município publica o que vai fazer com o resultado.' },
-          { title: 'Iniciativas comunitárias', body: 'Projetos que os próprios cidadãos levam adiante.' },
         ],
         proposal: { title: 'Horta comunitária no Paseo del Río', supports: '128 apoios', tag: 'Meio ambiente' },
       },
@@ -562,7 +560,7 @@ const pt = {
     items: [
       { id: 'listen', name: 'Ouvir', available: ['Pesquisas abertas com QR e WhatsApp, sem criar conta', 'Consultas com resposta do município', 'Por qual canal chegou cada resposta'], soon: ['Um canal permanente para cada Lugar'] },
       { id: 'understand', name: 'Compreender', available: ['Resultados de perguntas fechadas', 'Leitura de cada resposta aberta', 'Relatório mensal de participação'], soon: ['Temas, acordos e vozes minoritárias com IA', 'Evolução das necessidades'] },
-      { id: 'participate', name: 'Participar', available: ['Propostas com apoios de cidadãos', 'Consultas para priorizar entre opções', 'Iniciativas cidadãs', 'App para cidadãos no iOS e no Android'], soon: [] },
+      { id: 'participate', name: 'Participar', available: ['Propostas com apoios de cidadãos', 'Consultas para priorizar entre opções', 'App para cidadãos no iOS e no Android'], soon: [] },
       { id: 'cocreate', name: 'Cocriar', available: [], soon: ['CoLab: processos de cocriação por etapas, com regras anunciadas'], meanwhile: 'Enquanto isso, os cidadãos podem propor e priorizar com os recursos de Participar.' },
       { id: 'act', name: 'Agir e mostrar', available: ['Obras com status público', 'Avisos institucionais', 'Portal Mi Ciudad e índice de transparência'], soon: ['Necessidades vinculadas a ações', 'Fichas de Lugares'] },
     ],
@@ -789,7 +787,6 @@ const en = {
         items: [
           { title: 'Resident proposals', body: 'One resident proposes and others support it. Your team sees which topics move the city.' },
           { title: 'Consultations to prioritize', body: 'Residents rank options and your municipality publishes what it will do with the result.' },
-          { title: 'Community initiatives', body: 'Projects that residents carry out themselves.' },
         ],
         proposal: { title: 'Community garden at Paseo del Río', supports: '128 supporters', tag: 'Environment' },
       },
@@ -844,7 +841,7 @@ const en = {
     items: [
       { id: 'listen', name: 'Listen', available: ['Open surveys with QR codes and WhatsApp, no account needed', 'Consultations with a response from the municipality', 'Which channel each response came from'], soon: ['A permanent channel for each Place'] },
       { id: 'understand', name: 'Understand', available: ['Results for closed questions', 'Reading every open response', 'Monthly participation report'], soon: ['Topics, agreements and minority voices with AI', 'How needs evolve'] },
-      { id: 'participate', name: 'Participate', available: ['Proposals with residents’ support', 'Consultations to prioritize between options', 'Citizen initiatives', 'App for residents on iOS and Android'], soon: [] },
+      { id: 'participate', name: 'Participate', available: ['Proposals with residents’ support', 'Consultations to prioritize between options', 'App for residents on iOS and Android'], soon: [] },
       { id: 'cocreate', name: 'Co-create', available: [], soon: ['CoLab: co-creation processes in stages, under announced rules'], meanwhile: 'In the meantime, residents can propose and prioritize with the Participate tools.' },
       { id: 'act', name: 'Act and show', available: ['Public works with a public status', 'Official notices', 'Mi Ciudad portal and transparency index'], soon: ['Needs linked to actions', 'Places profiles'] },
     ],
