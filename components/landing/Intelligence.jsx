@@ -64,12 +64,12 @@ export default function Intelligence({ t, labels }) {
       <div className="wrap">
         <div className={styles.intelHead}>
           <div>
-            <p className={styles.eyebrow}>{t.eyebrow} <span className={styles.soonChip}>{labels.soon}</span></p>
+            <p className={styles.eyebrow}>{t.eyebrow} <span className={styles.availableChip}>{labels.available}</span></p>
             <h2 className={styles.h2}>{t.title}</h2>
             <p className={styles.lead}>{t.lead}</p>
           </div>
           <p className={styles.conceptBanner} role="note">
-            <span className={styles.conceptChip}>{labels.concept}</span>
+            <span className={styles.conceptChip}>{labels.fictional}</span>
             {t.disclaimer}
           </p>
         </div>

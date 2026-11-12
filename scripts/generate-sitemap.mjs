@@ -2,9 +2,19 @@
 import { writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
+import { createRequire } from 'node:module'
 import { LOCALES, LOCALE_META, SITE_URL, DEFAULT_LOCALE, localizedPath } from '../lib/i18n-config.mjs'
 
-const MULTILINGUAL = ['/', '/como-funciona', '/plataforma', '/vecinos', '/primer-ciclo']
+const { SHOW_CIVIC_CREDITS, SHOW_NEIGHBORS_PAGE } = createRequire(import.meta.url)('../lib/features.js')
+
+// Las páginas ocultas (lib/features.js) no se publican en el sitemap.
+const MULTILINGUAL = [
+  '/',
+  SHOW_CIVIC_CREDITS && '/como-funciona',
+  '/plataforma',
+  SHOW_NEIGHBORS_PAGE && '/vecinos',
+  '/primer-ciclo',
+].filter(Boolean)
 const SPANISH_ONLY = ['/privacy', '/terms', '/account-deletion', '/child-safety', '/transparency-methodology']
 
 const url = (p, l) => `${SITE_URL}${localizedPath(p, l)}`

@@ -11,6 +11,7 @@ import { showsUnverifiedClaims } from '../lib/claims.mjs'
 import { landing } from '../content/landing.mjs'
 import { firstCycle } from '../content/firstCycle.mjs'
 import { SITE_URL } from '../lib/i18n-config.mjs'
+import { SHOW_CIVIC_CREDITS } from '../lib/features'
 
 const ORGANIZATION_LD = {
   '@context': 'https://schema.org',
@@ -42,14 +43,15 @@ export default function Home() {
     <Layout>
       <Seo title={t.meta.title} description={t.meta.description} path="/" jsonLd={ORGANIZATION_LD} />
       <Hero t={t.hero} places={t.places.list} districts={t.places.districts} labels={t.labels} variant={variant} />
-      {/* Orden: el problema, lo que el municipio puede implementar hoy y lo que suma después. */}
+      {/* Orden (12-nov-2026): el problema, la inteligencia colectiva como diferencial, cómo
+          empezar, la acción y lo que se suma después. */}
       <Problems t={t.problems} />
+      <Intelligence t={t.intelligence} labels={t.labels} />
       <StartPath t={t.start} />
       <Action t={t.action} labels={t.labels} />
       <Places t={t.places} labels={t.labels} />
-      <Intelligence t={t.intelligence} labels={t.labels} />
       <Platform t={t.platform} />
-      <CivicCredits t={t.civicCredits} />
+      {SHOW_CIVIC_CREDITS && <CivicCredits t={t.civicCredits} />}
       <FinalCta t={t.final} form={f.form} />
       {REVIEW && <ReviewBar t={t.review} variants={t.hero.variants} value={variant} onChange={setVariant} />}
     </Layout>

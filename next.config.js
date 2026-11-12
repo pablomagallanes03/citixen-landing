@@ -9,6 +9,8 @@
 const SITE_ENV = process.env.VERCEL_ENV
   || (process.env.NODE_ENV === 'development' ? 'development' : 'local-build')
 
+const { SHOW_CIVIC_CREDITS, SHOW_NEIGHBORS_PAGE } = require('./lib/features.js')
+
 const BACKEND_URL = process.env.BACKEND_URL || 'https://citixen.app'
 
 // Páginas legales y de metodología: existen solo en español y conservan sus rutas.
@@ -31,8 +33,20 @@ const nextConfig = {
   async redirects() {
     return [
       // Rutas anteriores al rediseño
-      { source: '/creditos-civicos', destination: '/como-funciona', permanent: true },
-      { source: '/soyvecino', destination: '/vecinos', permanent: true },
+      // Créditos Cívicos y la página para vecinos pueden estar ocultos (lib/features.js).
+      // Ocultos, sus rutas redirigen de forma temporal para poder volver a mostrarlos.
+      ...(SHOW_CIVIC_CREDITS
+        ? [{ source: '/creditos-civicos', destination: '/como-funciona', permanent: true }]
+        : [
+            { source: '/creditos-civicos', destination: '/plataforma', permanent: false },
+            { source: '/como-funciona', destination: '/plataforma', permanent: false },
+          ]),
+      ...(SHOW_NEIGHBORS_PAGE
+        ? [{ source: '/soyvecino', destination: '/vecinos', permanent: true }]
+        : [
+            { source: '/soyvecino', destination: '/', permanent: false },
+            { source: '/vecinos', destination: '/', permanent: false },
+          ]),
       { source: '/soygobierno', destination: '/primer-ciclo', permanent: true },
       { source: '/municipios', destination: '/primer-ciclo', permanent: true },
       { source: '/pricing', destination: '/primer-ciclo', permanent: true },

@@ -6,6 +6,7 @@ import CtaBand from '../components/page/CtaBand'
 import { useContent } from '../lib/i18n.mjs'
 import { platform } from '../content/platform.mjs'
 import styles from '../components/page/Platform.module.css'
+import { SHOW_CIVIC_CREDITS } from '../lib/features'
 
 function Tool({ tool, status }) {
   const available = tool.status === 'available'
@@ -57,12 +58,14 @@ export default function Platform() {
             </li>
           </ol>
 
+          {SHOW_CIVIC_CREDITS && (
           <div className={`${styles.complement} reveal`}>
             <span className={styles.complementLabel}>{t.complement.label}</span>
             <h2>{t.complement.name}</h2>
             <p>{t.complement.body}</p>
             <Link href="/como-funciona" className={styles.complementLink}>{t.complement.link} <span aria-hidden="true">→</span></Link>
           </div>
+          )}
         </div>
       </section>
 
