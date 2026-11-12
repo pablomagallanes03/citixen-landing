@@ -79,7 +79,6 @@ export function Action({ t, labels }) {
             <div className={styles.portalBody}>
               <div className={styles.portalHead}>
                 <strong>{t.portal.title}</strong>
-                <span className={styles.transparency}><b>{t.portal.transparencyValue}</b>{t.portal.transparency}</span>
               </div>
               <div className={styles.notice}><span className={styles.mockKicker}>{t.portal.notice.label}</span><strong>{t.portal.notice.title}</strong></div>
               {t.portal.works.map((w) => (
