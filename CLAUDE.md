@@ -31,6 +31,10 @@ Brief aprobado por Pablo (10-nov-2026): https://claude.ai/artifact/TwbATDBS3ZU1N
 - **Foco en escucha e IA (decisión de Pablo, 12-nov-2026):** Créditos Cívicos y la página para vecinos quedan **ocultos, no borrados**, para no diluir el mensaje nuevo. Interruptores en `lib/features.js` (`SHOW_CIVIC_CREDITS`, `SHOW_NEIGHBORS_PAGE`): con `false` desaparecen de la navegación, el pie, la home, `/plataforma` y el sitemap, y `/como-funciona`, `/creditos-civicos` → `/plataforma`, `/vecinos`, `/soyvecino` → `/` redirigen de forma temporal. Para volver a mostrarlos, poner `true`.
 - **La IA pasa a «Disponible hoy»** (decisión de Pablo, 12-nov-2026; reemplaza «el hero no promete análisis con IA» y «demostración conceptual»): está incluida en el plan gratuito (1.000 aportes por mes). El hero la nombra y la sección de inteligencia colectiva sube a continuación de los problemas. El ejemplo interactivo sigue rotulado con datos ficticios.
 
+- **Lugares disponibles (12-nov-2026):** Lugares, su ficha (resumen, historial, necesidades, participación, acciones), las necesidades vinculadas a acciones y la lectura entre lugares pasan a «Disponible hoy» (existen en panel.citixen.app; el plan gratuito incluye 5 Lugares). Solo CoLab sigue «Próximamente». Publicar recién con el servidor de trabajos andando: sin él no hay temas ni necesidades.
+
+- **Sin Mi Ciudad ni índice de transparencia (decisión de Pablo, 12-nov-2026):** citixen.org ya no tiene el portal. La landing muestra en su lugar la página pública de cada Lugar (`participa.citixen.app/{ciudad}/lugares/{clave}`) y ya no promete un registro público de comunicados.
+
 ## Dominios
 
 - `citixen.app`: este repo. Nginx en el droplet del backend (`164.92.218.144`) hace reverse-proxy a Vercel para toda ruta que no sea `/api/*`. TLS termina en el droplet.

@@ -96,7 +96,7 @@ export default function Hero({ t, places, districts, labels, variant }) {
             <div className={styles.reading} aria-hidden="true">
               <div className={styles.readingHead}>
                 <strong>{t.reading.title}</strong>
-                <span className={styles.readingChip}>{labels.soon}</span>
+                <span className={styles.readingChip}>{labels.available}</span>
               </div>
               {t.reading.rows.map(([name, where, trend]) => (
                 <div key={name} className={styles.readingRow}>

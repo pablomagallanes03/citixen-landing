@@ -5,7 +5,7 @@
 const es = {
   meta: {
     title: 'Plataforma | Citixen',
-    description: 'Inteligencia colectiva con IA, Opiná, propuestas, Mi Ciudad, comunicación institucional y un panel de gestión. Y lo que llega: Lugares y CoLab.',
+    description: 'Inteligencia colectiva con IA, Opiná, propuestas, páginas públicas de cada Lugar, comunicación institucional y un panel de gestión. Y lo que llega: CoLab.',
   },
   hero: {
     eyebrow: 'Plataforma',
@@ -19,7 +19,7 @@ const es = {
       intro: 'Preguntale a tu ciudad donde está la gente.',
       tools: [
         { name: 'Opiná', status: 'available', body: 'Consultas y encuestas con la respuesta pública de tu municipio.', points: ['Consultas verificadas: responden vecinos con cuenta en tu ciudad.', 'Encuestas abiertas, sin crear cuenta, para compartir con QR, WhatsApp y redes.', 'El canal por el que llegó cada respuesta.', 'Al cierre, resultados y la respuesta oficial del municipio.'] },
-        { name: 'Lugares', status: 'soon', body: 'Cada plaza, escuela o centro cultural con su canal permanente y su ficha.', points: ['Un QR fijo en cada lugar para opinar en cualquier momento.', 'La historia, las necesidades y las acciones de cada lugar en un solo sitio.'] },
+        { name: 'Lugares', status: 'available', body: 'Cada plaza, escuela o centro cultural con su canal permanente y su ficha.', points: ['Un QR fijo en cada lugar para opinar en cualquier momento.', 'La historia, las necesidades y las acciones de cada lugar en un solo sitio.'] },
       ],
     },
     {
@@ -49,8 +49,8 @@ const es = {
       name: 'Actuar y mostrar',
       intro: 'Que se vea lo que hace tu gestión.',
       tools: [
-        { name: 'Mi Ciudad', status: 'available', body: 'La página pública de tu ciudad en citixen.org.', points: ['Obras con su estado y avance.', 'Proyectos y pruebas de cierre, abiertos a todos.', 'Encuestas y comunicados con su propia página para compartir.', 'Índice de transparencia.'] },
-        { name: 'Comunicación institucional', status: 'available', body: 'Un canal oficial al teléfono de cada vecino.', points: ['Avisos, convocatorias y emergencias, por audiencia.', 'Las comunicaciones masivas quedan en un registro público.', 'Límites de envío y revisión de un segundo funcionario para las emergencias.'] },
+        { name: 'Página pública de cada Lugar', status: 'available', body: 'Cada Lugar tiene su página en participa.citixen.app.', points: ['Para opinar con el QR del lugar, sin crear cuenta.', 'Las encuestas abiertas del lugar.', 'Las obras y acciones del lugar, con su estado y avance.'] },
+        { name: 'Comunicación institucional', status: 'available', body: 'Un canal oficial al teléfono de cada vecino.', points: ['Avisos, convocatorias y emergencias, por audiencia.', 'Límites de envío y revisión de un segundo funcionario para las emergencias.'] },
       ],
     },
   ],
@@ -70,7 +70,7 @@ const es = {
 const pt = {
   meta: {
     title: 'Plataforma | Citixen',
-    description: 'Inteligência coletiva com IA, consultas e pesquisas, propostas, Mi Ciudad, comunicação institucional e um painel de gestão. E o que vem por aí: Lugares e CoLab.',
+    description: 'Inteligência coletiva com IA, consultas e pesquisas, propostas, páginas públicas de cada Lugar, comunicação institucional e um painel de gestão. E o que vem por aí: CoLab.',
   },
   hero: {
     eyebrow: 'Plataforma',
@@ -84,7 +84,7 @@ const pt = {
       intro: 'Pergunte à sua cidade onde as pessoas estão.',
       tools: [
         { name: 'Opine', status: 'available', body: 'Consultas e pesquisas com a resposta pública do seu município.', points: ['Consultas verificadas: respondem cidadãos com conta na sua cidade.', 'Pesquisas abertas, sem criar conta, para compartilhar com QR, WhatsApp e redes sociais.', 'O canal por onde chegou cada resposta.', 'No encerramento, resultados e a resposta oficial do município.'] },
-        { name: 'Lugares', status: 'soon', body: 'Cada praça, escola ou centro cultural com o seu canal permanente e a sua ficha.', points: ['Um QR fixo em cada lugar para opinar a qualquer momento.', 'A história, as necessidades e as ações de cada lugar em um só lugar.'] },
+        { name: 'Lugares', status: 'available', body: 'Cada praça, escola ou centro cultural com o seu canal permanente e a sua ficha.', points: ['Um QR fixo em cada lugar para opinar a qualquer momento.', 'A história, as necessidades e as ações de cada lugar em um só lugar.'] },
       ],
     },
     {
@@ -114,8 +114,8 @@ const pt = {
       name: 'Agir e mostrar',
       intro: 'Que apareça o que a sua gestão faz.',
       tools: [
-        { name: 'Mi Ciudad', status: 'available', body: 'A página pública da sua cidade em citixen.org.', points: ['Obras com o seu status e andamento.', 'Projetos e provas de encerramento, abertos a todos.', 'Pesquisas e comunicados com página própria para compartilhar.', 'Índice de transparência.'] },
-        { name: 'Comunicação institucional', status: 'available', body: 'Um canal oficial até o celular de cada cidadão.', points: ['Avisos, convocações e emergências, por público.', 'As comunicações em massa ficam em um registro público.', 'Limites de envio e revisão de um segundo servidor para as emergências.'] },
+        { name: 'Página pública de cada Lugar', status: 'available', body: 'Cada Lugar tem a sua página em participa.citixen.app.', points: ['Para opinar com o QR do lugar, sem criar conta.', 'As pesquisas abertas do lugar.', 'As obras e ações do lugar, com seu status e andamento.'] },
+        { name: 'Comunicação institucional', status: 'available', body: 'Um canal oficial até o celular de cada cidadão.', points: ['Avisos, convocações e emergências, por público.', 'Limites de envio e revisão de um segundo servidor para as emergências.'] },
       ],
     },
   ],
@@ -135,7 +135,7 @@ const pt = {
 const en = {
   meta: {
     title: 'Platform | Citixen',
-    description: 'Collective intelligence with AI, consultations and surveys, proposals, Mi Ciudad, official communications and a management panel. And what is coming: Places and CoLab.',
+    description: 'Collective intelligence with AI, consultations and surveys, proposals, public pages for each Place, official communications and a management panel. And what is coming: CoLab.',
   },
   hero: {
     eyebrow: 'Platform',
@@ -149,7 +149,7 @@ const en = {
       intro: 'Ask your city where people are.',
       tools: [
         { name: 'Have Your Say', status: 'available', body: 'Consultations and surveys with your municipality’s public response.', points: ['Verified consultations: answered by residents with an account in your city.', 'Open surveys, no account needed, to share by QR code, WhatsApp and social media.', 'The channel each response came from.', 'When they close, results and the municipality’s official response.'] },
-        { name: 'Places', status: 'soon', body: 'Every square, school or community center with its own permanent channel and profile.', points: ['A fixed QR code at each place to share an opinion any time.', 'Each place’s history, needs and actions in one spot.'] },
+        { name: 'Places', status: 'available', body: 'Every square, school or community center with its own permanent channel and profile.', points: ['A fixed QR code at each place to share an opinion any time.', 'Each place’s history, needs and actions in one spot.'] },
       ],
     },
     {
@@ -179,8 +179,8 @@ const en = {
       name: 'Act and show',
       intro: 'Make what your administration does visible.',
       tools: [
-        { name: 'Mi Ciudad', status: 'available', body: 'Your city’s public page on citixen.org.', points: ['Public works with their status and progress.', 'Projects and closing evidence, open to everyone.', 'Surveys and notices with their own page to share.', 'Transparency index.'] },
-        { name: 'Official communications', status: 'available', body: 'An official channel to every resident’s phone.', points: ['Notices, calls to participate and emergencies, by audience.', 'Mass communications are kept in a public record.', 'Sending limits, and a second official’s review for emergencies.'] },
+        { name: 'A public page for each Place', status: 'available', body: 'Every Place has its own page on participa.citixen.app.', points: ['To share an opinion with the place’s QR code, no account needed.', 'The place’s open surveys.', 'The place’s public works and actions, with their status and progress.'] },
+        { name: 'Official communications', status: 'available', body: 'An official channel to every resident’s phone.', points: ['Notices, calls to participate and emergencies, by audience.', 'Sending limits, and a second official’s review for emergencies.'] },
       ],
     },
   ],

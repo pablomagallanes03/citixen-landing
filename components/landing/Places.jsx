@@ -35,7 +35,7 @@ export default function Places({ t, labels }) {
       <div className="wrap">
         <div className={styles.placesHead}>
           <div>
-            <p className={styles.eyebrowNight}>{t.eyebrow} <span className={styles.soonChipNight}>{labels.soon}</span></p>
+            <p className={styles.eyebrowNight}>{t.eyebrow} <span className={styles.availableChip}>{labels.available}</span></p>
             <h2 className={`${styles.h2} ${styles.onNight}`}>{t.title}</h2>
           </div>
           <p className={styles.leadNight}>{t.lead}</p>
