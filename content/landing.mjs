@@ -302,13 +302,6 @@ const es = {
     ],
     cta: 'Solicitar un piloto',
     secondary: 'o pedir una demostración',
-    rulesTitle: 'Reglas que podés defender',
-    rules: [
-      { title: 'Las reglas se anuncian antes', body: 'Cada encuesta y consulta dice para qué se usa lo que se responde y si es vinculante.' },
-      { title: 'Respuestas, no personas', body: 'Cuando no se puede comprobar quién respondió, contamos respuestas y aportes, no personas.' },
-      { title: 'Lo publicado deja registro', body: 'Un aviso del municipio no se edita después de enviado: si tiene un error, se publica una rectificación vinculada. Las respuestas a encuestas guardan sus versiones.' },
-      { title: 'Inteligencia artificial con límites', body: 'Cada tema muestra las respuestas que lo respaldan. La IA ordena y resume: no decide ni califica a las personas.' },
-    ],
   },
   civicCredits: {
     eyebrow: 'Créditos Cívicos',
@@ -581,13 +574,6 @@ const pt = {
     ],
     cta: 'Solicitar um piloto',
     secondary: 'ou solicitar uma demonstração',
-    rulesTitle: 'Regras que você pode defender',
-    rules: [
-      { title: 'As regras são anunciadas antes', body: 'Cada pesquisa e consulta informa para que serve o que se responde e se é vinculante.' },
-      { title: 'Respostas, não pessoas', body: 'Quando não é possível comprovar quem respondeu, contamos respostas e contribuições, não pessoas.' },
-      { title: 'O que é publicado deixa registro', body: 'Um aviso do município não é editado depois de enviado: se tiver um erro, é publicada uma retificação vinculada. As respostas a pesquisas guardam as suas versões.' },
-      { title: 'Inteligência artificial com limites', body: 'Cada tema mostra as respostas que o sustentam. A IA organiza e resume: não decide nem avalia pessoas.' },
-    ],
   },
   civicCredits: {
     eyebrow: 'Créditos Cívicos',
@@ -860,13 +846,6 @@ const en = {
     ],
     cta: 'Request a pilot',
     secondary: 'or request a demo',
-    rulesTitle: 'Rules you can stand behind',
-    rules: [
-      { title: 'Rules are announced first', body: 'Every survey and consultation states what the answers will be used for and whether it is binding.' },
-      { title: 'Responses, not people', body: 'When it can’t be verified who responded, we count responses and contributions, not people.' },
-      { title: 'What is published leaves a record', body: 'A notice from the municipality isn’t edited once sent: if it has an error, a linked correction is published. Responses to surveys keep their versions.' },
-      { title: 'Artificial intelligence with limits', body: 'Every topic shows the responses behind it. AI organizes and summarizes: it doesn’t decide and doesn’t rate people.' },
-    ],
   },
   civicCredits: {
     eyebrow: 'Civic Credits',

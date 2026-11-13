@@ -439,11 +439,6 @@
 .startSteps strong { font-family: var(--font-display); font-size: 1.1rem; }
 .startSteps span:not(.startNum) { color: var(--ink-2); }
 .startNum { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--night); color: var(--white); font-weight: 700; }
-.rulesTitle { margin-top: clamp(3rem, 2rem + 3vw, 5rem); font-size: var(--size-h3); color: var(--ink); }
-.rulesGrid { list-style: none; margin-top: 1.25rem; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
-.rulesGrid li { display: grid; gap: 0.4rem; align-content: start; padding: 1.2rem; border-radius: var(--radius); background: var(--mist-soft); }
-.rulesGrid strong { font-family: var(--font-display); font-size: 1.02rem; color: var(--ink); }
-.rulesGrid span { color: var(--ink-2); font-size: 0.92rem; }
 
 /* ── Créditos Cívicos ───────────────────────────────────── */
 .ccGrid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 3rem; align-items: center; }
@@ -476,7 +471,6 @@
   .pipeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 1080px) {
-  .rulesGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .intelBoard { grid-template-columns: minmax(0, 1fr); }
   .trace { position: static; }
   .actionFlow { grid-template-columns: minmax(0, 1fr); }
@@ -499,7 +493,7 @@
   .callout { display: none; }
   .reading { position: static; width: auto; margin: 0.6rem; }
   .heroFrame { background: #05275F; }
-  .platformGrid, .blockPair, .rulesGrid, .pipeline { grid-template-columns: minmax(0, 1fr); }
+  .platformGrid, .blockPair, .pipeline { grid-template-columns: minmax(0, 1fr); }
   .intelStats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mockWork { grid-template-columns: minmax(0, 1fr) 6.5rem; }
   .mockWork .mockBar { display: none; }
