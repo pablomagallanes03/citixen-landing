@@ -172,12 +172,6 @@ export function StartPath({ t }) {
           ))}
         </ol>
       </div>
-      <div className="wrap">
-        <h3 className={styles.rulesTitle}>{t.rulesTitle}</h3>
-        <ul className={styles.rulesGrid}>
-          {t.rules.map((r) => <li key={r.title}><strong>{r.title}</strong><span>{r.body}</span></li>)}
-        </ul>
-      </div>
     </section>
   )
 }
