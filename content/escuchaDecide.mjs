@@ -30,7 +30,6 @@ const es = {
     },
     themes: ['Iluminación', 'Juegos', 'Limpieza'],
     projects: ['Luminarias', 'Juegos inclusivos', 'Más cestos'],
-    goal: 'Meta',
     goalReached: 'Meta alcanzada',
   },
   listen: {
@@ -101,7 +100,6 @@ const pt = {
     },
     themes: ['Iluminação', 'Brinquedos', 'Limpeza'],
     projects: ['Iluminação', 'Brinquedos inclusivos', 'Mais lixeiras'],
-    goal: 'Meta',
     goalReached: 'Meta atingida',
   },
   listen: {
@@ -172,7 +170,6 @@ const en = {
     },
     themes: ['Lighting', 'Play', 'Cleaning'],
     projects: ['Lighting', 'Inclusive play', 'More bins'],
-    goal: 'Goal',
     goalReached: 'Goal reached',
   },
   listen: {

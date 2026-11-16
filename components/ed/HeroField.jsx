@@ -2,16 +2,16 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import styles from './ed.module.css'
 
 // Figura del hero: los mismos 48 puntos representan los aportes de la comunidad.
-// En Escucha se agrupan en tres temas; en Decide se apilan como el apoyo de tres
-// proyectos que avanzan hacia su meta. Datos ficticios (se rotula en la página).
+// En Escucha se agrupan en tres temas. En Decide fluyen hacia tres proyectos y se absorben:
+// cada proyecto es un anillo que se llena hacia su meta (uno la alcanza). Datos ficticios.
 
 const GROUPS = [20, 16, 12]
-const COLS = 2
-const GOAL_ROWS = 10 // el primer proyecto (20 puntos en filas de 2) llega justo a su meta
+// Avance de cada proyecto hacia su meta, en %. El primero la alcanza.
+const PROGRESS = [100, 72, 46]
 
 const FRAMES = {
-  wide: { w: 1000, h: 350, cx: [200, 500, 800], cy: 168, c: 14, base: 300, s: 25 },
-  narrow: { w: 600, h: 450, cx: [112, 300, 488], cy: 205, c: 15, base: 380, s: 27 },
+  wide: { w: 1000, h: 350, cx: [200, 500, 800], cy: 168, c: 14, ring: 74, stroke: 9 },
+  narrow: { w: 600, h: 350, cx: [112, 300, 488], cy: 150, c: 15, ring: 72, stroke: 12 },
 }
 
 // Pseudoaleatorio determinista: el estado inicial coincide en servidor y cliente.
@@ -33,7 +33,8 @@ function layout(frame) {
         group: g,
         scatter: { x: f.w * (0.06 + seeded(id + 1) * 0.88), y: f.h * (0.08 + seeded(id + 101) * 0.7) },
         listen: { x: f.cx[g] + r * Math.cos(angle), y: f.cy + r * Math.sin(angle) },
-        decide: { x: f.cx[g] + ((i % COLS) - (COLS - 1) / 2) * f.s, y: f.base - Math.floor(i / COLS) * f.s },
+        // Al centro del anillo de su proyecto, donde se absorben.
+        decide: { x: f.cx[g] + r * 0.18 * Math.cos(angle), y: f.cy + r * 0.18 * Math.sin(angle) },
       })
     }
   })
@@ -56,8 +57,7 @@ export default function HeroField({ t, mode, onSelect }) {
   const { f, dots } = useMemo(() => layout(frame), [frame])
   const shown = mode === 'scatter' ? 'listen' : mode
   const listenLabelY = f.cy + f.c * Math.sqrt(GROUPS[0]) + 22
-  const decideLabelY = f.base + f.s * 0.9
-  const goalY = f.base - (GOAL_ROWS - 1) * f.s - f.s * 0.75
+  const decideLabelY = f.cy + f.ring + f.stroke + 18
 
   return (
     <figure className={styles.field}>
@@ -81,13 +81,33 @@ export default function HeroField({ t, mode, onSelect }) {
         style={{ aspectRatio: `${f.w} / ${f.h}` }}
         aria-hidden="true"
       >
-        {f.cx.map((cx, g) => (
-          <span
-            key={`goal-${g}`}
-            className={styles.goal}
-            style={{ left: pct(cx - 2.6 * f.s, f.w), width: pct(5.2 * f.s, f.w), top: pct(goalY, f.h) }}
-          >
-            <span>{g === 0 ? t.goalReached : t.goal}</span>
+        <svg className={styles.rings} viewBox={`0 0 ${f.w} ${f.h}`} preserveAspectRatio="none">
+          {f.cx.map((cx, g) => (
+            <g key={`ring-${g}`} style={{ '--p': PROGRESS[g], '--rd': `${400 + g * 120}ms` }}>
+              <circle cx={cx} cy={f.cy} r={f.ring} className={styles.ringTrack} strokeWidth={f.stroke} />
+              <circle
+                cx={cx}
+                cy={f.cy}
+                r={f.ring}
+                pathLength="100"
+                className={styles.ringFill}
+                strokeWidth={f.stroke}
+                transform={`rotate(-90 ${cx} ${f.cy})`}
+              />
+              {g === 0 && (
+                <path
+                  className={styles.ringCheck}
+                  d={`M${cx - f.ring * 0.3} ${f.cy + 2} l${f.ring * 0.2} ${f.ring * 0.2} l${f.ring * 0.4} -${f.ring * 0.42}`}
+                  pathLength="100"
+                  strokeWidth={f.stroke}
+                />
+              )}
+            </g>
+          ))}
+        </svg>
+        {f.cx.slice(1).map((cx, i) => (
+          <span key={`pc-${i}`} className={styles.ringValue} style={{ left: pct(cx, f.w), top: pct(f.cy, f.h), '--rd': `${520 + i * 120}ms` }}>
+            {PROGRESS[i + 1]}<small>%</small>
           </span>
         ))}
 
@@ -97,7 +117,7 @@ export default function HeroField({ t, mode, onSelect }) {
             <span
               key={d.id}
               className={styles.dot}
-              style={{ left: pct(p.x, f.w), top: pct(p.y, f.h), transitionDelay: `${d.id * 14}ms` }}
+              style={{ left: pct(p.x, f.w), top: pct(p.y, f.h), '--d': `${d.id * 14}ms` }}
             />
           )
         })}
@@ -110,6 +130,7 @@ export default function HeroField({ t, mode, onSelect }) {
         {f.cx.map((cx, g) => (
           <span key={`ld-${g}`} className={`${styles.label} ${styles.labelDecide}`} style={{ left: pct(cx, f.w), top: pct(decideLabelY, f.h) }}>
             {t.projects[g]}
+            {g === 0 && <em className={styles.labelGoal}>{t.goalReached}</em>}
           </span>
         ))}
       </div>
@@ -131,7 +152,7 @@ export function useHeroSequence() {
       return undefined
     }
     const a = setTimeout(() => { if (!touched.current) setMode('listen') }, 350)
-    const b = setTimeout(() => { if (!touched.current) setMode('decide') }, 4300)
+    const b = setTimeout(() => { if (!touched.current) setMode('decide') }, 3300)
     return () => { clearTimeout(a); clearTimeout(b) }
   }, [])
 
