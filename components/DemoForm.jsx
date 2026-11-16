@@ -40,10 +40,12 @@ function Field({ name, label, type = 'text', value, onChange, autoComplete, minL
   )
 }
 
-export default function DemoForm({ t }) {
+// defaultInterest: la home de «Escucha y Decide» llega con la demostración elegida.
+export default function DemoForm({ t, defaultInterest = 'pilot' }) {
   const locale = useLocale()
   const { query } = useRouter()
-  const [form, setForm] = useState(EMPTY)
+  const [form, setForm] = useState({ ...EMPTY, interest: defaultInterest })
+  const interests = defaultInterest === 'demo' ? ['demo', 'pilot'] : INTERESTS
   const [status, setStatus] = useState('idle')
   const [error, setError] = useState('')
 
@@ -112,7 +114,7 @@ export default function DemoForm({ t }) {
       <fieldset className={styles.interest}>
         <legend>{f.interest}</legend>
         <div className={styles.choices}>
-          {INTERESTS.map((value) => (
+          {interests.map((value) => (
             <label key={value} className={`${styles.choice} ${form.interest === value ? styles.choiceOn : ''}`}>
               <input type="radio" name="interest" value={value} checked={form.interest === value} onChange={set('interest')} />
               <span>{t.interests[value]}</span>

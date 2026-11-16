@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { PANEL_SIGNUP_URL } from '../lib/urls.mjs'
 import { useRouter } from 'next/router'
 import Logo from './Logo'
 import { SHOW_CIVIC_CREDITS, SHOW_NEIGHBORS_PAGE } from '../lib/features'
@@ -8,9 +7,10 @@ import { LOCALES, LOCALE_META, useContent, useLocale } from '../lib/i18n.mjs'
 import { site } from '../content/site.mjs'
 import styles from './Navbar.module.css'
 
+// 16-nov-2026: la navegación presenta las dos soluciones (Documento Maestro §6).
 const LINKS = [
-  { href: '/plataforma', key: 'platform' },
-  { href: '/#lugares', key: 'places' },
+  { href: '/#escucha', key: 'listen' },
+  { href: '/#decide', key: 'decide' },
   SHOW_CIVIC_CREDITS && { href: '/como-funciona', key: 'howItWorks' },
   SHOW_NEIGHBORS_PAGE && { href: '/vecinos', key: 'neighbors' },
 ].filter(Boolean)
@@ -83,7 +83,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          <a href={PANEL_SIGNUP_URL} className={`btn-primary ${styles.cta}`}>{t.nav.cta}</a>
+          <Link href="/#demostracion" className={`btn-primary ${styles.cta}`}>{t.nav.cta}</Link>
         </nav>
 
         <button

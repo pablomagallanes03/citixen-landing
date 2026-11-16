@@ -3,6 +3,17 @@
 Web institucional de Citixen en `citixen.app`. Rama `redesign/ciudad-que-escucha` (maqueta, 10-nov-2026), creada sobre `redesign/el-acuerdo`.
 Hasta que se apruebe y se haga merge, producción sigue sirviendo `main` con el diseño anterior.
 
+## Home «Escucha y Decide» (rama `redesign/escucha-decide`, 16-nov-2026, pendiente de aprobación)
+
+Reemplaza la home «Ciudad que escucha» cuando se apruebe. Fuente: Documento Maestro v1.1 §6 (`../docs/estrategia/`).
+- Cuatro secciones: hero (selector Escucha/Decide sobre una figura de 48 puntos: temas ↔ barras con meta), Escucha (un Lugar recibe aportes y se forman temas, acuerdos y desacuerdos), Decide (asignación interactiva de Créditos Cívicos con límite mensual y meta), cierre (complementariedad + formulario de demostración). Código: `pages/index.js`, `components/ed/`, `content/escuchaDecide.mjs`.
+- CTA único: «Solicitar una demostración» (`/#demostracion`, mismo `MunicipalLead`, con la demostración preseleccionada). «Empezar gratis» sale de la navegación y del hero; el registro autónomo queda en el pie.
+- **La IA no se rotula «Disponible hoy»**: está apagada en producción desde el 16-nov-2026 (D6). La sección de Escucha aclara que se habilita en cada municipio al acordar las condiciones de tratamiento de datos.
+- Créditos Cívicos según el modelo continuo: sin ranking ni cierre, proyectos propuestos por vecinos u organizaciones y aprobados por el gobierno, límite de 5 por proyecto y mes, sin botón para retirar créditos (la app no lo ofrece). Se dicen «unidades de participación, no dinero».
+- Navegación y pie apuntan a `#escucha`, `#decide` y `#demostracion`. `/plataforma` y `/primer-ciclo` siguen publicadas, pero ya no se enlazan desde la navegación ni el pie (su contenido es de la dirección anterior). `components/landing/` y `content/landing.mjs` quedan sin uso.
+- `SHOW_CIVIC_CREDITS` sigue en `false`: la home nueva muestra Decide sin depender de ese interruptor, que solo gobierna las páginas viejas de Créditos Cívicos.
+- Imágenes para redes regeneradas con la figura del hero en modo Decide.
+
 ## Maqueta «Ciudad que escucha» (reemplaza la dirección de «El acuerdo» en la home)
 
 Brief aprobado por Pablo (10-nov-2026): https://claude.ai/artifact/TwbATDBS3ZU1NEpbhg6MmK

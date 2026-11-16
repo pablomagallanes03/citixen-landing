@@ -1,17 +1,10 @@
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
 import Layout from '../components/layout/Layout'
 import Seo from '../components/layout/Seo'
-import Hero from '../components/landing/Hero'
-import Places from '../components/landing/Places'
-import Intelligence from '../components/landing/Intelligence'
-import { Problems, Action, Platform, StartPath, CivicCredits, FinalCta, ReviewBar } from '../components/landing/Sections'
+import { Hero, Listen, Decide, Close } from '../components/ed/Sections'
 import { useContent } from '../lib/i18n.mjs'
-import { showsUnverifiedClaims } from '../lib/claims.mjs'
-import { landing } from '../content/landing.mjs'
+import { escuchaDecide } from '../content/escuchaDecide.mjs'
 import { firstCycle } from '../content/firstCycle.mjs'
 import { SITE_URL } from '../lib/i18n-config.mjs'
-import { SHOW_CIVIC_CREDITS } from '../lib/features'
 
 const ORGANIZATION_LD = {
   '@context': 'https://schema.org',
@@ -24,36 +17,18 @@ const ORGANIZATION_LD = {
   email: 'hello@citixen.org',
 }
 
-const REVIEW = showsUnverifiedClaims(process.env.SITE_ENV)
-
+// Home «Escucha y Decide» (16-nov-2026): cuatro secciones. La complementariedad vive en el
+// cierre, junto al único llamado a la acción. La home anterior sigue en components/landing.
 export default function Home() {
-  const t = useContent(landing)
+  const t = useContent(escuchaDecide)
   const f = useContent(firstCycle)
-  const { query } = useRouter()
-  const [variant, setVariant] = useState('a')
-
-  // ?titular=b permite compartir una variante concreta del titular durante la revisión.
-  useEffect(() => {
-    if (REVIEW && typeof query.titular === 'string' && t.hero.variants.some((v) => v.id === query.titular)) {
-      setVariant(query.titular)
-    }
-  }, [query.titular, t.hero.variants])
-
   return (
     <Layout>
       <Seo title={t.meta.title} description={t.meta.description} path="/" jsonLd={ORGANIZATION_LD} />
-      <Hero t={t.hero} places={t.places.list} districts={t.places.districts} labels={t.labels} variant={variant} />
-      {/* Orden (12-nov-2026): el problema, la inteligencia colectiva como diferencial, cómo
-          empezar, la acción y lo que se suma después. */}
-      <Problems t={t.problems} />
-      <Intelligence t={t.intelligence} labels={t.labels} />
-      <StartPath t={t.start} />
-      <Action t={t.action} labels={t.labels} />
-      <Places t={t.places} labels={t.labels} />
-      <Platform t={t.platform} />
-      {SHOW_CIVIC_CREDITS && <CivicCredits t={t.civicCredits} />}
-      <FinalCta t={t.final} form={f.form} />
-      {REVIEW && <ReviewBar t={t.review} variants={t.hero.variants} value={variant} onChange={setVariant} />}
+      <Hero t={t.hero} illustrative={t.illustrative} />
+      <Listen t={t.listen} illustrative={t.illustrative} />
+      <Decide t={t.decide} illustrative={t.illustrative} />
+      <Close t={t.close} form={f.form} />
     </Layout>
   )
 }
