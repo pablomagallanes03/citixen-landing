@@ -9,7 +9,16 @@
 const SITE_ENV = process.env.VERCEL_ENV
   || (process.env.NODE_ENV === 'development' ? 'development' : 'local-build')
 
-const { SHOW_CIVIC_CREDITS, SHOW_NEIGHBORS_PAGE } = require('./lib/features.js')
+const { SHOW_CIVIC_CREDITS, SHOW_NEIGHBORS_PAGE, SHOW_PLATFORM_PAGE, SHOW_FIRST_CYCLE_PAGE } = require('./lib/features.js')
+
+// Redirección temporal a una sección de la home, en un solo salto para cada idioma
+// (/pt/plataforma → /pt#escucha, sin pasar por /pt/).
+// Va primero la regla de pt/en; la general (sin locale: false) cubre el español, el idioma por omisión.
+const toSection = (source, hash) => [
+  { source: `/:locale(pt|en)${source}`, destination: `/:locale${hash}`, permanent: false, locale: false },
+  { source, destination: `/${hash}`, permanent: false },
+]
+
 
 const BACKEND_URL = process.env.BACKEND_URL || 'https://citixen.app'
 
@@ -38,8 +47,8 @@ const nextConfig = {
       ...(SHOW_CIVIC_CREDITS
         ? [{ source: '/creditos-civicos', destination: '/como-funciona', permanent: true }]
         : [
-            { source: '/creditos-civicos', destination: '/plataforma', permanent: false },
-            { source: '/como-funciona', destination: '/plataforma', permanent: false },
+            ...toSection('/creditos-civicos', '#decide'),
+            ...toSection('/como-funciona', '#decide'),
           ]),
       ...(SHOW_NEIGHBORS_PAGE
         ? [{ source: '/soyvecino', destination: '/vecinos', permanent: true }]
@@ -47,11 +56,19 @@ const nextConfig = {
             { source: '/soyvecino', destination: '/', permanent: false },
             { source: '/vecinos', destination: '/', permanent: false },
           ]),
-      { source: '/soygobierno', destination: '/primer-ciclo', permanent: true },
-      { source: '/municipios', destination: '/primer-ciclo', permanent: true },
-      { source: '/pricing', destination: '/primer-ciclo', permanent: true },
-      // Retirada en el rediseño; temporal hasta confirmar que no vuelve
-      { source: '/caso-de-estudio', destination: '/primer-ciclo', permanent: false },
+      // Páginas retiradas temporalmente con la home «Escucha y Decide» (lib/features.js).
+      ...(SHOW_PLATFORM_PAGE ? [] : toSection('/plataforma', '#escucha')),
+      // Rutas anteriores de conversión: van directo al destino final, sin cadenas de redirecciones.
+      // Temporales mientras /primer-ciclo esté retirada (una permanente quedaría guardada en los navegadores).
+      ...(SHOW_FIRST_CYCLE_PAGE
+        ? [
+            { source: '/soygobierno', destination: '/primer-ciclo', permanent: true },
+            { source: '/municipios', destination: '/primer-ciclo', permanent: true },
+            { source: '/pricing', destination: '/primer-ciclo', permanent: true },
+            { source: '/caso-de-estudio', destination: '/primer-ciclo', permanent: false },
+          ]
+        : ['/primer-ciclo', '/soygobierno', '/municipios', '/pricing', '/caso-de-estudio']
+            .flatMap((path) => toSection(path, '#demostracion'))),
 
       ...SPANISH_ONLY.flatMap((path) => [
         { source: `/pt${path}`, destination: path, permanent: false, locale: false },

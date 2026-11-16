@@ -6,9 +6,9 @@ const NOINDEX = process.env.SITE_ENV !== 'production'
 
 // Imagen para redes por idioma (public/og-image-<idioma>.png, 1200 × 630).
 const OG_ALT = {
-  es: 'Citixen: Conocé mejor tu ciudad. Construí su futuro con quienes la viven.',
-  pt: 'Citixen: Conheça melhor a sua cidade. Construa o futuro dela com quem vive nela.',
-  en: 'Citixen: Get to know your city better. Build its future with the people who live there.',
+  es: 'Citixen: Escuchá a tu comunidad. Decidí con ella.',
+  pt: 'Citixen: Ouça sua comunidade. Decida com ela.',
+  en: 'Citixen: Listen to your community. Decide with it.',
 }
 
 export default function Seo({ title, description, path = '/', image, jsonLd }) {
