@@ -37,7 +37,7 @@ function Intro({ t, dark }) {
 
 function Points({ points }) {
   return (
-    <ul className={`${styles.points} reveal`}>
+    <ul className={`${styles.points} reveal`} style={{ '--cols': points.length }}>
       {points.map((p) => (
         <li key={p.title}>
           <strong>{p.title}</strong>
@@ -55,7 +55,6 @@ export function Listen({ t, illustrative }) {
         <Intro t={{ ...t, title: <span id="escucha-title">{t.title}</span> }} />
         <ListenDemo t={t.demo} illustrative={illustrative} />
         <Points points={t.points} />
-        <p className={styles.footnote}>{t.note}</p>
       </div>
     </section>
   )

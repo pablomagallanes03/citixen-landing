@@ -6,8 +6,10 @@
 //    aprobado avanza hacia su meta; sin ranking ni fecha de cierre. Proponen vecinos y
 //    organizaciones; el gobierno aprueba.
 //  - La IA de Escucha existe en el producto, pero en producción se habilita por municipio
-//    (apagada desde el 16-nov-2026 hasta resolver las condiciones legales, D6). Por eso
-//    nunca se rotula «Disponible hoy» y la sección lo aclara en una línea.
+//    (apagada desde el 16-nov-2026 hasta resolver las condiciones legales, D6). Se muestra como
+//    capacidad opcional, nunca «Disponible hoy» ni activada por omisión.
+//  - Los parámetros de la demo de Decide son ejemplos; «Meta alcanzada» no promete ejecución
+//    inmediata: sigue los procedimientos administrativos y presupuestarios del municipio.
 //  - Todo ejemplo usa datos ficticios y lo dice.
 
 const es = {
@@ -34,7 +36,7 @@ const es = {
   listen: {
     eyebrow: 'Citixen Escucha',
     title: 'Comprendé lo que tu comunidad necesita.',
-    body: 'Recibí experiencias, necesidades e ideas en cada lugar de tu ciudad. La inteligencia artificial las ordena en temas, acuerdos y desacuerdos para que tu equipo decida con información.',
+    body: 'Recibí experiencias, necesidades e ideas en cada lugar de tu ciudad y transformalas en temas, acuerdos y desacuerdos que ayudan a tu equipo a decidir con información.',
     demo: {
       place: 'Plaza Belgrano',
       placeKind: 'Lugar · con su QR',
@@ -45,6 +47,7 @@ const es = {
       agreement: 'Acuerdo',
       disagreement: 'Desacuerdo',
       replay: 'Ver de nuevo',
+      aiNote: 'Con el análisis con IA activado',
       themeNames: ['Iluminación', 'Juegos para chicos', 'Limpieza'],
       items: [
         { text: 'De noche la plaza queda muy oscura.', theme: 0 },
@@ -60,8 +63,8 @@ const es = {
       { title: 'Lugares', body: 'Plazas, escuelas u oficinas escuchan todo el año con su propio QR.' },
       { title: 'Consultas', body: 'Preguntas puntuales cuando necesitás una respuesta.' },
       { title: 'Acciones', body: 'Lo que surge se convierte en acciones con seguimiento y respuesta a la comunidad.' },
+      { title: 'Inteligencia artificial', body: 'Opcional. Tu municipio la activa al acordar las condiciones de tratamiento de los datos. Asiste a tu equipo; no decide por él.' },
     ],
-    note: 'La IA asiste a tu equipo y no decide por él. Se habilita en cada municipio al acordar las condiciones de tratamiento de los datos.',
   },
   decide: {
     eyebrow: 'Citixen Decide',
@@ -69,13 +72,14 @@ const es = {
     body: 'Con Créditos Cívicos, cada vecino habilitado distribuye su participación entre proyectos aprobados por el gobierno. Los que reúnen más apoyo llegan antes a su meta.',
     demo: {
       wallet: 'Tus Créditos Cívicos',
-      limit: 'Hasta 5 por proyecto este mes',
+      limit: 'Límite de ejemplo: 5 por proyecto por mes',
       left: (n) => (n === 1 ? 'Te queda 1' : `Te quedan ${n}`),
       add: (p) => `Asignar un crédito a ${p}`,
       yours: 'Tu apoyo',
       of: 'de',
       limitReached: 'Límite del mes',
-      goalReached: 'Meta alcanzada: pasa a ejecución.',
+      goalReached: 'Meta alcanzada',
+      configurable: 'Saldo, límites y metas son ejemplos: cada municipio define los suyos.',
       reset: 'Empezar de nuevo',
       projects: [
         { name: 'Nuevas luminarias', place: 'Plaza Belgrano', by: 'Propuesto por vecinos', goal: 400, start: 396 },
@@ -86,7 +90,7 @@ const es = {
     points: [
       { title: 'No son dinero', body: 'Los Créditos Cívicos son unidades de participación: no se compran, no se transfieren y no se cambian por dinero.' },
       { title: 'Reglas del gobierno', body: 'Tu municipio define de dónde salen los créditos, sus límites y qué proyectos se habilitan.' },
-      { title: 'Con seguimiento', body: 'Al llegar a su meta, el proyecto pasa a ejecución y se sigue hasta su cierre con evidencia.' },
+      { title: 'Con seguimiento', body: 'Al llegar a su meta, el proyecto deja de recibir créditos y sigue los procedimientos administrativos y presupuestarios de tu municipio, hasta su cierre con evidencia.' },
     ],
   },
   close: {
@@ -121,7 +125,7 @@ const pt = {
   listen: {
     eyebrow: 'Citixen Escuta',
     title: 'Entenda o que a sua comunidade precisa.',
-    body: 'Receba experiências, necessidades e ideias em cada lugar da sua cidade. A inteligência artificial as organiza em temas, acordos e desacordos para que sua equipe decida com informação.',
+    body: 'Receba experiências, necessidades e ideias em cada lugar da sua cidade e transforme-as em temas, acordos e desacordos que ajudam sua equipe a decidir com informação.',
     demo: {
       place: 'Praça Belgrano',
       placeKind: 'Lugar · com seu QR',
@@ -132,6 +136,7 @@ const pt = {
       agreement: 'Acordo',
       disagreement: 'Desacordo',
       replay: 'Ver de novo',
+      aiNote: 'Com a análise por IA ativada',
       themeNames: ['Iluminação', 'Brinquedos para crianças', 'Limpeza'],
       items: [
         { text: 'À noite a praça fica muito escura.', theme: 0 },
@@ -147,8 +152,8 @@ const pt = {
       { title: 'Lugares', body: 'Praças, escolas ou repartições escutam o ano todo com seu próprio QR.' },
       { title: 'Consultas', body: 'Perguntas pontuais quando você precisa de uma resposta.' },
       { title: 'Ações', body: 'O que surge vira ações com acompanhamento e resposta à comunidade.' },
+      { title: 'Inteligência artificial', body: 'Opcional. Seu município a ativa ao acordar as condições de tratamento dos dados. Apoia sua equipe; não decide por ela.' },
     ],
-    note: 'A IA apoia sua equipe e não decide por ela. É habilitada em cada município ao acordar as condições de tratamento dos dados.',
   },
   decide: {
     eyebrow: 'Citixen Decide',
@@ -156,13 +161,14 @@ const pt = {
     body: 'Com Créditos Cívicos, cada cidadão habilitado distribui sua participação entre projetos aprovados pelo governo. Os que reúnem mais apoio chegam antes à meta.',
     demo: {
       wallet: 'Seus Créditos Cívicos',
-      limit: 'Até 5 por projeto neste mês',
+      limit: 'Limite de exemplo: 5 por projeto por mês',
       left: (n) => (n === 1 ? 'Resta 1' : `Restam ${n}`),
       add: (p) => `Atribuir um crédito a ${p}`,
       yours: 'Seu apoio',
       of: 'de',
       limitReached: 'Limite do mês',
-      goalReached: 'Meta atingida: passa à execução.',
+      goalReached: 'Meta atingida',
+      configurable: 'Saldo, limites e metas são exemplos: cada município define os seus.',
       reset: 'Começar de novo',
       projects: [
         { name: 'Nova iluminação', place: 'Praça Belgrano', by: 'Proposto por moradores', goal: 400, start: 396 },
@@ -173,7 +179,7 @@ const pt = {
     points: [
       { title: 'Não são dinheiro', body: 'Os Créditos Cívicos são unidades de participação: não se compram, não se transferem e não se trocam por dinheiro.' },
       { title: 'Regras do governo', body: 'Seu município define de onde vêm os créditos, seus limites e quais projetos são habilitados.' },
-      { title: 'Com acompanhamento', body: 'Ao atingir a meta, o projeto passa à execução e é acompanhado até o encerramento com evidências.' },
+      { title: 'Com acompanhamento', body: 'Ao atingir a meta, o projeto deixa de receber créditos e segue os procedimentos administrativos e orçamentários do seu município, até o encerramento com evidências.' },
     ],
   },
   close: {
@@ -208,7 +214,7 @@ const en = {
   listen: {
     eyebrow: 'Citixen Listen',
     title: 'Understand what your community needs.',
-    body: 'Collect experiences, needs and ideas at every place in your city. Artificial intelligence organizes them into themes, agreements and disagreements so your team can decide with evidence.',
+    body: 'Collect experiences, needs and ideas at every place in your city and turn them into themes, agreements and disagreements that help your team decide with evidence.',
     demo: {
       place: 'Belgrano Square',
       placeKind: 'Place · with its own QR',
@@ -219,6 +225,7 @@ const en = {
       agreement: 'Agreement',
       disagreement: 'Disagreement',
       replay: 'Play again',
+      aiNote: 'With AI analysis turned on',
       themeNames: ['Lighting', 'Play for kids', 'Cleaning'],
       items: [
         { text: 'The square gets very dark at night.', theme: 0 },
@@ -234,8 +241,8 @@ const en = {
       { title: 'Places', body: 'Squares, schools or offices listen all year round with their own QR code.' },
       { title: 'Consultations', body: 'Specific questions when you need an answer.' },
       { title: 'Actions', body: 'What emerges becomes tracked actions and a response to the community.' },
+      { title: 'Artificial intelligence', body: 'Optional. Your municipality turns it on once the data processing terms are agreed. It supports your team; it never decides for it.' },
     ],
-    note: 'AI supports your team and never decides for it. It is enabled in each municipality once the data processing terms are agreed.',
   },
   decide: {
     eyebrow: 'Citixen Decide',
@@ -243,13 +250,14 @@ const en = {
     body: 'With Civic Credits, every eligible resident spreads their participation across projects approved by the government. The ones with the most support reach their goal first.',
     demo: {
       wallet: 'Your Civic Credits',
-      limit: 'Up to 5 per project this month',
+      limit: 'Example limit: 5 per project per month',
       left: (n) => (n === 1 ? '1 left' : `${n} left`),
       add: (p) => `Assign one credit to ${p}`,
       yours: 'Your support',
       of: 'of',
       limitReached: 'Monthly limit',
-      goalReached: 'Goal reached: moves to delivery.',
+      goalReached: 'Goal reached',
+      configurable: 'Balance, limits and goals are examples: each municipality sets its own.',
       reset: 'Start over',
       projects: [
         { name: 'New street lights', place: 'Belgrano Square', by: 'Proposed by residents', goal: 400, start: 396 },
@@ -260,7 +268,7 @@ const en = {
     points: [
       { title: 'Not money', body: 'Civic Credits are units of participation: they cannot be bought, transferred or exchanged for money.' },
       { title: 'Government rules', body: 'Your municipality sets where credits come from, their limits and which projects are eligible.' },
-      { title: 'Followed through', body: 'Once a project reaches its goal it moves to delivery and is tracked until it closes with evidence.' },
+      { title: 'Followed through', body: 'Once a project reaches its goal it stops receiving credits and follows your municipality’s administrative and budget procedures until it closes with evidence.' },
     ],
   },
   close: {

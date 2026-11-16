@@ -78,7 +78,7 @@ export default function DecideDemo({ t, illustrative }) {
         </ul>
       </div>
       <figcaption className={styles.figNote}>
-        <span>{illustrative}</span>
+        <span>{illustrative}. {t.configurable}</span>
         {used > 0 && (
           <button type="button" className={styles.textBtn} onClick={() => setMine(t.projects.map(() => 0))}>
             {t.reset}

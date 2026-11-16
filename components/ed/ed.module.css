@@ -148,7 +148,7 @@
 .points {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
   gap: clamp(1.5rem, 1rem + 2vw, 3rem);
   max-width: 1040px;
   margin: clamp(3rem, 2rem + 3vw, 4.5rem) auto 0;
@@ -159,13 +159,6 @@
 .decide .points li { border-color: var(--line-night); }
 .decide .points span { color: var(--on-night-2); }
 
-.footnote {
-  max-width: 40rem;
-  margin: 2.5rem auto 0;
-  text-align: center;
-  font-size: 0.875rem;
-  color: var(--ink-3);
-}
 
 .figNote {
   display: flex;
@@ -382,6 +375,7 @@
   .paneThemes { box-shadow: 0 -1px 0 var(--line); }
   .feed { height: 15.5rem; }
   .closeInner { grid-template-columns: 1fr; }
+  .points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 640px) {

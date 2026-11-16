@@ -5,15 +5,15 @@ import path from 'node:path'
 import { createRequire } from 'node:module'
 import { LOCALES, LOCALE_META, SITE_URL, DEFAULT_LOCALE, localizedPath } from '../lib/i18n-config.mjs'
 
-const { SHOW_CIVIC_CREDITS, SHOW_NEIGHBORS_PAGE } = createRequire(import.meta.url)('../lib/features.js')
+const { SHOW_CIVIC_CREDITS, SHOW_NEIGHBORS_PAGE, SHOW_PLATFORM_PAGE, SHOW_FIRST_CYCLE_PAGE } = createRequire(import.meta.url)('../lib/features.js')
 
 // Las páginas ocultas (lib/features.js) no se publican en el sitemap.
 const MULTILINGUAL = [
   '/',
   SHOW_CIVIC_CREDITS && '/como-funciona',
-  '/plataforma',
+  SHOW_PLATFORM_PAGE && '/plataforma',
   SHOW_NEIGHBORS_PAGE && '/vecinos',
-  '/primer-ciclo',
+  SHOW_FIRST_CYCLE_PAGE && '/primer-ciclo',
 ].filter(Boolean)
 const SPANISH_ONLY = ['/privacy', '/terms', '/account-deletion', '/child-safety', '/transparency-methodology']
 

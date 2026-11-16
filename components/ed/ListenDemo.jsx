@@ -90,7 +90,7 @@ export default function ListenDemo({ t, illustrative }) {
         </div>
       </div>
       <figcaption className={styles.figNote}>
-        <span>{illustrative}</span>
+        <span>{illustrative} · {t.aiNote}</span>
         {step >= total && (
           <button type="button" className={styles.textBtn} onClick={() => { setStep(0); setRun((r) => r + 1) }}>
             {t.replay}
