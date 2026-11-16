@@ -185,7 +185,20 @@
 }
 .decide .textBtn { color: var(--on-night); }
 
-/* ── Escucha: demostración ────────────────────────────────────────── */
+/* ── Escucha: explorador de Lugares en un marco noche ─────────────── */
+.stage {
+  max-width: 1180px;
+  margin: clamp(3rem, 2rem + 3vw, 4.5rem) auto 0;
+  padding: clamp(1rem, 0.5rem + 2vw, 2.25rem);
+  border-radius: 28px;
+  background: radial-gradient(120% 80% at 20% 0%, #0A2F72 0%, var(--night) 60%);
+  color: var(--on-night);
+  box-shadow: 0 40px 90px -40px rgba(2, 27, 78, 0.55);
+}
+.stageHint { font-size: 0.9375rem; color: var(--on-night-2); }
+.stage > div:first-of-type { margin-top: 1rem; }
+
+/* ── Escucha: demostración anterior (sin uso, se conserva ListenDemo) ────────────────────────────────────────── */
 .listenDemo { max-width: 1040px; margin: clamp(3rem, 2rem + 3vw, 4.5rem) auto 0; }
 .frame {
   display: grid;

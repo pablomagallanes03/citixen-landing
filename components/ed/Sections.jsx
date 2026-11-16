@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import HeroField, { useHeroSequence } from './HeroField'
-import ListenDemo from './ListenDemo'
+import { PlacesExplorer } from '../landing/Places'
 import DecideDemo from './DecideDemo'
 import Pieces from '../brand/Pieces'
 import DemoForm from '../DemoForm'
@@ -48,12 +48,17 @@ function Points({ points }) {
   )
 }
 
-export function Listen({ t, illustrative }) {
+// Escucha muestra el producto con el explorador de Lugares de la home anterior (mapa de
+// Valle Norte + ficha de cada lugar), dentro de un marco noche, sin rótulos de disponibilidad.
+export function Listen({ t, places, placeLabels }) {
   return (
     <section id="escucha" className={styles.listen} aria-labelledby="escucha-title">
       <div className="wrap">
         <Intro t={{ ...t, title: <span id="escucha-title">{t.title}</span> }} />
-        <ListenDemo t={t.demo} illustrative={illustrative} />
+        <figure className={styles.stage}>
+          <p className={styles.stageHint}>{t.demo.hint}</p>
+          <PlacesExplorer t={places} labels={placeLabels} showStatus={false} note={t.demo.note} />
+        </figure>
         <Points points={t.points} />
       </div>
     </section>

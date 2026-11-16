@@ -4,6 +4,7 @@ import { Hero, Listen, Decide, Close } from '../components/ed/Sections'
 import { useContent } from '../lib/i18n.mjs'
 import { escuchaDecide } from '../content/escuchaDecide.mjs'
 import { firstCycle } from '../content/firstCycle.mjs'
+import { placesContent } from '../content/places.mjs'
 import { SITE_URL } from '../lib/i18n-config.mjs'
 
 const ORGANIZATION_LD = {
@@ -22,11 +23,13 @@ const ORGANIZATION_LD = {
 export default function Home() {
   const t = useContent(escuchaDecide)
   const f = useContent(firstCycle)
+  // Mapa y fichas de Lugares: datos de Valle Norte (content/places.mjs).
+  const l = useContent(placesContent)
   return (
     <Layout>
       <Seo title={t.meta.title} description={t.meta.description} path="/" jsonLd={ORGANIZATION_LD} />
       <Hero t={t.hero} illustrative={t.illustrative} />
-      <Listen t={t.listen} illustrative={t.illustrative} />
+      <Listen t={t.listen} places={l.places} placeLabels={l.labels} />
       <Decide t={t.decide} illustrative={t.illustrative} />
       <Close t={t.close} form={f.form} />
     </Layout>
