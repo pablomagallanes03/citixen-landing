@@ -1,11 +1,10 @@
 # CLAUDE.md — citixen.app (web institucional)
 
-Web institucional de Citixen en `citixen.app`. Rama `redesign/ciudad-que-escucha` (maqueta, 10-nov-2026), creada sobre `redesign/el-acuerdo`.
-Hasta que se apruebe y se haga merge, producción sigue sirviendo `main` con el diseño anterior.
+Web institucional de Citixen en `citixen.app`. **Producción sirve la home «Escucha y Decide» desde el 16-nov-2026** (PR #8, merge `cbc5140`). Las secciones «Ciudad que escucha» y «El acuerdo» de más abajo son historial de direcciones anteriores.
 
-## Home «Escucha y Decide» (rama `redesign/escucha-decide`, 16-nov-2026, pendiente de aprobación)
+## Home «Escucha y Decide» (en producción desde el 16-nov-2026)
 
-Reemplaza la home «Ciudad que escucha» cuando se apruebe. Fuente: Documento Maestro v1.1 §6 (`../docs/estrategia/`).
+Aprobada por Pablo tras la revisión visual (galería: https://claude.ai/artifact/6Qf9zwJDKLZKZYk2K274ae). Fuente: Documento Maestro v1.1 §6 (`../docs/estrategia/`). Despliegue anterior para volver atrás: `citixen-landing-eix66d16f` (Vercel, «Promote»).
 - Cuatro secciones: hero (selector Escucha/Decide sobre una figura de 48 puntos: en Escucha se agrupan en temas; en Decide fluyen hacia tres anillos de meta que se llenan en coral, uno completo con su tilde; los anillos reemplazaron a las columnas de puntos por pedido de Pablo, 16-nov-2026), Escucha (explorador de Lugares de la home anterior: mapa de Valle Norte + ficha de cada lugar en cinco pestañas, dentro de un marco noche, sin rótulos de disponibilidad; pedido de Pablo, 16-nov-2026; reemplazó a la demo de aportes, `components/ed/ListenDemo.jsx`, que queda sin uso), Decide (asignación interactiva de Créditos Cívicos con límite mensual y meta), cierre (complementariedad + formulario de demostración). Código: `pages/index.js`, `components/ed/`, `content/escuchaDecide.mjs`.
 - CTA único: «Solicitar una demostración» (`/#demostracion`, mismo `MunicipalLead`, con la demostración preseleccionada). «Empezar gratis» queda fuera del hero y de la navegación (decisión de Pablo, 16-nov-2026); el registro autónomo queda en el pie. La portada del registro (panel.citixen.app, repo `citixen-portal`, rama `fix/panel-plan-gratuito-sin-ia`) deja de prometer el análisis con IA.
 - Firma institucional: «Tu ciudad. Tu voz. Tu decisión.» (pie). «Tus impuestos. Tu decisión.» se reserva para comunicaciones específicas de Decide: no usarla en la home.
@@ -161,11 +160,13 @@ npx next lint
 
 | Item | Prioridad |
 |---|---|
-| Integrar el simulador interactivo tras validar el prototipo (y recalibrar cifras a 1 CC = 1 USD) | Alta |
+| Probar la home «Escucha y Decide» en un iPhone y un Android físicos | Alta |
+| Decidir si el punto «Lugares» de Escucha se quita (repite en parte el mapa) | Baja |
+| `components/ed/ListenDemo.jsx`, `content/home.mjs`, `components/home/` y el resto de `components/landing/` quedaron sin uso | Baja |
+| Integrar el simulador interactivo tras validar el prototipo (y recalibrar cifras a 1 CC = 1 USD) | Baja (la home nueva tiene su propia demo de Decide) |
 | Prueba en un dispositivo físico (iOS y Android) | Alta, antes de producción |
 | Política de privacidad: aplicar la propuesta de `docs/` tras la revisión jurídica (preguntas al abogado: https://claude.ai/artifact/D5c2tbtt3SDXyYf4foqZGF) | Alta, antes de producción |
 | Política de privacidad solo en español: una revisión preliminar con IA (no jurídica) la considera bloqueante para publicar pt/en. Decidir con el abogado | Alta |
-| `content/home.mjs` y `components/home/` quedaron sin uso (home de «El acuerdo») | Baja |
 | Revisión nativa de portugués e inglés (se publican sin ella por decisión de Pablo, 11-nov-2026) | Baja |
 | Versión del logo para fondos claros | Media |
 | Confirmar tipografía de titulares (Schibsted Grotesk o licencia) | Media |
