@@ -257,7 +257,8 @@ export default function HeroScene({ t, illustrative, onMode }) {
       const section = rootRef.current.closest('section')
       const inner = section.firstElementChild
       const cs = getComputedStyle(section)
-      const other = inner.offsetHeight - wrap.offsetHeight
+      const twoCols = getComputedStyle(inner).display === 'grid'
+      const other = (twoCols ? rootRef.current.offsetHeight : inner.offsetHeight) - wrap.offsetHeight
       const avail = window.innerHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom) - other - 8
       const k = Math.max(0.5, Math.min(1, avail / H, wrap.clientWidth / W))
       scaleRef.current = k

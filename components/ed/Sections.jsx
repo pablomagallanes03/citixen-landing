@@ -11,12 +11,14 @@ export function Hero({ t, illustrative }) {
   return (
     <section className={styles.hero}>
       <div className={`wrap ${styles.heroInner}`}>
-        <h1 className={styles.heroTitle}>
-          <span className={focus === 'decide' ? styles.dim : ''}>{t.titleA}</span>{' '}
-          <span className={focus === 'listen' ? styles.dim : ''}>{t.titleB}</span>
-        </h1>
-        <p className={styles.heroLead}>{t.lead}</p>
-        <a href="#demostracion" className={`btn-primary ${styles.heroCta}`}>{t.cta}</a>
+        <div className={styles.heroText}>
+          <h1 className={styles.heroTitle}>
+            <span className={focus === 'decide' ? styles.dim : ''}>{t.titleA}</span>{' '}
+            <span className={focus === 'listen' ? styles.dim : ''}>{t.titleB}</span>
+          </h1>
+          <p className={styles.heroLead}>{t.lead}</p>
+          <a href="#demostracion" className={`btn-primary ${styles.heroCta}`}>{t.cta}</a>
+        </div>
         <HeroScene t={t} illustrative={illustrative} onMode={setFocus} />
       </div>
     </section>

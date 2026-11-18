@@ -1,7 +1,7 @@
 /* Escena del hero: panel del municipio (atrás) y celular del vecino (adelante).
    Se dibuja a 880×400 y el componente la escala para que el hero entre en una pantalla. */
 
-.root { width: 100%; max-width: 1080px; margin-top: clamp(1rem, 3vh, 2.5rem); display: flex; flex-direction: column; align-items: center; }
+.root { width: 100%; max-width: 1080px; margin-top: clamp(1rem, 3vh, 2.5rem); min-width: 0; display: flex; flex-direction: column; align-items: center; }
 
 /* Selector */
 .switch { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.08); box-shadow: inset 0 0 0 1px var(--line-night); }
@@ -148,6 +148,9 @@
 .step { display: none; }
 
 /* ── Teléfono y tableta: panel arriba, celular abajo con su paso escrito ── */
+@media (min-width: 1024px) {
+  .root { margin-top: 0; }
+}
 @media (max-width: 860px) {
   .wrap { height: 535px; }
   .stage { left: 0; width: 100%; height: 535px; transform: none; }
