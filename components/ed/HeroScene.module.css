@@ -148,47 +148,70 @@
 .ripple { position: absolute; z-index: 11; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: rgba(255, 255, 255, 0.55); box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8); pointer-events: none; }
 .step { display: none; }
 
-/* ── Teléfono y tableta: panel arriba, celular abajo con su paso escrito ── */
-@media (min-width: 1024px) {
-  .root { margin-top: 0; }
-}
+/* ── Teléfono y tableta: la misma composición en miniatura. Panel a la derecha (texto
+   legible, contenido reducido a lo esencial) y celular superpuesto a la izquierda. ── */
 @media (max-width: 860px) {
-  .wrap { height: 535px; }
-  .stage { left: 0; width: 100%; height: 535px; transform: none; }
+  .wrap { height: 252px; }
+  .stage { left: 0; width: 100%; height: 252px; transform: none; }
   .glow { inset: 0 -10%; }
-  .win { left: 0; top: 0; height: 250px; }
-  .main { padding: 0.7rem 0.85rem; }
-  .view { left: 0.85rem; right: 0.85rem; top: 2rem; bottom: 0.6rem; gap: 0.6rem; }
-  .vhead { padding-bottom: 0.55rem; }
-  .vhead h4 { font-size: 1.05rem; }
-  .stat b { font-size: 1.25rem; }
-  .cols { gap: 0.75rem; }
-  .feed li:not(.new):nth-child(n+3) { display: none; }
-  .feed li { padding: 0.4rem 0.5rem; font-size: 0.72rem; }
-  .feed li small { display: none; }
-  .tb { gap: 0.5rem; font-size: 0.74rem; }
-  .tb li:nth-child(n+3) { display: none; }
+  .win { left: 62px; right: 0; top: 0; height: 236px; }
+  .main { padding: 0.6rem 0.75rem 0.6rem 3.5rem; }
+  .crumb { font-size: 0.62rem; }
+  .mk { width: 13px; height: 13px; }
+  .view { left: 3.5rem; right: 0.75rem; top: 1.7rem; bottom: 0.5rem; gap: 0.5rem; }
+  .vhead { padding-bottom: 0.45rem; gap: 0.5rem; }
+  .vhead small { font-size: 0.6rem; }
+  .vhead h4 { font-size: 0.98rem; }
+  .stat b { font-size: 1.15rem; }
+  .stat small { font-size: 0.58rem; }
+  .cols { grid-template-columns: minmax(0, 1fr); gap: 0.45rem; }
+  .lab { margin-bottom: 0.3rem; font-size: 0.56rem; }
   .chip { display: none; }
-  .pbig { grid-template-columns: 92px minmax(0, 1fr); gap: 0.9rem; }
-  .ring { width: 92px; height: 92px; }
-  .rt b { font-size: 1.35rem; }
-  .ck svg { width: 32px; height: 32px; }
-  .desc { font-size: 0.74rem; }
+  .feed { gap: 0.3rem; }
+  .feed li { padding: 0.32rem 0.5rem; font-size: 0.7rem; }
+  .feed li small { display: none; }
+  .feed li:not(.new):nth-child(n+3) { display: none; }
+  .tb { font-size: 0.72rem; }
+  .tb li:nth-child(n+2) { display: none; }
+  .pbig { grid-template-columns: 74px minmax(0, 1fr); gap: 0.7rem; }
+  .ring { width: 74px; height: 74px; }
+  .rt b { font-size: 1.15rem; }
+  .rt small { font-size: 0.56rem; }
+  .ck svg { width: 28px; height: 28px; }
+  .desc { font-size: 0.7rem; line-height: 1.35; }
   .facts, .others { display: none; }
-  .phone { top: 242px; transform: scale(0.84); transform-origin: top left; }
+  .goalchip { font-size: 0.64rem; padding: 0.22rem 0.5rem; }
+  .phone { top: 44px; transform: scale(0.56); transform-origin: top left; }
   /* Lo esencial del celular, más grande para que se lea a esta escala */
-  .typebox { font-size: 0.95rem; }
-  .scr strong { font-size: 1.05rem; }
-  .send { font-size: 0.9rem; }
-  .wal { font-size: 2.9rem; }
-  .prow2 { font-size: 0.85rem; }
-  .step { display: block; position: absolute; left: 190px; right: 0; top: 320px; margin: 0; font: 500 0.95rem/1.4 var(--font-display); color: var(--white); }
-  .step small { display: block; margin-bottom: 0.35rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--on-night-3); }
-  .root[data-mode='decide'] .step small { color: var(--coral); }
+  .typebox { font-size: 1.1rem; }
+  .scr strong { font-size: 1.2rem; }
+  .send { font-size: 1rem; }
+  .sDone small { font-size: 0.9rem; }
+  .wal { font-size: 3.3rem; }
+  .prow2 { font-size: 0.95rem; }
 }
-@media (max-width: 400px) {
-  .phone { transform: scale(0.78); }
-  .step { left: 172px; }
+@media (max-width: 640px) {
+  .root { margin-top: 1rem; }
+  /* Al llegar el aporte nuevo, el panel muestra solo ese: entra en cualquier idioma. */
+  .root[data-arrived='1'] .feed li:not(.new) { display: none; }
+  .crumb { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+  .crumb .mk { display: inline-block; vertical-align: -2px; }
+  .switchBtn { min-height: 40px; min-width: 6.5rem; }
+  .wrap { margin-top: 0.6rem; }
+  .caption { font-size: 0.9rem; }
+}
+/* Teléfonos angostos (≤ 360 px): celular más chico y panel con lo mínimo. */
+@media (max-width: 360px) {
+  .win { left: 48px; }
+  .main { padding-left: 3.6rem; }
+  .view { left: 3.6rem; right: 0.6rem; }
+  .phone { transform: scale(0.5); }
+  .stat small { display: none; }
+  .pbig { grid-template-columns: minmax(0, 1fr); }
+  .ring { display: none; }
+  .tb li { font-size: 0.68rem; }
+  .vhead small { display: none; }
+  .feed li { font-size: 0.66rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .pill, .view, .scr, .win, .phone, .lbar > i, .fl, .ck, .rt { transition: none; }

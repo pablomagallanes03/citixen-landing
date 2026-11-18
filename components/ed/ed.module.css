@@ -30,138 +30,11 @@
   line-height: 1.5;
 }
 .heroCta { margin-top: 2rem; padding: 1.05rem 1.75rem; font-size: 1.0625rem; }
-.heroNote { margin-top: 0.75rem; font-size: 0.8125rem; color: var(--on-night-3); }
 
 /* Figura */
-.field { width: 100%; max-width: 1080px; margin-top: clamp(2.5rem, 1.5rem + 2.5vw, 3.5rem); }
-
-.switch {
-  position: relative;
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 4px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 0 0 1px var(--line-night);
-}
-.switchPill {
-  position: absolute;
-  top: 4px; bottom: 4px; left: 4px;
-  width: calc(50% - 4px);
-  border-radius: 999px;
-  background: var(--white);
-  transition: transform 500ms var(--ease);
-}
-.switchRight { transform: translateX(100%); }
-.switchBtn {
-  position: relative;
-  z-index: 1;
-  min-width: 7.5rem;
-  min-height: 44px;
-  padding: 0 1.25rem;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  font-weight: 600;
-  font-size: 0.9375rem;
-  color: var(--on-night-2);
-  transition: color 400ms var(--ease);
-}
-.switchBtn[aria-pressed='true'] { color: var(--night); }
-
-.canvas { position: relative; width: 100%; margin-top: 1.5rem; }
-
-.dot {
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  margin: -6.5px 0 0 -6.5px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.82);
-  --d: 0ms;
-  transition:
-    left 1000ms var(--ease) var(--d),
-    top 1000ms var(--ease) var(--d),
-    opacity 500ms var(--ease) var(--d),
-    transform 500ms var(--ease) var(--d),
-    background-color 600ms var(--ease) var(--d);
-}
-.mode_scatter .dot { opacity: 0.45; }
 /* Decide: los puntos viajan al centro de su proyecto, toman el coral y se absorben. */
-.mode_decide .dot {
-  background: var(--coral);
-  opacity: 0;
-  transform: scale(0.3);
-  transition:
-    left 900ms var(--ease) var(--d),
-    top 900ms var(--ease) var(--d),
-    background-color 500ms var(--ease) var(--d),
-    opacity 350ms var(--ease) calc(var(--d) + 650ms),
-    transform 350ms var(--ease) calc(var(--d) + 650ms);
-}
-
-.label {
-  position: absolute;
-  transform: translateX(-50%);
-  width: 30%;
-  display: grid;
-  justify-items: center;
-  gap: 0.2rem;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  line-height: 1.25;
-  color: var(--on-night);
-  opacity: 0;
-  transition: opacity 600ms var(--ease);
-}
-.labelGoal { font-style: normal; font-size: 0.8125rem; font-weight: 600; color: var(--coral); }
-.mode_listen .labelListen,
-.mode_decide .labelDecide { opacity: 1; transition-delay: 500ms; }
 
 /* Anillos de meta: cada proyecto se llena en coral hacia su meta; el primero la alcanza. */
-.rings { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.rings g { opacity: 0; transition: opacity 500ms var(--ease); }
-.mode_decide .rings g { opacity: 1; transition-delay: 350ms; }
-.ringTrack { fill: none; stroke: rgba(255, 255, 255, 0.12); }
-.ringFill {
-  fill: none;
-  stroke: var(--coral);
-  stroke-linecap: round;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  transition: stroke-dashoffset 300ms var(--ease);
-}
-.mode_decide .ringFill {
-  stroke-dashoffset: calc(100 - var(--p));
-  transition: stroke-dashoffset 1100ms var(--ease) var(--rd);
-}
-.ringCheck {
-  fill: none;
-  stroke: var(--coral);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  transition: stroke-dashoffset 200ms var(--ease);
-}
-.mode_decide .ringCheck { stroke-dashoffset: 0; transition: stroke-dashoffset 450ms var(--ease) 1500ms; }
-
-.ringValue {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-display);
-  font-size: clamp(1.125rem, 0.8rem + 1.2vw, 1.75rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
-  color: var(--on-night);
-  opacity: 0;
-  transition: opacity 300ms var(--ease);
-}
-.ringValue small { font-size: 0.6em; color: var(--on-night-2); margin-left: 0.05em; }
-.mode_decide .ringValue { opacity: 1; transition: opacity 500ms var(--ease) calc(var(--rd) + 600ms); }
-
-.caption { margin-top: 1.25rem; font-size: 1rem; color: var(--on-night-2); min-height: 1.6em; }
 
 /* ── Encabezado de sección ────────────────────────────────────────── */
 .listen, .decide, .close { padding: var(--section) 0; }
@@ -246,96 +119,11 @@
 .stage > div:first-of-type { margin-top: 1rem; }
 
 /* ── Escucha: demostración anterior (sin uso, se conserva ListenDemo) ────────────────────────────────────────── */
-.listenDemo { max-width: 1040px; margin: clamp(3rem, 2rem + 3vw, 4.5rem) auto 0; }
-.frame {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-radius: 28px;
-  background: var(--mist-soft);
-  box-shadow: inset 0 0 0 1px var(--line);
-  overflow: hidden;
-}
-.pane { padding: clamp(1.25rem, 0.8rem + 2vw, 2.25rem); min-width: 0; }
-.paneThemes { background: var(--white); box-shadow: -1px 0 0 var(--line); }
-
-.placeHead { display: flex; align-items: center; gap: 0.85rem; }
-.placeHead strong { display: block; font-family: var(--font-display); font-size: 1.125rem; letter-spacing: -0.01em; }
-.placeHead small { display: block; font-size: 0.8125rem; color: var(--ink-3); }
-.qr {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  width: 38px;
-  height: 38px;
-  padding: 6px;
-  border-radius: 10px;
-  background: var(--night);
-  flex: 0 0 auto;
-}
-.qr i { background: var(--white); border-radius: 1px; }
-.qr i:nth-child(2), .qr i:nth-child(6), .qr i:nth-child(8) { background: transparent; }
-
-.prompt { margin-top: 1.25rem; font-size: 0.9375rem; color: var(--ink-2); }
-
-.feed {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 0.6rem;
-  height: 22rem;
-  margin-top: 1rem;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 3.5rem);
-  mask-image: linear-gradient(to bottom, transparent 0, #000 3.5rem);
-}
-.bubble {
-  display: grid;
-  gap: 0.35rem;
-  justify-items: start;
-  padding: 0.8rem 1rem;
-  border-radius: 16px 16px 16px 4px;
-  background: var(--white);
-  box-shadow: 0 1px 2px rgba(11, 23, 54, 0.06);
-  font-size: 0.9375rem;
-  line-height: 1.4;
-  animation: rise 500ms var(--ease) both;
-}
-.bubble em {
-  font-style: normal;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--navy);
-  opacity: 0;
-  transform: translateY(2px);
-  transition: opacity 400ms var(--ease), transform 400ms var(--ease);
-}
-.bubble em.tagOn { opacity: 1; transform: none; }
 
 @keyframes rise {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: none; }
 }
-
-.paneTitle { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
-.themes { list-style: none; display: grid; gap: 1.75rem; margin-top: 1.75rem; }
-.themes li { display: grid; gap: 0.55rem; opacity: 0.35; transition: opacity 500ms var(--ease); }
-.themes li.themeOn { opacity: 1; }
-.themeRow { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
-.themeRow strong { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; letter-spacing: -0.015em; }
-.themes small { font-size: 0.8125rem; color: var(--ink-3); }
-.track { height: 8px; border-radius: 999px; background: var(--mist); overflow: hidden; }
-.track span { display: block; height: 100%; border-radius: inherit; background: var(--navy); transition: width 600ms var(--ease); }
-.chipOn, .chipOff {
-  padding: 0.2rem 0.65rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  white-space: nowrap;
-  animation: rise 400ms var(--ease) both;
-}
-.chipOn { background: #E6EDF8; color: var(--navy); }
-.chipOff { box-shadow: inset 0 0 0 1px var(--ink-3); color: var(--ink-2); }
 
 /* ── Decide: demostración ─────────────────────────────────────────── */
 .decideDemo { max-width: 860px; margin: clamp(3rem, 2rem + 3vw, 4.5rem) auto 0; }
@@ -448,19 +236,10 @@
   .heroTitle { font-size: clamp(2.6rem, min(1rem + 4.6vw, 8vh), 5.25rem); }
   .heroLead { margin-top: clamp(0.75rem, 2vh, 1.5rem); max-width: 42rem; }
   .heroCta { margin-top: clamp(1rem, 3vh, 2rem); }
-  .field {
-    margin-top: clamp(1rem, 3vh, 2.5rem);
-    max-width: min(1080px, max(520px, calc(288.8vh - 1484px)));
-  }
   @supports (height: 1svh) {
     .heroTitle { font-size: clamp(2.6rem, min(1rem + 4.6vw, 8svh), 5.25rem); }
-    .field { max-width: min(1080px, max(520px, calc(288.8svh - 1484px))); }
   }
   /* Los puntos escalan con la figura para no amontonarse en pantallas bajas. */
-  .canvas { margin-top: clamp(0.5rem, 2vh, 1.5rem); container-type: inline-size; }
-  .dot { --ds: clamp(8px, 1.2cqw, 13px); width: var(--ds); height: var(--ds); margin: calc(var(--ds) / -2) 0 0 calc(var(--ds) / -2); }
-  .caption { margin-top: clamp(0.5rem, 1.5vh, 1.25rem); }
-  .heroNote { margin-top: 0.25rem; }
 
   /* Menú y redirecciones llevan a la demo (#escucha, #decide). Se ubica con su borde inferior
      cerca del pie de la ventana: la demo entera y, encima, lo que entre de su título. */
@@ -491,16 +270,18 @@
 }
 
 @media (max-width: 860px) {
-  .frame { grid-template-columns: 1fr; }
-  .paneThemes { box-shadow: 0 -1px 0 var(--line); }
-  .feed { height: 15.5rem; }
   .closeInner { grid-template-columns: 1fr; }
   .points { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 640px) {
-  .dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; }
-  .label { font-size: 0.75rem; }
+  /* Celular: hero compacto para que la escena aparezca en la primera pantalla (Safari deja ~660 px). */
+  .hero { padding: calc(var(--nav-height) + 1rem) 0 1.75rem; }
+  .heroTitle { font-size: clamp(1.85rem, 8.6vw, 2.6rem); }
+  .heroLead { margin-top: 0.85rem; font-size: 0.98rem; line-height: 1.45; }
+  .heroCta { margin-top: 1.1rem; padding: 0.9rem 1.5rem; font-size: 1rem; }
+}
+@media (max-width: 640px) {
   .points { grid-template-columns: 1fr; gap: 1.25rem; }
   .wallet { grid-template-columns: 1fr; }
   .coins { justify-content: flex-start; }
@@ -508,7 +289,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .heroTitle span, .switchPill, .switchBtn, .dot, .label, .rings g, .ringFill, .ringCheck, .ringValue,
-  .bubble em, .themes li, .track span, .coins i, .plus, .barMine { transition: none; }
-  .bubble, .chipOn, .chipOff, .reached { animation: none; }
+  .heroTitle span, .coins i, .plus, .barMine { transition: none; }
+  .reached { animation: none; }
 }
