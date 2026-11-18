@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import HeroField, { useHeroSequence } from './HeroField'
+import HeroScene from './HeroScene'
 import { PlacesExplorer } from '../landing/Places'
 import DecideDemo from './DecideDemo'
 import Pieces from '../brand/Pieces'
@@ -7,19 +7,19 @@ import DemoForm from '../DemoForm'
 import styles from './ed.module.css'
 
 export function Hero({ t, illustrative }) {
-  const [mode, select] = useHeroSequence()
-  const focus = mode === 'scatter' ? null : mode
+  const [focus, setFocus] = useState(null)
   return (
     <section className={styles.hero}>
       <div className={`wrap ${styles.heroInner}`}>
-        <h1 className={styles.heroTitle}>
-          <span className={focus === 'decide' ? styles.dim : ''}>{t.titleA}</span>{' '}
-          <span className={focus === 'listen' ? styles.dim : ''}>{t.titleB}</span>
-        </h1>
-        <p className={styles.heroLead}>{t.lead}</p>
-        <a href="#demostracion" className={`btn-primary ${styles.heroCta}`}>{t.cta}</a>
-        <HeroField t={t} mode={mode} onSelect={select} />
-        <p className={styles.heroNote}>{illustrative}</p>
+        <div className={styles.heroText}>
+          <h1 className={styles.heroTitle}>
+            <span className={focus === 'decide' ? styles.dim : ''}>{t.titleA}</span>{' '}
+            <span className={focus === 'listen' ? styles.dim : ''}>{t.titleB}</span>
+          </h1>
+          <p className={styles.heroLead}>{t.lead}</p>
+          <a href="#demostracion" className={`btn-primary ${styles.heroCta}`}>{t.cta}</a>
+        </div>
+        <HeroScene t={t} illustrative={illustrative} onMode={setFocus} />
       </div>
     </section>
   )
@@ -52,10 +52,10 @@ function Points({ points }) {
 // Valle Norte + ficha de cada lugar), dentro de un marco noche, sin rótulos de disponibilidad.
 export function Listen({ t, places, placeLabels }) {
   return (
-    <section id="escucha" className={styles.listen} aria-labelledby="escucha-title">
+    <section className={styles.listen} aria-labelledby="escucha-title">
       <div className="wrap">
         <Intro t={{ ...t, title: <span id="escucha-title">{t.title}</span> }} />
-        <figure className={styles.stage}>
+        <figure id="escucha" className={styles.stage}>
           <p className={styles.stageHint}>{t.demo.hint}</p>
           <PlacesExplorer t={places} labels={placeLabels} showStatus={false} note={t.demo.note} />
         </figure>
@@ -67,7 +67,7 @@ export function Listen({ t, places, placeLabels }) {
 
 export function Decide({ t, illustrative }) {
   return (
-    <section id="decide" className={styles.decide} aria-labelledby="decide-title">
+    <section className={styles.decide} aria-labelledby="decide-title">
       <div className="wrap">
         <Intro t={{ ...t, title: <span id="decide-title">{t.title}</span> }} dark />
         <DecideDemo t={t.demo} illustrative={illustrative} />

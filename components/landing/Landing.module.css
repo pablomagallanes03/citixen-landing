@@ -185,7 +185,7 @@
 .filter:hover { border-color: var(--on-night-2); color: var(--on-night); }
 .filterOn { background: var(--white); border-color: var(--white); color: var(--night); }
 .filterOn:hover { color: var(--night); }
-.placesGrid { margin-top: 1.5rem; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+.placesGrid { margin-top: 1.1rem; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 1.25rem; align-items: start; }
 .mapWrap { min-width: 0; position: sticky; top: calc(var(--nav-height) + 1rem); }
 .map { display: block; width: 100%; height: auto; border-radius: var(--radius-lg); border: 1px solid var(--line-night); box-shadow: 0 40px 90px rgba(1, 12, 40, 0.5); }
 .pin { cursor: pointer; outline: none; }
@@ -206,15 +206,15 @@
 .mapNote { margin-top: 0.75rem; font-size: 0.78rem; color: var(--on-night-3); }
 
 .placeCard {
-  background: var(--white); color: var(--ink); border-radius: var(--radius-lg); padding: 1.4rem;
-  display: grid; gap: 0.6rem; animation: rise 450ms var(--ease) both; min-width: 0;
+  background: var(--white); color: var(--ink); border-radius: var(--radius-lg); padding: 1.25rem;
+  display: grid; gap: 0.55rem; animation: rise 450ms var(--ease) both; min-width: 0;
   box-shadow: 0 30px 70px rgba(1, 12, 40, 0.45);
 }
 .placeCardHead { display: flex; gap: 0.9rem; align-items: center; }
 .placeCardIcon { width: 50px; height: 50px; flex: 0 0 auto; border-radius: 14px; display: grid; place-items: center; background: var(--night); color: var(--white); }
 .placeType { font-size: 0.78rem; color: var(--ink-3); }
 .placeName { font-size: 1.4rem; line-height: 1.15; }
-.placeMeta { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center; padding: 0.65rem 0.8rem; border-radius: var(--radius); background: var(--mist-soft); font-size: 0.8rem; color: var(--ink-2); }
+.placeMeta { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center; padding: 0.5rem 0.75rem; border-radius: var(--radius); background: var(--mist-soft); font-size: 0.8rem; color: var(--ink-2); }
 .placeMeta > span { display: inline-flex; align-items: center; gap: 0.4rem; }
 .placeMeta b { font-family: var(--font-display); font-size: 1.05rem; color: var(--navy); }
 .qr {
@@ -223,10 +223,10 @@
     linear-gradient(var(--white), var(--white));
   box-shadow: inset 0 0 0 2px var(--white), inset 0 0 0 3px var(--ink);
 }
-.placeTabs { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.3rem; }
+.placeTabs { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.15rem; }
 .placeTab {
-  display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.42rem 0.75rem; border-radius: 999px;
-  border: 1px solid var(--line); background: var(--white); font-weight: 600; font-size: 0.84rem; color: var(--ink-2);
+  display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.56rem; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--white); font-weight: 600; font-size: 0.8rem; color: var(--ink-2);
   transition: all 200ms var(--ease);
 }
 .placeTab:hover { border-color: var(--navy); color: var(--ink); }
