@@ -7,7 +7,7 @@ import styles from './HeroScene.module.css'
 // La escena se dibuja a 880×400 y se escala para que el hero entre en la primera pantalla.
 // La secuencia automática dura ~11 s, una sola vez; «Detener animación» cumple WCAG 2.2.2.
 
-const W = 880
+const W = 780
 const H = 400
 const START = 397
 const GOAL = 400
@@ -70,6 +70,7 @@ export default function HeroScene({ t, illustrative, onMode }) {
   const [running, setRunning] = useState(false)
   const [desktop, setDesktop] = useState(true)
   const [scale, setScale] = useState(1)
+  const [bleedW, setBleedW] = useState(null)
 
   const q = (k) => rootRef.current.querySelector(`[data-r="${k}"]`)
   const qa = (k) => rootRef.current.querySelectorAll(`[data-r="${k}"]`)
@@ -252,7 +253,7 @@ export default function HeroScene({ t, illustrative, onMode }) {
     const fit = () => {
       const isDesk = mq.matches
       setDesktop(isDesk)
-      if (!isDesk) { scaleRef.current = 1; setScale(1); return }
+      if (!isDesk) { scaleRef.current = 1; setScale(1); setBleedW(null); return }
       const wrap = wrapRef.current
       const section = rootRef.current.closest('section')
       const inner = section.firstElementChild
@@ -260,9 +261,14 @@ export default function HeroScene({ t, illustrative, onMode }) {
       const twoCols = getComputedStyle(inner).display === 'grid'
       const other = (twoCols ? rootRef.current.offsetHeight : inner.offsetHeight) - wrap.offsetHeight
       const avail = window.innerHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom) - other - 8
-      const k = Math.max(0.5, Math.min(1, avail / H, wrap.clientWidth / W))
+      // En dos columnas la escena puede crecer más allá de su columna, hasta cerca del borde
+      // derecho de la ventana (sin cortarse); en una columna, hasta el ancho disponible.
+      const left = rootRef.current.getBoundingClientRect().left
+      const availW = twoCols ? window.innerWidth - left - 28 : wrap.clientWidth
+      const k = Math.max(0.5, Math.min(twoCols ? 1.15 : 1, avail / H, availW / W))
       scaleRef.current = k
       setScale(k)
+      setBleedW(twoCols ? Math.round(W * k) : null)
     }
     fit()
     window.addEventListener('resize', fit)
@@ -273,7 +279,7 @@ export default function HeroScene({ t, illustrative, onMode }) {
   const switchMode = started ? mode : 'listen'
 
   return (
-    <figure ref={rootRef} className={styles.root} data-mode={switchMode} data-scr="form" data-focus="">
+    <figure ref={rootRef} className={styles.root} style={bleedW ? { width: `${bleedW}px`, maxWidth: 'none' } : undefined} data-mode={switchMode} data-scr="form" data-focus="">
       <div className={styles.switch} role="group" aria-label={t.switchLabel}>
         <span className={`${styles.pill} ${switchMode === 'decide' ? styles.pillRight : ''}`} aria-hidden="true" />
         {['listen', 'decide'].map((m) => (

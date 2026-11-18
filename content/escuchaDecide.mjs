@@ -14,13 +14,13 @@
 
 const es = {
   meta: {
-    title: 'Citixen | Escuchá a tu comunidad. Decidí con ella.',
+    title: 'Citixen | Escucha a tu comunidad. Decide con ella.',
     description: 'Citixen Escucha ayuda a tu gobierno a comprender lo que tu comunidad necesita. Citixen Decide le da a la ciudadanía poder de decisión sobre proyectos públicos con Créditos Cívicos.',
   },
   illustrative: 'Ejemplo ilustrativo con datos ficticios',
   hero: {
-    titleA: 'Escuchá a tu comunidad.',
-    titleB: 'Decidí con ella.',
+    titleA: 'Escucha a tu comunidad.',
+    titleB: 'Decide con ella.',
     lead: 'Dos soluciones para comprender lo que tu comunidad necesita y convertir su participación en decisiones públicas.',
     cta: 'Solicitar una demostración',
     switchLabel: 'Ver cada solución',
@@ -42,7 +42,7 @@ const es = {
       aiChip: 'análisis con IA · opcional',
       feed: [
         { text: '«De noche está muy oscuro»', meta: 'ahora · QR del lugar' },
-        { text: '«Juegos para los más chicos»', meta: 'hace 12 min' },
+        { text: '«Juegos para los más pequeños»', meta: 'hace 12 min' },
         { text: '«Falta luz en la esquina»', meta: 'hace 1 h' },
       ],
       themes: ['Iluminación', 'Juegos', 'Limpieza'],
@@ -64,8 +64,8 @@ const es = {
       goal: '400 Créditos Cívicos',
       goalReached: 'Meta alcanzada',
       of: 'de',
-      others: ['Juegos inclusivos', 'Más cestos'],
-      yours: 'Tus créditos acá',
+      others: ['Juegos inclusivos', 'Más cestos de basura'],
+      yours: 'Tus créditos aquí',
       limit: 'límite de ejemplo 5',
       steps: {
         scan: 'El vecino escanea el QR de la plaza.',
@@ -78,15 +78,15 @@ const es = {
   },
   listen: {
     eyebrow: 'Citixen Escucha',
-    title: 'Comprendé lo que tu comunidad necesita.',
-    body: 'Recibí experiencias, necesidades e ideas en cada lugar de tu ciudad y transformalas en temas, acuerdos y desacuerdos que ayudan a tu equipo a decidir con información.',
+    title: 'Comprende lo que tu comunidad necesita.',
+    body: 'Recibe experiencias, necesidades e ideas en cada lugar de tu ciudad y conviértelas en temas, acuerdos y desacuerdos que ayudan a tu equipo a decidir con información.',
     demo: {
-      hint: 'Tocá un lugar del mapa y recorré su ficha.',
+      hint: 'Toca un lugar del mapa y recorre su ficha.',
       note: 'Ejemplo ilustrativo con datos ficticios. Los temas y las necesidades requieren el análisis con IA activado.',
     },
     points: [
       { title: 'Lugares', body: 'Plazas, escuelas u oficinas escuchan todo el año con su propio QR.' },
-      { title: 'Consultas', body: 'Preguntas puntuales cuando necesitás una respuesta.' },
+      { title: 'Consultas', body: 'Preguntas puntuales cuando necesitas una respuesta.' },
       { title: 'Acciones', body: 'Lo que surge se convierte en acciones con seguimiento y respuesta a la comunidad.' },
       { title: 'Inteligencia artificial', body: 'Opcional. Tu municipio la activa al acordar las condiciones de tratamiento de los datos. Asiste a tu equipo; no decide por él.' },
     ],
@@ -107,7 +107,7 @@ const es = {
       configurable: 'Saldo, límites y metas son ejemplos: cada municipio define los suyos.',
       reset: 'Empezar de nuevo',
       projects: [
-        { name: 'Nuevas luminarias', place: 'Plaza Belgrano', by: 'Propuesto por vecinos', goal: 400, start: 396 },
+        { name: 'Nuevas luminarias', place: 'Plaza del Sol', by: 'Propuesto por vecinos', goal: 400, start: 396 },
         { name: 'Juegos inclusivos', place: 'Parque del Sur', by: 'Propuesto por una organización', goal: 600, start: 318 },
         { name: 'Huerta comunitaria', place: 'Barrio Norte', by: 'Propuesto por vecinos', goal: 300, start: 141 },
       ],
@@ -121,7 +121,7 @@ const es = {
   close: {
     title: 'Escucha, Decide o las dos.',
     body: 'Cada solución funciona por sí sola. Juntas, conectan lo que tu comunidad necesita con lo que decide.',
-    formTitle: 'Solicitá una demostración',
+    formTitle: 'Solicita una demostración',
     formBody: 'Te mostramos Citixen con el contexto de tu municipio.',
   },
 }
@@ -221,7 +221,7 @@ const pt = {
       configurable: 'Saldo, limites e metas são exemplos: cada município define os seus.',
       reset: 'Começar de novo',
       projects: [
-        { name: 'Nova iluminação', place: 'Praça Belgrano', by: 'Proposto por moradores', goal: 400, start: 396 },
+        { name: 'Nova iluminação', place: 'Praça do Sol', by: 'Proposto por moradores', goal: 400, start: 396 },
         { name: 'Brinquedos inclusivos', place: 'Parque do Sul', by: 'Proposto por uma organização', goal: 600, start: 318 },
         { name: 'Horta comunitária', place: 'Bairro Norte', by: 'Proposto por moradores', goal: 300, start: 141 },
       ],
@@ -335,7 +335,7 @@ const en = {
       configurable: 'Balance, limits and goals are examples: each municipality sets its own.',
       reset: 'Start over',
       projects: [
-        { name: 'New street lights', place: 'Belgrano Square', by: 'Proposed by residents', goal: 400, start: 396 },
+        { name: 'New street lights', place: 'Sun Square', by: 'Proposed by residents', goal: 400, start: 396 },
         { name: 'Inclusive playground', place: 'South Park', by: 'Proposed by an organization', goal: 600, start: 318 },
         { name: 'Community garden', place: 'North District', by: 'Proposed by residents', goal: 300, start: 141 },
       ],
