@@ -6,7 +6,7 @@ const NOINDEX = process.env.SITE_ENV !== 'production'
 
 // Imagen para redes por idioma (public/og-image-<idioma>.png, 1200 × 630).
 const OG_ALT = {
-  es: 'Citixen: Escuchá a tu comunidad. Decidí con ella.',
+  es: 'Citixen: Escucha a tu comunidad. Decide con ella.',
   pt: 'Citixen: Ouça sua comunidade. Decida com ela.',
   en: 'Citixen: Listen to your community. Decide with it.',
 }
