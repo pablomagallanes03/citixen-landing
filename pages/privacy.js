@@ -29,7 +29,7 @@ export default function Privacy() {
               <div className="legal-meta">
                 <div className="meta-item">
                   <span className="meta-label">Última actualización</span>
-                  <span className="meta-value">12 de noviembre de 2026</span>
+                  <span className="meta-value">18 de noviembre de 2026</span>
                 </div>
                 <div className="meta-item">
                   <span className="meta-label">Marco normativo</span>
@@ -179,14 +179,15 @@ export default function Privacy() {
               <ul>
                 <li>Extracción y estructuración de datos de documentos fiscales y financieros (ej: lectura de comprobantes de pago, balances municipales);</li>
                 <li>Filtrado automatizado de contenido para detectar lenguaje potencialmente inadecuado en propuestas y comentarios ciudadanos;</li>
-                <li>Categorización y organización de información para facilitar la gestión por parte de los gobiernos locales.</li>
+                <li>Categorización y organización de información para facilitar la gestión por parte de los gobiernos locales;</li>
+                <li>Agrupación por tema y resumen de opiniones y respuestas de participación ciudadana (encuestas y canales de un Lugar), para que el municipio u organización entienda qué dijo la comunidad. Antes de enviar un texto se ocultan automáticamente nombres y datos de contacto; los textos con datos sensibles y los aportes de lugares de atención, como centros de salud, no se envían.</li>
               </ul>
               <p><strong>Principios que rigen el uso de IA en la Plataforma:</strong></p>
               <ul>
                 <li><strong>Sin decisiones automatizadas vinculantes.</strong> Ninguna decisión que produzca efectos legales sobre los usuarios (aprobación de cuentas, aprobación de proyectos, procesamiento de desembolsos, suspensión de cuentas) es tomada por sistemas automatizados. Todas las decisiones gubernamentales son tomadas por funcionarios humanos.</li>
                 <li><strong>Revisión humana obligatoria.</strong> Cuando la IA asiste en la extracción o clasificación de datos, los resultados son revisados y validados por un operador humano antes de que produzcan efecto.</li>
                 <li><strong>Sin entrenamiento con datos personales identificables.</strong> Los datos personales de los usuarios no se utilizan para entrenar, ajustar ni mejorar modelos de IA. El procesamiento se limita a la ejecución de tareas específicas sobre los datos proporcionados, sin retención por parte del modelo.</li>
-                <li><strong>Proveedores de IA.</strong> Los modelos de IA utilizados son provistos por terceros (actualmente Anthropic, Inc.). Los datos enviados a estos proveedores están sujetos a los acuerdos de procesamiento de datos correspondientes y a las mismas salvaguardas descritas en la Sección 6.</li>
+                <li><strong>Proveedores de IA.</strong> Los modelos de IA utilizados son provistos por terceros (actualmente Anthropic, Inc. y Voyage AI, ambos en Estados Unidos). Los datos enviados a estos proveedores están sujetos a los acuerdos de procesamiento de datos correspondientes y a las mismas salvaguardas descritas en la Sección 6.</li>
               </ul>
 
               <h3>2.10 Verificación de identidad (función discontinuada)</h3>
@@ -346,7 +347,8 @@ export default function Privacy() {
                 <li><strong>Google LLC (Firebase)</strong> — entrega de notificaciones push (FCM) — Estados Unidos</li>
                 <li><strong>Google LLC / Apple Inc.</strong> — autenticación OAuth — Estados Unidos</li>
                 <li><strong>Resend, Inc.</strong> — correos electrónicos transaccionales — Estados Unidos</li>
-                <li><strong>Anthropic, Inc.</strong> — procesamiento asistido por IA (extracción de datos, filtrado de contenido) — Estados Unidos</li>
+                <li><strong>Anthropic, Inc.</strong> — procesamiento asistido por IA (extracción de datos, filtrado de contenido, agrupación y resumen de participación) — Estados Unidos</li>
+                <li><strong>Voyage AI</strong> — agrupación de textos similares — Estados Unidos</li>
               </ul>
 
               <h3>6.2 No venta de datos personales</h3>
