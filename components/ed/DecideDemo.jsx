@@ -19,7 +19,7 @@ export default function DecideDemo({ t, illustrative }) {
   const add = (i) => setMine((m) => m.map((v, j) => (j === i ? v + 1 : v)))
 
   return (
-    <figure className={styles.decideDemo}>
+    <figure id="decide" className={styles.decideDemo}>
       <div className={styles.decideFrame}>
         <div className={styles.wallet}>
           <div>
@@ -59,19 +59,19 @@ export default function DecideDemo({ t, illustrative }) {
                     </button>
                   </div>
                 </div>
-                <div className={styles.bar}>
-                  <span className={styles.barOthers} style={{ width: `${(p.start / p.goal) * 100}%` }} />
-                  <span
-                    className={styles.barMine}
-                    style={{ left: `min(${(p.start / p.goal) * 100}%, calc(100% - ${mine[i] * 5}px))`, width: mine[i] ? `max(${(Math.min(mine[i], p.goal - p.start) / p.goal) * 100}%, ${mine[i] * 5}px)` : 0 }}
-                  />
+                <div className={styles.barRow}>
+                  <div className={styles.bar}>
+                    <span className={styles.barOthers} style={{ width: `${(p.start / p.goal) * 100}%` }} />
+                    <span
+                      className={styles.barMine}
+                      style={{ left: `min(${(p.start / p.goal) * 100}%, calc(100% - ${mine[i] * 5}px))`, width: mine[i] ? `max(${(Math.min(mine[i], p.goal - p.start) / p.goal) * 100}%, ${mine[i] * 5}px)` : 0 }}
+                    />
+                  </div>
+                  <span className={styles.projectCount}>{Math.min(total, p.goal)} {t.of} {p.goal}</span>
                 </div>
-                <div className={styles.projectFoot}>
-                  <span>{Math.min(total, p.goal)} {t.of} {p.goal}</span>
-                  {reached
-                    ? <span className={styles.reached} role="status">{t.goalReached}</span>
-                    : atLimit && <span>{t.limitReached}</span>}
-                </div>
+                {reached
+                  ? <p className={`${styles.projectStatus} ${styles.reached}`} role="status">{t.goalReached}</p>
+                  : atLimit && <p className={styles.projectStatus}>{t.limitReached}</p>}
               </li>
             )
           })}

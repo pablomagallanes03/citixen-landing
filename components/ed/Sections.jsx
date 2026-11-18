@@ -52,10 +52,10 @@ function Points({ points }) {
 // Valle Norte + ficha de cada lugar), dentro de un marco noche, sin rótulos de disponibilidad.
 export function Listen({ t, places, placeLabels }) {
   return (
-    <section id="escucha" className={styles.listen} aria-labelledby="escucha-title">
+    <section className={styles.listen} aria-labelledby="escucha-title">
       <div className="wrap">
         <Intro t={{ ...t, title: <span id="escucha-title">{t.title}</span> }} />
-        <figure className={styles.stage}>
+        <figure id="escucha" className={styles.stage}>
           <p className={styles.stageHint}>{t.demo.hint}</p>
           <PlacesExplorer t={places} labels={placeLabels} showStatus={false} note={t.demo.note} />
         </figure>
@@ -67,7 +67,7 @@ export function Listen({ t, places, placeLabels }) {
 
 export function Decide({ t, illustrative }) {
   return (
-    <section id="decide" className={styles.decide} aria-labelledby="decide-title">
+    <section className={styles.decide} aria-labelledby="decide-title">
       <div className="wrap">
         <Intro t={{ ...t, title: <span id="decide-title">{t.title}</span> }} dark />
         <DecideDemo t={t.demo} illustrative={illustrative} />
