@@ -10,7 +10,7 @@ const GROUPS = [20, 16, 12]
 const PROGRESS = [100, 72, 46]
 
 const FRAMES = {
-  wide: { w: 1000, h: 350, cx: [200, 500, 800], cy: 168, c: 14, ring: 74, stroke: 9 },
+  wide: { w: 1000, h: 290, cx: [200, 500, 800], cy: 120, c: 14, ring: 74, stroke: 9 },
   narrow: { w: 600, h: 350, cx: [112, 300, 488], cy: 150, c: 15, ring: 72, stroke: 12 },
 }
 
