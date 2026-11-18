@@ -199,7 +199,7 @@
   max-width: 1040px;
   margin: clamp(3rem, 2rem + 3vw, 4.5rem) auto 0;
 }
-.points li { display: grid; gap: 0.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+.points li { display: grid; align-content: start; gap: 0.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
 .points strong { font-family: var(--font-display); font-size: 1.1875rem; font-weight: 600; letter-spacing: -0.01em; }
 .points span { font-size: 0.9875rem; color: var(--ink-2); line-height: 1.55; }
 .decide .points li { border-color: var(--line-night); }
