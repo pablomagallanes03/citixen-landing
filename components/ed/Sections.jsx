@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import HeroField, { useHeroSequence } from './HeroField'
+import HeroScene from './HeroScene'
 import { PlacesExplorer } from '../landing/Places'
 import DecideDemo from './DecideDemo'
 import Pieces from '../brand/Pieces'
@@ -7,8 +7,7 @@ import DemoForm from '../DemoForm'
 import styles from './ed.module.css'
 
 export function Hero({ t, illustrative }) {
-  const [mode, select] = useHeroSequence()
-  const focus = mode === 'scatter' ? null : mode
+  const [focus, setFocus] = useState(null)
   return (
     <section className={styles.hero}>
       <div className={`wrap ${styles.heroInner}`}>
@@ -18,8 +17,7 @@ export function Hero({ t, illustrative }) {
         </h1>
         <p className={styles.heroLead}>{t.lead}</p>
         <a href="#demostracion" className={`btn-primary ${styles.heroCta}`}>{t.cta}</a>
-        <HeroField t={t} mode={mode} onSelect={select} />
-        <p className={styles.heroNote}>{illustrative}</p>
+        <HeroScene t={t} illustrative={illustrative} onMode={setFocus} />
       </div>
     </section>
   )
