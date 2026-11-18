@@ -10,7 +10,7 @@ export default function AccountDeletion() {
         <title>Eliminación de cuenta — Citixen</title>
         <meta
           name="description"
-          content="Solicitá la eliminación de tu cuenta y datos asociados en Citixen. Información sobre qué datos se borran y cuáles se conservan por obligación legal."
+          content="Solicita la eliminación de tu cuenta y datos asociados en Citixen. Información sobre qué datos se borran y cuáles se conservan por obligación legal."
         />
         <meta property="og:title" content="Eliminación de cuenta — Citixen" />
         <meta
@@ -29,7 +29,7 @@ export default function AccountDeletion() {
               <span className="legal-label">Account deletion / Eliminación de cuenta</span>
               <h1>Eliminar tu cuenta de Citixen</h1>
               <p className="legal-subtitle">
-                Solicitá la eliminación de tu cuenta y de los datos personales asociados.
+                Solicita la eliminación de tu cuenta y de los datos personales asociados.
                 Tu solicitud se procesa en un plazo máximo de 30 días.
               </p>
               <div className="legal-meta">
@@ -84,7 +84,7 @@ export default function AccountDeletion() {
               {/* ═══ 1. INTRODUCCIÓN ═══ */}
               <h2>1. Tu derecho a solicitar la eliminación</h2>
               <p>
-                Como usuario de Citixen, tenés derecho a solicitar la eliminación de tu cuenta y de los
+                Como usuario de Citixen, tienes derecho a solicitar la eliminación de tu cuenta y de los
                 datos personales asociados, en cumplimiento de la Ley 25.326 de Protección de Datos
                 Personales de Argentina y del Reglamento General de Protección de Datos (RGPD) de la
                 Unión Europea.
@@ -98,11 +98,11 @@ export default function AccountDeletion() {
 
               <h3>2.1 Desde la aplicación móvil (recomendado)</h3>
               <ol>
-                <li>Abrí la app Citixen e iniciá sesión.</li>
-                <li>Tocá la pestaña <strong>&ldquo;Perfil&rdquo;</strong> (Modo Comunidad) o <strong>&ldquo;Mi Impacto&rdquo;</strong> (Créditos Cívicos).</li>
-                <li>Ingresá a <strong>Configuración</strong> (ícono de engranaje).</li>
-                <li>Seleccioná <strong>&ldquo;Eliminar cuenta&rdquo;</strong>.</li>
-                <li>Confirmá la acción ingresando tu contraseña.</li>
+                <li>Abre la app Citixen e inicia sesión.</li>
+                <li>Toca la pestaña <strong>&ldquo;Perfil&rdquo;</strong> (Modo Comunidad) o <strong>&ldquo;Mi Impacto&rdquo;</strong> (Créditos Cívicos).</li>
+                <li>Entra en <strong>Configuración</strong> (ícono de engranaje).</li>
+                <li>Selecciona <strong>&ldquo;Eliminar cuenta&rdquo;</strong>.</li>
+                <li>Confirma la acción ingresando tu contraseña.</li>
               </ol>
               <p>
                 Tu cuenta se desactiva inmediatamente. No vas a poder volver a iniciar sesión con esa
@@ -111,8 +111,8 @@ export default function AccountDeletion() {
 
               <h3>2.2 Por correo electrónico</h3>
               <p>
-                Si no podés acceder a la app (por ejemplo, ya la desinstalaste o perdiste acceso a tu
-                cuenta), enviá un correo a:
+                Si no puedes acceder a la app (por ejemplo, ya la desinstalaste o perdiste acceso a tu
+                cuenta), envía un correo a:
               </p>
               <p>
                 <a href="mailto:privacy@citixen.org">privacy@citixen.org</a>
@@ -127,7 +127,7 @@ export default function AccountDeletion() {
                 <li>El email con el que está registrada tu cuenta</li>
                 <li>Nombre completo (para validar tu identidad)</li>
                 <li>Ciudad declarada al registrarte</li>
-                <li>Confirmación expresa de que solicitás la eliminación de tu cuenta y datos asociados</li>
+                <li>Confirmación expresa de que solicitas la eliminación de tu cuenta y datos asociados</li>
               </ul>
               <p>
                 Procesamos la solicitud dentro de los 30 días corridos desde su recepción y te enviamos
@@ -202,7 +202,7 @@ export default function AccountDeletion() {
               {/* ═══ 6. CONFIRMACIÓN ═══ */}
               <h2>6. Confirmación de eliminación</h2>
               <p>
-                Una vez completada la eliminación, recibís un correo electrónico de confirmación a la
+                Una vez completada la eliminación, recibes un correo electrónico de confirmación a la
                 dirección que usaste para solicitarla. El correo describe qué datos se eliminaron y
                 cuáles se conservaron anonimizados, con detalle de las bases legales aplicadas.
               </p>
@@ -210,8 +210,8 @@ export default function AccountDeletion() {
               {/* ═══ 7. CONSULTAS ═══ */}
               <h2>7. Consultas sobre el proceso</h2>
               <p>
-                Si tenés dudas sobre el proceso de eliminación, sobre el tratamiento de tus datos, o
-                querés ejercer otros derechos (acceso, rectificación, portabilidad), podés contactarnos
+                Si tienes dudas sobre el proceso de eliminación, sobre el tratamiento de tus datos, o
+                quieres ejercer otros derechos (acceso, rectificación, portabilidad), puedes contactarnos
                 a través de los siguientes canales:
               </p>
               <p>
@@ -225,8 +225,8 @@ export default function AccountDeletion() {
                 <Link href="/terms">citixen.app/terms</Link>
               </p>
               <p>
-                También podés presentar un reclamo ante la Agencia de Acceso a la Información Pública
-                (AAIP) de Argentina si considerás que tus derechos no fueron respetados.
+                También puedes presentar un reclamo ante la Agencia de Acceso a la Información Pública
+                (AAIP) de Argentina si consideras que tus derechos no fueron respetados.
               </p>
 
             </div>
