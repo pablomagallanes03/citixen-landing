@@ -429,6 +429,36 @@
 .formCard > p { margin: 0.4rem 0 1.5rem; color: var(--ink-2); font-size: 0.9875rem; }
 
 /* ── Responsive ───────────────────────────────────────────────────── */
+/* Escritorio: el hero completo (título, CTA, selector, figura y leyenda) entra en la primera
+   pantalla. El título y la figura se escalan con la altura de la ventana; el resto es fijo
+   (~430 px). La figura mide 1000×290, de ahí el factor 3.45 entre alto y ancho. */
+@media (min-width: 861px) {
+  .hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: calc(var(--nav-height) + clamp(1rem, 3vh, 2.5rem)) 0 clamp(1rem, 3vh, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .heroTitle { font-size: clamp(2.6rem, min(1rem + 4.6vw, 8vh), 5.25rem); }
+  .heroLead { margin-top: clamp(0.75rem, 2vh, 1.5rem); max-width: 42rem; }
+  .heroCta { margin-top: clamp(1rem, 3vh, 2rem); }
+  .field {
+    margin-top: clamp(1rem, 3vh, 2.5rem);
+    max-width: min(1080px, max(520px, calc(288.8vh - 1484px)));
+  }
+  @supports (height: 1svh) {
+    .heroTitle { font-size: clamp(2.6rem, min(1rem + 4.6vw, 8svh), 5.25rem); }
+    .field { max-width: min(1080px, max(520px, calc(288.8svh - 1484px))); }
+  }
+  /* Los puntos escalan con la figura para no amontonarse en pantallas bajas. */
+  .canvas { margin-top: clamp(0.5rem, 2vh, 1.5rem); container-type: inline-size; }
+  .dot { --ds: clamp(8px, 1.2cqw, 13px); width: var(--ds); height: var(--ds); margin: calc(var(--ds) / -2) 0 0 calc(var(--ds) / -2); }
+  .caption { margin-top: clamp(0.5rem, 1.5vh, 1.25rem); }
+  .heroNote { margin-top: 0.25rem; }
+}
+
 @media (max-width: 860px) {
   .frame { grid-template-columns: 1fr; }
   .paneThemes { box-shadow: 0 -1px 0 var(--line); }
