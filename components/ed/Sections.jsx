@@ -60,6 +60,16 @@ function Points({ points, exampleLabel }) {
   )
 }
 
+// Íconos de los mecanismos de protección (trazo, 24 px).
+const GUARD_ICONS = {
+  gate: <><rect x="5" y="3.5" width="14" height="17" rx="2" /><path d="M9 20.5v-6a3 3 0 0 1 6 0v6" /></>,
+  mask: <><path d="M3 12s3.2-6 9-6 9 6 9 6-3.2 6-9 6-9-6-9-6Z" /><path d="M4 4l16 16" /></>,
+  block: <><path d="M12 3.5 5 6.2v5.3c0 4.3 2.9 7.6 7 9 4.1-1.4 7-4.7 7-9V6.2z" /><path d="m9.5 9.5 5 5m0-5-5 5" /></>,
+  check: <><path d="M12 3.5 5 6.2v5.3c0 4.3 2.9 7.6 7 9 4.1-1.4 7-4.7 7-9V6.2z" /><path d="m9 12 2.2 2.2L15.2 10" /></>,
+  erase: <><path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13" /><path d="M10.5 11v5M13.5 11v5" /></>,
+  group: <><circle cx="9" cy="9" r="3" /><circle cx="17" cy="10" r="2.3" /><path d="M3.5 19c.6-3 2.8-4.5 5.5-4.5s4.9 1.5 5.5 4.5M15 15c2.6-.4 4.6.8 5.3 3.5" /></>,
+}
+
 const AI_STEP_MS = 5200
 
 // Qué hace la IA, en cuatro pasos con un ejemplo de Valle Norte. Avanza solo una vez al verse;
@@ -188,8 +198,8 @@ function AiPanel({ t }) {
       <ul className={styles.aiGuards}>
         {t.safeguards.map((g) => (
           <li key={g.title}>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5 6.2v5.3c0 4.3 2.9 7.6 7 9 4.1-1.4 7-4.7 7-9V6.2z" /><path d="m9 12 2.2 2.2L15.2 10" /></svg>
-            <span><strong>{g.title}</strong>{g.body}</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">{GUARD_ICONS[g.icon]}</svg>
+            <strong>{g.title}</strong>
           </li>
         ))}
       </ul>
