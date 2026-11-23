@@ -39,7 +39,7 @@ const es = {
       perMonth: 'aportes este mes',
       latest: 'Últimos aportes',
       themesLabel: 'Temas',
-      aiChip: 'análisis con IA · opcional',
+      aiChip: 'análisis con IA',
       feed: [
         { text: '«De noche está muy oscuro»', meta: 'ahora · QR del lugar' },
         { text: '«Juegos para los más pequeños»', meta: 'hace 12 min' },
@@ -82,7 +82,7 @@ const es = {
     body: 'Recibe experiencias, necesidades e ideas en cada lugar de tu ciudad y conviértelas en temas, acuerdos y desacuerdos que ayudan a tu equipo a decidir con información.',
     demo: {
       hint: 'Toca un lugar del mapa y recorre su ficha.',
-      note: 'Ejemplo ilustrativo con datos ficticios. Los temas y las necesidades requieren el análisis con IA activado.',
+      note: 'Ejemplo ilustrativo con datos ficticios.',
     },
     points: [
       { icon: 'place', title: 'Lugares', body: 'Plazas, escuelas u oficinas escuchan todo el año con su propio QR.', example: 'Plaza del Encuentro: 86 aportes este mes con el QR de la entrada.' },
@@ -92,9 +92,8 @@ const es = {
     exampleLabel: 'Ejemplo',
     ai: {
       kicker: 'Inteligencia artificial',
-      badge: 'Opcional',
       title: 'Lee cada aporte para que tu equipo vea lo importante.',
-      body: 'Cuando llegan cientos de aportes, nadie alcanza a leerlos todos con la misma atención. La IA los ordena, muestra acuerdos y desacuerdos y propone hallazgos con citas. Tu equipo revisa y decide. Tu municipio la activa solo si quiere.',
+      body: 'Cuando llegan cientos de aportes, nadie alcanza a leerlos todos con la misma atención. La IA los ordena, muestra acuerdos y desacuerdos y propone hallazgos con citas. Tu equipo revisa y decide.',
       stepsLabel: 'Qué hace la inteligencia artificial',
       place: 'Plaza del Encuentro · 86 aportes',
       steps: [
@@ -192,7 +191,7 @@ const pt = {
       perMonth: 'contribuições este mês',
       latest: 'Últimas contribuições',
       themesLabel: 'Temas',
-      aiChip: 'análise com IA · opcional',
+      aiChip: 'análise com IA',
       feed: [
         { text: '«À noite está muito escuro»', meta: 'agora · QR do lugar' },
         { text: '«Brinquedos para os pequenos»', meta: 'há 12 min' },
@@ -235,7 +234,7 @@ const pt = {
     body: 'Receba experiências, necessidades e ideias em cada lugar da sua cidade e transforme-as em temas, acordos e desacordos que ajudam sua equipe a decidir com informação.',
     demo: {
       hint: 'Toque em um lugar do mapa e percorra a ficha dele.',
-      note: 'Exemplo ilustrativo com dados fictícios. Os temas e as necessidades exigem a análise por IA ativada.',
+      note: 'Exemplo ilustrativo com dados fictícios.',
     },
     points: [
       { icon: 'place', title: 'Lugares', body: 'Praças, escolas ou repartições escutam o ano todo com seu próprio QR.', example: 'Plaza del Encuentro: 86 contribuições este mês pelo QR da entrada.' },
@@ -245,9 +244,8 @@ const pt = {
     exampleLabel: 'Exemplo',
     ai: {
       kicker: 'Inteligência artificial',
-      badge: 'Opcional',
       title: 'Lê cada contribuição para que sua equipe veja o que importa.',
-      body: 'Quando chegam centenas de contribuições, ninguém consegue ler todas com a mesma atenção. A IA as organiza, mostra consensos e divergências e propõe achados com citações. Sua equipe revisa e decide. Seu município a ativa só se quiser.',
+      body: 'Quando chegam centenas de contribuições, ninguém consegue ler todas com a mesma atenção. A IA as organiza, mostra consensos e divergências e propõe achados com citações. Sua equipe revisa e decide.',
       stepsLabel: 'O que a inteligência artificial faz',
       place: 'Plaza del Encuentro · 86 contribuições',
       steps: [
@@ -345,7 +343,7 @@ const en = {
       perMonth: 'inputs this month',
       latest: 'Latest input',
       themesLabel: 'Themes',
-      aiChip: 'AI analysis · optional',
+      aiChip: 'AI analysis',
       feed: [
         { text: '“It’s too dark at night”', meta: 'now · place QR' },
         { text: '“Play equipment for little kids”', meta: '12 min ago' },
@@ -388,7 +386,7 @@ const en = {
     body: 'Collect experiences, needs and ideas at every place in your city and turn them into themes, agreements and disagreements that help your team decide with evidence.',
     demo: {
       hint: 'Tap a place on the map and explore its profile.',
-      note: 'Illustrative example with fictional data. Topics and needs require AI analysis to be turned on.',
+      note: 'Illustrative example with fictional data.',
     },
     points: [
       { icon: 'place', title: 'Places', body: 'Squares, schools or offices listen all year round with their own QR code.', example: 'Plaza del Encuentro: 86 contributions this month through the QR code at the entrance.' },
@@ -398,9 +396,8 @@ const en = {
     exampleLabel: 'Example',
     ai: {
       kicker: 'Artificial intelligence',
-      badge: 'Optional',
       title: 'It reads every contribution so your team sees what matters.',
-      body: 'When hundreds of contributions come in, no one can read them all with the same care. AI organizes them, shows agreements and disagreements and suggests findings backed by quotes. Your team reviews and decides. Your municipality turns it on only if it chooses to.',
+      body: 'When hundreds of contributions come in, no one can read them all with the same care. AI organizes them, shows agreements and disagreements and suggests findings backed by quotes. Your team reviews and decides.',
       stepsLabel: 'What artificial intelligence does',
       place: 'Plaza del Encuentro · 86 contributions',
       steps: [

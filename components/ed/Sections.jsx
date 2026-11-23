@@ -100,7 +100,7 @@ function AiPanel({ t }) {
   return (
     <div className={`${styles.ai} reveal`} ref={ref}>
       <div className={styles.aiHead}>
-        <p className={styles.aiKicker}>{t.kicker} <span className={styles.aiBadge}>{t.badge}</span></p>
+        <p className={styles.aiKicker}>{t.kicker}</p>
         <h3 className={styles.aiTitle}>{t.title}</h3>
         <p className={styles.aiBody}>{t.body}</p>
       </div>
