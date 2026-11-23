@@ -153,8 +153,10 @@
 .aiProposed {
   display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
   margin-top: 0.35rem; padding: 0.7rem 0.85rem; border: 1px dashed rgba(255, 255, 255, 0.3); border-radius: 10px;
-  font-size: 0.9375rem; color: var(--on-night-2);
+  font-size: 0.875rem; color: var(--on-night-3);
 }
+.aiProposed span:first-child { display: grid; gap: 0.15rem; }
+.aiProposed b { font-size: 0.9375rem; font-weight: 600; color: var(--on-night); }
 .aiChip { flex: none; padding: 0.25rem 0.7rem; border-radius: 999px; background: var(--white); color: var(--night); font-size: 0.8125rem; font-weight: 600; }
 .aiPosition { display: grid; gap: 0.5rem; padding: 0.85rem 0.95rem; border-radius: 10px; background: rgba(255, 255, 255, 0.05); }
 .aiPosition p { font-size: 0.9875rem; }
@@ -187,8 +189,12 @@
 .aiNote { margin-top: 1rem; font-size: 0.75rem; color: var(--on-night-3); }
 
 .aiGuards {
-  list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem;
+  list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 1.75rem;
+  margin-top: 1.25rem;
+}
+.aiGuardsTitle {
   margin-top: clamp(1.75rem, 1rem + 2vw, 2.5rem); padding-top: clamp(1.5rem, 1rem + 1.5vw, 2rem); border-top: 1px solid var(--line);
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy);
 }
 .aiGuards li { display: grid; grid-template-columns: auto 1fr; gap: 0.65rem; align-items: start; }
 .aiGuards svg { width: 1.35rem; height: 1.35rem; margin-top: 0.1rem; fill: none; stroke: var(--navy); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }

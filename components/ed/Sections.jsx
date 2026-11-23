@@ -142,7 +142,7 @@ function AiPanel({ t }) {
                   </div>
                 ))}
                 <div className={styles.aiProposed}>
-                  <span>{d.proposed}</span>
+                  <span><b>{d.proposed}</b>{d.proposedFrom}</span>
                   <span className={styles.aiChip}>{d.confirm}</span>
                 </div>
               </>
@@ -184,6 +184,7 @@ function AiPanel({ t }) {
         </div>
       </div>
 
+      <p className={styles.aiGuardsTitle}>{t.safeguardsTitle}</p>
       <ul className={styles.aiGuards}>
         {t.safeguards.map((g) => (
           <li key={g.title}>
