@@ -157,7 +157,20 @@ function AiPanel({ t }) {
                 </div>
               </>
             )}
-            {step === 1 && d.positions.map(([text, yes, no]) => (
+            {step === 1 && (
+              <>
+                <p className={styles.aiLabel}>{d.trendPeriod}</p>
+                {d.trends.map(([name, from, to, dir]) => (
+                  <div key={name} className={`${styles.aiTrend} ${dir === 'up' ? styles.aiTrendUp : ''}`}>
+                    <span>{name}</span>
+                    <span className={styles.aiTrendFig}>{from} % → <b>{to} %</b></span>
+                    <span className={styles.aiTrendTag}>{dir === 'up' ? `↑ ${d.trendUp}` : d.trendFlat}</span>
+                  </div>
+                ))}
+                <p className={styles.aiProof}>✓ {d.trendProof}</p>
+              </>
+            )}
+            {step === 2 && d.positions.map(([text, yes, no]) => (
               <div key={text} className={styles.aiPosition}>
                 <p>{text}</p>
                 <span className={styles.aiSplit}>
@@ -167,7 +180,7 @@ function AiPanel({ t }) {
                 <small><b>{yes}</b> {d.favor} · <b>{no}</b> {d.against}</small>
               </div>
             ))}
-            {step === 2 && (
+            {step === 3 && (
               <div className={styles.aiFinding}>
                 <p className={styles.aiLabel}>{d.findingLabel}</p>
                 <p className={styles.aiFindingText}>{d.finding}</p>
@@ -179,7 +192,7 @@ function AiPanel({ t }) {
                 ))}
               </div>
             )}
-            {step === 3 && (
+            {step === 4 && (
               <>
                 <ol className={styles.aiReview}>
                   {d.review.map(([label, state]) => (
