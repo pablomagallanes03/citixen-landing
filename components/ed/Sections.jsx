@@ -152,7 +152,7 @@ function AiPanel({ t }) {
                   </div>
                 ))}
                 <div className={styles.aiProposed}>
-                  <span><b>{d.proposed}</b>{d.proposedFrom}</span>
+                  <span><small>{d.proposedLabel}</small><b>{d.proposed}</b><q>{d.proposedQuote}</q></span>
                   <span className={styles.aiChip}>{d.confirm}</span>
                 </div>
               </>

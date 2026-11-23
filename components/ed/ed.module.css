@@ -156,6 +156,8 @@
 }
 .aiProposed span:first-child { display: grid; gap: 0.15rem; }
 .aiProposed b { font-size: 0.9375rem; font-weight: 600; color: var(--on-night); }
+.aiProposed small { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; color: #9CC3F2; }
+.aiProposed q { font-style: italic; quotes: '«' '»'; }
 .aiChip { flex: none; padding: 0.25rem 0.7rem; border-radius: 999px; background: var(--white); color: var(--night); font-size: 0.8125rem; font-weight: 600; }
 .aiPosition { display: grid; gap: 0.5rem; padding: 0.85rem 0.95rem; border-radius: 10px; background: rgba(255, 255, 255, 0.05); }
 .aiPosition p { font-size: 0.9875rem; }
